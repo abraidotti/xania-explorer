@@ -2,7 +2,7 @@
 
 import pytest
 
-from xania_utils.areafile.world import DEFAULT_AREA_DIR, load_world
+from xania_explorer.areafile.world import DEFAULT_AREA_DIR, load_world
 
 pytestmark = pytest.mark.skipif(not (DEFAULT_AREA_DIR / "area.lst").exists(), reason="xania checkout not found")
 
@@ -44,7 +44,7 @@ def test_mobprogs_loaded(world):
 
 
 def test_catalogue_is_deterministic(world, tmp_path):
-    from xania_utils.gen.area_catalogue import render_area, render_index
+    from xania_explorer.gen.area_catalogue import render_area, render_index
 
     assert render_index(world) == render_index(world)
     dell = world.area_named("Dell.are")

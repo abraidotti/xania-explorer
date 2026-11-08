@@ -1,4 +1,4 @@
-# xania-utils
+# Xania Explorer
 
 Tools for documenting and assessing [Xania](https://github.com/mattgodbolt/xania). They read a Xania checkout's
 data files directly (no C++ build needed) and produce a website of guides, level 1–91 balance reports with
@@ -13,13 +13,13 @@ python -m venv .venv
 .venv\Scripts\activate            # Windows   (source .venv/bin/activate elsewhere)
 python -m pip install -e ".[dev,site]"
 
-python -m xania_utils serve       # http://127.0.0.1:8000, rebuilds when area files change
+python -m xania_explorer serve       # http://127.0.0.1:8000, rebuilds when area files change
 ```
 
 To compare two versions, point at both checkouts. The first is the baseline:
 
 ```
-python -m xania_utils serve --target upstream=../xania-upstream --target fork=../xania
+python -m xania_explorer serve --target upstream=../xania-upstream --target fork=../xania
 ```
 
 ## Commands
@@ -56,12 +56,12 @@ If the fork doesn't exist or isn't public, the site is built from upstream alone
 
 ```
 docs/                             hand-written pages (guides); generated pages are added at build time
-mkdocs.yml                        site config; hooks in xania_utils/site/hooks.py
-xania_utils/paths.py              where the Xania checkout is (--xania / XANIA_DIR / ../xania)
-xania_utils/areafile/             faithful port of Xania's area loader (reader, parser, model, world checks)
-xania_utils/source/               tables extracted from xania/src: skills/groups, classes/races/stats, spell damage
-xania_utils/systems.py            the game systems assessed, in reading order (drives CLI, pages, nav)
-xania_utils/assess/               one analysis per system + shared stats (common.py) and item sources
-xania_utils/gen/area_catalogue.py area catalogue pages
-xania_utils/site/                 website: targets, per-version pages, findings-first stories/, charts (Vega-Lite), compare, hooks
+mkdocs.yml                        site config; hooks in xania_explorer/site/hooks.py
+xania_explorer/paths.py              where the Xania checkout is (--xania / XANIA_DIR / ../xania)
+xania_explorer/areafile/             faithful port of Xania's area loader (reader, parser, model, world checks)
+xania_explorer/source/               tables extracted from xania/src: skills/groups, classes/races/stats, spell damage
+xania_explorer/systems.py            the game systems assessed, in reading order (drives CLI, pages, nav)
+xania_explorer/assess/               one analysis per system + shared stats (common.py) and item sources
+xania_explorer/gen/area_catalogue.py area catalogue pages
+xania_explorer/site/                 website: targets, per-version pages, findings-first stories/, charts (Vega-Lite), compare, hooks
 ```

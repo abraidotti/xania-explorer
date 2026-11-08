@@ -1,8 +1,8 @@
-"""The game systems xania-utils assesses, in reading order.
+"""The game systems xania-explorer assesses, in reading order.
 
-Each system has an assessment module (``xania_utils.assess.<slug>``) providing
+Each system has an assessment module (``xania_explorer.assess.<slug>``) providing
 ``render(world) -> Markdown`` and ``write_csv(world, path)``, and a website page
-(``xania_utils.site.stories.<slug>``) providing ``<slug>_page(world) -> Markdown``.
+(``xania_explorer.site.stories.<slug>``) providing ``<slug>_page(world) -> Markdown``.
 The CLI, the website pages, the navigation and the version overview all read this list.
 """
 
@@ -20,10 +20,10 @@ class System:
 
     @property
     def assessment(self):
-        return importlib.import_module(f"xania_utils.assess.{self.slug}")
+        return importlib.import_module(f"xania_explorer.assess.{self.slug}")
 
     def page(self, world) -> str:
-        module = importlib.import_module(f"xania_utils.site.stories.{self.slug}")
+        module = importlib.import_module(f"xania_explorer.site.stories.{self.slug}")
         return getattr(module, f"{self.slug}_page")(world)
 
 

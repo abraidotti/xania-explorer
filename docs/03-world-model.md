@@ -76,7 +76,7 @@ and the `G`/`E` lines after it equip that mob. Key rules (full table in the
 ## Inspecting the world from Python
 
 ```python
-from xania_utils.areafile.world import load_world
+from xania_explorer.areafile.world import load_world
 w = load_world()                      # ../xania/area by default
 w.mobs[12100].hit.average             # 7601.0
 w.area_named("Dell.are").linked_areas # {'Plains of the North'}

@@ -1,7 +1,7 @@
 import pytest
 
-from xania_utils.areafile.world import DEFAULT_AREA_DIR, load_world
-from xania_utils.assess import combat as CB
+from xania_explorer.areafile.world import DEFAULT_AREA_DIR, load_world
+from xania_explorer.assess import combat as CB
 
 
 def test_interpolate_matches_cpp_integer_division():

@@ -1,10 +1,10 @@
 import pytest
 
-from xania_utils.areafile.model import Obj, ObjAffect
-from xania_utils.areafile.world import DEFAULT_AREA_DIR, load_world
-from xania_utils.assess import equipment as E
+from xania_explorer.areafile.model import Obj, ObjAffect
+from xania_explorer.areafile.world import DEFAULT_AREA_DIR, load_world
+from xania_explorer.assess import equipment as E
 
-LOC = {name: i for i, name in enumerate(__import__("xania_utils.areafile.flags", fromlist=["x"]).AFFECT_LOCATIONS)}
+LOC = {name: i for i, name in enumerate(__import__("xania_explorer.areafile.flags", fromlist=["x"]).AFFECT_LOCATIONS)}
 
 
 def armour(level: int, affects: list[tuple[str, int]], values=(10, 10, 10, 10), wear: int = 1 | 1 << 3) -> E.Item:

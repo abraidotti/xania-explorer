@@ -1,8 +1,8 @@
 import pytest
 
-from xania_utils.areafile import flags as F
-from xania_utils.areafile.parser import parse_text
-from xania_utils.areafile.reader import AreaParseError
+from xania_explorer.areafile import flags as F
+from xania_explorer.areafile.parser import parse_text
+from xania_explorer.areafile.reader import AreaParseError
 
 FIXTURE = """#AREA
 Test.are~

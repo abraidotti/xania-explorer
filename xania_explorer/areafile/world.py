@@ -18,7 +18,7 @@ from .parser import parse_file
 from ..paths import XaniaPaths
 from .reader import AreaParseError, Diagnostic, Reader
 
-DEFAULT_AREA_DIR = XaniaPaths.resolve().area_dir  # default checkout; see xania_utils/paths.py
+DEFAULT_AREA_DIR = XaniaPaths.resolve().area_dir  # default checkout; see xania_explorer/paths.py
 
 
 @dataclass

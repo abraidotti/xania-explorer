@@ -1,4 +1,4 @@
-# Builds the xania-utils website from upstream Xania and (if it exists) your fork, then publishes it to
+# Builds the xania-explorer website from upstream Xania and (if it exists) your fork, then publishes it to
 # GitHub Pages. Repository settings:
 #   - Settings → Pages → Source: "GitHub Actions".
 #   - Optional variables (Settings → Secrets and variables → Actions → Variables):
@@ -37,10 +37,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out xania-utils
+      - name: Check out xania-explorer
         uses: actions/checkout@v7
         with:
-          path: xania-utils
+          path: xania-explorer
 
       - name: Check out upstream Xania
         uses: actions/checkout@v7
@@ -63,22 +63,22 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: xania-utils/pyproject.toml
+          cache-dependency-path: xania-explorer/pyproject.toml
 
       - name: Install
-        run: python -m pip install -e "./xania-utils[dev,site]"
+        run: python -m pip install -e "./xania-explorer[dev,site]"
 
       - name: Test
-        working-directory: xania-utils
+        working-directory: xania-explorer
         env:
           XANIA_DIR: ${{ github.workspace }}/xania-upstream
         run: python -m pytest -q
 
       - name: Load-integrity check
-        working-directory: xania-utils
+        working-directory: xania-explorer
         run: |
-          python -m xania_utils --xania ../xania-upstream check
-          if [ "${{ steps.fork.outcome }}" = "success" ]; then python -m xania_utils --xania ../xania-fork check; fi
+          python -m xania_explorer --xania ../xania-upstream check
+          if [ "${{ steps.fork.outcome }}" = "success" ]; then python -m xania_explorer --xania ../xania-fork check; fi
 
       - name: Look up the Pages URL (handles custom domains)
         id: pages
@@ -87,7 +87,7 @@ jobs:
         uses: actions/configure-pages@v6
 
       - name: Build site
-        working-directory: xania-utils
+        working-directory: xania-explorer
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url && format('{0}/', steps.pages.outputs.base_url) || '' }}
           SITE_REPO_URL: https://github.com/${{ github.repository }}
@@ -99,7 +99,7 @@ jobs:
           else
             echo "::notice::Fork ${FORK_REPO} not available; building upstream only."
           fi
-          python -m xania_utils site --strict --out ../_site "${targets[@]}"
+          python -m xania_explorer site --strict --out ../_site "${targets[@]}"
 
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'

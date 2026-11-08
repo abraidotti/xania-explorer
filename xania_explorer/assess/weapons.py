@@ -333,7 +333,7 @@ def analyse(world: World) -> WeaponAnalysis:
     return C.cached(world, "weapons", WeaponAnalysis)
 
 
-# -- plain Markdown report (CLI: python -m xania_utils assess) ------------------
+# -- plain Markdown report (CLI: python -m xania_explorer assess) ------------------
 def render(world: World) -> str:
     a = analyse(world)
     out = [C.GENERATED_NOTE, "\n# Weapons: availability by level and class\n\n", "## Headline findings\n\n",

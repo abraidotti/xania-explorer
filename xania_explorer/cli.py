@@ -1,4 +1,4 @@
-"""Command line: ``python -m xania_utils [--xania PATH] <command>``."""
+"""Command line: ``python -m xania_explorer [--xania PATH] <command>``."""
 
 from __future__ import annotations
 
@@ -60,7 +60,7 @@ def cmd_assess(args: argparse.Namespace) -> int:
 
 def _targets_env(args: argparse.Namespace) -> dict[str, str]:
     """Translate --target NAME=PATH (repeatable) or --xania into the XANIA_TARGETS env var
-    read by the MkDocs hook (xania_utils/site/hooks.py)."""
+    read by the MkDocs hook (xania_explorer/site/hooks.py)."""
     from .site.targets import format_targets, parse_target
 
     specs = [parse_target(t) for t in args.target] if args.target else \
@@ -90,7 +90,7 @@ def cmd_serve(args: argparse.Namespace) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="xania_utils", description="Tools for assessing Xania.")
+    parser = argparse.ArgumentParser(prog="xania_explorer", description="Xania Explorer: balance reports and data checks for the Xania MUD.")
     parser.add_argument("--xania", type=Path, default=None, metavar="PATH",
                         help="Xania checkout (or its area/ dir). Default: $XANIA_DIR or ../xania "
                              f"(currently {default_xania_dir()})")

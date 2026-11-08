@@ -1,6 +1,6 @@
 import pytest
 
-from xania_utils.areafile.reader import AreaParseError, Reader
+from xania_explorer.areafile.reader import AreaParseError, Reader
 
 
 def test_number_sign_and_pipe_addition():

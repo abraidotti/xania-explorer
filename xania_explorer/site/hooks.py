@@ -13,21 +13,21 @@ import re
 from mkdocs.structure.files import File, Files
 
 # Absolute imports: MkDocs loads this file as a standalone module, not as part of the package.
-from xania_utils.areafile.world import load_world
-from xania_utils.site import compare, pages
-from xania_utils.site.targets import Target, load_targets
-from xania_utils.source import character_tables, cpp_tables
-from xania_utils.systems import SYSTEMS
+from xania_explorer.areafile.world import load_world
+from xania_explorer.site import compare, pages
+from xania_explorer.site.targets import Target, load_targets
+from xania_explorer.source import character_tables, cpp_tables
+from xania_explorer.systems import SYSTEMS
 
-log = logging.getLogger("mkdocs.plugins.xania_utils")
+log = logging.getLogger("mkdocs.plugins.xania_explorer")
 
 _targets: list[tuple[Target, object]] = []
 _generated: dict[str, str] = {}
 
 # Hand-written docs link to source with paths that work when browsing the repo
-# (../../xania/src/db.cpp#L395, ../xania_utils/...). On the site, point them at GitHub.
+# (../../xania/src/db.cpp#L395, ../xania_explorer/...). On the site, point them at GitHub.
 _XANIA_LINK = re.compile(r"\]\((?:\.\./)+xania/([^)]*)\)")
-_UTILS_LINK = re.compile(r"\[([^\]]*)\]\((?:\.\./)+(xania_utils/[^)]*)\)")
+_UTILS_LINK = re.compile(r"\[([^\]]*)\]\((?:\.\./)+(xania_explorer/[^)]*)\)")
 
 
 def on_config(config, **kwargs):
@@ -39,7 +39,7 @@ def on_config(config, **kwargs):
     _targets = []
     _generated = {}
     for t in targets:
-        log.info("xania_utils: loading %s from %s", t.label, t.paths.root)
+        log.info("xania_explorer: loading %s from %s", t.label, t.paths.root)
         world = load_world(t.paths)
         _targets.append((t, world))
         _generated.update(pages.target_pages(t, world))

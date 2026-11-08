@@ -4,9 +4,9 @@ import json
 
 import pytest
 
-from xania_utils.areafile.world import DEFAULT_AREA_DIR, load_world
-from xania_utils.site import charts as V
-from xania_utils.site.targets import format_targets, load_targets, parse_target
+from xania_explorer.areafile.world import DEFAULT_AREA_DIR, load_world
+from xania_explorer.site import charts as V
+from xania_explorer.site.targets import format_targets, load_targets, parse_target
 
 needs_xania = pytest.mark.skipif(not (DEFAULT_AREA_DIR / "area.lst").exists(), reason="xania checkout not found")
 

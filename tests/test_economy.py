@@ -1,7 +1,7 @@
 import pytest
 
-from xania_utils.areafile.world import DEFAULT_AREA_DIR, load_world
-from xania_utils.assess import economy as EC
+from xania_explorer.areafile.world import DEFAULT_AREA_DIR, load_world
+from xania_explorer.assess import economy as EC
 
 pytestmark = pytest.mark.skipif(not (DEFAULT_AREA_DIR / "area.lst").exists(), reason="xania checkout not found")
 

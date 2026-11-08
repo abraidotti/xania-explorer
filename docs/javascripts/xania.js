@@ -1,4 +1,4 @@
-// Renders Vega-Lite charts embedded by xania_utils/site/charts.py and makes tables sortable.
+// Renders Vega-Lite charts embedded by xania_explorer/site/charts.py and makes tables sortable.
 // Material's `document$` fires on every page load, including instant navigation.
 (function () {
   function isDark() {

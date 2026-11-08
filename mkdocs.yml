@@ -1,6 +1,6 @@
-# Build with:  python -m xania_utils site    (or: serve)
-# The CLI sets XANIA_TARGETS; generated pages come from xania_utils/site/hooks.py.
-site_name: Xania Utils
+# Build with:  python -m xania_explorer site    (or: serve)
+# The CLI sets XANIA_TARGETS; generated pages come from xania_explorer/site/hooks.py.
+site_name: Xania Explorer
 site_description: Documentation and level 1–91 balance reports for the Xania MUD
 site_url: !ENV [SITE_URL, ""]
 repo_url: !ENV [SITE_REPO_URL, ""]
@@ -43,7 +43,7 @@ theme:
   favicon: assets/favicon.svg
 
 hooks:
-  - xania_utils/site/hooks.py
+  - xania_explorer/site/hooks.py
 
 markdown_extensions:
   - tables

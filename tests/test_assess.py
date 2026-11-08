@@ -1,11 +1,11 @@
 import pytest
 
-from xania_utils.areafile.world import DEFAULT_AREA_DIR, load_world
-from xania_utils.paths import XaniaPaths
-from xania_utils.assess import common as C
-from xania_utils.assess.sources import MobSpawn, estimated_population
-from xania_utils.assess.weapons import allowed_average, class_profiles
-from xania_utils.source.cpp_tables import load_skills, starting_skills
+from xania_explorer.areafile.world import DEFAULT_AREA_DIR, load_world
+from xania_explorer.paths import XaniaPaths
+from xania_explorer.assess import common as C
+from xania_explorer.assess.sources import MobSpawn, estimated_population
+from xania_explorer.assess.weapons import allowed_average, class_profiles
+from xania_explorer.source.cpp_tables import load_skills, starting_skills
 
 
 def test_bands_cover_1_to_91():
@@ -56,7 +56,7 @@ def test_class_profiles():
 
 @pytest.mark.skipif(not (DEFAULT_AREA_DIR / "area.lst").exists(), reason="xania checkout not found")
 def test_reports_render_deterministically():
-    from xania_utils.assess import mobs, weapons
+    from xania_explorer.assess import mobs, weapons
 
     world = load_world()
     for mod in (weapons, mobs):

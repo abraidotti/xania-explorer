@@ -1,7 +1,9 @@
-# How Xania works
+# Xania Explorer
 
-Working notes and balance reports for assessing [Xania](https://github.com/mattgodbolt/xania). The guides give
-formulas and point to the source; they aren't player guides.
+Balance reports and working notes for [Xania](https://github.com/mattgodbolt/xania), the MUD Matt Godbolt and
+friends ran in the late 1990s. The name tips its hat to his [Compiler Explorer](https://godbolt.org/): point it
+at a Xania checkout and see what the code and data actually do. The guides give formulas and point to the
+source; they aren't player guides.
 
 ## Guides
 
@@ -28,10 +30,10 @@ downloads. When there's more than one version, a **Compare** page shows how they
 
 ```
 python -m pip install -e .[site]
-python -m xania_utils serve                       # ../xania, live preview at http://127.0.0.1:8000
-python -m xania_utils serve --target upstream=../xania-upstream --target fork=../xania
+python -m xania_explorer serve                       # ../xania, live preview at http://127.0.0.1:8000
+python -m xania_explorer serve --target upstream=../xania-upstream --target fork=../xania
 ```
 
 `serve` rebuilds whenever an area file changes. When the C++ loader changes, update the parser in
-[xania_utils/areafile/](../xania_utils/areafile/) and the [area file format](02-area-file-format.md) guide
+[xania_explorer/areafile/](../xania_explorer/areafile/) and the [area file format](02-area-file-format.md) guide
 together. Each parser function cites the C++ function it ports.

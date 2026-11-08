@@ -1,7 +1,7 @@
 import pytest
 
-from xania_utils.areafile.world import DEFAULT_AREA_DIR, load_world
-from xania_utils.assess import levelling as L
+from xania_explorer.areafile.world import DEFAULT_AREA_DIR, load_world
+from xania_explorer.assess import levelling as L
 
 ROOMS = """#AREA
 Mini.are~

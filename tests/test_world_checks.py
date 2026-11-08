@@ -1,6 +1,6 @@
 """World-level checks, exercised on a small deliberately broken world."""
 
-from xania_utils.areafile.world import load_world
+from xania_explorer.areafile.world import load_world
 
 BROKEN = """#AREA
 Broken.are~

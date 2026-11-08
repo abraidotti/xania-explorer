@@ -15,7 +15,7 @@ Each has interactive charts and a CSV of the underlying data.
 | Levelling path | Where can a character of each level gain experience, and how much is there? | Combat |
 | Mobs | Are mobs spread evenly over the levels, and is their toughness consistent? | — |
 
-Without the website, `python -m xania_utils assess` writes the same reports as Markdown and CSV into `build/`.
+Without the website, `python -m xania_explorer assess` writes the same reports as Markdown and CSV into `build/`.
 
 ## How a page reads
 
@@ -29,7 +29,7 @@ All the wording is generated from the data, so it stays true as the game changes
 
 ## Shared conventions
 
-These live in [xania_utils/assess/common.py](../xania_utils/assess/common.py).
+These live in [xania_explorer/assess/common.py](../xania_explorer/assess/common.py).
 
 - **Levels** run from 1 to 91. Content above 91 (immortal/hero) is reported separately. Level-0 objects and mobs
   count as level 1.
@@ -39,7 +39,7 @@ These live in [xania_utils/assess/common.py](../xania_utils/assess/common.py).
   - **Gini**: 0 means perfectly even, 1 means everything is in one bin;
   - range and number of empty bins.
 - **Obtainable** means placed by at least one reset: shop stock, a mob drop, or on the floor or in a container
-  ([sources.py](../xania_utils/assess/sources.py)). Content no reset places is listed rather than counted.
+  ([sources.py](../xania_explorer/assess/sources.py)). Content no reset places is listed rather than counted.
 - **Class views.** Class matters through skill *difficulty* (the per-class `skill_table` rating). It's the
   creation-point cost, and it divides practice and learn-by-use gains. Weapons shows a *start* view (what the
   class gets at creation) and an *easy* view (difficulty ≤ 3).
@@ -49,7 +49,7 @@ These live in [xania_utils/assess/common.py](../xania_utils/assess/common.py).
 - **Expected values.** Models use expected values of the C++ random rolls, never simulations, so the same data
   always gives the same page.
 - **Data comes from** the area files (via the [area parser](02-area-file-format.md)) and, for tables that only
-  exist in C++, from extractors in [xania_utils/source/](../xania_utils/source/): skills and groups, classes,
+  exist in C++, from extractors in [xania_explorer/source/](../xania_explorer/source/): skills and groups, classes,
   races and stat tables, and spell damage.
 
 ## Recommendations

@@ -1,7 +1,7 @@
 import pytest
 
-from xania_utils.areafile.world import DEFAULT_AREA_DIR, load_world
-from xania_utils.source.spell_tables import load_damage_spells, mana_cost, save_chance
+from xania_explorer.areafile.world import DEFAULT_AREA_DIR, load_world
+from xania_explorer.source.spell_tables import load_damage_spells, mana_cost, save_chance
 
 needs_xania = pytest.mark.skipif(not (DEFAULT_AREA_DIR / "area.lst").exists(), reason="xania checkout not found")
 
@@ -30,7 +30,7 @@ def test_damage_tables():
 
 @needs_xania
 def test_skill_analysis():
-    from xania_utils.assess import skills as S
+    from xania_explorer.assess import skills as S
 
     a = S.analyse(load_world())
     assert a.spells["mage"][30] is not None and a.spells["mage"][30].damage > 0

@@ -2,7 +2,7 @@
 
 This is the reference spec for Xania's area files, written from the C++ loader. Line references point into
 `xania/src/` (e.g. [db.cpp:395](../../xania/src/db.cpp#L395)). The Python port in
-[xania_utils/areafile/](../xania_utils/areafile/) follows the same structure, so each section here corresponds
+[xania_explorer/areafile/](../xania_explorer/areafile/) follows the same structure, so each section here corresponds
 to one parser function.
 
 **Severity.** The C++ treats some problems as fatal (`exit(1)`, so the MUD won't boot). Others it only logs
@@ -313,4 +313,4 @@ stand stand male 1236           positions, sex, gold
 - Mark one-way exits with a negative vnum.
 - Use `spell name~`, never `'spell name'`.
 - Don't put NoRemove on anything but weapons.
-- Run `python -m xania_utils check` before committing.
+- Run `python -m xania_explorer check` before committing.

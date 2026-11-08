@@ -1,8 +1,8 @@
 """Where the Xania checkout lives.
 
-Everything in xania-utils reads from one Xania checkout: ``area/`` for game
+Everything in xania-explorer reads from one Xania checkout: ``area/`` for game
 data and ``src/`` for tables that only exist in C++. By default that's a
-``xania`` folder next to ``xania-utils``; override with ``--xania PATH`` on the
+``xania`` folder next to ``xania-explorer``; override with ``--xania PATH`` on the
 command line or the ``XANIA_DIR`` environment variable.
 """
 
