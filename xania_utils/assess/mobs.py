@@ -244,7 +244,7 @@ class MobAnalysis:
 
 
 def analyse(world: World) -> MobAnalysis:
-    return MobAnalysis(world)
+    return C.cached(world, "mobs", MobAnalysis)
 
 
 def render(world: World) -> str:

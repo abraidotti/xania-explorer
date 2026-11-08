@@ -52,6 +52,7 @@ def on_config(config, **kwargs):
                        {"Area file format": "02-area-file-format.md"},
                        {"World model": "03-world-model.md"},
                        {"Characters": "04-characters.md"},
+                       {"Combat & experience": "05-combat.md"},
                        {"About the assessments": "assessments.md"}]}]
     for t, _ in _targets:
         # The bare index.md first makes the section title itself link to the overview

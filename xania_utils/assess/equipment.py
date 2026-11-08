@@ -261,7 +261,7 @@ class EquipmentAnalysis:
 
 
 def analyse(world: World) -> EquipmentAnalysis:
-    return EquipmentAnalysis(world)
+    return C.cached(world, "equipment", EquipmentAnalysis)
 
 
 def render(world: World) -> str:

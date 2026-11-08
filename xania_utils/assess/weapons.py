@@ -330,7 +330,7 @@ class WeaponAnalysis:
 
 
 def analyse(world: World) -> WeaponAnalysis:
-    return WeaponAnalysis(world)
+    return C.cached(world, "weapons", WeaponAnalysis)
 
 
 # -- plain Markdown report (CLI: python -m xania_utils assess) ------------------

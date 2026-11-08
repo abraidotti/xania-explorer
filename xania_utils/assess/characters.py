@@ -266,7 +266,7 @@ class CharacterAnalysis:
 
 
 def analyse(world: World) -> CharacterAnalysis:
-    return CharacterAnalysis(world)
+    return C.cached(world, "characters", CharacterAnalysis)
 
 
 def render(world: World) -> str:

@@ -31,6 +31,7 @@ SYSTEMS: list[System] = [
     System("characters", "Characters", "How do classes and races grow from level 1 to 91, and what does each cost?"),
     System("weapons", "Weapons", "What weapons can each class find and wield at each level?"),
     System("equipment", "Equipment", "How much armour and hitroll/damroll can a character wear at each level?"),
+    System("combat", "Combat & XP", "What does a fight look like at each level, and how many kills does a level take?"),
     System("mobs", "Mobs", "Are mobs spread evenly over the levels, and is their toughness consistent?"),
 ]
 
