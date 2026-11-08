@@ -20,10 +20,24 @@ CLASS_COLOURS = {"mage": "#4f7896", "cleric": "#e0a030", "knight": "#5f8a5b", "b
 FONT = "Nunito Sans, Helvetica, Arial, sans-serif"
 
 
+def _wrap(text: str, width: int = 68) -> str | list[str]:
+    """Vega titles don't wrap; split long ones into lines."""
+    if len(text) <= width:
+        return text
+    lines, line = [], ""
+    for word in text.split():
+        if line and len(line) + 1 + len(word) > width:
+            lines.append(line)
+            line = word
+        else:
+            line = f"{line} {word}".strip()
+    return lines + [line]
+
+
 def spec(data: list[dict[str, Any]], *, title: str, height: int = 300, **body: Any) -> dict[str, Any]:
     return {
         "$schema": SCHEMA,
-        "title": {"text": title, "anchor": "start"},
+        "title": {"text": _wrap(title), "anchor": "start"},
         "width": "container",
         "height": height,
         "data": {"values": data},
@@ -31,7 +45,7 @@ def spec(data: list[dict[str, Any]], *, title: str, height: int = 300, **body: A
         "config": {"font": FONT, "view": {"stroke": None},
                    "title": {"font": "Fraunces, Georgia, serif", "fontSize": 15, "fontWeight": 600},
                    "axis": {"labelFontSize": 11, "titleFontSize": 12, "gridOpacity": 0.55},
-                   "legend": {"orient": "bottom"},
+                   "legend": {"orient": "bottom", "columns": 5, "labelLimit": 180},
                    "range": {"category": WARM_CATEGORY},
                    "bar": {"color": WARM_CATEGORY[0], "cornerRadiusEnd": 2},
                    "line": {"strokeWidth": 2.2},

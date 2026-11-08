@@ -1,15 +1,31 @@
 # About the assessments
 
-Each assessment answers one question: **how balanced is this topic for a character levelling from 1 to 91
-(hero)?** The reports are generated for every [Xania version](versions.md) the site is built from. Each has
-interactive charts and a CSV of the underlying data.
+Each assessment covers one game **system** and answers one question: **how balanced is it for a character levelling
+from 1 to 91 (hero)?** The reports are generated for every [Xania version](versions.md) the site is built from.
+Each has interactive charts and a CSV of the underlying data.
 
-| Report | Question |
-|---|---|
-| Weapons | What weapons can a character use at each level, how good are they, and does one class find suitable weapons more easily than another? |
-| Mobs | Are mobs evenly spread across levels, does toughness rise smoothly, and do mobs match their area's level band? |
+| System | Question | Builds on |
+|---|---|---|
+| Characters | How do classes and races grow, and what does each cost in XP? | — |
+| Weapons | What weapons can each class find and wield at each level? | — |
+| Equipment | How much armour and hitroll/damroll can a character wear at each level? | — |
+| Combat & XP | What does a fight look like at each level, and how many kills does a level take? | Characters, Weapons, Equipment, Mobs |
+| Skills & spells | What can each class learn as it levels, and do attack spells keep up? | Characters, Combat |
+| Economy | Is the gold earned at each level enough for what there is to buy? | Combat, Equipment, Weapons |
+| Levelling path | Where can a character of each level gain experience, and how much is there? | Combat |
+| Mobs | Are mobs spread evenly over the levels, and is their toughness consistent? | — |
 
 Without the website, `python -m xania_utils assess` writes the same reports as Markdown and CSV into `build/`.
+
+## How a page reads
+
+1. **Key numbers** at the top.
+2. **One section per finding.** The heading states the finding, a short paragraph gives the evidence, and a chart
+   shows it with the relevant part highlighted.
+3. **Full tables** sit in collapsed "Details" blocks.
+4. **The method** comes last.
+
+All the wording is generated from the data, so it stays true as the game changes.
 
 ## Shared conventions
 
@@ -25,14 +41,18 @@ These live in [xania_utils/assess/common.py](../xania_utils/assess/common.py).
 - **Obtainable** means placed by at least one reset: shop stock, a mob drop, or on the floor or in a container
   ([sources.py](../xania_utils/assess/sources.py)). Content no reset places is listed rather than counted.
 - **Class views.** Class matters through skill *difficulty* (the per-class `skill_table` rating). It's the
-  creation-point cost, and it divides practice and learn-by-use gains. Assessments show a *start* view (what the
+  creation-point cost, and it divides practice and learn-by-use gains. Weapons shows a *start* view (what the
   class gets at creation) and an *easy* view (difficulty ≤ 3).
+- **The reference character** for per-level models (Combat, Skills, Economy, Levelling) is a human with the
+  class's default skill package, trains spent on stats and then HP, and the best gear the world offers at that
+  level. It's an upper bound: real characters are less well equipped.
+- **Expected values.** Models use expected values of the C++ random rolls, never simulations, so the same data
+  always gives the same page.
 - **Data comes from** the area files (via the [area parser](02-area-file-format.md)) and, for tables that only
-  exist in C++, from [xania_utils/source/cpp_tables.py](../xania_utils/source/cpp_tables.py).
-- Every report starts with **headline findings** and a **method** section, then gives distributions by level, and
-  ends with lists of specific outliers to fix.
+  exist in C++, from extractors in [xania_utils/source/](../xania_utils/source/): skills and groups, classes,
+  races and stat tables, and spell damage.
 
-## Planned
+## Recommendations
 
-Armour and other equipment, mob XP yield per level (with the combat guide), skills and spells by class, gold and
-shop economy, and area coverage of the levelling path.
+Once every system is assessed, a **recommendations** page will rank changes by impact × effort. It's regenerated
+from the same data on every build, with no stored state.

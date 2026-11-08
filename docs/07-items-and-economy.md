@@ -49,7 +49,7 @@ Resets place every object in the world (see the [area format](02-area-file-forma
 - **Mobs:** each instance carries `random(gold/2, 3·gold/2)` of its prototype's gold
   ([db.cpp:1034](../../xania/src/db.cpp#L1034)). Autogold loots it from the corpse.
 - **Sacrifice:** sacrificing a corpse gives `max(1, 2 × level)` gold. Other objects give that much capped at
-  their cost ([act_obj.cpp:1434](../../xania/src/act_obj.cpp#L1434)).
+  their cost ([act_obj.cpp:1435](../../xania/src/act_obj.cpp#L1435)).
 - **Money** objects on the floor or in containers.
 - **Selling** to a shop that trades the item's type pays `cost × sell %`. A shop that already stocks the item
   pays nothing ([act_obj.cpp:481](../../xania/src/act_obj.cpp#L481)).

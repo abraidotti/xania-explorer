@@ -34,6 +34,7 @@ SYSTEMS: list[System] = [
     System("combat", "Combat & XP", "What does a fight look like at each level, and how many kills does a level take?"),
     System("skills", "Skills & spells", "What can each class learn as it levels, and do attack spells keep up?"),
     System("economy", "Economy", "Is the gold earned at each level enough for what there is to buy?"),
+    System("levelling", "Levelling path", "Where can a character of each level gain experience, and how much is there?"),
     System("mobs", "Mobs", "Are mobs spread evenly over the levels, and is their toughness consistent?"),
 ]
 

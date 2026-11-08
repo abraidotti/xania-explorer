@@ -23,8 +23,8 @@ def equipment_page(world: World) -> str:
            "1 to 91, where the gaps are, and which items break the item-points rule. Weapons have their own page.\n",
            V.stat_tiles([
                (f"{k91.total('ac'):.0f}", f"AC from a best-in-slot kit at {C.HERO_LEVEL}"),
-               (f"+{a.hit_kits[C.HERO_LEVEL].total('hitroll')}/+{a.hit_kits[C.HERO_LEVEL].total('damroll')}",
-                f"hitroll/damroll from gear at {C.HERO_LEVEL}"),
+               (f"+{a.hit_kits[C.HERO_LEVEL].total('damroll')}",
+                f"damroll from gear at {C.HERO_LEVEL} (+{a.hit_kits[C.HERO_LEVEL].total('hitroll')} hitroll)"),
                (str(len(a.got)), "obtainable pieces of gear"),
                (str(len(a.over_points)), "items over the points rule"),
                (str(len(a.hidden_by_bug)), "more hidden by an AC bug"),
