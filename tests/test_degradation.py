@@ -67,6 +67,6 @@ def test_scorecard_doesnt_count_unrunnable_checks_as_fixed(tmp_path):
     out = scorecard([(Target("base", base.xania), base), (Target("head", head.xania), head)])
     assert "Not comparable: Characters, Weapons" in out
     changed = out.split("### What changed")[1].split("???")[0] if "### What changed" in out else ""
-    assert "xu-improved" not in changed  # missing source isn't a fix
+    assert "xe-improved" not in changed  # missing source isn't a fix
     bugs = by_slug("bugs").page(head)
     assert "The C++ checks couldn't run on this checkout" in bugs and "unknown, not fixed" in bugs

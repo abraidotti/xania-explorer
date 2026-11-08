@@ -87,5 +87,5 @@ def test_same_repo_two_branches_compare(tmp_path):
 
 
 def test_html_rendering_keeps_anchors_and_cards():
-    html = X.to_html('## Title {#combat-xp}\n\n<div class="xu-card-grid" markdown>\n\n**[x](combat.md#a)**\n\n</div>\n')
+    html = X.to_html('## Title {#combat-xp}\n\n<div class="xe-card-grid" markdown>\n\n**[x](combat.md#a)**\n\n</div>\n')
     assert 'id="combat-xp"' in html and 'href="combat.md#a"' in html and "<strong>" in html

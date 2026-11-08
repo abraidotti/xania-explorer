@@ -61,7 +61,7 @@ def _explore_link(target: Target) -> str:
     if not p.repo_slug:
         return ""
     base = quote(f"{p.repo_slug}@{p.branch}" if p.branch and p.branch != "HEAD" else p.repo_slug, safe="/@")
-    return (f'\n<p class="xu-explore-link">Compare this version with another repo or branch: '
+    return (f'\n<p class="xe-explore-link">Compare this version with another repo or branch: '
             f'<a href="../explore/?base={base}">open it in the explorer</a>.</p>\n')
 
 

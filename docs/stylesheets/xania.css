@@ -1,81 +1,89 @@
-/* Warm theme for Xania Explorer: parchment and terracotta by day, lantern-lit brown by night.
-   Material reads these custom properties (palette primary/accent: custom in mkdocs.yml). */
+/* Sunny theme for Xania Explorer: cream, coral and sunflower by day; a warm rosy evening by night.
+   Material reads these custom properties (palette primary/accent: custom in mkdocs.yml).
+   Every text colour here is at least 4.5:1 against its background (WCAG AA). */
 
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap");
 
 :root {
-  --xu-heading-font: "Fraunces", Georgia, "Times New Roman", serif;
+  --xe-heading-font: "Fraunces", Georgia, "Times New Roman", serif;
 }
 
-/* -- Light: parchment ------------------------------------------------------- */
+/* -- Light: cream and coral ---------------------------------------------------- */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color: #a8482a;          /* terracotta */
-  --md-primary-fg-color--light: #c4683f;
-  --md-primary-fg-color--dark: #86361d;
-  --md-primary-bg-color: #fdf8ef;
-  --md-primary-bg-color--light: rgba(253, 248, 239, 0.75);
-  --md-accent-fg-color: #c27c0e;           /* amber */
-  --md-accent-fg-color--transparent: rgba(194, 124, 14, 0.12);
+  --md-primary-fg-color: #c7472a;          /* coral */
+  --md-primary-fg-color--light: #e4572e;
+  --md-primary-fg-color--dark: #a83a20;
+  --md-primary-bg-color: #fffaf2;
+  --md-primary-bg-color--light: rgba(255, 250, 242, 0.8);
+  --md-accent-fg-color: #e8920c;           /* sunflower */
+  --md-accent-fg-color--transparent: rgba(245, 184, 46, 0.16);
 
-  --md-default-bg-color: #fbf6ec;          /* parchment */
+  --md-default-bg-color: #fffaf2;          /* cream */
   --md-default-fg-color: rgba(58, 38, 28, 0.9);
-  --md-default-fg-color--light: rgba(58, 38, 28, 0.66);
+  --md-default-fg-color--light: rgba(58, 38, 28, 0.68);
   --md-default-fg-color--lighter: rgba(58, 38, 28, 0.36);
   --md-default-fg-color--lightest: rgba(58, 38, 28, 0.1);
 
   --md-typeset-color: #3a261c;
-  --md-typeset-a-color: #a8482a;
-  --md-code-bg-color: #f3eadb;
+  --md-typeset-a-color: #c24127;
+  --md-code-bg-color: #fdf0dc;
   --md-code-fg-color: #4a3428;
   --md-footer-bg-color: #3a261c;
   --md-footer-bg-color--dark: #2c1d15;
 
-  --xu-card-bg: #fffaf2;
-  --xu-card-border: #ead9c0;
-  --xu-table-head: #f1e3cd;
-  --xu-table-stripe: rgba(168, 72, 42, 0.035);
-  --xu-table-hover: rgba(194, 124, 14, 0.1);
+  --xe-card-bg: #ffffff;
+  --xe-card-border: #f6dfc0;
+  --xe-table-head: #fdebcd;
+  --xe-table-stripe: rgba(245, 184, 46, 0.06);
+  --xe-table-hover: rgba(245, 184, 46, 0.16);
+  --xe-header-bg: linear-gradient(90deg, #c43d21 0%, #cc4426 55%, #c8462f 100%);
 }
 
-/* -- Dark: lantern light ------------------------------------------------------ */
+/* -- Dark: warm evening -------------------------------------------------------- */
 [data-md-color-scheme="slate"] {
-  --md-hue: 24;                            /* warms all of Material's slate greys */
-  --md-primary-fg-color: #d9774e;
-  --md-primary-fg-color--light: #e89470;
-  --md-primary-fg-color--dark: #b85a33;
-  --md-primary-bg-color: #fdf3e6;
-  --md-accent-fg-color: #f0b04a;
-  --md-accent-fg-color--transparent: rgba(240, 176, 74, 0.12);
+  --md-hue: 340;                           /* tints Material's slate greys rosy rather than brown */
+  --md-primary-fg-color: #ff8a5c;
+  --md-primary-fg-color--light: #ffa77a;
+  --md-primary-fg-color--dark: #e86a3c;
+  --md-primary-bg-color: #fff4ea;
+  --md-accent-fg-color: #ffc145;
+  --md-accent-fg-color--transparent: rgba(255, 193, 69, 0.14);
 
-  --md-default-bg-color: #1e1814;
-  --md-default-fg-color: rgba(244, 231, 214, 0.88);
-  --md-default-fg-color--light: rgba(244, 231, 214, 0.62);
-  --md-default-fg-color--lighter: rgba(244, 231, 214, 0.34);
-  --md-default-fg-color--lightest: rgba(244, 231, 214, 0.1);
+  --md-default-bg-color: #201a1f;
+  --md-default-fg-color: rgba(250, 236, 226, 0.9);
+  --md-default-fg-color--light: rgba(250, 236, 226, 0.64);
+  --md-default-fg-color--lighter: rgba(250, 236, 226, 0.34);
+  --md-default-fg-color--lightest: rgba(250, 236, 226, 0.1);
 
-  --md-typeset-color: #efe2d0;
-  --md-typeset-a-color: #eb9a6c;
-  --md-code-bg-color: #2a221c;
-  --md-code-fg-color: #efd9bd;
-  --md-footer-bg-color: #16110e;
-  --md-footer-bg-color--dark: #110d0a;
+  --md-typeset-color: #f6e8dd;
+  --md-typeset-a-color: #ff9b6e;
+  --md-code-bg-color: #2c2329;
+  --md-code-fg-color: #ffe0c4;
+  --md-footer-bg-color: #171216;
+  --md-footer-bg-color--dark: #120e11;
 
-  --xu-card-bg: #261f1a;
-  --xu-card-border: #3b2f27;
-  --xu-table-head: #31271f;
-  --xu-table-stripe: rgba(240, 176, 74, 0.03);
-  --xu-table-hover: rgba(240, 176, 74, 0.08);
+  --xe-card-bg: #2a2228;
+  --xe-card-border: #40343c;
+  --xe-table-head: #372c34;
+  --xe-table-stripe: rgba(255, 193, 69, 0.03);
+  --xe-table-hover: rgba(255, 193, 69, 0.09);
+  --xe-header-bg: #2c2229;
 }
 
-/* Header in light mode: a deeper, warmer bar than the body accent. */
-[data-md-color-scheme="default"] .md-header,
-[data-md-color-scheme="default"] .md-tabs {
-  background-color: #8f3c22;
+/* Header: a bright coral bar by day, with a sunflower line under the tabs. */
+.md-header,
+.md-tabs {
+  background: var(--xe-header-bg);
 }
 [data-md-color-scheme="slate"] .md-header,
 [data-md-color-scheme="slate"] .md-tabs {
-  background-color: #2b211b;
-  color: #f4e4cf;
+  color: #fbeee4;
+}
+.md-tabs {
+  box-shadow: inset 0 -3px 0 #f5b82e;
+}
+.md-tabs__item--active .md-tabs__link {
+  font-weight: 700;
 }
 
 /* -- Typography --------------------------------------------------------------- */
@@ -83,7 +91,7 @@
 .md-typeset h2,
 .md-typeset h3,
 .md-header__topic:first-child {
-  font-family: var(--xu-heading-font);
+  font-family: var(--xe-heading-font);
   font-optical-sizing: auto;
   letter-spacing: -0.01em;
 }
@@ -97,7 +105,7 @@
 .md-typeset h2 {
   font-weight: 600;
   padding-bottom: 0.25em;
-  border-bottom: 1px solid var(--xu-card-border);
+  border-bottom: 1px solid var(--xe-card-border);
 }
 .md-typeset h3 {
   font-weight: 500;
@@ -108,68 +116,68 @@
 }
 
 /* -- Key-number tiles --------------------------------------------------------------- */
-.xu-stats {
+.xe-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(5.4rem, 1fr));
   gap: 0.6rem;
   margin: 1.2em 0 1.4em;
 }
-.xu-stat {
+.xe-stat {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
   padding: 0.65rem 0.75rem 0.6rem;
-  background: var(--xu-card-bg);
-  border: 1px solid var(--xu-card-border);
+  background: var(--xe-card-bg);
+  border: 1px solid var(--xe-card-border);
   border-top: 3px solid var(--md-primary-fg-color);
   border-radius: 10px;
 }
-.xu-stat-value {
-  font-family: var(--xu-heading-font);
+.xe-stat-value {
+  font-family: var(--xe-heading-font);
   font-size: 1.55rem;
   font-weight: 650;
   line-height: 1.1;
   color: var(--md-primary-fg-color);
 }
-.xu-stat-label {
+.xe-stat-label {
   font-size: 0.66rem;
   line-height: 1.35;
   color: var(--md-default-fg-color--light);
 }
 
 /* -- Dashboard cards ----------------------------------------------------------------- */
-.md-typeset .xu-card-grid {
+.md-typeset .xe-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
   gap: 0.75rem;
   margin: 1em 0 1.6em;
 }
-.md-typeset .xu-finding-card,
-.md-typeset .xu-system-card {
-  background: var(--xu-card-bg);
-  border: 1px solid var(--xu-card-border);
-  border-left: 4px solid var(--xu-card-border);
+.md-typeset .xe-finding-card,
+.md-typeset .xe-system-card {
+  background: var(--xe-card-bg);
+  border: 1px solid var(--xe-card-border);
+  border-left: 4px solid var(--xe-card-border);
   border-radius: 10px;
   padding: 0.7rem 0.85rem 0.6rem;
   font-size: 0.72rem;
   line-height: 1.45;
 }
-.md-typeset .xu-finding-card > p,
-.md-typeset .xu-system-card > p {
+.md-typeset .xe-finding-card > p,
+.md-typeset .xe-system-card > p {
   margin: 0.35em 0;
 }
-.md-typeset .xu-finding-card a,
-.md-typeset .xu-system-card a {
+.md-typeset .xe-finding-card a,
+.md-typeset .xe-system-card a {
   color: var(--md-typeset-color);
 }
-.md-typeset .xu-finding-card a:hover,
-.md-typeset .xu-system-card a:hover {
+.md-typeset .xe-finding-card a:hover,
+.md-typeset .xe-system-card a:hover {
   color: var(--md-typeset-a-color);
 }
-.md-typeset .xu-impact-3 { border-left-color: #b4532a; }
-.md-typeset .xu-impact-2 { border-left-color: #e0a030; }
-.md-typeset .xu-impact-1 { border-left-color: #9a8b7e; }
-.md-typeset .xu-chip {
+.md-typeset .xe-impact-3 { border-left-color: #e4572e; }
+.md-typeset .xe-impact-2 { border-left-color: #f5b82e; }
+.md-typeset .xe-impact-1 { border-left-color: #c9bbae; }
+.md-typeset .xe-chip {
   display: inline-block;
   font-size: 0.58rem;
   font-weight: 700;
@@ -178,32 +186,33 @@
   padding: 0.05rem 0.4rem;
   margin-right: 0.3rem;
   border-radius: 999px;
-  background: var(--xu-table-head);
+  background: var(--xe-table-head);
   color: var(--md-default-fg-color--light);
 }
-.md-typeset .xu-impact-3 .xu-chip-impact { background: #b4532a; color: #fffaf2; }
-.md-typeset .xu-impact-2 .xu-chip-impact { background: #e0a030; color: #3a261c; }
-.md-typeset .xu-card-metric {
-  font-family: var(--xu-heading-font);
+.md-typeset .xe-impact-3 .xe-chip-impact { background: #cc4426; color: #ffffff; }
+.md-typeset .xe-impact-2 .xe-chip-impact { background: #f5b82e; color: #3a261c; }
+.md-typeset .xe-card-metric {
+  font-family: var(--xe-heading-font);
   font-size: 1.15rem;
   font-weight: 650;
   color: var(--md-primary-fg-color);
 }
-.md-typeset .xu-card-label {
+.md-typeset .xe-card-label {
   color: var(--md-default-fg-color--light);
 }
 /* Bug statuses */
-.md-typeset .xu-status-present { background: #b4532a; color: #fffaf2; }
-.md-typeset .xu-status-latent { background: #e0a030; color: #3a261c; }
-.md-typeset .xu-status-fixed,
-.md-typeset .xu-status-clean { background: #5f8a5b; color: #fffaf2; }
-.md-typeset h3 + p .xu-chip { margin-bottom: 0.3rem; }
+.md-typeset .xe-status-present { background: #cc4426; color: #ffffff; }
+.md-typeset .xe-status-latent { background: #f5b82e; color: #3a261c; }
+.md-typeset .xe-status-fixed,
+.md-typeset .xe-status-clean { background: #2a8350; color: #ffffff; }
+.md-typeset h3 + p .xe-chip { margin-bottom: 0.3rem; }
 
 /* Scorecard verdicts */
-.md-typeset .xu-improved { color: #3d7a3a; font-weight: 700; }
-.md-typeset .xu-worse { color: #b4532a; font-weight: 700; }
-[data-md-color-scheme="slate"] .md-typeset .xu-improved { color: #8cc485; }
-[data-md-color-scheme="slate"] .md-typeset .xu-worse { color: #eb9a6c; }
+.md-typeset .xe-improved { color: #1f7a45; font-weight: 700; }
+.md-typeset .xe-worse { color: #c24127; font-weight: 700; }
+[data-md-color-scheme="slate"] .md-typeset .xe-improved { color: #7fd49a; }
+[data-md-color-scheme="slate"] .md-typeset .xe-worse { color: #ff9b6e; }
+.md-typeset .xe-na { color: var(--md-default-fg-color--light); font-style: italic; }
 
 /* Finding headings read as statements: give them room. */
 .md-typeset h2 {
@@ -213,39 +222,43 @@
 /* Collapsed "Details" blocks: quiet, parchment-toned. */
 .md-typeset details.abstract,
 .md-typeset details.info {
-  border-color: var(--xu-card-border);
-  background: var(--xu-card-bg);
+  border-color: var(--xe-card-border);
+  background: var(--xe-card-bg);
   box-shadow: none;
   font-size: 0.72rem;
 }
 .md-typeset details.abstract > summary,
 .md-typeset details.info > summary {
-  background: var(--xu-table-head);
+  background: var(--xe-table-head);
   font-weight: 600;
 }
 .md-typeset details.abstract > summary::before,
 .md-typeset details.info > summary::before {
   background-color: var(--md-primary-fg-color);
 }
+.md-typeset details.abstract > summary::after,
+.md-typeset details.info > summary::after {
+  background-color: var(--md-primary-fg-color);
+}
 
 /* -- Charts as cards ------------------------------------------------------------ */
-.xu-chart {
+.xe-chart {
   margin: 1.2em 0 1.8em;
   width: 100%;
   padding: 0.9rem 1rem 0.6rem;
-  background: var(--xu-card-bg);
-  border: 1px solid var(--xu-card-border);
+  background: var(--xe-card-bg);
+  border: 1px solid var(--xe-card-border);
   border-radius: 12px;
   box-shadow: 0 1px 2px rgba(58, 38, 28, 0.06), 0 6px 18px -10px rgba(58, 38, 28, 0.18);
   box-sizing: border-box;
 }
-.xu-chart .xu-chart-body,
-.xu-chart .vega-embed {
+.xe-chart .xe-chart-body,
+.xe-chart .vega-embed {
   width: 100%;
 }
 /* vega-embed's actions menu is a <details>; Material styles every <details> as a collapsible
    admonition (blue border, icon, chevron). Undo that inside charts. */
-.md-typeset .xu-chart .vega-embed details {
+.md-typeset .xe-chart .vega-embed details {
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -255,7 +268,7 @@
   font-size: 0.7rem;
   overflow: visible;
 }
-.md-typeset .xu-chart .vega-embed details > summary {
+.md-typeset .xe-chart .vega-embed details > summary {
   padding: 0;
   margin: 0;
   background: none;
@@ -263,30 +276,30 @@
   min-height: 0;
   opacity: 0.55;
 }
-.md-typeset .xu-chart .vega-embed details > summary::before,
-.md-typeset .xu-chart .vega-embed details > summary::after {
+.md-typeset .xe-chart .vega-embed details > summary::before,
+.md-typeset .xe-chart .vega-embed details > summary::after {
   display: none;
 }
-.md-typeset .xu-chart .vega-embed details > summary:hover {
+.md-typeset .xe-chart .vega-embed details > summary:hover {
   opacity: 1;
 }
 
 /* -- Tables ----------------------------------------------------------------------- */
 .md-typeset table:not([class]) {
   font-size: 0.68rem;
-  border: 1px solid var(--xu-card-border);
+  border: 1px solid var(--xe-card-border);
   border-radius: 10px;
   box-shadow: none;
 }
 .md-typeset table:not([class]) th {
-  background: var(--xu-table-head);
+  background: var(--xe-table-head);
   font-weight: 700;
 }
 .md-typeset table:not([class]) tbody tr:nth-child(even) {
-  background: var(--xu-table-stripe);
+  background: var(--xe-table-stripe);
 }
 .md-typeset table:not([class]) tbody tr:hover {
-  background: var(--xu-table-hover);
+  background: var(--xe-table-hover);
   box-shadow: none;
 }
 .md-typeset table:not([class]) th[role="columnheader"] {
@@ -316,15 +329,15 @@
   margin: 1rem 0;
 }
 .xe-side {
-  border: 1px solid var(--xu-card-border);
-  background: var(--xu-card-bg);
+  border: 1px solid var(--xe-card-border);
+  background: var(--xe-card-bg);
   border-radius: 0.5rem;
   padding: 0.6rem 0.9rem 0.8rem;
   margin: 0;
   min-width: 0;
 }
 .xe-side legend {
-  font-family: var(--xu-heading-font);
+  font-family: var(--xe-heading-font);
   font-weight: 650;
   padding: 0 0.3rem;
 }
@@ -346,7 +359,7 @@
   font-weight: 400;
   color: var(--md-typeset-color);
   background: var(--md-default-bg-color);
-  border: 1px solid var(--xu-card-border);
+  border: 1px solid var(--xe-card-border);
   border-radius: 0.3rem;
 }
 .xe-side input:focus { outline: 2px solid var(--md-accent-fg-color); outline-offset: 0; }
@@ -355,8 +368,8 @@
   margin: 0.5rem 0 0;
   padding: 0.4rem 0.6rem;
   font-size: 0.74rem;
-  border-left: 3px solid #b4532a;
-  background: rgba(180, 83, 42, 0.08);
+  border-left: 3px solid #e4572e;
+  background: rgba(228, 87, 46, 0.08);
   border-radius: 0 0.3rem 0.3rem 0;
 }
 .md-typeset .xe-swap { align-self: center; padding: 0.3rem 0.7rem; margin: 0; }
@@ -367,20 +380,20 @@
 .md-typeset ol.xe-status li { margin: 0.15rem 0; padding-left: 1.4rem; position: relative; font-size: 0.78rem; }
 .xe-step::before { position: absolute; left: 0.2rem; }
 .xe-step-active::before { content: "\25cc"; color: var(--md-accent-fg-color); }
-.xe-step-done::before { content: "\2713"; color: #3d7a3a; }
-.xe-step-warning::before { content: "!"; font-weight: 700; color: #c27c0e; }
-.xe-step-failed { color: #b4532a; font-weight: 600; }
+.xe-step-done::before { content: "\2713"; color: #1f7a45; }
+.xe-step-warning::before { content: "!"; font-weight: 700; color: #b06d00; }
+.xe-step-failed { color: #c24127; font-weight: 600; }
 .xe-step-failed::before { content: "\2715"; }
-[data-md-color-scheme="slate"] .xe-step-done::before { color: #8cc485; }
-[data-md-color-scheme="slate"] .xe-step-failed { color: #eb9a6c; }
+[data-md-color-scheme="slate"] .xe-step-done::before { color: #7fd49a; }
+[data-md-color-scheme="slate"] .xe-step-failed { color: #ff9b6e; }
 .xe-notice p {
   font-size: 0.78rem;
   padding: 0.5rem 0.8rem;
-  border: 1px solid var(--xu-card-border);
-  background: var(--xu-card-bg);
+  border: 1px solid var(--xe-card-border);
+  background: var(--xe-card-bg);
   border-radius: 0.4rem;
 }
-.xe-pages { margin: 1rem 0 0.5rem; border-bottom: 1px solid var(--xu-card-border); padding-bottom: 0.6rem; }
+.xe-pages { margin: 1rem 0 0.5rem; border-bottom: 1px solid var(--xe-card-border); padding-bottom: 0.6rem; }
 .xe-group { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; margin: 0.25rem 0; }
 .xe-group-label { font-weight: 700; font-size: 0.74rem; margin-right: 0.4rem; min-width: 12rem; }
 .xe-page {
@@ -388,8 +401,8 @@
   font-size: 0.72rem;
   padding: 0.2rem 0.6rem;
   border-radius: 1rem;
-  border: 1px solid var(--xu-card-border);
-  background: var(--xu-card-bg);
+  border: 1px solid var(--xe-card-border);
+  background: var(--xe-card-bg);
   color: var(--md-typeset-color);
   cursor: pointer;
 }
@@ -413,12 +426,12 @@
 .md-typeset .xe-fallback code { white-space: pre-wrap; word-break: break-all; }
 
 /* Version switcher under a report page's title */
-.md-typeset .xu-version-switch {
+.md-typeset .xe-version-switch {
   font-size: 0.68rem;
   color: var(--md-default-fg-color--light);
   border-left: 3px solid var(--md-accent-fg-color);
   padding: 0.1rem 0 0.1rem 0.6rem;
   margin: -0.4rem 0 1.2rem;
 }
-.md-typeset .xu-version-switch p { margin: 0; }
-.md-typeset .xu-version-switch strong { color: var(--md-default-fg-color); }
+.md-typeset .xe-version-switch p { margin: 0; }
+.md-typeset .xe-version-switch strong { color: var(--md-default-fg-color); }

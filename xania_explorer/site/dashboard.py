@@ -26,17 +26,17 @@ def _link(prefix: str, system: System, f: Finding) -> str:
 
 
 def card(system: System, f: Finding, prefix: str = "") -> str:
-    metric = (f'<span class="xu-card-metric">{fmt_metric(f.metric)}</span> '
-              f'<span class="xu-card-label">{f.metric_label}</span>') if f.metric is not None else ""
-    return (f'<div class="xu-finding-card xu-impact-{f.impact}" markdown>\n\n'
-            f'<span class="xu-chip">{system.title}</span>'
-            f'<span class="xu-chip xu-chip-impact">{IMPACT_NAME[f.impact]}</span>\n\n'
+    metric = (f'<span class="xe-card-metric">{fmt_metric(f.metric)}</span> '
+              f'<span class="xe-card-label">{f.metric_label}</span>') if f.metric is not None else ""
+    return (f'<div class="xe-finding-card xe-impact-{f.impact}" markdown>\n\n'
+            f'<span class="xe-chip">{system.title}</span>'
+            f'<span class="xe-chip xe-chip-impact">{IMPACT_NAME[f.impact]}</span>\n\n'
             f"**[{f.title}]({_link(prefix, system, f)})**\n\n"
             f"{metric}\n\n</div>\n")
 
 
 def card_grid(items: list[tuple[System, Finding]], prefix: str = "") -> str:
-    return '\n<div class="xu-card-grid" markdown>\n\n' + "".join(card(s, f, prefix) for s, f in items) + "\n</div>\n\n"
+    return '\n<div class="xe-card-grid" markdown>\n\n' + "".join(card(s, f, prefix) for s, f in items) + "\n</div>\n\n"
 
 
 def issue_counts(world: World) -> dict[int, int]:
@@ -60,7 +60,7 @@ def deployment_dashboard(world: World) -> str:
             out.append(f"| {s.title} | [{f.title}]({_link('', s, f)}) | {IMPACT_NAME[f.impact]} | "
                        f"{fmt_metric(f.metric)} {f.metric_label} |\n")
     out.append("\n## Systems {#systems}\n\n")
-    out.append('\n<div class="xu-card-grid" markdown>\n\n')
+    out.append('\n<div class="xe-card-grid" markdown>\n\n')
     for s in SYSTEMS:
         st = s.story(world)
         worst = st.issues[0] if st.issues else None
@@ -70,8 +70,8 @@ def deployment_dashboard(world: World) -> str:
             line = f"Top issue: [{worst.title}]({s.slug}.md#{worst.anchor})\n\n"
         else:
             line = "No issues found.\n\n"
-        out.append(f'<div class="xu-system-card" markdown>\n\n**[{s.title}]({s.slug}.md)**\n\n'
-                   f'<span class="xu-card-label">{s.question}</span>\n\n' + line + "</div>\n")
+        out.append(f'<div class="xe-system-card" markdown>\n\n**[{s.title}]({s.slug}.md)**\n\n'
+                   f'<span class="xe-card-label">{s.question}</span>\n\n' + line + "</div>\n")
     out.append("\n</div>\n\n")
     return "".join(out)
 
@@ -104,12 +104,12 @@ def bug_changes(targets: list[tuple[object, World]]) -> str:
             if b is None or b.status == r.status and len(b.detection.occurrences) == len(r.detection.occurrences):
                 continue
             if b.open and not r.open:
-                change = '<span class="xu-improved">▲ fixed</span>'
+                change = '<span class="xe-improved">▲ fixed</span>'
             elif r.open and not b.open:
-                change = '<span class="xu-worse">▼ introduced</span>'
+                change = '<span class="xe-worse">▼ introduced</span>'
             else:
                 d = len(r.detection.occurrences) - len(b.detection.occurrences)
-                change = (f'<span class="xu-{"improved" if d < 0 else "worse"}">{"▲" if d < 0 else "▼"} '
+                change = (f'<span class="xe-{"improved" if d < 0 else "worse"}">{"▲" if d < 0 else "▼"} '
                           f'{d:+d} occurrences</span>') if d else f"{b.status} → {r.status}"
             rows.append(f"| {t.name} | [{r.check.title}]({t.name}/bugs.md#{r.anchor}) | {b.status} "
                         f"({len(b.detection.occurrences)}) | {r.status} ({len(r.detection.occurrences)}) | {change} |\n")
@@ -143,7 +143,7 @@ def scorecard(targets: list[tuple[object, World]]) -> str:
             moved = gone = False
             for (t, _), st, found in zip(others, other_stories, other_findings):
                 if st.status != "ok":  # the other side can't run this system: not a change in the game
-                    cells.append('<span class="xu-n/a">unavailable</span>')
+                    cells.append('<span class="xe-na">unavailable</span>')
                     gone = True
                     continue
                 g = found.get(fid)
@@ -153,7 +153,7 @@ def scorecard(targets: list[tuple[object, World]]) -> str:
                 moved |= g is None or g.metric != f.metric
                 mark = {"improved": "▲ ", "worse": "▼ ", "same": "= "}.get(v, "")
                 value = fmt_metric(g.metric) if g else "—"
-                cells.append(f'<span class="xu-{v}">{mark}{value}</span>' if g else "—")
+                cells.append(f'<span class="xe-{v.replace("/", "")}">{mark}{value}</span>' if g else "—")
             row = f"| {s.title} | {f.title} | {f.metric_label} | " + " | ".join(cells) + " |\n"
             (changed if moved else unavailable if gone else unchanged).append(row)
     head = ("| System | Finding (baseline) | Number | " + " | ".join(t.name for t, _ in targets) + " |\n"

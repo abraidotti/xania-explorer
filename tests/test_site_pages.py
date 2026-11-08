@@ -23,11 +23,11 @@ def pages(world):
 def test_page_leads_with_findings(pages, slug):
     """Key numbers first, each finding followed by its chart, tables tucked into details blocks."""
     page = pages[slug]
-    assert page.index('class="xu-stats"') < page.index('class="xu-chart"')
+    assert page.index('class="xe-stats"') < page.index('class="xe-chart"')
     sections = page.split("\n## ")[1:]
     findings = [s for s in sections if not s.startswith(("Method", "Left out"))]
     assert len(findings) >= 4
-    charted = sum('class="xu-chart"' in s for s in findings)
+    charted = sum('class="xe-chart"' in s for s in findings)
     assert charted >= 3 and charted >= len(findings) - 2  # short text-only findings are fine, but few
     assert "\n| " not in page.split("\n??? ")[0]  # no bare tables before the first details block
     assert '??? info "How these numbers are calculated"' in page

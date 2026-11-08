@@ -76,8 +76,8 @@ def _m_levels(a: M.MobAnalysis) -> str:
                                "tooltip": V.tooltip(("level", "Level"), ("population", "Population"),
                                                     ("prototypes", "Prototypes"))}},
                  {"data": {"values": empty},
-                  "mark": {"type": "point", "shape": "triangle-up", "filled": True, "size": 150, "color": "#e0a030",
-                           "stroke": "#7a4a0c", "strokeWidth": 1},
+                  "mark": {"type": "point", "shape": "triangle-up", "filled": True, "size": 150, "color": "#f5b82e",
+                           "stroke": "#9a5a00", "strokeWidth": 1},
                   "encoding": {"x": x, "y": {"value": {"expr": "height - 5"}},
                                "tooltip": V.tooltip(("level", "Level"), ("note", "Note"))}},
              ]}
@@ -102,7 +102,7 @@ def _m_toughness(a: M.MobAnalysis) -> str:
                    params=[{"name": "zoom", "select": "interval", "bind": "scales"}],
                    encoding={"x": V.quant("level", "Mob level", scale={"domain": [1, C.HERO_LEVEL], "nice": False}),
                              "y": V.quant("hp", "Average HP", scale={"type": "log"}),
-                             "color": V.nominal("kind", "", {"outlier": HIGHLIGHT, "typical": "#8fa3b0"}),
+                             "color": V.nominal("kind", "", {"outlier": HIGHLIGHT, "typical": "#9cb4c4"}),
                              "size": {"condition": {"test": "datum.kind === 'outlier'", "value": 70}, "value": 22},
                              "tooltip": V.tooltip(("name", "Mob"), ("vnum", "Vnum"), ("area", "Area"),
                                                   ("level", "Level"), ("hp", "HP"), ("dmg", "Damage"),
@@ -149,7 +149,7 @@ def _m_areas(a: M.MobAnalysis) -> str:
                                    "sort": {"field": "total", "order": "descending"}},
                              "x": V.quant("share", "Share of the area's combat mobs", axis={"format": "%"},
                                           stack=True),
-                             "color": V.nominal("where", "", {"below the band": "#4f7896",
+                             "color": V.nominal("where", "", {"below the band": "#3f88c5",
                                                               "above the band": HIGHLIGHT}),
                              "tooltip": V.tooltip(("area", "Area"), ("band", "Advertised band"),
                                                   ("where", "Where"), ("share", "Share"))})

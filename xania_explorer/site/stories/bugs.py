@@ -10,9 +10,9 @@ from ...bugs import KINDS, SEVERITY_LABEL, BugResult
 from .. import charts as V
 from .common import HIGHLIGHT, MUTED, _list, _plural, finding, story
 
-STATUS_COLOURS = {"present": HIGHLIGHT, "latent": "#e0a030", "fixed": "#5f8a5b", "clean": "#5f8a5b",
+STATUS_COLOURS = {"present": HIGHLIGHT, "latent": "#f5b82e", "fixed": "#3fa66b", "clean": "#3fa66b",
                   "unknown": MUTED}
-SEVERITY_COLOURS = {"crash risk": HIGHLIGHT, "wrong behaviour": "#e0a030", "cosmetic": "#9a8b7e"}
+SEVERITY_COLOURS = {"crash risk": HIGHLIGHT, "wrong behaviour": "#f5b82e", "cosmetic": "#a8998b"}
 TOP_AREAS = 15
 
 
@@ -162,11 +162,11 @@ def _catalogue(a: B.BugAnalysis) -> str:
            "Every check, open or not: what it looks for, why it matters, and how to fix it.\n\n",
            V.details("Summary of all checks", a.summary_table(), kind="abstract")]
     for r in a.results:
-        chip = (f'<span class="xu-chip xu-status-{r.status}">{r.status}</span>'
-                f'<span class="xu-chip">{r.check.kind}</span>'
-                f'<span class="xu-chip">{SEVERITY_LABEL[r.check.severity]}</span>')
+        chip = (f'<span class="xe-chip xe-status-{r.status}">{r.status}</span>'
+                f'<span class="xe-chip">{r.check.kind}</span>'
+                f'<span class="xe-chip">{SEVERITY_LABEL[r.check.severity]}</span>')
         out.append(f"\n### {r.check.title} {{#{r.anchor}}}\n\n{chip}"
-                   + (f" <span class=\"xu-card-label\">{r.detection.note}</span>" if r.detection.note else "")
+                   + (f" <span class=\"xe-card-label\">{r.detection.note}</span>" if r.detection.note else "")
                    + f"\n\n{r.check.explain}\n\n**Fix.** {r.check.remedy}\n")
         if r.detection.occurrences:
             out.append(V.details(f"Where: {_plural(len(r.detection.occurrences), 'occurrence')}",

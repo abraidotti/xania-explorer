@@ -207,9 +207,9 @@ def switcher(src_uri: str, exists) -> str:
         dest = next(p for p in (f"{t.name}/{rest}", f"{t.name}/{_nav_equivalent(rest)}", f"{t.name}/index.md")
                     if exists(p))
         rel = posixpath.relpath(dest, posixpath.dirname(src_uri))
-        links.append(f'[{short[t.name]}]({rel}){{ .xu-version-link title="{t.label}" }}')
+        links.append(f'[{short[t.name]}]({rel}){{ .xe-version-link title="{t.label}" }}')
     switch = (" · Same page in " + " · ".join(links)) if links else ""
-    return (f'\n<div class="xu-version-switch" markdown>\n\nViewing **{here.label}**{switch}\n\n</div>\n')
+    return (f'\n<div class="xe-version-switch" markdown>\n\nViewing **{here.label}**{switch}\n\n</div>\n')
 
 
 def _with_switcher(markdown: str, src_uri: str, files: Files) -> str:

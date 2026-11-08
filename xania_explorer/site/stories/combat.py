@@ -98,7 +98,7 @@ def _kills(a: CB.CombatAnalysis) -> str:
 
 def _clock(a: CB.CombatAnalysis, hours: dict[str, float]) -> str:
     clock = [{"level": lvl, "clock": CLOCK_MINUTES} for lvl in C.LEVELS if lvl >= 15]
-    layer = {"data": {"values": clock}, "mark": {"type": "line", "strokeDash": [5, 4], "color": "#9a8b7e"},
+    layer = {"data": {"values": clock}, "mark": {"type": "line", "strokeDash": [5, 4], "color": "#a8998b"},
              "encoding": {"x": {"field": "level", "type": "quantitative"},
                           "y": {"field": "clock", "type": "quantitative"}}}
     chart = _lines(a, "minutes_per_level", "Minutes of combat per level; dashed = the 90-minute XP clock",
@@ -167,7 +167,7 @@ def _accuracy(a: CB.CombatAnalysis) -> str:
                    mark={"type": "line"},
                    encoding={"x": V.quant("level", "Level", scale={"domain": [1, C.HERO_LEVEL], "nice": False}),
                              "y": V.quant("value", "Chance", axis={"format": "%"}),
-                             "color": V.nominal("class", "", {**V.CLASS_COLOURS, "mob vs knight": "#9a8b7e"},
+                             "color": V.nominal("class", "", {**V.CLASS_COLOURS, "mob vs knight": "#a8998b"},
                                                 CLASSES + ["mob vs knight"]),
                              "strokeDash": {"field": "who", "type": "nominal", "title": "",
                                             "scale": {"domain": ["you hit it", "it hits you"],

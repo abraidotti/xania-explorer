@@ -56,10 +56,10 @@ def _supply(a: L.LevellingAnalysis, none_from: int | None) -> str:
                                 "(log scale; dashed = one level)"),
              "layer": [
                  # a line, not an area: an area needs a zero baseline, which a log scale doesn't have
-                 {"data": {"values": rows}, "mark": {"type": "line", "color": "#e0a030", "strokeWidth": 2.5},
+                 {"data": {"values": rows}, "mark": {"type": "line", "color": "#f5b82e", "strokeWidth": 2.5},
                   "encoding": {"x": _x(), "y": V.quant("levels", "Levels of XP", scale={"type": "log"}),
                                "tooltip": V.tooltip(("level", "Level"), ("levels", "Levels of XP"))}},
-                 {"data": {"values": one}, "mark": {"type": "line", "strokeDash": [5, 4], "color": "#9a8b7e"},
+                 {"data": {"values": one}, "mark": {"type": "line", "strokeDash": [5, 4], "color": "#a8998b"},
                   "encoding": {"x": {"field": "level", "type": "quantitative"},
                                "y": {"field": "y", "type": "quantitative"}}},
              ]}

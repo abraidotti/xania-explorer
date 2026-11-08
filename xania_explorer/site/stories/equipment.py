@@ -97,7 +97,7 @@ def _hitdam(a: E.EquipmentAnalysis) -> str:
                    mark={"type": "line", "interpolate": "step-after"},
                    encoding={"x": V.quant("level", "Level", scale={"domain": [1, C.HERO_LEVEL], "nice": False}),
                              "y": V.quant("value", "Bonus"),
-                             "color": V.nominal("bonus", "", {"hitroll": "#4f7896", "damroll": HIGHLIGHT}),
+                             "color": V.nominal("bonus", "", {"hitroll": "#3f88c5", "damroll": HIGHLIGHT}),
                              "tooltip": V.tooltip(("bonus", "Bonus"), ("level", "Level"), ("value", "Value"))})
     k30, k91 = a.hit_kits[30], a.hit_kits[C.HERO_LEVEL]
     combined = {lvl: a.hit_kits[lvl].total("hitroll") + a.hit_kits[lvl].total("damroll") for lvl in C.LEVELS}
@@ -126,7 +126,7 @@ def _points(a: E.EquipmentAnalysis) -> str:
                                "color": V.nominal("status", "", {"over the rule": HIGHLIGHT, "within": MUTED}),
                                "tooltip": V.tooltip(("name", "Item"), ("vnum", "Vnum"), ("area", "Area"),
                                                     ("level", "Level"), ("points", "Points"))}},
-                 {"data": {"values": allowed}, "mark": {"type": "line", "strokeDash": [4, 4], "color": "#9a8b7e"},
+                 {"data": {"values": allowed}, "mark": {"type": "line", "strokeDash": [4, 4], "color": "#a8998b"},
                   "encoding": {"x": {"field": "level", "type": "quantitative"},
                                "y": {"field": "allowed", "type": "quantitative"}}},
              ]}

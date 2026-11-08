@@ -7,14 +7,14 @@
 
   function renderCharts() {
     if (typeof vegaEmbed === "undefined") return;
-    document.querySelectorAll(".xu-chart").forEach(function (holder) {
+    document.querySelectorAll(".xe-chart").forEach(function (holder) {
       var script = holder.querySelector("script[type='application/json']");
       if (!script) return;
       var spec = JSON.parse(script.textContent);
-      var target = holder.querySelector(".xu-chart-body");
+      var target = holder.querySelector(".xe-chart-body");
       if (!target) {
         target = document.createElement("div");
-        target.className = "xu-chart-body";
+        target.className = "xe-chart-body";
         holder.appendChild(target);
       }
       vegaEmbed(target, spec, {
@@ -39,7 +39,7 @@
 
   // The version switcher keeps your place: the same section in the other version.
   function keepPlace() {
-    document.querySelectorAll("a.xu-version-link").forEach(function (a) {
+    document.querySelectorAll("a.xe-version-link").forEach(function (a) {
       if (a.dataset.keepPlace) return;
       a.dataset.keepPlace = "1";
       a.addEventListener("click", function () {

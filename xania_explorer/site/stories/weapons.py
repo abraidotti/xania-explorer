@@ -172,8 +172,8 @@ def _w_sources(a: W.WeaponAnalysis) -> str:
                    encoding={"x": V.ordinal("band", "Levels", BAND_LABELS),
                              "y": V.quant("count", "Weapons", stack=True),
                              "color": V.nominal("source", "Easiest source",
-                                                {"shop": "#e0a030", "floor/container": "#5f8a5b",
-                                                 "given by the game": "#4f7896", "mob drop": "#b4532a"}),
+                                                {"shop": "#f5b82e", "floor/container": "#3fa66b",
+                                                 "given by the game": "#3f88c5", "mob drop": "#e4572e"}),
                              "order": {"field": "source", "sort": "descending"},
                              "tooltip": V.tooltip(("band", "Levels"), ("source", "Source"), ("count", "Weapons"))})
     share = mob_only / len(late) if late else 0
@@ -203,7 +203,7 @@ def _w_over(a: W.WeaponAnalysis) -> str:
                                "tooltip": V.tooltip(("name", "Weapon"), ("vnum", "Vnum"), ("area", "Area"),
                                                     ("type", "Type"), ("level", "Level"), ("avg", "Avg"),
                                                     ("sources", "Sources"))}},
-                 {"data": {"values": cap}, "mark": {"type": "line", "strokeDash": [4, 4], "color": "#9a8b7e"},
+                 {"data": {"values": cap}, "mark": {"type": "line", "strokeDash": [4, 4], "color": "#a8998b"},
                   "encoding": {"x": {"field": "level", "type": "quantitative"},
                                "y": {"field": "cap", "type": "quantitative"}}},
              ]}

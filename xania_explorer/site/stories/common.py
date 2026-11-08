@@ -35,7 +35,7 @@ def story(slug: str, title: str, intro: str, tiles: str, findings: list[Finding 
     return Story(slug, title, intro, tiles, [f for f in findings if f], V.details(
         "How these numbers are calculated", method, kind="info") if method else "", preamble, appendix)
 MUTED = "#b8ab9c"
-HIGHLIGHT = "#b4532a"
+HIGHLIGHT = "#e4572e"
 
 
 def _plural(n: int, word: str, plural: str | None = None) -> str:

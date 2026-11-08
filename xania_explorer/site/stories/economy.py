@@ -57,7 +57,7 @@ def _flat_from(a: EC.EconomyAnalysis) -> int:
 def _income(a: EC.EconomyAnalysis) -> str:
     rows = [{"level": lvl, "gold": round(g)} for lvl, g in a.gold_per_kill.items() if g]
     chart = V.spec(rows, title="Gold per kill (mob gold + corpse sacrifice), level-appropriate mobs",
-                   mark={"type": "line", "color": "#e0a030", "strokeWidth": 2.5},
+                   mark={"type": "line", "color": "#f5b82e", "strokeWidth": 2.5},
                    encoding={"x": _x(), "y": V.quant("gold", "Gold per kill"),
                              "tooltip": V.tooltip(("level", "Level"), ("gold", "Gold per kill"))})
     g = a.gold_per_kill
@@ -76,7 +76,7 @@ def _healer(a: EC.EconomyAnalysis) -> str:
     chart = V.spec(rows, title="Kills' worth of gold to buy a healer service (flat prices)",
                    mark={"type": "line"},
                    encoding={"x": _x(), "y": V.quant("kills", "Kills of gold", scale={"type": "log"}),
-                             "color": V.nominal("service", "", {"heal": HIGHLIGHT, "cure light": "#4f7896"}),
+                             "color": V.nominal("service", "", {"heal": HIGHLIGHT, "cure light": "#3f88c5"}),
                              "tooltip": V.tooltip(("service", "Service"), ("level", "Level"), ("kills", "Kills"))})
     k = lambda s, lvl: a.kills_to_afford(EC.HEALER[s], lvl)  # noqa: E731
     text = (f"The healer charges the same at every level: {EC.HEALER['cure light']:,} gold for cure light and "
@@ -95,8 +95,8 @@ def _shops(a: EC.EconomyAnalysis) -> str:
     chart = V.spec(rows, title="Gold earned so far vs the price of the best armour shops sell (log scale)",
                    mark={"type": "line", "interpolate": "step-after"},
                    encoding={"x": _x(), "y": V.quant("gold", "Gold", scale={"type": "log"}),
-                             "color": V.nominal("what", "", {"gold earned so far": "#e0a030",
-                                                             "best shop armour, all slots": "#4f7896"}),
+                             "color": V.nominal("what", "", {"gold earned so far": "#f5b82e",
+                                                             "best shop armour, all slots": "#3f88c5"}),
                              "tooltip": V.tooltip(("what", ""), ("level", "Level"), ("gold", "Gold"))})
     kit5 = a.shop_kit(5)[1]
     afford = next((lvl for lvl in C.LEVELS if a.cumulative[lvl] >= kit5), None)

@@ -13,10 +13,10 @@ from typing import Any
 SCHEMA = "https://vega.github.io/schema/vega-lite/v5.json"
 # Warm palette to match docs/stylesheets/xania.css; still distinct for colour-blind readers
 # (hue *and* lightness differ between neighbours).
-WARM_CATEGORY = ["#b4532a", "#e0a030", "#5f8a5b", "#4f7896", "#9b5a8a", "#8a6a45", "#d36e5a", "#3f8a86",
-                 "#c9b27c"]
-CLASS_COLOURS = {"mage": "#4f7896", "cleric": "#e0a030", "knight": "#5f8a5b", "barbarian": "#b4532a",
-                 "any type": "#8a6a45", "cap": "#9a8b7e"}
+WARM_CATEGORY = ["#e4572e", "#f5b82e", "#3fa66b", "#3f88c5", "#a35bb5", "#b07a45", "#f08a6b", "#2bb3a3",
+                 "#e8c97a"]
+CLASS_COLOURS = {"mage": "#3f88c5", "cleric": "#f5b82e", "knight": "#3fa66b", "barbarian": "#e4572e",
+                 "any type": "#b07a45", "cap": "#a8998b"}
 FONT = "Nunito Sans, Helvetica, Arial, sans-serif"
 
 
@@ -57,22 +57,22 @@ def spec(data: list[dict[str, Any]], *, title: str, height: int = 300, **body: A
 def embed(chart: dict[str, Any]) -> str:
     """Markdown-safe HTML block that xania.js turns into a chart."""
     payload = json.dumps(chart, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
-    return f'\n<div class="xu-chart"><script type="application/json">{payload}</script></div>\n\n'
+    return f'\n<div class="xe-chart"><script type="application/json">{payload}</script></div>\n\n'
 
 
 def extract_specs(markdown: str) -> list[dict[str, Any]]:
     """All chart specs embedded in a generated page (used by tests)."""
     out = []
-    for chunk in markdown.split('<div class="xu-chart"><script type="application/json">')[1:]:
+    for chunk in markdown.split('<div class="xe-chart"><script type="application/json">')[1:]:
         out.append(json.loads(chunk.split("</script></div>", 1)[0].replace("<\\/", "</")))
     return out
 
 
 def stat_tiles(tiles: list[tuple[str, str]]) -> str:
     """A row of big-number tiles: [(value, label), ...]."""
-    cells = "".join(f'<div class="xu-stat"><span class="xu-stat-value">{v}</span>'
-                    f'<span class="xu-stat-label">{label}</span></div>' for v, label in tiles)
-    return f'\n<div class="xu-stats">{cells}</div>\n\n'
+    cells = "".join(f'<div class="xe-stat"><span class="xe-stat-value">{v}</span>'
+                    f'<span class="xe-stat-label">{label}</span></div>' for v, label in tiles)
+    return f'\n<div class="xe-stats">{cells}</div>\n\n'
 
 
 def details(title: str, body: str, kind: str = "abstract") -> str:
@@ -112,7 +112,7 @@ def heatmap(data: list[dict[str, Any]], *, x: str, y: str, value: str, title: st
             height: int | None = None) -> dict[str, Any]:
     """Grid of coloured cells with the value printed in each (warm sequential scale).
     ``reverse`` makes low values dark (use when low is "bad")."""
-    colours = ["#fbf0dc", "#e7b37a", "#b4532a"]
+    colours = ["#fff4dc", "#f9b96a", "#e4572e"]
     if reverse:
         colours = colours[::-1]
     values = [d[value] for d in data if d.get(value) is not None]
