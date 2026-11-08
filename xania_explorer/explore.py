@@ -59,7 +59,9 @@ def plan(tree: list[dict] | list[str], repo: str = "this repository") -> Plan:
     warning = ""
     if unavailable:
         warning = (f"{len(missing)} of the C++ files the assessments read are missing, so "
-                   f"{', '.join(unavailable)} won't be available. If this isn't Xania, results may not mean much.")
+                   f"{', '.join(unavailable)} won't be available. Older Xania branches kept these tables in other "
+                   "files "
+                   "(const.cpp, tables.cpp); a trimmed copy or another MUD would also lack them.")
     return Plan(True, files=sorted(files), missing_sources=missing, unavailable=unavailable, warning=warning)
 
 

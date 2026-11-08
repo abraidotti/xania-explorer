@@ -32,18 +32,24 @@ def bugs_story(world: World):
     code_open = a.by(kind="code")
     data_found = sum(len(r.detection.occurrences) for r in a.by(kind="data") if r.check.id != "data.unlisted-broken")
     present_crash = [r for r in crash if r.status == "present"]
+
+    def counted(kind: str, value: int) -> int | None:
+        """A count is only comparable when every check of that kind ran: unknown isn't fixed."""
+        return None if any(r.status == "unknown" for r in a.by(kind=kind, open_only=False)) else value
+
     return story("bugs", "Bugs",
                  "Defects found in this version's C++ code, area data and content, each explained with a fix. "
                  "Everything is re-detected on every build, so a branch that fixes a bug shows it as fixed.", tiles, [
-                     finding("bugs.code", _code(a), metric=len(code_open), label="open code defects",
+                     finding("bugs.code", _code(a), metric=counted("code", len(code_open)), label="open code defects",
                              impact=3 if present_crash else 2 if any(r.check.kind == "code" for r in crash) else 1),
                      finding("bugs.data", _data(a), metric=data_found, label="area-data load errors and warnings",
                              issue=data_found > 0, impact=3 if any(r.status == "present" and r.check.kind == "data"
                                                                    for r in crash) else 1),
                      finding("bugs.content", _content(a),
-                             metric=sum(len(r.detection.occurrences) for r in a.by(kind="content")),
+                             metric=counted("content", sum(len(r.detection.occurrences) for r in a.by(kind="content"))),
                              label="pieces of content that never reach players"),
-                     finding("bugs.by-area", _areas(a), metric=len({ar for ar, _ in a.area_counts()}),
+                     finding("bugs.by-area", _areas(a),
+                             metric=counted("content", len({ar for ar, _ in a.area_counts()})),
                              label="areas with open data or content defects", better="none", issue=False),
                  ], a.method(), appendix=_catalogue(a))
 
@@ -70,13 +76,18 @@ def _code(a: B.BugAnalysis) -> str:
     open_ = [r for r in code if r.open]
     latent = [r for r in open_ if r.status == "latent"]
     crash = [r for r in open_ if r.check.severity == "crash"]
-    text = (f"{_plural(len(open_), 'defect')} in the C++ source: "
-            + _list([f"{_ref(r)} ({SEVERITY_LABEL[r.check.severity]})" for r in open_]) + ". "
+    if all(r.status == "unknown" for r in code):
+        return ("\n## The C++ checks couldn't run on this checkout\n\n" + _unknown_note(code)
+                + " The C++ source files they read aren't there.\n")
+    text = ((f"{_plural(len(open_), 'defect')} in the C++ source: "
+             + _list([f"{_ref(r)} ({SEVERITY_LABEL[r.check.severity]})" for r in open_]) + ". "
+             if open_ else "No open defects in the C++ source. ")
             + (f"{_plural(len(crash), 'is a crash risk', 'are crash risks')}"
                + (f", {len(latent)} of them latent: the faulty code is there, but no current area data triggers it, "
                   "so the first builder to make that mistake takes the MUD down at boot. " if latent else ". ")
                if crash else "")
-            + "Each has a suggested patch in the catalogue below.\n")
+            + ("Each has a suggested patch in the catalogue below. " if open_ else "")
+            + _unknown_note(code) + "\n")
     title = (f"{_plural(len(open_), 'code defect')}, {_plural(len(crash), 'crash risk')} waiting to happen"
              if crash else f"{_plural(len(open_), 'code defect')}")
     return f"\n## {title}\n\n" + text + V.embed(_status_chart(code, "Code checks: status and occurrences"))
@@ -112,8 +123,17 @@ def _content(a: B.BugAnalysis) -> str:
     text = ("Built content that players can't reach: "
             + _list([f"{len(r.detection.occurrences)} × {_ref(r)}" for r in content if r.detection.occurrences])
             + ". Some is deliberate (immortal rooms, items handed out by mob programs), so treat these as a review "
-            "list rather than certain bugs.\n")
+            "list rather than certain bugs. " + _unknown_note(content) + "\n")
     return f"\n## {_plural(total, 'piece')} of content never reach players\n\n" + text + V.embed(chart)
+
+
+def _unknown_note(results: list[BugResult]) -> str:
+    unknown = [r for r in results if r.status == "unknown"]
+    if not unknown:
+        return ""
+    return (f"{_plural(len(unknown), 'check')} couldn't run on this checkout ("
+            + _list([_ref(r) for r in unknown]) + "), so "
+            + ("its result is" if len(unknown) == 1 else "their results are") + " unknown, not fixed.")
 
 
 def _areas(a: B.BugAnalysis) -> str:

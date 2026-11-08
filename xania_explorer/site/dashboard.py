@@ -126,15 +126,26 @@ def scorecard(targets: list[tuple[object, World]]) -> str:
 
     base_t, base_w = targets[0]
     others = targets[1:]
-    changed, unchanged = [], []
+    changed, unchanged, unavailable = [], [], []
     tally = {t.name: {"improved": 0, "worse": 0, "same": 0} for t, _ in others}
+    missing_systems: dict[str, list[str]] = {t.name: [] for t, _ in others}
     for s in SYSTEMS:
+        if s.story(base_w).status != "ok":
+            continue
         base_findings = {f.id: f for f in s.story(base_w).findings}
-        other_findings = [{f.id: f for f in s.story(w).findings} for _, w in others]
+        other_stories = [s.story(w) for _, w in others]
+        for (t, _), st in zip(others, other_stories):
+            if st.status != "ok":
+                missing_systems[t.name].append(s.title)
+        other_findings = [{f.id: f for f in st.findings} for st in other_stories]
         for fid, f in base_findings.items():
             cells = [f"[{fmt_metric(f.metric)}]({base_t.name}/{s.slug}.md#{f.anchor})"]
-            moved = False
-            for (t, _), found in zip(others, other_findings):
+            moved = gone = False
+            for (t, _), st, found in zip(others, other_stories, other_findings):
+                if st.status != "ok":  # the other side can't run this system: not a change in the game
+                    cells.append('<span class="xu-n/a">unavailable</span>')
+                    gone = True
+                    continue
                 g = found.get(fid)
                 v = verdict(f.metric, g.metric if g else None, f.better)
                 if v in tally[t.name]:
@@ -144,15 +155,20 @@ def scorecard(targets: list[tuple[object, World]]) -> str:
                 value = fmt_metric(g.metric) if g else "—"
                 cells.append(f'<span class="xu-{v}">{mark}{value}</span>' if g else "—")
             row = f"| {s.title} | {f.title} | {f.metric_label} | " + " | ".join(cells) + " |\n"
-            (changed if moved else unchanged).append(row)
+            (changed if moved else unavailable if gone else unchanged).append(row)
     head = ("| System | Finding (baseline) | Number | " + " | ".join(t.name for t, _ in targets) + " |\n"
             + "|---|---|---|" + "---|" * len(targets) + "\n")
     summary = "".join(f"**{t.name}** vs {base_t.name}: {c['improved']} improved, {c['worse']} worse, "
-                      f"{c['same']} unchanged.\n\n" for t, c in ((t, tally[t.name]) for t, _ in others))
+                      f"{c['same']} unchanged."
+                      + (f" Not comparable: {', '.join(missing_systems[t.name])} (unavailable for {t.name})."
+                         if missing_systems[t.name] else "") + "\n\n"
+                      for t, c in ((t, tally[t.name]) for t, _ in others))
     out = ("\n## Scorecard {#scorecard}\n\n"
            f"Every finding's headline number, baseline **{base_t.label}** first. ▲ is an improvement and ▼ a "
            "regression, judged by each finding's direction; descriptive numbers have no arrow.\n\n" + summary)
     out += ("### What changed\n\n" + head + "".join(changed)) if changed else "No finding's number changed.\n\n"
     if unchanged:
         out += V.details(f"Unchanged findings ({len(unchanged)})", head + "".join(unchanged))
+    if unavailable:
+        out += V.details(f"Findings a compared version can't run ({len(unavailable)})", head + "".join(unavailable))
     return out

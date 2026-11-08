@@ -55,8 +55,9 @@ class System:
         if missing:
             files = ", ".join(f"`src/{f}`" for f in missing)
             return Story(self.slug, self.title, self.question, "", status="unavailable",
-                         note=f"This checkout has no {files}, which the {self.title} assessment needs. It may "
-                              "not be Xania, or it may be a trimmed copy.")
+                         note=f"This checkout has no {files}, which the {self.title} assessment needs. Older "
+                              "Xania branches kept these tables in other files (const.cpp, tables.cpp); a trimmed "
+                              "copy or another MUD would also lack them.")
         try:
             module = importlib.import_module(f"xania_explorer.site.stories.{self.slug}")
             return getattr(module, f"{self.slug}_story")(world)

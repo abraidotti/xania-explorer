@@ -58,8 +58,8 @@ def custom_build(checkouts: list[Path], out_dir: Path, *, site_url: str = "", ru
     subprocess.run([sys.executable, "-m", "mkdocs", "build", "--strict", "-f", str(REPO_ROOT / "mkdocs.yml"),
                     "--site-dir", str(dest)], check=True, env=env, cwd=REPO_ROOT)
     labels = [Target(s.name, p).label for s, p in zip(specs, paths)]
-    info = {"slug": slug, "sides": sides, "labels": labels, "built": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "run": run_url}
+    built = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    info = {"slug": slug, "sides": sides, "labels": labels, "built": built, "run": run_url}
     (dest / INFO).write_text(json.dumps(info, indent=1), encoding="utf-8")
     prune(out_dir, keep)
     return dest

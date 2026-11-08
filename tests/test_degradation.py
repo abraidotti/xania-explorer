@@ -52,3 +52,21 @@ def test_an_unexpected_error_is_contained(tmp_path, monkeypatch):
 def test_real_checkout_has_every_system():
     world = load_world()
     assert all(s.missing(world) == [] for s in SYSTEMS)
+
+
+@pytest.mark.skipif(not HAVE_XANIA, reason="xania checkout not found")
+def test_scorecard_doesnt_count_unrunnable_checks_as_fixed(tmp_path):
+    """Real areas but no C++: systems are 'not comparable' and unknown bug checks aren't improvements."""
+    import shutil
+
+    from xania_explorer.site.dashboard import scorecard
+
+    base = load_world()
+    shutil.copytree(DEFAULT_AREA_DIR, tmp_path / "area")
+    head = load_world(tmp_path)
+    out = scorecard([(Target("base", base.xania), base), (Target("head", head.xania), head)])
+    assert "Not comparable: Characters, Weapons" in out
+    changed = out.split("### What changed")[1].split("???")[0] if "### What changed" in out else ""
+    assert "xu-improved" not in changed  # missing source isn't a fix
+    bugs = by_slug("bugs").page(head)
+    assert "The C++ checks couldn't run on this checkout" in bugs and "unknown, not fixed" in bugs

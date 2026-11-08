@@ -43,7 +43,8 @@
       .map(function (s) { return s.title; });
     var warning = unavailable.length
       ? missing.length + " of the C++ files the assessments read are missing, so " + unavailable.join(", ") +
-        " won't be available. If this isn't Xania, results may not mean much."
+        " won't be available. Older Xania branches kept these tables in other files " +
+        "(const.cpp, tables.cpp); a trimmed copy or another MUD would also lack them."
       : "";
     // Python's sorted(): code-point order, not locale order
     files.sort(function (a, b) { return a < b ? -1 : a > b ? 1 : 0; });
