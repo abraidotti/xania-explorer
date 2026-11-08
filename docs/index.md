@@ -13,9 +13,10 @@ formulas and point to the source; they aren't player guides.
 | [Characters](04-characters.md) | Creation, classes, races, stats, XP per level, levelling and practising |
 | [Combat & experience](05-combat.md) | Rounds, hit chance, defences, damage pipeline, mob stats, XP per kill and the played-time clock |
 | [Skills & magic](06-skills-and-magic.md) | The skill table, getting and improving skills, mana costs, saves and damage spells |
+| [Items & economy](07-items-and-economy.md) | Wearing items, AC, the item-points rule (and its AC bug), where items and gold come from and go |
 | [About the assessments](assessments.md) | How the level 1–91 balance reports are calculated |
 
-Planned: items and economy, NPC behaviour, persistence and admin.
+Planned: NPC behaviour, persistence and admin.
 
 ## Reports
 

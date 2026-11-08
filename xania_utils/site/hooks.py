@@ -54,6 +54,7 @@ def on_config(config, **kwargs):
                        {"Characters": "04-characters.md"},
                        {"Combat & experience": "05-combat.md"},
                        {"Skills & magic": "06-skills-and-magic.md"},
+                       {"Items & economy": "07-items-and-economy.md"},
                        {"About the assessments": "assessments.md"}]}]
     for t, _ in _targets:
         # The bare index.md first makes the section title itself link to the overview
