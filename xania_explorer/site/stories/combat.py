@@ -32,9 +32,9 @@ def combat_story(world: World):
     preamble = ("\n!!! warning \"A model, not a simulation\"\n    Expected values from the C++ formulas, for a human of "
                 "each class with the best gear the world offers at that level. Mobs' casting and breath specials "
                 + ("are included" if a.specials else "aren't included (no `src/special.cpp`)")
-                + ". Each fight is one mob at a time, except in the section on group fights. Player spells, buffs "
-                "such as haste and sanctuary, resistances and mob skills like bash aren't modelled, so casters look "
-                "weaker here than they play. See the Method at the end.\n")
+                + ". Each fight is straight melee against one mob, except in two sections: casters fighting with "
+                "their spells and buffs, and group fights. Resistances and mob skills like bash aren't modelled. "
+                "See the Method at the end.\n")
     tiles = V.stat_tiles([
         (f"{min(kills):.0f}–{max(kills):.0f}", "kills per level, at every level"),
         (f"{hours[fastest]:.0f} h", f"of combat to hero for a {fastest}"),
@@ -63,6 +63,10 @@ def combat_story(world: World):
                      finding("combat.mob-spells", _mob_spells(a), metric=_spell_peak(a)[1],
                              label="% of mob damage from spells and breath, at its peak level (knight)",
                              better="none", issue=False),
+                     finding("combat.with-spells", _with_spells(a),
+                             metric=round(_caster_hours(a, "mage"), 1) if _caster_play(a) else None,
+                             label="hours of combat to hero for a mage fighting with its spells and buffs",
+                             better="lower", issue=False),
                      finding("combat.group-fights", _groups(a), metric=_group_jump(a)[1],
                              label="percentage points more mobs deadly once helpers join, at the worst level (knight)",
                              impact=2, issue=bool(_traps(a)), recs=[_r_traps(a)]),
@@ -159,8 +163,9 @@ def _deadly(a: CB.CombatAnalysis) -> str:
             + ("More than half the mobs at your level are deadly in melee, for good, for "
                + ", ".join(f"{c} from level {lvl}" for c, lvl in sorted(known.items(), key=lambda kv: kv[1]))
                + ". " if known else "No class reaches a majority of deadly mobs. ")
-            + "Casters really fight with spells and buffs (sanctuary alone cuts damage taken to 62%), so this marks "
-            "where melee stops being an option, not where the class fails.\n")
+            + "Casters really fight with spells and buffs (sanctuary alone cuts damage taken to 62.5%), so this "
+            "marks where melee stops being an option, not where the class fails: see "
+            "[casters with their spells and buffs](#combat-with-spells).\n")
     worst = min(known, key=known.get) if known else CLASSES[0]
     title = (f"Melee turns deadly for {worst}s from level {known[worst]}" if known
              else "Melee stays survivable for every class")
@@ -398,3 +403,84 @@ def _r_traps(a: CB.CombatAnalysis):
                f"The biggest jump in deadly mobs from helpers falls from **{jump} points at level {level}** to "
                f"{after} points (at level {after_level}).",
                effort=edit_effort(len(set(areas)), len(traps)))
+
+
+# -- casters with their spells and buffs ----------------------------------------------------------------------
+CASTERS = ("mage", "cleric")
+
+
+def _caster_play(a: CB.CombatAnalysis) -> dict[tuple[str, int], tuple[float, float, float]] | None:
+    """(deadly share, mean rounds, combat minutes for the level) per caster and level, fighting with the default
+    package's buffs and best attack spell (Skills), a full mana bar per fight. None without magic.cpp."""
+    if "_caster_play" in a.__dict__:
+        return a.__dict__["_caster_play"]
+    out = None
+    if (a.world.src_dir / "magic.cpp").exists():
+        from ...assess import skills as S
+
+        sk = S.analyse(a.world)
+        out = {}
+        for cls in CASTERS:
+            for lvl in C.LEVELS:
+                r = a.results[(cls, lvl)]
+                if not r.weight:
+                    out[(cls, lvl)] = (0.0, 0.0, 0.0)
+                    continue
+                p = a.player(cls, lvl, buffed=True)
+                mana = a.chars.build("human", cls).at(lvl).mana
+                fights = [(m, a.fight_with_spells(p, m, sk.spells[cls][lvl], mana)) for m, _ in r.fights]
+                deadly = sum(m.info.population for m, f in fights if f.damage_taken >= p.hp) / r.weight
+                rounds = sum(m.info.population * f.rounds for m, f in fights) / r.weight
+                kills = r.kills_per_level or 0
+                out[(cls, lvl)] = (deadly, rounds, kills * rounds * CB.ROUND_SECONDS / 60)
+    a.__dict__["_caster_play"] = out
+    return out
+
+
+def _caster_hours(a: CB.CombatAnalysis, cls: str) -> float | None:
+    play = _caster_play(a)
+    return sum(play[(cls, lvl)][2] for lvl in C.LEVELS) / 60 if play else None
+
+
+def _with_spells(a: CB.CombatAnalysis) -> str:
+    play = _caster_play(a)
+    if not play:
+        return ("\n## Casters' own spells aren't modelled for this checkout\n\n"
+                "It has no `src/magic.cpp`, so the numbers above are straight melee for every class.\n")
+    rows = []
+    for cls in CASTERS:
+        melee = a.series(cls, "rounds")
+        for lvl in C.LEVELS:
+            if melee.get(lvl):
+                rows.append({"class": cls, "level": lvl, "how": "straight melee", "rounds": round(melee[lvl], 1)})
+            rows.append({"class": cls, "level": lvl, "how": "spells and buffs", "rounds": round(play[(cls, lvl)][1], 1)})
+    chart = V.spec(rows, title="Rounds to kill a level-appropriate mob: spells and buffs (solid) vs straight melee "
+                               "(dashed)", mark={"type": "line"},
+                   encoding={"x": V.quant("level", "Level", scale={"domain": [1, C.HERO_LEVEL], "nice": False}),
+                             "y": V.quant("rounds", "Rounds"),
+                             "color": V.nominal("class", "Class", V.CLASS_COLOURS, list(CASTERS)),
+                             "strokeDash": {"field": "how", "type": "nominal", "title": "",
+                                            "scale": {"domain": ["spells and buffs", "straight melee"],
+                                                      "range": [[1, 0], [5, 3]]}},
+                             "tooltip": V.tooltip(("class", "Class"), ("how", "How"), ("level", "Level"),
+                                                  ("rounds", "Rounds"))})
+    parts = []
+    for cls in CASTERS:
+        buffs = a.buffs(cls, C.HERO_LEVEL).names
+        melee_h, spell_h = a.hours_to_hero(cls), _caster_hours(a, cls)
+        onset = next((lvl for lvl in C.LEVELS if lvl > 5 and all(
+            play[(cls, x)][0] >= 0.5 for x in range(lvl, min(lvl + DEADLY_RUN, C.HERO_LEVEL + 1)))), None)
+        parts.append(f"A **{cls}** keeps up {_list(list(buffs))} once learned. Fighting with them and its best attack "
+                     f"spell, it needs about {play[(cls, 60)][1]:.0f} rounds per kill at level 60 instead of "
+                     f"{a.series(cls, 'rounds')[60]:.0f}, and "
+                     + (f"most mobs at its level turn deadly only from level {onset}" if onset
+                        else "no level has a majority of deadly mobs")
+                     + f" (straight melee: {deadly_onset(a, cls) or 'never'}). Combat time to hero: "
+                     f"**{spell_h:.0f} h** instead of {melee_h:.0f} h.")
+    ratio = min(a.series(c, "rounds")[C.HERO_LEVEL] / play[(c, C.HERO_LEVEL)][1] for c in CASTERS)
+    text = (" ".join(parts) + " These are best-case numbers: buffs from the default package are assumed kept up "
+            "(recast between fights), every fight starts with a full mana bar (resting in between, which isn't "
+            "counted), and the spell is the one Skills & spells ranks best. Knights and barbarians have no buffs or "
+            "attack spells in their default package, so their numbers above already are how they fight.\n")
+    return (f"\n## With their spells and buffs, casters kill at least {ratio:.1f}× faster by level {C.HERO_LEVEL}\n\n"
+            + text + V.embed(chart))

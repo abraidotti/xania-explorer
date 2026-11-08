@@ -27,6 +27,7 @@ from ..areafile.world import World
 from ..source.character_tables import load_race_off_flags
 from ..source.cpp_tables import CLASSES, load_skills
 from ..source.specials import load_specials, special_damage_per_round
+from ..source.spell_tables import save_chance
 from . import characters as CH
 from . import common as C
 from . import equipment as E
@@ -204,6 +205,29 @@ def assists(helper: MobFighter, fighter: MobFighter) -> bool:
 
 
 # -- player side -------------------------------------------------------------------------
+BUFF_SPELLS = ("armor", "shield", "stone skin", "bless", "frenzy", "giant strength", "haste", "sanctuary",
+               "protection evil")
+SANCTUARY_DIVISOR = 1.6  # fight.cpp damage(): adjusted_damage /= 1.6
+PULSES_PER_ROUND = 12  # a 3-second combat round; a spell's beats are its lag in pulses
+
+
+@dataclass(frozen=True)
+class Buffs:
+    """Self-buffs and what they add (magic.cpp spell_armor, spell_shield, …)."""
+    names: tuple[str, ...] = ()
+    ac: int = 0  # armour class change (negative is better)
+    hitroll: int = 0
+    damroll: int = 0
+    str: int = 0
+    dex: int = 0
+    haste: bool = False  # one extra attack per round
+    sanctuary: bool = False  # incoming damage ÷ 1.6
+    protection_evil: bool = False  # incoming damage from evil attackers −¼
+
+
+NO_BUFFS = Buffs()
+
+
 @dataclass(frozen=True)
 class Player:
     cls: str
@@ -217,6 +241,7 @@ class Player:
     per_hit: float
     defence: dict
     blocks: bool
+    buffs: Buffs = NO_BUFFS
 
 
 @dataclass
@@ -303,22 +328,45 @@ class CombatAnalysis:
             return None
         return s.learn_level(cls)
 
-    def player(self, cls: str, level: int) -> "Player":
-        """The player side of every fight at this class and level (cached)."""
+    def buffs(self, cls: str, level: int) -> "Buffs":
+        """The self-buffs a default ``cls`` build of ``level`` knows (its default package, as everywhere in this
+        model) and can cast, at its own level (magic.cpp)."""
+        from ..source.cpp_tables import starting_skills
+
+        start = self.__dict__.setdefault("_start", {})
+        if cls not in start:
+            start[cls] = starting_skills(cls, self.world.src_dir)
+        known = {name for name in BUFF_SPELLS if name in start[cls]
+                 and (at := self.learned_at(cls, name)) is not None and at <= level}
+        gs = 1 + (level >= 18) + (level >= 25) + (level >= 32)  # giant strength and haste's stat bonus
+        return Buffs(
+            tuple(n for n in BUFF_SPELLS if n in known),
+            ac=-20 * ("armor" in known) - 20 * ("shield" in known) - 40 * ("stone skin" in known)
+            + level * ("frenzy" in known),  # frenzy worsens AC by the caster's level
+            hitroll=level // 8 * ("bless" in known) + level // 6 * ("frenzy" in known),
+            damroll=level // 6 * ("frenzy" in known),
+            str=gs * ("giant strength" in known), dex=gs * ("haste" in known),
+            haste="haste" in known, sanctuary="sanctuary" in known, protection_evil="protection evil" in known)
+
+    def player(self, cls: str, level: int, buffed: bool = False) -> "Player":
+        """The player side of every fight at this class and level (cached); ``buffed`` adds its self-buffs."""
         cache = self.__dict__.setdefault("_players", {})
-        if (cls, level) in cache:
-            return cache[(cls, level)]
+        if (cls, level, buffed) in cache:
+            return cache[(cls, level, buffed)]
         build = self.chars.build("human", cls)
         state = build.at(level)
         t = self.tables
-        st = state.stats
+        b = self.buffs(cls, level) if buffed else NO_BUFFS
+        top = len(t.str_app) - 1
+        st = dict(state.stats, str=min(top, state.stats["str"] + b.str), dex=min(top, state.stats["dex"] + b.dex))
         kit = self.equip.ac_kits[level]
         gear_hit, gear_dam, gear_ac = kit.total("hitroll"), kit.total("damroll"), kit.total("ac")
         weapon_avg = self.weapons.best_start[cls][level]
         weapon_skill = pc_skill(level, 1) if weapon_avg else 0
-        hitroll = gear_hit + t.str_app[st["str"]][0]
-        damroll = gear_dam + t.str_app[st["str"]][1]
-        to_hit_ac = interpolate(level, build.cls.to_hit_ac_level0, build.cls.to_hit_ac_level32) *             (weapon_skill or 40) / 100 - hitroll
+        hitroll = gear_hit + t.str_app[st["str"]][0] + b.hitroll
+        damroll = gear_dam + t.str_app[st["str"]][1] + b.damroll
+        to_hit_ac = (interpolate(level, build.cls.to_hit_ac_level0, build.cls.to_hit_ac_level32)
+                     * (weapon_skill or 40) / 100 - hitroll)
         second = pc_skill(level, self.learned_at(cls, "second attack"))
         third = pc_skill(level, self.learned_at(cls, "third attack"))
         enhanced = enhanced_damage_factor(pc_skill(level, self.learned_at(cls, "enhanced damage")))
@@ -327,10 +375,40 @@ class CombatAnalysis:
         else:  # unarmed (fight.cpp one_hit)
             per_hit = (1 + 2 * level / 3) / 2 + damroll
         pc_def = {k: pc_skill(level, self.learned_at(cls, k)) for k in ("parry", "dodge", "shield block")}
-        cache[(cls, level)] = Player(cls, level, state.hp, st["dex"], bool(weapon_avg), to_hit_ac,
-                                     -gear_ac + t.dex_app[st["dex"]], 1 + second / 2 / 100 + third / 4 / 100, per_hit,
-                                     pc_def, bool(pc_def["shield block"] or kit.picks.get("shield")))
-        return cache[(cls, level)]
+        cache[(cls, level, buffed)] = Player(
+            cls, level, state.hp, st["dex"], bool(weapon_avg), to_hit_ac, -gear_ac + t.dex_app[st["dex"]] + b.ac,
+            1 + second / 2 / 100 + third / 4 / 100 + b.haste, per_hit, pc_def,
+            bool(pc_def["shield block"] or kit.picks.get("shield")), b)
+        return cache[(cls, level, buffed)]
+
+    def fight_with_spells(self, p: "Player", m: MobFighter, spell, mana: float) -> Fight:
+        """The fight a caster really has: its buffs on, auto-attacking every round, and casting ``spell`` (a Skills
+        SpellChoice) on top while ``mana`` lasts; melee alone after that. Incoming damage is reduced by sanctuary
+        (÷1.6) and, against evil mobs, protection from evil (−¼)."""
+        f = self.fight(p, m)
+        hp = m.mob.hit.average
+        rounds = f.rounds
+        if spell is not None and spell.mana > 0 and spell.damage > 0:
+            # the cast's damage, with the save re-rolled against this mob's level
+            skill = spell.damage / spell.spell.expected(p.level, save_chance(p.level, p.level))
+            per_cast = spell.spell.expected(p.level, save_chance(p.level, m.mob.level)) * skill
+            band = _align_band(m.mob.alignment)  # dispel evil/good only hurt evil/good victims
+            if (spell.spell.fun == "spell_dispel_evil" and band >= 0) or \
+                    (spell.spell.fun == "spell_dispel_good" and band <= 0):
+                per_cast = 0.0
+            casts = int(mana // spell.mana)
+            cast_rounds = casts * spell.ability.skill.beats / PULSES_PER_ROUND
+            boosted = f.pc_dpr + per_cast * PULSES_PER_ROUND / max(1, spell.ability.skill.beats)
+            if boosted * cast_rounds >= hp:
+                rounds = hp / boosted
+            elif f.pc_dpr > 0:
+                rounds = cast_rounds + (hp - boosted * cast_rounds) / f.pc_dpr
+            else:
+                rounds = float("inf")
+        cut = (1 / SANCTUARY_DIVISOR if p.buffs.sanctuary else 1.0) * \
+            (0.75 if p.buffs.protection_evil and _align_band(m.mob.alignment) < 0 else 1.0)
+        return Fight(f.hit_pc, f.hit_mob, hp / rounds if rounds else f.pc_dpr, f.mob_dpr * cut, rounds,
+                     rounds * (f.mob_dpr + f.spell_dpr) * cut, f.xp, f.spell_dpr * cut)
 
     def fight(self, p: "Player", m: MobFighter) -> Fight:
         """One straight fight between the player and a mob (expected values)."""
@@ -482,7 +560,13 @@ class CombatAnalysis:
                 "(same prototype, race or alignment band, or assist_all), counted from the resets. Over a fight of R "
                 "rounds each joins with a 50% chance per round, so it joins at all with chance 1 − ½^R and attacks "
                 "for about R − 1 − (1 − ½^(R−1)) rounds; then it has to be fought too. That's a lower bound: helpers "
-                "joining later fights aren't counted. Mobs wander, so this is the fight where they spawn.\n")
+                "joining later fights aren't counted. Mobs wander, so this is the fight where they spawn.\n"
+                "- **Casters with spells and buffs**: a mage or cleric keeps up the buffs in its default package "
+                "(armour, shield, stone skin, bless, frenzy, giant strength, haste, sanctuary, protection from evil, "
+                "each with its magic.cpp effect: AC, hitroll/damroll, str/dex, an extra attack, incoming damage ÷1.6, "
+                "−¼ from evil mobs), keeps auto-attacking, and casts its best attack spell (Skills & spells) on top "
+                "until its mana runs out, starting each fight with a full bar. Dispel evil/good only hurt evil/good "
+                "mobs.\n")
 
 
 def _pct(v):
