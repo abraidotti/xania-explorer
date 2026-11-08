@@ -189,11 +189,27 @@ def on_page_markdown(markdown: str, page, config, files, **kwargs):
     else:  # no repo to link to (local build without SITE_REPO_URL): show the path as code
         markdown = _UTILS_LINK.sub(lambda m: f"`{m.group(2)}`", markdown)
     if page.file.src_uri == "index.md" and _targets:
-        # Put each deployment's top balance issues up front, before the guides.
-        summary = home_summary(_targets)
-        marker = "\n## Guides"
-        markdown = markdown.replace(marker, summary + marker, 1) if marker in markdown else markdown + summary
+        markdown = _home(markdown)
     return markdown
+
+
+_IF_COMPARE = re.compile(r"<!-- if-compare -->(.*?)<!-- /if-compare -->", re.S)
+
+
+def _home(markdown: str) -> str:
+    """Fill the home page's placeholders from the versions this site is built from, and add each version's top
+    issues ("At a glance") before "How to read a report"."""
+    base = _targets[0][0]
+    others = [t for t, _ in _targets[1:]]
+    markdown = _IF_COMPARE.sub(lambda m: m.group(1) if others else "", markdown)
+    systems = ", ".join(f"[{s.title}](@base/{s.slug}.md)" for s in SYSTEMS)
+    markdown = (markdown.replace("@systems", systems)
+                .replace("@base-label", base.label)
+                .replace("@other-labels", " and ".join(t.label for t in others))
+                .replace("@base/", f"{base.name}/"))
+    summary = home_summary(_targets)
+    marker = "\n## How to read a report"
+    return markdown.replace(marker, summary + marker, 1) if marker in markdown else markdown + summary
 
 
 def switcher(src_uri: str, exists) -> str:

@@ -122,7 +122,9 @@ def _plural(n: int) -> str:
 
 def home_summary(targets: list[tuple[object, World]], per_target: int = 3) -> str:
     """'At a glance' block for the site home page: each deployment's top issues."""
-    out = ["\n## At a glance {#at-a-glance}\n\n"]
+    out = ["\n## At a glance {#at-a-glance}\n\n",
+           f"The {per_target} highest-impact balance issues in each version, as of this build. Each links to its "
+           "evidence.\n\n"]
     for t, world in targets:
         counts = issue_counts(world)
         out.append(f"**[{t.label}]({t.name}/index.md)**: {counts[3]} high-impact, {counts[2]} medium and "

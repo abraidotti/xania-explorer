@@ -69,3 +69,17 @@ def test_other_versions_sidebar_browses_that_version(two):
     assert 'href="../../fork/mobs/"' in out
     assert 'href="../../base/"' in out  # the baseline's overview stays put
     assert 'href="../../fork/combat/" class="md-nav__link md-nav__link--active"' in out
+
+
+def test_home_page_placeholders(two, monkeypatch):
+    from xania_explorer import paths
+
+    monkeypatch.setattr(hooks, "home_summary", lambda targets: "\n## At a glance\n")
+    page = (paths.REPO_ROOT / "docs" / "index.md").read_text(encoding="utf-8")
+    both = hooks._home(page)
+    assert "@base" not in both and "@systems" not in both and "@other" not in both
+    assert "](base/recommendations.md)" in both and "[Compare](compare.md)" in both
+    assert "fork: abraidotti/xania @ balance" in both
+    monkeypatch.setattr(hooks, "_targets", two[:1])
+    alone = hooks._home(page)
+    assert "compare.md" not in alone and "if-compare" not in alone  # no Compare tab with one version

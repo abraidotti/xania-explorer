@@ -454,3 +454,12 @@
 .md-typeset .tip > summary::before {
   background-color: #e8920c;
 }
+
+/* Home page: the four parts of the site as a 2 x 2 grid, with the tab names prominent */
+.md-typeset .xe-home-grid {
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+.md-typeset .xe-home-grid .xe-system-card > p:first-child {
+  font-family: var(--xe-heading-font);
+  font-size: 1rem;
+}
