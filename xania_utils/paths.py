@@ -72,6 +72,12 @@ class XaniaPaths:
         remote = remote.removesuffix(".git")
         return remote if remote.startswith("https://github.com/") else None
 
+    @property
+    def repo_slug(self) -> str | None:
+        """``owner/repo`` of the GitHub ``origin`` remote, e.g. ``mattgodbolt/xania``."""
+        url = self.web_url
+        return url.removeprefix("https://github.com/") if url else None
+
     def blob_url(self, rel_path: str = "") -> str:
         """Link to a file in this checkout on GitHub, pinned to its commit when known."""
         base = self.web_url or UPSTREAM_URL

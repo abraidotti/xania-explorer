@@ -11,6 +11,7 @@ theme:
   name: material
   features:
     - navigation.sections
+    - navigation.indexes
     - navigation.top
     - navigation.footer
     - search.highlight

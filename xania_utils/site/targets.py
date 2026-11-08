@@ -32,8 +32,10 @@ class Target:
 
     @property
     def label(self) -> str:
-        commit = self.paths.commit
-        return f"{self.name} @ {commit[:7]}" if commit else self.name
+        """e.g. ``upstream: mattgodbolt/xania @ 82171fa`` (parts omitted when unknown)."""
+        slug, commit = self.paths.repo_slug, self.paths.commit
+        label = f"{self.name}: {slug}" if slug else self.name
+        return f"{label} @ {commit[:7]}" if commit else label
 
 
 def parse_target(text: str) -> TargetSpec:

@@ -51,7 +51,9 @@ def on_config(config, **kwargs):
                        {"World model": "03-world-model.md"},
                        {"About the assessments": "assessments.md"}]}]
     for t, _ in _targets:
-        nav.append({t.label: [{"Overview": f"{t.name}/index.md"}, {"Weapons": f"{t.name}/weapons.md"},
+        # The bare index.md first makes the section title itself link to the overview
+        # (Material's navigation.indexes feature).
+        nav.append({t.label: [f"{t.name}/index.md", {"Weapons": f"{t.name}/weapons.md"},
                               {"Mobs": f"{t.name}/mobs.md"}, {"Area catalogue": f"{t.name}/areas.md"}]})
     if len(_targets) > 1:
         nav.append({"Compare": "compare.md"})
