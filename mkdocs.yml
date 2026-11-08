@@ -1,0 +1,65 @@
+# Build with:  python -m xania_utils site    (or: serve)
+# The CLI sets XANIA_TARGETS; generated pages come from xania_utils/site/hooks.py.
+site_name: Xania Utils
+site_description: Documentation and level 1–91 balance reports for the Xania MUD
+site_url: !ENV [SITE_URL, ""]
+repo_url: !ENV [SITE_REPO_URL, ""]
+edit_uri: ""
+docs_dir: docs
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+hooks:
+  - xania_utils/site/hooks.py
+
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/vega@5.30.0
+  - https://cdn.jsdelivr.net/npm/vega-lite@5.21.0
+  - https://cdn.jsdelivr.net/npm/vega-embed@6.26.0
+  - https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/tablesort.min.js
+  - https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/sorts/tablesort.number.min.js
+  - javascripts/xania.js
+
+extra_css:
+  - stylesheets/xania.css
+
+# Per-area catalogue pages are reached from each version's catalogue, not the sidebar.
+not_in_nav: |
+  /*/areas/*.md
+  /versions.md
+
+validation:
+  links:
+    absolute_links: info
+    unrecognized_links: warn

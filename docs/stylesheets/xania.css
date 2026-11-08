@@ -1,0 +1,26 @@
+/* Charts span the content column. */
+.xu-chart {
+  margin: 1.2em 0 1.6em;
+  width: 100%;
+}
+.xu-chart .xu-chart-body {
+  width: 100%;
+}
+.xu-chart .vega-embed {
+  width: 100%;
+}
+
+/* Wide report tables: smaller text, sortable headers show a pointer. */
+.md-typeset table:not([class]) {
+  font-size: 0.68rem;
+}
+.md-typeset table:not([class]) th[role="columnheader"] {
+  cursor: pointer;
+  white-space: nowrap;
+}
+.md-typeset table:not([class]) th[aria-sort="ascending"]::after {
+  content: " ▲";
+}
+.md-typeset table:not([class]) th[aria-sort="descending"]::after {
+  content: " ▼";
+}

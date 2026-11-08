@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xania-utils"
+version = "0.1.0"
+description = "Tools for documenting and assessing the Xania MUD"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "vl-convert-python>=1.6"]
+site = ["mkdocs>=1.6,<2", "mkdocs-material>=9.5,<10"]
+
+[tool.setuptools.packages.find]
+include = ["xania_utils*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
