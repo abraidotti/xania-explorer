@@ -29,7 +29,7 @@ python -m xania_utils serve --target upstream=../xania-upstream --target fork=..
 | `serve [--target NAME=PATH ...]` | Build the website and serve it locally with live reload |
 | `site [--target ...] [--out DIR] [--strict]` | Build the static website into `site/` |
 | `check` | Load the world and list loader warnings and integrity problems (exit 1 if any would stop the MUD booting) |
-| `assess [weapons\|mobs]` | Write the assessments as Markdown + CSV into `build/assessments/` |
+| `assess [SYSTEM ...]` | Write the assessments (characters, weapons, equipment, combat, skills, economy, levelling, mobs) as Markdown + CSV into `build/assessments/` |
 | `docs` | Write the area catalogue as Markdown into `build/reference/` |
 
 Every command takes `--xania PATH` (a checkout root or its `area/` dir) before the command name. Without it, the
@@ -59,8 +59,9 @@ docs/                             hand-written pages (guides); generated pages a
 mkdocs.yml                        site config; hooks in xania_utils/site/hooks.py
 xania_utils/paths.py              where the Xania checkout is (--xania / XANIA_DIR / ../xania)
 xania_utils/areafile/             faithful port of Xania's area loader (reader, parser, model, world checks)
-xania_utils/source/cpp_tables.py  skill/group tables extracted from xania/src/SkillTables.cpp
-xania_utils/assess/               level-progression assessments (common stats, sources, weapons, mobs)
+xania_utils/source/               tables extracted from xania/src: skills/groups, classes/races/stats, spell damage
+xania_utils/systems.py            the game systems assessed, in reading order (drives CLI, pages, nav)
+xania_utils/assess/               one analysis per system + shared stats (common.py) and item sources
 xania_utils/gen/area_catalogue.py area catalogue pages
-xania_utils/site/                 website: targets, per-version pages, charts (Vega-Lite), compare, MkDocs hooks
+xania_utils/site/                 website: targets, per-version pages, findings-first stories/, charts (Vega-Lite), compare, hooks
 ```

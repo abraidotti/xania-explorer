@@ -36,6 +36,35 @@ def _metrics(world: World) -> dict[str, object]:
     out.update({"Combat mobs": len(mobs), "Mob population": sum(pop),
                 "Mob population CV (bands)": round(spread.cv, 2), "Mob population Gini (bands)": round(spread.gini, 2),
                 "Levels with no combat mob": sum(1 for lvl in C.LEVELS if not any(i.level == lvl for i in mobs))})
+    out.update(_system_metrics(world))
+    return out
+
+
+def _system_metrics(world: World) -> dict[str, object]:
+    """Headline numbers from the other systems, so a fork's balance changes show up here."""
+    from ..assess import combat as CB
+    from ..assess import economy as EC
+    from ..assess import equipment as E
+    from ..assess import levelling as L
+    from ..assess import skills as S
+
+    out: dict[str, object] = {}
+    eq = E.analyse(world)
+    out["Best-in-slot AC at 91"] = round(eq.ac_kits[C.HERO_LEVEL].total("ac"))
+    out["Items over the points rule"] = len(eq.over_points)
+    cb = CB.analyse(world)
+    for c in ("mage", "knight"):
+        out[f"Combat hours to 91 ({c})"] = round(cb.hours_to_hero(c), 1)
+    kills = [v for v in cb.series("knight", "kills_per_level").values() if v]
+    out["Mean kills per level"] = round(sum(kills) / len(kills), 1)
+    sk = S.analyse(world)
+    out["Mage casts per kill at 91"] = round(sk.casts_to_kill("mage", C.HERO_LEVEL) or 0, 1)
+    ec = EC.analyse(world)
+    out["Gold earned by 91"] = f"{ec.cumulative[C.HERO_LEVEL]:,.0f}"
+    lv = L.analyse(world)
+    out["Levels of XP per reset at 60"] = round(lv.levels_of_xp(60), 1)
+    out["Levels with ≤ 3 suitable areas"] = sum(1 for lvl in C.LEVELS if len(lv.suitable(lvl)) <= 3)
+    out["Rooms unreachable on foot"] = len(lv.unreachable_rooms)
     return out
 
 
