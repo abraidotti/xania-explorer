@@ -176,6 +176,33 @@ def _unobtainable(world: World) -> Detection:
     return Detection("present", occ) if occ else Detection("clean")
 
 
+SAVE_LEVEL_MARGIN = 2  # save.cpp fwrite_one_obj: objects more than 2 levels above the character aren't saved
+
+
+def _vanish_on_save(world: World) -> Detection:
+    """Mob-only drops more than 2 levels above their easiest carrier: a player of that mob's level who loots one
+    loses it at the next save (save.cpp skips such objects; containers are exempt, keys are never saved)."""
+    from ..assess import common as C
+    from ..assess.sources import object_sources
+
+    occ = []
+    for vnum, sources in sorted(object_sources(world).items()):
+        obj = world.objects.get(vnum)
+        if obj is None or obj.type_name in ("Container", "Key", "Money") or obj.level > C.HERO_LEVEL:
+            continue
+        mobs = [s for s in sources if s.kind == "mob" and s.mob_level is not None]
+        if not mobs or len(mobs) != len(sources):
+            continue
+        easiest = min(mobs, key=lambda s: s.mob_level)
+        if obj.level > easiest.mob_level + SAVE_LEVEL_MARGIN:
+            carrier = world.mobs.get(easiest.mob_vnum)
+            occ.append(Occurrence(f"#{vnum} {obj.short_descr}",
+                                  f"level {obj.level}, dropped by level-{easiest.mob_level} "
+                                  f"{carrier.short_descr if carrier else f'mob #{easiest.mob_vnum}'}: kept only from "
+                                  f"level {obj.level - SAVE_LEVEL_MARGIN}", world.obj_area[vnum].name))
+    return Detection("present", occ) if occ else Detection("clean")
+
+
 def _never_spawn(world: World) -> Detection:
     from ..assess import mobs as M
 
@@ -280,6 +307,15 @@ CHECKS: list[BugCheck] = [
         "program, special or immortal creates them.",
         "Give each a reset (a mob to carry it or a room to hold it) or remove it from the area file.",
         _unobtainable),
+    BugCheck(
+        "content.vanish-on-save", "Drops that vanish when the finder saves", "content", "wrong-behaviour",
+        "Items that only come from mob drops and are more than 2 levels above their easiest carrier. A player of "
+        "that mob's level can loot one, but `fwrite_one_obj` (`src/save.cpp`) skips any object "
+        "more than 2 levels above its owner, so it disappears at their next save, quit or autosave (every ~15 "
+        "minutes), until they're within 2 levels of it.",
+        "Lower the item's level to at most its easiest carrier's level + 2, or move it to a mob at least that close "
+        "to its level. (Containers are exempt from the rule; keys are never saved, by design.)",
+        _vanish_on_save),
     BugCheck(
         "content.mobs-never-spawn", "Mobs that never spawn", "content", "wrong-behaviour",
         "Mob prototypes with no `M` reset, or whose resets all have a world cap of 0 or less.",

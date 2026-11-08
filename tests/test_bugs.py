@@ -68,3 +68,17 @@ def test_real_checkout():
     # objects the C++ creates (the Mud School kit) aren't "unobtainable"
     names = [o.where for o in results["content.unobtainable-items"].detection.occurrences]
     assert not any(n.startswith("#3700 ") for n in names)
+
+
+@pytest.mark.skipif(not (DEFAULT_AREA_DIR / "area.lst").exists(), reason="xania checkout not found")
+def test_vanish_on_save_follows_item_levels():
+    """A drop more than 2 levels above its easiest carrier is flagged; bring it within 2 and it isn't."""
+    world = load_world()
+    found = K._vanish_on_save(world)
+    assert found.status == "present"
+    first = found.occurrences[0]
+    vnum = int(first.where.split()[0][1:])
+    assert "kept only from level" in first.detail
+    carrier_level = int(first.detail.split("dropped by level-")[1].split()[0])
+    world.objects[vnum].level = carrier_level + K.SAVE_LEVEL_MARGIN
+    assert all(not o.where.startswith(f"#{vnum} ") for o in K._vanish_on_save(world).occurrences)
