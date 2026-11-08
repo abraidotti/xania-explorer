@@ -14,9 +14,9 @@ actually do.
 | [Combat & experience](05-combat.md) | Rounds, hit chance, defences, damage pipeline, mob stats, XP per kill and the played-time clock |
 | [Skills & magic](06-skills-and-magic.md) | The skill table, getting and improving skills, mana costs, saves and damage spells |
 | [Items & economy](07-items-and-economy.md) | Wearing items, AC, the item-points rule (and its AC bug), where items and gold come from and go |
+| [NPC behaviour](08-npc-behaviour.md) | Aggression and its level ceiling, assisting, fleeing, wandering, regeneration, special procedures, mob programs |
+| [Persistence & admin](09-persistence-and-admin.md) | What survives a reboot, when players are saved, objects that are never saved, immortal levels, bans and logs |
 | [About the assessments](assessments.md) | How the level 1–91 balance reports are calculated |
-
-Planned: NPC behaviour, persistence and admin.
 
 ## Reports
 

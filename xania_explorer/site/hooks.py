@@ -110,7 +110,9 @@ def _nav(has_builds: bool) -> list:
                            {"Characters": "04-characters.md"},
                            {"Combat & experience": "05-combat.md"},
                            {"Skills & magic": "06-skills-and-magic.md"},
-                           {"Items & economy": "07-items-and-economy.md"}]})
+                           {"Items & economy": "07-items-and-economy.md"},
+                           {"NPC behaviour": "08-npc-behaviour.md"},
+                           {"Persistence & admin": "09-persistence-and-admin.md"}]})
     return nav
 
 

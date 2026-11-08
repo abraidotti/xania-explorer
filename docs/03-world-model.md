@@ -73,6 +73,9 @@ and the `G`/`E` lines after it equip that mob. Key rules (full table in the
 - **Mob programs** are scripted triggers from `.prg` files. Currently 12 files are used by 29 mobs
   ([MProgImpl.cpp](../../xania/src/MProgImpl.cpp)).
 
+What specials and programs do, and how mobs aggress, assist, flee and wander, is in
+[NPC behaviour](08-npc-behaviour.md).
+
 ## Inspecting the world from Python
 
 ```python
