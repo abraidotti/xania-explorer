@@ -10,9 +10,10 @@ within ±2 levels (the mobs a player of that level would hunt), using the C++ fo
 - mobs use their real stats: level-based stats and skills (db.cpp create_mobile, Char::get_skill),
   file hitroll/damroll/AC, the weapon or shield their resets equip.
 
-Expected values are used throughout (hit chances, extra attacks, parry/dodge/block, damage). Spells,
-affects (sanctuary, haste…), resistances, special procedures and mob skills like bash are not modelled,
-so mages and clerics look weaker here than they play: see Skills & spells for spell damage.
+Expected values are used throughout (hit chances, extra attacks, parry/dodge/block, damage). Mobs' damaging
+special procedures (casting and breath, special.cpp) are included. Player spells, affects (sanctuary, haste…),
+resistances, mob skills like bash and mobs that assist each other are not modelled, so mages and clerics look
+weaker here than they play: see Skills & spells for spell damage.
 """
 
 from __future__ import annotations
@@ -24,6 +25,7 @@ from pathlib import Path
 
 from ..areafile.world import World
 from ..source.cpp_tables import CLASSES, load_skills
+from ..source.specials import load_specials, special_damage_per_round
 from . import characters as CH
 from . import common as C
 from . import equipment as E
@@ -99,6 +101,7 @@ class MobFighter:
     info: M.MobInfo
     weapon_avg: float | None  # wielded weapon dice average (None = unarmed)
     has_shield: bool
+    special: str | None = None  # spec_fun from the area's #SPECIALS, e.g. "spec_cast_mage"
 
     @property
     def mob(self):
@@ -174,7 +177,8 @@ def mob_fighters(world: World) -> list[MobFighter]:
                     weapons[last] = (int(obj.values[1]) * int(obj.values[2]) + int(obj.values[1])) / 2
                 elif r.arg3 == 11:
                     shields.add(last)
-    return [MobFighter(i, weapons.get(i.mob.vnum), i.mob.vnum in shields)
+    specials = {sp.mob_vnum: sp.spec_fun.lower() for af in world.files for sp in af.specials}
+    return [MobFighter(i, weapons.get(i.mob.vnum), i.mob.vnum in shields, specials.get(i.mob.vnum))
             for i in M.collect(world) if i.category == "combat"]
 
 
@@ -184,10 +188,11 @@ class Fight:
     hit_pc: float  # player's chance per swing to land (after mob parry/dodge/block)
     hit_mob: float  # mob's chance per swing to land on the player
     pc_dpr: float  # player's expected damage per round
-    mob_dpr: float
+    mob_dpr: float  # melee
     rounds: float  # rounds to kill the mob
-    damage_taken: float
+    damage_taken: float  # melee and special procedures, over the whole fight
     xp: float
+    spell_dpr: float = 0.0  # expected damage per round from the mob's special (spells, breath)
 
 
 @dataclass
@@ -239,9 +244,22 @@ class CombatAnalysis:
         self.weapons = W.analyse(world)
         self.skills = load_skills(world.src_dir)
         self.mobs = mob_fighters(world)
+        # None when special.cpp (or magic.cpp, for spell damage) isn't in the checkout
+        self.specials = load_specials(world.src_dir) if (world.src_dir / "magic.cpp").exists() else None
         self.by_level = {lvl: [m for m in self.mobs if abs(C.usable_level(m.mob.level) - lvl) <= WINDOW]
                          for lvl in C.LEVELS}
         self.results = {(c, lvl): self._level(c, lvl) for c in CLASSES for lvl in C.LEVELS}
+
+    def spell_dpr(self, m: MobFighter, level: int) -> float:
+        """Expected damage per round a level-``level`` player takes from the mob's special procedure."""
+        if not self.specials or m.special not in self.specials.names:
+            return 0.0
+        cache = self.__dict__.setdefault("_spell_dpr", {})
+        key = (m.mob.vnum, level)
+        if key not in cache:
+            cache[key] = special_damage_per_round(self.specials, m.special, m.mob.level, m.mob.hit.average, level,
+                                                  self.world.src_dir)
+        return cache[key]
 
     def learned_at(self, cls: str, skill: str) -> int | None:
         s = self.skills.get(skill)
@@ -296,7 +314,9 @@ class CombatAnalysis:
             mob_dpr = m.attacks_per_round() * hit_mob * m.damage_per_hit(t)
             rounds = m.mob.hit.average / pc_dpr if pc_dpr > 0 else float("inf")
             xp = xp_per_kill(level, ml, m.mob.alignment, "NoAlign" in m.mob.act_names)
-            res.fights.append((m, Fight(hit_pc, hit_mob, pc_dpr, mob_dpr, rounds, rounds * mob_dpr, xp)))
+            spell_dpr = self.spell_dpr(m, level)
+            res.fights.append((m, Fight(hit_pc, hit_mob, pc_dpr, mob_dpr, rounds, rounds * (mob_dpr + spell_dpr), xp,
+                                        spell_dpr)))
         return res
 
     # -- facts ---------------------------------------------------------------------------
@@ -354,7 +374,16 @@ class CombatAnalysis:
                 "- **Deadly mobs**: share of that population whose expected damage over the whole fight exceeds "
                 "the player's maximum HP.\n"
                 f"- **Combat minutes per level** = kills × rounds × {ROUND_SECONDS} s; resting, travel and "
-                "searching are not included.\n")
+                "searching are not included.\n"
+                + ("- **Mob specials** (special.cpp, run every 4 s): each casting or breathing special picks the "
+                   "player with its own chance (⅛ for most, ¼ for clerics and judges), then a spell drawn the way "
+                   "the C++ draws it (a random case that fits the mob's level), cast at the mob's level against "
+                   "the player's save. Breath deals `hp/20 + 16` to `hp/15` of the breather's current HP (capped "
+                   "at 2000), averaged over a fight in which it falls to 0. Spells that only curse, blind or "
+                   "poison count as no damage; dispel evil/good don't affect a neutral player; exorcise isn't "
+                   "halved for close alignments, a slight overestimate.\n"
+                   if self.specials else "- **Mob specials** aren't modelled: this checkout has no "
+                   "`src/special.cpp` (or no `src/magic.cpp`).\n"))
 
 
 def _pct(v):

@@ -24,7 +24,8 @@ MAX_AREA_FILE = 4_000_000  # bytes; Xania's largest area file is ~250 KB
 # C++ files read by the systems (System.needs) and the bug checks; anything else in src/ is ignored.
 BUG_CHECK_SOURCES = ("AFFECT_DATA.cpp", "Area.cpp", "VnumObjects.hpp", "apps/areas.cpp", "apps/map.cpp", "db.cpp",
                      "update.cpp")
-SOURCE_FILES = tuple(sorted({f for s in SYSTEMS for f in s.needs} | set(BUG_CHECK_SOURCES)))
+OPTIONAL_SOURCES = ("special.cpp",)  # read if present (mob specials in Combat); never makes a system unavailable
+SOURCE_FILES = tuple(sorted({f for s in SYSTEMS for f in s.needs} | set(BUG_CHECK_SOURCES) | set(OPTIONAL_SOURCES)))
 MARKDOWN_EXTENSIONS = ["tables", "admonition", "attr_list", "md_in_html", "toc", "pymdownx.superfences",
                        "pymdownx.details"]  # as in mkdocs.yml
 

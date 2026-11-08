@@ -30,9 +30,11 @@ def combat_story(world: World):
     onsets = [x for x in (deadly_onset(a, c) for c in CLASSES) if x]
     hit = [v for lvl, v in a.series("mage", "hit_pc").items() if v and lvl >= 20]
     preamble = ("\n!!! warning \"A model, not a simulation\"\n    Expected values from the C++ formulas, for a human of "
-                "each class with the best gear the world offers at that level. Spells, buffs such as haste and "
-                "sanctuary, resistances and mob skills like bash aren't modelled, so casters look weaker here than "
-                "they play. See the Method at the end.\n")
+                "each class with the best gear the world offers at that level. Mobs' casting and breath specials "
+                + ("are included" if a.specials else "aren't included (no `src/special.cpp`)")
+                + ". Player spells, buffs such as haste and sanctuary, resistances, mob skills like bash and "
+                "mobs assisting each other aren't modelled, so casters look weaker here than they play. See the "
+                "Method at the end.\n")
     tiles = V.stat_tiles([
         (f"{min(kills):.0f}–{max(kills):.0f}", "kills per level, at every level"),
         (f"{hours[fastest]:.0f} h", f"of combat to hero for a {fastest}"),
@@ -58,6 +60,9 @@ def combat_story(world: World):
                              impact=2),
                      finding("combat.accuracy-dip", _accuracy(a), metric=round(100 * min(hit)) if hit else None,
                              label="% lowest chance per swing for a mage (level 20+)", better="higher"),
+                     finding("combat.mob-spells", _mob_spells(a), metric=_spell_peak(a)[1],
+                             label="% of mob damage from spells and breath, at its peak level (knight)",
+                             better="none", issue=False),
                  ], a.method(), preamble)
 
 
@@ -146,7 +151,8 @@ def _deadly(a: CB.CombatAnalysis) -> str:
         first[c] = next((lvl for lvl in C.LEVELS
                          if lvl > 5 and all((s.get(x) or 0) >= 0.5 for x in range(lvl, min(lvl + run, 92)))), None)
     known = {c: lvl for c, lvl in first.items() if lvl}
-    text = ("A mob counts as deadly when its expected damage over the whole fight exceeds your maximum HP. "
+    text = ("A mob counts as deadly when its expected damage over the whole fight, melee plus any spells or breath, "
+            "exceeds your maximum HP. "
             + ("More than half the mobs at your level are deadly in melee, for good, for "
                + ", ".join(f"{c} from level {lvl}" for c, lvl in sorted(known.items(), key=lambda kv: kv[1]))
                + ". " if known else "No class reaches a majority of deadly mobs. ")
@@ -238,3 +244,50 @@ def _r_rounds(a: CB.CombatAnalysis):
                "time per level falls by the same proportion. Mobs also deal less total damage, so melee gets "
                "safer.",
                effort=edit_effort(len(set(areas)), len(mobs)))
+
+
+def _spell_share(a: CB.CombatAnalysis, cls: str, level: int) -> tuple[float, float]:
+    """(share of mob damage from specials, share of the mob population with a damaging special) at a level."""
+    r = a.results[(cls, level)]
+    melee, spell = r.weighted_mean("mob_dpr") or 0, r.weighted_mean("spell_dpr") or 0
+    casters = sum(m.info.population for m, f in r.fights if f.spell_dpr > 0) / r.weight if r.weight else 0
+    return (spell / (melee + spell) if melee + spell else 0.0), casters
+
+
+def _spell_peak(a: CB.CombatAnalysis) -> tuple[int, int | None]:
+    if not a.specials:
+        return 0, None
+    level = max(C.LEVELS, key=lambda lvl: _spell_share(a, "knight", lvl)[0])
+    return level, round(100 * _spell_share(a, "knight", level)[0])
+
+
+def _mob_spells(a: CB.CombatAnalysis) -> str:
+    if not a.specials:
+        return ("\n## Mob spells and breath aren't modelled for this checkout\n\n"
+                "It has no `src/special.cpp` (or `src/magic.cpp`), so the damage above is melee only.\n")
+    from collections import Counter
+
+    rows = []
+    for lvl in C.LEVELS:
+        share, casters = _spell_share(a, "knight", lvl)
+        rows += [{"level": lvl, "what": "share of mob damage", "value": round(share, 3)},
+                 {"level": lvl, "what": "share of mobs with a damaging special", "value": round(casters, 3)}]
+    chart = V.spec(rows, title="Mob spells and breath against a knight, at each level",
+                   mark={"type": "line"},
+                   encoding={"x": V.quant("level", "Level", scale={"domain": [1, C.HERO_LEVEL], "nice": False}),
+                             "y": V.quant("value", "Share", axis={"format": ".0%"}),
+                             "color": V.nominal("what", "", {"share of mob damage": HIGHLIGHT,
+                                                             "share of mobs with a damaging special": "#3f88c5"}),
+                             "tooltip": [{"field": "what", "title": ""}, {"field": "level", "title": "Level"},
+                                         {"field": "value", "title": "Share", "format": ".0%"}]})
+    peak, pct = _spell_peak(a)
+    kinds = Counter(m.special for m in a.mobs if m.special and m.special in a.specials.names)
+    lvls = (20, 40, 60, 80, C.HERO_LEVEL)
+    text = (f"{sum(kinds.values())} combat mobs cast or breathe through a special procedure, most often "
+            + _list([f"`{k}` ({n})" for k, n in kinds.most_common(3)])
+            + ". They act every 4 seconds on top of melee, cast at the mob's own level and use no mana. Against a "
+            "knight, they add "
+            + _list([f"{100 * _spell_share(a, 'knight', lvl)[0]:.0f}% at level {lvl}" for lvl in lvls])
+            + f" of the damage mobs deal, peaking at **{pct}%** at level {peak}. The share depends on how many "
+            "level-appropriate mobs have one (blue).\n")
+    return (f"\n## Mob spells and breath add up to {pct}% of the damage mobs deal\n\n" + text + V.embed(chart))

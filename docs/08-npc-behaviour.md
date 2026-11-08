@@ -99,8 +99,8 @@ A `#SPECIALS` section in an area file attaches a C++ function to a mob prototype
 returns true, the mob does nothing else that pulse (no wandering or scavenging).
 
 **Fighting specials** cast at the mob's level. They're not limited by mana and run on their own 4-second clock,
-on top of the mob's melee rounds. Combat (Combat & XP) doesn't model them, so mobs that have them are tougher
-than that page shows.
+on top of the mob's melee rounds. The Combat & XP model includes their expected damage, read from the
+checkout's `special.cpp`: chances, spell lists and level limits.
 
 | Special | When | Does |
 |---|---|---|
@@ -173,7 +173,8 @@ Notes:
   high-level characters can walk through low areas unmolested, and an aggressive area only threatens players near
   its level.
 - **Specials are free damage.** A caster or breather adds a spell every few seconds at no mana cost. That
-  matters most at high level, where the spells scale with the mob's level. The combat model leaves them out.
+  matters most at high level, where the spells scale with the mob's level. Combat & XP shows how much of the damage
+  mobs deal comes from specials at each level.
 - **Assist flags turn single fights into group fights,** one helper per round at 50% each. An area full of
   `assist_vnum` mobs is much harder than its per-mob numbers suggest.
 - **Regeneration is fast** relative to fight length at high level. Long fights against a healing mob, or
