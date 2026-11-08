@@ -1,0 +1,2485 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and level 1–91 balance reports for the Xania MUD">
+      
+      
+      
+        <link rel="canonical" href="https://abraidotti.github.io/xania-explorer/builds/mattgodbolt-xania-main...mattgodbolt-xania-mg-web/mattgodbolt-xania-main/levelling/">
+      
+      
+        <link rel="prev" href="../economy/">
+      
+      
+        <link rel="next" href="../mobs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Levelling path - Xania Explorer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/xania.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#levelling-path" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Xania Explorer" class="md-header__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xania Explorer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Levelling path
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Xania Explorer" class="md-nav__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    Xania Explorer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore any repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture & game loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-area-file-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area file format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-world-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-skills-and-magic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & magic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-items-and-economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Items & economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assessments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About the assessments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#levelling-xp-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The XP on offer falls 50× between level 3 and level 88
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levelling-suitable-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16 levels have three or fewer areas to level in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levelling-area-dominance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UnderDark carries levels 16–23
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levelling-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Some of the toughest areas are a few steps from recall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levelling-unreachable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        59 rooms can't be reached on foot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../mattgodbolt-xania-mg-web/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#levelling-xp-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The XP on offer falls 50× between level 3 and level 88
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levelling-suitable-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16 levels have three or fewer areas to level in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levelling-area-dominance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UnderDark carries levels 16–23
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levelling-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Some of the toughest areas are a few steps from recall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levelling-unreachable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        59 rooms can't be reached on foot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="levelling-path">Levelling path<a class="headerlink" href="#levelling-path" title="Permanent link">&para;</a></h1>
+<p>Where a character of each level can go for experience: how many areas suit them, how much XP the world offers per reset, which areas carry each stretch of levels, and how far away they are.</p>
+<div class="xu-stats"><div class="xu-stat"><span class="xu-stat-value">133 → 2.6</span><span class="xu-stat-label">levels' worth of XP per world reset, level 3 → 88</span></div><div class="xu-stat"><span class="xu-stat-value">88</span><span class="xu-stat-label">level from which no area suits</span></div><div class="xu-stat"><span class="xu-stat-value">59</span><span class="xu-stat-label">rooms unreachable on foot from recall</span></div><div class="xu-stat"><span class="xu-stat-value">42</span><span class="xu-stat-label">steps to the farthest area</span></div></div>
+
+<h2 id="levelling-xp-supply">The XP on offer falls 50× between level 3 and level 88<a class="headerlink" href="#levelling-xp-supply" title="Permanent link">&para;</a></h2>
+<p>Killing every level-appropriate mob once, in a freshly reset world, is worth about <strong>133 levels</strong> of XP to a level-3 character, 52 at level 20, 14 at 40, 6 at 60, 5 at 80 and <strong>2.6</strong> at 88. Areas reset every 4–22 minutes (see World model), so even a thin supply refills, but from level 85 there's less than three levels' worth on offer per reset, shared by everyone at that level. This mirrors the mob population cliff on the Mobs page.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":["Levels' worth of XP a full world reset offers a character of each","level (log scale; dashed = one level)"],"anchor":"start"},"width":"container","height":300,"data":{"values":[]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"layer":[{"data":{"values":[{"level":1,"levels":91.69},{"level":2,"levels":96.84},{"level":3,"levels":132.62},{"level":4,"levels":117.47},{"level":5,"levels":107.2},{"level":6,"levels":100.59},{"level":7,"levels":92.37},{"level":8,"levels":91.63},{"level":9,"levels":75.57},{"level":10,"levels":70.24},{"level":11,"levels":59.33},{"level":12,"levels":49.66},{"level":13,"levels":49.87},{"level":14,"levels":53.0},{"level":15,"levels":48.98},{"level":16,"levels":46.79},{"level":17,"levels":45.98},{"level":18,"levels":53.31},{"level":19,"levels":56.42},{"level":20,"levels":51.86},{"level":21,"levels":49.38},{"level":22,"levels":43.08},{"level":23,"levels":44.99},{"level":24,"levels":36.5},{"level":25,"levels":30.47},{"level":26,"levels":24.16},{"level":27,"levels":19.99},{"level":28,"levels":23.61},{"level":29,"levels":22.09},{"level":30,"levels":27.34},{"level":31,"levels":25.15},{"level":32,"levels":21.8},{"level":33,"levels":28.04},{"level":34,"levels":24.72},{"level":35,"levels":21.33},{"level":36,"levels":15.08},{"level":37,"levels":16.31},{"level":38,"levels":17.78},{"level":39,"levels":14.76},{"level":40,"levels":13.96},{"level":41,"levels":15.22},{"level":42,"levels":13.87},{"level":43,"levels":14.61},{"level":44,"levels":15.07},{"level":45,"levels":14.75},{"level":46,"levels":13.64},{"level":47,"levels":11.96},{"level":48,"levels":19.11},{"level":49,"levels":16.62},{"level":50,"levels":17.36},{"level":51,"levels":19.62},{"level":52,"levels":17.75},{"level":53,"levels":18.77},{"level":54,"levels":15.25},{"level":55,"levels":11.54},{"level":56,"levels":9.05},{"level":57,"levels":7.51},{"level":58,"levels":6.45},{"level":59,"levels":6.95},{"level":60,"levels":6.09},{"level":61,"levels":4.39},{"level":62,"levels":3.78},{"level":63,"levels":8.8},{"level":64,"levels":8.83},{"level":65,"levels":7.24},{"level":66,"levels":8.33},{"level":67,"levels":8.96},{"level":68,"levels":10.24},{"level":69,"levels":8.03},{"level":70,"levels":10.64},{"level":71,"levels":8.58},{"level":72,"levels":6.45},{"level":73,"levels":8.04},{"level":74,"levels":7.64},{"level":75,"levels":4.8},{"level":76,"levels":6.8},{"level":77,"levels":5.39},{"level":78,"levels":6.47},{"level":79,"levels":5.34},{"level":80,"levels":5.5},{"level":81,"levels":4.64},{"level":82,"levels":3.67},{"level":83,"levels":4.35},{"level":84,"levels":3.92},{"level":85,"levels":2.82},{"level":86,"levels":2.9},{"level":87,"levels":2.3},{"level":88,"levels":2.64},{"level":89,"levels":2.48},{"level":90,"levels":2.03},{"level":91,"levels":1.35}]},"mark":{"type":"line","color":"#e0a030","strokeWidth":2.5},"encoding":{"x":{"field":"level","type":"quantitative","title":"Level","scale":{"domain":[1,91],"nice":false}},"y":{"field":"levels","type":"quantitative","title":"Levels of XP","scale":{"type":"log"}},"tooltip":[{"field":"level","title":"Level"},{"field":"levels","title":"Levels of XP"}]}},{"data":{"values":[{"level":1,"y":1},{"level":2,"y":1},{"level":3,"y":1},{"level":4,"y":1},{"level":5,"y":1},{"level":6,"y":1},{"level":7,"y":1},{"level":8,"y":1},{"level":9,"y":1},{"level":10,"y":1},{"level":11,"y":1},{"level":12,"y":1},{"level":13,"y":1},{"level":14,"y":1},{"level":15,"y":1},{"level":16,"y":1},{"level":17,"y":1},{"level":18,"y":1},{"level":19,"y":1},{"level":20,"y":1},{"level":21,"y":1},{"level":22,"y":1},{"level":23,"y":1},{"level":24,"y":1},{"level":25,"y":1},{"level":26,"y":1},{"level":27,"y":1},{"level":28,"y":1},{"level":29,"y":1},{"level":30,"y":1},{"level":31,"y":1},{"level":32,"y":1},{"level":33,"y":1},{"level":34,"y":1},{"level":35,"y":1},{"level":36,"y":1},{"level":37,"y":1},{"level":38,"y":1},{"level":39,"y":1},{"level":40,"y":1},{"level":41,"y":1},{"level":42,"y":1},{"level":43,"y":1},{"level":44,"y":1},{"level":45,"y":1},{"level":46,"y":1},{"level":47,"y":1},{"level":48,"y":1},{"level":49,"y":1},{"level":50,"y":1},{"level":51,"y":1},{"level":52,"y":1},{"level":53,"y":1},{"level":54,"y":1},{"level":55,"y":1},{"level":56,"y":1},{"level":57,"y":1},{"level":58,"y":1},{"level":59,"y":1},{"level":60,"y":1},{"level":61,"y":1},{"level":62,"y":1},{"level":63,"y":1},{"level":64,"y":1},{"level":65,"y":1},{"level":66,"y":1},{"level":67,"y":1},{"level":68,"y":1},{"level":69,"y":1},{"level":70,"y":1},{"level":71,"y":1},{"level":72,"y":1},{"level":73,"y":1},{"level":74,"y":1},{"level":75,"y":1},{"level":76,"y":1},{"level":77,"y":1},{"level":78,"y":1},{"level":79,"y":1},{"level":80,"y":1},{"level":81,"y":1},{"level":82,"y":1},{"level":83,"y":1},{"level":84,"y":1},{"level":85,"y":1},{"level":86,"y":1},{"level":87,"y":1},{"level":88,"y":1},{"level":89,"y":1},{"level":90,"y":1},{"level":91,"y":1}]},"mark":{"type":"line","strokeDash":[5,4],"color":"#9a8b7e"},"encoding":{"x":{"field":"level","type":"quantitative"},"y":{"field":"y","type":"quantitative"}}}]}</script></div>
+
+<h2 id="levelling-suitable-areas">16 levels have three or fewer areas to level in<a class="headerlink" href="#levelling-suitable-areas" title="Permanent link">&para;</a></h2>
+<p>Up to level 15 a character can choose from 16–32 areas. <strong>16 levels</strong> offer three or fewer, and 4 (levels 88–91) offer none at all. Area level ranges advertised in <code>areas</code> often don't match the mobs inside (see Mobs), so this counts areas by the mobs they actually hold.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Areas with at least 5 level-appropriate mobs, at each level","anchor":"start"},"width":"container","height":300,"data":{"values":[{"level":1,"areas":16,"thin":"4+"},{"level":2,"areas":18,"thin":"4+"},{"level":3,"areas":28,"thin":"4+"},{"level":4,"areas":32,"thin":"4+"},{"level":5,"areas":31,"thin":"4+"},{"level":6,"areas":32,"thin":"4+"},{"level":7,"areas":32,"thin":"4+"},{"level":8,"areas":32,"thin":"4+"},{"level":9,"areas":31,"thin":"4+"},{"level":10,"areas":31,"thin":"4+"},{"level":11,"areas":24,"thin":"4+"},{"level":12,"areas":24,"thin":"4+"},{"level":13,"areas":20,"thin":"4+"},{"level":14,"areas":19,"thin":"4+"},{"level":15,"areas":18,"thin":"4+"},{"level":16,"areas":18,"thin":"4+"},{"level":17,"areas":18,"thin":"4+"},{"level":18,"areas":17,"thin":"4+"},{"level":19,"areas":18,"thin":"4+"},{"level":20,"areas":15,"thin":"4+"},{"level":21,"areas":17,"thin":"4+"},{"level":22,"areas":17,"thin":"4+"},{"level":23,"areas":15,"thin":"4+"},{"level":24,"areas":14,"thin":"4+"},{"level":25,"areas":12,"thin":"4+"},{"level":26,"areas":10,"thin":"4+"},{"level":27,"areas":10,"thin":"4+"},{"level":28,"areas":7,"thin":"4+"},{"level":29,"areas":8,"thin":"4+"},{"level":30,"areas":8,"thin":"4+"},{"level":31,"areas":10,"thin":"4+"},{"level":32,"areas":9,"thin":"4+"},{"level":33,"areas":10,"thin":"4+"},{"level":34,"areas":12,"thin":"4+"},{"level":35,"areas":11,"thin":"4+"},{"level":36,"areas":11,"thin":"4+"},{"level":37,"areas":12,"thin":"4+"},{"level":38,"areas":11,"thin":"4+"},{"level":39,"areas":10,"thin":"4+"},{"level":40,"areas":8,"thin":"4+"},{"level":41,"areas":10,"thin":"4+"},{"level":42,"areas":10,"thin":"4+"},{"level":43,"areas":7,"thin":"4+"},{"level":44,"areas":7,"thin":"4+"},{"level":45,"areas":6,"thin":"4+"},{"level":46,"areas":6,"thin":"4+"},{"level":47,"areas":6,"thin":"4+"},{"level":48,"areas":8,"thin":"4+"},{"level":49,"areas":8,"thin":"4+"},{"level":50,"areas":7,"thin":"4+"},{"level":51,"areas":7,"thin":"4+"},{"level":52,"areas":8,"thin":"4+"},{"level":53,"areas":9,"thin":"4+"},{"level":54,"areas":9,"thin":"4+"},{"level":55,"areas":8,"thin":"4+"},{"level":56,"areas":7,"thin":"4+"},{"level":57,"areas":6,"thin":"4+"},{"level":58,"areas":3,"thin":"3 or fewer"},{"level":59,"areas":4,"thin":"4+"},{"level":60,"areas":5,"thin":"4+"},{"level":61,"areas":5,"thin":"4+"},{"level":62,"areas":3,"thin":"3 or fewer"},{"level":63,"areas":5,"thin":"4+"},{"level":64,"areas":5,"thin":"4+"},{"level":65,"areas":4,"thin":"4+"},{"level":66,"areas":4,"thin":"4+"},{"level":67,"areas":6,"thin":"4+"},{"level":68,"areas":5,"thin":"4+"},{"level":69,"areas":5,"thin":"4+"},{"level":70,"areas":5,"thin":"4+"},{"level":71,"areas":6,"thin":"4+"},{"level":72,"areas":5,"thin":"4+"},{"level":73,"areas":4,"thin":"4+"},{"level":74,"areas":4,"thin":"4+"},{"level":75,"areas":3,"thin":"3 or fewer"},{"level":76,"areas":5,"thin":"4+"},{"level":77,"areas":4,"thin":"4+"},{"level":78,"areas":4,"thin":"4+"},{"level":79,"areas":3,"thin":"3 or fewer"},{"level":80,"areas":3,"thin":"3 or fewer"},{"level":81,"areas":2,"thin":"3 or fewer"},{"level":82,"areas":2,"thin":"3 or fewer"},{"level":83,"areas":2,"thin":"3 or fewer"},{"level":84,"areas":1,"thin":"3 or fewer"},{"level":85,"areas":1,"thin":"3 or fewer"},{"level":86,"areas":1,"thin":"3 or fewer"},{"level":87,"areas":1,"thin":"3 or fewer"},{"level":88,"areas":0,"thin":"3 or fewer"},{"level":89,"areas":0,"thin":"3 or fewer"},{"level":90,"areas":0,"thin":"3 or fewer"},{"level":91,"areas":0,"thin":"3 or fewer"}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":"bar","encoding":{"x":{"field":"level","type":"ordinal","title":"Level","axis":{"values":[1,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90],"labelAngle":0}},"y":{"field":"areas","type":"quantitative","title":"Suitable areas"},"color":{"field":"thin","type":"nominal","title":"","scale":{"domain":["3 or fewer","4+"],"range":["#b4532a","#b8ab9c"]}},"tooltip":[{"field":"level","title":"Level"},{"field":"areas","title":"Areas"}]}}</script></div>
+
+<details class="abstract">
+<summary>Details: by level band</summary>
+<table>
+<thead>
+<tr>
+<th>Levels (mid-band)</th>
+<th>suitable areas</th>
+<th>levels of XP per reset</th>
+<th>richest area</th>
+<th>its share</th>
+<th>nearest suitable (steps)</th>
+<th>top areas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–5</td>
+<td>28</td>
+<td>132.6</td>
+<td>Dangerous Neighbourhood</td>
+<td>11%</td>
+<td>2</td>
+<td>Dangerous Neighbourhood, Elemental Canyon, Old Thalos, The Shire</td>
+</tr>
+<tr>
+<td>6–10</td>
+<td>32</td>
+<td>91.6</td>
+<td>New Thalos</td>
+<td>12%</td>
+<td>9</td>
+<td>New Thalos, High Tower of Sorcery, Kingdom of Juargan, Moria</td>
+</tr>
+<tr>
+<td>11–15</td>
+<td>20</td>
+<td>49.9</td>
+<td>Midgaard</td>
+<td>10%</td>
+<td>2</td>
+<td>Midgaard, Dwarven Catacombs, Imladris, UnderDark</td>
+</tr>
+<tr>
+<td>16–20</td>
+<td>17</td>
+<td>53.3</td>
+<td>UnderDark</td>
+<td>33%</td>
+<td>11</td>
+<td>UnderDark, Dylan's Wilderness, High Tower of Sorcery, New Ofcol</td>
+</tr>
+<tr>
+<td>21–25</td>
+<td>15</td>
+<td>45</td>
+<td>UnderDark</td>
+<td>36%</td>
+<td>14</td>
+<td>UnderDark, The Enchanted Forest, The Astral Plane, The Flying Citadel</td>
+</tr>
+<tr>
+<td>26–30</td>
+<td>7</td>
+<td>23.6</td>
+<td>UnderDark</td>
+<td>12%</td>
+<td>18</td>
+<td>UnderDark, Ultima, The Keep of Mahn-Tor, The Enchanted Forest</td>
+</tr>
+<tr>
+<td>31–35</td>
+<td>10</td>
+<td>28</td>
+<td>UnderDark</td>
+<td>16%</td>
+<td>17</td>
+<td>UnderDark, Descent to Hell, Ultima, Mos Eisley</td>
+</tr>
+<tr>
+<td>36–40</td>
+<td>11</td>
+<td>17.8</td>
+<td>The Astral Plane</td>
+<td>18%</td>
+<td>15</td>
+<td>The Astral Plane, UnderDark, Mos Eisley, Camelot</td>
+</tr>
+<tr>
+<td>41–45</td>
+<td>7</td>
+<td>14.6</td>
+<td>Descent to Hell</td>
+<td>27%</td>
+<td>13</td>
+<td>Descent to Hell, UnderDark, Fire Newt Mountain, Sethanon</td>
+</tr>
+<tr>
+<td>46–50</td>
+<td>8</td>
+<td>19.1</td>
+<td>Descent to Hell</td>
+<td>15%</td>
+<td>12</td>
+<td>Descent to Hell, The Valkyrie, UnderDark, Fire Newt Mountain</td>
+</tr>
+<tr>
+<td>51–55</td>
+<td>9</td>
+<td>18.8</td>
+<td>Camelot</td>
+<td>20%</td>
+<td>17</td>
+<td>Camelot, Descent to Hell, Fire Newt Mountain, The Valkyrie</td>
+</tr>
+<tr>
+<td>56–60</td>
+<td>3</td>
+<td>6.4</td>
+<td>Strange World</td>
+<td>27%</td>
+<td>19</td>
+<td>Strange World, Olympus, Fire Newt Mountain</td>
+</tr>
+<tr>
+<td>61–65</td>
+<td>5</td>
+<td>8.8</td>
+<td>Mos Eisley</td>
+<td>28%</td>
+<td>24</td>
+<td>Mos Eisley, The Valkyrie, Japan, Chapel Catacombs</td>
+</tr>
+<tr>
+<td>66–70</td>
+<td>5</td>
+<td>10.2</td>
+<td>Japan</td>
+<td>25%</td>
+<td>22</td>
+<td>Japan, Chapel Catacombs, Strange World, Sethanon</td>
+</tr>
+<tr>
+<td>71–75</td>
+<td>4</td>
+<td>8</td>
+<td>Japan</td>
+<td>26%</td>
+<td>30</td>
+<td>Japan, Den of Monsters, Chapel Catacombs, The Valkyrie</td>
+</tr>
+<tr>
+<td>76–80</td>
+<td>4</td>
+<td>6.5</td>
+<td>The Seminary</td>
+<td>24%</td>
+<td>9</td>
+<td>The Seminary, Camelot, Dragon Cult, Japan</td>
+</tr>
+<tr>
+<td>81–85</td>
+<td>2</td>
+<td>4.4</td>
+<td>Den of Monsters</td>
+<td>27%</td>
+<td>11</td>
+<td>Den of Monsters, Dragon Cult</td>
+</tr>
+<tr>
+<td>86–90</td>
+<td>0</td>
+<td>2.6</td>
+<td>The Heavens</td>
+<td>25%</td>
+<td>—</td>
+<td></td>
+</tr>
+<tr>
+<td>91</td>
+<td>0</td>
+<td>1.4</td>
+<td>The Heavens</td>
+<td>29%</td>
+<td>—</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="levelling-area-dominance">UnderDark carries levels 16–23<a class="headerlink" href="#levelling-area-dominance" title="Permanent link">&para;</a></h2>
+<p>Most levels draw on many areas, but a few areas carry whole stretches. <strong>UnderDark</strong> supplies 30% or more of the XP on offer at 8 levels (16–23). The 9 areas that matter most across the whole range are shown; everything else is grouped as other areas. A level stretch that leans on one area depends on that area's design.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Where the XP comes from at each level (share of XP on offer)","anchor":"start"},"width":"container","height":340,"data":{"values":[{"level":1,"area":"other areas","share":0.9999999999999998,"rank":9},{"level":2,"area":"other areas","share":1.0000000000000002,"rank":9},{"level":3,"area":"Descent to Hell","share":0.002420513284546041,"rank":4},{"level":3,"area":"other areas","share":0.9975794867154542,"rank":9},{"level":4,"area":"Chapel Catacombs","share":0.007661269727769549,"rank":8},{"level":4,"area":"Descent to Hell","share":0.001991930129220083,"rank":4},{"level":4,"area":"other areas","share":0.9903468001430104,"rank":9},{"level":5,"area":"Chapel Catacombs","share":0.006212396809850287,"rank":8},{"level":5,"area":"Descent to Hell","share":0.001637050510703792,"rank":4},{"level":5,"area":"other areas","share":0.992150552679446,"rank":9},{"level":6,"area":"Chapel Catacombs","share":0.005070237704673566,"rank":8},{"level":6,"area":"Descent to Hell","share":0.0013421217453547674,"rank":4},{"level":6,"area":"other areas","share":0.9935876405499717,"rank":9},{"level":7,"area":"Chapel Catacombs","share":0.00467669124094703,"rank":8},{"level":7,"area":"Descent to Hell","share":0.0011042187652236042,"rank":4},{"level":7,"area":"other areas","share":0.9942190899938292,"rank":9},{"level":8,"area":"UnderDark","share":0.003928951461078824,"rank":0},{"level":8,"area":"Chapel Catacombs","share":0.003601538839322256,"rank":8},{"level":8,"area":"other areas","share":0.992469509699599,"rank":9},{"level":9,"area":"UnderDark","share":0.028384842890887076,"rank":0},{"level":9,"area":"other areas","share":0.9716151571091128,"rank":9},{"level":10,"area":"UnderDark","share":0.04277538119847948,"rank":0},{"level":10,"area":"other areas","share":0.9572246188015207,"rank":9},{"level":11,"area":"UnderDark","share":0.07953281423804227,"rank":0},{"level":11,"area":"other areas","share":0.9204671857619575,"rank":9},{"level":12,"area":"UnderDark","share":0.09399540896460071,"rank":0},{"level":12,"area":"other areas","share":0.9060045910353995,"rank":9},{"level":13,"area":"UnderDark","share":0.07907242540904716,"rank":0},{"level":13,"area":"Descent to Hell","share":0.0045115495668912415,"rank":4},{"level":13,"area":"other areas","share":0.9164160250240617,"rank":9},{"level":14,"area":"UnderDark","share":0.22279455466561005,"rank":0},{"level":14,"area":"Descent to Hell","share":0.0035377692242379646,"rank":4},{"level":14,"area":"other areas","share":0.7736676761101519,"rank":9},{"level":15,"area":"UnderDark","share":0.26804470984535295,"rank":0},{"level":15,"area":"Descent to Hell","share":0.00324605726534987,"rank":4},{"level":15,"area":"other areas","share":0.7287092328892976,"rank":9},{"level":16,"area":"UnderDark","share":0.3501202115723674,"rank":0},{"level":16,"area":"Descent to Hell","share":0.0028850777368167975,"rank":4},{"level":16,"area":"other areas","share":0.6469947106908159,"rank":9},{"level":17,"area":"UnderDark","share":0.4123654159869494,"rank":0},{"level":17,"area":"Descent to Hell","share":0.0022185970636215335,"rank":4},{"level":17,"area":"other areas","share":0.5854159869494289,"rank":9},{"level":18,"area":"UnderDark","share":0.3279403489026449,"rank":0},{"level":18,"area":"other areas","share":0.6720596510973553,"rank":9},{"level":19,"area":"UnderDark","share":0.40793916673313657,"rank":0},{"level":19,"area":"other areas","share":0.5920608332668635,"rank":9},{"level":20,"area":"UnderDark","share":0.39029962980101807,"rank":0},{"level":20,"area":"other areas","share":0.609700370198982,"rank":9},{"level":21,"area":"UnderDark","share":0.3941188979009083,"rank":0},{"level":21,"area":"other areas","share":0.6058811020990919,"rank":9},{"level":22,"area":"UnderDark","share":0.375065278696515,"rank":0},{"level":22,"area":"other areas","share":0.624934721303485,"rank":9},{"level":23,"area":"UnderDark","share":0.3626937822970495,"rank":0},{"level":23,"area":"other areas","share":0.6373062177029506,"rank":9},{"level":24,"area":"UnderDark","share":0.281405383192932,"rank":0},{"level":24,"area":"other areas","share":0.7185946168070679,"rank":9},{"level":25,"area":"UnderDark","share":0.29356172474896636,"rank":0},{"level":25,"area":"other areas","share":0.7064382752510334,"rank":9},{"level":26,"area":"UnderDark","share":0.23677675689098585,"rank":0},{"level":26,"area":"other areas","share":0.7632232431090142,"rank":9},{"level":27,"area":"UnderDark","share":0.2164778269678097,"rank":0},{"level":27,"area":"Descent to Hell","share":0.03376603886846252,"rank":4},{"level":27,"area":"other areas","share":0.7497561341637279,"rank":9},{"level":28,"area":"UnderDark","share":0.12391180021605135,"rank":0},{"level":28,"area":"Descent to Hell","share":0.033360869288936904,"rank":4},{"level":28,"area":"other areas","share":0.8427273304950115,"rank":9},{"level":29,"area":"UnderDark","share":0.11634066829665851,"rank":0},{"level":29,"area":"Descent to Hell","share":0.050461831024178214,"rank":4},{"level":29,"area":"other areas","share":0.8331975006791633,"rank":9},{"level":30,"area":"UnderDark","share":0.2810030728709394,"rank":0},{"level":30,"area":"Descent to Hell","share":0.050812115891132575,"rank":4},{"level":30,"area":"Mos Eisley","share":0.03950834064969271,"rank":3},{"level":30,"area":"other areas","share":0.6286764705882351,"rank":9},{"level":31,"area":"UnderDark","share":0.25940948404413955,"rank":0},{"level":31,"area":"Descent to Hell","share":0.04509394572025052,"rank":4},{"level":31,"area":"Mos Eisley","share":0.035788845809722636,"rank":3},{"level":31,"area":"other areas","share":0.6597077244258873,"rank":9},{"level":32,"area":"UnderDark","share":0.24382524939800482,"rank":0},{"level":32,"area":"Descent to Hell","share":0.08324733402132783,"rank":4},{"level":32,"area":"Mos Eisley","share":0.03508771929824561,"rank":3},{"level":32,"area":"other areas","share":0.6378396972824216,"rank":9},{"level":33,"area":"UnderDark","share":0.16306441258292317,"rank":0},{"level":33,"area":"Descent to Hell","share":0.10651615664455381,"rank":4},{"level":33,"area":"Mos Eisley","share":0.09372993794136529,"rank":3},{"level":33,"area":"The Seminary","share":0.08827305799272415,"rank":2},{"level":33,"area":"other areas","share":0.5484164348384336,"rank":9},{"level":34,"area":"Descent to Hell","share":0.1371882774103513,"rank":4},{"level":34,"area":"UnderDark","share":0.1335477216188338,"rank":0},{"level":34,"area":"The Seminary","share":0.09253079303440326,"rank":2},{"level":34,"area":"Mos Eisley","share":0.08676657969783387,"rank":3},{"level":34,"area":"other areas","share":0.5499666282385778,"rank":9},{"level":35,"area":"Descent to Hell","share":0.14706709804473203,"rank":4},{"level":35,"area":"The Seminary","share":0.10135040090026727,"rank":2},{"level":35,"area":"Mos Eisley","share":0.065761710507807,"rank":3},{"level":35,"area":"UnderDark","share":0.029821353214235475,"rank":0},{"level":35,"area":"other areas","share":0.655999437332958,"rank":9},{"level":36,"area":"Descent to Hell","share":0.15256091496767776,"rank":4},{"level":36,"area":"The Seminary","share":0.1079065141720537,"rank":2},{"level":36,"area":"Mos Eisley","share":0.07001491795126803,"rank":3},{"level":36,"area":"UnderDark","share":0.04952759820984585,"rank":0},{"level":36,"area":"other areas","share":0.6199900546991545,"rank":9},{"level":37,"area":"Camelot","share":0.1279080459770115,"rank":7},{"level":37,"area":"Descent to Hell","share":0.0912183908045977,"rank":4},{"level":37,"area":"UnderDark","share":0.08864367816091955,"rank":0},{"level":37,"area":"The Seminary","share":0.07668965517241379,"rank":2},{"level":37,"area":"Mos Eisley","share":0.049563218390804596,"rank":3},{"level":37,"area":"other areas","share":0.5659770114942528,"rank":9},{"level":38,"area":"UnderDark","share":0.11930475869051636,"rank":0},{"level":38,"area":"Mos Eisley","share":0.10124873439082012,"rank":3},{"level":38,"area":"Camelot","share":0.09762065474181572,"rank":7},{"level":38,"area":"Descent to Hell","share":0.04919001012487344,"rank":4},{"level":38,"area":"The Seminary","share":0.04547755653054337,"rank":2},{"level":38,"area":"Chapel Catacombs","share":0.04514006074924064,"rank":8},{"level":38,"area":"other areas","share":0.5420182247721903,"rank":9},{"level":39,"area":"UnderDark","share":0.13229018492176386,"rank":0},{"level":39,"area":"Mos Eisley","share":0.10058931111562691,"rank":3},{"level":39,"area":"Camelot","share":0.099065230644178,"rank":7},{"level":39,"area":"Descent to Hell","share":0.06360495834180045,"rank":4},{"level":39,"area":"Chapel Catacombs","share":0.04470636049583418,"rank":8},{"level":39,"area":"The Seminary","share":0.039626092257671205,"rank":2},{"level":39,"area":"other areas","share":0.5201178622231254,"rank":9},{"level":40,"area":"Camelot","share":0.15635074145712444,"rank":7},{"level":40,"area":"UnderDark","share":0.1243283902858371,"rank":0},{"level":40,"area":"Descent to Hell","share":0.10219213410702772,"rank":4},{"level":40,"area":"Mos Eisley","share":0.09026434558349453,"rank":3},{"level":40,"area":"Chapel Catacombs","share":0.04029658284977434,"rank":8},{"level":40,"area":"The Seminary","share":0.029980657640232108,"rank":2},{"level":40,"area":"other areas","share":0.45658714807650974,"rank":9},{"level":41,"area":"UnderDark","share":0.18129865011331164,"rank":0},{"level":41,"area":"Descent to Hell","share":0.1306532663316583,"rank":4},{"level":41,"area":"Camelot","share":0.11350872007094295,"rank":7},{"level":41,"area":"Mos Eisley","share":0.09597004630998128,"rank":3},{"level":41,"area":"The Seminary","share":0.062370676913981675,"rank":2},{"level":41,"area":"Chapel Catacombs","share":0.031037540644398464,"rank":8},{"level":41,"area":"other areas","share":0.38516109961572575,"rank":9},{"level":42,"area":"UnderDark","share":0.18845280570872527,"rank":0},{"level":42,"area":"Descent to Hell","share":0.13277111039031247,"rank":4},{"level":42,"area":"Mos Eisley","share":0.12736512055357335,"rank":3},{"level":42,"area":"Camelot","share":0.05935776840739539,"rank":7},{"level":42,"area":"The Seminary","share":0.054492377554330194,"rank":2},{"level":42,"area":"Chapel Catacombs","share":0.025948751216347713,"rank":8},{"level":42,"area":"other areas","share":0.4116120661693156,"rank":9},{"level":43,"area":"Descent to Hell","share":0.2739402648055014,"rank":4},{"level":43,"area":"UnderDark","share":0.14933798624653596,"rank":0},{"level":43,"area":"The Seminary","share":0.07944165041568306,"rank":2},{"level":43,"area":"Mos Eisley","share":0.05460330493687776,"rank":3},{"level":43,"area":"Camelot","share":0.047726572924150674,"rank":7},{"level":43,"area":"Chapel Catacombs","share":0.026891101303499948,"rank":8},{"level":43,"area":"other areas","share":0.3680591193677511,"rank":9},{"level":44,"area":"UnderDark","share":0.23449786005772869,"rank":0},{"level":44,"area":"Descent to Hell","share":0.21777645068179555,"rank":4},{"level":44,"area":"The Seminary","share":0.06449686473574201,"rank":2},{"level":44,"area":"Mos Eisley","share":0.04498855379715338,"rank":3},{"level":44,"area":"Camelot","share":0.03603065591718921,"rank":7},{"level":44,"area":"Chapel Catacombs","share":0.02169801930924654,"rank":8},{"level":44,"area":"other areas","share":0.38051159550114455,"rank":9},{"level":45,"area":"UnderDark","share":0.25831384114715755,"rank":0},{"level":45,"area":"Descent to Hell","share":0.16454795077799247,"rank":4},{"level":45,"area":"The Seminary","share":0.05349333875724601,"rank":2},{"level":45,"area":"Mos Eisley","share":0.03722160073222821,"rank":3},{"level":45,"area":"Chapel Catacombs","share":0.018712498728770465,"rank":8},{"level":45,"area":"Camelot","share":0.006305298484694397,"rank":7},{"level":45,"area":"other areas","share":0.4614054713719109,"rank":9},{"level":46,"area":"UnderDark","share":0.24540754592454075,"rank":0},{"level":46,"area":"Descent to Hell","share":0.17104828951710482,"rank":4},{"level":46,"area":"The Valkyrie","share":0.06863931360686393,"rank":6},{"level":46,"area":"The Seminary","share":0.06115938840611594,"rank":2},{"level":46,"area":"Mos Eisley","share":0.02067979320206798,"rank":3},{"level":46,"area":"Chapel Catacombs","share":0.017159828401715982,"rank":8},{"level":46,"area":"Camelot","share":0.005169948300516995,"rank":7},{"level":46,"area":"other areas","share":0.4107358926410737,"rank":9},{"level":47,"area":"Descent to Hell","share":0.24451135365700666,"rank":4},{"level":47,"area":"UnderDark","share":0.24200225818592397,"rank":0},{"level":47,"area":"The Valkyrie","share":0.11692384895245264,"rank":6},{"level":47,"area":"The Seminary","share":0.055200100363818845,"rank":2},{"level":47,"area":"Chapel Catacombs","share":0.01480366327938778,"rank":8},{"level":47,"area":"other areas","share":0.3265587755614101,"rank":9},{"level":48,"area":"Descent to Hell","share":0.14721808051479243,"rank":4},{"level":48,"area":"The Valkyrie","share":0.1421957152946716,"rank":6},{"level":48,"area":"UnderDark","share":0.12218472887075257,"rank":0},{"level":48,"area":"The Seminary","share":0.08710664678647101,"rank":2},{"level":48,"area":"Mos Eisley","share":0.08192733265322137,"rank":3},{"level":48,"area":"other areas","share":0.41936749588009103,"rank":9},{"level":49,"area":"The Valkyrie","share":0.21187511279552426,"rank":6},{"level":49,"area":"Descent to Hell","share":0.1493412741382422,"rank":4},{"level":49,"area":"The Seminary","share":0.11144197798231366,"rank":2},{"level":49,"area":"Mos Eisley","share":0.07796426637791012,"rank":3},{"level":49,"area":"UnderDark","share":0.07570835589243818,"rank":0},{"level":49,"area":"other areas","share":0.3736690128135717,"rank":9},{"level":50,"area":"Descent to Hell","share":0.2640808569454043,"rank":4},{"level":50,"area":"The Valkyrie","share":0.19497235659986178,"rank":6},{"level":50,"area":"The Seminary","share":0.11126468555632343,"rank":2},{"level":50,"area":"Mos Eisley","share":0.06375259156876296,"rank":3},{"level":50,"area":"UnderDark","share":0.036973047684865236,"rank":0},{"level":50,"area":"other areas","share":0.3289564616447822,"rank":9},{"level":51,"area":"Camelot","share":0.26376146788990823,"rank":7},{"level":51,"area":"Descent to Hell","share":0.2382262996941896,"rank":4},{"level":51,"area":"The Valkyrie","share":0.12454128440366972,"rank":6},{"level":51,"area":"The Seminary","share":0.0746177370030581,"rank":2},{"level":51,"area":"Mos Eisley","share":0.04747706422018349,"rank":3},{"level":51,"area":"UnderDark","share":0.012691131498470948,"rank":0},{"level":51,"area":"other areas","share":0.23868501529051983,"rank":9},{"level":52,"area":"Camelot","share":0.24083150245056617,"rank":7},{"level":52,"area":"Descent to Hell","share":0.22579009633260097,"rank":4},{"level":52,"area":"The Valkyrie","share":0.15092107486902145,"rank":6},{"level":52,"area":"The Seminary","share":0.085600811221903,"rank":2},{"level":52,"area":"Mos Eisley","share":0.039547067770829815,"rank":3},{"level":52,"area":"UnderDark","share":0.003971607233395302,"rank":0},{"level":52,"area":"other areas","share":0.25333784012168326,"rank":9},{"level":53,"area":"Camelot","share":0.19664268585131894,"rank":7},{"level":53,"area":"Descent to Hell","share":0.1521982414068745,"rank":4},{"level":53,"area":"The Valkyrie","share":0.11806554756195044,"rank":6},{"level":53,"area":"Strange World","share":0.08273381294964029,"rank":5},{"level":53,"area":"Japan","share":0.06522781774580336,"rank":1},{"level":53,"area":"The Seminary","share":0.05707434052757794,"rank":2},{"level":53,"area":"Mos Eisley","share":0.056195043964828134,"rank":3},{"level":53,"area":"other areas","share":0.2718625099920064,"rank":9},{"level":54,"area":"Camelot","share":0.20068863748155436,"rank":7},{"level":54,"area":"Descent to Hell","share":0.15651746187899657,"rank":4},{"level":54,"area":"The Valkyrie","share":0.09906542056074766,"rank":6},{"level":54,"area":"Strange World","share":0.08322675848499754,"rank":5},{"level":54,"area":"Japan","share":0.0661091982292179,"rank":1},{"level":54,"area":"Mos Eisley","share":0.05656665027053615,"rank":3},{"level":54,"area":"The Seminary","share":0.04564682734874569,"rank":2},{"level":54,"area":"other areas","share":0.29217904574520415,"rank":9},{"level":55,"area":"Camelot","share":0.20270270270270271,"rank":7},{"level":55,"area":"The Valkyrie","share":0.12214137214137215,"rank":6},{"level":55,"area":"Strange World","share":0.09472453222453223,"rank":5},{"level":55,"area":"Descent to Hell","share":0.0877079002079002,"rank":4},{"level":55,"area":"Japan","share":0.07484407484407485,"rank":1},{"level":55,"area":"Mos Eisley","share":0.06418918918918919,"rank":3},{"level":55,"area":"The Seminary","share":0.038721413721413724,"rank":2},{"level":55,"area":"other areas","share":0.314968814968815,"rank":9},{"level":56,"area":"Strange World","share":0.22770964534305602,"rank":5},{"level":56,"area":"The Valkyrie","share":0.12595293337752733,"rank":6},{"level":56,"area":"Japan","share":0.08087504143188598,"rank":1},{"level":56,"area":"Mos Eisley","share":0.06894265826980445,"rank":3},{"level":56,"area":"The Seminary","share":0.06082200861783228,"rank":2},{"level":56,"area":"Descent to Hell","share":0.04308916141862778,"rank":4},{"level":56,"area":"other areas","share":0.39260855154126617,"rank":9},{"level":57,"area":"Strange World","share":0.21933679584498603,"rank":5},{"level":57,"area":"The Valkyrie","share":0.07710747103475829,"rank":6},{"level":57,"area":"Japan","share":0.07351178585697163,"rank":1},{"level":57,"area":"Mos Eisley","share":0.06332401118657612,"rank":3},{"level":57,"area":"The Seminary","share":0.041550139832201356,"rank":2},{"level":57,"area":"Descent to Hell","share":0.014982021574111066,"rank":4},{"level":57,"area":"other areas","share":0.5101877746703954,"rank":9},{"level":58,"area":"Strange World","share":0.27076064200976974,"rank":5},{"level":58,"area":"The Valkyrie","share":0.06187485461735287,"rank":6},{"level":58,"area":"The Seminary","share":0.020702488950918817,"rank":2},{"level":58,"area":"Descent to Hell","share":0.013258897418004187,"rank":4},{"level":58,"area":"other areas","share":0.6334031170039545,"rank":9},{"level":59,"area":"Strange World","share":0.21040138109624515,"rank":5},{"level":59,"area":"The Valkyrie","share":0.12429866206301252,"rank":6},{"level":59,"area":"Chapel Catacombs","share":0.08631851532153648,"rank":8},{"level":59,"area":"Camelot","share":0.02157962883038412,"rank":7},{"level":59,"area":"The Seminary","share":0.016184721622788088,"rank":2},{"level":59,"area":"other areas","share":0.5412170910660337,"rank":9},{"level":60,"area":"Strange World","share":0.19103889709502708,"rank":5},{"level":60,"area":"The Valkyrie","share":0.12358444116198916,"rank":6},{"level":60,"area":"Chapel Catacombs","share":0.11250615460364352,"rank":8},{"level":60,"area":"Camelot","share":0.020433284096504186,"rank":7},{"level":60,"area":"The Seminary","share":0.013786312161496799,"rank":2},{"level":60,"area":"other areas","share":0.5386509108813393,"rank":9},{"level":61,"area":"The Valkyrie","share":0.14461538461538462,"rank":6},{"level":61,"area":"Chapel Catacombs","share":0.13128205128205128,"rank":8},{"level":61,"area":"Strange World","share":0.1282051282051282,"rank":5},{"level":61,"area":"Camelot","share":0.023931623931623933,"rank":7},{"level":61,"area":"other areas","share":0.5719658119658121,"rank":9},{"level":62,"area":"Japan","share":0.14886859865025803,"rank":1},{"level":62,"area":"The Valkyrie","share":0.1409289400555776,"rank":6},{"level":62,"area":"Chapel Catacombs","share":0.13021040095275904,"rank":8},{"level":62,"area":"Strange World","share":0.11115522032552601,"rank":5},{"level":62,"area":"Camelot","share":0.023818975784041286,"rank":7},{"level":62,"area":"other areas","share":0.445017864231838,"rank":9},{"level":63,"area":"Mos Eisley","share":0.2837423312883436,"rank":3},{"level":63,"area":"The Valkyrie","share":0.1440013633265167,"rank":6},{"level":63,"area":"Japan","share":0.12014314928425358,"rank":1},{"level":63,"area":"Chapel Catacombs","share":0.11077027948193592,"rank":8},{"level":63,"area":"The Seminary","share":0.10940695296523517,"rank":2},{"level":63,"area":"Camelot","share":0.007668711656441718,"rank":7},{"level":63,"area":"other areas","share":0.22426721199727337,"rank":9},{"level":64,"area":"Japan","share":0.3523016816714795,"rank":1},{"level":64,"area":"Mos Eisley","share":0.23441481229828434,"rank":3},{"level":64,"area":"The Valkyrie","share":0.0929165958892475,"rank":6},{"level":64,"area":"The Seminary","share":0.09070834041107526,"rank":2},{"level":64,"area":"Chapel Catacombs","share":0.06522846950908782,"rank":8},{"level":64,"area":"other areas","share":0.16443010022082558,"rank":9},{"level":65,"area":"Japan","share":0.3588893493576461,"rank":1},{"level":65,"area":"Mos Eisley","share":0.24554496477414006,"rank":3},{"level":65,"area":"The Seminary","share":0.09407376709490262,"rank":2},{"level":65,"area":"The Valkyrie","share":0.08889349357646084,"rank":6},{"level":65,"area":"Chapel Catacombs","share":0.05801906340654787,"rank":8},{"level":65,"area":"other areas","share":0.15457936179030252,"rank":9},{"level":66,"area":"Japan","share":0.4172221221401549,"rank":1},{"level":66,"area":"Mos Eisley","share":0.1783462439200144,"rank":3},{"level":66,"area":"The Valkyrie","share":0.12015852999459557,"rank":6},{"level":66,"area":"The Seminary","share":0.10844892812105927,"rank":2},{"level":66,"area":"Chapel Catacombs","share":0.04251486218699334,"rank":8},{"level":66,"area":"other areas","share":0.1333093136371825,"rank":9},{"level":67,"area":"Japan","share":0.3001339136257114,"rank":1},{"level":67,"area":"Chapel Catacombs","share":0.23702711750920658,"rank":8},{"level":67,"area":"Mos Eisley","share":0.12554402410445262,"rank":3},{"level":67,"area":"The Valkyrie","share":0.08838299296953465,"rank":6},{"level":67,"area":"The Seminary","share":0.07900903916973552,"rank":2},{"level":67,"area":"other areas","share":0.1699029126213592,"rank":9},{"level":68,"area":"Japan","share":0.2511348660125933,"rank":1},{"level":68,"area":"Chapel Catacombs","share":0.18538585444428174,"rank":8},{"level":68,"area":"Strange World","share":0.16107775662615317,"rank":5},{"level":68,"area":"The Valkyrie","share":0.062088153463171765,"rank":6},{"level":68,"area":"Mos Eisley","share":0.043051691316444575,"rank":3},{"level":68,"area":"The Seminary","share":0.02284375457607263,"rank":2},{"level":68,"area":"other areas","share":0.2744179235612828,"rank":9},{"level":69,"area":"Chapel Catacombs","share":0.2008594917787743,"rank":8},{"level":69,"area":"Strange World","share":0.17002989536621824,"rank":5},{"level":69,"area":"Japan","share":0.16143497757847533,"rank":1},{"level":69,"area":"The Valkyrie","share":0.06595665171898356,"rank":6},{"level":69,"area":"The Seminary","share":0.046898355754858,"rank":2},{"level":69,"area":"Mos Eisley","share":0.04540358744394619,"rank":3},{"level":69,"area":"other areas","share":0.3094170403587444,"rank":9},{"level":70,"area":"Japan","share":0.3299027209925278,"rank":1},{"level":70,"area":"Chapel Catacombs","share":0.12279712392499648,"rank":8},{"level":70,"area":"Strange World","share":0.10432821091216693,"rank":5},{"level":70,"area":"The Valkyrie","share":0.06640349640490624,"rank":6},{"level":70,"area":"The Seminary","share":0.04370506132806993,"rank":2},{"level":70,"area":"Mos Eisley","share":0.027914845622444662,"rank":3},{"level":70,"area":"Camelot","share":0.016495136049626394,"rank":7},{"level":70,"area":"other areas","share":0.28845340476526155,"rank":9},{"level":71,"area":"Japan","share":0.2839160839160839,"rank":1},{"level":71,"area":"Chapel Catacombs","share":0.11783216783216784,"rank":8},{"level":71,"area":"Strange World","share":0.11013986013986014,"rank":5},{"level":71,"area":"The Valkyrie","share":0.08199300699300699,"rank":6},{"level":71,"area":"Mos Eisley","share":0.06993006993006994,"rank":3},{"level":71,"area":"The Seminary","share":0.03129370629370629,"rank":2},{"level":71,"area":"Camelot","share":0.01695804195804196,"rank":7},{"level":71,"area":"other areas","share":0.28793706293706295,"rank":9},{"level":72,"area":"Japan","share":0.3569602602835231,"rank":1},{"level":72,"area":"Strange World","share":0.10922612131071345,"rank":5},{"level":72,"area":"The Valkyrie","share":0.08900766906809203,"rank":6},{"level":72,"area":"Mos Eisley","share":0.07436672089240065,"rank":3},{"level":72,"area":"The Seminary","share":0.06204973274459679,"rank":2},{"level":72,"area":"Chapel Catacombs","share":0.02416918429003021,"rank":8},{"level":72,"area":"Camelot","share":0.01905647222867767,"rank":7},{"level":72,"area":"other areas","share":0.2651638391819661,"rank":9},{"level":73,"area":"Japan","share":0.2648759559783622,"rank":1},{"level":73,"area":"Chapel Catacombs","share":0.1298265249020705,"rank":8},{"level":73,"area":"Mos Eisley","share":0.06491326245103525,"rank":3},{"level":73,"area":"The Valkyrie","share":0.06323447118074986,"rank":6},{"level":73,"area":"The Seminary","share":0.04047752285021451,"rank":2},{"level":73,"area":"Camelot","share":0.012870733072188025,"rank":7},{"level":73,"area":"other areas","share":0.4238015295653797,"rank":9},{"level":74,"area":"Japan","share":0.36376128778955635,"rank":1},{"level":74,"area":"Chapel Catacombs","share":0.11307420494699646,"rank":8},{"level":74,"area":"Mos Eisley","share":0.05732234000785238,"rank":3},{"level":74,"area":"The Valkyrie","share":0.05418138987043581,"rank":6},{"level":74,"area":"The Seminary","share":0.044169611307420496,"rank":2},{"level":74,"area":"Camelot","share":0.010208087946603848,"rank":7},{"level":74,"area":"other areas","share":0.35728307813113463,"rank":9},{"level":75,"area":"Japan","share":0.2853125,"rank":1},{"level":75,"area":"Chapel Catacombs","share":0.151875,"rank":8},{"level":75,"area":"Mos Eisley","share":0.073125,"rank":3},{"level":75,"area":"The Valkyrie","share":0.0465625,"rank":6},{"level":75,"area":"The Seminary","share":0.0453125,"rank":2},{"level":75,"area":"other areas","share":0.3978125,"rank":9},{"level":76,"area":"Camelot","share":0.30423280423280424,"rank":7},{"level":76,"area":"Japan","share":0.1695326278659612,"rank":1},{"level":76,"area":"Chapel Catacombs","share":0.09126984126984126,"rank":8},{"level":76,"area":"The Seminary","share":0.08664021164021164,"rank":2},{"level":76,"area":"Mos Eisley","share":0.0496031746031746,"rank":3},{"level":76,"area":"The Valkyrie","share":0.012125220458553791,"rank":6},{"level":76,"area":"other areas","share":0.2865961199294533,"rank":9},{"level":77,"area":"Camelot","share":0.3170189098998888,"rank":7},{"level":77,"area":"Japan","share":0.15739710789766406,"rank":1},{"level":77,"area":"Chapel Catacombs","share":0.08509454949944383,"rank":8},{"level":77,"area":"The Seminary","share":0.07869855394883203,"rank":2},{"level":77,"area":"Mos Eisley","share":0.049777530589543935,"rank":3},{"level":77,"area":"The Valkyrie","share":0.01167964404894327,"rank":6},{"level":77,"area":"other areas","share":0.30033370411568416,"rank":9},{"level":78,"area":"The Seminary","share":0.2441456063065152,"rank":2},{"level":78,"area":"Camelot","share":0.2225828889404127,"rank":7},{"level":78,"area":"Mos Eisley","share":0.09784372826338975,"rank":3},{"level":78,"area":"Japan","share":0.07604915372130767,"rank":1},{"level":78,"area":"Strange World","share":0.02643171806167401,"rank":5},{"level":78,"area":"Chapel Catacombs","share":0.02109900301414329,"rank":8},{"level":78,"area":"The Valkyrie","share":0.02109900301414329,"rank":6},{"level":78,"area":"other areas","share":0.29074889867841414,"rank":9},{"level":79,"area":"The Seminary","share":0.2354593987075021,"rank":2},{"level":79,"area":"Camelot","share":0.22927788704692328,"rank":7},{"level":79,"area":"Mos Eisley","share":0.09834223096375386,"rank":3},{"level":79,"area":"Strange World","share":0.026411913458836752,"rank":5},{"level":79,"area":"Chapel Catacombs","share":0.021073335206518686,"rank":8},{"level":79,"area":"The Valkyrie","share":0.021073335206518686,"rank":6},{"level":79,"area":"other areas","share":0.3683618994099466,"rank":9},{"level":80,"area":"The Seminary","share":0.19077510917030568,"rank":2},{"level":80,"area":"Camelot","share":0.16703056768558952,"rank":7},{"level":80,"area":"Mos Eisley","share":0.07942139737991266,"rank":3},{"level":80,"area":"Japan","share":0.055676855895196505,"rank":1},{"level":80,"area":"The Valkyrie","share":0.0453056768558952,"rank":6},{"level":80,"area":"Strange World","share":0.021834061135371178,"rank":5},{"level":80,"area":"Chapel Catacombs","share":0.017467248908296942,"rank":8},{"level":80,"area":"other areas","share":0.4224890829694323,"rank":9},{"level":81,"area":"The Seminary","share":0.15643180349062702,"rank":2},{"level":81,"area":"Strange World","share":0.13122171945701358,"rank":5},{"level":81,"area":"Mos Eisley","share":0.0649644473173885,"rank":3},{"level":81,"area":"Japan","share":0.05429864253393665,"rank":1},{"level":81,"area":"The Valkyrie","share":0.04460245636716225,"rank":6},{"level":81,"area":"Chapel Catacombs","share":0.017453135100193924,"rank":8},{"level":81,"area":"other areas","share":0.5310277957336782,"rank":9},{"level":82,"area":"The Seminary","share":0.15038823048630975,"rank":2},{"level":82,"area":"Strange World","share":0.13608500204331836,"rank":5},{"level":82,"area":"Mos Eisley","share":0.06252554147936248,"rank":3},{"level":82,"area":"Japan","share":0.05884756845116469,"rank":1},{"level":82,"area":"The Valkyrie","share":0.04617899468737229,"rank":6},{"level":82,"area":"Chapel Catacombs","share":0.016755210461789946,"rank":8},{"level":82,"area":"other areas","share":0.5292194523906826,"rank":9},{"level":83,"area":"Japan","share":0.10716747070985527,"rank":1},{"level":83,"area":"Mos Eisley","share":0.10062026188835287,"rank":3},{"level":83,"area":"Strange World","share":0.08166781529979325,"rank":5},{"level":83,"area":"Camelot","share":0.03859407305306685,"rank":7},{"level":83,"area":"The Seminary","share":0.031013094417643005,"rank":2},{"level":83,"area":"The Valkyrie","share":0.02067539627842867,"rank":6},{"level":83,"area":"other areas","share":0.6202618883528601,"rank":9},{"level":84,"area":"Japan","share":0.09525631216526396,"rank":1},{"level":84,"area":"Mos Eisley","share":0.09219586840091813,"rank":3},{"level":84,"area":"Strange World","share":0.07689364957918898,"rank":5},{"level":84,"area":"Camelot","share":0.03557765876052028,"rank":7},{"level":84,"area":"The Seminary","share":0.028309104820198928,"rank":2},{"level":84,"area":"The Valkyrie","share":0.017597551644988524,"rank":6},{"level":84,"area":"other areas","share":0.6541698546289213,"rank":9},{"level":85,"area":"Mos Eisley","share":0.1088688263409453,"rank":3},{"level":85,"area":"Strange World","share":0.07966011683483802,"rank":5},{"level":85,"area":"Japan","share":0.07116303770578863,"rank":1},{"level":85,"area":"Camelot","share":0.04195432819968136,"rank":7},{"level":85,"area":"The Seminary","share":0.03345724907063197,"rank":2},{"level":85,"area":"other areas","share":0.6648964418481147,"rank":9},{"level":86,"area":"Strange World","share":0.22933884297520662,"rank":5},{"level":86,"area":"Mos Eisley","share":0.08884297520661157,"rank":3},{"level":86,"area":"Japan","share":0.05836776859504132,"rank":1},{"level":86,"area":"Camelot","share":0.03409090909090909,"rank":7},{"level":86,"area":"The Seminary","share":0.02737603305785124,"rank":2},{"level":86,"area":"other areas","share":0.5619834710743802,"rank":9},{"level":87,"area":"Strange World","share":0.2402088772845953,"rank":5},{"level":87,"area":"Mos Eisley","share":0.08485639686684072,"rank":3},{"level":87,"area":"Japan","share":0.05548302872062663,"rank":1},{"level":87,"area":"Camelot","share":0.03263707571801567,"rank":7},{"level":87,"area":"The Seminary","share":0.02610966057441253,"rank":2},{"level":87,"area":"other areas","share":0.5607049608355091,"rank":9},{"level":88,"area":"Strange World","share":0.1775754126351736,"rank":5},{"level":88,"area":"Chapel Catacombs","share":0.16903813318155947,"rank":8},{"level":88,"area":"other areas","share":0.653386454183267,"rank":9},{"level":89,"area":"Strange World","share":0.1596130592503023,"rank":5},{"level":89,"area":"Chapel Catacombs","share":0.1487303506650544,"rank":8},{"level":89,"area":"The Seminary","share":0.13301088270858524,"rank":2},{"level":89,"area":"other areas","share":0.5586457073760579,"rank":9},{"level":90,"area":"Chapel Catacombs","share":0.15486725663716813,"rank":8},{"level":90,"area":"Strange World","share":0.14749262536873156,"rank":5},{"level":90,"area":"The Seminary","share":0.13421828908554573,"rank":2},{"level":90,"area":"other areas","share":0.5634218289085545,"rank":9},{"level":91,"area":"Chapel Catacombs","share":0.19666666666666666,"rank":8},{"level":91,"area":"The Seminary","share":0.1711111111111111,"rank":2},{"level":91,"area":"other areas","share":0.6322222222222221,"rank":9}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":{"type":"area"},"encoding":{"x":{"field":"level","type":"quantitative","title":"Level","scale":{"domain":[1,91],"nice":false}},"y":{"field":"share","type":"quantitative","title":"Share of XP","stack":"normalize","axis":{"format":"%"}},"color":{"field":"area","type":"nominal","title":"Area","scale":{"domain":["UnderDark","Japan","The Seminary","Mos Eisley","Descent to Hell","Strange World","The Valkyrie","Camelot","Chapel Catacombs","other areas"],"range":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c","#d9cfc3"]}},"order":{"field":"rank","type":"quantitative"},"tooltip":[{"field":"area"},{"field":"level"},{"field":"share","title":"Share","format":".0%"}]}}</script></div>
+
+<h2 id="levelling-distance">Some of the toughest areas are a few steps from recall<a class="headerlink" href="#levelling-distance" title="Permanent link">&para;</a></h2>
+<p>Every area is measured from the Midgaard temple, where recall leads, along room exits. The farthest are Japan (42 steps, mobs around level 70), The Valkyrie (42 steps, mobs around level 63.5) and Sethanon (36 steps, mobs around level 65). Some high-level areas sit right next to recall: The Heavens (3 steps, level 72) and Dragon Cult (4 steps, level 79). Distance isn't a problem in itself (portals and spells shortcut it, and aren't followed here), but newcomers wandering out of Midgaard can walk straight into high-level content.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Walking distance from recall vs the median level of an area's mobs","anchor":"start"},"width":"container","height":320,"data":{"values":[{"area":"Midgaard","steps":0,"level":9},{"area":"Mud School","steps":1,"level":2.5},{"area":"Immortal Zone","steps":2,"level":57},{"area":"The Heavens","steps":3,"level":72},{"area":"Dragon Cult","steps":4,"level":79.0},{"area":"Sewer","steps":5,"level":10.0},{"area":"The Astral Plane","steps":6,"level":36.0},{"area":"Haon Dor","steps":7,"level":5},{"area":"Miden'nir","steps":7,"level":8.0},{"area":"Moria","steps":7,"level":8},{"area":"Crystalmir Lake","steps":8,"level":7},{"area":"Limbo","steps":8,"level":26},{"area":"Machine Dreams","steps":8,"level":8},{"area":"Mob Factory","steps":8,"level":5.0},{"area":"Penthouse","steps":8,"level":91},{"area":"The Shire","steps":8,"level":6.0},{"area":"Thalos","steps":9,"level":11},{"area":"Sands of Sorrow","steps":10,"level":8},{"area":"Smurf Village","steps":10,"level":3.0},{"area":"Ciquala's Lair","steps":11,"level":37.0},{"area":"Dangerous Neighbourhood","steps":11,"level":7.5},{"area":"Gnome Village","steps":11,"level":6.0},{"area":"Holy Grove","steps":11,"level":10},{"area":"New Thalos","steps":11,"level":12},{"area":"The Dell","steps":11,"level":42},{"area":"The Seminary","steps":11,"level":55.0},{"area":"UnderDark","steps":11,"level":25},{"area":"Dwarven Kingdom","steps":12,"level":15.0},{"area":"Graveyard","steps":12,"level":4.0},{"area":"Plains of the North","steps":12,"level":6},{"area":"Yggdrasil","steps":12,"level":50},{"area":"Kingdom of Juargan","steps":13,"level":10},{"area":"Redferne's Residence","steps":13,"level":29},{"area":"Dwarven Day Care","steps":14,"level":3},{"area":"Fire Newt Mountain","steps":14,"level":54.5},{"area":"Lore Keep","steps":14,"level":50},{"area":"Ultima","steps":14,"level":25.0},{"area":"Nirvana","steps":15,"level":23.0},{"area":"Strange World","steps":15,"level":80},{"area":"Old Marsh","steps":16,"level":14.5},{"area":"Troll Den","steps":16,"level":7},{"area":"Camelot","steps":17,"level":57.0},{"area":"Chapel Catacombs","steps":17,"level":69},{"area":"Dylan's Wilderness","steps":17,"level":25},{"area":"Old Thalos","steps":17,"level":7},{"area":"Olympus","steps":17,"level":50},{"area":"The Flying Citadel","steps":18,"level":30.0},{"area":"Uruk's Fortress","steps":18,"level":83.0},{"area":"Valley of the Elves","steps":18,"level":7},{"area":"Elemental Canyon","steps":19,"level":11.0},{"area":"Wyvern Tower","steps":19,"level":10},{"area":"Arachnos","steps":21,"level":10},{"area":"Descent to Hell","steps":21,"level":45},{"area":"Dwarven Catacombs","steps":21,"level":12},{"area":"Mega-City One","steps":21,"level":19},{"area":"Mos Eisley","steps":21,"level":65},{"area":"The Enchanted Forest","steps":21,"level":30},{"area":"Drow City","steps":22,"level":19.0},{"area":"High Tower of Sorcery","steps":22,"level":16},{"area":"Imladris","steps":22,"level":15},{"area":"Temple of the Great Wyrm","steps":22,"level":50},{"area":"Wolf Pointe","steps":22,"level":35.0},{"area":"The Keep of Mahn-Tor","steps":23,"level":23.5},{"area":"Dragon Tower","steps":26,"level":20},{"area":"Galaxy","steps":26,"level":22.0},{"area":"New Ofcol","steps":26,"level":7},{"area":"Den of Monsters","steps":27,"level":75.0},{"area":"Sethanon","steps":36,"level":65},{"area":"Japan","steps":42,"level":70.0},{"area":"The Valkyrie","steps":42,"level":63.5}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":{"type":"point","filled":true,"size":80,"opacity":0.8,"color":"#b4532a"},"encoding":{"x":{"field":"level","type":"quantitative","title":"Median mob level"},"y":{"field":"steps","type":"quantitative","title":"Steps from recall"},"tooltip":[{"field":"area","title":"Area"},{"field":"level","title":"Median mob level"},{"field":"steps","title":"Steps"}]}}</script></div>
+
+<details class="abstract">
+<summary>Details: every area's distance</summary>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>steps from recall</th>
+<th>median mob level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Midgaard</td>
+<td>0</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Mud School</td>
+<td>1</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Immortal Zone</td>
+<td>2</td>
+<td>57</td>
+</tr>
+<tr>
+<td>The Heavens</td>
+<td>3</td>
+<td>72</td>
+</tr>
+<tr>
+<td>Dragon Cult</td>
+<td>4</td>
+<td>79</td>
+</tr>
+<tr>
+<td>Sewer</td>
+<td>5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Wedding Rites</td>
+<td>5</td>
+<td>—</td>
+</tr>
+<tr>
+<td>The Astral Plane</td>
+<td>6</td>
+<td>36</td>
+</tr>
+<tr>
+<td>Haon Dor</td>
+<td>7</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Miden'nir</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Moria</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Crystalmir Lake</td>
+<td>8</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Limbo</td>
+<td>8</td>
+<td>26</td>
+</tr>
+<tr>
+<td>Machine Dreams</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Mob Factory</td>
+<td>8</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Penthouse</td>
+<td>8</td>
+<td>91</td>
+</tr>
+<tr>
+<td>The Shire</td>
+<td>8</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Thalos</td>
+<td>9</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Sands of Sorrow</td>
+<td>10</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Smurf Village</td>
+<td>10</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Ciquala's Lair</td>
+<td>11</td>
+<td>37</td>
+</tr>
+<tr>
+<td>Dangerous Neighbourhood</td>
+<td>11</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>Gnome Village</td>
+<td>11</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Holy Grove</td>
+<td>11</td>
+<td>10</td>
+</tr>
+<tr>
+<td>New Thalos</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr>
+<td>The Dell</td>
+<td>11</td>
+<td>42</td>
+</tr>
+<tr>
+<td>The Seminary</td>
+<td>11</td>
+<td>55</td>
+</tr>
+<tr>
+<td>UnderDark</td>
+<td>11</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Dwarven Kingdom</td>
+<td>12</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Graveyard</td>
+<td>12</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Plains of the North</td>
+<td>12</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Yggdrasil</td>
+<td>12</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Kingdom of Juargan</td>
+<td>13</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Redferne's Residence</td>
+<td>13</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Dwarven Day Care</td>
+<td>14</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Fire Newt Mountain</td>
+<td>14</td>
+<td>54.5</td>
+</tr>
+<tr>
+<td>Lore Keep</td>
+<td>14</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Ultima</td>
+<td>14</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Nirvana</td>
+<td>15</td>
+<td>23</td>
+</tr>
+<tr>
+<td>Strange World</td>
+<td>15</td>
+<td>80</td>
+</tr>
+<tr>
+<td>Old Marsh</td>
+<td>16</td>
+<td>14.5</td>
+</tr>
+<tr>
+<td>Troll Den</td>
+<td>16</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Camelot</td>
+<td>17</td>
+<td>57</td>
+</tr>
+<tr>
+<td>Chapel Catacombs</td>
+<td>17</td>
+<td>69</td>
+</tr>
+<tr>
+<td>Dylan's Wilderness</td>
+<td>17</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Old Thalos</td>
+<td>17</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Olympus</td>
+<td>17</td>
+<td>50</td>
+</tr>
+<tr>
+<td>The Flying Citadel</td>
+<td>18</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Uruk's Fortress</td>
+<td>18</td>
+<td>83</td>
+</tr>
+<tr>
+<td>Valley of the Elves</td>
+<td>18</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Elemental Canyon</td>
+<td>19</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Wyvern Tower</td>
+<td>19</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Arachnos</td>
+<td>21</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Descent to Hell</td>
+<td>21</td>
+<td>45</td>
+</tr>
+<tr>
+<td>Dwarven Catacombs</td>
+<td>21</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Mega-City One</td>
+<td>21</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Mos Eisley</td>
+<td>21</td>
+<td>65</td>
+</tr>
+<tr>
+<td>The Enchanted Forest</td>
+<td>21</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Drow City</td>
+<td>22</td>
+<td>19</td>
+</tr>
+<tr>
+<td>High Tower of Sorcery</td>
+<td>22</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Imladris</td>
+<td>22</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Temple of the Great Wyrm</td>
+<td>22</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Wolf Pointe</td>
+<td>22</td>
+<td>35</td>
+</tr>
+<tr>
+<td>Ofcol</td>
+<td>23</td>
+<td>—</td>
+</tr>
+<tr>
+<td>The Keep of Mahn-Tor</td>
+<td>23</td>
+<td>23.5</td>
+</tr>
+<tr>
+<td>Dragon Tower</td>
+<td>26</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Galaxy</td>
+<td>26</td>
+<td>22</td>
+</tr>
+<tr>
+<td>New Ofcol</td>
+<td>26</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Den of Monsters</td>
+<td>27</td>
+<td>75</td>
+</tr>
+<tr>
+<td>Sethanon</td>
+<td>36</td>
+<td>65</td>
+</tr>
+<tr>
+<td>Japan</td>
+<td>42</td>
+<td>70</td>
+</tr>
+<tr>
+<td>The Valkyrie</td>
+<td>42</td>
+<td>63.5</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="levelling-unreachable">59 rooms can't be reached on foot<a class="headerlink" href="#levelling-unreachable" title="Permanent link">&para;</a></h2>
+<p>59 rooms in 20 areas have no walking route from recall, and 33 mob resets place mobs in them. Some are deliberate (immortal rooms, rooms reached by portal, mob program or a one-way trap), others may be broken exits worth checking.</p>
+<details class="abstract">
+<summary>Details: unreachable rooms by area</summary>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>unreachable rooms</th>
+<th>rooms</th>
+<th>share</th>
+<th>mobs placed there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Immortal Zone</td>
+<td>3</td>
+<td>23</td>
+<td>13%</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Ofcol</td>
+<td>1</td>
+<td>8</td>
+<td>12%</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Nirvana</td>
+<td>7</td>
+<td>60</td>
+<td>12%</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Uruk's Fortress</td>
+<td>1</td>
+<td>13</td>
+<td>8%</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Dragon Cult</td>
+<td>3</td>
+<td>48</td>
+<td>6%</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Camelot</td>
+<td>4</td>
+<td>66</td>
+<td>6%</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Redferne's Residence</td>
+<td>1</td>
+<td>17</td>
+<td>6%</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Mos Eisley</td>
+<td>3</td>
+<td>58</td>
+<td>5%</td>
+<td>1</td>
+</tr>
+<tr>
+<td>New Thalos</td>
+<td>12</td>
+<td>263</td>
+<td>5%</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Dylan's Wilderness</td>
+<td>4</td>
+<td>88</td>
+<td>5%</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Holy Grove</td>
+<td>1</td>
+<td>22</td>
+<td>5%</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Arachnos</td>
+<td>2</td>
+<td>56</td>
+<td>4%</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Machine Dreams</td>
+<td>1</td>
+<td>36</td>
+<td>3%</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Wolf Pointe</td>
+<td>1</td>
+<td>60</td>
+<td>2%</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Galaxy</td>
+<td>1</td>
+<td>61</td>
+<td>2%</td>
+<td>1</td>
+</tr>
+<tr>
+<td>UnderDark</td>
+<td>8</td>
+<td>488</td>
+<td>2%</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Descent to Hell</td>
+<td>2</td>
+<td>141</td>
+<td>1%</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Sewer</td>
+<td>2</td>
+<td>177</td>
+<td>1%</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Midgaard</td>
+<td>1</td>
+<td>147</td>
+<td>1%</td>
+<td>5</td>
+</tr>
+<tr>
+<td>High Tower of Sorcery</td>
+<td>1</td>
+<td>183</td>
+<td>1%</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
+<details class="info">
+<summary>How these numbers are calculated</summary>
+<ul>
+<li><strong>Suitable area</strong> for level L: an area holding at least <code>MIN_MOBS</code> combat mobs (population) within
+  ±2 levels of L.</li>
+<li><strong>XP on offer</strong>: for a level-L character, the XP of killing every such mob once in a fully reset world
+  (Combat's xp_compute model), in levels' worth (÷ 1,000 XP per level for a human).</li>
+<li><strong>Distance</strong>: walking steps from the Midgaard temple (room 3001, where recall leads) through room exits,
+  ignoring doors' locked state; portals, mob programs and other transport aren't followed.</li>
+</ul>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../economy/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Economy">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Economy
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../mobs/" class="md-footer__link md-footer__link--next" aria-label="Next: Mobs">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Mobs
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/sorts/tablesort.number.min.js"></script>
+      
+        <script src="../../javascripts/xania.js"></script>
+      
+        <script src="../../javascripts/explore-plan.js"></script>
+      
+        <script src="../../javascripts/explore.js"></script>
+      
+    
+  </body>
+</html>

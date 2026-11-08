@@ -1,0 +1,4158 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and level 1–91 balance reports for the Xania MUD">
+      
+      
+      
+        <link rel="canonical" href="https://abraidotti.github.io/xania-explorer/builds/mattgodbolt-xania-main...mattgodbolt-xania-mg-web/mattgodbolt-xania-main/characters/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../weapons/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Characters - Xania Explorer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/xania.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#characters-by-level" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Xania Explorer" class="md-header__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xania Explorer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Characters
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Xania Explorer" class="md-nav__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    Xania Explorer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore any repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture & game loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-area-file-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area file format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-world-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-skills-and-magic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & magic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-items-and-economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Items & economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assessments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About the assessments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#characters-xp-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A dragon needs 4× the XP per level of a human
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-hp-by-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barbarians finish with 1.5× a mage's HP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-mana-by-race" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An elf mage ends with 31% more mana than a wolf mage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-race-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expensive races buy very little extra HP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-stats-maxed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stats are maxed by level 21, then only the caps matter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../mattgodbolt-xania-mg-web/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#characters-xp-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A dragon needs 4× the XP per level of a human
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-hp-by-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barbarians finish with 1.5× a mage's HP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-mana-by-race" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An elf mage ends with 31% more mana than a wolf mage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-race-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expensive races buy very little extra HP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-stats-maxed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stats are maxed by level 21, then only the caps matter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="characters-by-level">Characters by level<a class="headerlink" href="#characters-by-level" title="Permanent link">&para;</a></h1>
+<p>How each class and race grows from level 1 to 91: the XP each level costs, the HP, mana and movement it brings, and how quickly stats max out.</p>
+<div class="xu-stats"><div class="xu-stat"><span class="xu-stat-value">4×</span><span class="xu-stat-label">XP per level, dearest vs cheapest build</span></div><div class="xu-stat"><span class="xu-stat-value">1.5×</span><span class="xu-stat-label">a barbarian's HP vs a mage's at 91</span></div><div class="xu-stat"><span class="xu-stat-value">±163</span><span class="xu-stat-label">HP that race choice swings at 91</span></div><div class="xu-stat"><span class="xu-stat-value">17–21</span><span class="xu-stat-label">level by which stats are maxed</span></div></div>
+
+<h2 id="characters-xp-cost">A dragon needs 4× the XP per level of a human<a class="headerlink" href="#characters-xp-cost" title="Permanent link">&para;</a></h2>
+<p>A <strong>dragon</strong> needs <strong>4,000</strong> XP per level and a <strong>human</strong> <strong>1,000</strong>, so reaching level 91 takes 360,000 against 90,000 XP. Two things drive it. Creation points: every 10 points above the default 40 raise the cost steeply (<code>exp_per_level</code>), and dragons cost 40 points and hobbits cost 20 points. Class multipliers: minotaur knight ×1.5, elf barbarian ×1.5 and eagle barbarian ×1.5.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"XP per level, by race and class","anchor":"start"},"width":"container","height":260,"data":{"values":[{"race":"human","class":"mage","xp":1000},{"race":"human","class":"cleric","xp":1000},{"race":"human","class":"knight","xp":1000},{"race":"human","class":"barbarian","xp":1000},{"race":"hobbit","class":"mage","xp":2000},{"race":"hobbit","class":"cleric","xp":2400},{"race":"hobbit","class":"knight","xp":2000},{"race":"hobbit","class":"barbarian","xp":2400},{"race":"minotaur","class":"mage","xp":2450},{"race":"minotaur","class":"cleric","xp":1750},{"race":"minotaur","class":"knight","xp":2625},{"race":"minotaur","class":"barbarian","xp":1750},{"race":"elf","class":"mage","xp":1250},{"race":"elf","class":"cleric","xp":1562},{"race":"elf","class":"knight","xp":1250},{"race":"elf","class":"barbarian","xp":1875},{"race":"half-elf","class":"mage","xp":2187},{"race":"half-elf","class":"cleric","xp":1750},{"race":"half-elf","class":"knight","xp":1750},{"race":"half-elf","class":"barbarian","xp":2187},{"race":"dragon","class":"mage","xp":4000},{"race":"dragon","class":"cleric","xp":4000},{"race":"dragon","class":"knight","xp":4000},{"race":"dragon","class":"barbarian","xp":4000},{"race":"eagle","class":"mage","xp":1650},{"race":"eagle","class":"cleric","xp":1500},{"race":"eagle","class":"knight","xp":1500},{"race":"eagle","class":"barbarian","xp":2250},{"race":"orc","class":"mage","xp":1500},{"race":"orc","class":"cleric","xp":1500},{"race":"orc","class":"knight","xp":1800},{"race":"orc","class":"barbarian","xp":1500},{"race":"dwarf","class":"mage","xp":1875},{"race":"dwarf","class":"cleric","xp":1250},{"race":"dwarf","class":"knight","xp":1500},{"race":"dwarf","class":"barbarian","xp":1250},{"race":"wolf","class":"mage","xp":3000},{"race":"wolf","class":"cleric","xp":3000},{"race":"wolf","class":"knight","xp":2400},{"race":"wolf","class":"barbarian","xp":2000}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"encoding":{"x":{"field":"class","type":"ordinal","title":null,"sort":["mage","cleric","knight","barbarian"],"axis":{"orient":"top","labelAngle":0}},"y":{"field":"race","type":"ordinal","title":null,"sort":["human","hobbit","minotaur","elf","half-elf","dragon","eagle","orc","dwarf","wolf"]}},"layer":[{"mark":{"type":"rect","stroke":"#fffaf2","strokeWidth":2,"cornerRadius":3},"encoding":{"color":{"field":"xp","type":"quantitative","title":"XP per level","scale":{"range":["#fbf0dc","#e7b37a","#b4532a"]},"legend":null},"tooltip":[{"field":"race"},{"field":"class"},{"field":"xp","title":"XP per level","format":",.0f"}]}},{"mark":{"type":"text","fontSize":11},"encoding":{"text":{"field":"xp","type":"quantitative","format":",.0f"},"color":{"condition":{"test":"datum['xp'] > 2500.0","value":"#fffaf2"},"value":"#3a261c"}}}]}</script></div>
+
+<details class="abstract">
+<summary>Details: XP per level and creation points</summary>
+<table>
+<thead>
+<tr>
+<th>Race</th>
+<th>mage</th>
+<th>cleric</th>
+<th>knight</th>
+<th>barbarian</th>
+<th>creation points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>human</td>
+<td>1000</td>
+<td>1000</td>
+<td>1000</td>
+<td>1000</td>
+<td>40</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>2000</td>
+<td>2400</td>
+<td>2000</td>
+<td>2400</td>
+<td>60</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>2450</td>
+<td>1750</td>
+<td>2625</td>
+<td>1750</td>
+<td>55</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>1250</td>
+<td>1562</td>
+<td>1250</td>
+<td>1875</td>
+<td>45</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>2187</td>
+<td>1750</td>
+<td>1750</td>
+<td>2187</td>
+<td>55</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>4000</td>
+<td>4000</td>
+<td>4000</td>
+<td>4000</td>
+<td>80</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>1650</td>
+<td>1500</td>
+<td>1500</td>
+<td>2250</td>
+<td>50</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>1500</td>
+<td>1500</td>
+<td>1800</td>
+<td>1500</td>
+<td>50</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>1875</td>
+<td>1250</td>
+<td>1500</td>
+<td>1250</td>
+<td>45</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>3000</td>
+<td>3000</td>
+<td>2400</td>
+<td>2000</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="characters-hp-by-class">Barbarians finish with 1.5× a mage's HP<a class="headerlink" href="#characters-hp-by-class" title="Permanent link">&para;</a></h2>
+<p>At level 91 a human barbarian has about <strong>2,272</strong> HP, a knight 1,923, a cleric 1,632 and a mage <strong>1,534</strong>. 700–740 HP of every build comes from trains spent on HP once stats are maxed, about the same for every class, so the gap comes from the per-level roll (barbarian 13–17, mage 6–8) and, for barbarians, the extra con of their prime stat.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"HP at each level: human (line) and range across races (shading)","anchor":"start"},"width":"container","height":300,"data":{"values":[]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"layer":[{"data":{"values":[{"class":"mage","level":1,"lo":20,"hi":20},{"class":"mage","level":2,"lo":26,"hi":28},{"class":"mage","level":3,"lo":32,"hi":36},{"class":"mage","level":4,"lo":38,"hi":45},{"class":"mage","level":5,"lo":44,"hi":53},{"class":"mage","level":6,"lo":50,"hi":63},{"class":"mage","level":7,"lo":57,"hi":72},{"class":"mage","level":8,"lo":64,"hi":81},{"class":"mage","level":9,"lo":71,"hi":91},{"class":"mage","level":10,"lo":78,"hi":100},{"class":"mage","level":11,"lo":85,"hi":109},{"class":"mage","level":12,"lo":92,"hi":119},{"class":"mage","level":13,"lo":99,"hi":128},{"class":"mage","level":14,"lo":106,"hi":137},{"class":"mage","level":15,"lo":113,"hi":147},{"class":"mage","level":16,"lo":120,"hi":156},{"class":"mage","level":17,"lo":127,"hi":165},{"class":"mage","level":18,"lo":134,"hi":185},{"class":"mage","level":19,"lo":141,"hi":204},{"class":"mage","level":20,"lo":148,"hi":223},{"class":"mage","level":21,"lo":165,"hi":243},{"class":"mage","level":22,"lo":182,"hi":262},{"class":"mage","level":23,"lo":199,"hi":281},{"class":"mage","level":24,"lo":216,"hi":301},{"class":"mage","level":25,"lo":233,"hi":320},{"class":"mage","level":26,"lo":250,"hi":339},{"class":"mage","level":27,"lo":267,"hi":359},{"class":"mage","level":28,"lo":284,"hi":378},{"class":"mage","level":29,"lo":301,"hi":397},{"class":"mage","level":30,"lo":318,"hi":417},{"class":"mage","level":31,"lo":335,"hi":436},{"class":"mage","level":32,"lo":352,"hi":455},{"class":"mage","level":33,"lo":369,"hi":475},{"class":"mage","level":34,"lo":386,"hi":494},{"class":"mage","level":35,"lo":403,"hi":513},{"class":"mage","level":36,"lo":420,"hi":533},{"class":"mage","level":37,"lo":437,"hi":552},{"class":"mage","level":38,"lo":454,"hi":571},{"class":"mage","level":39,"lo":471,"hi":591},{"class":"mage","level":40,"lo":488,"hi":610},{"class":"mage","level":41,"lo":505,"hi":629},{"class":"mage","level":42,"lo":522,"hi":649},{"class":"mage","level":43,"lo":539,"hi":668},{"class":"mage","level":44,"lo":556,"hi":687},{"class":"mage","level":45,"lo":573,"hi":707},{"class":"mage","level":46,"lo":590,"hi":726},{"class":"mage","level":47,"lo":607,"hi":745},{"class":"mage","level":48,"lo":624,"hi":765},{"class":"mage","level":49,"lo":641,"hi":784},{"class":"mage","level":50,"lo":658,"hi":803},{"class":"mage","level":51,"lo":675,"hi":823},{"class":"mage","level":52,"lo":692,"hi":842},{"class":"mage","level":53,"lo":709,"hi":861},{"class":"mage","level":54,"lo":726,"hi":881},{"class":"mage","level":55,"lo":743,"hi":900},{"class":"mage","level":56,"lo":760,"hi":919},{"class":"mage","level":57,"lo":777,"hi":939},{"class":"mage","level":58,"lo":794,"hi":958},{"class":"mage","level":59,"lo":811,"hi":977},{"class":"mage","level":60,"lo":828,"hi":997},{"class":"mage","level":61,"lo":845,"hi":1016},{"class":"mage","level":62,"lo":862,"hi":1035},{"class":"mage","level":63,"lo":879,"hi":1055},{"class":"mage","level":64,"lo":896,"hi":1074},{"class":"mage","level":65,"lo":913,"hi":1093},{"class":"mage","level":66,"lo":930,"hi":1113},{"class":"mage","level":67,"lo":947,"hi":1132},{"class":"mage","level":68,"lo":964,"hi":1151},{"class":"mage","level":69,"lo":981,"hi":1171},{"class":"mage","level":70,"lo":998,"hi":1190},{"class":"mage","level":71,"lo":1015,"hi":1209},{"class":"mage","level":72,"lo":1032,"hi":1229},{"class":"mage","level":73,"lo":1049,"hi":1248},{"class":"mage","level":74,"lo":1066,"hi":1267},{"class":"mage","level":75,"lo":1083,"hi":1287},{"class":"mage","level":76,"lo":1100,"hi":1306},{"class":"mage","level":77,"lo":1117,"hi":1325},{"class":"mage","level":78,"lo":1134,"hi":1345},{"class":"mage","level":79,"lo":1151,"hi":1364},{"class":"mage","level":80,"lo":1168,"hi":1383},{"class":"mage","level":81,"lo":1185,"hi":1403},{"class":"mage","level":82,"lo":1202,"hi":1422},{"class":"mage","level":83,"lo":1219,"hi":1441},{"class":"mage","level":84,"lo":1236,"hi":1461},{"class":"mage","level":85,"lo":1253,"hi":1480},{"class":"mage","level":86,"lo":1270,"hi":1499},{"class":"mage","level":87,"lo":1287,"hi":1519},{"class":"mage","level":88,"lo":1304,"hi":1538},{"class":"mage","level":89,"lo":1321,"hi":1557},{"class":"mage","level":90,"lo":1338,"hi":1577},{"class":"mage","level":91,"lo":1355,"hi":1596},{"class":"cleric","level":1,"lo":20,"hi":20},{"class":"cleric","level":2,"lo":28,"hi":29},{"class":"cleric","level":3,"lo":35,"hi":38},{"class":"cleric","level":4,"lo":42,"hi":48},{"class":"cleric","level":5,"lo":50,"hi":58},{"class":"cleric","level":6,"lo":58,"hi":68},{"class":"cleric","level":7,"lo":66,"hi":78},{"class":"cleric","level":8,"lo":75,"hi":89},{"class":"cleric","level":9,"lo":83,"hi":100},{"class":"cleric","level":10,"lo":91,"hi":110},{"class":"cleric","level":11,"lo":100,"hi":120},{"class":"cleric","level":12,"lo":108,"hi":131},{"class":"cleric","level":13,"lo":116,"hi":142},{"class":"cleric","level":14,"lo":124,"hi":152},{"class":"cleric","level":15,"lo":132,"hi":162},{"class":"cleric","level":16,"lo":141,"hi":173},{"class":"cleric","level":17,"lo":149,"hi":184},{"class":"cleric","level":18,"lo":157,"hi":204},{"class":"cleric","level":19,"lo":166,"hi":224},{"class":"cleric","level":20,"lo":174,"hi":245},{"class":"cleric","level":21,"lo":192,"hi":266},{"class":"cleric","level":22,"lo":210,"hi":286},{"class":"cleric","level":23,"lo":228,"hi":306},{"class":"cleric","level":24,"lo":247,"hi":327},{"class":"cleric","level":25,"lo":265,"hi":348},{"class":"cleric","level":26,"lo":283,"hi":368},{"class":"cleric","level":27,"lo":302,"hi":388},{"class":"cleric","level":28,"lo":320,"hi":409},{"class":"cleric","level":29,"lo":338,"hi":430},{"class":"cleric","level":30,"lo":356,"hi":450},{"class":"cleric","level":31,"lo":374,"hi":470},{"class":"cleric","level":32,"lo":393,"hi":491},{"class":"cleric","level":33,"lo":411,"hi":512},{"class":"cleric","level":34,"lo":429,"hi":532},{"class":"cleric","level":35,"lo":448,"hi":552},{"class":"cleric","level":36,"lo":466,"hi":573},{"class":"cleric","level":37,"lo":484,"hi":594},{"class":"cleric","level":38,"lo":502,"hi":614},{"class":"cleric","level":39,"lo":520,"hi":634},{"class":"cleric","level":40,"lo":539,"hi":655},{"class":"cleric","level":41,"lo":557,"hi":676},{"class":"cleric","level":42,"lo":575,"hi":696},{"class":"cleric","level":43,"lo":594,"hi":716},{"class":"cleric","level":44,"lo":612,"hi":737},{"class":"cleric","level":45,"lo":630,"hi":758},{"class":"cleric","level":46,"lo":648,"hi":778},{"class":"cleric","level":47,"lo":666,"hi":798},{"class":"cleric","level":48,"lo":685,"hi":819},{"class":"cleric","level":49,"lo":703,"hi":840},{"class":"cleric","level":50,"lo":721,"hi":860},{"class":"cleric","level":51,"lo":740,"hi":880},{"class":"cleric","level":52,"lo":758,"hi":901},{"class":"cleric","level":53,"lo":776,"hi":922},{"class":"cleric","level":54,"lo":794,"hi":942},{"class":"cleric","level":55,"lo":812,"hi":962},{"class":"cleric","level":56,"lo":831,"hi":983},{"class":"cleric","level":57,"lo":849,"hi":1004},{"class":"cleric","level":58,"lo":867,"hi":1024},{"class":"cleric","level":59,"lo":886,"hi":1044},{"class":"cleric","level":60,"lo":904,"hi":1065},{"class":"cleric","level":61,"lo":922,"hi":1086},{"class":"cleric","level":62,"lo":940,"hi":1106},{"class":"cleric","level":63,"lo":958,"hi":1126},{"class":"cleric","level":64,"lo":977,"hi":1147},{"class":"cleric","level":65,"lo":995,"hi":1168},{"class":"cleric","level":66,"lo":1013,"hi":1188},{"class":"cleric","level":67,"lo":1032,"hi":1208},{"class":"cleric","level":68,"lo":1050,"hi":1229},{"class":"cleric","level":69,"lo":1068,"hi":1250},{"class":"cleric","level":70,"lo":1086,"hi":1270},{"class":"cleric","level":71,"lo":1104,"hi":1290},{"class":"cleric","level":72,"lo":1123,"hi":1311},{"class":"cleric","level":73,"lo":1141,"hi":1332},{"class":"cleric","level":74,"lo":1159,"hi":1352},{"class":"cleric","level":75,"lo":1178,"hi":1372},{"class":"cleric","level":76,"lo":1196,"hi":1393},{"class":"cleric","level":77,"lo":1214,"hi":1414},{"class":"cleric","level":78,"lo":1232,"hi":1434},{"class":"cleric","level":79,"lo":1250,"hi":1454},{"class":"cleric","level":80,"lo":1269,"hi":1475},{"class":"cleric","level":81,"lo":1287,"hi":1496},{"class":"cleric","level":82,"lo":1305,"hi":1516},{"class":"cleric","level":83,"lo":1324,"hi":1536},{"class":"cleric","level":84,"lo":1342,"hi":1557},{"class":"cleric","level":85,"lo":1360,"hi":1578},{"class":"cleric","level":86,"lo":1378,"hi":1598},{"class":"cleric","level":87,"lo":1396,"hi":1618},{"class":"cleric","level":88,"lo":1415,"hi":1639},{"class":"cleric","level":89,"lo":1433,"hi":1660},{"class":"cleric","level":90,"lo":1451,"hi":1680},{"class":"cleric","level":91,"lo":1470,"hi":1700},{"class":"knight","level":1,"lo":20,"hi":20},{"class":"knight","level":2,"lo":30,"hi":32},{"class":"knight","level":3,"lo":40,"hi":44},{"class":"knight","level":4,"lo":51,"hi":57},{"class":"knight","level":5,"lo":61,"hi":70},{"class":"knight","level":6,"lo":71,"hi":84},{"class":"knight","level":7,"lo":82,"hi":98},{"class":"knight","level":8,"lo":93,"hi":112},{"class":"knight","level":9,"lo":104,"hi":126},{"class":"knight","level":10,"lo":115,"hi":140},{"class":"knight","level":11,"lo":126,"hi":154},{"class":"knight","level":12,"lo":137,"hi":168},{"class":"knight","level":13,"lo":148,"hi":182},{"class":"knight","level":14,"lo":159,"hi":196},{"class":"knight","level":15,"lo":170,"hi":210},{"class":"knight","level":16,"lo":181,"hi":224},{"class":"knight","level":17,"lo":192,"hi":238},{"class":"knight","level":18,"lo":203,"hi":262},{"class":"knight","level":19,"lo":214,"hi":286},{"class":"knight","level":20,"lo":225,"hi":310},{"class":"knight","level":21,"lo":246,"hi":334},{"class":"knight","level":22,"lo":267,"hi":358},{"class":"knight","level":23,"lo":288,"hi":382},{"class":"knight","level":24,"lo":309,"hi":406},{"class":"knight","level":25,"lo":330,"hi":430},{"class":"knight","level":26,"lo":351,"hi":454},{"class":"knight","level":27,"lo":372,"hi":478},{"class":"knight","level":28,"lo":393,"hi":502},{"class":"knight","level":29,"lo":414,"hi":526},{"class":"knight","level":30,"lo":435,"hi":550},{"class":"knight","level":31,"lo":456,"hi":574},{"class":"knight","level":32,"lo":477,"hi":598},{"class":"knight","level":33,"lo":498,"hi":622},{"class":"knight","level":34,"lo":519,"hi":646},{"class":"knight","level":35,"lo":540,"hi":670},{"class":"knight","level":36,"lo":561,"hi":694},{"class":"knight","level":37,"lo":582,"hi":718},{"class":"knight","level":38,"lo":603,"hi":742},{"class":"knight","level":39,"lo":624,"hi":766},{"class":"knight","level":40,"lo":645,"hi":790},{"class":"knight","level":41,"lo":666,"hi":814},{"class":"knight","level":42,"lo":687,"hi":838},{"class":"knight","level":43,"lo":708,"hi":862},{"class":"knight","level":44,"lo":729,"hi":886},{"class":"knight","level":45,"lo":750,"hi":910},{"class":"knight","level":46,"lo":771,"hi":934},{"class":"knight","level":47,"lo":792,"hi":958},{"class":"knight","level":48,"lo":813,"hi":982},{"class":"knight","level":49,"lo":834,"hi":1006},{"class":"knight","level":50,"lo":855,"hi":1030},{"class":"knight","level":51,"lo":876,"hi":1054},{"class":"knight","level":52,"lo":897,"hi":1078},{"class":"knight","level":53,"lo":918,"hi":1102},{"class":"knight","level":54,"lo":939,"hi":1126},{"class":"knight","level":55,"lo":960,"hi":1150},{"class":"knight","level":56,"lo":981,"hi":1174},{"class":"knight","level":57,"lo":1002,"hi":1198},{"class":"knight","level":58,"lo":1023,"hi":1222},{"class":"knight","level":59,"lo":1044,"hi":1246},{"class":"knight","level":60,"lo":1065,"hi":1270},{"class":"knight","level":61,"lo":1086,"hi":1294},{"class":"knight","level":62,"lo":1107,"hi":1318},{"class":"knight","level":63,"lo":1128,"hi":1342},{"class":"knight","level":64,"lo":1149,"hi":1366},{"class":"knight","level":65,"lo":1170,"hi":1390},{"class":"knight","level":66,"lo":1191,"hi":1414},{"class":"knight","level":67,"lo":1212,"hi":1438},{"class":"knight","level":68,"lo":1233,"hi":1462},{"class":"knight","level":69,"lo":1254,"hi":1486},{"class":"knight","level":70,"lo":1275,"hi":1510},{"class":"knight","level":71,"lo":1296,"hi":1534},{"class":"knight","level":72,"lo":1317,"hi":1558},{"class":"knight","level":73,"lo":1338,"hi":1582},{"class":"knight","level":74,"lo":1359,"hi":1606},{"class":"knight","level":75,"lo":1380,"hi":1630},{"class":"knight","level":76,"lo":1401,"hi":1654},{"class":"knight","level":77,"lo":1422,"hi":1678},{"class":"knight","level":78,"lo":1443,"hi":1702},{"class":"knight","level":79,"lo":1464,"hi":1726},{"class":"knight","level":80,"lo":1485,"hi":1750},{"class":"knight","level":81,"lo":1506,"hi":1774},{"class":"knight","level":82,"lo":1527,"hi":1798},{"class":"knight","level":83,"lo":1548,"hi":1822},{"class":"knight","level":84,"lo":1569,"hi":1846},{"class":"knight","level":85,"lo":1590,"hi":1870},{"class":"knight","level":86,"lo":1611,"hi":1894},{"class":"knight","level":87,"lo":1632,"hi":1918},{"class":"knight","level":88,"lo":1653,"hi":1942},{"class":"knight","level":89,"lo":1674,"hi":1966},{"class":"knight","level":90,"lo":1695,"hi":1990},{"class":"knight","level":91,"lo":1716,"hi":2014},{"class":"barbarian","level":1,"lo":20,"hi":20},{"class":"barbarian","level":2,"lo":35,"hi":38},{"class":"barbarian","level":3,"lo":50,"hi":56},{"class":"barbarian","level":4,"lo":65,"hi":74},{"class":"barbarian","level":5,"lo":80,"hi":93},{"class":"barbarian","level":6,"lo":95,"hi":111},{"class":"barbarian","level":7,"lo":110,"hi":130},{"class":"barbarian","level":8,"lo":125,"hi":148},{"class":"barbarian","level":9,"lo":140,"hi":166},{"class":"barbarian","level":10,"lo":155,"hi":185},{"class":"barbarian","level":11,"lo":170,"hi":203},{"class":"barbarian","level":12,"lo":185,"hi":222},{"class":"barbarian","level":13,"lo":200,"hi":240},{"class":"barbarian","level":14,"lo":215,"hi":258},{"class":"barbarian","level":15,"lo":230,"hi":277},{"class":"barbarian","level":16,"lo":245,"hi":295},{"class":"barbarian","level":17,"lo":260,"hi":314},{"class":"barbarian","level":18,"lo":275,"hi":332},{"class":"barbarian","level":19,"lo":290,"hi":360},{"class":"barbarian","level":20,"lo":305,"hi":389},{"class":"barbarian","level":21,"lo":330,"hi":417},{"class":"barbarian","level":22,"lo":355,"hi":446},{"class":"barbarian","level":23,"lo":380,"hi":474},{"class":"barbarian","level":24,"lo":405,"hi":502},{"class":"barbarian","level":25,"lo":430,"hi":531},{"class":"barbarian","level":26,"lo":455,"hi":559},{"class":"barbarian","level":27,"lo":480,"hi":588},{"class":"barbarian","level":28,"lo":505,"hi":616},{"class":"barbarian","level":29,"lo":530,"hi":644},{"class":"barbarian","level":30,"lo":555,"hi":673},{"class":"barbarian","level":31,"lo":580,"hi":701},{"class":"barbarian","level":32,"lo":605,"hi":730},{"class":"barbarian","level":33,"lo":630,"hi":758},{"class":"barbarian","level":34,"lo":655,"hi":786},{"class":"barbarian","level":35,"lo":680,"hi":815},{"class":"barbarian","level":36,"lo":705,"hi":843},{"class":"barbarian","level":37,"lo":730,"hi":872},{"class":"barbarian","level":38,"lo":755,"hi":900},{"class":"barbarian","level":39,"lo":780,"hi":928},{"class":"barbarian","level":40,"lo":805,"hi":957},{"class":"barbarian","level":41,"lo":830,"hi":985},{"class":"barbarian","level":42,"lo":855,"hi":1014},{"class":"barbarian","level":43,"lo":880,"hi":1042},{"class":"barbarian","level":44,"lo":905,"hi":1070},{"class":"barbarian","level":45,"lo":930,"hi":1099},{"class":"barbarian","level":46,"lo":955,"hi":1127},{"class":"barbarian","level":47,"lo":980,"hi":1156},{"class":"barbarian","level":48,"lo":1005,"hi":1184},{"class":"barbarian","level":49,"lo":1030,"hi":1212},{"class":"barbarian","level":50,"lo":1055,"hi":1241},{"class":"barbarian","level":51,"lo":1080,"hi":1269},{"class":"barbarian","level":52,"lo":1105,"hi":1298},{"class":"barbarian","level":53,"lo":1130,"hi":1326},{"class":"barbarian","level":54,"lo":1155,"hi":1354},{"class":"barbarian","level":55,"lo":1180,"hi":1383},{"class":"barbarian","level":56,"lo":1205,"hi":1411},{"class":"barbarian","level":57,"lo":1230,"hi":1440},{"class":"barbarian","level":58,"lo":1255,"hi":1468},{"class":"barbarian","level":59,"lo":1280,"hi":1496},{"class":"barbarian","level":60,"lo":1305,"hi":1525},{"class":"barbarian","level":61,"lo":1330,"hi":1553},{"class":"barbarian","level":62,"lo":1355,"hi":1582},{"class":"barbarian","level":63,"lo":1380,"hi":1610},{"class":"barbarian","level":64,"lo":1405,"hi":1638},{"class":"barbarian","level":65,"lo":1430,"hi":1667},{"class":"barbarian","level":66,"lo":1455,"hi":1695},{"class":"barbarian","level":67,"lo":1480,"hi":1724},{"class":"barbarian","level":68,"lo":1505,"hi":1752},{"class":"barbarian","level":69,"lo":1530,"hi":1780},{"class":"barbarian","level":70,"lo":1555,"hi":1809},{"class":"barbarian","level":71,"lo":1580,"hi":1837},{"class":"barbarian","level":72,"lo":1605,"hi":1866},{"class":"barbarian","level":73,"lo":1630,"hi":1894},{"class":"barbarian","level":74,"lo":1655,"hi":1922},{"class":"barbarian","level":75,"lo":1680,"hi":1951},{"class":"barbarian","level":76,"lo":1705,"hi":1979},{"class":"barbarian","level":77,"lo":1730,"hi":2008},{"class":"barbarian","level":78,"lo":1755,"hi":2036},{"class":"barbarian","level":79,"lo":1780,"hi":2064},{"class":"barbarian","level":80,"lo":1805,"hi":2093},{"class":"barbarian","level":81,"lo":1830,"hi":2121},{"class":"barbarian","level":82,"lo":1855,"hi":2150},{"class":"barbarian","level":83,"lo":1880,"hi":2178},{"class":"barbarian","level":84,"lo":1905,"hi":2206},{"class":"barbarian","level":85,"lo":1930,"hi":2235},{"class":"barbarian","level":86,"lo":1955,"hi":2263},{"class":"barbarian","level":87,"lo":1980,"hi":2292},{"class":"barbarian","level":88,"lo":2005,"hi":2320},{"class":"barbarian","level":89,"lo":2030,"hi":2348},{"class":"barbarian","level":90,"lo":2055,"hi":2377},{"class":"barbarian","level":91,"lo":2080,"hi":2405}]},"mark":{"type":"area","opacity":0.15},"encoding":{"x":{"field":"level","type":"quantitative","title":"Level","scale":{"domain":[1,91],"nice":false}},"y":{"field":"lo","type":"quantitative","title":"HP"},"y2":{"field":"hi"},"color":{"field":"class","type":"nominal","title":"Class","scale":{"domain":["mage","cleric","knight","barbarian"],"range":["#4f7896","#e0a030","#5f8a5b","#b4532a"]},"legend":null}}},{"data":{"values":[{"class":"mage","level":1,"value":20},{"class":"mage","level":2,"value":26},{"class":"mage","level":3,"value":33},{"class":"mage","level":4,"value":41},{"class":"mage","level":5,"value":49},{"class":"mage","level":6,"value":58},{"class":"mage","level":7,"value":66},{"class":"mage","level":8,"value":75},{"class":"mage","level":9,"value":84},{"class":"mage","level":10,"value":92},{"class":"mage","level":11,"value":101},{"class":"mage","level":12,"value":110},{"class":"mage","level":13,"value":118},{"class":"mage","level":14,"value":127},{"class":"mage","level":15,"value":136},{"class":"mage","level":16,"value":144},{"class":"mage","level":17,"value":153},{"class":"mage","level":18,"value":172},{"class":"mage","level":19,"value":190},{"class":"mage","level":20,"value":209},{"class":"mage","level":21,"value":228},{"class":"mage","level":22,"value":246},{"class":"mage","level":23,"value":265},{"class":"mage","level":24,"value":284},{"class":"mage","level":25,"value":302},{"class":"mage","level":26,"value":321},{"class":"mage","level":27,"value":340},{"class":"mage","level":28,"value":358},{"class":"mage","level":29,"value":377},{"class":"mage","level":30,"value":396},{"class":"mage","level":31,"value":414},{"class":"mage","level":32,"value":433},{"class":"mage","level":33,"value":452},{"class":"mage","level":34,"value":470},{"class":"mage","level":35,"value":489},{"class":"mage","level":36,"value":508},{"class":"mage","level":37,"value":526},{"class":"mage","level":38,"value":545},{"class":"mage","level":39,"value":564},{"class":"mage","level":40,"value":582},{"class":"mage","level":41,"value":601},{"class":"mage","level":42,"value":620},{"class":"mage","level":43,"value":638},{"class":"mage","level":44,"value":657},{"class":"mage","level":45,"value":676},{"class":"mage","level":46,"value":694},{"class":"mage","level":47,"value":713},{"class":"mage","level":48,"value":732},{"class":"mage","level":49,"value":750},{"class":"mage","level":50,"value":769},{"class":"mage","level":51,"value":788},{"class":"mage","level":52,"value":806},{"class":"mage","level":53,"value":825},{"class":"mage","level":54,"value":844},{"class":"mage","level":55,"value":862},{"class":"mage","level":56,"value":881},{"class":"mage","level":57,"value":900},{"class":"mage","level":58,"value":918},{"class":"mage","level":59,"value":937},{"class":"mage","level":60,"value":956},{"class":"mage","level":61,"value":974},{"class":"mage","level":62,"value":993},{"class":"mage","level":63,"value":1012},{"class":"mage","level":64,"value":1030},{"class":"mage","level":65,"value":1049},{"class":"mage","level":66,"value":1068},{"class":"mage","level":67,"value":1086},{"class":"mage","level":68,"value":1105},{"class":"mage","level":69,"value":1124},{"class":"mage","level":70,"value":1142},{"class":"mage","level":71,"value":1161},{"class":"mage","level":72,"value":1180},{"class":"mage","level":73,"value":1198},{"class":"mage","level":74,"value":1217},{"class":"mage","level":75,"value":1236},{"class":"mage","level":76,"value":1254},{"class":"mage","level":77,"value":1273},{"class":"mage","level":78,"value":1292},{"class":"mage","level":79,"value":1310},{"class":"mage","level":80,"value":1329},{"class":"mage","level":81,"value":1348},{"class":"mage","level":82,"value":1366},{"class":"mage","level":83,"value":1385},{"class":"mage","level":84,"value":1404},{"class":"mage","level":85,"value":1422},{"class":"mage","level":86,"value":1441},{"class":"mage","level":87,"value":1460},{"class":"mage","level":88,"value":1478},{"class":"mage","level":89,"value":1497},{"class":"mage","level":90,"value":1516},{"class":"mage","level":91,"value":1534},{"class":"cleric","level":1,"value":20},{"class":"cleric","level":2,"value":28},{"class":"cleric","level":3,"value":36},{"class":"cleric","level":4,"value":45},{"class":"cleric","level":5,"value":54},{"class":"cleric","level":6,"value":64},{"class":"cleric","level":7,"value":73},{"class":"cleric","level":8,"value":83},{"class":"cleric","level":9,"value":93},{"class":"cleric","level":10,"value":102},{"class":"cleric","level":11,"value":112},{"class":"cleric","level":12,"value":122},{"class":"cleric","level":13,"value":132},{"class":"cleric","level":14,"value":142},{"class":"cleric","level":15,"value":151},{"class":"cleric","level":16,"value":161},{"class":"cleric","level":17,"value":171},{"class":"cleric","level":18,"value":190},{"class":"cleric","level":19,"value":210},{"class":"cleric","level":20,"value":230},{"class":"cleric","level":21,"value":250},{"class":"cleric","level":22,"value":270},{"class":"cleric","level":23,"value":289},{"class":"cleric","level":24,"value":309},{"class":"cleric","level":25,"value":329},{"class":"cleric","level":26,"value":348},{"class":"cleric","level":27,"value":368},{"class":"cleric","level":28,"value":388},{"class":"cleric","level":29,"value":408},{"class":"cleric","level":30,"value":428},{"class":"cleric","level":31,"value":447},{"class":"cleric","level":32,"value":467},{"class":"cleric","level":33,"value":487},{"class":"cleric","level":34,"value":506},{"class":"cleric","level":35,"value":526},{"class":"cleric","level":36,"value":546},{"class":"cleric","level":37,"value":566},{"class":"cleric","level":38,"value":586},{"class":"cleric","level":39,"value":605},{"class":"cleric","level":40,"value":625},{"class":"cleric","level":41,"value":645},{"class":"cleric","level":42,"value":664},{"class":"cleric","level":43,"value":684},{"class":"cleric","level":44,"value":704},{"class":"cleric","level":45,"value":724},{"class":"cleric","level":46,"value":744},{"class":"cleric","level":47,"value":763},{"class":"cleric","level":48,"value":783},{"class":"cleric","level":49,"value":803},{"class":"cleric","level":50,"value":822},{"class":"cleric","level":51,"value":842},{"class":"cleric","level":52,"value":862},{"class":"cleric","level":53,"value":882},{"class":"cleric","level":54,"value":902},{"class":"cleric","level":55,"value":921},{"class":"cleric","level":56,"value":941},{"class":"cleric","level":57,"value":961},{"class":"cleric","level":58,"value":980},{"class":"cleric","level":59,"value":1000},{"class":"cleric","level":60,"value":1020},{"class":"cleric","level":61,"value":1040},{"class":"cleric","level":62,"value":1060},{"class":"cleric","level":63,"value":1079},{"class":"cleric","level":64,"value":1099},{"class":"cleric","level":65,"value":1119},{"class":"cleric","level":66,"value":1138},{"class":"cleric","level":67,"value":1158},{"class":"cleric","level":68,"value":1178},{"class":"cleric","level":69,"value":1198},{"class":"cleric","level":70,"value":1218},{"class":"cleric","level":71,"value":1237},{"class":"cleric","level":72,"value":1257},{"class":"cleric","level":73,"value":1277},{"class":"cleric","level":74,"value":1296},{"class":"cleric","level":75,"value":1316},{"class":"cleric","level":76,"value":1336},{"class":"cleric","level":77,"value":1356},{"class":"cleric","level":78,"value":1376},{"class":"cleric","level":79,"value":1395},{"class":"cleric","level":80,"value":1415},{"class":"cleric","level":81,"value":1435},{"class":"cleric","level":82,"value":1454},{"class":"cleric","level":83,"value":1474},{"class":"cleric","level":84,"value":1494},{"class":"cleric","level":85,"value":1514},{"class":"cleric","level":86,"value":1534},{"class":"cleric","level":87,"value":1553},{"class":"cleric","level":88,"value":1573},{"class":"cleric","level":89,"value":1593},{"class":"cleric","level":90,"value":1612},{"class":"cleric","level":91,"value":1632},{"class":"knight","level":1,"value":20},{"class":"knight","level":2,"value":30},{"class":"knight","level":3,"value":41},{"class":"knight","level":4,"value":53},{"class":"knight","level":5,"value":65},{"class":"knight","level":6,"value":78},{"class":"knight","level":7,"value":91},{"class":"knight","level":8,"value":104},{"class":"knight","level":9,"value":117},{"class":"knight","level":10,"value":130},{"class":"knight","level":11,"value":143},{"class":"knight","level":12,"value":156},{"class":"knight","level":13,"value":169},{"class":"knight","level":14,"value":182},{"class":"knight","level":15,"value":195},{"class":"knight","level":16,"value":208},{"class":"knight","level":17,"value":221},{"class":"knight","level":18,"value":244},{"class":"knight","level":19,"value":267},{"class":"knight","level":20,"value":290},{"class":"knight","level":21,"value":313},{"class":"knight","level":22,"value":336},{"class":"knight","level":23,"value":359},{"class":"knight","level":24,"value":382},{"class":"knight","level":25,"value":405},{"class":"knight","level":26,"value":428},{"class":"knight","level":27,"value":451},{"class":"knight","level":28,"value":474},{"class":"knight","level":29,"value":497},{"class":"knight","level":30,"value":520},{"class":"knight","level":31,"value":543},{"class":"knight","level":32,"value":566},{"class":"knight","level":33,"value":589},{"class":"knight","level":34,"value":612},{"class":"knight","level":35,"value":635},{"class":"knight","level":36,"value":658},{"class":"knight","level":37,"value":681},{"class":"knight","level":38,"value":704},{"class":"knight","level":39,"value":727},{"class":"knight","level":40,"value":750},{"class":"knight","level":41,"value":773},{"class":"knight","level":42,"value":796},{"class":"knight","level":43,"value":819},{"class":"knight","level":44,"value":842},{"class":"knight","level":45,"value":865},{"class":"knight","level":46,"value":888},{"class":"knight","level":47,"value":911},{"class":"knight","level":48,"value":934},{"class":"knight","level":49,"value":957},{"class":"knight","level":50,"value":980},{"class":"knight","level":51,"value":1003},{"class":"knight","level":52,"value":1026},{"class":"knight","level":53,"value":1049},{"class":"knight","level":54,"value":1072},{"class":"knight","level":55,"value":1095},{"class":"knight","level":56,"value":1118},{"class":"knight","level":57,"value":1141},{"class":"knight","level":58,"value":1164},{"class":"knight","level":59,"value":1187},{"class":"knight","level":60,"value":1210},{"class":"knight","level":61,"value":1233},{"class":"knight","level":62,"value":1256},{"class":"knight","level":63,"value":1279},{"class":"knight","level":64,"value":1302},{"class":"knight","level":65,"value":1325},{"class":"knight","level":66,"value":1348},{"class":"knight","level":67,"value":1371},{"class":"knight","level":68,"value":1394},{"class":"knight","level":69,"value":1417},{"class":"knight","level":70,"value":1440},{"class":"knight","level":71,"value":1463},{"class":"knight","level":72,"value":1486},{"class":"knight","level":73,"value":1509},{"class":"knight","level":74,"value":1532},{"class":"knight","level":75,"value":1555},{"class":"knight","level":76,"value":1578},{"class":"knight","level":77,"value":1601},{"class":"knight","level":78,"value":1624},{"class":"knight","level":79,"value":1647},{"class":"knight","level":80,"value":1670},{"class":"knight","level":81,"value":1693},{"class":"knight","level":82,"value":1716},{"class":"knight","level":83,"value":1739},{"class":"knight","level":84,"value":1762},{"class":"knight","level":85,"value":1785},{"class":"knight","level":86,"value":1808},{"class":"knight","level":87,"value":1831},{"class":"knight","level":88,"value":1854},{"class":"knight","level":89,"value":1877},{"class":"knight","level":90,"value":1900},{"class":"knight","level":91,"value":1923},{"class":"barbarian","level":1,"value":20},{"class":"barbarian","level":2,"value":37},{"class":"barbarian","level":3,"value":54},{"class":"barbarian","level":4,"value":70},{"class":"barbarian","level":5,"value":87},{"class":"barbarian","level":6,"value":104},{"class":"barbarian","level":7,"value":121},{"class":"barbarian","level":8,"value":138},{"class":"barbarian","level":9,"value":154},{"class":"barbarian","level":10,"value":171},{"class":"barbarian","level":11,"value":188},{"class":"barbarian","level":12,"value":205},{"class":"barbarian","level":13,"value":222},{"class":"barbarian","level":14,"value":238},{"class":"barbarian","level":15,"value":255},{"class":"barbarian","level":16,"value":272},{"class":"barbarian","level":17,"value":289},{"class":"barbarian","level":18,"value":316},{"class":"barbarian","level":19,"value":342},{"class":"barbarian","level":20,"value":369},{"class":"barbarian","level":21,"value":396},{"class":"barbarian","level":22,"value":423},{"class":"barbarian","level":23,"value":450},{"class":"barbarian","level":24,"value":476},{"class":"barbarian","level":25,"value":503},{"class":"barbarian","level":26,"value":530},{"class":"barbarian","level":27,"value":557},{"class":"barbarian","level":28,"value":584},{"class":"barbarian","level":29,"value":610},{"class":"barbarian","level":30,"value":637},{"class":"barbarian","level":31,"value":664},{"class":"barbarian","level":32,"value":691},{"class":"barbarian","level":33,"value":718},{"class":"barbarian","level":34,"value":744},{"class":"barbarian","level":35,"value":771},{"class":"barbarian","level":36,"value":798},{"class":"barbarian","level":37,"value":825},{"class":"barbarian","level":38,"value":852},{"class":"barbarian","level":39,"value":878},{"class":"barbarian","level":40,"value":905},{"class":"barbarian","level":41,"value":932},{"class":"barbarian","level":42,"value":959},{"class":"barbarian","level":43,"value":986},{"class":"barbarian","level":44,"value":1012},{"class":"barbarian","level":45,"value":1039},{"class":"barbarian","level":46,"value":1066},{"class":"barbarian","level":47,"value":1093},{"class":"barbarian","level":48,"value":1120},{"class":"barbarian","level":49,"value":1146},{"class":"barbarian","level":50,"value":1173},{"class":"barbarian","level":51,"value":1200},{"class":"barbarian","level":52,"value":1227},{"class":"barbarian","level":53,"value":1254},{"class":"barbarian","level":54,"value":1280},{"class":"barbarian","level":55,"value":1307},{"class":"barbarian","level":56,"value":1334},{"class":"barbarian","level":57,"value":1361},{"class":"barbarian","level":58,"value":1388},{"class":"barbarian","level":59,"value":1414},{"class":"barbarian","level":60,"value":1441},{"class":"barbarian","level":61,"value":1468},{"class":"barbarian","level":62,"value":1495},{"class":"barbarian","level":63,"value":1522},{"class":"barbarian","level":64,"value":1548},{"class":"barbarian","level":65,"value":1575},{"class":"barbarian","level":66,"value":1602},{"class":"barbarian","level":67,"value":1629},{"class":"barbarian","level":68,"value":1656},{"class":"barbarian","level":69,"value":1682},{"class":"barbarian","level":70,"value":1709},{"class":"barbarian","level":71,"value":1736},{"class":"barbarian","level":72,"value":1763},{"class":"barbarian","level":73,"value":1790},{"class":"barbarian","level":74,"value":1816},{"class":"barbarian","level":75,"value":1843},{"class":"barbarian","level":76,"value":1870},{"class":"barbarian","level":77,"value":1897},{"class":"barbarian","level":78,"value":1924},{"class":"barbarian","level":79,"value":1950},{"class":"barbarian","level":80,"value":1977},{"class":"barbarian","level":81,"value":2004},{"class":"barbarian","level":82,"value":2031},{"class":"barbarian","level":83,"value":2058},{"class":"barbarian","level":84,"value":2084},{"class":"barbarian","level":85,"value":2111},{"class":"barbarian","level":86,"value":2138},{"class":"barbarian","level":87,"value":2165},{"class":"barbarian","level":88,"value":2192},{"class":"barbarian","level":89,"value":2218},{"class":"barbarian","level":90,"value":2245},{"class":"barbarian","level":91,"value":2272}]},"mark":{"type":"line"},"encoding":{"x":{"field":"level","type":"quantitative","title":"Level","scale":{"domain":[1,91],"nice":false}},"y":{"field":"value","type":"quantitative","title":"HP"},"color":{"field":"class","type":"nominal","title":"Class","scale":{"domain":["mage","cleric","knight","barbarian"],"range":["#4f7896","#e0a030","#5f8a5b","#b4532a"]}},"tooltip":[{"field":"class","title":"Class"},{"field":"level","title":"Level"},{"field":"value","title":"HP"}]}}]}</script></div>
+
+<details class="abstract">
+<summary>Details: HP at level 91, every race and class</summary>
+<table>
+<thead>
+<tr>
+<th>Race</th>
+<th>mage</th>
+<th>cleric</th>
+<th>knight</th>
+<th>barbarian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>human</td>
+<td>1534</td>
+<td>1632</td>
+<td>1923</td>
+<td>2272</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>1477</td>
+<td>1566</td>
+<td>1837</td>
+<td>2200</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>1586</td>
+<td>1690</td>
+<td>2002</td>
+<td>2334</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>1355</td>
+<td>1470</td>
+<td>1716</td>
+<td>2080</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>1522</td>
+<td>1622</td>
+<td>1913</td>
+<td>2262</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>1552</td>
+<td>1656</td>
+<td>1966</td>
+<td>2370</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>1512</td>
+<td>1610</td>
+<td>1903</td>
+<td>2252</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>1596</td>
+<td>1700</td>
+<td>2014</td>
+<td>2344</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>1586</td>
+<td>1690</td>
+<td>2004</td>
+<td>2405</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>1529</td>
+<td>1624</td>
+<td>1914</td>
+<td>2262</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="abstract">
+<summary>Details: human HP and mana at every level</summary>
+<table>
+<thead>
+<tr>
+<th>Lvl</th>
+<th>mage HP</th>
+<th>cleric HP</th>
+<th>knight HP</th>
+<th>barbarian HP</th>
+<th>mage mana</th>
+<th>cleric mana</th>
+<th>knight mana</th>
+<th>barbarian mana</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>20</td>
+<td>20</td>
+<td>20</td>
+<td>20</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+</tr>
+<tr>
+<td>2</td>
+<td>26</td>
+<td>28</td>
+<td>30</td>
+<td>37</td>
+<td>107</td>
+<td>105</td>
+<td>103</td>
+<td>101</td>
+</tr>
+<tr>
+<td>3</td>
+<td>33</td>
+<td>36</td>
+<td>41</td>
+<td>54</td>
+<td>113</td>
+<td>109</td>
+<td>106</td>
+<td>102</td>
+</tr>
+<tr>
+<td>4</td>
+<td>41</td>
+<td>45</td>
+<td>53</td>
+<td>70</td>
+<td>120</td>
+<td>114</td>
+<td>109</td>
+<td>103</td>
+</tr>
+<tr>
+<td>5</td>
+<td>49</td>
+<td>54</td>
+<td>65</td>
+<td>87</td>
+<td>127</td>
+<td>118</td>
+<td>112</td>
+<td>104</td>
+</tr>
+<tr>
+<td>6</td>
+<td>58</td>
+<td>64</td>
+<td>78</td>
+<td>104</td>
+<td>133</td>
+<td>123</td>
+<td>115</td>
+<td>105</td>
+</tr>
+<tr>
+<td>7</td>
+<td>66</td>
+<td>73</td>
+<td>91</td>
+<td>121</td>
+<td>140</td>
+<td>127</td>
+<td>118</td>
+<td>106</td>
+</tr>
+<tr>
+<td>8</td>
+<td>75</td>
+<td>83</td>
+<td>104</td>
+<td>138</td>
+<td>147</td>
+<td>132</td>
+<td>121</td>
+<td>107</td>
+</tr>
+<tr>
+<td>9</td>
+<td>84</td>
+<td>93</td>
+<td>117</td>
+<td>154</td>
+<td>153</td>
+<td>136</td>
+<td>124</td>
+<td>108</td>
+</tr>
+<tr>
+<td>10</td>
+<td>92</td>
+<td>102</td>
+<td>130</td>
+<td>171</td>
+<td>160</td>
+<td>141</td>
+<td>127</td>
+<td>109</td>
+</tr>
+<tr>
+<td>11</td>
+<td>101</td>
+<td>112</td>
+<td>143</td>
+<td>188</td>
+<td>167</td>
+<td>145</td>
+<td>130</td>
+<td>110</td>
+</tr>
+<tr>
+<td>12</td>
+<td>110</td>
+<td>122</td>
+<td>156</td>
+<td>205</td>
+<td>173</td>
+<td>150</td>
+<td>133</td>
+<td>111</td>
+</tr>
+<tr>
+<td>13</td>
+<td>118</td>
+<td>132</td>
+<td>169</td>
+<td>222</td>
+<td>180</td>
+<td>154</td>
+<td>136</td>
+<td>112</td>
+</tr>
+<tr>
+<td>14</td>
+<td>127</td>
+<td>142</td>
+<td>182</td>
+<td>238</td>
+<td>186</td>
+<td>159</td>
+<td>139</td>
+<td>113</td>
+</tr>
+<tr>
+<td>15</td>
+<td>136</td>
+<td>151</td>
+<td>195</td>
+<td>255</td>
+<td>193</td>
+<td>163</td>
+<td>142</td>
+<td>114</td>
+</tr>
+<tr>
+<td>16</td>
+<td>144</td>
+<td>161</td>
+<td>208</td>
+<td>272</td>
+<td>200</td>
+<td>168</td>
+<td>145</td>
+<td>115</td>
+</tr>
+<tr>
+<td>17</td>
+<td>153</td>
+<td>171</td>
+<td>221</td>
+<td>289</td>
+<td>207</td>
+<td>173</td>
+<td>149</td>
+<td>116</td>
+</tr>
+<tr>
+<td>18</td>
+<td>172</td>
+<td>190</td>
+<td>244</td>
+<td>316</td>
+<td>214</td>
+<td>178</td>
+<td>152</td>
+<td>117</td>
+</tr>
+<tr>
+<td>19</td>
+<td>190</td>
+<td>210</td>
+<td>267</td>
+<td>342</td>
+<td>221</td>
+<td>183</td>
+<td>156</td>
+<td>118</td>
+</tr>
+<tr>
+<td>20</td>
+<td>209</td>
+<td>230</td>
+<td>290</td>
+<td>369</td>
+<td>228</td>
+<td>189</td>
+<td>159</td>
+<td>119</td>
+</tr>
+<tr>
+<td>21</td>
+<td>228</td>
+<td>250</td>
+<td>313</td>
+<td>396</td>
+<td>236</td>
+<td>194</td>
+<td>163</td>
+<td>120</td>
+</tr>
+<tr>
+<td>22</td>
+<td>246</td>
+<td>270</td>
+<td>336</td>
+<td>423</td>
+<td>243</td>
+<td>199</td>
+<td>166</td>
+<td>121</td>
+</tr>
+<tr>
+<td>23</td>
+<td>265</td>
+<td>289</td>
+<td>359</td>
+<td>450</td>
+<td>250</td>
+<td>204</td>
+<td>170</td>
+<td>122</td>
+</tr>
+<tr>
+<td>24</td>
+<td>284</td>
+<td>309</td>
+<td>382</td>
+<td>476</td>
+<td>257</td>
+<td>209</td>
+<td>173</td>
+<td>123</td>
+</tr>
+<tr>
+<td>25</td>
+<td>302</td>
+<td>329</td>
+<td>405</td>
+<td>503</td>
+<td>264</td>
+<td>214</td>
+<td>177</td>
+<td>124</td>
+</tr>
+<tr>
+<td>26</td>
+<td>321</td>
+<td>348</td>
+<td>428</td>
+<td>530</td>
+<td>271</td>
+<td>219</td>
+<td>180</td>
+<td>125</td>
+</tr>
+<tr>
+<td>27</td>
+<td>340</td>
+<td>368</td>
+<td>451</td>
+<td>557</td>
+<td>278</td>
+<td>225</td>
+<td>184</td>
+<td>126</td>
+</tr>
+<tr>
+<td>28</td>
+<td>358</td>
+<td>388</td>
+<td>474</td>
+<td>584</td>
+<td>286</td>
+<td>230</td>
+<td>188</td>
+<td>127</td>
+</tr>
+<tr>
+<td>29</td>
+<td>377</td>
+<td>408</td>
+<td>497</td>
+<td>610</td>
+<td>293</td>
+<td>235</td>
+<td>191</td>
+<td>128</td>
+</tr>
+<tr>
+<td>30</td>
+<td>396</td>
+<td>428</td>
+<td>520</td>
+<td>637</td>
+<td>300</td>
+<td>240</td>
+<td>195</td>
+<td>129</td>
+</tr>
+<tr>
+<td>31</td>
+<td>414</td>
+<td>447</td>
+<td>543</td>
+<td>664</td>
+<td>307</td>
+<td>245</td>
+<td>198</td>
+<td>130</td>
+</tr>
+<tr>
+<td>32</td>
+<td>433</td>
+<td>467</td>
+<td>566</td>
+<td>691</td>
+<td>314</td>
+<td>250</td>
+<td>202</td>
+<td>131</td>
+</tr>
+<tr>
+<td>33</td>
+<td>452</td>
+<td>487</td>
+<td>589</td>
+<td>718</td>
+<td>321</td>
+<td>255</td>
+<td>205</td>
+<td>132</td>
+</tr>
+<tr>
+<td>34</td>
+<td>470</td>
+<td>506</td>
+<td>612</td>
+<td>744</td>
+<td>329</td>
+<td>261</td>
+<td>209</td>
+<td>133</td>
+</tr>
+<tr>
+<td>35</td>
+<td>489</td>
+<td>526</td>
+<td>635</td>
+<td>771</td>
+<td>336</td>
+<td>266</td>
+<td>212</td>
+<td>134</td>
+</tr>
+<tr>
+<td>36</td>
+<td>508</td>
+<td>546</td>
+<td>658</td>
+<td>798</td>
+<td>343</td>
+<td>271</td>
+<td>216</td>
+<td>135</td>
+</tr>
+<tr>
+<td>37</td>
+<td>526</td>
+<td>566</td>
+<td>681</td>
+<td>825</td>
+<td>350</td>
+<td>276</td>
+<td>219</td>
+<td>136</td>
+</tr>
+<tr>
+<td>38</td>
+<td>545</td>
+<td>586</td>
+<td>704</td>
+<td>852</td>
+<td>357</td>
+<td>281</td>
+<td>223</td>
+<td>137</td>
+</tr>
+<tr>
+<td>39</td>
+<td>564</td>
+<td>605</td>
+<td>727</td>
+<td>878</td>
+<td>364</td>
+<td>286</td>
+<td>226</td>
+<td>138</td>
+</tr>
+<tr>
+<td>40</td>
+<td>582</td>
+<td>625</td>
+<td>750</td>
+<td>905</td>
+<td>372</td>
+<td>292</td>
+<td>230</td>
+<td>139</td>
+</tr>
+<tr>
+<td>41</td>
+<td>601</td>
+<td>645</td>
+<td>773</td>
+<td>932</td>
+<td>379</td>
+<td>297</td>
+<td>234</td>
+<td>140</td>
+</tr>
+<tr>
+<td>42</td>
+<td>620</td>
+<td>664</td>
+<td>796</td>
+<td>959</td>
+<td>386</td>
+<td>302</td>
+<td>237</td>
+<td>141</td>
+</tr>
+<tr>
+<td>43</td>
+<td>638</td>
+<td>684</td>
+<td>819</td>
+<td>986</td>
+<td>393</td>
+<td>307</td>
+<td>241</td>
+<td>142</td>
+</tr>
+<tr>
+<td>44</td>
+<td>657</td>
+<td>704</td>
+<td>842</td>
+<td>1012</td>
+<td>400</td>
+<td>312</td>
+<td>244</td>
+<td>143</td>
+</tr>
+<tr>
+<td>45</td>
+<td>676</td>
+<td>724</td>
+<td>865</td>
+<td>1039</td>
+<td>407</td>
+<td>317</td>
+<td>248</td>
+<td>144</td>
+</tr>
+<tr>
+<td>46</td>
+<td>694</td>
+<td>744</td>
+<td>888</td>
+<td>1066</td>
+<td>414</td>
+<td>322</td>
+<td>251</td>
+<td>145</td>
+</tr>
+<tr>
+<td>47</td>
+<td>713</td>
+<td>763</td>
+<td>911</td>
+<td>1093</td>
+<td>422</td>
+<td>328</td>
+<td>255</td>
+<td>146</td>
+</tr>
+<tr>
+<td>48</td>
+<td>732</td>
+<td>783</td>
+<td>934</td>
+<td>1120</td>
+<td>429</td>
+<td>333</td>
+<td>258</td>
+<td>147</td>
+</tr>
+<tr>
+<td>49</td>
+<td>750</td>
+<td>803</td>
+<td>957</td>
+<td>1146</td>
+<td>436</td>
+<td>338</td>
+<td>262</td>
+<td>148</td>
+</tr>
+<tr>
+<td>50</td>
+<td>769</td>
+<td>822</td>
+<td>980</td>
+<td>1173</td>
+<td>443</td>
+<td>343</td>
+<td>265</td>
+<td>149</td>
+</tr>
+<tr>
+<td>51</td>
+<td>788</td>
+<td>842</td>
+<td>1003</td>
+<td>1200</td>
+<td>450</td>
+<td>348</td>
+<td>269</td>
+<td>150</td>
+</tr>
+<tr>
+<td>52</td>
+<td>806</td>
+<td>862</td>
+<td>1026</td>
+<td>1227</td>
+<td>457</td>
+<td>353</td>
+<td>272</td>
+<td>151</td>
+</tr>
+<tr>
+<td>53</td>
+<td>825</td>
+<td>882</td>
+<td>1049</td>
+<td>1254</td>
+<td>465</td>
+<td>358</td>
+<td>276</td>
+<td>152</td>
+</tr>
+<tr>
+<td>54</td>
+<td>844</td>
+<td>902</td>
+<td>1072</td>
+<td>1280</td>
+<td>472</td>
+<td>364</td>
+<td>280</td>
+<td>153</td>
+</tr>
+<tr>
+<td>55</td>
+<td>862</td>
+<td>921</td>
+<td>1095</td>
+<td>1307</td>
+<td>479</td>
+<td>369</td>
+<td>283</td>
+<td>154</td>
+</tr>
+<tr>
+<td>56</td>
+<td>881</td>
+<td>941</td>
+<td>1118</td>
+<td>1334</td>
+<td>486</td>
+<td>374</td>
+<td>287</td>
+<td>155</td>
+</tr>
+<tr>
+<td>57</td>
+<td>900</td>
+<td>961</td>
+<td>1141</td>
+<td>1361</td>
+<td>493</td>
+<td>379</td>
+<td>290</td>
+<td>156</td>
+</tr>
+<tr>
+<td>58</td>
+<td>918</td>
+<td>980</td>
+<td>1164</td>
+<td>1388</td>
+<td>500</td>
+<td>384</td>
+<td>294</td>
+<td>157</td>
+</tr>
+<tr>
+<td>59</td>
+<td>937</td>
+<td>1000</td>
+<td>1187</td>
+<td>1414</td>
+<td>507</td>
+<td>389</td>
+<td>297</td>
+<td>158</td>
+</tr>
+<tr>
+<td>60</td>
+<td>956</td>
+<td>1020</td>
+<td>1210</td>
+<td>1441</td>
+<td>515</td>
+<td>394</td>
+<td>301</td>
+<td>159</td>
+</tr>
+<tr>
+<td>61</td>
+<td>974</td>
+<td>1040</td>
+<td>1233</td>
+<td>1468</td>
+<td>522</td>
+<td>400</td>
+<td>304</td>
+<td>160</td>
+</tr>
+<tr>
+<td>62</td>
+<td>993</td>
+<td>1060</td>
+<td>1256</td>
+<td>1495</td>
+<td>529</td>
+<td>405</td>
+<td>308</td>
+<td>161</td>
+</tr>
+<tr>
+<td>63</td>
+<td>1012</td>
+<td>1079</td>
+<td>1279</td>
+<td>1522</td>
+<td>536</td>
+<td>410</td>
+<td>311</td>
+<td>162</td>
+</tr>
+<tr>
+<td>64</td>
+<td>1030</td>
+<td>1099</td>
+<td>1302</td>
+<td>1548</td>
+<td>543</td>
+<td>415</td>
+<td>315</td>
+<td>163</td>
+</tr>
+<tr>
+<td>65</td>
+<td>1049</td>
+<td>1119</td>
+<td>1325</td>
+<td>1575</td>
+<td>550</td>
+<td>420</td>
+<td>318</td>
+<td>164</td>
+</tr>
+<tr>
+<td>66</td>
+<td>1068</td>
+<td>1138</td>
+<td>1348</td>
+<td>1602</td>
+<td>558</td>
+<td>425</td>
+<td>322</td>
+<td>165</td>
+</tr>
+<tr>
+<td>67</td>
+<td>1086</td>
+<td>1158</td>
+<td>1371</td>
+<td>1629</td>
+<td>565</td>
+<td>431</td>
+<td>326</td>
+<td>166</td>
+</tr>
+<tr>
+<td>68</td>
+<td>1105</td>
+<td>1178</td>
+<td>1394</td>
+<td>1656</td>
+<td>572</td>
+<td>436</td>
+<td>329</td>
+<td>167</td>
+</tr>
+<tr>
+<td>69</td>
+<td>1124</td>
+<td>1198</td>
+<td>1417</td>
+<td>1682</td>
+<td>579</td>
+<td>441</td>
+<td>333</td>
+<td>168</td>
+</tr>
+<tr>
+<td>70</td>
+<td>1142</td>
+<td>1218</td>
+<td>1440</td>
+<td>1709</td>
+<td>586</td>
+<td>446</td>
+<td>336</td>
+<td>169</td>
+</tr>
+<tr>
+<td>71</td>
+<td>1161</td>
+<td>1237</td>
+<td>1463</td>
+<td>1736</td>
+<td>593</td>
+<td>451</td>
+<td>340</td>
+<td>170</td>
+</tr>
+<tr>
+<td>72</td>
+<td>1180</td>
+<td>1257</td>
+<td>1486</td>
+<td>1763</td>
+<td>600</td>
+<td>456</td>
+<td>343</td>
+<td>171</td>
+</tr>
+<tr>
+<td>73</td>
+<td>1198</td>
+<td>1277</td>
+<td>1509</td>
+<td>1790</td>
+<td>608</td>
+<td>461</td>
+<td>347</td>
+<td>172</td>
+</tr>
+<tr>
+<td>74</td>
+<td>1217</td>
+<td>1296</td>
+<td>1532</td>
+<td>1816</td>
+<td>615</td>
+<td>467</td>
+<td>350</td>
+<td>173</td>
+</tr>
+<tr>
+<td>75</td>
+<td>1236</td>
+<td>1316</td>
+<td>1555</td>
+<td>1843</td>
+<td>622</td>
+<td>472</td>
+<td>354</td>
+<td>174</td>
+</tr>
+<tr>
+<td>76</td>
+<td>1254</td>
+<td>1336</td>
+<td>1578</td>
+<td>1870</td>
+<td>629</td>
+<td>477</td>
+<td>357</td>
+<td>175</td>
+</tr>
+<tr>
+<td>77</td>
+<td>1273</td>
+<td>1356</td>
+<td>1601</td>
+<td>1897</td>
+<td>636</td>
+<td>482</td>
+<td>361</td>
+<td>176</td>
+</tr>
+<tr>
+<td>78</td>
+<td>1292</td>
+<td>1376</td>
+<td>1624</td>
+<td>1924</td>
+<td>643</td>
+<td>487</td>
+<td>364</td>
+<td>177</td>
+</tr>
+<tr>
+<td>79</td>
+<td>1310</td>
+<td>1395</td>
+<td>1647</td>
+<td>1950</td>
+<td>651</td>
+<td>492</td>
+<td>368</td>
+<td>178</td>
+</tr>
+<tr>
+<td>80</td>
+<td>1329</td>
+<td>1415</td>
+<td>1670</td>
+<td>1977</td>
+<td>658</td>
+<td>497</td>
+<td>372</td>
+<td>179</td>
+</tr>
+<tr>
+<td>81</td>
+<td>1348</td>
+<td>1435</td>
+<td>1693</td>
+<td>2004</td>
+<td>665</td>
+<td>503</td>
+<td>375</td>
+<td>180</td>
+</tr>
+<tr>
+<td>82</td>
+<td>1366</td>
+<td>1454</td>
+<td>1716</td>
+<td>2031</td>
+<td>672</td>
+<td>508</td>
+<td>379</td>
+<td>181</td>
+</tr>
+<tr>
+<td>83</td>
+<td>1385</td>
+<td>1474</td>
+<td>1739</td>
+<td>2058</td>
+<td>679</td>
+<td>513</td>
+<td>382</td>
+<td>182</td>
+</tr>
+<tr>
+<td>84</td>
+<td>1404</td>
+<td>1494</td>
+<td>1762</td>
+<td>2084</td>
+<td>686</td>
+<td>518</td>
+<td>386</td>
+<td>183</td>
+</tr>
+<tr>
+<td>85</td>
+<td>1422</td>
+<td>1514</td>
+<td>1785</td>
+<td>2111</td>
+<td>693</td>
+<td>523</td>
+<td>389</td>
+<td>184</td>
+</tr>
+<tr>
+<td>86</td>
+<td>1441</td>
+<td>1534</td>
+<td>1808</td>
+<td>2138</td>
+<td>701</td>
+<td>528</td>
+<td>393</td>
+<td>185</td>
+</tr>
+<tr>
+<td>87</td>
+<td>1460</td>
+<td>1553</td>
+<td>1831</td>
+<td>2165</td>
+<td>708</td>
+<td>534</td>
+<td>396</td>
+<td>186</td>
+</tr>
+<tr>
+<td>88</td>
+<td>1478</td>
+<td>1573</td>
+<td>1854</td>
+<td>2192</td>
+<td>715</td>
+<td>539</td>
+<td>400</td>
+<td>187</td>
+</tr>
+<tr>
+<td>89</td>
+<td>1497</td>
+<td>1593</td>
+<td>1877</td>
+<td>2218</td>
+<td>722</td>
+<td>544</td>
+<td>403</td>
+<td>188</td>
+</tr>
+<tr>
+<td>90</td>
+<td>1516</td>
+<td>1612</td>
+<td>1900</td>
+<td>2245</td>
+<td>729</td>
+<td>549</td>
+<td>407</td>
+<td>189</td>
+</tr>
+<tr>
+<td>91</td>
+<td>1534</td>
+<td>1632</td>
+<td>1923</td>
+<td>2272</td>
+<td>736</td>
+<td>554</td>
+<td>410</td>
+<td>190</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="characters-mana-by-race">An elf mage ends with 31% more mana than a wolf mage<a class="headerlink" href="#characters-mana-by-race" title="Permanent link">&para;</a></h2>
+<p>Human mages reach about <strong>736</strong> mana, clerics 554, knights 410 and barbarians 190. Race matters more for casters: a <strong>elf</strong> mage ends with 825 and a <strong>wolf</strong> mage with 629, because mana gain only counts int and wis above 15.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Mana at each level: human (line) and range across races (shading)","anchor":"start"},"width":"container","height":300,"data":{"values":[]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"layer":[{"data":{"values":[{"class":"mage","level":1,"lo":100,"hi":100},{"class":"mage","level":2,"lo":105,"hi":107},{"class":"mage","level":3,"lo":111,"hi":115},{"class":"mage","level":4,"lo":116,"hi":123},{"class":"mage","level":5,"lo":121,"hi":130},{"class":"mage","level":6,"lo":126,"hi":138},{"class":"mage","level":7,"lo":132,"hi":146},{"class":"mage","level":8,"lo":137,"hi":153},{"class":"mage","level":9,"lo":142,"hi":161},{"class":"mage","level":10,"lo":147,"hi":169},{"class":"mage","level":11,"lo":153,"hi":176},{"class":"mage","level":12,"lo":158,"hi":184},{"class":"mage","level":13,"lo":163,"hi":192},{"class":"mage","level":14,"lo":168,"hi":199},{"class":"mage","level":15,"lo":174,"hi":207},{"class":"mage","level":16,"lo":179,"hi":215},{"class":"mage","level":17,"lo":185,"hi":222},{"class":"mage","level":18,"lo":190,"hi":230},{"class":"mage","level":19,"lo":196,"hi":238},{"class":"mage","level":20,"lo":202,"hi":246},{"class":"mage","level":21,"lo":208,"hi":254},{"class":"mage","level":22,"lo":214,"hi":262},{"class":"mage","level":23,"lo":220,"hi":270},{"class":"mage","level":24,"lo":226,"hi":278},{"class":"mage","level":25,"lo":232,"hi":286},{"class":"mage","level":26,"lo":238,"hi":295},{"class":"mage","level":27,"lo":244,"hi":303},{"class":"mage","level":28,"lo":250,"hi":311},{"class":"mage","level":29,"lo":257,"hi":319},{"class":"mage","level":30,"lo":263,"hi":327},{"class":"mage","level":31,"lo":269,"hi":335},{"class":"mage","level":32,"lo":275,"hi":344},{"class":"mage","level":33,"lo":281,"hi":352},{"class":"mage","level":34,"lo":287,"hi":360},{"class":"mage","level":35,"lo":293,"hi":368},{"class":"mage","level":36,"lo":299,"hi":376},{"class":"mage","level":37,"lo":305,"hi":384},{"class":"mage","level":38,"lo":311,"hi":393},{"class":"mage","level":39,"lo":317,"hi":401},{"class":"mage","level":40,"lo":323,"hi":409},{"class":"mage","level":41,"lo":329,"hi":417},{"class":"mage","level":42,"lo":335,"hi":425},{"class":"mage","level":43,"lo":341,"hi":433},{"class":"mage","level":44,"lo":347,"hi":441},{"class":"mage","level":45,"lo":353,"hi":450},{"class":"mage","level":46,"lo":359,"hi":458},{"class":"mage","level":47,"lo":365,"hi":466},{"class":"mage","level":48,"lo":371,"hi":474},{"class":"mage","level":49,"lo":377,"hi":482},{"class":"mage","level":50,"lo":383,"hi":490},{"class":"mage","level":51,"lo":389,"hi":499},{"class":"mage","level":52,"lo":395,"hi":507},{"class":"mage","level":53,"lo":401,"hi":515},{"class":"mage","level":54,"lo":407,"hi":523},{"class":"mage","level":55,"lo":413,"hi":531},{"class":"mage","level":56,"lo":419,"hi":539},{"class":"mage","level":57,"lo":425,"hi":548},{"class":"mage","level":58,"lo":431,"hi":556},{"class":"mage","level":59,"lo":437,"hi":564},{"class":"mage","level":60,"lo":443,"hi":572},{"class":"mage","level":61,"lo":449,"hi":580},{"class":"mage","level":62,"lo":455,"hi":588},{"class":"mage","level":63,"lo":461,"hi":597},{"class":"mage","level":64,"lo":467,"hi":605},{"class":"mage","level":65,"lo":473,"hi":613},{"class":"mage","level":66,"lo":479,"hi":621},{"class":"mage","level":67,"lo":485,"hi":629},{"class":"mage","level":68,"lo":491,"hi":637},{"class":"mage","level":69,"lo":497,"hi":645},{"class":"mage","level":70,"lo":503,"hi":654},{"class":"mage","level":71,"lo":509,"hi":662},{"class":"mage","level":72,"lo":515,"hi":670},{"class":"mage","level":73,"lo":521,"hi":678},{"class":"mage","level":74,"lo":527,"hi":686},{"class":"mage","level":75,"lo":533,"hi":694},{"class":"mage","level":76,"lo":539,"hi":703},{"class":"mage","level":77,"lo":545,"hi":711},{"class":"mage","level":78,"lo":551,"hi":719},{"class":"mage","level":79,"lo":557,"hi":727},{"class":"mage","level":80,"lo":563,"hi":735},{"class":"mage","level":81,"lo":569,"hi":743},{"class":"mage","level":82,"lo":575,"hi":752},{"class":"mage","level":83,"lo":581,"hi":760},{"class":"mage","level":84,"lo":587,"hi":768},{"class":"mage","level":85,"lo":593,"hi":776},{"class":"mage","level":86,"lo":599,"hi":784},{"class":"mage","level":87,"lo":605,"hi":792},{"class":"mage","level":88,"lo":611,"hi":801},{"class":"mage","level":89,"lo":617,"hi":809},{"class":"mage","level":90,"lo":623,"hi":817},{"class":"mage","level":91,"lo":629,"hi":825},{"class":"cleric","level":1,"lo":100,"hi":100},{"class":"cleric","level":2,"lo":105,"hi":105},{"class":"cleric","level":3,"lo":109,"hi":109},{"class":"cleric","level":4,"lo":114,"hi":114},{"class":"cleric","level":5,"lo":118,"hi":119},{"class":"cleric","level":6,"lo":123,"hi":124},{"class":"cleric","level":7,"lo":127,"hi":129},{"class":"cleric","level":8,"lo":132,"hi":134},{"class":"cleric","level":9,"lo":136,"hi":139},{"class":"cleric","level":10,"lo":141,"hi":144},{"class":"cleric","level":11,"lo":145,"hi":149},{"class":"cleric","level":12,"lo":150,"hi":154},{"class":"cleric","level":13,"lo":154,"hi":159},{"class":"cleric","level":14,"lo":159,"hi":164},{"class":"cleric","level":15,"lo":163,"hi":169},{"class":"cleric","level":16,"lo":168,"hi":174},{"class":"cleric","level":17,"lo":173,"hi":179},{"class":"cleric","level":18,"lo":178,"hi":184},{"class":"cleric","level":19,"lo":183,"hi":190},{"class":"cleric","level":20,"lo":188,"hi":195},{"class":"cleric","level":21,"lo":192,"hi":201},{"class":"cleric","level":22,"lo":197,"hi":207},{"class":"cleric","level":23,"lo":201,"hi":213},{"class":"cleric","level":24,"lo":206,"hi":218},{"class":"cleric","level":25,"lo":211,"hi":224},{"class":"cleric","level":26,"lo":215,"hi":230},{"class":"cleric","level":27,"lo":220,"hi":235},{"class":"cleric","level":28,"lo":224,"hi":241},{"class":"cleric","level":29,"lo":229,"hi":247},{"class":"cleric","level":30,"lo":234,"hi":252},{"class":"cleric","level":31,"lo":238,"hi":258},{"class":"cleric","level":32,"lo":243,"hi":264},{"class":"cleric","level":33,"lo":248,"hi":269},{"class":"cleric","level":34,"lo":252,"hi":275},{"class":"cleric","level":35,"lo":257,"hi":281},{"class":"cleric","level":36,"lo":261,"hi":287},{"class":"cleric","level":37,"lo":266,"hi":292},{"class":"cleric","level":38,"lo":271,"hi":298},{"class":"cleric","level":39,"lo":275,"hi":304},{"class":"cleric","level":40,"lo":280,"hi":310},{"class":"cleric","level":41,"lo":284,"hi":316},{"class":"cleric","level":42,"lo":289,"hi":321},{"class":"cleric","level":43,"lo":294,"hi":327},{"class":"cleric","level":44,"lo":298,"hi":333},{"class":"cleric","level":45,"lo":303,"hi":339},{"class":"cleric","level":46,"lo":307,"hi":345},{"class":"cleric","level":47,"lo":312,"hi":350},{"class":"cleric","level":48,"lo":317,"hi":356},{"class":"cleric","level":49,"lo":321,"hi":362},{"class":"cleric","level":50,"lo":326,"hi":368},{"class":"cleric","level":51,"lo":331,"hi":374},{"class":"cleric","level":52,"lo":335,"hi":379},{"class":"cleric","level":53,"lo":340,"hi":385},{"class":"cleric","level":54,"lo":344,"hi":391},{"class":"cleric","level":55,"lo":349,"hi":397},{"class":"cleric","level":56,"lo":354,"hi":403},{"class":"cleric","level":57,"lo":358,"hi":408},{"class":"cleric","level":58,"lo":363,"hi":414},{"class":"cleric","level":59,"lo":367,"hi":420},{"class":"cleric","level":60,"lo":372,"hi":426},{"class":"cleric","level":61,"lo":377,"hi":432},{"class":"cleric","level":62,"lo":381,"hi":437},{"class":"cleric","level":63,"lo":386,"hi":443},{"class":"cleric","level":64,"lo":390,"hi":449},{"class":"cleric","level":65,"lo":395,"hi":455},{"class":"cleric","level":66,"lo":400,"hi":460},{"class":"cleric","level":67,"lo":404,"hi":466},{"class":"cleric","level":68,"lo":409,"hi":472},{"class":"cleric","level":69,"lo":414,"hi":478},{"class":"cleric","level":70,"lo":418,"hi":484},{"class":"cleric","level":71,"lo":423,"hi":489},{"class":"cleric","level":72,"lo":427,"hi":495},{"class":"cleric","level":73,"lo":432,"hi":501},{"class":"cleric","level":74,"lo":437,"hi":507},{"class":"cleric","level":75,"lo":441,"hi":513},{"class":"cleric","level":76,"lo":446,"hi":518},{"class":"cleric","level":77,"lo":450,"hi":524},{"class":"cleric","level":78,"lo":455,"hi":530},{"class":"cleric","level":79,"lo":460,"hi":536},{"class":"cleric","level":80,"lo":464,"hi":542},{"class":"cleric","level":81,"lo":469,"hi":547},{"class":"cleric","level":82,"lo":473,"hi":553},{"class":"cleric","level":83,"lo":478,"hi":559},{"class":"cleric","level":84,"lo":483,"hi":565},{"class":"cleric","level":85,"lo":487,"hi":571},{"class":"cleric","level":86,"lo":492,"hi":576},{"class":"cleric","level":87,"lo":496,"hi":582},{"class":"cleric","level":88,"lo":501,"hi":588},{"class":"cleric","level":89,"lo":506,"hi":594},{"class":"cleric","level":90,"lo":510,"hi":600},{"class":"cleric","level":91,"lo":515,"hi":605},{"class":"knight","level":1,"lo":100,"hi":100},{"class":"knight","level":2,"lo":103,"hi":103},{"class":"knight","level":3,"lo":106,"hi":106},{"class":"knight","level":4,"lo":109,"hi":109},{"class":"knight","level":5,"lo":112,"hi":112},{"class":"knight","level":6,"lo":115,"hi":115},{"class":"knight","level":7,"lo":118,"hi":118},{"class":"knight","level":8,"lo":121,"hi":121},{"class":"knight","level":9,"lo":124,"hi":124},{"class":"knight","level":10,"lo":127,"hi":127},{"class":"knight","level":11,"lo":130,"hi":130},{"class":"knight","level":12,"lo":133,"hi":133},{"class":"knight","level":13,"lo":136,"hi":136},{"class":"knight","level":14,"lo":139,"hi":139},{"class":"knight","level":15,"lo":142,"hi":143},{"class":"knight","level":16,"lo":145,"hi":147},{"class":"knight","level":17,"lo":148,"hi":150},{"class":"knight","level":18,"lo":151,"hi":154},{"class":"knight","level":19,"lo":154,"hi":158},{"class":"knight","level":20,"lo":157,"hi":162},{"class":"knight","level":21,"lo":160,"hi":165},{"class":"knight","level":22,"lo":163,"hi":169},{"class":"knight","level":23,"lo":166,"hi":173},{"class":"knight","level":24,"lo":169,"hi":177},{"class":"knight","level":25,"lo":172,"hi":181},{"class":"knight","level":26,"lo":175,"hi":185},{"class":"knight","level":27,"lo":178,"hi":188},{"class":"knight","level":28,"lo":181,"hi":192},{"class":"knight","level":29,"lo":184,"hi":196},{"class":"knight","level":30,"lo":187,"hi":200},{"class":"knight","level":31,"lo":190,"hi":204},{"class":"knight","level":32,"lo":193,"hi":207},{"class":"knight","level":33,"lo":196,"hi":211},{"class":"knight","level":34,"lo":199,"hi":215},{"class":"knight","level":35,"lo":202,"hi":219},{"class":"knight","level":36,"lo":205,"hi":223},{"class":"knight","level":37,"lo":208,"hi":226},{"class":"knight","level":38,"lo":211,"hi":230},{"class":"knight","level":39,"lo":214,"hi":234},{"class":"knight","level":40,"lo":217,"hi":238},{"class":"knight","level":41,"lo":220,"hi":242},{"class":"knight","level":42,"lo":223,"hi":246},{"class":"knight","level":43,"lo":226,"hi":250},{"class":"knight","level":44,"lo":229,"hi":254},{"class":"knight","level":45,"lo":232,"hi":258},{"class":"knight","level":46,"lo":235,"hi":262},{"class":"knight","level":47,"lo":238,"hi":265},{"class":"knight","level":48,"lo":241,"hi":269},{"class":"knight","level":49,"lo":244,"hi":273},{"class":"knight","level":50,"lo":247,"hi":277},{"class":"knight","level":51,"lo":250,"hi":281},{"class":"knight","level":52,"lo":253,"hi":285},{"class":"knight","level":53,"lo":256,"hi":289},{"class":"knight","level":54,"lo":259,"hi":293},{"class":"knight","level":55,"lo":262,"hi":297},{"class":"knight","level":56,"lo":265,"hi":300},{"class":"knight","level":57,"lo":268,"hi":304},{"class":"knight","level":58,"lo":271,"hi":308},{"class":"knight","level":59,"lo":274,"hi":312},{"class":"knight","level":60,"lo":277,"hi":316},{"class":"knight","level":61,"lo":280,"hi":320},{"class":"knight","level":62,"lo":283,"hi":324},{"class":"knight","level":63,"lo":286,"hi":328},{"class":"knight","level":64,"lo":289,"hi":332},{"class":"knight","level":65,"lo":292,"hi":335},{"class":"knight","level":66,"lo":295,"hi":339},{"class":"knight","level":67,"lo":298,"hi":343},{"class":"knight","level":68,"lo":301,"hi":347},{"class":"knight","level":69,"lo":304,"hi":351},{"class":"knight","level":70,"lo":307,"hi":355},{"class":"knight","level":71,"lo":310,"hi":359},{"class":"knight","level":72,"lo":313,"hi":363},{"class":"knight","level":73,"lo":316,"hi":367},{"class":"knight","level":74,"lo":319,"hi":370},{"class":"knight","level":75,"lo":322,"hi":374},{"class":"knight","level":76,"lo":325,"hi":378},{"class":"knight","level":77,"lo":328,"hi":382},{"class":"knight","level":78,"lo":331,"hi":386},{"class":"knight","level":79,"lo":334,"hi":390},{"class":"knight","level":80,"lo":337,"hi":394},{"class":"knight","level":81,"lo":340,"hi":398},{"class":"knight","level":82,"lo":343,"hi":402},{"class":"knight","level":83,"lo":346,"hi":405},{"class":"knight","level":84,"lo":349,"hi":409},{"class":"knight","level":85,"lo":352,"hi":413},{"class":"knight","level":86,"lo":355,"hi":417},{"class":"knight","level":87,"lo":358,"hi":421},{"class":"knight","level":88,"lo":361,"hi":425},{"class":"knight","level":89,"lo":364,"hi":429},{"class":"knight","level":90,"lo":367,"hi":433},{"class":"knight","level":91,"lo":370,"hi":437},{"class":"barbarian","level":1,"lo":100,"hi":100},{"class":"barbarian","level":2,"lo":101,"hi":101},{"class":"barbarian","level":3,"lo":102,"hi":102},{"class":"barbarian","level":4,"lo":103,"hi":103},{"class":"barbarian","level":5,"lo":104,"hi":104},{"class":"barbarian","level":6,"lo":105,"hi":105},{"class":"barbarian","level":7,"lo":106,"hi":106},{"class":"barbarian","level":8,"lo":107,"hi":107},{"class":"barbarian","level":9,"lo":108,"hi":108},{"class":"barbarian","level":10,"lo":109,"hi":109},{"class":"barbarian","level":11,"lo":110,"hi":110},{"class":"barbarian","level":12,"lo":111,"hi":111},{"class":"barbarian","level":13,"lo":112,"hi":112},{"class":"barbarian","level":14,"lo":113,"hi":113},{"class":"barbarian","level":15,"lo":114,"hi":114},{"class":"barbarian","level":16,"lo":115,"hi":115},{"class":"barbarian","level":17,"lo":116,"hi":116},{"class":"barbarian","level":18,"lo":117,"hi":117},{"class":"barbarian","level":19,"lo":118,"hi":118},{"class":"barbarian","level":20,"lo":119,"hi":119},{"class":"barbarian","level":21,"lo":120,"hi":120},{"class":"barbarian","level":22,"lo":121,"hi":121},{"class":"barbarian","level":23,"lo":122,"hi":122},{"class":"barbarian","level":24,"lo":123,"hi":123},{"class":"barbarian","level":25,"lo":124,"hi":124},{"class":"barbarian","level":26,"lo":125,"hi":125},{"class":"barbarian","level":27,"lo":126,"hi":126},{"class":"barbarian","level":28,"lo":127,"hi":127},{"class":"barbarian","level":29,"lo":128,"hi":128},{"class":"barbarian","level":30,"lo":129,"hi":129},{"class":"barbarian","level":31,"lo":130,"hi":130},{"class":"barbarian","level":32,"lo":131,"hi":131},{"class":"barbarian","level":33,"lo":132,"hi":132},{"class":"barbarian","level":34,"lo":133,"hi":133},{"class":"barbarian","level":35,"lo":134,"hi":134},{"class":"barbarian","level":36,"lo":135,"hi":135},{"class":"barbarian","level":37,"lo":136,"hi":136},{"class":"barbarian","level":38,"lo":137,"hi":137},{"class":"barbarian","level":39,"lo":138,"hi":138},{"class":"barbarian","level":40,"lo":139,"hi":139},{"class":"barbarian","level":41,"lo":140,"hi":140},{"class":"barbarian","level":42,"lo":141,"hi":141},{"class":"barbarian","level":43,"lo":142,"hi":142},{"class":"barbarian","level":44,"lo":143,"hi":143},{"class":"barbarian","level":45,"lo":144,"hi":144},{"class":"barbarian","level":46,"lo":145,"hi":145},{"class":"barbarian","level":47,"lo":146,"hi":146},{"class":"barbarian","level":48,"lo":147,"hi":147},{"class":"barbarian","level":49,"lo":148,"hi":148},{"class":"barbarian","level":50,"lo":149,"hi":149},{"class":"barbarian","level":51,"lo":150,"hi":150},{"class":"barbarian","level":52,"lo":151,"hi":151},{"class":"barbarian","level":53,"lo":152,"hi":152},{"class":"barbarian","level":54,"lo":153,"hi":153},{"class":"barbarian","level":55,"lo":154,"hi":154},{"class":"barbarian","level":56,"lo":155,"hi":155},{"class":"barbarian","level":57,"lo":156,"hi":156},{"class":"barbarian","level":58,"lo":157,"hi":157},{"class":"barbarian","level":59,"lo":158,"hi":158},{"class":"barbarian","level":60,"lo":159,"hi":159},{"class":"barbarian","level":61,"lo":160,"hi":160},{"class":"barbarian","level":62,"lo":161,"hi":161},{"class":"barbarian","level":63,"lo":162,"hi":162},{"class":"barbarian","level":64,"lo":163,"hi":163},{"class":"barbarian","level":65,"lo":164,"hi":164},{"class":"barbarian","level":66,"lo":165,"hi":165},{"class":"barbarian","level":67,"lo":166,"hi":166},{"class":"barbarian","level":68,"lo":167,"hi":167},{"class":"barbarian","level":69,"lo":168,"hi":168},{"class":"barbarian","level":70,"lo":169,"hi":169},{"class":"barbarian","level":71,"lo":170,"hi":170},{"class":"barbarian","level":72,"lo":171,"hi":171},{"class":"barbarian","level":73,"lo":172,"hi":172},{"class":"barbarian","level":74,"lo":173,"hi":173},{"class":"barbarian","level":75,"lo":174,"hi":174},{"class":"barbarian","level":76,"lo":175,"hi":175},{"class":"barbarian","level":77,"lo":176,"hi":176},{"class":"barbarian","level":78,"lo":177,"hi":177},{"class":"barbarian","level":79,"lo":178,"hi":178},{"class":"barbarian","level":80,"lo":179,"hi":179},{"class":"barbarian","level":81,"lo":180,"hi":180},{"class":"barbarian","level":82,"lo":181,"hi":181},{"class":"barbarian","level":83,"lo":182,"hi":182},{"class":"barbarian","level":84,"lo":183,"hi":183},{"class":"barbarian","level":85,"lo":184,"hi":184},{"class":"barbarian","level":86,"lo":185,"hi":185},{"class":"barbarian","level":87,"lo":186,"hi":186},{"class":"barbarian","level":88,"lo":187,"hi":187},{"class":"barbarian","level":89,"lo":188,"hi":188},{"class":"barbarian","level":90,"lo":189,"hi":189},{"class":"barbarian","level":91,"lo":190,"hi":190}]},"mark":{"type":"area","opacity":0.15},"encoding":{"x":{"field":"level","type":"quantitative","title":"Level","scale":{"domain":[1,91],"nice":false}},"y":{"field":"lo","type":"quantitative","title":"Mana"},"y2":{"field":"hi"},"color":{"field":"class","type":"nominal","title":"Class","scale":{"domain":["mage","cleric","knight","barbarian"],"range":["#4f7896","#e0a030","#5f8a5b","#b4532a"]},"legend":null}}},{"data":{"values":[{"class":"mage","level":1,"value":100},{"class":"mage","level":2,"value":107},{"class":"mage","level":3,"value":113},{"class":"mage","level":4,"value":120},{"class":"mage","level":5,"value":127},{"class":"mage","level":6,"value":133},{"class":"mage","level":7,"value":140},{"class":"mage","level":8,"value":147},{"class":"mage","level":9,"value":153},{"class":"mage","level":10,"value":160},{"class":"mage","level":11,"value":167},{"class":"mage","level":12,"value":173},{"class":"mage","level":13,"value":180},{"class":"mage","level":14,"value":186},{"class":"mage","level":15,"value":193},{"class":"mage","level":16,"value":200},{"class":"mage","level":17,"value":207},{"class":"mage","level":18,"value":214},{"class":"mage","level":19,"value":221},{"class":"mage","level":20,"value":228},{"class":"mage","level":21,"value":236},{"class":"mage","level":22,"value":243},{"class":"mage","level":23,"value":250},{"class":"mage","level":24,"value":257},{"class":"mage","level":25,"value":264},{"class":"mage","level":26,"value":271},{"class":"mage","level":27,"value":278},{"class":"mage","level":28,"value":286},{"class":"mage","level":29,"value":293},{"class":"mage","level":30,"value":300},{"class":"mage","level":31,"value":307},{"class":"mage","level":32,"value":314},{"class":"mage","level":33,"value":321},{"class":"mage","level":34,"value":329},{"class":"mage","level":35,"value":336},{"class":"mage","level":36,"value":343},{"class":"mage","level":37,"value":350},{"class":"mage","level":38,"value":357},{"class":"mage","level":39,"value":364},{"class":"mage","level":40,"value":372},{"class":"mage","level":41,"value":379},{"class":"mage","level":42,"value":386},{"class":"mage","level":43,"value":393},{"class":"mage","level":44,"value":400},{"class":"mage","level":45,"value":407},{"class":"mage","level":46,"value":414},{"class":"mage","level":47,"value":422},{"class":"mage","level":48,"value":429},{"class":"mage","level":49,"value":436},{"class":"mage","level":50,"value":443},{"class":"mage","level":51,"value":450},{"class":"mage","level":52,"value":457},{"class":"mage","level":53,"value":465},{"class":"mage","level":54,"value":472},{"class":"mage","level":55,"value":479},{"class":"mage","level":56,"value":486},{"class":"mage","level":57,"value":493},{"class":"mage","level":58,"value":500},{"class":"mage","level":59,"value":507},{"class":"mage","level":60,"value":515},{"class":"mage","level":61,"value":522},{"class":"mage","level":62,"value":529},{"class":"mage","level":63,"value":536},{"class":"mage","level":64,"value":543},{"class":"mage","level":65,"value":550},{"class":"mage","level":66,"value":558},{"class":"mage","level":67,"value":565},{"class":"mage","level":68,"value":572},{"class":"mage","level":69,"value":579},{"class":"mage","level":70,"value":586},{"class":"mage","level":71,"value":593},{"class":"mage","level":72,"value":600},{"class":"mage","level":73,"value":608},{"class":"mage","level":74,"value":615},{"class":"mage","level":75,"value":622},{"class":"mage","level":76,"value":629},{"class":"mage","level":77,"value":636},{"class":"mage","level":78,"value":643},{"class":"mage","level":79,"value":651},{"class":"mage","level":80,"value":658},{"class":"mage","level":81,"value":665},{"class":"mage","level":82,"value":672},{"class":"mage","level":83,"value":679},{"class":"mage","level":84,"value":686},{"class":"mage","level":85,"value":693},{"class":"mage","level":86,"value":701},{"class":"mage","level":87,"value":708},{"class":"mage","level":88,"value":715},{"class":"mage","level":89,"value":722},{"class":"mage","level":90,"value":729},{"class":"mage","level":91,"value":736},{"class":"cleric","level":1,"value":100},{"class":"cleric","level":2,"value":105},{"class":"cleric","level":3,"value":109},{"class":"cleric","level":4,"value":114},{"class":"cleric","level":5,"value":118},{"class":"cleric","level":6,"value":123},{"class":"cleric","level":7,"value":127},{"class":"cleric","level":8,"value":132},{"class":"cleric","level":9,"value":136},{"class":"cleric","level":10,"value":141},{"class":"cleric","level":11,"value":145},{"class":"cleric","level":12,"value":150},{"class":"cleric","level":13,"value":154},{"class":"cleric","level":14,"value":159},{"class":"cleric","level":15,"value":163},{"class":"cleric","level":16,"value":168},{"class":"cleric","level":17,"value":173},{"class":"cleric","level":18,"value":178},{"class":"cleric","level":19,"value":183},{"class":"cleric","level":20,"value":189},{"class":"cleric","level":21,"value":194},{"class":"cleric","level":22,"value":199},{"class":"cleric","level":23,"value":204},{"class":"cleric","level":24,"value":209},{"class":"cleric","level":25,"value":214},{"class":"cleric","level":26,"value":219},{"class":"cleric","level":27,"value":225},{"class":"cleric","level":28,"value":230},{"class":"cleric","level":29,"value":235},{"class":"cleric","level":30,"value":240},{"class":"cleric","level":31,"value":245},{"class":"cleric","level":32,"value":250},{"class":"cleric","level":33,"value":255},{"class":"cleric","level":34,"value":261},{"class":"cleric","level":35,"value":266},{"class":"cleric","level":36,"value":271},{"class":"cleric","level":37,"value":276},{"class":"cleric","level":38,"value":281},{"class":"cleric","level":39,"value":286},{"class":"cleric","level":40,"value":292},{"class":"cleric","level":41,"value":297},{"class":"cleric","level":42,"value":302},{"class":"cleric","level":43,"value":307},{"class":"cleric","level":44,"value":312},{"class":"cleric","level":45,"value":317},{"class":"cleric","level":46,"value":322},{"class":"cleric","level":47,"value":328},{"class":"cleric","level":48,"value":333},{"class":"cleric","level":49,"value":338},{"class":"cleric","level":50,"value":343},{"class":"cleric","level":51,"value":348},{"class":"cleric","level":52,"value":353},{"class":"cleric","level":53,"value":358},{"class":"cleric","level":54,"value":364},{"class":"cleric","level":55,"value":369},{"class":"cleric","level":56,"value":374},{"class":"cleric","level":57,"value":379},{"class":"cleric","level":58,"value":384},{"class":"cleric","level":59,"value":389},{"class":"cleric","level":60,"value":394},{"class":"cleric","level":61,"value":400},{"class":"cleric","level":62,"value":405},{"class":"cleric","level":63,"value":410},{"class":"cleric","level":64,"value":415},{"class":"cleric","level":65,"value":420},{"class":"cleric","level":66,"value":425},{"class":"cleric","level":67,"value":431},{"class":"cleric","level":68,"value":436},{"class":"cleric","level":69,"value":441},{"class":"cleric","level":70,"value":446},{"class":"cleric","level":71,"value":451},{"class":"cleric","level":72,"value":456},{"class":"cleric","level":73,"value":461},{"class":"cleric","level":74,"value":467},{"class":"cleric","level":75,"value":472},{"class":"cleric","level":76,"value":477},{"class":"cleric","level":77,"value":482},{"class":"cleric","level":78,"value":487},{"class":"cleric","level":79,"value":492},{"class":"cleric","level":80,"value":497},{"class":"cleric","level":81,"value":503},{"class":"cleric","level":82,"value":508},{"class":"cleric","level":83,"value":513},{"class":"cleric","level":84,"value":518},{"class":"cleric","level":85,"value":523},{"class":"cleric","level":86,"value":528},{"class":"cleric","level":87,"value":534},{"class":"cleric","level":88,"value":539},{"class":"cleric","level":89,"value":544},{"class":"cleric","level":90,"value":549},{"class":"cleric","level":91,"value":554},{"class":"knight","level":1,"value":100},{"class":"knight","level":2,"value":103},{"class":"knight","level":3,"value":106},{"class":"knight","level":4,"value":109},{"class":"knight","level":5,"value":112},{"class":"knight","level":6,"value":115},{"class":"knight","level":7,"value":118},{"class":"knight","level":8,"value":121},{"class":"knight","level":9,"value":124},{"class":"knight","level":10,"value":127},{"class":"knight","level":11,"value":130},{"class":"knight","level":12,"value":133},{"class":"knight","level":13,"value":136},{"class":"knight","level":14,"value":139},{"class":"knight","level":15,"value":142},{"class":"knight","level":16,"value":145},{"class":"knight","level":17,"value":149},{"class":"knight","level":18,"value":152},{"class":"knight","level":19,"value":156},{"class":"knight","level":20,"value":159},{"class":"knight","level":21,"value":163},{"class":"knight","level":22,"value":166},{"class":"knight","level":23,"value":170},{"class":"knight","level":24,"value":173},{"class":"knight","level":25,"value":177},{"class":"knight","level":26,"value":180},{"class":"knight","level":27,"value":184},{"class":"knight","level":28,"value":188},{"class":"knight","level":29,"value":191},{"class":"knight","level":30,"value":195},{"class":"knight","level":31,"value":198},{"class":"knight","level":32,"value":202},{"class":"knight","level":33,"value":205},{"class":"knight","level":34,"value":209},{"class":"knight","level":35,"value":212},{"class":"knight","level":36,"value":216},{"class":"knight","level":37,"value":219},{"class":"knight","level":38,"value":223},{"class":"knight","level":39,"value":226},{"class":"knight","level":40,"value":230},{"class":"knight","level":41,"value":234},{"class":"knight","level":42,"value":237},{"class":"knight","level":43,"value":241},{"class":"knight","level":44,"value":244},{"class":"knight","level":45,"value":248},{"class":"knight","level":46,"value":251},{"class":"knight","level":47,"value":255},{"class":"knight","level":48,"value":258},{"class":"knight","level":49,"value":262},{"class":"knight","level":50,"value":265},{"class":"knight","level":51,"value":269},{"class":"knight","level":52,"value":272},{"class":"knight","level":53,"value":276},{"class":"knight","level":54,"value":280},{"class":"knight","level":55,"value":283},{"class":"knight","level":56,"value":287},{"class":"knight","level":57,"value":290},{"class":"knight","level":58,"value":294},{"class":"knight","level":59,"value":297},{"class":"knight","level":60,"value":301},{"class":"knight","level":61,"value":304},{"class":"knight","level":62,"value":308},{"class":"knight","level":63,"value":311},{"class":"knight","level":64,"value":315},{"class":"knight","level":65,"value":318},{"class":"knight","level":66,"value":322},{"class":"knight","level":67,"value":326},{"class":"knight","level":68,"value":329},{"class":"knight","level":69,"value":333},{"class":"knight","level":70,"value":336},{"class":"knight","level":71,"value":340},{"class":"knight","level":72,"value":343},{"class":"knight","level":73,"value":347},{"class":"knight","level":74,"value":350},{"class":"knight","level":75,"value":354},{"class":"knight","level":76,"value":357},{"class":"knight","level":77,"value":361},{"class":"knight","level":78,"value":364},{"class":"knight","level":79,"value":368},{"class":"knight","level":80,"value":372},{"class":"knight","level":81,"value":375},{"class":"knight","level":82,"value":379},{"class":"knight","level":83,"value":382},{"class":"knight","level":84,"value":386},{"class":"knight","level":85,"value":389},{"class":"knight","level":86,"value":393},{"class":"knight","level":87,"value":396},{"class":"knight","level":88,"value":400},{"class":"knight","level":89,"value":403},{"class":"knight","level":90,"value":407},{"class":"knight","level":91,"value":410},{"class":"barbarian","level":1,"value":100},{"class":"barbarian","level":2,"value":101},{"class":"barbarian","level":3,"value":102},{"class":"barbarian","level":4,"value":103},{"class":"barbarian","level":5,"value":104},{"class":"barbarian","level":6,"value":105},{"class":"barbarian","level":7,"value":106},{"class":"barbarian","level":8,"value":107},{"class":"barbarian","level":9,"value":108},{"class":"barbarian","level":10,"value":109},{"class":"barbarian","level":11,"value":110},{"class":"barbarian","level":12,"value":111},{"class":"barbarian","level":13,"value":112},{"class":"barbarian","level":14,"value":113},{"class":"barbarian","level":15,"value":114},{"class":"barbarian","level":16,"value":115},{"class":"barbarian","level":17,"value":116},{"class":"barbarian","level":18,"value":117},{"class":"barbarian","level":19,"value":118},{"class":"barbarian","level":20,"value":119},{"class":"barbarian","level":21,"value":120},{"class":"barbarian","level":22,"value":121},{"class":"barbarian","level":23,"value":122},{"class":"barbarian","level":24,"value":123},{"class":"barbarian","level":25,"value":124},{"class":"barbarian","level":26,"value":125},{"class":"barbarian","level":27,"value":126},{"class":"barbarian","level":28,"value":127},{"class":"barbarian","level":29,"value":128},{"class":"barbarian","level":30,"value":129},{"class":"barbarian","level":31,"value":130},{"class":"barbarian","level":32,"value":131},{"class":"barbarian","level":33,"value":132},{"class":"barbarian","level":34,"value":133},{"class":"barbarian","level":35,"value":134},{"class":"barbarian","level":36,"value":135},{"class":"barbarian","level":37,"value":136},{"class":"barbarian","level":38,"value":137},{"class":"barbarian","level":39,"value":138},{"class":"barbarian","level":40,"value":139},{"class":"barbarian","level":41,"value":140},{"class":"barbarian","level":42,"value":141},{"class":"barbarian","level":43,"value":142},{"class":"barbarian","level":44,"value":143},{"class":"barbarian","level":45,"value":144},{"class":"barbarian","level":46,"value":145},{"class":"barbarian","level":47,"value":146},{"class":"barbarian","level":48,"value":147},{"class":"barbarian","level":49,"value":148},{"class":"barbarian","level":50,"value":149},{"class":"barbarian","level":51,"value":150},{"class":"barbarian","level":52,"value":151},{"class":"barbarian","level":53,"value":152},{"class":"barbarian","level":54,"value":153},{"class":"barbarian","level":55,"value":154},{"class":"barbarian","level":56,"value":155},{"class":"barbarian","level":57,"value":156},{"class":"barbarian","level":58,"value":157},{"class":"barbarian","level":59,"value":158},{"class":"barbarian","level":60,"value":159},{"class":"barbarian","level":61,"value":160},{"class":"barbarian","level":62,"value":161},{"class":"barbarian","level":63,"value":162},{"class":"barbarian","level":64,"value":163},{"class":"barbarian","level":65,"value":164},{"class":"barbarian","level":66,"value":165},{"class":"barbarian","level":67,"value":166},{"class":"barbarian","level":68,"value":167},{"class":"barbarian","level":69,"value":168},{"class":"barbarian","level":70,"value":169},{"class":"barbarian","level":71,"value":170},{"class":"barbarian","level":72,"value":171},{"class":"barbarian","level":73,"value":172},{"class":"barbarian","level":74,"value":173},{"class":"barbarian","level":75,"value":174},{"class":"barbarian","level":76,"value":175},{"class":"barbarian","level":77,"value":176},{"class":"barbarian","level":78,"value":177},{"class":"barbarian","level":79,"value":178},{"class":"barbarian","level":80,"value":179},{"class":"barbarian","level":81,"value":180},{"class":"barbarian","level":82,"value":181},{"class":"barbarian","level":83,"value":182},{"class":"barbarian","level":84,"value":183},{"class":"barbarian","level":85,"value":184},{"class":"barbarian","level":86,"value":185},{"class":"barbarian","level":87,"value":186},{"class":"barbarian","level":88,"value":187},{"class":"barbarian","level":89,"value":188},{"class":"barbarian","level":90,"value":189},{"class":"barbarian","level":91,"value":190}]},"mark":{"type":"line"},"encoding":{"x":{"field":"level","type":"quantitative","title":"Level","scale":{"domain":[1,91],"nice":false}},"y":{"field":"value","type":"quantitative","title":"Mana"},"color":{"field":"class","type":"nominal","title":"Class","scale":{"domain":["mage","cleric","knight","barbarian"],"range":["#4f7896","#e0a030","#5f8a5b","#b4532a"]}},"tooltip":[{"field":"class","title":"Class"},{"field":"level","title":"Level"},{"field":"value","title":"Mana"}]}}]}</script></div>
+
+<details class="abstract">
+<summary>Details: mana at level 91, every race and class</summary>
+<table>
+<thead>
+<tr>
+<th>Race</th>
+<th>mage</th>
+<th>cleric</th>
+<th>knight</th>
+<th>barbarian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>human</td>
+<td>736</td>
+<td>554</td>
+<td>410</td>
+<td>190</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>808</td>
+<td>599</td>
+<td>432</td>
+<td>190</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>749</td>
+<td>562</td>
+<td>413</td>
+<td>190</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>825</td>
+<td>603</td>
+<td>436</td>
+<td>190</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>796</td>
+<td>588</td>
+<td>424</td>
+<td>190</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>820</td>
+<td>605</td>
+<td>435</td>
+<td>190</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>821</td>
+<td>604</td>
+<td>437</td>
+<td>190</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>704</td>
+<td>542</td>
+<td>401</td>
+<td>190</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>703</td>
+<td>541</td>
+<td>400</td>
+<td>190</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>629</td>
+<td>515</td>
+<td>370</td>
+<td>190</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="characters-race-value">Expensive races buy very little extra HP<a class="headerlink" href="#characters-race-value" title="Permanent link">&para;</a></h2>
+<p>Within a class, the dearest races barely out-grow the cheapest. A dragon pays <strong>4×</strong> a human's XP per level for 1%–4% more HP at level 91. Its other benefits (bonus skills such as breath weapons) aren't counted here, but the price is steep. Each dot is one build; further left is cheaper, higher is tougher.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"XP per level vs HP at level 91, every build","anchor":"start"},"width":"container","height":320,"data":{"values":[{"race":"human","class":"mage","xp":1000,"hp":1534,"label":"human mage"},{"race":"human","class":"cleric","xp":1000,"hp":1632,"label":"human cleric"},{"race":"human","class":"knight","xp":1000,"hp":1923,"label":"human knight"},{"race":"human","class":"barbarian","xp":1000,"hp":2272,"label":"human barbarian"},{"race":"hobbit","class":"mage","xp":2000,"hp":1477,"label":"hobbit mage"},{"race":"hobbit","class":"cleric","xp":2400,"hp":1566,"label":"hobbit cleric"},{"race":"hobbit","class":"knight","xp":2000,"hp":1837,"label":"hobbit knight"},{"race":"hobbit","class":"barbarian","xp":2400,"hp":2200,"label":"hobbit barbarian"},{"race":"minotaur","class":"mage","xp":2450,"hp":1586,"label":"minotaur mage"},{"race":"minotaur","class":"cleric","xp":1750,"hp":1690,"label":"minotaur cleric"},{"race":"minotaur","class":"knight","xp":2625,"hp":2002,"label":"minotaur knight"},{"race":"minotaur","class":"barbarian","xp":1750,"hp":2334,"label":"minotaur barbarian"},{"race":"elf","class":"mage","xp":1250,"hp":1355,"label":"elf mage"},{"race":"elf","class":"cleric","xp":1562,"hp":1470,"label":"elf cleric"},{"race":"elf","class":"knight","xp":1250,"hp":1716,"label":"elf knight"},{"race":"elf","class":"barbarian","xp":1875,"hp":2080,"label":"elf barbarian"},{"race":"half-elf","class":"mage","xp":2187,"hp":1522,"label":"half-elf mage"},{"race":"half-elf","class":"cleric","xp":1750,"hp":1622,"label":"half-elf cleric"},{"race":"half-elf","class":"knight","xp":1750,"hp":1913,"label":"half-elf knight"},{"race":"half-elf","class":"barbarian","xp":2187,"hp":2262,"label":"half-elf barbarian"},{"race":"dragon","class":"mage","xp":4000,"hp":1552,"label":"dragon mage"},{"race":"dragon","class":"cleric","xp":4000,"hp":1656,"label":"dragon cleric"},{"race":"dragon","class":"knight","xp":4000,"hp":1966,"label":"dragon knight"},{"race":"dragon","class":"barbarian","xp":4000,"hp":2370,"label":"dragon barbarian"},{"race":"eagle","class":"mage","xp":1650,"hp":1512,"label":"eagle mage"},{"race":"eagle","class":"cleric","xp":1500,"hp":1610,"label":"eagle cleric"},{"race":"eagle","class":"knight","xp":1500,"hp":1903,"label":"eagle knight"},{"race":"eagle","class":"barbarian","xp":2250,"hp":2252,"label":"eagle barbarian"},{"race":"orc","class":"mage","xp":1500,"hp":1596,"label":"orc mage"},{"race":"orc","class":"cleric","xp":1500,"hp":1700,"label":"orc cleric"},{"race":"orc","class":"knight","xp":1800,"hp":2014,"label":"orc knight"},{"race":"orc","class":"barbarian","xp":1500,"hp":2344,"label":"orc barbarian"},{"race":"dwarf","class":"mage","xp":1875,"hp":1586,"label":"dwarf mage"},{"race":"dwarf","class":"cleric","xp":1250,"hp":1690,"label":"dwarf cleric"},{"race":"dwarf","class":"knight","xp":1500,"hp":2004,"label":"dwarf knight"},{"race":"dwarf","class":"barbarian","xp":1250,"hp":2405,"label":"dwarf barbarian"},{"race":"wolf","class":"mage","xp":3000,"hp":1529,"label":"wolf mage"},{"race":"wolf","class":"cleric","xp":3000,"hp":1624,"label":"wolf cleric"},{"race":"wolf","class":"knight","xp":2400,"hp":1914,"label":"wolf knight"},{"race":"wolf","class":"barbarian","xp":2000,"hp":2262,"label":"wolf barbarian"}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":{"type":"point","filled":true,"size":90,"opacity":0.85},"encoding":{"x":{"field":"xp","type":"quantitative","title":"XP per level"},"y":{"field":"hp","type":"quantitative","title":"HP at 91","scale":{"zero":false}},"color":{"field":"class","type":"nominal","title":"Class","scale":{"domain":["mage","cleric","knight","barbarian"],"range":["#4f7896","#e0a030","#5f8a5b","#b4532a"]}},"tooltip":[{"field":"label","title":"Build"},{"field":"xp","title":"XP per level"},{"field":"hp","title":"HP"}]}}</script></div>
+
+<details class="abstract">
+<summary>Details: race table</summary>
+<table>
+<thead>
+<tr>
+<th>Race</th>
+<th>points</th>
+<th>XP mult (m/c/k/b)</th>
+<th>bonus skills</th>
+<th>base stats</th>
+<th>max stats</th>
+<th>size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>human</td>
+<td>0</td>
+<td>100 / 100 / 100 / 100</td>
+<td>—</td>
+<td>14 14 14 14 14</td>
+<td>18 18 18 18 18</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>20</td>
+<td>100 / 120 / 100 / 120</td>
+<td>backstab, pick lock</td>
+<td>13 15 16 16 14</td>
+<td>17 19 21 20 17</td>
+<td>small</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>15</td>
+<td>140 / 100 / 150 / 100</td>
+<td>headbutt</td>
+<td>16 14 15 11 16</td>
+<td>21 18 19 15 20</td>
+<td>large</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>5</td>
+<td>100 / 125 / 100 / 150</td>
+<td>sneak, hide</td>
+<td>11 16 14 16 11</td>
+<td>16 21 18 21 15</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>15</td>
+<td>125 / 100 / 100 / 125</td>
+<td>dodge</td>
+<td>14 15 14 15 14</td>
+<td>18 20 18 19 18</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>40</td>
+<td>100 / 100 / 100 / 100</td>
+<td>draconian, transportation, bash</td>
+<td>16 16 16 13 16</td>
+<td>21 20 20 16 21</td>
+<td>large</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>10</td>
+<td>110 / 100 / 100 / 150</td>
+<td>fly, lore</td>
+<td>13 15 15 13 14</td>
+<td>17 20 20 17 18</td>
+<td>small</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>10</td>
+<td>100 / 100 / 120 / 100</td>
+<td>fast healing, berserk</td>
+<td>16 12 16 12 16</td>
+<td>20 16 20 16 20</td>
+<td>large</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>5</td>
+<td>150 / 100 / 120 / 100</td>
+<td>haggle, peek</td>
+<td>16 12 16 10 16</td>
+<td>20 16 20 14 21</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>20</td>
+<td>150 / 150 / 120 / 100</td>
+<td>berserk, second attack</td>
+<td>16 11 15 16 15</td>
+<td>21 14 19 21 19</td>
+<td>medium</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="characters-stats-maxed">Stats are maxed by level 21, then only the caps matter<a class="headerlink" href="#characters-stats-maxed" title="Permanent link">&para;</a></h2>
+<p>With 3 trains at creation and one per level, every build can max all five stats by level <strong>17–21</strong> (latest: dragon mage). After that, stats stop differentiating builds except through their <em>caps</em>: an elf's con tops out at 15 (17 for barbarians), which is why elves have the lowest HP in every class.</p>
+<details class="abstract">
+<summary>Details: start and maximum stats, trains needed</summary>
+<table>
+<thead>
+<tr>
+<th>Race</th>
+<th>Class</th>
+<th>str</th>
+<th>int</th>
+<th>wis</th>
+<th>dex</th>
+<th>con</th>
+<th>trains to max</th>
+<th>maxed by level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>human</td>
+<td>mage</td>
+<td>14→18</td>
+<td>17→20</td>
+<td>14→18</td>
+<td>14→18</td>
+<td>14→18</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>human</td>
+<td>cleric</td>
+<td>14→18</td>
+<td>14→18</td>
+<td>17→20</td>
+<td>14→18</td>
+<td>14→18</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>human</td>
+<td>knight</td>
+<td>17→20</td>
+<td>14→18</td>
+<td>14→18</td>
+<td>14→18</td>
+<td>14→18</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>human</td>
+<td>barbarian</td>
+<td>14→18</td>
+<td>14→18</td>
+<td>14→18</td>
+<td>14→18</td>
+<td>17→20</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>mage</td>
+<td>13→17</td>
+<td>18→21</td>
+<td>16→21</td>
+<td>16→20</td>
+<td>14→17</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>cleric</td>
+<td>13→17</td>
+<td>15→19</td>
+<td>19→23</td>
+<td>16→20</td>
+<td>14→17</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>knight</td>
+<td>16→19</td>
+<td>15→19</td>
+<td>16→21</td>
+<td>16→20</td>
+<td>14→17</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>barbarian</td>
+<td>13→17</td>
+<td>15→19</td>
+<td>16→21</td>
+<td>16→20</td>
+<td>17→19</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>mage</td>
+<td>16→21</td>
+<td>17→20</td>
+<td>15→19</td>
+<td>11→15</td>
+<td>16→20</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>cleric</td>
+<td>16→21</td>
+<td>14→18</td>
+<td>18→21</td>
+<td>11→15</td>
+<td>16→20</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>knight</td>
+<td>19→23</td>
+<td>14→18</td>
+<td>15→19</td>
+<td>11→15</td>
+<td>16→20</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>barbarian</td>
+<td>16→21</td>
+<td>14→18</td>
+<td>15→19</td>
+<td>11→15</td>
+<td>19→22</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>mage</td>
+<td>11→16</td>
+<td>19→23</td>
+<td>14→18</td>
+<td>16→21</td>
+<td>11→15</td>
+<td>22</td>
+<td>20</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>cleric</td>
+<td>11→16</td>
+<td>16→21</td>
+<td>17→20</td>
+<td>16→21</td>
+<td>11→15</td>
+<td>22</td>
+<td>20</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>knight</td>
+<td>14→18</td>
+<td>16→21</td>
+<td>14→18</td>
+<td>16→21</td>
+<td>11→15</td>
+<td>22</td>
+<td>20</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>barbarian</td>
+<td>11→16</td>
+<td>16→21</td>
+<td>14→18</td>
+<td>16→21</td>
+<td>14→17</td>
+<td>22</td>
+<td>20</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>mage</td>
+<td>14→18</td>
+<td>18→22</td>
+<td>14→18</td>
+<td>15→19</td>
+<td>14→18</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>cleric</td>
+<td>14→18</td>
+<td>15→20</td>
+<td>17→20</td>
+<td>15→19</td>
+<td>14→18</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>knight</td>
+<td>17→20</td>
+<td>15→20</td>
+<td>14→18</td>
+<td>15→19</td>
+<td>14→18</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>barbarian</td>
+<td>14→18</td>
+<td>15→20</td>
+<td>14→18</td>
+<td>15→19</td>
+<td>17→20</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>mage</td>
+<td>16→21</td>
+<td>16→22</td>
+<td>16→20</td>
+<td>13→16</td>
+<td>16→21</td>
+<td>23</td>
+<td>21</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>cleric</td>
+<td>16→21</td>
+<td>16→20</td>
+<td>16→22</td>
+<td>13→16</td>
+<td>16→21</td>
+<td>23</td>
+<td>21</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>knight</td>
+<td>16→23</td>
+<td>16→20</td>
+<td>16→20</td>
+<td>13→16</td>
+<td>16→21</td>
+<td>23</td>
+<td>21</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>barbarian</td>
+<td>16→21</td>
+<td>16→20</td>
+<td>16→20</td>
+<td>13→16</td>
+<td>16→23</td>
+<td>23</td>
+<td>21</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>mage</td>
+<td>13→17</td>
+<td>18→22</td>
+<td>15→20</td>
+<td>13→17</td>
+<td>14→18</td>
+<td>21</td>
+<td>19</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>cleric</td>
+<td>13→17</td>
+<td>15→20</td>
+<td>18→22</td>
+<td>13→17</td>
+<td>14→18</td>
+<td>21</td>
+<td>19</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>knight</td>
+<td>16→19</td>
+<td>15→20</td>
+<td>15→20</td>
+<td>13→17</td>
+<td>14→18</td>
+<td>21</td>
+<td>19</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>barbarian</td>
+<td>13→17</td>
+<td>15→20</td>
+<td>15→20</td>
+<td>13→17</td>
+<td>17→20</td>
+<td>21</td>
+<td>19</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>mage</td>
+<td>16→20</td>
+<td>15→18</td>
+<td>16→20</td>
+<td>12→16</td>
+<td>16→20</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>cleric</td>
+<td>16→20</td>
+<td>12→16</td>
+<td>19→22</td>
+<td>12→16</td>
+<td>16→20</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>knight</td>
+<td>19→22</td>
+<td>12→16</td>
+<td>16→20</td>
+<td>12→16</td>
+<td>16→20</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>barbarian</td>
+<td>16→20</td>
+<td>12→16</td>
+<td>16→20</td>
+<td>12→16</td>
+<td>19→22</td>
+<td>19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>mage</td>
+<td>16→20</td>
+<td>15→18</td>
+<td>16→20</td>
+<td>10→14</td>
+<td>16→21</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>cleric</td>
+<td>16→20</td>
+<td>12→16</td>
+<td>19→22</td>
+<td>10→14</td>
+<td>16→21</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>knight</td>
+<td>19→22</td>
+<td>12→16</td>
+<td>16→20</td>
+<td>10→14</td>
+<td>16→21</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>barbarian</td>
+<td>16→20</td>
+<td>12→16</td>
+<td>16→20</td>
+<td>10→14</td>
+<td>19→23</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>mage</td>
+<td>16→21</td>
+<td>14→16</td>
+<td>15→19</td>
+<td>16→21</td>
+<td>15→19</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>cleric</td>
+<td>16→21</td>
+<td>11→14</td>
+<td>18→21</td>
+<td>16→21</td>
+<td>15→19</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>knight</td>
+<td>19→23</td>
+<td>11→14</td>
+<td>15→19</td>
+<td>16→21</td>
+<td>15→19</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>barbarian</td>
+<td>16→21</td>
+<td>11→14</td>
+<td>15→19</td>
+<td>16→21</td>
+<td>18→21</td>
+<td>20</td>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="abstract">
+<summary>Details: combat bonuses from stats at level 91</summary>
+<table>
+<thead>
+<tr>
+<th>Race</th>
+<th>Class</th>
+<th>hitroll (str)</th>
+<th>damroll (str)</th>
+<th>AC (dex)</th>
+<th>learn (int)</th>
+<th>practices/level (wis)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>human</td>
+<td>mage</td>
+<td>2</td>
+<td>3</td>
+<td>-30</td>
+<td>49</td>
+<td>3</td>
+</tr>
+<tr>
+<td>human</td>
+<td>cleric</td>
+<td>2</td>
+<td>3</td>
+<td>-30</td>
+<td>40</td>
+<td>3</td>
+</tr>
+<tr>
+<td>human</td>
+<td>knight</td>
+<td>3</td>
+<td>5</td>
+<td>-30</td>
+<td>40</td>
+<td>3</td>
+</tr>
+<tr>
+<td>human</td>
+<td>barbarian</td>
+<td>2</td>
+<td>3</td>
+<td>-30</td>
+<td>40</td>
+<td>3</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>mage</td>
+<td>2</td>
+<td>3</td>
+<td>-50</td>
+<td>55</td>
+<td>3</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>cleric</td>
+<td>2</td>
+<td>3</td>
+<td>-50</td>
+<td>44</td>
+<td>4</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>knight</td>
+<td>3</td>
+<td>4</td>
+<td>-50</td>
+<td>44</td>
+<td>3</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>barbarian</td>
+<td>2</td>
+<td>3</td>
+<td>-50</td>
+<td>44</td>
+<td>3</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>mage</td>
+<td>4</td>
+<td>6</td>
+<td>-10</td>
+<td>49</td>
+<td>3</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>cleric</td>
+<td>4</td>
+<td>6</td>
+<td>-10</td>
+<td>40</td>
+<td>3</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>knight</td>
+<td>5</td>
+<td>7</td>
+<td>-10</td>
+<td>40</td>
+<td>3</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>barbarian</td>
+<td>4</td>
+<td>6</td>
+<td>-10</td>
+<td>40</td>
+<td>3</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>mage</td>
+<td>1</td>
+<td>2</td>
+<td>-60</td>
+<td>70</td>
+<td>3</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>cleric</td>
+<td>1</td>
+<td>2</td>
+<td>-60</td>
+<td>55</td>
+<td>3</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>knight</td>
+<td>2</td>
+<td>3</td>
+<td>-60</td>
+<td>55</td>
+<td>3</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>barbarian</td>
+<td>1</td>
+<td>2</td>
+<td>-60</td>
+<td>55</td>
+<td>3</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>mage</td>
+<td>2</td>
+<td>3</td>
+<td>-40</td>
+<td>60</td>
+<td>3</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>cleric</td>
+<td>2</td>
+<td>3</td>
+<td>-40</td>
+<td>49</td>
+<td>3</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>knight</td>
+<td>3</td>
+<td>5</td>
+<td>-40</td>
+<td>49</td>
+<td>3</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>barbarian</td>
+<td>2</td>
+<td>3</td>
+<td>-40</td>
+<td>49</td>
+<td>3</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>mage</td>
+<td>4</td>
+<td>6</td>
+<td>-15</td>
+<td>60</td>
+<td>3</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>cleric</td>
+<td>4</td>
+<td>6</td>
+<td>-15</td>
+<td>49</td>
+<td>4</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>knight</td>
+<td>5</td>
+<td>7</td>
+<td>-15</td>
+<td>49</td>
+<td>3</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>barbarian</td>
+<td>4</td>
+<td>6</td>
+<td>-15</td>
+<td>49</td>
+<td>3</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>mage</td>
+<td>2</td>
+<td>3</td>
+<td>-20</td>
+<td>60</td>
+<td>3</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>cleric</td>
+<td>2</td>
+<td>3</td>
+<td>-20</td>
+<td>49</td>
+<td>4</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>knight</td>
+<td>3</td>
+<td>4</td>
+<td>-20</td>
+<td>49</td>
+<td>3</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>barbarian</td>
+<td>2</td>
+<td>3</td>
+<td>-20</td>
+<td>49</td>
+<td>3</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>mage</td>
+<td>3</td>
+<td>5</td>
+<td>-15</td>
+<td>40</td>
+<td>3</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>cleric</td>
+<td>3</td>
+<td>5</td>
+<td>-15</td>
+<td>34</td>
+<td>4</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>knight</td>
+<td>4</td>
+<td>6</td>
+<td>-15</td>
+<td>34</td>
+<td>3</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>barbarian</td>
+<td>3</td>
+<td>5</td>
+<td>-15</td>
+<td>34</td>
+<td>3</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>mage</td>
+<td>3</td>
+<td>5</td>
+<td>0</td>
+<td>40</td>
+<td>3</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>cleric</td>
+<td>3</td>
+<td>5</td>
+<td>0</td>
+<td>34</td>
+<td>4</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>knight</td>
+<td>4</td>
+<td>6</td>
+<td>0</td>
+<td>34</td>
+<td>3</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>barbarian</td>
+<td>3</td>
+<td>5</td>
+<td>0</td>
+<td>34</td>
+<td>3</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>mage</td>
+<td>4</td>
+<td>6</td>
+<td>-60</td>
+<td>34</td>
+<td>3</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>cleric</td>
+<td>4</td>
+<td>6</td>
+<td>-60</td>
+<td>28</td>
+<td>3</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>knight</td>
+<td>5</td>
+<td>7</td>
+<td>-60</td>
+<td>28</td>
+<td>3</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>barbarian</td>
+<td>4</td>
+<td>6</td>
+<td>-60</td>
+<td>28</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
+<details class="info">
+<summary>How these numbers are calculated</summary>
+<ul>
+<li><strong>Builds</strong>: every PC race × class with the class's <strong>default skill package</strong> (40 creation points) plus the race's points. Customising costs more points and so more XP per level.</li>
+<li><strong>XP per level</strong> = <code>exp_per_level(points)</code> (skills.cpp:259) × the race's class multiplier. It's the same at every level, so reaching level 91 takes 90× that.</li>
+<li><strong>Stats</strong> start at the race's base +3 to the class prime stat (not dragons, MudImpl.cpp). Each stat can be trained to the race maximum, +2 for the prime stat (handler.cpp get_max_train), capped at 25.</li>
+<li><strong>Trains</strong>: 3 at creation and 1 per level. Assumed spent on stats until all are maxed (prime first, then con, str, dex, wis, int), then on +10 HP each.</li>
+<li><strong>Per-level gains</strong> are the expected values of <code>advance_level</code> (update.cpp:480): HP = (con bonus + class roll) × 0.9; mana from the class factor, int and wis above 15; move from con + dex; practices from wis. Starting values are 20 HP, 100 mana, 100 move.</li>
+<li>Equipment, spells and skills that raise stats aren't included.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>prime stat</th>
+<th>HP roll/level</th>
+<th>mana factor</th>
+<th>to-hit AC lvl 0</th>
+<th>to-hit AC lvl 32</th>
+<th>skill adept %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mage</td>
+<td>int</td>
+<td>6–8</td>
+<td>10</td>
+<td>-1</td>
+<td>-47</td>
+<td>75</td>
+</tr>
+<tr>
+<td>cleric</td>
+<td>wis</td>
+<td>7–10</td>
+<td>8</td>
+<td>-1</td>
+<td>-51</td>
+<td>75</td>
+</tr>
+<tr>
+<td>knight</td>
+<td>str</td>
+<td>10–14</td>
+<td>6</td>
+<td>-1</td>
+<td>-61</td>
+<td>75</td>
+</tr>
+<tr>
+<td>barbarian</td>
+<td>con</td>
+<td>13–17</td>
+<td>3</td>
+<td>-1</td>
+<td>-63</td>
+<td>75</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Race</th>
+<th>points</th>
+<th>XP mult (m/c/k/b)</th>
+<th>bonus skills</th>
+<th>base stats</th>
+<th>max stats</th>
+<th>size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>human</td>
+<td>0</td>
+<td>100 / 100 / 100 / 100</td>
+<td>—</td>
+<td>14 14 14 14 14</td>
+<td>18 18 18 18 18</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>hobbit</td>
+<td>20</td>
+<td>100 / 120 / 100 / 120</td>
+<td>backstab, pick lock</td>
+<td>13 15 16 16 14</td>
+<td>17 19 21 20 17</td>
+<td>small</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>15</td>
+<td>140 / 100 / 150 / 100</td>
+<td>headbutt</td>
+<td>16 14 15 11 16</td>
+<td>21 18 19 15 20</td>
+<td>large</td>
+</tr>
+<tr>
+<td>elf</td>
+<td>5</td>
+<td>100 / 125 / 100 / 150</td>
+<td>sneak, hide</td>
+<td>11 16 14 16 11</td>
+<td>16 21 18 21 15</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>half-elf</td>
+<td>15</td>
+<td>125 / 100 / 100 / 125</td>
+<td>dodge</td>
+<td>14 15 14 15 14</td>
+<td>18 20 18 19 18</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>dragon</td>
+<td>40</td>
+<td>100 / 100 / 100 / 100</td>
+<td>draconian, transportation, bash</td>
+<td>16 16 16 13 16</td>
+<td>21 20 20 16 21</td>
+<td>large</td>
+</tr>
+<tr>
+<td>eagle</td>
+<td>10</td>
+<td>110 / 100 / 100 / 150</td>
+<td>fly, lore</td>
+<td>13 15 15 13 14</td>
+<td>17 20 20 17 18</td>
+<td>small</td>
+</tr>
+<tr>
+<td>orc</td>
+<td>10</td>
+<td>100 / 100 / 120 / 100</td>
+<td>fast healing, berserk</td>
+<td>16 12 16 12 16</td>
+<td>20 16 20 16 20</td>
+<td>large</td>
+</tr>
+<tr>
+<td>dwarf</td>
+<td>5</td>
+<td>150 / 100 / 120 / 100</td>
+<td>haggle, peek</td>
+<td>16 12 16 10 16</td>
+<td>20 16 20 14 21</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>wolf</td>
+<td>20</td>
+<td>150 / 150 / 120 / 100</td>
+<td>berserk, second attack</td>
+<td>16 11 15 16 15</td>
+<td>21 14 19 21 19</td>
+<td>medium</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: mattgodbolt/xania @ main (82171fa)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                mattgodbolt/xania @ main (82171fa)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../weapons/" class="md-footer__link md-footer__link--next" aria-label="Next: Weapons">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Weapons
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/sorts/tablesort.number.min.js"></script>
+      
+        <script src="../../javascripts/xania.js"></script>
+      
+        <script src="../../javascripts/explore-plan.js"></script>
+      
+        <script src="../../javascripts/explore.js"></script>
+      
+    
+  </body>
+</html>

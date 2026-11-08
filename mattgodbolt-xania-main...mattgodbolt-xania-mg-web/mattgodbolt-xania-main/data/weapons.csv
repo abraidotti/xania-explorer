@@ -1,0 +1,435 @@
+vnum,name,area,type,level,dice,average,cap,two_handed,flags,sources,buyable,best_drop_pct,easiest_mob_level
+3020,a thin dagger,Midgaard,dagger,0,1d4,2.5,4,0,,mob shop,1,100,5
+3021,a small sword,Midgaard,sword,0,1d5,3.0,4,0,,mob shop,1,100,4
+3025,a hand axe,Midgaard,axe,0,1d6,3.5,4,0,,mob shop,1,100,4
+3613,a silver dagger,Graveyard,dagger,0,2d4,5.0,4,0,,floor,0,,
+3700,a sub issue mace,Mud School,mace,0,1d5,3.0,4,0,,code,0,,
+3701,a sub issue dagger,Mud School,dagger,0,1d4,2.5,4,0,,code,0,,
+3702,a sub issue sword,Mud School,sword,0,1d5,3.0,4,0,,code,0,,
+3717,a sub issue axe,Mud School,axe,0,1d4,2.5,4,0,,code,0,,
+4003,a rusty dagger,Moria,dagger,0,1d5,3.0,4,0,,mob,0,100,4
+5005,A large leg bone,Sands of Sorrow,mace,0,1d4,2.5,4,0,,floor,0,,
+6600,a toy axe,Dwarven Day Care,axe,0,1d5,3.0,4,0,,mob,0,100,3
+6622,a broom,Dwarven Day Care,spear,0,2d3,4.0,4,0,TwoHands,mob,0,100,5
+6647,a toy gun,Dwarven Day Care,spear,0,2d3,4.0,4,0,TwoHands,mob,0,100,3
+9592,something,New Thalos,exotic,0,2d5,6.0,4,0,,,0,,
+103,a small axe,Smurf Village,axe,3,2d2,3.0,5,0,,mob,0,100,3
+1502,A toy boomerang,Gnome Village,exotic,3,1d2,1.5,5,0,,mob,0,100,3
+1521,a large club,Gnome Village,mace,3,1d2,1.5,5,0,,floor mob,0,100,3
+3023,a club,Midgaard,mace,3,1d7,4.0,5,0,,mob shop,1,100,4
+3029,a flail,Midgaard,flail,3,1d7,4.0,5,0,,mob shop,1,100,5
+3350,a standard issue sword,Midgaard,sword,3,2d4,5.0,5,0,,shop,1,,
+3351,a standard issue dagger,Midgaard,dagger,3,3d2,4.5,5,0,,mob shop,1,100,8
+3352,a standard issue mace,Midgaard,mace,3,3d2,4.5,5,0,,shop,1,,
+3501,a long spear,Miden'nir,polearm,3,2d5,6.0,5,0,TwoHands,mob,0,100,9
+3605,a rake,Graveyard,mace,3,1d4,2.5,5,0,,floor,0,,
+4004,a bullwhip,Moria,whip,3,1d7,4.0,5,0,,mob,0,100,5
+9220,a stone club,Elemental Canyon,mace,3,2d2,3.0,5,0,,mob,0,100,3
+1503,A gnarled staff,Gnome Village,exotic,4,1d2,1.5,6,0,,mob,0,100,4
+2417,the shepherd's crook,Ultima,exotic,4,1d2,1.5,6,0,,mob,0,80,4
+3027,a spear,Midgaard,spear,4,1d8,4.5,6,0,,mob shop,1,100,7
+3028,a wooden staff,Midgaard,spear,4,1d8,4.5,6,0,TwoHands,shop,1,,
+3604,a shovel,Graveyard,mace,4,1d5,3.0,6,0,,floor,0,,
+9590,a chessboard,New Thalos,exotic,4,2d2,3.0,6,0,,mob,0,100,4
+615,a pitchfork,New Ofcol,spear,5,2d3,4.0,6,0,,mob shop,1,100,5
+666,a broom,New Ofcol,exotic,5,1d2,1.5,6,0,,mob,0,100,5
+1113,a bardiche,The Shire,polearm,5,2d3,4.0,6,0,,mob,0,100,5
+2419,Katrina's sword,Ultima,sword,5,2d3,4.0,6,0,,mob,0,70,5
+2805,a cracked bone,Troll Den,mace,5,2d3,4.0,6,0,,floor,0,,
+3500,a goblin's short sword,Miden'nir,sword,5,2d4,5.0,6,0,,mob,0,100,6
+4056,a two-headed flail,Moria,flail,5,1d7,4.0,6,0,,mob,0,100,7
+4058,a falchion,Moria,sword,5,2d4,5.0,6,0,,mob,0,100,10
+5000,A small mining pick,Sands of Sorrow,mace,5,1d2,1.5,6,0,,mob,0,100,5
+6000,a lumber axe,Haon Dor,axe,5,1d2,1.5,6,0,,mob,0,100,5
+8006,a splintered bashball bat,Mega-City One,mace,5,2d3,4.0,6,0,,mob,0,100,5
+8009,a knife,Mega-City One,dagger,5,2d3,4.0,6,0,,mob,0,100,5
+1114,a flail,The Shire,flail,6,2d3,4.0,7,0,,,0,,
+1703,a gnarled staff,Wyvern Tower,spear,6,2d6,7.0,7,0,,,0,,
+2201,a silver dagger,Dragon Tower,dagger,6,2d3,4.0,7,0,,mob,0,100,6
+3024,a steel mace,Midgaard,mace,6,2d4,5.0,7,0,,shop,1,,
+3505,a rune-covered knife,Miden'nir,dagger,6,2d4,5.0,7,0,,mob,0,100,8
+4055,a broad sword,Moria,sword,6,1d10,5.5,7,0,,mob,0,100,7
+4057,a heavy iron mace,Moria,mace,6,2d4,5.0,7,0,,mob,0,100,7
+4156,a sharpened hand axe,Moria,axe,6,2d4,5.0,7,0,,mob,0,100,6
+6518,a mining pick,Dwarven Kingdom,mace,6,2d3,4.0,7,0,,floor,0,,
+7202,the small mace,Sewer,mace,6,2d3,4.0,7,0,,mob,0,100,6
+7211,a short sword,Sewer,sword,6,2d3,4.0,7,0,,mob,0,100,6
+7802,an elven longsword,Valley of the Elves,sword,6,1d2,1.5,7,0,,mob,0,100,6
+1317,a long sword,High Tower of Sorcery,sword,7,1d8,4.5,7,0,,container,0,,
+1701,a short bow,Wyvern Tower,exotic,7,2d3,4.0,7,0,,mob,0,100,7
+3022,a long sword,Midgaard,sword,7,2d5,6.0,7,0,,mob shop,1,100,7
+3026,a battle axe,Midgaard,axe,7,2d5,6.0,7,0,TwoHands,mob shop,1,100,8
+3384,a shining silvery flail,Midgaard,flail,7,2d4,5.0,7,0,,shop,1,,
+4152,a light silver dagger,Moria,dagger,7,2d4,5.0,7,0,,mob,0,100,12
+4701,a mining pick,Kingdom of Juargan,mace,7,2d3,4.0,7,0,,mob,0,100,7
+11015,a Footman's lance,Crystalmir Lake,spear,7,2d3,4.0,7,0,,mob,0,100,7
+1109,a tiny dagger,The Shire,dagger,8,2d4,5.0,8,0,,mob,0,100,8
+1320,a wooden staff,High Tower of Sorcery,spear,8,2d4,5.0,8,0,,floor,0,,
+1504,A gnome sword,Gnome Village,sword,8,2d3,4.0,8,0,,mob,0,100,8
+2110,a patrol club,Dangerous Neighbourhood,mace,8,2d3,4.0,8,0,,mob,0,100,8
+3382,a forest spear,Midgaard,spear,8,2d5,6.0,8,0,,shop,1,,
+6508,dwarven club,Dwarven Kingdom,mace,8,2d4,5.0,8,0,,mob,0,100,8
+7201,the large mace,Sewer,mace,8,2d4,5.0,8,0,,mob,0,100,8
+1318,a silver dagger,High Tower of Sorcery,dagger,9,3d3,6.0,8,0,,container,0,,
+2424,a mandolin,Ultima,mace,9,3d4,7.5,8,0,,mob,0,70,9
+3380,a studded ebony mace,Midgaard,mace,9,2d5,6.0,8,0,,shop,1,,
+3383,an ebony polearm,Midgaard,polearm,9,2d6,7.0,8,0,TwoHands,shop,1,,
+3385,a sharpened stiletto dagger,Midgaard,dagger,9,2d5,6.0,8,0,,mob shop,1,100,11
+4105,an iron-shod staff,Moria,spear,9,2d5,6.0,8,0,TwoHands,mob,0,100,9
+5252,a long slim dagger,Thalos,dagger,9,3d3,6.0,8,0,,mob,0,100,9
+6104,"a long, grey branch",Haon Dor,mace,9,2d5,6.0,8,0,,floor,0,,
+1601,a rusty cleaver,Wyvern Tower,axe,10,3d5,9.0,9,0,,floor,0,,
+1604,a steel broad sword,Wyvern Tower,sword,10,4d3,8.0,9,0,,mob,0,100,10
+2103,a hefty length of chain,Dangerous Neighbourhood,whip,10,2d3,4.0,9,0,,mob,0,100,10
+3124,a long sword,Midgaard,sword,10,2d5,6.0,9,0,Sharp,mob,0,90,23
+4053,a thieves dirk,Moria,dagger,10,2d5,6.0,9,0,,,0,,
+4059,a voulge,Moria,polearm,10,2d6,7.0,9,0,TwoHands,mob,0,100,10
+4153,a morning star,Moria,mace,10,2d6,7.0,9,0,,,0,,
+5018,"a long, pointed cutlass",Sands of Sorrow,sword,10,2d3,4.0,9,0,,mob,0,100,10
+5100,a commoner's longsword,Drow City,sword,10,2d5,6.0,9,0,,mob,0,100,10
+7299,a short sword,Sewer,sword,10,2d5,6.0,9,0,,,0,,
+8014,a polished bashball bat,Mega-City One,mace,10,3d3,6.0,9,0,,mob,0,100,10
+9301,a comet's tail,Galaxy,whip,10,2d3,4.0,9,0,,mob,0,100,10
+9511,a sickle,New Thalos,polearm,10,2d5,6.0,9,0,,shop,1,,
+9513,a scimitar,New Thalos,sword,10,3d4,7.5,9,0,,mob shop,1,100,10
+9586,a sledge hammer,New Thalos,mace,10,2d3,4.0,9,0,,mob,0,100,10
+11002,farming scythe,Crystalmir Lake,polearm,10,2d5,6.0,9,0,,mob,0,100,10
+16020,"a small, deadly dart",UnderDark,spear,10,4d4,10.0,9,0,,,0,,
+16047,a drow sword,UnderDark,sword,10,2d5,6.0,9,0,,shop,1,,
+16048,a drow dagger,UnderDark,dagger,10,2d5,6.0,9,0,,shop,1,,
+16049,a drow mace,UnderDark,mace,10,2d5,6.0,9,0,,shop,1,,
+2428,Iolo's bow,Ultima,exotic,11,2d3,4.0,9,0,,mob,0,100,11
+2431,a wooden spear,Ultima,spear,11,4d4,10.0,9,0,,mob,0,100,11
+3381,a defiler's axe,Midgaard,axe,11,3d4,7.5,9,0,,shop,1,,
+4054,a war axe,Moria,axe,11,3d4,7.5,9,0,,mob,0,100,12
+4100,a black demon blade,Moria,sword,11,3d4,7.5,9,0,Vampiric TwoHands,mob,0,100,12
+16033,a broken bottle,UnderDark,exotic,11,4d3,8.0,9,0,,mob,0,100,11
+601,a meat cleaver,New Ofcol,dagger,12,3d4,7.5,10,0,,mob shop,1,100,12
+1314,a mithril hammer,High Tower of Sorcery,mace,12,2d6,7.0,10,0,,floor,0,,
+1702,a long bow,Wyvern Tower,exotic,12,3d4,7.5,10,0,,mob,0,100,12
+2016,a templar's sword,Dwarven Catacombs,sword,12,3d4,7.5,10,0,,mob,0,100,12
+3386,a guardsman blade,Midgaard,sword,12,3d4,7.5,10,0,,mob,0,100,15
+5017,a curved scimitar,Sands of Sorrow,sword,12,2d3,4.0,10,0,,mob,0,100,12
+5101,a noble's longsword,Drow City,sword,12,4d3,8.0,10,0,,mob,0,100,12
+9510,a guisarme,New Thalos,polearm,12,4d3,8.0,10,0,,shop,1,,
+9599,the wolverine claw,New Thalos,mace,12,4d3,8.0,10,0,,mob,0,100,12
+11014,Chamorro Dagger,Crystalmir Lake,dagger,12,3d4,7.5,10,0,,mob,0,100,12
+12007,a white feathered quill,Imladris,dagger,12,3d5,9.0,10,0,,mob,0,100,12
+12033,a really nasty Orcish spear,Imladris,spear,12,4d4,10.0,10,0,,mob,0,100,12
+1319,a curved scimitar,High Tower of Sorcery,sword,13,2d7,8.0,10,0,,container,0,,
+1602,the fine mace,Wyvern Tower,mace,13,3d5,9.0,10,0,,mob,0,100,13
+2106,a stiletto,Dangerous Neighbourhood,dagger,13,3d4,7.5,10,0,,mob,0,100,13
+2200,a jagged spear,Dragon Tower,spear,13,3d4,7.5,10,0,,mob,0,100,13
+2432,a stone club,Ultima,mace,13,4d4,10.0,10,0,,mob,0,100,13
+4005,a huge club,Moria,mace,13,2d9,10.0,10,0,TwoHands,mob,0,100,13
+8910,a wooden staff,Holy Grove,spear,13,3d4,7.5,10,0,,mob,0,100,13
+12050,a sturdy staff of oak,Imladris,polearm,13,4d5,12.0,11,1,TwoHands,mob,0,100,13
+1117,a bronze bardiche,The Shire,polearm,14,3d5,9.0,11,0,Sharp,mob,0,100,14
+5016,"a long, curved sabre",Sands of Sorrow,sword,14,3d5,9.0,11,0,,mob,0,100,14
+7200,the devil rod,Sewer,mace,14,4d4,10.0,11,0,,mob,0,100,14
+8015,a bronze bashball bat,Mega-City One,mace,14,3d5,9.0,11,0,,mob,0,100,14
+12011,a visciously sharp axe featuring a skull pommel,Imladris,axe,14,3d5,9.0,11,0,Sharp,mob,0,100,14
+1510,An electrum sword,Gnome Village,sword,15,3d4,7.5,11,0,,mob,0,100,15
+2004,the neutralizer,Dwarven Catacombs,sword,15,3d5,9.0,11,0,,mob,0,100,15
+2362,a kopesh sword,The Keep of Mahn-Tor,sword,15,4d4,10.0,11,0,,mob,0,100,15
+2386,an ogre spear,The Keep of Mahn-Tor,spear,15,3d5,9.0,11,0,,mob,0,100,15
+2434,a staff,Ultima,spear,15,4d4,10.0,11,0,,mob,0,100,15
+5102,a snake headed whip,Drow City,whip,15,3d5,9.0,11,0,,mob,0,100,15
+7807,a quarterstaff,Valley of the Elves,spear,15,4d4,10.0,11,0,,mob,0,100,15
+8301,a long spear,Old Marsh,spear,15,3d5,9.0,11,0,,mob,0,100,15
+9233,an adamantite club,Elemental Canyon,mace,15,3d5,9.0,11,0,,mob,0,100,15
+9509,a glaive,New Thalos,polearm,15,4d5,12.0,11,0,,shop,1,,
+9585,a fountain pen,New Thalos,dagger,15,3d4,7.5,11,0,,mob,0,100,15
+10065,standard steel sword,Wolf Pointe,sword,15,5d3,10.0,11,0,,shop,1,,
+1107,"a huge, steel axe",The Shire,axe,16,4d4,10.0,12,0,,mob,0,100,17
+1606,the rod of might,Wyvern Tower,mace,16,4d5,12.0,12,0,,mob,0,100,16
+6509,a two-handed dwarven axe,Dwarven Kingdom,axe,16,4d4,10.0,12,0,,mob,0,100,16
+9598,the Daemon Claw,New Thalos,dagger,16,2d8,9.0,12,0,,floor,0,,
+16007,sword of darkness,UnderDark,sword,16,4d4,10.0,12,0,,mob,0,100,16
+1106,an elven bow,The Shire,exotic,17,3d6,10.5,12,0,,mob,0,100,17
+1357,a silvery dagger,High Tower of Sorcery,dagger,17,4d4,10.0,12,0,,mob,0,100,9
+5103,a snake headed whip,Drow City,whip,17,3d6,10.5,12,0,,mob,0,100,17
+5317,an imperial sword,Old Thalos,sword,17,4d4,10.0,12,0,,mob,0,100,17
+5318,an imperial mace,Old Thalos,mace,17,4d4,10.0,12,0,,mob,0,100,17
+6155,the morning star,Haon Dor,mace,17,4d4,10.0,12,0,,mob,0,100,17
+8008,a Hoover vacuum cleaner,Mega-City One,mace,17,3d4,7.5,12,0,,mob,0,100,17
+8010,a wet noodle,Mega-City One,whip,17,4d4,10.0,12,0,,mob,0,100,17
+16045,an ebony morning star,UnderDark,exotic,17,3d4,7.5,12,0,,mob,0,100,17
+16064,a broadsword named 'Vision',UnderDark,sword,17,3d6,10.5,12,0,,mob,0,100,17
+1381,a huge spiked club,High Tower of Sorcery,mace,18,3d4,7.5,13,0,,mob,0,100,18
+1603,a long elven dagger,Wyvern Tower,dagger,18,5d4,12.5,13,0,,container,0,,
+2223,a stone club,Dragon Tower,mace,18,3d6,10.5,13,0,,mob,0,100,18
+2260,a golden scimitar,Dragon Tower,sword,18,3d6,10.5,13,0,,mob,0,100,18
+2286,a copper hammer,Dragon Tower,mace,18,3d6,10.5,13,0,,mob,0,100,18
+2436,a sword,Ultima,sword,18,4d5,12.0,13,0,,mob,0,100,18
+3387,an officer's blade,Midgaard,sword,18,3d6,10.5,13,0,,mob,0,100,15
+5021,a strange energy bow,Sands of Sorrow,exotic,18,3d4,7.5,13,0,,mob,0,100,18
+5106,a snake headed whip,Drow City,whip,18,3d6,10.5,13,0,,,0,,
+9232,a stone axe,Elemental Canyon,axe,18,3d6,10.5,13,0,,mob,0,100,18
+12020,a longbow from the lands of Lorien,Imladris,exotic,18,7d3,14.0,13,0,,mob,0,100,18
+12031,the Wraithblade,Imladris,dagger,18,3d8,13.5,13,0,Frost,mob,0,48,21
+630,a claymore,New Ofcol,sword,19,3d6,10.5,13,0,,mob,0,100,19
+1101,Sting,The Shire,dagger,19,4d5,12.0,13,0,,mob,0,100,19
+2387,an ogre war club,The Keep of Mahn-Tor,mace,19,5d4,12.5,13,0,,mob,0,100,19
+8016,a reinforced steel bashball bat,Mega-City One,mace,19,3d6,10.5,13,0,,mob,0,100,19
+16006,glinting gnome mace,UnderDark,mace,19,5d4,12.5,13,0,,mob,0,100,19
+1355,a meat cleaver,High Tower of Sorcery,dagger,20,3d4,7.5,14,0,,mob,0,90,20
+1704,an ancient long sword,Wyvern Tower,sword,20,3d8,13.5,14,0,,,0,,
+2287,a gem encrusted dagger,Dragon Tower,dagger,20,3d7,12.0,14,0,,mob,0,48,20
+5107,a snake headed whip,Drow City,whip,20,4d5,12.0,14,0,,,0,,
+6504,a hammer,Dwarven Kingdom,mace,20,4d5,12.0,14,0,,mob shop,1,100,9
+8011,a billy club,Mega-City One,mace,20,5d4,12.5,14,0,,mob,0,90,20
+8306,"A huge, wicked-looking scythe",Old Marsh,polearm,20,4d5,12.0,14,0,,mob,0,63,20
+8920,a fine oaken staff,Holy Grove,spear,20,5d4,12.5,14,0,,mob,0,40,20
+9508,a fauchard,New Thalos,polearm,20,4d5,12.0,14,0,,shop,1,,
+12015,the sword of an Elflord,Imladris,sword,20,4d6,14.0,14,0,,mob,0,33,20
+16018,a very sharp pin,UnderDark,dagger,20,4d5,12.0,14,0,,mob,0,90,22
+16019,very muddy branch,UnderDark,exotic,20,3d4,7.5,14,0,,mob,0,90,20
+16074,a blade of poison,UnderDark,dagger,20,4d5,12.0,14,0,,mob,0,90,20
+662,the Golden Claw,New Ofcol,exotic,21,5d4,12.5,14,0,,mob,0,40,21
+1376,a runed chisel,High Tower of Sorcery,dagger,21,4d5,12.0,14,0,,mob,0,90,21
+2368,a huge halberd,The Keep of Mahn-Tor,polearm,21,4d5,12.0,14,0,,mob,0,48,21
+5104,a snake headed whip,Drow City,whip,21,4d5,12.0,14,0,,mob,0,63,21
+5105,a black longsword,Drow City,sword,21,4d5,12.0,14,0,,mob,0,90,21
+2365,a battle axe,The Keep of Mahn-Tor,axe,22,5d5,15.0,15,0,,mob,0,48,22
+2435,a sword,Ultima,sword,22,6d4,15.0,15,0,,mob,0,90,22
+9230,The Shock Whip,Elemental Canyon,whip,22,2d11,12.0,15,0,,mob,0,90,22
+9314,the Sting of Scorpio,Galaxy,exotic,22,4d5,12.0,15,0,,mob,0,90,22
+9316,the Titanic Bow of Sagittarius,Galaxy,exotic,22,4d5,12.0,15,0,,mob,0,63,22
+12004,"a mighty, two-handed sword",Imladris,sword,22,4d6,14.0,16,1,TwoHands,mob,0,48,22
+1907,a silvery dagger,The Astral Plane,dagger,23,5d5,15.0,15,0,,mob,0,90,23
+8007,the Vibroblade,Mega-City One,dagger,23,2d13,14.0,15,0,,container,0,,
+9228,the Avalanche,Elemental Canyon,exotic,23,3d7,12.0,15,0,,mob,0,90,23
+9503,a morningstar,New Thalos,flail,23,5d5,15.0,15,0,,shop,1,,
+9512,a two-handed bastard sword,New Thalos,sword,23,5d5,15.0,15,0,,shop,1,,
+9514,a rapier,New Thalos,sword,23,5d5,15.0,15,0,,shop,1,,
+9583,a pair of sewing shears,New Thalos,dagger,23,4d5,12.0,15,0,,shop,1,,
+9584,a meat cleaver,New Thalos,dagger,23,4d5,12.0,15,0,,shop,1,,
+13024,a notched sword,The Flying Citadel,sword,23,4d5,12.0,15,0,,mob,0,63,24
+13220,a teeny tiny spear,The Enchanted Forest,polearm,23,2d10,11.0,15,0,Sharp bit7,mob,0,63,21
+16038,slaver's whip,UnderDark,whip,23,5d5,15.0,15,0,,mob,0,90,23
+16086,a demon blade,UnderDark,dagger,23,5d5,15.0,15,0,,mob,0,90,23
+9227,an icicle,Elemental Canyon,dagger,24,5d5,15.0,16,0,,mob,0,90,24
+12002,"a black hilted dagger called ""Loriana""",Imladris,dagger,24,4d7,16.0,16,0,Sharp,mob,0,48,24
+1116,a finely etched bardiche,The Shire,polearm,25,5d5,15.0,16,0,Sharp,mob,0,90,25
+1926,a rusted sword,The Astral Plane,sword,25,5d5,15.0,16,0,,mob,0,90,25
+2348,an ethereal blade,The Keep of Mahn-Tor,exotic,25,5d5,15.0,16,0,,mob,0,48,25
+2372,a two-handed sword,The Keep of Mahn-Tor,sword,25,4d5,12.0,16,0,,mob,0,36,25
+2391,a massive club,The Keep of Mahn-Tor,mace,25,5d5,15.0,16,0,,mob,0,63,25
+2438,a hammer,Ultima,mace,25,6d4,15.0,16,0,,mob,0,90,25
+5221,a two-handed sword,Thalos,sword,25,5d5,15.0,16,0,,mob,0,63,25
+7825,a darkened quarterstaff,Valley of the Elves,spear,25,5d5,15.0,16,0,,mob,0,48,25
+9507,a bill-guisarme,New Thalos,polearm,25,5d5,15.0,16,0,,shop,1,,
+9600,the halberd,New Thalos,polearm,25,4d5,12.0,16,0,,mob,0,63,25
+10075,Wolf Dagger,Wolf Pointe,dagger,25,5d5,15.0,16,0,,shop,1,,
+10076,Wolf Sword,Wolf Pointe,sword,25,5d5,15.0,16,0,,shop,1,,
+10077,Wolf Mace,Wolf Pointe,mace,25,5d5,15.0,16,0,,shop,1,,
+16077,a garotte,UnderDark,exotic,25,5d5,15.0,16,0,,mob,0,90,25
+1909,a thin two-handed sword,The Astral Plane,sword,26,5d5,15.0,18,1,TwoHands,mob,0,63,26
+2222,an emerald sword,Dragon Tower,sword,26,5d5,15.0,17,0,,mob,0,40,26
+2376,a minotaur glaive,The Keep of Mahn-Tor,polearm,26,4d7,16.0,17,0,,mob,0,36,26
+9226,a flame lance,Elemental Canyon,spear,26,4d5,12.0,17,0,,mob,0,90,26
+13040,a horsewhip,The Flying Citadel,whip,26,5d5,15.0,17,0,,mob,0,63,28
+16041,a jagged long sword,UnderDark,sword,26,5d5,15.0,17,0,,mob,0,90,26
+16042,an ebony dagger,UnderDark,dagger,26,5d5,15.0,17,0,,mob,0,90,26
+653,a ranseur,New Ofcol,polearm,27,5d5,15.0,17,0,,mob,0,27,27
+2202,a dragon's tooth knife,Dragon Tower,dagger,27,4d5,12.0,17,0,,mob,0,48,27
+4706,a large dwarven battle axe,Kingdom of Juargan,axe,27,5d5,15.0,17,0,,mob,0,90,27
+8018,a Judge's club,Mega-City One,mace,27,4d7,16.0,17,0,,mob,0,63,25
+2380,a huge morningstar,The Keep of Mahn-Tor,mace,28,4d7,16.0,18,0,,mob,0,36,28
+2439,a sword,Ultima,sword,28,5d5,15.0,18,0,,mob,0,90,28
+9229,the Morning Star,Elemental Canyon,flail,28,4d7,16.0,18,0,,mob,0,90,28
+2381,some huge spiked brass knuckles,The Keep of Mahn-Tor,exotic,29,4d5,12.0,18,0,,mob,0,63,29
+2383,a huge wooden maul,The Keep of Mahn-Tor,mace,29,6d5,18.0,18,0,,mob,0,63,29
+600,a hand axe,New Ofcol,axe,30,5d6,17.5,19,0,,shop,1,,
+1385,an iron shod staff,High Tower of Sorcery,spear,30,4d5,12.0,19,0,,mob,0,48,30
+1390,a sharp shard of obsidian,High Tower of Sorcery,dagger,30,4d5,12.0,19,0,,mob,0,48,30
+1394,an ivory hilted dagger,High Tower of Sorcery,dagger,30,6d5,18.0,19,0,,mob,0,48,30
+2005,The sword Excalibur,Dwarven Catacombs,sword,30,5d6,17.5,19,0,,container,0,,
+2304,the rod of weaponry,The Keep of Mahn-Tor,mace,30,6d5,18.0,19,0,,mob,0,36,30
+2309,"a shortsword named ""Nightbringer""",The Keep of Mahn-Tor,sword,30,6d5,18.0,19,0,,mob,0,40,30
+2314,"a huge mace named ""Dawnbringer""",The Keep of Mahn-Tor,mace,30,6d5,18.0,19,0,,mob,0,36,30
+2318,a gnarled magius staff,The Keep of Mahn-Tor,spear,30,6d5,18.0,19,0,,mob,0,40,30
+2323,a huge mithril mace,The Keep of Mahn-Tor,mace,30,4d5,12.0,19,0,,mob,0,36,30
+2329,an ice staff,The Keep of Mahn-Tor,spear,30,6d5,18.0,19,0,,mob,0,36,30
+2334,a huge crossbow,The Keep of Mahn-Tor,exotic,30,4d5,12.0,19,0,,mob,0,36,30
+2339,a wicked shortsword,The Keep of Mahn-Tor,sword,30,6d5,18.0,19,0,,mob,0,40,30
+2421,a magic dagger,Ultima,dagger,30,6d5,18.0,19,0,,mob,0,70,30
+2441,a shiny sword,Ultima,sword,30,6d5,18.0,19,0,,mob,0,63,30
+5002,the halberd,Sands of Sorrow,polearm,30,4d5,12.0,19,0,,mob,0,63,30
+7216,a red dragon claw,Sewer,mace,30,6d5,18.0,19,0,,mob,0,28,29
+8308,"a razor-sharp, jagged spear",Old Marsh,spear,30,3d10,16.5,19,0,,mob,0,63,30
+9203,a fiery dagger,Elemental Canyon,dagger,30,6d5,18.0,19,0,,mob,0,63,30
+9207,a sparking lightning sword,Elemental Canyon,sword,30,6d5,18.0,19,0,,mob,0,63,30
+9323,the Great Dipper of the Skies,Galaxy,exotic,30,6d5,18.0,19,0,,mob,0,63,30
+9506,a bec de corbine,New Thalos,polearm,30,5d6,17.5,19,0,,shop,1,,
+9589,a riding crop,New Thalos,whip,30,4d5,12.0,19,0,,shop,1,,
+9609,a dagger,New Thalos,dagger,30,8d4,20.0,19,0,Sharp,shop,1,,
+10408,flaming claw,Descent to Hell,mace,30,5d6,17.5,19,0,,mob,0,90,30
+11008,silver longsword,Crystalmir Lake,dagger,30,5d6,17.5,19,0,,mob,0,63,30
+13035,the orcish sword,The Flying Citadel,sword,30,6d5,18.0,19,0,,mob,0,48,32
+30124,Sword of the Great Wyrm,Temple of the Great Wyrm,sword,30,6d5,18.0,19,0,Sharp Vorpal,,0,,
+2430,the Infinity Bow,Ultima,spear,31,4d9,20.0,19,0,,mob,0,90,31
+2433,a gavel,Ultima,mace,32,5d6,17.5,20,0,,mob,0,90,32
+647,Holy Avenger,New Ofcol,sword,33,4d8,18.0,20,0,,mob,0,27,33
+2345,Mahn-Tor's Great Axe,The Keep of Mahn-Tor,axe,33,5d6,17.5,20,0,,mob,0,33,33
+2429,a chicken,Ultima,exotic,33,5d6,17.5,20,0,,mob,0,90,33
+2437,a bastard sword,Ultima,sword,33,5d7,20.0,20,0,,mob,0,90,33
+2443,a rapier,Ultima,sword,33,6d5,18.0,20,0,,mob,0,90,33
+2445,a rusty sword,Ultima,sword,33,6d5,18.0,20,0,,mob,0,63,33
+5332,"a great, two-handed sword",Old Thalos,sword,34,5d7,20.0,22,1,TwoHands,mob,0,29,35
+913,a notched axe,Olympus,axe,35,5d6,17.5,21,0,,mob,0,63,35
+2444,a boomerang,Ultima,exotic,35,5d6,17.5,21,0,,mob,0,90,35
+2457,Sentri's two-handed sword,Ultima,exotic,35,5d6,17.5,21,0,,mob,0,29,35
+5113,a spider shaped dagger,Drow City,dagger,35,5d6,17.5,21,0,,mob,0,90,35
+5829,A rusty hand blaster,Mos Eisley,exotic,35,5d7,20.0,21,0,Sharp,mob,0,90,35
+9505,a bardiche,New Thalos,polearm,35,5d7,20.0,21,0,,shop,1,,
+10402,a black leather whip,Descent to Hell,whip,35,5d7,20.0,21,0,,mob,0,90,35
+10403,hickey maker,Descent to Hell,exotic,35,5d7,20.0,21,0,,mob,0,90,35
+10407,vorpal blade,Descent to Hell,dagger,35,5d7,20.0,21,0,,mob,0,63,35
+10444,mane's claws,Descent to Hell,exotic,35,5d7,20.0,21,0,,mob,0,90,35
+13002,the draconian axe,The Flying Citadel,axe,35,6d6,21.0,21,0,Sharp,mob,0,48,39
+668,the Golden Talons,New Ofcol,exotic,36,6d6,21.0,22,0,,mob,0,48,37
+13025,the spear,The Flying Citadel,spear,36,9d4,22.5,22,0,Sharp TwoHands,mob,0,30,36
+1908,an extremely sharp and thin sword,The Astral Plane,sword,37,6d6,21.0,22,0,,mob,0,63,37
+9000,THE long sword,Nirvana,sword,37,4d9,20.0,22,0,Vorpal TwoHands,mob,0,90,40
+1910,a silvery sword,The Astral Plane,sword,39,5d8,22.5,23,0,,mob,0,63,39
+13007,(|gHideous|w) the draconian mace,The Flying Citadel,mace,39,6d7,24.0,23,0,Vampiric,mob,0,48,40
+16025,a huge stone mace,UnderDark,mace,39,5d8,22.5,23,0,,mob,0,90,39
+509,a HUGE meat cleaver,Camelot,exotic,40,10d4,25.0,24,0,Sharp,mob,0,63,44
+1906,a silvery knife,The Astral Plane,dagger,40,5d8,22.5,24,0,,mob,0,90,40
+5813,A hand blaster,Mos Eisley,exotic,40,4d10,22.0,24,0,Sharp,mob,0,90,40
+9504,an awl-pike,New Thalos,spear,40,5d8,22.5,24,0,,shop,1,,
+16024,an iron sword,UnderDark,sword,40,5d8,22.5,24,0,,mob,0,90,40
+16028,demon horn,UnderDark,dagger,40,5d8,22.5,24,0,,mob,0,90,40
+2285,a dragon tailed whip,Dragon Tower,whip,41,5d7,20.0,24,0,,mob,0,63,41
+10410,demon teeth,Descent to Hell,exotic,41,6d7,24.0,24,0,,mob,0,63,41
+13417,the torturer's whip,Ciquala's Lair,whip,41,5d6,17.5,24,0,,mob,0,90,41
+10401,a wicked looking trident,Descent to Hell,spear,42,6d7,24.0,25,0,,mob,0,90,42
+16096,a fractured long sword,UnderDark,sword,42,6d7,24.0,25,0,,mob,0,40,42
+2450,a spiked mace,Ultima,mace,43,7d6,24.5,25,0,,mob,0,90,43
+5812,A gaffi stick,Mos Eisley,polearm,43,6d7,24.0,25,0,,mob,0,90,43
+13011,the energy whip,The Flying Citadel,whip,44,4d12,26.0,27,1,Sharp Vorpal TwoHands,mob,0,63,45
+2901,horns,Fire Newt Mountain,exotic,45,9d5,27.0,26,0,,mob,0,90,45
+10074,Wolf Tooth Dagger,Wolf Pointe,dagger,45,6d7,24.0,26,0,,mob,0,80,65
+10404,"a black hilted sword called, ""Farslayer""",Descent to Hell,sword,45,5d9,25.0,26,0,,mob,0,90,45
+10413,circular saw,Descent to Hell,flail,45,5d9,25.0,26,0,,mob,0,90,45
+10420,large meat hook,Descent to Hell,exotic,45,5d9,25.0,26,0,,mob,0,90,45
+10445,welding torch,Descent to Hell,exotic,45,5d9,25.0,26,0,,mob,0,90,45
+27034,a cyberstaff,The Seminary,exotic,45,6d8,27.0,26,0,Frost,mob,0,90,45
+10417,hell hound teeth,Descent to Hell,exotic,46,7d7,28.0,27,0,,mob,0,90,46
+2903,a shovel,Fire Newt Mountain,mace,47,6d8,27.0,27,0,,mob,0,90,46
+13043,a draconian dagger,The Flying Citadel,dagger,47,5d10,27.5,27,0,,mob,0,48,48
+16071,a jewelled dagger,UnderDark,dagger,47,7d7,28.0,27,0,,mob,0,90,47
+28002,Moredhel Longsword,Sethanon,sword,48,5d10,27.5,28,0,,mob,0,90,50
+28003,Eledhel Longsword,Sethanon,sword,48,5d10,27.5,28,0,,mob,0,63,50
+10431,ionic torque wrench,Descent to Hell,mace,49,7d7,28.0,28,0,,mob,0,63,49
+507,the long arm of justice,Camelot,polearm,50,5d10,27.5,29,0,Sharp,mob,0,54,53
+907,a silver bow,Olympus,exotic,50,6d7,24.0,29,0,,mob,0,63,50
+1400,the ebony kris,High Tower of Sorcery,dagger,50,6d7,24.0,29,0,,mob,0,36,50
+1900,a massive slate-grey sledgehammer,The Astral Plane,mace,50,7d7,28.0,29,0,,mob,0,90,50
+2463,The Glass Sword,Ultima,exotic,50,6d7,24.0,29,0,,mob,0,90,50
+9610,a dagger,New Thalos,dagger,50,10d5,30.0,29,0,Sharp,shop,1,,
+13015,the immense axe,The Flying Citadel,axe,50,5d11,30.0,30,1,TwoHands,mob,0,30,50
+27020,a soup ladle,The Seminary,exotic,50,10d5,30.0,29,0,Vampiric,mob,0,63,50
+1911,an iron barbed flail,The Astral Plane,flail,52,3d13,21.0,30,0,,mob,0,54,52
+9900,a body-wrecker,Yggdrasil,polearm,52,6d9,30.0,30,0,,mob,0,80,52
+10427,sharp teeth of a lawyer,Descent to Hell,exotic,52,7d7,28.0,30,0,,mob,0,80,52
+10448,cleaver,Descent to Hell,axe,52,7d7,28.0,30,0,,mob,0,80,52
+13400,Ciquala's sword,Ciquala's Lair,sword,52,4d13,28.0,30,0,,mob,0,40,52
+27033,the Swiss Army Knife,The Seminary,dagger,52,6d9,30.0,30,0,Sharp,mob,0,80,52
+10419,ice spear,Descent to Hell,spear,53,6d9,30.0,30,0,,mob,0,80,53
+10423,electric eraser,Descent to Hell,mace,53,6d9,30.0,30,0,,mob,0,80,53
+27044,Wolfgang's stethoscope,The Seminary,flail,54,9d6,31.5,31,0,Frost,mob,0,80,54
+27243,a gold plated cutlass,The Valkyrie,sword,54,11d5,33.0,31,0,,mob,0,80,54
+27248,a spiked ramming rod,The Valkyrie,mace,54,11d5,33.0,31,0,Frost TwoHands,mob,0,80,55
+1801,a gardener's spade,Japan,spear,55,4d13,28.0,31,0,,mob,0,80,55
+2904,a short sword,Fire Newt Mountain,sword,55,5d11,30.0,31,0,,mob,0,80,55
+2905,a hand axe,Fire Newt Mountain,axe,55,5d11,30.0,31,0,,mob,0,80,55
+5814,A blaster,Mos Eisley,exotic,55,11d5,33.0,31,0,,mob,0,80,55
+10415,bloody black talon,Descent to Hell,dagger,56,7d8,31.5,32,0,,mob,0,54,56
+27257,a barbed harpoon,The Valkyrie,polearm,56,11d5,33.0,32,0,TwoHands,mob,0,80,56
+508,a bladder on a stick,Camelot,exotic,58,6d10,33.0,33,0,Vorpal,mob,0,54,61
+2907,a pick,Fire Newt Mountain,mace,58,6d10,33.0,33,0,,mob,0,54,58
+906,Poseidon's Trident,Olympus,spear,59,5d12,32.5,33,0,,mob,0,40,59
+901,The Thunder Bolt,Olympus,mace,60,5d12,32.5,34,0,,mob,0,34,60
+923,the Sword of the Sun,Olympus,sword,60,7d8,31.5,34,0,,mob,0,54,60
+1912,The unholy sword of the githyanki,The Astral Plane,sword,60,5d12,32.5,34,0,,mob,0,54,60
+9831,a black pen,Dragon Cult,dagger,60,5d12,32.5,34,0,,mob,0,80,60
+30155,the axe of the Protector of the Lore,Lore Keep,axe,60,6d10,33.0,34,0,Sharp,mob,0,54,60
+27051,Ajandurah's staff of utter negativity,The Seminary,polearm,61,10d6,35.0,35,1,Frost TwoHands,mob,0,80,65
+12108,(Magical) a huge sword,The Dell,sword,62,7d9,35.0,35,0,Flaming Sharp,mob,0,54,64
+5831,an imperial blaster,Mos Eisley,exotic,64,8d8,36.0,36,0,,mob,0,80,65
+1802,Leonardo's Katana blade,Japan,sword,65,8d8,36.0,36,0,Sharp,mob,0,80,65
+1803,Michaelangelo's numchucks,Japan,mace,65,8d8,36.0,37,1,TwoHands,mob,0,80,65
+1804,Donatello's bokken,Japan,polearm,65,8d8,36.0,37,1,TwoHands,mob,0,80,65
+1805,Raphael's sai,Japan,dagger,65,8d8,36.0,36,0,,mob,0,80,65
+2911,a broad axe,Fire Newt Mountain,axe,65,8d8,36.0,36,0,,mob,0,54,65
+2913,a flaming mace,Fire Newt Mountain,mace,65,8d8,36.0,36,0,,mob,0,80,65
+3421,a rusty curved scimitar,Chapel Catacombs,sword,65,6d11,36.0,36,0,,mob,0,80,65
+10066,Executioner's Axe,Wolf Pointe,axe,65,6d11,36.0,36,0,Vampiric,mob,0,80,65
+10068,Sheriff's Mace,Wolf Pointe,mace,65,6d11,36.0,36,0,,mob,0,54,75
+10072,Wolf Bone Dagger,Wolf Pointe,exotic,65,6d11,36.0,36,0,,mob,0,40,75
+27048,a dorsal fin,The Seminary,exotic,65,11d6,38.5,36,0,Frost Sharp,mob,0,54,65
+1812,a red stiletto,Japan,dagger,68,7d10,38.5,38,0,Sharp,mob,0,80,66
+1814,black stiletto,Japan,dagger,68,6d11,36.0,38,0,,mob,0,80,68
+27269,a shipwright's hatchet,The Valkyrie,axe,68,10d7,40.0,38,0,,mob,0,54,68
+506,a heavy pewter candlestick,Camelot,exotic,70,7d10,38.5,39,0,Flaming,mob,0,40,72
+823,The Flaming Dragon,Strange World,exotic,70,13d5,39.0,39,0,Flaming,mob,0,80,70
+1808,the chief's blade,Japan,sword,70,7d10,38.5,39,0,,mob,0,80,70
+3414,a whisper thin rapier,Chapel Catacombs,sword,70,7d10,38.5,39,0,,mob,0,54,70
+9611,a dagger,New Thalos,dagger,70,10d7,40.0,39,0,Sharp,shop,1,,
+9902,a holy bastard sword,Yggdrasil,sword,70,11d6,38.5,39,0,,mob,0,80,70
+1813,numchucks,Japan,mace,72,8d9,40.0,42,1,TwoHands,mob,0,80,72
+1818,a bamboo rod,Japan,polearm,72,8d9,40.0,40,0,,mob,0,80,70
+1809,a samurai sword,Japan,sword,73,8d9,40.0,40,0,Sharp,mob,0,80,72
+505,a Knight of the Round Table's sword,Camelot,sword,75,5d15,40.0,41,0,Sharp,mob,0,33,78
+1817,a grey staff,Japan,spear,75,10d7,40.0,43,1,TwoHands,mob,0,80,75
+3402,a nightgaunt's tickler,Chapel Catacombs,whip,75,8d9,40.0,41,0,,mob,0,80,75
+10051,A marble gavel,Wolf Pointe,mace,75,7d11,42.0,41,0,,mob,0,54,75
+27236,Vengeance,The Valkyrie,sword,75,15d5,45.0,41,0,Sharp,mob,0,27,80
+30126,Axe of the Great Wyrm,Temple of the Great Wyrm,axe,75,7d10,38.5,43,1,TwoHands,,0,,
+18110,The Bubble Blower,Den of Monsters,exotic,76,7d11,42.0,42,0,,mob,0,80,75
+27026,a roll of burning parchment,The Seminary,mace,76,8d9,40.0,42,0,Flaming,mob,0,70,76
+1810,a Fujimoto blade,Japan,sword,78,7d11,42.0,43,0,Sharp,mob,0,70,76
+9828,a bone sword,Dragon Cult,exotic,78,7d11,42.0,43,0,,mob,0,45,78
+27238,kris of a thousand lies,The Valkyrie,dagger,78,10d8,45.0,43,0,Poisoned,mob,0,33,82
+5832,a custom blaster,Mos Eisley,exotic,80,8d10,44.0,44,0,,mob,0,70,80
+9833,a black staff,Dragon Cult,exotic,80,8d9,40.0,44,0,,mob,0,45,80
+18109,A Decaying Arm,Den of Monsters,flail,80,10d8,45.0,44,0,,mob,0,33,95
+27023,the blade of destruction,The Seminary,polearm,80,10d8,45.0,46,1,Frost Sharp TwoHands,mob,0,45,80
+9832,an evil looking black dagger,Dragon Cult,dagger,81,9d9,45.0,44,0,,mob,0,45,81
+1806,the Takashima blade,Japan,sword,82,9d9,45.0,45,0,,mob,0,70,82
+1815,the Stiehl,Japan,dagger,82,9d9,45.0,45,0,Sharp,mob,0,45,82
+28013,steel rapier,Sethanon,sword,82,7d12,45.5,45,0,Sharp,mob,0,100,85
+803,The Sabre of Wind,Strange World,sword,83,13d6,45.5,45,0,Sharp,mob,0,70,88
+503,sword of the deceiver,Camelot,sword,85,8d12,52.0,46,0,Sharp Vorpal,mob,0,27,95
+1811,a Minowara blade,Japan,sword,85,7d12,45.5,46,0,,mob,0,33,85
+5815,A double-barrelled laser pistol,Mos Eisley,exotic,85,7d12,45.5,46,0,,mob,0,70,95
+5830,A reinforced handcannon,Mos Eisley,exotic,85,9d9,45.0,46,0,,mob,0,70,85
+9901,a huge hammer of cold iron,Yggdrasil,mace,85,9d9,45.0,46,0,,mob,0,70,85
+18121,The Reaper's Scythe,Den of Monsters,polearm,85,9d9,45.0,46,0,Vampiric,mob,0,45,85
+18127,The Bloody Stake,Den of Monsters,spear,85,8d10,44.0,46,0,,mob,0,70,85
+820,Claw of Earth,Strange World,exotic,86,8d10,44.0,47,0,Sharp,mob,0,70,93
+27037,hands of emptiness,The Seminary,exotic,86,9d9,45.0,49,1,Frost Vorpal TwoHands,mob,0,45,99
+502,jewelled dagger of Anwe,Camelot,dagger,87,11d8,49.5,47,0,Frost Vorpal,mob,0,27,100
+810,Blood Sucker,Strange World,exotic,87,15d5,45.0,47,0,Sharp,mob,0,45,93
+504,a huge black hilted sword,Camelot,sword,88,6d15,48.0,48,0,Frost Sharp TwoHands,mob,0,45,95
+501,Excalibur,Camelot,sword,90,15d6,52.5,49,0,Sharp Vorpal TwoHands,mob,0,24,105
+809,Saint Sword,Strange World,sword,90,15d6,52.5,49,0,Frost,mob,0,21,105
+1006,The Fangs of Nitrius,The Heavens,exotic,90,13d7,52.0,49,0,Vampiric Vorpal,mob,0,45,100
+5828,A tripod-mounted blaster,Mos Eisley,exotic,90,6d15,48.0,49,0,,mob,0,70,98
+9612,a dagger,New Thalos,dagger,90,10d9,50.0,49,0,Sharp,shop,1,,
+10133,a long black whip,Uruk's Fortress,whip,90,15d6,52.5,49,0,Flaming,mob,0,45,108
+18128,The Fangs of the Vampire,Den of Monsters,exotic,90,10d9,50.0,49,0,Vampiric,mob,0,45,105
+30128,Pike of the Great Wyrm,Temple of the Great Wyrm,polearm,90,15d6,52.5,51,1,Sharp TwoHands,,0,,
+3428,a pitch-black gavel that flames brightly...,Chapel Catacombs,mace,91,15d6,52.5,49,0,,mob,0,33,106
+10129,an axe,Uruk's Fortress,axe,91,15d6,52.5,51,1,Vampiric TwoHands,mob,0,70,94
+18105,A Shark's Tooth,Den of Monsters,dagger,91,10d9,50.0,49,0,Sharp,mob,0,70,95
+18130,The Runed Cube,Den of Monsters,whip,91,8d12,52.0,49,0,,mob,0,45,105
+18132,Your Leg,Den of Monsters,axe,91,8d12,52.0,49,0,,mob,0,70,110
+18133,Freddy's Claw,Den of Monsters,exotic,91,8d12,52.0,49,0,,mob,0,70,115
+18135,THE Machete,Den of Monsters,sword,91,8d12,52.0,49,0,,mob,0,33,125
+28021,Sword of Ashen-Shugar,Sethanon,exotic,91,13d7,52.0,49,0,Vampiric Sharp,mob,0,45,105
+30005,a rusty looking scythe,Penthouse,polearm,91,15d6,52.5,51,1,Sharp Vorpal TwoHands Poisoned,mob,0,27,100
+30002,Staff of Gondor,Penthouse,exotic,99,20d6,70.0,53,0,Frost,,0,,

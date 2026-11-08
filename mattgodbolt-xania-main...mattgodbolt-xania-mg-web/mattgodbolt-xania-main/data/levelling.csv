@@ -1,0 +1,1935 @@
+level,area,mobs_in_window,xp_on_offer,steps_from_recall,suitable
+1,New Thalos,33,10350,17,1
+1,Elemental Canyon,30,10080,19,1
+1,Gnome Village,23,9360,13,1
+1,The Shire,26,8640,14,1
+1,Dwarven Day Care,21,6999,15,1
+1,Midgaard,18,4890,2,1
+1,Mob Factory,13,4560,11,1
+1,Sewer,13,4140,6,1
+1,Smurf Village,13,4050,13,1
+1,Graveyard,8,3600,13,1
+1,Haon Dor,10,3480,13,1
+1,Ultima,8,3450,15,1
+1,Mud School,11,3066,4,1
+1,New Ofcol,8,2640,29,1
+1,The Keep of Mahn-Tor,5,1875,54,1
+1,Troll Den,5,1800,17,1
+1,Thalos,4,1440,18,0
+1,Moria,3,1080,20,0
+1,Dwarven Kingdom,2,810,25,0
+1,Sands of Sorrow,2,810,18,0
+1,Plains of the North,3,765,14,0
+1,Old Marsh,2,720,19,0
+1,Old Thalos,2,618,22,0
+1,High Tower of Sorcery,2,606,24,0
+1,Holy Grove,2,600,16,0
+1,Dragon Cult,1,360,10,0
+1,Valley of the Elves,1,360,31,0
+1,Drow City,1,288,24,0
+1,Wolf Pointe,1,255,30,0
+2,Elemental Canyon,44,11229,19,1
+2,The Shire,42,10824,14,1
+2,New Thalos,43,10254,17,1
+2,Old Thalos,25,8162,22,1
+2,Gnome Village,24,6796,13,1
+2,Mob Factory,20,5262,9,1
+2,Dwarven Day Care,21,4868,15,1
+2,Graveyard,13,4296,13,1
+2,Sewer,16,3920,6,1
+2,Ultima,12,3858,15,1
+2,Midgaard,18,3332,2,1
+2,New Ofcol,12,3036,29,1
+2,Smurf Village,13,2823,13,1
+2,Mud School,13,2738,4,1
+2,Moria,9,2547,17,1
+2,Haon Dor,10,2415,13,1
+2,The Keep of Mahn-Tor,5,1320,54,1
+2,Troll Den,5,1245,17,1
+2,Valley of the Elves,4,1149,26,0
+2,Thalos,4,996,18,0
+2,Sands of Sorrow,3,861,18,0
+2,Plains of the North,4,840,14,0
+2,Holy Grove,3,723,15,0
+2,Crystalmir Lake,2,600,15,0
+2,Dwarven Kingdom,2,558,25,0
+2,Old Marsh,2,498,19,0
+2,High Tower of Sorcery,2,428,24,0
+2,Miden'nir,1,338,18,0
+2,Galaxy,1,300,30,0
+2,Dragon Cult,1,249,10,0
+2,Drow City,1,202,24,0
+2,Wolf Pointe,1,180,30,0
+3,Dangerous Neighbourhood,56,14364,12,1
+3,Elemental Canyon,61,12580,19,1
+3,Old Thalos,46,11841,20,1
+3,The Shire,57,11632,14,1
+3,Gnome Village,36,8428,13,1
+3,New Thalos,46,8133,17,1
+3,New Ofcol,28,6658,26,1
+3,Crystalmir Lake,19,4786,13,1
+3,Sewer,22,4558,6,1
+3,Dwarven Day Care,23,3974,15,1
+3,Mob Factory,20,3794,9,1
+3,Moria,15,3456,17,1
+3,Ultima,14,3422,15,1
+3,Graveyard,13,3093,13,1
+3,Haon Dor,15,3040,12,1
+3,Midgaard,20,2610,2,1
+3,Mud School,15,2380,4,1
+3,Valley of the Elves,10,2360,22,1
+3,Sands of Sorrow,8,2193,16,1
+3,Smurf Village,13,1972,13,1
+3,Troll Den,9,1934,17,1
+3,Kingdom of Juargan,6,1728,39,1
+3,Dragon Tower,6,1539,30,1
+3,Dwarven Catacombs,6,1539,29,1
+3,Wolf Pointe,6,1431,25,1
+3,Arachnos,5,1314,23,1
+3,Mega-City One,4,1152,24,0
+3,Plains of the North,6,1077,14,1
+3,The Keep of Mahn-Tor,5,960,54,1
+3,Holy Grove,4,776,14,0
+3,Wyvern Tower,3,770,25,0
+3,Thalos,4,726,18,0
+3,Dwarven Kingdom,2,411,25,0
+3,Old Marsh,2,363,19,0
+3,Descent to Hell,1,321,83,0
+3,High Tower of Sorcery,2,278,24,0
+3,Temple of the Great Wyrm,1,256,29,0
+3,Miden'nir,1,240,18,0
+3,Galaxy,1,213,30,0
+3,Dragon Cult,1,182,10,0
+3,Drow City,1,132,24,0
+4,Dangerous Neighbourhood,56,10500,12,1
+4,Elemental Canyon,62,10394,19,1
+4,Old Thalos,51,10116,20,1
+4,The Shire,60,9201,14,1
+4,Gnome Village,38,7006,13,1
+4,New Ofcol,31,6250,26,1
+4,Sewer,25,5805,6,1
+4,New Thalos,44,5612,17,1
+4,Valley of the Elves,23,4662,22,1
+4,Crystalmir Lake,23,4406,10,1
+4,Mob Factory,25,4176,9,1
+4,Moria,19,3452,17,1
+4,Ultima,15,2800,15,1
+4,Graveyard,14,2576,13,1
+4,Olympus,9,2524,20,1
+4,Dwarven Day Care,17,2367,15,1
+4,Haon Dor,15,2222,12,1
+4,Dragon Tower,10,2133,30,1
+4,Troll Den,11,1929,17,1
+4,Sands of Sorrow,9,1888,16,1
+4,Arachnos,9,1860,23,1
+4,Miden'nir,7,1692,16,1
+4,Wyvern Tower,8,1688,21,1
+4,Kingdom of Juargan,6,1260,39,1
+4,Mud School,8,1167,4,1
+4,Dwarven Catacombs,6,1125,29,1
+4,Plains of the North,5,984,17,1
+4,Wolf Pointe,5,960,25,1
+4,Smurf Village,7,945,16,1
+4,Chapel Catacombs,4,900,29,0
+4,Mega-City One,4,840,24,0
+4,Midgaard,5,794,3,1
+4,Holy Grove,5,776,14,1
+4,The Keep of Mahn-Tor,5,638,54,1
+4,Thalos,4,540,18,0
+4,Dwarven Kingdom,2,303,25,0
+4,Old Marsh,2,270,19,0
+4,Descent to Hell,1,234,83,0
+4,Temple of the Great Wyrm,1,188,29,0
+4,Galaxy,1,159,30,0
+4,Dragon Cult,1,135,10,0
+5,Dangerous Neighbourhood,60,8694,12,1
+5,Gnome Village,51,8174,13,1
+5,Elemental Canyon,58,7821,19,1
+5,Old Thalos,51,7774,20,1
+5,Moria,38,6478,17,1
+5,The Shire,49,6056,14,1
+5,New Ofcol,33,5139,26,1
+5,Crystalmir Lake,31,4948,10,1
+5,New Thalos,33,4641,19,1
+5,Valley of the Elves,28,4460,22,1
+5,Sewer,25,4286,6,1
+5,Kingdom of Juargan,16,3204,32,1
+5,Mob Factory,23,2860,9,1
+5,Dragon Tower,15,2835,26,1
+5,Dwarven Catacombs,14,2442,29,1
+5,High Tower of Sorcery,11,2296,31,1
+5,Wyvern Tower,13,2253,21,1
+5,Sands of Sorrow,13,2190,16,1
+5,Ultima,15,2180,15,1
+5,Troll Den,14,1992,16,1
+5,Olympus,9,1863,20,1
+5,Graveyard,14,1827,13,1
+5,Miden'nir,9,1749,16,1
+5,Arachnos,10,1614,23,1
+5,Dwarven Day Care,15,1492,15,1
+5,Haon Dor,13,1437,12,1
+5,Plains of the North,5,735,17,1
+5,Wolf Pointe,5,723,25,1
+5,Mud School,6,705,4,1
+5,Midgaard,5,686,4,1
+5,Chapel Catacombs,4,666,29,0
+5,Smurf Village,7,640,16,1
+5,Mega-City One,4,636,24,0
+5,Holy Grove,3,428,14,0
+5,Thalos,4,366,18,0
+5,Dwarven Kingdom,2,204,25,0
+5,Old Marsh,2,183,19,0
+5,Descent to Hell,1,176,83,0
+5,Temple of the Great Wyrm,1,141,29,0
+5,Galaxy,1,120,30,0
+5,Dragon Cult,1,92,10,0
+6,Dangerous Neighbourhood,70,8898,12,1
+6,Elemental Canyon,55,6866,20,1
+6,The Shire,52,6564,13,1
+6,Old Thalos,53,6094,20,1
+6,Gnome Village,37,5796,13,1
+6,Valley of the Elves,39,5463,21,1
+6,Moria,39,5444,17,1
+6,Kingdom of Juargan,26,4659,32,1
+6,New Thalos,33,4442,19,1
+6,Crystalmir Lake,31,3748,10,1
+6,High Tower of Sorcery,21,3634,26,1
+6,New Ofcol,29,3580,26,1
+6,Sewer,24,3453,6,1
+6,Arachnos,18,2672,21,1
+6,Miden'nir,14,2367,16,1
+6,Dwarven Catacombs,16,2208,22,1
+6,Sands of Sorrow,14,2178,13,1
+6,Dragon Tower,15,2162,26,1
+6,Wyvern Tower,15,2072,21,1
+6,Olympus,11,1881,20,1
+6,Ultima,11,1668,15,1
+6,Lore Keep,9,1620,16,1
+6,Troll Den,11,1575,16,1
+6,Galaxy,8,1500,29,1
+6,Mob Factory,12,1358,9,1
+6,Old Marsh,6,1080,18,1
+6,Nirvana,5,900,16,1
+6,Midgaard,5,726,4,1
+6,Haon Dor,6,720,12,1
+6,Graveyard,6,650,14,1
+6,Plains of the North,5,554,17,1
+6,Wolf Pointe,5,554,25,1
+6,Dwarven Kingdom,3,540,19,0
+6,Chapel Catacombs,4,510,29,0
+6,Holy Grove,4,498,14,0
+6,Mega-City One,4,486,24,0
+6,Dwarven Day Care,3,441,15,0
+6,Mud School,4,381,7,0
+6,Machine Dreams,1,225,,0
+6,Smurf Village,1,180,23,0
+6,Descent to Hell,1,135,83,0
+6,Temple of the Great Wyrm,1,108,29,0
+7,Dangerous Neighbourhood,70,7005,12,1
+7,High Tower of Sorcery,39,6524,23,1
+7,Elemental Canyon,45,5370,20,1
+7,Moria,39,5218,17,1
+7,Gnome Village,36,4707,13,1
+7,Valley of the Elves,36,4336,21,1
+7,The Shire,36,4266,13,1
+7,Kingdom of Juargan,26,3873,32,1
+7,Wyvern Tower,25,3660,21,1
+7,New Thalos,26,3626,19,1
+7,Old Thalos,30,3144,20,1
+7,Crystalmir Lake,29,2886,10,1
+7,Dragon Tower,20,2788,26,1
+7,Thalos,12,2700,18,1
+7,Dwarven Catacombs,20,2625,22,1
+7,Sewer,21,2614,6,1
+7,New Ofcol,25,2595,26,1
+7,Dwarven Kingdom,12,2250,19,1
+7,Arachnos,18,2199,21,1
+7,Miden'nir,14,2134,16,1
+7,Mob Factory,12,1922,10,1
+7,Ultima,10,1716,20,1
+7,Sands of Sorrow,13,1708,13,1
+7,Galaxy,9,1626,29,1
+7,Olympus,11,1590,20,1
+7,Lore Keep,9,1350,16,1
+7,Troll Den,11,1292,16,1
+7,Old Marsh,8,1260,18,1
+7,Midgaard,6,772,4,1
+7,Nirvana,5,750,16,1
+7,Wolf Pointe,6,603,25,1
+7,Haon Dor,6,562,12,1
+7,Chapel Catacombs,4,432,29,0
+7,Plains of the North,4,381,23,0
+7,Mega-City One,4,372,24,0
+7,Dwarven Day Care,3,352,15,0
+7,Holy Grove,3,340,14,0
+7,Machine Dreams,1,188,,0
+7,Mud School,2,165,7,0
+7,Smurf Village,1,150,23,0
+7,Graveyard,1,135,19,0
+7,Descent to Hell,1,102,83,0
+7,Temple of the Great Wyrm,1,82,29,0
+8,New Thalos,63,11362,18,1
+8,High Tower of Sorcery,47,7100,23,1
+8,Kingdom of Juargan,32,5505,32,1
+8,Moria,40,5362,17,1
+8,Dwarven Catacombs,30,4671,22,1
+8,Wyvern Tower,29,4256,21,1
+8,Elemental Canyon,32,3942,27,1
+8,Dangerous Neighbourhood,23,3732,12,1
+8,Gnome Village,25,3176,13,1
+8,Valley of the Elves,30,3142,21,1
+8,Galaxy,16,2710,29,1
+8,The Shire,21,2542,13,1
+8,Arachnos,17,2372,21,1
+8,Thalos,12,2250,18,1
+8,Dwarven Kingdom,14,2238,19,1
+8,Sewer,18,2206,9,1
+8,Dragon Tower,15,2067,26,1
+8,Old Thalos,14,2055,19,1
+8,Miden'nir,15,1950,16,1
+8,Mob Factory,12,1551,10,1
+8,Ultima,9,1486,20,1
+8,Crystalmir Lake,13,1401,10,1
+8,Old Marsh,9,1245,18,1
+8,Olympus,11,1236,20,1
+8,Sands of Sorrow,9,1236,13,1
+8,Lore Keep,9,1148,16,1
+8,Mega-City One,6,1148,23,1
+8,Holy Grove,6,1110,14,1
+8,The Keep of Mahn-Tor,5,900,39,1
+8,New Ofcol,9,897,33,1
+8,Troll Den,7,798,16,1
+8,Nirvana,5,638,16,1
+8,Midgaard,4,513,5,0
+8,Wolf Pointe,3,510,31,0
+8,Smurf Village,3,488,19,0
+8,Drow City,2,450,27,0
+8,Plains of the North,3,390,23,0
+8,UnderDark,2,360,32,0
+8,Haon Dor,2,352,12,0
+8,Chapel Catacombs,4,330,29,0
+8,Temple of the Great Wyrm,1,202,28,0
+8,The Astral Plane,1,180,26,0
+8,Dwarven Day Care,1,159,23,0
+8,Machine Dreams,1,159,,0
+8,Graveyard,1,102,19,0
+9,New Thalos,64,9591,18,1
+9,High Tower of Sorcery,48,6081,23,1
+9,Moria,39,4610,17,1
+9,Dwarven Catacombs,34,4572,22,1
+9,Kingdom of Juargan,32,4530,32,1
+9,Galaxy,23,3532,29,1
+9,Wyvern Tower,24,3202,21,1
+9,Dangerous Neighbourhood,23,3102,12,1
+9,Thalos,17,2808,18,1
+9,Elemental Canyon,24,2736,27,1
+9,Gnome Village,21,2229,15,1
+9,UnderDark,11,2145,25,1
+9,The Shire,18,1918,13,1
+9,Dwarven Kingdom,14,1902,19,1
+9,Ultima,11,1833,20,1
+9,Valley of the Elves,17,1708,21,1
+9,Arachnos,13,1707,21,1
+9,Old Marsh,11,1413,18,1
+9,Dragon Tower,11,1380,26,1
+9,Old Thalos,8,1250,19,1
+9,Miden'nir,9,1152,18,1
+9,Nirvana,8,1080,16,1
+9,Sewer,6,1011,9,1
+9,Lore Keep,9,972,16,1
+9,Mega-City One,6,954,23,1
+9,Sands of Sorrow,8,922,13,1
+9,Mob Factory,7,892,10,1
+9,Holy Grove,5,858,14,1
+9,Crystalmir Lake,9,830,12,1
+9,The Keep of Mahn-Tor,5,750,39,1
+9,Troll Den,6,716,16,1
+9,Wolf Pointe,3,428,31,0
+9,Midgaard,4,426,5,0
+9,Smurf Village,3,408,19,0
+9,Drow City,2,375,27,0
+9,Haon Dor,2,296,12,0
+9,Olympus,2,270,29,0
+9,New Ofcol,2,204,33,0
+9,Plains of the North,1,188,,0
+9,Temple of the Great Wyrm,1,168,28,0
+9,The Astral Plane,1,150,26,0
+9,Dwarven Day Care,1,135,23,0
+9,Machine Dreams,1,135,,0
+10,New Thalos,64,9261,18,1
+10,Dwarven Catacombs,40,6351,22,1
+10,High Tower of Sorcery,39,4618,23,1
+10,Wyvern Tower,24,3380,21,1
+10,Sewer,18,3129,9,1
+10,Moria,23,3094,21,1
+10,UnderDark,17,3004,24,1
+10,Kingdom of Juargan,22,2928,38,1
+10,Galaxy,23,2913,29,1
+10,Elemental Canyon,23,2472,27,1
+10,Thalos,17,2370,18,1
+10,Dwarven Kingdom,17,2258,14,1
+10,Dangerous Neighbourhood,19,2234,12,1
+10,Ultima,12,1874,20,1
+10,The Shire,18,1582,13,1
+10,Arachnos,13,1521,21,1
+10,Old Marsh,13,1498,18,1
+10,Imladris,7,1395,26,1
+10,Drow City,6,1218,25,1
+10,Gnome Village,9,1122,17,1
+10,Valley of the Elves,12,990,21,1
+10,Old Thalos,7,956,19,1
+10,Mob Factory,8,936,9,1
+10,Nirvana,8,862,16,1
+10,Mega-City One,6,814,23,1
+10,Miden'nir,7,750,18,1
+10,Lore Keep,9,742,16,1
+10,Dragon Tower,6,735,33,1
+10,Holy Grove,5,718,14,1
+10,Sands of Sorrow,5,690,13,1
+10,The Keep of Mahn-Tor,5,638,39,1
+10,Midgaard,4,498,5,0
+10,Troll Den,3,374,17,0
+10,Wolf Pointe,3,363,31,0
+10,Crystalmir Lake,2,352,11,0
+10,Smurf Village,3,338,19,0
+10,Haon Dor,2,242,12,0
+10,Olympus,2,204,29,0
+10,New Ofcol,1,180,32,0
+10,Plains of the North,1,159,,0
+10,Temple of the Great Wyrm,1,144,28,0
+10,The Astral Plane,1,128,26,0
+10,Dwarven Day Care,1,102,23,0
+10,Machine Dreams,1,102,,0
+11,Dwarven Catacombs,48,7230,25,1
+11,New Thalos,55,7158,18,1
+11,Imladris,23,4740,26,1
+11,UnderDark,28,4719,23,1
+11,High Tower of Sorcery,29,2990,23,1
+11,Wyvern Tower,23,2840,21,1
+11,Sewer,17,2643,9,1
+11,Moria,21,2607,21,1
+11,Ultima,12,1968,26,1
+11,Galaxy,16,1893,30,1
+11,Thalos,17,1862,18,1
+11,Dragon Tower,11,1698,28,1
+11,Kingdom of Juargan,12,1620,38,1
+11,Dwarven Kingdom,14,1604,14,1
+11,Elemental Canyon,13,1572,27,1
+11,Dangerous Neighbourhood,11,1386,12,1
+11,Old Marsh,9,1188,18,1
+11,Drow City,6,1020,25,1
+11,Holy Grove,6,990,13,1
+11,Arachnos,6,908,25,1
+11,Mob Factory,8,728,9,1
+11,Mega-City One,6,688,23,1
+11,Old Thalos,5,662,19,1
+11,The Keep of Mahn-Tor,5,540,39,1
+11,Gnome Village,3,464,24,0
+11,Troll Den,2,384,18,0
+11,Nirvana,3,382,16,0
+11,New Ofcol,2,375,30,0
+11,Plains of the North,2,338,17,0
+11,Sands of Sorrow,2,322,22,0
+11,Wolf Pointe,3,298,31,0
+11,Crystalmir Lake,2,296,11,0
+11,Midgaard,2,270,10,0
+11,Miden'nir,2,224,18,0
+11,Smurf Village,2,216,19,0
+11,The Shire,1,150,17,0
+11,Haon Dor,1,135,12,0
+11,Temple of the Great Wyrm,1,122,28,0
+11,The Astral Plane,1,108,26,0
+12,Dwarven Catacombs,45,5820,26,1
+12,New Thalos,52,5376,18,1
+12,UnderDark,32,4668,23,1
+12,Imladris,26,4620,26,1
+12,Sewer,19,2656,9,1
+12,Wyvern Tower,15,2025,21,1
+12,Moria,16,1936,21,1
+12,Ultima,10,1612,26,1
+12,High Tower of Sorcery,13,1490,28,1
+12,Old Marsh,10,1461,18,1
+12,Nirvana,9,1404,16,1
+12,Galaxy,14,1365,30,1
+12,Kingdom of Juargan,12,1224,38,1
+12,Mega-City One,9,1134,23,1
+12,The Keep of Mahn-Tor,9,1132,31,1
+12,Dangerous Neighbourhood,11,1084,12,1
+12,Dragon Tower,6,1020,28,1
+12,Elemental Canyon,9,1012,27,1
+12,Arachnos,7,942,25,1
+12,Drow City,6,840,25,1
+12,Olympus,4,810,23,0
+12,Holy Grove,6,783,13,1
+12,Dwarven Kingdom,5,642,14,1
+12,Gnome Village,4,610,24,0
+12,Thalos,5,540,18,1
+12,Old Thalos,5,501,19,1
+12,Sands of Sorrow,3,486,22,0
+12,The Shire,2,330,16,0
+12,Troll Den,2,322,18,0
+12,New Ofcol,2,315,30,0
+12,Plains of the North,2,270,17,0
+12,Crystalmir Lake,2,242,11,0
+12,Smurf Village,2,165,19,0
+12,Wolf Pointe,2,165,31,0
+12,Midgaard,1,159,10,0
+12,Mob Factory,1,128,9,0
+12,Haon Dor,1,102,12,0
+12,Miden'nir,1,93,18,0
+12,Temple of the Great Wyrm,1,93,28,0
+12,The Astral Plane,1,82,26,0
+13,Midgaard,22,4815,2,1
+13,Dwarven Catacombs,31,4185,25,1
+13,Imladris,27,4089,26,1
+13,UnderDark,31,3944,23,1
+13,High Tower of Sorcery,19,3496,30,1
+13,The Keep of Mahn-Tor,17,2940,31,1
+13,New Thalos,18,2350,20,1
+13,Old Marsh,14,2040,18,1
+13,Sewer,16,1982,9,1
+13,Ultima,12,1870,30,1
+13,Wyvern Tower,10,1605,21,1
+13,Wolf Pointe,7,1530,24,1
+13,Elemental Canyon,10,1479,26,1
+13,Drow City,8,1440,25,1
+13,Dwarven Kingdom,7,1215,14,1
+13,Galaxy,10,1162,29,1
+13,Nirvana,9,1148,16,1
+13,Moria,9,1054,21,1
+13,Dragon Tower,5,795,28,1
+13,Arachnos,4,675,21,0
+13,Kingdom of Juargan,3,675,50,0
+13,Olympus,4,675,23,0
+13,Gnome Village,4,669,17,0
+13,Mega-City One,3,504,24,0
+13,Old Thalos,2,450,26,0
+13,Thalos,5,412,18,1
+13,Valley of the Elves,2,360,35,0
+13,Sands of Sorrow,2,322,22,0
+13,Holy Grove,2,318,13,0
+13,The Shire,2,276,16,0
+13,New Ofcol,2,267,30,0
+13,Troll Den,2,261,18,0
+13,Dangerous Neighbourhood,2,255,22,0
+13,Descent to Hell,1,225,28,0
+13,Plains of the North,1,144,17,0
+13,Crystalmir Lake,1,135,11,0
+13,Mob Factory,1,108,9,0
+14,UnderDark,65,11808,18,1
+14,High Tower of Sorcery,26,4318,32,1
+14,Imladris,31,4272,26,1
+14,Midgaard,22,4002,2,1
+14,Dwarven Catacombs,28,3321,25,1
+14,The Keep of Mahn-Tor,20,3000,31,1
+14,Old Marsh,16,2373,18,1
+14,New Thalos,17,1808,20,1
+14,Elemental Canyon,12,1574,26,1
+14,Dwarven Kingdom,10,1521,14,1
+14,Ultima,10,1518,31,1
+14,Wyvern Tower,11,1479,21,1
+14,Sewer,15,1474,9,1
+14,Wolf Pointe,7,1274,24,1
+14,Drow City,8,1158,25,1
+14,Mega-City One,5,792,24,1
+14,Nirvana,6,765,22,1
+14,Dragon Tower,5,675,28,1
+14,Moria,6,652,24,1
+14,Olympus,4,573,23,0
+14,Kingdom of Juargan,3,562,50,0
+14,Arachnos,4,556,21,0
+14,Gnome Village,4,542,17,0
+14,Galaxy,3,488,29,0
+14,Old Thalos,2,375,26,0
+14,Valley of the Elves,2,300,35,0
+14,Holy Grove,2,270,13,0
+14,Sands of Sorrow,2,261,22,0
+14,The Shire,2,226,16,0
+14,New Ofcol,2,218,30,0
+14,Dangerous Neighbourhood,2,216,22,0
+14,Descent to Hell,1,188,28,0
+14,Troll Den,1,135,18,0
+14,Plains of the North,1,122,17,0
+14,Crystalmir Lake,1,102,11,0
+14,Mob Factory,1,82,9,0
+15,UnderDark,78,13130,16,1
+15,Old Thalos,18,3918,26,1
+15,High Tower of Sorcery,26,3867,32,1
+15,Midgaard,22,3532,2,1
+15,Imladris,25,3098,26,1
+15,The Keep of Mahn-Tor,20,2540,31,1
+15,Old Marsh,14,1842,18,1
+15,Drow City,8,1536,25,1
+15,Dwarven Catacombs,14,1524,25,1
+15,Elemental Canyon,11,1462,26,1
+15,Wolf Pointe,7,1083,24,1
+15,Ultima,8,1074,31,1
+15,Wyvern Tower,7,1065,28,1
+15,Mega-City One,7,1024,24,1
+15,Dwarven Kingdom,7,1023,21,1
+15,Nirvana,7,828,22,1
+15,New Thalos,6,765,20,1
+15,Galaxy,4,594,29,0
+15,Arachnos,4,556,21,0
+15,The Shire,3,526,16,0
+15,Dragon Tower,5,510,28,1
+15,Olympus,4,486,23,0
+15,Kingdom of Juargan,3,477,50,0
+15,Sewer,3,352,19,0
+15,Moria,3,300,24,0
+15,Gnome Village,2,294,17,0
+15,Valley of the Elves,2,255,35,0
+15,Holy Grove,2,204,13,0
+15,Crystalmir Lake,1,180,16,0
+15,Haon Dor,1,180,17,0
+15,Dangerous Neighbourhood,2,165,22,0
+15,Descent to Hell,1,159,28,0
+15,Sands of Sorrow,1,135,23,0
+15,New Ofcol,1,102,30,0
+15,Troll Den,1,102,18,0
+15,Plains of the North,1,93,17,0
+16,UnderDark,100,16383,16,1
+16,High Tower of Sorcery,29,3840,32,1
+16,Old Thalos,18,3270,26,1
+16,Midgaard,22,2996,2,1
+16,The Keep of Mahn-Tor,20,2116,31,1
+16,Dragon Tower,7,1575,31,1
+16,Elemental Canyon,11,1455,26,1
+16,Imladris,10,1438,34,1
+16,Old Marsh,12,1392,18,1
+16,Drow City,8,1290,25,1
+16,Dwarven Kingdom,8,1048,20,1
+16,Wyvern Tower,7,1014,28,1
+16,New Thalos,8,1008,20,1
+16,Galaxy,6,951,29,1
+16,Wolf Pointe,7,918,24,1
+16,Ultima,6,864,33,1
+16,Mega-City One,7,834,24,1
+16,Nirvana,7,645,22,1
+16,The Shire,4,633,16,0
+16,Dwarven Catacombs,4,484,25,0
+16,Kingdom of Juargan,3,405,50,0
+16,Arachnos,3,387,21,0
+16,Olympus,4,369,23,0
+16,Sands of Sorrow,2,282,18,0
+16,Gnome Village,2,237,17,0
+16,Valley of the Elves,2,216,35,0
+16,Sewer,2,204,21,0
+16,Crystalmir Lake,1,150,16,0
+16,Haon Dor,1,150,17,0
+16,Descent to Hell,1,135,28,0
+16,Moria,1,102,33,0
+17,UnderDark,123,18958,16,1
+17,New Ofcol,14,3150,26,1
+17,High Tower of Sorcery,27,2946,32,1
+17,Old Thalos,18,2748,26,1
+17,Midgaard,22,2282,2,1
+17,The Keep of Mahn-Tor,20,2206,33,1
+17,Dragon Tower,7,1312,31,1
+17,Elemental Canyon,11,1184,26,1
+17,Galaxy,8,1174,29,1
+17,Drow City,8,1044,25,1
+17,Imladris,7,956,34,1
+17,Old Marsh,9,898,18,1
+17,Wyvern Tower,6,884,28,1
+17,Dwarven Kingdom,8,843,20,1
+17,Ultima,6,834,33,1
+17,New Thalos,8,795,20,1
+17,Wolf Pointe,7,696,24,1
+17,Mega-City One,5,674,24,1
+17,The Shire,4,634,16,0
+17,Dwarven Catacombs,3,320,25,0
+17,Kingdom of Juargan,3,306,50,0
+17,Arachnos,2,230,21,0
+17,Valley of the Elves,2,165,35,0
+17,Sands of Sorrow,1,150,18,0
+17,Crystalmir Lake,1,128,16,0
+17,Haon Dor,1,128,17,0
+17,Nirvana,1,128,26,0
+17,Descent to Hell,1,102,28,0
+17,Gnome Village,1,102,17,0
+18,UnderDark,132,17482,16,1
+18,Dylan's Wilderness,35,7088,18,1
+18,High Tower of Sorcery,21,2931,30,1
+18,New Ofcol,15,2850,26,1
+18,The Keep of Mahn-Tor,17,2810,31,1
+18,Old Thalos,18,2610,30,1
+18,The Enchanted Forest,8,1800,28,1
+18,Dwarven Kingdom,10,1590,17,1
+18,Mega-City One,10,1494,24,1
+18,New Thalos,8,1448,29,1
+18,Dragon Tower,8,1338,31,1
+18,Old Marsh,8,1156,18,1
+18,Midgaard,5,1035,11,1
+18,Imladris,7,918,26,1
+18,The Flying Citadel,5,900,23,1
+18,Elemental Canyon,7,816,26,1
+18,Galaxy,5,764,31,1
+18,Wyvern Tower,4,564,38,0
+18,Drow City,4,540,25,0
+18,The Shire,4,537,16,0
+18,Holy Grove,2,450,14,0
+18,Ultima,3,448,40,0
+18,Nirvana,2,288,26,0
+18,Dwarven Catacombs,2,282,29,0
+18,Kingdom of Juargan,1,180,41,0
+18,The Astral Plane,1,180,26,0
+18,Valley of the Elves,1,180,33,0
+18,Wolf Pointe,1,180,34,0
+18,Sands of Sorrow,1,128,18,0
+18,Arachnos,1,108,49,0
+18,Crystalmir Lake,1,108,16,0
+18,Haon Dor,1,108,17,0
+19,UnderDark,143,23014,16,1
+19,Dylan's Wilderness,35,5880,18,1
+19,New Ofcol,20,3538,26,1
+19,The Keep of Mahn-Tor,17,2691,31,1
+19,The Enchanted Forest,14,2580,23,1
+19,High Tower of Sorcery,15,2223,30,1
+19,Old Thalos,18,2007,30,1
+19,New Thalos,12,1929,19,1
+19,Dwarven Kingdom,8,1296,17,1
+19,Dragon Tower,8,1132,31,1
+19,Imladris,6,1100,25,1
+19,Mega-City One,8,1095,24,1
+19,Drow City,7,1083,25,1
+19,Old Marsh,6,1059,18,1
+19,The Flying Citadel,6,930,23,1
+19,Midgaard,5,852,11,1
+19,Galaxy,5,639,31,1
+19,Elemental Canyon,5,531,26,1
+19,The Shire,4,434,16,0
+19,Wyvern Tower,3,396,38,0
+19,Holy Grove,2,375,14,0
+19,Ultima,2,294,40,0
+19,Nirvana,2,232,26,0
+19,Dwarven Catacombs,1,150,29,0
+19,Kingdom of Juargan,1,150,41,0
+19,The Astral Plane,1,150,26,0
+19,Valley of the Elves,1,150,33,0
+19,Wolf Pointe,1,150,34,0
+19,Sands of Sorrow,1,108,18,0
+19,Arachnos,1,82,49,0
+19,Crystalmir Lake,1,82,16,0
+19,Haon Dor,1,82,17,0
+20,UnderDark,137,20242,16,1
+20,Dylan's Wilderness,35,5040,18,1
+20,Galaxy,17,3192,31,1
+20,New Ofcol,20,2986,26,1
+20,The Keep of Mahn-Tor,20,2814,31,1
+20,The Enchanted Forest,15,2352,23,1
+20,High Tower of Sorcery,15,2078,30,1
+20,New Thalos,12,1610,19,1
+20,Dragon Tower,10,1323,31,1
+20,Dwarven Kingdom,8,1096,17,1
+20,Imladris,6,1026,25,1
+20,Mega-City One,7,1017,24,1
+20,Old Marsh,6,896,18,1
+20,Nirvana,5,848,26,1
+20,The Flying Citadel,6,788,23,1
+20,Midgaard,4,636,11,0
+20,Drow City,3,562,26,0
+20,Elemental Canyon,4,472,26,0
+20,Ultima,3,462,38,0
+20,Ciquala's Lair,2,450,16,0
+20,Holy Grove,2,318,14,0
+20,Old Thalos,2,318,34,0
+20,Wyvern Tower,2,237,39,0
+20,The Shire,2,201,16,0
+20,Olympus,1,180,27,0
+20,Dwarven Catacombs,1,128,29,0
+20,Kingdom of Juargan,1,128,41,0
+20,The Astral Plane,1,128,26,0
+20,Valley of the Elves,1,128,33,0
+20,Wolf Pointe,1,128,34,0
+20,Sands of Sorrow,1,82,18,0
+21,UnderDark,128,19461,14,1
+21,Dylan's Wilderness,37,4702,18,1
+21,The Enchanted Forest,20,3120,23,1
+21,High Tower of Sorcery,17,2517,27,1
+21,Galaxy,15,2472,31,1
+21,New Ofcol,20,2358,26,1
+21,The Keep of Mahn-Tor,20,2338,31,1
+21,New Thalos,11,1450,19,1
+21,Drow City,5,927,23,1
+21,The Astral Plane,5,918,16,1
+21,Dwarven Kingdom,7,856,17,1
+21,Mega-City One,7,848,24,1
+21,The Flying Citadel,7,848,23,1
+21,Imladris,5,780,25,1
+21,Midgaard,5,765,11,1
+21,Old Marsh,6,760,18,1
+21,Ultima,4,740,38,0
+21,Nirvana,5,708,26,1
+21,Dragon Tower,3,510,34,0
+21,Elemental Canyon,3,438,26,0
+21,Ciquala's Lair,2,375,16,0
+21,Holy Grove,2,270,14,0
+21,Old Thalos,2,270,34,0
+21,The Dell,1,180,12,0
+21,Olympus,1,150,27,0
+21,Dwarven Catacombs,1,108,29,0
+21,Kingdom of Juargan,1,108,41,0
+21,Valley of the Elves,1,108,33,0
+21,Wolf Pointe,1,108,34,0
+21,Wyvern Tower,1,102,41,0
+21,The Shire,1,82,19,0
+22,UnderDark,110,16160,14,1
+22,Dylan's Wilderness,38,3810,18,1
+22,The Enchanted Forest,25,3654,23,1
+22,High Tower of Sorcery,19,2394,27,1
+22,Galaxy,13,1941,33,1
+22,The Keep of Mahn-Tor,16,1570,31,1
+22,Drow City,8,1455,23,1
+22,The Flying Citadel,11,1390,22,1
+22,New Thalos,11,1164,19,1
+22,Nirvana,7,952,26,1
+22,Imladris,6,876,25,1
+22,Old Marsh,7,830,18,1
+22,New Ofcol,6,777,32,1
+22,The Astral Plane,5,754,16,1
+22,Dwarven Kingdom,7,666,17,1
+22,Midgaard,5,596,11,1
+22,Mega-City One,6,592,26,1
+22,Elemental Canyon,4,540,26,0
+22,Ultima,3,534,38,0
+22,Dragon Tower,3,420,34,0
+22,Ciquala's Lair,2,318,16,0
+22,Dwarven Catacombs,2,308,29,0
+22,Arachnos,1,225,47,0
+22,Plains of the North,1,225,32,0
+22,Holy Grove,2,204,14,0
+22,Old Thalos,2,204,34,0
+22,The Dell,1,150,12,0
+22,Olympus,1,128,27,0
+22,Kingdom of Juargan,1,82,41,0
+22,Valley of the Elves,1,82,33,0
+22,Wolf Pointe,1,82,34,0
+23,UnderDark,119,16318,14,1
+23,The Enchanted Forest,21,3236,23,1
+23,The Astral Plane,18,3096,15,1
+23,The Flying Citadel,14,2520,22,1
+23,Thalos,9,2025,18,1
+23,High Tower of Sorcery,14,2014,27,1
+23,Galaxy,14,1872,33,1
+23,The Keep of Mahn-Tor,12,1786,29,1
+23,Ultima,8,1556,20,1
+23,Drow City,9,1412,23,1
+23,Dylan's Wilderness,8,1368,25,1
+23,New Thalos,9,1209,19,1
+23,Imladris,7,1065,25,1
+23,Nirvana,6,732,26,1
+23,Mega-City One,3,562,28,0
+23,New Ofcol,5,510,32,1
+23,Olympus,3,468,27,0
+23,Arachnos,2,412,47,0
+23,Elemental Canyon,3,386,31,0
+23,Valley of the Elves,2,382,34,0
+23,Old Marsh,3,374,18,0
+23,Ciquala's Lair,2,270,16,0
+23,Dragon Tower,2,270,34,0
+23,Haon Dor,1,225,22,0
+23,Dwarven Catacombs,1,188,33,0
+23,Plains of the North,1,188,32,0
+23,The Shire,1,180,16,0
+23,Midgaard,1,159,11,0
+23,The Dell,1,128,12,0
+23,Dwarven Kingdom,1,82,21,0
+24,UnderDark,71,10272,14,1
+24,The Astral Plane,20,2991,15,1
+24,The Enchanted Forest,15,2302,24,1
+24,The Flying Citadel,14,2268,22,1
+24,Nirvana,14,2025,26,1
+24,Galaxy,16,1886,33,1
+24,Ultima,10,1740,20,1
+24,Thalos,9,1688,18,1
+24,The Keep of Mahn-Tor,11,1620,29,1
+24,High Tower of Sorcery,12,1539,27,1
+24,Dylan's Wilderness,8,1148,25,1
+24,Drow City,6,934,23,1
+24,Arachnos,4,796,44,0
+24,Olympus,5,742,27,1
+24,New Thalos,5,735,23,1
+24,Imladris,4,627,41,0
+24,Elemental Canyon,4,498,31,0
+24,Mega-City One,3,458,28,0
+24,Dragon Tower,3,429,34,0
+24,Valley of the Elves,2,318,34,0
+24,Limbo,1,225,9,0
+24,Ciquala's Lair,2,204,16,0
+24,Haon Dor,1,188,22,0
+24,Dwarven Catacombs,1,159,33,0
+24,Old Marsh,1,159,21,0
+24,Plains of the North,1,159,32,0
+24,The Shire,1,150,16,0
+24,Midgaard,1,135,11,0
+24,The Dell,1,108,12,0
+25,UnderDark,65,8946,14,1
+25,The Astral Plane,20,2493,15,1
+25,The Flying Citadel,14,1911,22,1
+25,The Enchanted Forest,14,1821,24,1
+25,Thalos,9,1431,18,1
+25,Nirvana,10,1416,26,1
+25,Ultima,9,1359,20,1
+25,Dylan's Wilderness,10,1310,25,1
+25,The Keep of Mahn-Tor,8,1160,29,1
+25,High Tower of Sorcery,10,1116,27,1
+25,Drow City,6,768,23,1
+25,Galaxy,4,714,42,0
+25,Arachnos,4,669,44,0
+25,New Thalos,5,612,23,1
+25,Olympus,4,555,27,0
+25,Imladris,3,453,42,0
+25,Kingdom of Juargan,2,450,45,0
+25,New Ofcol,2,450,29,0
+25,Dragon Tower,2,412,34,0
+25,Elemental Canyon,3,340,31,0
+25,Mega-City One,2,303,29,0
+25,Valley of the Elves,2,272,34,0
+25,Ciquala's Lair,1,225,16,0
+25,Crystalmir Lake,1,225,19,0
+25,Limbo,1,188,9,0
+25,Haon Dor,1,159,22,0
+25,Dwarven Catacombs,1,135,33,0
+25,Old Marsh,1,135,21,0
+25,Plains of the North,1,135,32,0
+25,The Shire,1,128,16,0
+25,Midgaard,1,102,11,0
+25,The Dell,1,82,12,0
+26,UnderDark,42,5721,19,1
+26,The Flying Citadel,15,1920,22,1
+26,Nirvana,14,1905,24,1
+26,The Astral Plane,16,1800,15,1
+26,Ultima,9,1407,20,1
+26,The Keep of Mahn-Tor,10,1344,29,1
+26,The Enchanted Forest,10,1275,24,1
+26,Thalos,9,1215,18,1
+26,Dylan's Wilderness,9,1102,25,1
+26,Galaxy,4,603,42,0
+26,Arachnos,4,555,44,0
+26,High Tower of Sorcery,5,543,60,1
+26,Olympus,4,471,27,0
+26,Drow City,4,441,26,0
+26,New Thalos,4,432,23,0
+26,Elemental Canyon,3,390,31,0
+26,Kingdom of Juargan,2,375,45,0
+26,New Ofcol,2,375,29,0
+26,Imladris,3,372,42,0
+26,Dragon Tower,2,346,34,0
+26,Mega-City One,2,256,29,0
+26,Valley of the Elves,2,230,34,0
+26,Ciquala's Lair,1,188,16,0
+26,Crystalmir Lake,1,188,19,0
+26,Limbo,1,159,9,0
+26,Haon Dor,1,135,22,0
+26,The Shire,1,108,16,0
+26,Dwarven Catacombs,1,102,33,0
+26,Old Marsh,1,102,21,0
+26,Plains of the North,1,102,32,0
+27,UnderDark,35,4328,19,1
+27,Nirvana,12,1464,24,1
+27,The Astral Plane,16,1398,15,1
+27,Ultima,10,1352,20,1
+27,The Keep of Mahn-Tor,11,1250,29,1
+27,The Flying Citadel,11,1248,24,1
+27,New Ofcol,5,993,29,1
+27,Thalos,9,918,18,1
+27,Dylan's Wilderness,8,818,25,1
+27,Descent to Hell,3,675,26,0
+27,Dwarven Kingdom,3,675,20,0
+27,The Enchanted Forest,5,596,24,1
+27,Galaxy,4,500,42,0
+27,Olympus,4,381,27,0
+27,Arachnos,3,372,44,0
+27,New Thalos,4,330,23,0
+27,Kingdom of Juargan,2,318,45,0
+27,Dragon Tower,2,294,34,0
+27,High Tower of Sorcery,3,286,60,0
+27,Elemental Canyon,2,258,31,0
+27,Redferne's Residence,1,225,16,0
+27,Imladris,2,204,42,0
+27,Mega-City One,2,195,29,0
+27,Valley of the Elves,2,176,34,0
+27,Ciquala's Lair,1,159,16,0
+27,Crystalmir Lake,1,159,19,0
+27,Limbo,1,135,9,0
+27,Drow City,1,102,31,0
+27,Haon Dor,1,102,22,0
+27,The Shire,1,82,16,0
+28,UnderDark,20,2925,18,1
+28,Ultima,13,2494,23,1
+28,The Keep of Mahn-Tor,13,2212,51,1
+28,The Enchanted Forest,7,1509,23,1
+28,Nirvana,12,1170,24,1
+28,Elemental Canyon,7,1110,31,1
+28,New Ofcol,6,1058,29,1
+28,Midgaard,4,900,2,0
+28,Old Thalos,4,900,35,0
+28,New Thalos,4,832,24,0
+28,Descent to Hell,4,788,26,0
+28,Mud School,3,675,3,0
+28,High Tower of Sorcery,3,630,84,0
+28,Dwarven Kingdom,3,562,20,0
+28,Galaxy,4,537,44,0
+28,Temple of the Great Wyrm,2,450,29,0
+28,Yggdrasil,2,450,15,0
+28,Sands of Sorrow,2,428,15,0
+28,The Flying Citadel,3,390,24,0
+28,Ciquala's Lair,2,360,16,0
+28,Crystalmir Lake,2,360,9,0
+28,Lore Keep,2,360,18,0
+28,Dylan's Wilderness,3,344,41,0
+28,Kingdom of Juargan,2,270,45,0
+28,Dragon Tower,2,237,34,0
+28,Old Marsh,1,225,20,0
+28,Sewer,1,225,22,0
+28,Arachnos,2,204,44,0
+28,Redferne's Residence,1,188,16,0
+28,The Astral Plane,2,186,18,0
+28,Mega-City One,1,180,27,0
+28,Wolf Pointe,1,180,34,0
+28,Olympus,2,165,27,0
+28,Limbo,1,102,9,0
+29,New Thalos,17,3258,23,1
+29,Ultima,15,2816,23,1
+29,UnderDark,17,2570,18,1
+29,The Keep of Mahn-Tor,11,1710,52,1
+29,The Enchanted Forest,7,1260,23,1
+29,Descent to Hell,6,1114,26,1
+29,New Ofcol,6,868,29,1
+29,Elemental Canyon,6,858,32,1
+29,Midgaard,4,750,2,0
+29,Old Thalos,4,750,35,0
+29,Mud School,3,562,3,0
+29,High Tower of Sorcery,3,525,84,0
+29,Dylan's Wilderness,4,498,29,0
+29,Dwarven Kingdom,3,477,20,0
+29,Nirvana,4,432,24,0
+29,Temple of the Great Wyrm,2,375,29,0
+29,Yggdrasil,2,375,15,0
+29,Sands of Sorrow,2,356,15,0
+29,Lore Keep,2,300,18,0
+29,Ciquala's Lair,2,290,16,0
+29,Crystalmir Lake,2,290,9,0
+29,Galaxy,2,270,48,0
+29,The Flying Citadel,2,243,24,0
+29,Kingdom of Juargan,2,204,45,0
+29,Old Marsh,1,188,20,0
+29,Sewer,1,188,22,0
+29,Redferne's Residence,1,159,16,0
+29,Mega-City One,1,150,27,0
+29,Wolf Pointe,1,150,34,0
+29,Dragon Tower,1,102,35,0
+30,UnderDark,44,7682,17,1
+30,Ultima,19,3252,23,1
+30,New Thalos,17,2727,23,1
+30,The Enchanted Forest,10,1596,23,1
+30,The Keep of Mahn-Tor,11,1437,52,1
+30,Descent to Hell,8,1389,26,1
+30,Mos Eisley,6,1080,25,1
+30,Elemental Canyon,6,720,32,1
+30,The Astral Plane,3,675,19,0
+30,Midgaard,4,636,2,0
+30,Old Thalos,4,636,35,0
+30,The Flying Citadel,4,636,22,0
+30,New Ofcol,4,564,33,0
+30,Mud School,3,477,3,0
+30,High Tower of Sorcery,3,446,84,0
+30,Dwarven Kingdom,3,405,20,0
+30,Nirvana,4,330,24,0
+30,Temple of the Great Wyrm,2,318,29,0
+30,Yggdrasil,2,318,15,0
+30,Sands of Sorrow,2,303,15,0
+30,Dylan's Wilderness,2,270,29,0
+30,Lore Keep,2,255,18,0
+30,Ciquala's Lair,1,159,18,0
+30,Crystalmir Lake,1,159,9,0
+30,Galaxy,1,159,49,0
+30,Old Marsh,1,159,20,0
+30,Sewer,1,159,22,0
+30,Redferne's Residence,1,135,16,0
+30,Mega-City One,1,128,27,0
+30,Wolf Pointe,1,128,34,0
+31,UnderDark,44,6524,17,1
+31,Ultima,22,3693,23,1
+31,New Thalos,17,2314,23,1
+31,The Keep of Mahn-Tor,10,1270,52,1
+31,The Enchanted Forest,9,1260,23,1
+31,Descent to Hell,8,1134,26,1
+31,The Astral Plane,5,1012,17,1
+31,Mos Eisley,6,900,25,1
+31,Nirvana,4,720,25,0
+31,New Ofcol,5,666,26,1
+31,Ciquala's Lair,3,540,14,0
+31,Elemental Canyon,5,540,33,1
+31,Midgaard,4,540,2,0
+31,Old Thalos,4,540,35,0
+31,Mud School,3,405,3,0
+31,High Tower of Sorcery,3,378,84,0
+31,The Flying Citadel,2,375,22,0
+31,Dwarven Kingdom,3,306,20,0
+31,Temple of the Great Wyrm,2,270,29,0
+31,Yggdrasil,2,270,15,0
+31,Sands of Sorrow,2,256,15,0
+31,Lore Keep,2,216,18,0
+31,Dylan's Wilderness,1,159,29,0
+31,Crystalmir Lake,1,135,9,0
+31,Galaxy,1,135,49,0
+31,Old Marsh,1,135,20,0
+31,Sewer,1,135,22,0
+31,Mega-City One,1,108,27,0
+31,Wolf Pointe,1,108,34,0
+31,Redferne's Residence,1,102,16,0
+32,UnderDark,42,5316,17,1
+32,Ultima,23,3380,23,1
+32,New Thalos,18,2144,23,1
+32,Descent to Hell,10,1815,27,1
+32,The Enchanted Forest,9,994,23,1
+32,The Keep of Mahn-Tor,9,918,54,1
+32,The Astral Plane,5,852,17,1
+32,Mos Eisley,6,765,25,1
+32,Olympus,3,675,27,0
+32,Nirvana,4,600,25,0
+32,Ciquala's Lair,3,440,14,0
+32,Elemental Canyon,5,412,33,1
+32,Midgaard,4,408,2,0
+32,Old Thalos,4,408,35,0
+32,The Flying Citadel,2,318,22,0
+32,Mud School,3,306,3,0
+32,New Ofcol,2,290,26,0
+32,High Tower of Sorcery,3,286,84,0
+32,Temple of the Great Wyrm,2,204,29,0
+32,Yggdrasil,2,204,15,0
+32,Sands of Sorrow,2,195,15,0
+32,Lore Keep,2,165,18,0
+32,Dylan's Wilderness,1,135,29,0
+32,Crystalmir Lake,1,102,9,0
+32,Galaxy,1,102,49,0
+32,Old Marsh,1,102,20,0
+32,Sewer,1,102,22,0
+32,Mega-City One,1,82,27,0
+32,Wolf Pointe,1,82,34,0
+33,UnderDark,40,4572,17,1
+33,Descent to Hell,16,2986,26,1
+33,Ultima,18,2793,27,1
+33,Mos Eisley,17,2628,23,1
+33,The Seminary,11,2475,18,1
+33,Wolf Pointe,11,2475,24,1
+33,The Astral Plane,12,2028,17,1
+33,New Thalos,17,1942,23,1
+33,Olympus,8,1598,27,1
+33,The Enchanted Forest,8,1449,23,1
+33,Yggdrasil,4,810,13,0
+33,Ciquala's Lair,4,646,14,0
+33,Nirvana,4,510,25,0
+33,The Flying Citadel,2,270,22,0
+33,Drow City,1,225,37,0
+33,Old Thalos,1,225,33,0
+33,New Ofcol,1,159,26,0
+33,The Keep of Mahn-Tor,1,144,55,0
+33,Dylan's Wilderness,1,102,29,0
+34,Descent to Hell,19,3392,26,1
+34,UnderDark,37,3302,17,1
+34,The Seminary,12,2288,18,1
+34,Mos Eisley,17,2145,23,1
+34,Wolf Pointe,11,2062,24,1
+34,Ultima,14,1964,33,1
+34,The Astral Plane,12,1664,17,1
+34,The Flying Citadel,8,1554,22,1
+34,Olympus,8,1340,27,1
+34,The Enchanted Forest,8,1185,23,1
+34,Nirvana,8,1152,25,1
+34,Ciquala's Lair,5,723,14,1
+34,Yggdrasil,4,675,13,0
+34,New Thalos,4,646,29,0
+34,Drow City,1,188,37,0
+34,Old Thalos,1,188,33,0
+34,New Ofcol,1,135,26,0
+34,The Keep of Mahn-Tor,1,122,55,0
+35,Descent to Hell,19,3136,26,1
+35,The Astral Plane,17,2748,17,1
+35,The Seminary,13,2162,18,1
+35,Wolf Pointe,11,1749,24,1
+35,Ciquala's Lair,10,1714,14,1
+35,Ultima,12,1707,41,1
+35,Mos Eisley,11,1402,23,1
+35,Olympus,8,1137,27,1
+35,The Flying Citadel,6,1125,23,1
+35,Nirvana,8,930,25,1
+35,The Enchanted Forest,5,795,28,1
+35,UnderDark,4,636,18,0
+35,Yggdrasil,4,573,13,0
+35,New Thalos,4,549,29,0
+35,New Ofcol,2,327,26,0
+35,Dragon Tower,1,225,40,0
+35,Drow City,1,159,37,0
+35,Old Thalos,1,159,33,0
+35,The Keep of Mahn-Tor,1,93,55,0
+36,Descent to Hell,19,2301,26,1
+36,The Astral Plane,15,1896,19,1
+36,The Seminary,13,1628,18,1
+36,Wolf Pointe,11,1320,24,1
+36,Ciquala's Lair,8,1137,17,1
+36,Mos Eisley,11,1056,23,1
+36,Ultima,7,873,46,1
+36,The Flying Citadel,6,846,23,1
+36,Olympus,8,822,27,1
+36,UnderDark,5,747,18,1
+36,The Enchanted Forest,5,600,28,1
+36,Nirvana,4,450,27,0
+36,Yggdrasil,4,432,13,0
+36,New Thalos,4,402,29,0
+36,Dragon Tower,1,166,40,0
+36,New Ofcol,1,166,35,0
+36,Drow City,1,120,37,0
+36,Old Thalos,1,120,33,0
+37,The Astral Plane,19,2349,19,1
+37,Camelot,13,2086,20,1
+37,The Flying Citadel,10,1518,23,1
+37,Descent to Hell,14,1488,26,1
+37,UnderDark,10,1446,18,1
+37,The Seminary,13,1251,18,1
+37,Ciquala's Lair,9,1148,17,1
+37,Wolf Pointe,11,990,24,1
+37,Mos Eisley,11,808,23,1
+37,Ultima,6,752,56,1
+37,The Enchanted Forest,5,450,28,1
+37,Olympus,5,417,28,1
+37,Nirvana,4,384,27,0
+37,Dragon Tower,2,340,40,0
+37,Yggdrasil,4,327,13,0
+37,New Thalos,3,237,30,0
+37,New Ofcol,1,141,35,0
+37,Drow City,1,90,37,0
+37,Old Thalos,1,90,33,0
+38,The Astral Plane,20,3126,18,1
+38,UnderDark,14,2121,20,1
+38,Mos Eisley,10,1800,24,1
+38,Camelot,13,1736,20,1
+38,The Flying Citadel,11,1406,23,1
+38,Ciquala's Lair,9,1239,17,1
+38,Wolf Pointe,5,880,26,1
+38,Descent to Hell,8,874,26,1
+38,The Seminary,5,808,15,1
+38,Chapel Catacombs,5,802,20,1
+38,The Enchanted Forest,4,798,22,0
+38,Yggdrasil,3,598,13,0
+38,Ultima,4,567,58,0
+38,Nirvana,5,454,26,1
+38,Dragon Tower,2,286,40,0
+38,New Thalos,1,160,,0
+38,New Ofcol,1,120,35,0
+39,The Astral Plane,20,2526,18,1
+39,UnderDark,15,1953,20,1
+39,Mos Eisley,10,1485,24,1
+39,Camelot,13,1462,20,1
+39,Ciquala's Lair,9,1118,17,1
+39,Descent to Hell,6,939,26,1
+39,Wolf Pointe,5,726,26,1
+39,The Flying Citadel,5,723,23,1
+39,Chapel Catacombs,5,660,20,1
+39,The Enchanted Forest,4,660,22,0
+39,Ultima,5,650,58,1
+39,The Seminary,4,585,15,0
+39,Yggdrasil,3,495,13,0
+39,Dragon Tower,3,428,34,0
+39,New Thalos,1,132,,0
+39,Nirvana,1,132,26,0
+39,New Ofcol,1,90,35,0
+40,Camelot,19,2182,20,1
+40,The Astral Plane,14,1986,18,1
+40,UnderDark,15,1736,26,1
+40,Descent to Hell,8,1426,25,1
+40,Mos Eisley,10,1260,24,1
+40,Wolf Pointe,7,934,26,1
+40,The Flying Citadel,6,812,23,1
+40,Chapel Catacombs,5,562,20,1
+40,Ciquala's Lair,4,562,17,0
+40,The Enchanted Forest,4,558,22,0
+40,The Seminary,3,418,15,0
+40,Yggdrasil,3,418,13,0
+40,Ultima,3,396,58,0
+40,Dragon Tower,2,284,34,0
+40,The Dell,1,198,11,0
+40,New Thalos,1,112,,0
+40,Nirvana,1,112,26,0
+41,UnderDark,21,2760,25,1
+41,Descent to Hell,12,1989,25,1
+41,Camelot,19,1728,20,1
+41,The Astral Plane,14,1638,18,1
+41,Mos Eisley,12,1461,23,1
+41,The Seminary,6,950,15,1
+41,Wolf Pointe,7,784,26,1
+41,Yggdrasil,5,752,13,1
+41,The Flying Citadel,6,644,23,1
+41,Ultima,4,522,58,0
+41,The Enchanted Forest,4,474,22,0
+41,Chapel Catacombs,5,472,20,1
+41,Ciquala's Lair,4,466,17,0
+41,Dragon Tower,2,230,34,0
+41,The Dell,1,165,11,0
+41,New Thalos,1,94,,0
+41,Nirvana,1,94,26,0
+42,UnderDark,20,2614,13,1
+42,Fire Newt Mountain,12,1890,27,1
+42,Descent to Hell,13,1842,25,1
+42,Mos Eisley,16,1767,23,1
+42,The Astral Plane,10,984,18,1
+42,Camelot,7,824,24,1
+42,The Seminary,6,756,15,1
+42,Wolf Pointe,7,618,26,1
+42,Yggdrasil,5,592,13,1
+42,Chapel Catacombs,5,360,20,1
+42,The Enchanted Forest,4,354,22,0
+42,Ultima,3,352,58,0
+42,Ciquala's Lair,3,294,17,0
+42,The Flying Citadel,2,226,23,0
+42,The Dell,1,138,11,0
+42,Dragon Tower,1,117,34,0
+42,New Thalos,1,72,,0
+42,Nirvana,1,72,26,0
+43,Descent to Hell,25,4004,25,1
+43,UnderDark,16,2182,13,1
+43,Fire Newt Mountain,14,1881,17,1
+43,Sethanon,6,1179,39,1
+43,The Seminary,7,1161,17,1
+43,Mos Eisley,6,798,23,1
+43,Camelot,7,698,24,1
+43,Ultima,3,423,74,0
+43,Chapel Catacombs,2,393,51,0
+43,The Flying Citadel,2,314,25,0
+43,Ciquala's Lair,2,285,15,0
+43,Dragon Tower,2,285,34,0
+43,Yggdrasil,2,276,15,0
+43,The Astral Plane,2,234,18,0
+43,Crystalmir Lake,1,196,9,0
+43,Wolf Pointe,2,189,37,0
+43,The Dell,1,117,11,0
+44,UnderDark,24,3534,13,1
+44,Descent to Hell,23,3282,25,1
+44,Fire Newt Mountain,18,2301,17,1
+44,Sethanon,6,981,39,1
+44,The Seminary,7,972,17,1
+44,Mos Eisley,6,678,23,1
+44,Yggdrasil,4,627,15,0
+44,The Astral Plane,4,570,18,0
+44,Camelot,7,543,24,1
+44,Chapel Catacombs,2,327,51,0
+44,Ultima,2,280,76,0
+44,The Flying Citadel,2,252,25,0
+44,Ciquala's Lair,1,164,15,0
+44,Crystalmir Lake,1,164,9,0
+44,Dragon Tower,1,164,34,0
+44,Wolf Pointe,2,144,37,0
+44,The Dell,1,88,11,0
+45,Fire Newt Mountain,30,3984,17,1
+45,UnderDark,29,3810,13,1
+45,Descent to Hell,19,2427,27,1
+45,Sethanon,6,828,39,1
+45,The Seminary,7,789,17,1
+45,Mos Eisley,6,549,23,1
+45,Ciquala's Lair,3,528,15,0
+45,Yggdrasil,4,501,15,0
+45,The Astral Plane,2,324,28,0
+45,Chapel Catacombs,2,276,51,0
+45,Ultima,2,226,76,0
+45,Crystalmir Lake,1,138,9,0
+45,Dragon Tower,1,138,34,0
+45,The Flying Citadel,1,138,25,0
+45,Camelot,1,93,24,0
+46,UnderDark,25,3346,12,1
+46,Fire Newt Mountain,30,3243,17,1
+46,Descent to Hell,18,2332,29,1
+46,The Valkyrie,6,936,44,1
+46,The Seminary,6,834,16,1
+46,Sethanon,6,702,39,1
+46,Ciquala's Lair,3,441,15,0
+46,The Flying Citadel,2,312,25,0
+46,Mos Eisley,4,282,28,0
+46,The Astral Plane,2,276,28,0
+46,Yggdrasil,2,276,15,0
+46,Chapel Catacombs,2,234,51,0
+46,Crystalmir Lake,1,117,9,0
+46,Dragon Tower,1,117,34,0
+46,Ultima,1,117,77,0
+46,Camelot,1,70,24,0
+47,Descent to Hell,23,2924,29,1
+47,UnderDark,23,2894,12,1
+47,Fire Newt Mountain,18,2025,17,1
+47,The Valkyrie,10,1398,44,1
+47,The Seminary,6,660,16,1
+47,Sethanon,6,531,39,1
+47,Ciquala's Lair,3,364,15,0
+47,The Flying Citadel,2,250,25,0
+47,The Astral Plane,2,234,28,0
+47,Yggdrasil,2,234,15,0
+47,Chapel Catacombs,2,177,51,0
+47,Crystalmir Lake,1,88,9,0
+47,Dragon Tower,1,88,34,0
+47,Ultima,1,88,77,0
+48,Descent to Hell,17,2814,47,1
+48,The Valkyrie,20,2718,43,1
+48,UnderDark,22,2336,12,1
+48,Fire Newt Mountain,19,2002,18,1
+48,Sethanon,10,1935,39,1
+48,The Seminary,10,1665,16,1
+48,Mos Eisley,9,1566,26,1
+48,Yggdrasil,8,1179,14,1
+48,Ciquala's Lair,4,579,15,0
+48,The Flying Citadel,3,484,18,0
+48,Olympus,2,387,24,0
+48,The Astral Plane,3,328,12,0
+48,Temple of the Great Wyrm,2,309,31,0
+48,Ultima,1,194,62,0
+48,High Tower of Sorcery,1,154,85,0
+48,Lore Keep,1,154,18,0
+48,New Thalos,1,154,,0
+48,Wolf Pointe,1,154,30,0
+49,The Valkyrie,28,3522,43,1
+49,Descent to Hell,17,2482,47,1
+49,The Seminary,13,1852,16,1
+49,Sethanon,10,1605,39,1
+49,Fire Newt Mountain,15,1323,18,1
+49,Mos Eisley,9,1296,26,1
+49,UnderDark,13,1258,12,1
+49,Yggdrasil,6,837,14,1
+49,Olympus,3,514,24,0
+49,Ciquala's Lair,4,464,15,0
+49,The Flying Citadel,3,405,18,0
+49,Temple of the Great Wyrm,2,258,31,0
+49,Ultima,1,160,62,0
+49,High Tower of Sorcery,1,129,85,0
+49,Lore Keep,1,129,18,0
+49,New Thalos,1,129,,0
+49,The Astral Plane,1,129,12,0
+49,Wolf Pointe,1,129,30,0
+50,Descent to Hell,30,4586,47,1
+50,The Valkyrie,31,3386,43,1
+50,Sethanon,14,1983,39,1
+50,The Seminary,15,1932,16,1
+50,Mos Eisley,9,1107,26,1
+50,Yggdrasil,8,1098,14,1
+50,UnderDark,7,642,12,1
+50,Ciquala's Lair,3,440,15,0
+50,Olympus,3,434,24,0
+50,The Flying Citadel,3,333,18,0
+50,Fire Newt Mountain,3,328,18,0
+50,The Astral Plane,2,303,12,0
+50,Temple of the Great Wyrm,2,219,31,0
+50,Ultima,1,136,62,0
+50,High Tower of Sorcery,1,110,85,0
+50,Lore Keep,1,110,18,0
+50,New Thalos,1,110,,0
+50,Wolf Pointe,1,110,30,0
+51,Camelot,30,5175,18,1
+51,Descent to Hell,33,4674,59,1
+51,The Valkyrie,25,2444,43,1
+51,Sethanon,14,1650,39,1
+51,The Seminary,13,1464,20,1
+51,Mos Eisley,9,932,26,1
+51,Yggdrasil,8,912,14,1
+51,Ciquala's Lair,3,364,15,0
+51,Olympus,3,363,24,0
+51,Fire Newt Mountain,3,274,18,0
+51,The Astral Plane,2,250,12,0
+51,UnderDark,3,249,20,0
+51,The Flying Citadel,2,206,18,0
+51,Temple of the Great Wyrm,2,183,31,0
+51,Ultima,1,114,62,0
+51,High Tower of Sorcery,1,92,85,0
+51,Lore Keep,1,92,18,0
+51,New Thalos,1,92,,0
+51,Wolf Pointe,1,92,30,0
+52,Camelot,30,4275,18,1
+52,Descent to Hell,30,4008,59,1
+52,The Valkyrie,27,2679,43,1
+52,Sethanon,17,1761,39,1
+52,The Seminary,15,1520,20,1
+52,Yggdrasil,8,726,14,1
+52,Mos Eisley,9,702,26,1
+52,Fire Newt Mountain,5,556,18,1
+52,Ciquala's Lair,3,292,15,0
+52,Olympus,3,288,24,0
+52,The Astral Plane,2,206,12,0
+52,The Flying Citadel,2,158,18,0
+52,Temple of the Great Wyrm,2,141,31,0
+52,Ultima,1,87,62,0
+52,High Tower of Sorcery,1,70,85,0
+52,Lore Keep,1,70,18,0
+52,New Thalos,1,70,,0
+52,UnderDark,1,70,25,0
+52,Wolf Pointe,1,70,30,0
+53,Camelot,30,3690,18,1
+53,Descent to Hell,23,2856,59,1
+53,Fire Newt Mountain,14,2355,22,1
+53,The Valkyrie,21,2216,45,1
+53,Strange World,9,1552,17,1
+53,Japan,8,1224,47,1
+53,Sethanon,10,1208,37,1
+53,The Seminary,9,1071,20,1
+53,Mos Eisley,6,1054,29,1
+53,The Heavens,3,459,5,0
+53,Olympus,2,279,27,0
+53,Yggdrasil,2,228,14,0
+53,Dragon Tower,1,192,46,0
+53,Dragon Cult,1,153,11,0
+53,Ciquala's Lair,1,114,19,0
+53,The Astral Plane,1,114,29,0
+54,Camelot,30,3060,18,1
+54,Descent to Hell,23,2386,48,1
+54,Fire Newt Mountain,14,1935,22,1
+54,The Valkyrie,14,1510,45,1
+54,Strange World,9,1269,17,1
+54,Japan,8,1008,47,1
+54,Sethanon,10,978,37,1
+54,Mos Eisley,6,862,29,1
+54,The Seminary,6,696,20,1
+54,Olympus,3,538,23,0
+54,The Heavens,3,378,5,0
+54,Yggdrasil,2,171,14,0
+54,Dragon Tower,1,158,46,0
+54,Dragon Cult,1,126,11,0
+54,Ciquala's Lair,1,86,19,0
+54,The Astral Plane,1,86,29,0
+55,Camelot,30,2340,18,1
+55,Fire Newt Mountain,14,1662,22,1
+55,The Valkyrie,13,1410,46,1
+55,Strange World,9,1094,17,1
+55,Descent to Hell,10,1012,48,1
+55,Japan,8,864,47,1
+55,Mos Eisley,6,741,29,1
+55,Sethanon,6,598,37,1
+55,Olympus,3,448,23,0
+55,The Seminary,4,447,21,0
+55,The Heavens,3,324,5,0
+55,Immortal Zone,1,190,4,0
+55,The Astral Plane,1,171,26,0
+55,Dragon Tower,1,134,46,0
+55,Dragon Cult,1,108,11,0
+56,Strange World,15,2061,17,1
+56,Fire Newt Mountain,16,1722,22,1
+56,The Valkyrie,13,1140,46,1
+56,Japan,8,732,47,1
+56,Mos Eisley,6,624,29,1
+56,Olympus,4,572,23,0
+56,The Seminary,5,550,21,1
+56,Sethanon,6,482,37,1
+56,Descent to Hell,4,390,48,0
+56,The Heavens,3,274,5,0
+56,Immortal Zone,1,158,4,0
+56,The Astral Plane,1,141,26,0
+56,Dragon Tower,1,114,46,0
+56,Dragon Cult,1,92,11,0
+57,Fire Newt Mountain,18,1974,22,1
+57,Strange World,15,1647,17,1
+57,Olympus,7,1035,23,1
+57,The Valkyrie,7,579,46,1
+57,Japan,8,552,47,1
+57,Mos Eisley,6,476,29,1
+57,The Seminary,3,312,21,0
+57,Sethanon,3,207,37,0
+57,The Heavens,3,207,5,0
+57,Immortal Zone,1,134,4,0
+57,The Astral Plane,1,120,26,0
+57,Descent to Hell,1,112,48,0
+57,Dragon Tower,1,86,46,0
+57,Dragon Cult,1,69,11,0
+58,Strange World,11,1746,19,1
+58,Olympus,9,1344,23,1
+58,Fire Newt Mountain,6,870,29,1
+58,Sethanon,3,450,37,0
+58,The Valkyrie,4,399,46,0
+58,Den of Monsters,2,339,27,0
+58,The Astral Plane,2,291,26,0
+58,Dragon Cult,1,189,7,0
+58,Ultima,1,189,62,0
+58,Lore Keep,1,150,18,0
+58,The Heavens,1,150,7,0
+58,The Seminary,1,134,26,0
+58,Immortal Zone,1,112,4,0
+58,Descent to Hell,1,86,48,0
+59,Strange World,11,1462,19,1
+59,Olympus,7,986,23,1
+59,The Valkyrie,7,864,45,1
+59,Fire Newt Mountain,6,738,29,1
+59,Chapel Catacombs,4,600,30,0
+59,The Heavens,3,465,4,0
+59,Sethanon,3,378,37,0
+59,Dragon Cult,2,308,4,0
+59,Den of Monsters,2,284,27,0
+59,The Astral Plane,2,236,26,0
+59,Ultima,1,158,62,0
+59,Camelot,1,150,28,0
+59,Lore Keep,1,126,18,0
+59,The Seminary,1,112,26,0
+59,Immortal Zone,1,86,4,0
+60,Strange World,11,1164,19,1
+60,Fire Newt Mountain,8,903,29,1
+60,Olympus,7,818,23,1
+60,The Valkyrie,6,753,45,1
+60,Chapel Catacombs,5,686,29,1
+60,The Heavens,3,384,4,0
+60,Sethanon,3,315,37,0
+60,Dragon Cult,2,256,4,0
+60,Den of Monsters,2,237,27,0
+60,The Astral Plane,1,132,31,0
+60,Ultima,1,132,62,0
+60,Camelot,1,124,28,0
+60,Lore Keep,1,105,18,0
+60,The Seminary,1,84,26,0
+61,The Valkyrie,6,634,45,1
+61,Olympus,6,590,26,1
+61,Fire Newt Mountain,6,585,30,1
+61,Chapel Catacombs,5,576,29,1
+61,Strange World,5,562,20,1
+61,The Heavens,3,330,4,0
+61,Sethanon,3,270,37,0
+61,Dragon Cult,2,218,4,0
+61,Den of Monsters,2,202,27,0
+61,The Astral Plane,1,112,31,0
+61,Ultima,1,112,62,0
+61,Camelot,1,105,28,0
+61,Lore Keep,1,90,18,0
+62,Japan,3,562,52,0
+62,The Valkyrie,6,532,45,1
+62,Chapel Catacombs,5,492,29,1
+62,Strange World,5,420,20,1
+62,The Heavens,3,268,4,0
+62,Olympus,3,252,26,0
+62,Fire Newt Mountain,2,210,32,0
+62,Sethanon,3,202,37,0
+62,The Dell,1,188,13,0
+62,Dragon Cult,2,174,4,0
+62,Den of Monsters,2,152,27,0
+62,Camelot,1,90,28,0
+62,The Astral Plane,1,84,31,0
+62,Ultima,1,84,62,0
+62,Lore Keep,1,68,18,0
+63,Mos Eisley,15,2498,25,1
+63,The Valkyrie,11,1268,45,1
+63,Japan,7,1058,48,1
+63,Chapel Catacombs,9,975,24,1
+63,The Seminary,6,963,26,1
+63,Fire Newt Mountain,4,546,31,0
+63,Sethanon,3,500,42,0
+63,Wolf Pointe,2,369,31,0
+63,Den of Monsters,1,184,30,0
+63,The Dell,1,154,13,0
+63,The Heavens,2,153,4,0
+63,Camelot,1,68,28,0
+63,Dragon Cult,1,68,4,0
+64,Japan,22,3111,42,1
+64,Mos Eisley,15,2070,25,1
+64,The Valkyrie,7,820,47,1
+64,The Seminary,6,801,26,1
+64,Chapel Catacombs,5,576,24,1
+64,Fire Newt Mountain,4,444,31,0
+64,Sethanon,3,414,42,0
+64,Wolf Pointe,2,309,31,0
+64,Den of Monsters,1,154,30,0
+64,The Dell,1,130,13,0
+65,Japan,22,2598,42,1
+65,Mos Eisley,15,1778,25,1
+65,The Seminary,6,681,26,1
+65,The Valkyrie,6,644,48,1
+65,Chapel Catacombs,4,420,24,0
+65,Sethanon,3,356,42,0
+65,Fire Newt Mountain,2,261,31,0
+65,Wolf Pointe,2,261,31,0
+65,Den of Monsters,1,130,30,0
+65,The Dell,1,111,13,0
+66,Japan,30,3474,42,1
+66,Mos Eisley,15,1485,25,1
+66,The Valkyrie,9,1000,47,1
+66,The Seminary,8,903,26,1
+66,Chapel Catacombs,4,354,24,0
+66,Sethanon,3,297,42,0
+66,Fire Newt Mountain,2,219,31,0
+66,Wolf Pointe,2,219,31,0
+66,Dragon Cult,1,183,10,0
+66,Den of Monsters,1,110,30,0
+66,The Dell,1,82,13,0
+67,Japan,27,2690,42,1
+67,Chapel Catacombs,16,2124,22,1
+67,Mos Eisley,15,1125,25,1
+67,Sethanon,7,957,41,1
+67,The Valkyrie,9,792,47,1
+67,The Seminary,8,708,26,1
+67,Fire Newt Mountain,2,165,31,0
+67,Wolf Pointe,2,165,31,0
+67,Dragon Cult,1,153,10,0
+67,Den of Monsters,1,82,30,0
+68,Japan,27,2572,42,1
+68,Chapel Catacombs,14,1899,22,1
+68,Strange World,10,1650,22,1
+68,Sethanon,10,1638,41,1
+68,The Valkyrie,5,636,47,1
+68,Den of Monsters,3,531,29,0
+68,Yggdrasil,3,513,16,0
+68,Mos Eisley,3,441,36,0
+68,The Seminary,2,234,29,0
+68,Dragon Cult,1,129,10,0
+69,Chapel Catacombs,14,1612,22,1
+69,Sethanon,10,1365,41,1
+69,Strange World,10,1365,22,1
+69,Japan,12,1296,54,1
+69,The Valkyrie,5,530,47,1
+69,Den of Monsters,3,440,29,0
+69,Yggdrasil,3,424,16,0
+69,The Seminary,3,376,29,0
+69,Mos Eisley,3,364,36,0
+69,Dragon Cult,2,255,4,0
+70,Japan,30,3510,54,1
+70,Chapel Catacombs,14,1306,22,1
+70,Sethanon,11,1292,41,1
+70,Strange World,10,1110,22,1
+70,The Valkyrie,7,706,46,1
+70,The Heavens,4,702,4,0
+70,Den of Monsters,4,534,29,0
+70,The Seminary,4,465,25,0
+70,Yggdrasil,3,345,16,0
+70,Mos Eisley,3,297,36,0
+70,Dragon Cult,2,196,4,0
+70,Camelot,1,176,34,0
+71,Japan,22,2436,54,1
+71,Sethanon,11,1046,41,1
+71,Chapel Catacombs,14,1011,22,1
+71,Strange World,10,945,22,1
+71,The Valkyrie,6,704,46,1
+71,Mos Eisley,5,600,36,1
+71,The Heavens,4,582,4,0
+71,Den of Monsters,4,450,29,0
+71,Yggdrasil,3,294,16,0
+71,The Seminary,2,268,25,0
+71,Camelot,1,146,34,0
+71,Dragon Cult,1,99,4,0
+72,Japan,24,2304,54,1
+72,Strange World,10,705,22,1
+72,The Valkyrie,6,574,46,1
+72,Sethanon,7,567,42,1
+72,The Heavens,4,492,4,0
+72,Mos Eisley,5,480,36,1
+72,The Seminary,3,400,25,0
+72,Den of Monsters,4,351,29,0
+72,Yggdrasil,3,219,16,0
+72,Chapel Catacombs,2,156,25,0
+72,Camelot,1,123,34,0
+72,Dragon Cult,1,82,4,0
+73,Japan,23,2130,58,1
+73,Den of Monsters,8,1304,30,1
+73,Chapel Catacombs,6,1044,43,1
+73,Mos Eisley,4,522,31,0
+73,Temple of the Great Wyrm,3,522,23,0
+73,The Valkyrie,5,508,46,1
+73,Wolf Pointe,3,450,30,0
+73,The Heavens,4,414,4,0
+73,Sethanon,3,380,43,0
+73,The Seminary,3,326,25,0
+73,Lore Keep,1,138,19,0
+73,Yggdrasil,1,138,16,0
+73,Camelot,1,104,34,0
+73,Dragon Cult,1,63,4,0
+74,Japan,31,2780,57,1
+74,Den of Monsters,8,1071,30,1
+74,Chapel Catacombs,6,864,43,1
+74,Mos Eisley,4,438,31,0
+74,Temple of the Great Wyrm,3,432,23,0
+74,The Valkyrie,5,414,46,1
+74,Wolf Pointe,3,375,30,0
+74,The Seminary,3,338,25,0
+74,The Heavens,4,312,4,0
+74,Sethanon,3,309,43,0
+74,Lore Keep,1,116,19,0
+74,Yggdrasil,1,116,16,0
+74,Camelot,1,78,34,0
+75,Japan,13,1370,57,1
+75,Den of Monsters,7,838,30,1
+75,Chapel Catacombs,6,729,43,1
+75,Temple of the Great Wyrm,3,364,23,0
+75,Mos Eisley,4,351,31,0
+75,Wolf Pointe,3,316,30,0
+75,The Valkyrie,3,224,48,0
+75,The Seminary,2,218,26,0
+75,Sethanon,2,195,45,0
+75,Lore Keep,1,98,19,0
+75,Yggdrasil,1,98,16,0
+76,Camelot,12,2070,32,1
+76,Japan,13,1154,57,1
+76,Den of Monsters,7,714,30,1
+76,Chapel Catacombs,6,621,43,1
+76,The Seminary,5,590,23,1
+76,Mos Eisley,3,338,31,0
+76,Dragon Cult,2,327,11,0
+76,Temple of the Great Wyrm,3,310,23,0
+76,Wolf Pointe,3,268,30,0
+76,Sethanon,2,165,45,0
+76,Lore Keep,1,82,19,0
+76,The Valkyrie,1,82,49,0
+76,Yggdrasil,1,82,16,0
+77,Camelot,12,1710,32,1
+77,Japan,11,849,57,1
+77,Den of Monsters,7,530,30,1
+77,Chapel Catacombs,6,459,43,1
+77,The Seminary,4,424,23,0
+77,Dragon Cult,2,270,11,0
+77,Mos Eisley,3,268,31,0
+77,Temple of the Great Wyrm,3,230,23,0
+77,Wolf Pointe,3,202,30,0
+77,Uruk's Fortress,1,136,,0
+77,Sethanon,2,126,45,0
+77,Lore Keep,1,63,19,0
+77,The Valkyrie,1,63,49,0
+77,Yggdrasil,1,63,16,0
+78,The Seminary,12,1580,23,1
+78,Camelot,12,1440,32,1
+78,Dragon Cult,7,912,9,1
+78,Den of Monsters,4,684,29,0
+78,Mos Eisley,4,633,28,0
+78,Japan,8,492,57,1
+78,Midgaard,1,171,0,0
+78,Strange World,1,171,27,0
+78,Chapel Catacombs,1,136,21,0
+78,The Valkyrie,1,136,49,0
+78,Uruk's Fortress,1,114,,0
+79,The Seminary,11,1257,23,1
+79,Camelot,12,1224,32,1
+79,Dragon Cult,10,1166,9,1
+79,Den of Monsters,4,564,29,0
+79,Mos Eisley,4,525,28,0
+79,Midgaard,1,141,0,0
+79,Strange World,1,141,27,0
+79,Chapel Catacombs,1,112,21,0
+79,The Valkyrie,1,112,49,0
+79,Uruk's Fortress,1,96,,0
+80,The Seminary,11,1048,23,1
+80,Dragon Cult,10,963,9,1
+80,Camelot,12,918,32,1
+80,The Heavens,4,678,5,0
+80,Den of Monsters,4,480,29,0
+80,Mos Eisley,4,436,28,0
+80,Japan,2,306,59,0
+80,The Valkyrie,2,249,49,0
+80,Midgaard,1,120,0,0
+80,Strange World,1,120,27,0
+80,Chapel Catacombs,1,96,21,0
+80,Uruk's Fortress,1,81,,0
+81,Dragon Cult,9,862,9,1
+81,The Seminary,8,726,23,1
+81,Strange World,4,609,27,0
+81,The Heavens,4,564,5,0
+81,Uruk's Fortress,4,536,22,0
+81,Den of Monsters,4,402,29,0
+81,Mos Eisley,3,302,28,0
+81,Japan,2,252,59,0
+81,The Valkyrie,2,207,49,0
+81,Midgaard,1,100,0,0
+81,Chapel Catacombs,1,81,21,0
+82,Dragon Cult,9,692,9,1
+82,The Seminary,8,552,23,1
+82,Strange World,4,500,27,0
+82,The Heavens,4,474,5,0
+82,Uruk's Fortress,3,394,22,0
+82,Den of Monsters,4,306,29,0
+82,Mos Eisley,3,230,28,0
+82,Japan,2,216,59,0
+82,The Valkyrie,2,170,49,0
+82,Midgaard,1,76,0,0
+82,Chapel Catacombs,1,62,21,0
+83,Den of Monsters,7,1160,30,1
+83,Dragon Cult,5,471,11,1
+83,Japan,4,466,59,0
+83,Mos Eisley,3,438,32,0
+83,The Heavens,4,402,5,0
+83,Strange World,3,356,30,0
+83,Uruk's Fortress,3,332,22,0
+83,Camelot,1,168,34,0
+83,Sethanon,1,168,43,0
+83,Yggdrasil,1,168,14,0
+83,The Seminary,1,135,25,0
+83,The Valkyrie,1,90,49,0
+84,Den of Monsters,7,962,30,1
+84,Dragon Cult,4,576,11,0
+84,Japan,4,374,59,0
+84,Mos Eisley,3,362,32,0
+84,Strange World,3,302,30,0
+84,The Heavens,4,300,5,0
+84,Uruk's Fortress,3,280,22,0
+84,Midgaard,1,168,0,0
+84,Camelot,1,140,34,0
+84,Sethanon,1,140,43,0
+84,Yggdrasil,1,140,14,0
+84,The Seminary,1,111,25,0
+84,The Valkyrie,1,69,49,0
+85,Den of Monsters,7,818,30,1
+85,Dragon Cult,4,472,11,0
+85,Mos Eisley,3,308,32,0
+85,Strange World,3,225,30,0
+85,Uruk's Fortress,3,212,22,0
+85,Japan,2,201,64,0
+85,Midgaard,1,140,0,0
+85,Camelot,1,118,34,0
+85,Sethanon,1,118,43,0
+85,Yggdrasil,1,118,14,0
+85,The Seminary,1,94,25,0
+86,Den of Monsters,7,684,30,1
+86,Strange World,4,666,30,0
+86,Dragon Cult,4,500,11,0
+86,Mos Eisley,3,258,32,0
+86,Japan,2,170,64,0
+86,Uruk's Fortress,1,134,21,0
+86,Midgaard,1,117,0,0
+86,Camelot,1,99,34,0
+86,Sethanon,1,99,43,0
+86,Yggdrasil,1,99,14,0
+86,The Seminary,1,80,25,0
+87,Strange World,4,552,30,0
+87,Den of Monsters,7,518,30,1
+87,Dragon Cult,4,411,11,0
+87,Mos Eisley,3,195,32,0
+87,Japan,2,128,64,0
+87,Uruk's Fortress,1,111,21,0
+87,Midgaard,1,99,0,0
+87,Camelot,1,75,34,0
+87,Sethanon,1,75,43,0
+87,Yggdrasil,1,75,14,0
+87,The Seminary,1,60,25,0
+88,The Heavens,4,660,5,0
+88,Strange World,4,468,30,0
+88,Chapel Catacombs,3,446,44,0
+88,Dragon Cult,3,267,11,0
+88,Den of Monsters,1,165,33,0
+88,Sethanon,1,165,49,0
+88,Temple of the Great Wyrm,1,165,25,0
+88,Lore Keep,1,132,19,0
+88,Uruk's Fortress,1,93,21,0
+88,Midgaard,1,75,0,0
+89,The Heavens,4,552,5,0
+89,Strange World,4,396,30,0
+89,Chapel Catacombs,3,369,44,0
+89,The Seminary,2,330,24,0
+89,Den of Monsters,1,138,33,0
+89,Sethanon,1,138,49,0
+89,Temple of the Great Wyrm,1,138,25,0
+89,Penthouse,1,132,11,0
+89,Lore Keep,1,110,19,0
+89,Dragon Cult,1,99,11,0
+89,Uruk's Fortress,1,80,21,0
+90,The Heavens,4,462,5,0
+90,Chapel Catacombs,3,315,44,0
+90,Strange World,4,300,30,0
+90,The Seminary,2,273,24,0
+90,Den of Monsters,1,116,33,0
+90,Sethanon,1,116,49,0
+90,Temple of the Great Wyrm,1,116,25,0
+90,Penthouse,1,110,11,0
+90,Lore Keep,1,93,19,0
+90,Dragon Cult,1,75,11,0
+90,Uruk's Fortress,1,60,21,0
+91,The Heavens,4,390,5,0
+91,Chapel Catacombs,3,266,44,0
+91,The Seminary,2,231,24,0
+91,Den of Monsters,1,98,33,0
+91,Sethanon,1,98,49,0
+91,Temple of the Great Wyrm,1,98,25,0
+91,Penthouse,1,93,11,0
+91,Lore Keep,1,78,19,0

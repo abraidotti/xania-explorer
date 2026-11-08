@@ -1,0 +1,1536 @@
+vnum,name,area,type,level,slots,ac,hitroll,damroll,hp,mana,stats,points,allowed,points_if_ac_counted,alignment_flags,sources
+4,template,Limbo,Light,0,body head legs feet hands arms shield about waist neck wrist finger ears hold,0.0,0,0,0,0,0,0,1,0,AntiGood AntiEvil AntiNeutral,
+23,a hand-written scroll of %s,Limbo,Scroll,0,hold,0.0,0,0,0,0,0,0,1,0,,code
+24,a home-brewed potion of %s,Limbo,Potion,0,hold,0.0,0,0,0,0,0,0,1,0,,code
+25,a home-made bomb,Limbo,Bomb,0,hold,0.0,0,0,0,0,0,0,1,0,,code
+102,a smurf hat,Smurf Village,Armor,1,head,2.25,0,0,0,0,0,0,1,0,,mob
+206,a diamond wedding ring,Wedding Rites,Armor,1,finger,0.0,0,0,0,0,0,0,1,0,,shop
+207,a golden wedding ring,Wedding Rites,Armor,1,finger,0.0,0,0,0,0,0,0,1,0,,shop
+209,"an old, silver necklace",Wedding Rites,Armor,1,neck,0.0,0,0,0,0,0,0,1,0,,shop
+210,an intricate lace veil,Wedding Rites,Armor,1,head,0.0,0,0,0,0,0,0,1,0,,shop
+211,a beautiful wedding dress,Wedding Rites,Armor,1,body,0.0,0,0,0,0,0,0,1,0,,shop
+212,"some hastily polished, borrowed shoes",Wedding Rites,Armor,1,feet,0.0,0,0,0,0,0,0,1,0,,shop
+213,a blue garter,Wedding Rites,Armor,1,legs,0.0,0,0,0,0,0,0,1,0,,shop
+215,a marriage certificate,Wedding Rites,Armor,1,hold,0.0,0,0,0,0,0,0,1,0,,shop
+216,a grey felt top hat,Wedding Rites,Armor,1,head,0.0,0,0,0,0,0,0,1,0,,shop
+217,a grey morning suit,Wedding Rites,Armor,1,body,0.0,0,0,0,0,0,0,1,0,,shop
+218,tails of a morning suit,Wedding Rites,Armor,1,legs,0.0,0,0,0,0,0,0,1,0,,shop
+219,a silk bridesmaid dress,Wedding Rites,Armor,1,body,0.0,0,0,0,0,0,0,1,0,,shop
+220,some confetti,Wedding Rites,Bomb,1,hold,0.0,0,0,0,0,0,0,1,0,,shop
+221,a piece wedding cake,Wedding Rites,Food,1,hold,0.0,0,0,0,0,0,0,1,0,,shop
+222,"a well wrapped, surprise wedding present",Wedding Rites,Trash,1,hold,0.0,0,0,0,0,0,0,1,0,,shop
+223,a bottle of champagne,Wedding Rites,Drink,1,hold,0.0,0,0,0,0,0,0,1,0,,shop
+304,wild flowers,Plains of the North,Trash,0,head hold,0.0,0,0,0,0,0,0,1,0,AntiEvil,floor shop
+655,a golden dragonhelm,New Ofcol,Armor,0,head,5.25,1,0,0,0,0,1,1,4,AntiEvil,
+1001,a red rose,The Heavens,Armor,0,head,1.5,0,0,0,0,0,0,1,0,,
+1307,a straw broom,High Tower of Sorcery,Trash,0,hold,0.0,0,0,0,0,0,0,1,0,,floor
+1326,a red and white staff,High Tower of Sorcery,Staff,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+1327,a burnt staff,High Tower of Sorcery,Staff,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+1328,a black rod,High Tower of Sorcery,Wand,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+1329,a wooden stick,High Tower of Sorcery,Wand,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+1330,a metal wand,High Tower of Sorcery,Wand,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+1333,an eyeball,High Tower of Sorcery,Trash,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+1335,a pair of spectacles,High Tower of Sorcery,Armor,0,head,0.0,0,0,0,0,2,2,1,2,,container
+1337,a heart shaped medallion,High Tower of Sorcery,Armor,0,neck,0.0,0,0,0,0,1,2,1,2,,container
+1343,a pair of old boots,High Tower of Sorcery,Armor,0,feet,0.0,0,0,0,0,0,3,1,3,,floor
+1365,a silver stirring spoon,High Tower of Sorcery,Furniture,0,hold,0.0,0,0,0,0,0,0,1,1,,container
+1375,a blackened wand,High Tower of Sorcery,Wand,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+1378,some sparkling dust,High Tower of Sorcery,Staff,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+1396,a shimmering cloak of many colors,High Tower of Sorcery,Container,0,neck,15.0,0,0,0,0,0,0,1,20,,
+1403,a bottle of Absolut vodka,High Tower of Sorcery,Drink,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+1404,a bottle of cranberry juice,High Tower of Sorcery,Drink,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+1515,a pair of gnome boots,Gnome Village,Armor,0,feet,1.0,0,0,0,0,0,2,1,2,,
+1519,a stone shield,Gnome Village,Armor,0,shield,1.0,0,0,0,0,2,2,1,2,,
+2221,a plain black robe,Dragon Tower,Armor,0,about,1.25,0,2,0,0,0,2,1,2,,
+3020,a thin dagger,Midgaard,Weapon,0,,0.0,0,0,0,0,0,0,1,0,,mob shop
+3021,a small sword,Midgaard,Weapon,0,,0.0,0,0,0,0,0,0,1,0,,mob shop
+3025,a hand axe,Midgaard,Weapon,0,,0.0,0,0,0,0,0,0,1,0,,mob shop
+3039,a scroll of cancellation,Midgaard,Scroll,0,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3041,a yellow potion of see invisible,Midgaard,Potion,0,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3042,a scroll of recall,Midgaard,Scroll,0,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3044,a wand of magic missiles,Midgaard,Wand,0,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3052,a leather bracer,Midgaard,Armor,0,wrist,1.0,0,0,0,0,0,0,1,0,,mob shop
+3053,a leather belt,Midgaard,Armor,0,waist,1.25,0,0,0,0,0,0,1,0,,shop
+3060,a leather jerkin,Midgaard,Armor,0,body,1.25,0,0,0,0,0,0,1,0,,shop
+3061,a leather cap,Midgaard,Armor,0,head,1.25,0,0,0,0,0,0,1,0,,shop
+3062,a pair of leather pants,Midgaard,Armor,0,legs,1.25,0,0,0,0,0,0,1,0,,shop
+3063,a pair of leather boots,Midgaard,Armor,0,feet,1.25,0,0,0,0,0,0,1,0,,shop
+3064,a pair of leather gloves,Midgaard,Armor,0,hands,1.25,0,0,0,0,0,0,1,0,,shop
+3065,a pair of leather sleeves,Midgaard,Armor,0,arms,1.25,0,0,0,0,0,0,1,0,,shop
+3083,a potion of cure light wounds,Midgaard,Potion,0,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3086,a bottle of antidote,Midgaard,Potion,0,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3087,a potion of cure blindness,Midgaard,Potion,0,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3089,a potion of armor,Midgaard,Potion,0,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3090,a potion of negation,Midgaard,Potion,0,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3091,a potion of flying,Midgaard,Potion,0,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3092,a potion of true sight,Midgaard,Potion,0,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3098,"a page from Book II, Lore of Xania",Midgaard,Scroll,1,hold,0.0,0,0,0,0,0,0,1,0,,floor
+3129,a pair of hand cuffs,Midgaard,Trash,0,hold,0.0,0,0,0,0,0,0,1,0,,
+3161,a white key,Midgaard,Key,0,hold,0.0,0,0,0,0,0,0,1,0,,
+3371,a diamond wedding ring,Midgaard,Treasure,0,finger,0.0,0,0,0,0,0,0,1,2,,
+3372,a gold wedding band,Midgaard,Treasure,0,finger,0.0,0,0,0,0,0,0,1,2,,
+3400,a candlestick,Chapel Catacombs,Light,0,hold,0.0,0,0,0,0,0,0,1,0,,floor
+3413,a black marble ring,Chapel Catacombs,Treasure,0,finger,0.0,0,0,0,0,0,2,1,2,AntiEvil,container
+3417,a wineflask,Chapel Catacombs,Drink,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+3600,a candlestick,Graveyard,Light,0,hold,0.0,0,0,0,0,0,0,1,0,,
+3613,a silver dagger,Graveyard,Weapon,0,,0.0,0,1,0,0,0,0,1,0,,floor
+3700,a sub issue mace,Mud School,Weapon,0,,0.0,2,0,0,0,0,1,1,1,,code
+3701,a sub issue dagger,Mud School,Weapon,0,,0.0,2,0,0,0,0,1,1,1,,code
+3702,a sub issue sword,Mud School,Weapon,0,,0.0,2,0,0,0,0,1,1,1,,code
+3703,a sub issue vest,Mud School,Armor,0,body,0.75,0,0,0,0,0,0,1,0,,code
+3704,a sub issue shield,Mud School,Armor,0,shield,0.75,0,0,0,0,0,0,1,0,,code
+3705,a sub issue cloak,Mud School,Armor,0,neck,0.75,0,0,0,0,0,0,1,0,,mob
+3706,a sub issue helmet,Mud School,Armor,0,head,0.75,0,0,0,0,0,0,1,0,,mob
+3707,a pair of sub issue leggings,Mud School,Armor,0,legs,0.75,0,0,0,0,0,0,1,0,,mob
+3708,a pair of sub issue boots,Mud School,Armor,0,feet,0.75,0,0,0,0,0,0,1,0,,mob
+3709,a pair of sub issue gloves,Mud School,Armor,0,hands,0.75,0,0,0,0,0,0,1,0,,mob
+3710,a pair of sub issue sleeves,Mud School,Armor,0,arms,0.75,0,0,0,0,0,0,1,0,,mob
+3711,a sub issue cape,Mud School,Armor,0,about,0.75,0,0,0,0,0,0,1,0,,mob
+3712,a sub issue belt,Mud School,Armor,0,waist,0.75,0,0,0,0,0,0,1,0,,mob
+3713,a sub issue bracer,Mud School,Armor,0,wrist,0.5,0,0,0,0,0,0,1,0,,mob
+3715,a mud school diploma,Mud School,Treasure,0,hold,0.0,0,0,0,0,2,2,1,2,,mob
+3717,a sub issue axe,Mud School,Weapon,0,,0.0,2,0,0,0,0,1,1,1,,code
+4000,a yellow and green ring,Moria,Treasure,0,finger,0.0,0,0,0,0,-2,0,1,0,,mob
+4003,a rusty dagger,Moria,Weapon,0,,0.0,-1,0,0,0,0,-1,1,-1,,mob
+4704,a large dwarven shield,Kingdom of Juargan,Armor,0,shield,3.0,0,0,0,0,0,0,1,2,,floor
+4708,the staff of ruling,Kingdom of Juargan,Staff,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+5005,A large leg bone,Sands of Sorrow,Weapon,0,,0.0,0,0,0,0,0,0,1,0,,floor
+5014,a thick padded turban,Sands of Sorrow,Armor,0,head,-1.0,0,0,0,0,0,0,1,0,,container
+5025,a copper bracelet,Sands of Sorrow,Armor,0,wrist,1.25,0,2,10,0,0,4,1,4,,container
+5030,the tiger jewel,Sands of Sorrow,Treasure,0,hold,0.0,0,0,0,0,1,1,1,1,,container floor
+5031,the red-eyed jewel,Sands of Sorrow,Treasure,0,hold,0.0,0,0,0,0,2,2,1,2,,container
+5234,a pink stone,Thalos,Treasure,0,hold,0.0,0,0,0,0,1,1,1,1,,
+6103,"a long, grey branch",Haon Dor,Light,0,hold,0.0,0,0,0,0,0,0,1,0,,floor
+6507,"long, black stick",Dwarven Kingdom,Light,0,hold,0.0,0,0,0,0,0,0,1,0,,floor
+6517,a chunk of coal,Dwarven Kingdom,Trash,0,hold,0.0,0,0,0,0,0,0,1,0,,floor
+6600,a toy axe,Dwarven Day Care,Weapon,0,,0.0,0,0,0,0,0,0,1,0,,mob
+6622,a broom,Dwarven Day Care,Weapon,0,,1.0,-1,0,0,0,0,-1,1,0,,mob
+6647,a toy gun,Dwarven Day Care,Weapon,0,,1.0,0,0,0,0,0,0,1,1,,mob
+7300,a backpack,Sewer,Container,1,about,0.0,0,0,0,0,0,0,1,0,,floor
+7301,a large beltpouch,Sewer,Container,1,waist,0.0,0,0,0,0,0,0,1,0,,
+8600,morris bells,Machine Dreams,Armor,0,legs,0.75,0,0,0,0,0,0,1,0,,floor
+8601,a morris handkerchief,Machine Dreams,Armor,0,wrist,0.75,0,0,0,0,0,0,1,0,,floor
+8602,a morris sash,Machine Dreams,Armor,0,waist,0.75,0,0,0,0,0,0,1,0,,floor
+8603,a morris staff,Machine Dreams,Staff,0,hold,0.0,0,0,0,0,0,0,1,0,,floor
+8904,some small yellow kernels,Holy Grove,Food,0,hold,0.0,0,0,0,0,0,0,1,0,,container
+8905,a crumpled wad of paper,Holy Grove,Trash,0,hold,0.0,0,0,0,0,0,0,1,0,,floor
+9101,a pair of winged boots,Dylan's Wilderness,Armor,0,feet,0.75,0,0,0,0,2,2,1,2,,
+9573,an off white potion,New Thalos,Potion,1,hold,0.0,0,0,0,0,0,0,1,0,,
+9580,a wand of glinting yellow,New Thalos,Wand,1,hold,0.0,0,0,0,0,0,0,1,0,,
+9592,something,New Thalos,Weapon,0,,0.0,0,0,0,0,0,0,1,0,,
+9594,the dungeon key,New Thalos,Key,0,hold,0.0,0,0,0,0,0,0,1,0,,
+9595,a tie-dye shirt,New Thalos,Armor,0,body,1.75,0,0,0,0,0,0,1,0,,
+9596,a pair of Bugle Boy jeans,New Thalos,Armor,0,legs,1.25,0,0,0,0,0,0,1,0,,
+9597,a pair of Reebok Pumps,New Thalos,Armor,0,feet,0.25,0,0,0,0,1,3,1,3,,
+9838,A pair of cheap plaid pants,Dragon Cult,Armor,1,legs,0.0,0,0,0,0,0,0,1,0,,
+11004,a bright silver bracer,Crystalmir Lake,Armor,0,wrist,1.75,0,0,1,0,1,5,1,5,AntiGood,container
+11012,some grain,Crystalmir Lake,Armor,0,body,0.5,0,0,0,0,0,0,1,0,,floor
+12025,a great burden,Imladris,Trash,1,hold,0.0,0,0,0,0,-3,0,1,0,,mob
+12037,a blue rose,Imladris,Trash,1,hold,0.0,0,0,0,0,0,0,1,0,,floor
+13216,the dragon's talon,The Enchanted Forest,Key,1,hold,0.0,0,0,0,0,0,0,1,0,,mob
+13416,an iron maiden,Ciquala's Lair,Armor,0,body,0.0,-1,0,0,0,-20,-1,1,-1,,floor
+27053,a light nightie,The Seminary,Armor,1,body,5.0,0,0,0,0,0,0,1,0,,mob
+27264,a signed death warrant,The Valkyrie,Furniture,0,hold,0.0,0,0,0,0,-8,0,1,0,,mob
+30000,a rod of divine power,Penthouse,Armor,1,hold,0.0,0,0,0,0,75,75,1,75,,
+30003,a seal of stewardship,Penthouse,Wand,0,hold,0.0,0,0,0,0,0,0,1,0,,
+30024,a sacred Krellstone clan gem,Penthouse,Treasure,1,hold,0.0,0,0,0,0,0,0,1,0,,
+30111,A red potion,Temple of the Great Wyrm,Potion,1,hold,0.0,0,0,0,0,0,0,1,0,,floor
+30112,A green potion,Temple of the Great Wyrm,Potion,1,hold,0.0,0,0,0,0,0,0,1,0,,floor
+30113,A blue potion,Temple of the Great Wyrm,Potion,1,hold,0.0,0,0,0,0,0,0,1,0,,floor
+30114,A golden key,Temple of the Great Wyrm,Key,1,hold,0.0,0,0,0,0,0,0,1,0,,mob
+30115,a steel key,Temple of the Great Wyrm,Key,1,hold,0.0,0,0,0,0,0,0,1,0,,mob
+30118,A black key,Temple of the Great Wyrm,Key,1,hold,0.0,0,0,0,0,0,0,1,0,,mob
+30165,a golden key,Lore Keep,Key,1,hold,0.0,0,0,0,0,0,0,1,0,,mob
+30166,a steel key,Lore Keep,Key,1,hold,0.0,0,0,0,0,0,0,1,0,,mob
+30169,a black key,Lore Keep,Key,1,hold,0.0,0,0,0,0,0,0,1,0,,mob
+1505,a studded shield,Gnome Village,Armor,2,shield,2.25,0,0,0,0,0,0,1,0,,mob
+9218,elemental wand of wind and air,Elemental Canyon,Wand,2,hold,0.0,0,0,0,0,0,0,1,0,,mob
+101,A pair of glasses,Smurf Village,Armor,3,head,2.25,0,0,0,0,1,1,1,1,,mob
+103,a small axe,Smurf Village,Weapon,3,,0.0,0,0,0,0,0,0,1,0,,mob
+104,a small necklace,Smurf Village,Armor,3,neck,2.25,0,0,0,0,1,1,1,1,,mob
+1502,A toy boomerang,Gnome Village,Weapon,3,,0.0,0,0,0,0,0,0,1,0,,mob
+1521,a large club,Gnome Village,Weapon,3,,0.0,0,0,0,0,0,0,1,0,,floor mob
+3023,a club,Midgaard,Weapon,3,,0.0,-1,0,0,0,0,-1,1,-1,,mob shop
+3029,a flail,Midgaard,Weapon,3,,-1.0,0,0,0,0,0,0,1,0,,mob shop
+3054,a leather girdle,Midgaard,Armor,3,waist,1.75,0,0,0,0,0,0,1,0,,shop
+3066,a hard leather jerkin,Midgaard,Armor,3,body,1.75,0,0,0,0,0,0,1,0,,mob shop
+3067,a hard leather cap,Midgaard,Armor,3,head,1.75,0,0,0,0,0,0,1,0,,shop
+3068,a pair of hard leather pants,Midgaard,Armor,3,legs,1.75,0,0,0,0,0,0,1,0,,shop
+3069,a pair of hard leather boots,Midgaard,Armor,3,feet,1.75,0,0,0,0,0,0,1,0,,shop
+3070,a pair of hard leather gloves,Midgaard,Armor,3,hands,1.75,0,0,0,0,0,0,1,0,,shop
+3071,a pair of hard leather sleeves,Midgaard,Armor,3,arms,1.75,0,0,0,0,0,0,1,0,,shop
+3117,a small wooden shield,Midgaard,Armor,3,shield,2.5,0,0,0,0,0,0,1,0,,mob shop
+3350,a standard issue sword,Midgaard,Weapon,3,,0.0,1,1,0,0,0,1,1,1,,shop
+3351,a standard issue dagger,Midgaard,Weapon,3,,0.0,1,1,0,0,0,1,1,1,,mob shop
+3352,a standard issue mace,Midgaard,Weapon,3,,0.0,1,1,0,0,0,1,1,1,,shop
+3501,a long spear,Miden'nir,Weapon,3,,-2.0,0,0,0,0,0,0,1,0,,mob
+3503,a stained travelling cloak,Miden'nir,Armor,3,neck,2.25,0,0,0,0,0,0,1,0,,mob
+3605,a rake,Graveyard,Weapon,3,,0.0,0,0,0,0,0,0,1,0,,floor
+4004,a bullwhip,Moria,Weapon,3,,0.0,1,0,0,0,0,0,1,0,,mob
+5253,some lizard scales,Thalos,Armor,3,arms,1.75,0,0,0,0,1,1,1,1,,mob
+6601,a pink ice ring,Dwarven Day Care,Treasure,3,finger,0.0,0,0,4,0,1,2,1,2,,mob
+6621,a linen robe,Dwarven Day Care,Armor,3,about,1.25,0,0,0,5,1,2,1,2,,mob
+9217,an elemental rod of earthquake,Elemental Canyon,Wand,3,hold,0.0,0,0,0,0,0,0,1,0,,mob
+9220,a stone club,Elemental Canyon,Weapon,3,,0.0,0,0,0,0,0,0,1,0,,mob
+9231,anti-cyclops elixir,Elemental Canyon,Potion,3,hold,0.0,0,0,0,0,0,0,1,0,,mob shop
+9836,A torn white dress,Dragon Cult,Armor,3,body,2.25,0,0,0,0,0,0,1,0,,mob
+1503,A gnarled staff,Gnome Village,Weapon,4,,0.0,0,0,0,0,0,0,1,0,,mob
+2417,the shepherd's crook,Ultima,Weapon,4,,0.0,0,0,0,0,0,0,1,0,,mob
+2804,a leather belt,Troll Den,Armor,4,waist,2.0,0,0,0,0,0,0,1,0,,container
+3027,a spear,Midgaard,Weapon,4,,0.0,0,0,0,0,0,0,1,0,,mob shop
+3028,a wooden staff,Midgaard,Weapon,4,,2.0,0,0,0,0,0,0,1,2,,shop
+3604,a shovel,Graveyard,Weapon,4,,0.0,0,0,0,0,0,0,1,0,,floor
+3611,a amethyst,Graveyard,Treasure,4,hold,0.0,0,0,0,0,0,0,1,0,,mob
+5300,a lamia collar,Old Thalos,Armor,4,neck,2.25,0,0,0,0,0,0,1,0,,mob
+9215,elemental wand of fire,Elemental Canyon,Wand,4,hold,0.0,0,0,0,0,0,0,1,0,,mob
+9219,elemental wand of lightning,Elemental Canyon,Wand,4,hold,0.0,0,0,0,0,0,0,1,0,,mob
+9590,a chessboard,New Thalos,Weapon,4,,0.0,0,0,0,0,0,0,1,0,,mob
+615,a pitchfork,New Ofcol,Weapon,5,,0.0,0,0,0,0,0,0,1,0,,mob shop
+666,a broom,New Ofcol,Weapon,5,,0.0,3,-3,0,0,0,0,1,0,,mob
+1113,a bardiche,The Shire,Weapon,5,,0.0,4,0,0,0,0,2,1,2,,mob
+1341,a brown cloak,High Tower of Sorcery,Armor,5,neck,7.0,0,0,0,0,0,0,1,8,,floor
+1712,a pair of travelling boots,Wyvern Tower,Armor,5,feet,1.5,0,0,0,0,0,2,1,2,,
+2101,an Ogre gang jacket,Dangerous Neighbourhood,Armor,5,body,3.0,0,0,0,0,0,0,1,0,,mob
+2102,a Troll gang jacket,Dangerous Neighbourhood,Armor,5,body,3.0,0,0,0,0,0,0,1,0,,mob
+2419,Katrina's sword,Ultima,Weapon,5,,0.0,0,0,0,0,0,0,1,0,AntiEvil,mob
+2805,a cracked bone,Troll Den,Weapon,5,,0.0,1,1,0,0,0,1,1,1,,floor
+2806,brass knuckle dusters,Troll Den,Armor,5,hands,2.0,0,3,0,0,0,3,1,3,,mob
+3040,a scroll of identify,Midgaard,Scroll,5,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3043,a ring of protection,Midgaard,Treasure,5,finger,2.0,0,0,0,0,0,0,1,3,,shop
+3045,a scale mail jacket,Midgaard,Armor,5,body,2.75,0,0,0,0,0,0,1,0,,mob
+3072,a scale mail jerkin,Midgaard,Armor,5,body,2.75,0,0,0,0,0,0,1,0,,mob shop
+3073,a scale mail coif,Midgaard,Armor,5,head,2.75,0,0,0,0,0,0,1,0,,mob shop
+3074,a long scale mail skirt,Midgaard,Armor,5,legs,2.75,0,0,0,0,0,0,1,0,,mob shop
+3075,a pair of reinforced boots,Midgaard,Armor,5,feet,2.75,0,0,0,0,0,0,1,0,,mob shop
+3076,a pair of reinforced gloves,Midgaard,Armor,5,hands,2.75,0,0,0,0,0,0,1,0,,mob shop
+3077,a pair of scale mail sleeves,Midgaard,Armor,5,arms,2.75,0,0,0,0,0,0,1,0,,mob shop
+3084,a potion of cure serious wounds,Midgaard,Potion,5,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3088,a vial of holy water,Midgaard,Potion,5,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3097,a small metal shield,Midgaard,Armor,5,shield,3.25,0,0,0,0,0,0,1,0,,mob shop
+3500,a goblin's short sword,Miden'nir,Weapon,5,,0.0,-1,0,0,0,0,-1,1,-1,,mob
+3502,a black horned helmet,Miden'nir,Armor,5,head,3.0,0,0,0,0,0,0,1,0,,mob
+4056,a two-headed flail,Moria,Weapon,5,,-1.0,0,2,0,0,0,1,1,1,,mob
+4058,a falchion,Moria,Weapon,5,,0.0,0,0,0,0,0,0,1,0,,mob
+4102,"a scroll which reads ""ysafg""",Moria,Scroll,5,hold,0.0,0,0,0,0,0,0,1,0,,mob
+4150,a black potion,Moria,Potion,5,hold,0.0,0,0,0,0,0,0,1,0,,mob
+5000,A small mining pick,Sands of Sorrow,Weapon,5,,0.0,0,0,0,0,0,0,1,0,AntiGood,mob
+5243,a clear stone,Thalos,Treasure,5,hold,-3.0,0,0,0,0,0,0,1,0,,mob
+6000,a lumber axe,Haon Dor,Weapon,5,,0.0,0,0,0,0,0,0,1,0,,mob
+6001,a chequered shirt,Haon Dor,Armor,5,body,3.0,0,0,0,0,0,0,1,0,,mob
+6002,a pair of leather boots,Haon Dor,Armor,5,feet,3.0,0,0,0,0,0,0,1,0,,mob
+7190,a glinting ring of silver,Sewer,Armor,5,finger,3.0,1,0,0,0,0,1,1,1,,mob
+8001,a set of knee pads,Mega-City One,Armor,5,legs,3.0,0,0,0,0,0,0,1,0,,mob
+8006,a splintered bashball bat,Mega-City One,Weapon,5,,0.0,0,0,0,0,0,0,1,0,,mob
+8009,a knife,Mega-City One,Weapon,5,,0.0,0,0,0,0,0,0,1,0,,mob
+9221,a lodestone,Elemental Canyon,Wand,5,hold,0.0,0,0,0,0,0,0,1,0,,mob
+9602,a pair of white baggy pants,New Thalos,Armor,5,legs,2.0,0,0,0,0,1,1,1,1,,mob
+11009,a farmer's longjohns,Crystalmir Lake,Armor,5,body,3.0,0,0,0,0,0,0,1,0,,mob
+30101,TOKEN FOR Shield of the Great Wyrm,Temple of the Great Wyrm,Trash,5,hold,0.0,0,0,0,0,0,0,1,0,,mob
+30121,Shield of the Great Wyrm,Temple of the Great Wyrm,Armor,5,shield,2.0,0,1,0,0,0,1,1,1,,
+30150,|Rflowing red robes of the Lore|w,Lore Keep,Armor,5,about,2.0,0,0,0,0,1,1,1,1,,mob
+1114,a flail,The Shire,Weapon,6,,0.0,0,0,0,0,0,0,1,0,,
+1115,an ancient elven jewel,The Shire,Armor,6,hold,3.0,0,0,8,0,2,4,1,4,AntiEvil,mob
+1703,a gnarled staff,Wyvern Tower,Weapon,6,,0.0,0,0,5,0,0,1,1,1,,
+1711,a fur cap,Wyvern Tower,Armor,6,head,3.0,0,0,0,0,0,0,1,0,,mob
+2201,a silver dagger,Dragon Tower,Weapon,6,,0.0,0,0,0,0,0,0,1,0,,mob
+2422,a robe,Ultima,Armor,6,about,3.0,0,0,0,0,0,0,1,0,,mob
+3024,a steel mace,Midgaard,Weapon,6,,0.0,0,1,0,0,0,0,1,0,,shop
+3353,a standard issue vest,Midgaard,Armor,6,body,3.0,0,0,0,0,0,0,1,0,,mob
+3354,a standard issue shield,Midgaard,Armor,6,shield,3.5,0,0,0,0,0,0,1,0,,mob
+3355,a standard issue cloak,Midgaard,Armor,6,neck,3.25,0,0,0,0,0,0,1,0,,mob
+3356,a standard issue helmet,Midgaard,Armor,6,head,3.0,0,0,0,0,0,0,1,0,,mob
+3357,a pair of standard issue leggings,Midgaard,Armor,6,legs,3.0,0,0,0,0,0,0,1,0,,mob
+3358,a pair of standard issue boots,Midgaard,Armor,6,feet,3.0,0,0,0,0,0,0,1,0,,mob
+3359,a pair of standard issue gloves,Midgaard,Armor,6,hands,3.0,0,0,0,0,0,0,1,0,,mob
+3360,a pair of standard issue sleeves,Midgaard,Armor,6,arms,3.0,0,0,0,0,0,0,1,0,,mob
+3361,a standard issue cape,Midgaard,Armor,6,about,2.75,0,0,0,0,0,0,1,0,,mob
+3362,a standard issue belt,Midgaard,Armor,6,waist,3.0,0,0,0,0,0,0,1,0,,mob
+3363,a standard issue bracer,Midgaard,Armor,6,wrist,2.75,0,0,0,0,0,0,1,0,,mob
+3505,a rune-covered knife,Miden'nir,Weapon,6,,0.0,1,0,0,0,0,0,1,0,AntiEvil,mob
+3612,a silver pendant,Graveyard,Armor,6,neck,3.0,0,0,0,0,0,0,1,0,,mob
+4055,a broad sword,Moria,Weapon,6,,0.0,0,0,0,0,0,0,1,0,,mob
+4057,a heavy iron mace,Moria,Weapon,6,,0.0,0,1,0,0,0,0,1,0,,mob
+4156,a sharpened hand axe,Moria,Weapon,6,,0.0,0,0,0,0,0,0,1,0,,mob
+5309,a mandolin,Old Thalos,Staff,6,hold,0.0,0,0,0,0,0,0,1,0,,mob
+5310,a golden harp,Old Thalos,Staff,6,hold,0.0,0,0,0,0,0,0,1,0,,mob
+6518,a mining pick,Dwarven Kingdom,Weapon,6,,0.0,0,0,0,0,0,0,1,0,,floor
+7202,the small mace,Sewer,Weapon,6,,0.0,0,1,0,0,0,0,1,0,,mob
+7206,a strange white skull,Sewer,Armor,6,head,2.25,0,0,0,0,-4,0,1,0,,floor
+7208,a small stick,Sewer,Light,6,hold,0.0,0,0,0,0,0,0,1,0,,container mob
+7209,a pair of muddy boots,Sewer,Armor,6,feet,3.0,0,0,0,0,1,1,1,1,,mob
+7211,a short sword,Sewer,Weapon,6,,0.0,1,0,0,0,0,0,1,0,,mob
+7801,elven boots,Valley of the Elves,Armor,6,feet,3.0,0,0,0,0,0,8,1,8,,mob
+7802,an elven longsword,Valley of the Elves,Weapon,6,,0.0,1,0,0,0,0,0,1,0,,mob
+7803,a brown cloak,Valley of the Elves,Armor,6,neck,3.0,0,0,0,0,1,1,1,1,,mob
+12026,"a white, cotton shirt",Imladris,Armor,6,body,2.0,0,0,0,0,0,0,1,0,,mob
+1120,a pair of stained leather pants,The Shire,Armor,7,legs,2.0,0,0,0,0,1,1,1,1,,mob
+1317,a long sword,High Tower of Sorcery,Weapon,7,,0.0,1,2,0,0,0,1,1,1,,container
+1701,a short bow,Wyvern Tower,Weapon,7,,0.0,0,0,0,0,0,0,1,0,,mob
+2107,spiked heeled boots,Dangerous Neighbourhood,Armor,7,feet,3.0,0,1,0,0,-1,1,1,1,,mob
+2108,a mirror,Dangerous Neighbourhood,Wand,7,hold,0.0,0,0,0,0,0,0,1,0,,mob
+3022,a long sword,Midgaard,Weapon,7,,0.0,0,0,0,0,0,0,1,0,,mob shop
+3026,a battle axe,Midgaard,Weapon,7,,0.0,0,0,0,0,0,0,1,0,,mob shop
+3384,a shining silvery flail,Midgaard,Weapon,7,,-1.0,0,0,0,0,0,0,1,0,,shop
+3504,an enchanted leather bracer,Miden'nir,Armor,7,wrist,3.0,1,0,0,0,0,1,1,1,,mob
+4051,a metal helmet,Moria,Armor,7,head,3.25,0,0,0,0,0,0,1,1,,mob
+4152,a light silver dagger,Moria,Weapon,7,,1.0,1,0,0,0,0,0,1,1,,mob
+4701,a mining pick,Kingdom of Juargan,Weapon,7,,0.0,0,0,0,0,0,0,1,0,,mob
+5311,a silver flute,Old Thalos,Staff,7,hold,0.0,0,0,0,0,0,0,1,0,,mob
+7800,elven chainmail,Valley of the Elves,Armor,7,body,3.0,0,0,0,0,0,0,1,0,,mob
+11015,a Footman's lance,Crystalmir Lake,Weapon,7,,0.0,0,0,0,0,0,0,1,0,,mob
+11016,a Humanskin vest,Crystalmir Lake,Armor,7,body,3.0,0,0,0,0,0,0,1,0,,mob
+11017,a draconian helmet,Crystalmir Lake,Armor,7,head,3.0,0,0,0,0,0,0,1,0,,mob
+12027,"a pair of grey, woolen trousers",Imladris,Armor,7,legs,2.25,0,0,0,0,0,0,1,0,,mob
+12028,"a black, leather belt",Imladris,Armor,7,waist,2.25,1,2,0,0,0,3,1,3,,mob
+112,a silver stud,Smurf Village,Armor,8,ears,1.5,0,0,0,0,1,1,1,1,,mob
+1109,a tiny dagger,The Shire,Weapon,8,,0.0,0,0,0,0,0,0,1,0,,mob
+1119,a toughened leather vest,The Shire,Armor,8,about,3.0,0,0,0,0,2,2,1,2,,mob
+1320,a wooden staff,High Tower of Sorcery,Weapon,8,,0.0,0,0,0,0,0,0,1,0,,floor
+1342,a chameleon poncho,High Tower of Sorcery,Armor,8,about,6.0,0,0,0,0,2,2,1,5,,floor
+1344,a seashell ring,High Tower of Sorcery,Boat,8,finger,0.0,0,0,0,0,0,0,1,0,,container
+1345,a leather backpack,High Tower of Sorcery,Container,8,about hold,0.0,0,0,0,0,0,0,1,0,,floor
+1504,A gnome sword,Gnome Village,Weapon,8,,0.0,0,0,0,0,0,0,1,0,,mob
+1507,a bloody cloak,Gnome Village,Armor,8,neck,3.0,0,0,0,0,0,0,1,0,,mob
+2110,a patrol club,Dangerous Neighbourhood,Weapon,8,,0.0,3,0,0,0,0,3,1,3,,mob
+2425,a cup,Ultima,Container,8,neck,0.0,0,0,0,0,0,0,1,0,,mob
+3085,a potion of cure critical wounds,Midgaard,Potion,8,hold,0.0,0,0,0,0,0,0,1,0,,shop
+3382,a forest spear,Midgaard,Weapon,8,,0.0,0,0,0,0,0,0,1,0,,shop
+4050,a purple potion,Moria,Potion,8,hold,0.0,0,0,0,0,0,0,1,0,,mob
+4101,swordsman's gloves,Moria,Armor,8,hands,2.0,2,1,0,0,0,3,1,3,,mob
+5003,the amulet,Sands of Sorrow,Armor,8,neck,3.0,0,0,0,0,1,1,1,1,,mob
+5207,a battered iron breast plate,Thalos,Armor,8,body,3.25,-6,0,0,0,0,-6,1,-6,,floor
+6508,dwarven club,Dwarven Kingdom,Weapon,8,,0.0,0,0,0,0,0,0,1,0,,mob
+7201,the large mace,Sewer,Weapon,8,,0.0,0,2,0,0,0,1,1,1,,mob
+9216,an ice staff,Elemental Canyon,Staff,8,hold,0.0,0,0,0,0,0,0,1,0,,mob
+111,a sparkling blue stone,Smurf Village,Treasure,9,hold,0.0,0,0,0,0,0,0,1,0,,container
+1318,a silver dagger,High Tower of Sorcery,Weapon,9,,0.0,2,2,0,0,0,2,1,2,,container
+2424,a mandolin,Ultima,Weapon,9,,0.0,0,0,0,0,0,0,1,0,,mob
+3380,a studded ebony mace,Midgaard,Weapon,9,,0.0,0,1,0,0,0,0,1,0,,shop
+3383,an ebony polearm,Midgaard,Weapon,9,,2.0,0,0,0,0,0,0,1,2,,shop
+3385,a sharpened stiletto dagger,Midgaard,Weapon,9,,0.0,0,1,0,0,0,0,1,0,,mob shop
+4105,an iron-shod staff,Moria,Weapon,9,,2.0,0,0,0,0,0,0,1,2,,mob
+5217,a silver flute,Thalos,Staff,9,hold,0.0,0,0,0,0,0,0,1,0,,mob
+5230,a pale blue stone,Thalos,Treasure,9,hold,0.0,0,0,0,0,1,1,1,1,,container mob
+5231,a scarlet and blue stone,Thalos,Treasure,9,hold,0.0,0,0,0,0,1,1,1,1,,container mob
+5232,an incandescent blue stone,Thalos,Treasure,9,hold,0.0,0,0,0,0,1,1,1,1,,mob
+5233,a deep red stone,Thalos,Treasure,9,hold,0.0,0,0,0,0,1,1,1,1,,mob
+5235,a pearly white stone,Thalos,Treasure,9,hold,0.0,0,0,1,0,0,1,1,1,,mob
+5237,a lavender and green stone,Thalos,Treasure,9,hold,0.0,0,0,0,0,0,0,1,2,,mob
+5241,a pink and green stone,Thalos,Treasure,9,hold,0.0,-5,0,0,0,0,-5,1,-5,,mob
+5250,a mandolin,Thalos,Staff,9,hold,0.0,0,0,0,0,0,0,1,0,,mob
+5251,a golden harp,Thalos,Staff,9,hold,0.0,0,0,0,0,0,0,1,0,,mob
+5252,a long slim dagger,Thalos,Weapon,9,,0.0,1,1,0,0,0,1,1,1,,mob
+6104,"a long, grey branch",Haon Dor,Weapon,9,,0.0,-2,0,0,0,0,-1,1,-1,,floor
+6506,"long, black stick",Dwarven Kingdom,Staff,9,hold,0.0,0,0,0,0,0,0,1,0,,floor mob
+9603,a leather saddle,New Thalos,Armor,9,body,2.25,1,0,0,0,0,1,1,1,,shop
+106,a small wand,Smurf Village,Wand,10,hold,0.0,0,0,0,0,0,0,2,0,,mob
+1601,a rusty cleaver,Wyvern Tower,Weapon,10,,0.0,0,0,0,0,0,0,2,0,,floor
+1604,a steel broad sword,Wyvern Tower,Weapon,10,,0.0,1,1,0,0,0,1,2,1,,mob
+2015,a misty potion,Dwarven Catacombs,Potion,10,hold,0.0,0,0,0,0,0,0,2,0,,mob
+2103,a hefty length of chain,Dangerous Neighbourhood,Weapon,10,,5.0,1,0,0,0,0,0,2,5,,mob
+2104,a metal shield,Dangerous Neighbourhood,Armor,10,shield,3.75,0,0,0,0,0,0,2,0,,mob
+2105,a spray paint can,Dangerous Neighbourhood,Wand,10,hold,0.0,0,0,0,0,0,0,2,0,,mob
+2109,comfortable leather gloves,Dangerous Neighbourhood,Armor,10,hands,3.75,0,0,0,0,1,1,2,1,,mob
+2111,a troll signet ring,Dangerous Neighbourhood,Armor,10,finger,3.75,0,0,0,0,1,1,2,1,,mob
+2385,a belt pouch,The Keep of Mahn-Tor,Container,10,waist,0.0,0,0,0,0,0,0,2,0,,mob
+2803,an opal ring,Troll Den,Armor,10,finger,3.25,0,2,0,0,0,2,2,2,,container
+3081,a potion of sanctuary,Midgaard,Potion,10,hold,0.0,0,0,0,0,0,0,2,0,,shop
+3110,a chain mail shirt,Midgaard,Armor,10,body,3.5,0,0,0,0,0,0,2,0,,mob shop
+3111,a chain mail coif,Midgaard,Armor,10,head,3.5,0,0,0,0,0,0,2,0,,shop
+3112,a long chain mail skirt,Midgaard,Armor,10,legs,3.5,0,0,0,0,0,0,2,0,,shop
+3113,a pair of iron-bound boots,Midgaard,Armor,10,feet,3.5,0,0,0,0,0,0,2,0,,shop
+3114,a pair of chain mail gauntlets,Midgaard,Armor,10,hands,3.5,0,0,0,0,0,0,2,0,,mob shop
+3115,a pair of chain mail sleeves,Midgaard,Armor,10,arms,3.5,0,0,0,0,0,0,2,0,,shop
+3116,a large metal shield,Midgaard,Armor,10,shield,4.25,0,0,0,0,0,0,2,0,,mob shop
+3124,a long sword,Midgaard,Weapon,10,,0.0,0,0,0,0,0,1,2,1,,mob
+4006,some smelly furs,Moria,Armor,10,about,4.25,0,0,0,0,-1,0,2,0,,mob
+4053,a thieves dirk,Moria,Weapon,10,,0.0,1,1,0,0,0,1,2,1,,
+4059,a voulge,Moria,Weapon,10,,1.0,0,0,0,0,0,0,2,1,,mob
+4153,a morning star,Moria,Weapon,10,,0.0,0,1,0,0,-1,0,2,0,,
+4702,a dwarven helm,Kingdom of Juargan,Armor,10,head,3.75,0,0,0,0,0,0,2,0,,mob
+4703,a dwarven breast plate,Kingdom of Juargan,Armor,10,body,3.75,0,0,0,0,0,0,2,0,,mob
+5018,"a long, pointed cutlass",Sands of Sorrow,Weapon,10,,0.0,0,0,0,0,0,0,2,0,AntiNeutral,mob
+5100,a commoner's longsword,Drow City,Weapon,10,,0.0,1,1,0,0,0,1,2,1,,mob
+6114,an iron ring,Haon Dor,Armor,10,finger,3.75,0,0,0,0,0,0,2,0,,mob
+7299,a short sword,Sewer,Weapon,10,,0.0,0,0,0,0,0,0,2,0,,
+8014,a polished bashball bat,Mega-City One,Weapon,10,,0.0,0,0,0,0,0,0,2,0,,mob
+9301,a comet's tail,Galaxy,Weapon,10,,0.0,0,0,0,0,0,0,2,0,,mob
+9511,a sickle,New Thalos,Weapon,10,,0.0,0,0,0,0,0,0,2,0,,shop
+9513,a scimitar,New Thalos,Weapon,10,,0.0,0,0,0,0,0,0,2,0,,mob shop
+9517,a suit of field plate,New Thalos,Armor,10,body,3.75,0,0,0,0,0,0,2,0,AntiEvil AntiNeutral,mob shop
+9521,a splinted shield,New Thalos,Armor,10,shield,3.75,0,0,0,0,0,0,2,0,,mob shop
+9586,a sledge hammer,New Thalos,Weapon,10,,0.0,0,0,0,0,0,0,2,0,,mob
+11002,farming scythe,Crystalmir Lake,Weapon,10,,0.0,0,0,0,0,0,0,2,0,,mob
+12035,a lyre,Imladris,Staff,10,hold,0.0,0,0,0,0,0,0,2,0,,mob
+12036,a mallorn leaf,Imladris,Wand,10,hold,0.0,0,0,0,0,0,0,2,0,,floor
+12041,some seeds,Imladris,Wand,10,hold,0.0,0,0,0,0,0,0,2,0,,floor mob
+12111,the wing of a fairy,The Dell,Staff,10,hold,0.0,0,0,0,0,0,0,2,0,,shop
+16020,"a small, deadly dart",UnderDark,Weapon,10,,0.0,2,0,0,0,-1,2,2,2,,
+16047,a drow sword,UnderDark,Weapon,10,,0.0,1,1,0,0,0,1,2,1,,shop
+16048,a drow dagger,UnderDark,Weapon,10,,0.0,2,1,0,0,0,1,2,1,,shop
+16049,a drow mace,UnderDark,Weapon,10,,0.0,1,2,0,0,0,1,2,1,,shop
+16050,duergar breastplate,UnderDark,Armor,10,body,7.0,0,0,0,0,0,0,2,4,,shop
+16051,a duergar helm,UnderDark,Armor,10,head,6.0,0,0,0,0,0,0,2,3,,shop
+16052,a duergar shield,UnderDark,Armor,10,shield,5.0,0,0,0,0,0,0,2,2,,shop
+16053,duergar leggings,UnderDark,Armor,10,legs,5.0,0,0,0,0,0,0,2,2,,shop
+16054,a duergar bracer,UnderDark,Armor,10,wrist,5.0,0,0,0,0,0,0,2,2,,shop
+30102,TOKEN FOR Helm of the Great Wyrm,Temple of the Great Wyrm,Trash,10,hold,0.0,0,0,0,0,0,0,2,0,,mob
+30122,Helm of the Great Wyrm,Temple of the Great Wyrm,Armor,10,head,2.25,0,0,0,0,1,1,2,1,,
+30174,a scroll of God's armour,Lore Keep,Scroll,10,hold,0.0,0,0,0,0,0,0,2,0,,shop
+2009,a suit of chainmail,Dwarven Catacombs,Armor,11,body,3.75,0,0,0,0,0,0,2,0,,mob
+2428,Iolo's bow,Ultima,Weapon,11,,0.0,0,0,0,0,1,1,2,1,,mob
+2431,a wooden spear,Ultima,Weapon,11,,0.0,0,0,0,0,0,0,2,0,,mob
+3381,a defiler's axe,Midgaard,Weapon,11,,0.0,0,0,0,0,0,0,2,0,,shop
+4054,a war axe,Moria,Weapon,11,,0.0,0,1,0,0,0,0,2,0,,mob
+4100,a black demon blade,Moria,Weapon,11,,0.0,0,0,0,0,0,1,2,1,AntiGood AntiNeutral,mob
+4151,a heavy oak staff,Moria,Staff,11,hold,0.0,0,0,0,0,0,0,2,0,,mob
+5214,a smooth quartz ball,Thalos,Light,11,hold,0.0,0,0,0,0,0,0,2,0,,container mob
+5218,a demon-faced talisman,Thalos,Armor,11,neck,3.75,0,0,0,0,-18,0,2,0,,mob
+5222,a black silk robe,Thalos,Armor,11,about,3.75,0,0,0,10,0,2,2,2,,mob
+5239,a dull grey stone,Thalos,Treasure,11,hold,0.0,0,0,0,0,0,0,2,0,,mob
+16030,belt of pleasure,UnderDark,Armor,11,waist,3.75,0,0,0,0,1,1,2,1,,mob
+16033,a broken bottle,UnderDark,Weapon,11,,0.0,0,2,0,0,-1,1,2,1,,mob
+601,a meat cleaver,New Ofcol,Weapon,12,,0.0,0,0,0,0,0,0,2,0,,mob shop
+1314,a mithril hammer,High Tower of Sorcery,Weapon,12,,0.0,2,0,0,0,1,2,2,2,,floor
+1520,heavy banded mail,Gnome Village,Armor,12,body,3.75,0,0,0,0,0,0,2,0,,mob
+1621,a dark red potion,Wyvern Tower,Potion,12,hold,0.0,0,0,0,0,0,0,2,0,,mob
+1692,a strange key,Wyvern Tower,Key,12,hold,5.0,0,0,0,0,0,0,2,5,,mob
+1702,a long bow,Wyvern Tower,Weapon,12,,0.0,1,0,0,0,0,0,2,0,,mob
+1713,a bronze ring,Wyvern Tower,Armor,12,finger,3.75,0,0,0,5,0,1,2,1,,mob
+2016,a templar's sword,Dwarven Catacombs,Weapon,12,,0.0,1,0,0,0,0,0,2,0,,mob
+3364,a city guard signet ring,Midgaard,Armor,12,finger,5.0,0,0,0,0,0,0,2,6,,mob
+3386,a guardsman blade,Midgaard,Weapon,12,,0.0,0,0,0,0,0,0,2,0,,mob
+5017,a curved scimitar,Sands of Sorrow,Weapon,12,,0.0,1,0,0,0,0,0,2,0,AntiNeutral,mob
+5101,a noble's longsword,Drow City,Weapon,12,,0.0,2,2,0,0,0,2,2,2,,mob
+9510,a guisarme,New Thalos,Weapon,12,,0.0,0,0,0,0,0,0,2,0,,shop
+9599,the wolverine claw,New Thalos,Weapon,12,,0.0,0,0,0,0,0,0,2,0,,mob
+9606,some reigns,New Thalos,Armor,12,head,3.25,0,0,0,0,1,1,2,1,,shop
+11013,leather armor,Crystalmir Lake,Armor,12,body,3.75,0,0,0,0,0,0,2,0,,mob
+11014,Chamorro Dagger,Crystalmir Lake,Weapon,12,,0.0,0,0,0,0,0,0,2,0,,mob
+12007,a white feathered quill,Imladris,Weapon,12,,0.0,0,0,0,0,1,1,2,1,,mob
+12008,a piece of parchment,Imladris,Scroll,12,hold,0.0,0,0,0,0,0,0,2,0,,mob
+12012,a phial of blazing light,Imladris,Potion,12,hold,0.0,0,0,0,0,0,0,2,0,AntiEvil,mob
+12013,a lavender coloured silk negligee,Imladris,Armor,12,about,3.0,0,0,0,0,0,0,2,2,,mob
+12032,steel ringmail,Imladris,Armor,12,body,2.0,0,0,0,0,0,0,2,0,,mob
+12033,a really nasty Orcish spear,Imladris,Weapon,12,,0.0,0,3,0,0,0,1,2,1,,mob
+12034,an iron shield bearing the symbol of the White Eye,Imladris,Armor,12,shield,2.25,0,0,0,15,0,3,2,3,,mob
+12039,a broken sword,Imladris,Trash,12,hold,0.0,0,0,0,0,0,0,2,0,,mob
+12040,the tip of a sword,Imladris,Trash,12,hold,0.0,0,0,0,0,0,0,2,0,,floor
+30164,a blue potion,Lore Keep,Potion,12,hold,0.0,0,0,0,0,0,0,2,0,,container
+307,a strange amulet,Plains of the North,Armor,13,neck,3.75,0,0,0,0,0,0,2,5,,mob
+308,a druish staff,Plains of the North,Furniture,13,hold,0.0,0,0,0,0,0,0,2,0,,mob
+1118,a ringmail shirt,The Shire,Armor,13,body,4.75,0,0,0,0,0,0,2,0,,mob
+1319,a curved scimitar,High Tower of Sorcery,Weapon,13,,0.0,0,0,3,0,0,1,2,1,,container
+1602,the fine mace,Wyvern Tower,Weapon,13,,0.0,1,0,0,0,0,0,2,0,,mob
+2106,a stiletto,Dangerous Neighbourhood,Weapon,13,,-20.0,4,0,0,0,0,2,2,2,,mob
+2112,brass knuckles,Dangerous Neighbourhood,Armor,13,hands,3.75,5,0,-15,0,0,5,2,5,,mob
+2200,a jagged spear,Dragon Tower,Weapon,13,,0.0,0,0,0,0,0,0,2,0,,mob
+2432,a stone club,Ultima,Weapon,13,,0.0,0,0,0,0,0,0,2,0,,mob
+2802,the troll skin,Troll Den,Armor,13,about,3.75,0,0,0,0,1,1,2,1,,mob
+3373,a mercenary issue shirt,Midgaard,Armor,13,body,4.75,0,0,0,0,0,0,2,0,,shop
+3374,a mercenary issue coif,Midgaard,Armor,13,head,4.75,0,0,0,0,0,0,2,0,,shop
+3375,a mercenary issue skirt,Midgaard,Armor,13,legs,4.75,0,0,0,0,0,0,2,0,,shop
+3376,a pair mercenary issue boots,Midgaard,Armor,13,feet,4.75,0,0,0,0,0,0,2,0,,shop
+3377,a pair of mercenary issue gauntlets,Midgaard,Armor,13,hands,5.0,0,0,0,0,0,0,2,0,,shop
+3378,a pair of mercenary issue sleeves,Midgaard,Armor,13,arms,4.75,0,0,0,0,0,0,2,0,,shop
+3379,a mercenary issue shield,Midgaard,Armor,13,shield,5.5,0,0,0,0,0,0,2,0,,shop
+4005,a huge club,Moria,Weapon,13,,0.0,-2,0,0,0,0,-1,2,-1,,mob
+8910,a wooden staff,Holy Grove,Weapon,13,,0.0,0,0,0,0,0,0,2,0,AntiEvil,mob
+12046,an emerald silk shirt,Imladris,Armor,13,body,2.5,0,0,0,0,1,1,2,1,,mob
+12047,some emerald silk sleeves,Imladris,Armor,13,arms,2.5,0,0,0,0,0,0,2,0,,mob
+12048,"a pair of emerald, silk pants",Imladris,Armor,13,legs,2.75,1,1,0,0,0,10,2,10,,mob
+12049,a dull grey cloak,Imladris,Armor,13,about,3.25,0,0,0,20,0,3,2,3,,mob
+12050,a sturdy staff of oak,Imladris,Weapon,13,,0.0,0,3,0,0,-1,1,2,1,,mob
+16029,translucent Robe,UnderDark,Armor,13,about,3.75,0,0,10,0,1,3,2,3,,mob
+1108,the thain girth,The Shire,Armor,14,waist,3.75,0,0,0,0,2,2,2,2,,mob
+1117,a bronze bardiche,The Shire,Weapon,14,,0.0,0,0,0,0,0,1,2,1,,mob
+2014,a shadow cloak,Dwarven Catacombs,Armor,14,about,3.75,0,0,0,0,0,0,2,0,,mob
+5016,"a long, curved sabre",Sands of Sorrow,Weapon,14,,0.0,1,0,0,0,0,0,2,0,AntiNeutral,mob
+7200,the devil rod,Sewer,Weapon,14,,0.0,2,0,0,0,1,2,2,2,,mob
+7203,a purple cloak,Sewer,Armor,14,neck,3.75,0,0,0,0,0,0,2,1,,mob
+8015,a bronze bashball bat,Mega-City One,Weapon,14,,0.0,0,0,0,0,0,0,2,0,,mob
+12009,the golden DragonWing shield,Imladris,Armor,14,shield,3.25,0,0,0,0,-1,0,2,8,,mob
+12010,a bronze bracer,Imladris,Armor,14,wrist,2.75,0,2,0,0,0,2,2,2,,mob
+12011,a visciously sharp axe featuring a skull pommel,Imladris,Weapon,14,,0.0,0,0,0,0,1,2,2,2,,mob
+12052,a pair of blue suede shoes,Imladris,Armor,14,feet,4.0,0,0,0,0,0,3,2,3,,mob
+12053,a crystal stud,Imladris,Armor,14,ears,3.75,0,0,0,0,1,1,2,1,,mob
+16031,ring of nobility,UnderDark,Armor,14,finger,3.75,0,1,5,0,-2,2,2,2,,mob
+1508,A bat ring,Gnome Village,Armor,15,finger,4.5,0,0,0,0,0,3,2,3,,mob
+1509,A bead necklace,Gnome Village,Armor,15,neck,4.5,2,0,0,0,0,2,2,2,,mob
+1510,An electrum sword,Gnome Village,Weapon,15,,0.0,0,0,0,0,0,0,2,0,,mob
+1612,a black kite shield,Wyvern Tower,Armor,15,shield,4.5,0,0,0,0,0,0,2,0,,mob
+1617,an iron hoop,Wyvern Tower,Armor,15,ears,3.75,0,1,0,0,0,1,2,1,,mob
+2004,the neutralizer,Dwarven Catacombs,Weapon,15,,0.0,1,1,0,0,0,1,2,1,AntiGood AntiEvil,mob
+2011,the shield of defence,Dwarven Catacombs,Armor,15,shield,4.5,-2,-1,10,10,0,1,2,1,,mob
+2362,a kopesh sword,The Keep of Mahn-Tor,Weapon,15,,0.0,0,0,0,0,0,0,2,0,,mob
+2386,an ogre spear,The Keep of Mahn-Tor,Weapon,15,,0.0,0,0,0,0,0,0,2,0,,mob
+2434,a staff,Ultima,Weapon,15,,0.0,0,0,0,0,1,1,2,1,AntiEvil,mob
+3046,a bronze breast plate,Midgaard,Armor,15,body,4.5,0,0,0,0,0,0,2,0,,
+3080,a potion of healing,Midgaard,Potion,15,hold,0.0,0,0,0,0,0,0,2,0,,shop
+3105,a bronze bracer,Midgaard,Armor,15,wrist,3.75,0,0,0,0,0,0,2,0,,container
+5102,a snake headed whip,Drow City,Weapon,15,,0.0,2,2,0,0,0,2,2,2,,mob
+7806,a gold ring,Valley of the Elves,Armor,15,finger,4.5,0,0,0,10,0,2,2,2,,mob
+7807,a quarterstaff,Valley of the Elves,Weapon,15,,0.0,0,2,0,0,0,1,2,1,,mob
+8301,a long spear,Old Marsh,Weapon,15,,0.0,0,3,0,0,2,3,2,3,AntiGood,mob
+8302,a dark horned helmet,Old Marsh,Armor,15,head,4.5,0,1,0,0,-3,1,2,1,AntiGood,mob
+9233,an adamantite club,Elemental Canyon,Weapon,15,,0.0,0,0,0,0,0,0,2,0,,mob
+9509,a glaive,New Thalos,Weapon,15,,0.0,0,0,0,0,0,0,2,0,,shop
+9585,a fountain pen,New Thalos,Weapon,15,,0.0,0,0,0,0,0,0,2,0,,mob
+10061,smashed plate,Wolf Pointe,Armor,15,body,4.75,0,0,0,0,0,0,2,0,,mob
+10062,standard steel helm,Wolf Pointe,Armor,15,head,5.0,0,0,0,0,0,0,2,0,,shop
+10063,standard steel plate,Wolf Pointe,Armor,15,body,5.25,0,0,0,0,0,0,2,0,,shop
+10064,standard steel shield,Wolf Pointe,Armor,15,shield,6.0,0,0,0,0,0,0,2,0,,shop
+10065,standard steel sword,Wolf Pointe,Weapon,15,,0.0,0,0,0,0,0,0,2,0,,shop
+12042,"an intricate, silver key",Imladris,Key,15,hold,0.0,0,0,0,0,0,0,2,0,,mob
+16044,a midnight blue bracer,UnderDark,Armor,15,wrist,4.5,0,0,0,0,1,1,2,1,,mob
+1107,"a huge, steel axe",The Shire,Weapon,16,,0.0,0,0,0,0,0,0,2,0,,mob
+1606,the rod of might,Wyvern Tower,Weapon,16,,0.0,2,0,0,0,1,2,2,2,,mob
+2008,a flask of holy water,Dwarven Catacombs,Potion,16,hold,0.0,0,0,0,0,0,0,2,0,,mob
+2010,a white cape,Dwarven Catacombs,Armor,16,neck,4.5,1,0,0,0,0,1,2,1,,mob
+2361,the white pelt of a yeti,The Keep of Mahn-Tor,Armor,16,about,4.5,0,0,0,0,0,0,2,0,,mob
+6509,a two-handed dwarven axe,Dwarven Kingdom,Weapon,16,,0.0,2,0,0,0,2,3,2,3,,mob
+8000,a spit gun,Mega-City One,Wand,16,hold,0.0,0,0,0,0,0,0,2,0,,mob
+9598,the Daemon Claw,New Thalos,Weapon,16,,0.0,-2,0,0,0,0,-1,2,-1,,floor
+12019,the sapphire DragonWing shield,Imladris,Armor,16,shield,3.75,0,0,0,0,0,1,2,3,,mob
+13000,the helmet of stupidity,The Flying Citadel,Armor,16,head,1.0,0,0,0,12,-3,2,2,3,,mob
+16007,sword of darkness,UnderDark,Weapon,16,,0.0,2,0,0,0,1,2,2,2,,mob
+16013,ripped leather pants,UnderDark,Armor,16,legs,4.5,0,0,0,0,0,0,2,0,,mob
+16032,gold teeth,UnderDark,Armor,16,head,4.5,0,2,0,0,-1,2,2,2,,mob
+16043,a glowing sphere,UnderDark,Light,16,hold,0.0,0,0,0,20,0,3,2,3,,mob
+16046,black drow chainmail,UnderDark,Armor,16,body,4.5,0,0,4,0,1,2,2,2,,mob
+16063,necklace of nobility,UnderDark,Armor,16,neck,8.5,0,0,0,0,0,2,2,6,,mob
+16065,thief's patch,UnderDark,Armor,16,wrist,4.5,4,0,0,0,2,6,2,6,,mob
+30162,a red potion,Lore Keep,Potion,16,hold,0.0,0,0,0,0,0,0,2,0,,container
+30163,a green potion,Lore Keep,Potion,16,hold,0.0,0,0,0,0,0,0,2,0,,container
+1106,an elven bow,The Shire,Weapon,17,,0.0,2,0,0,0,0,1,2,1,AntiEvil,mob
+1357,a silvery dagger,High Tower of Sorcery,Weapon,17,,0.0,1,0,0,0,0,0,2,0,,mob
+1614,a commander's helm,Wyvern Tower,Armor,17,head,4.5,0,0,0,0,1,1,2,1,,mob
+5103,a snake headed whip,Drow City,Weapon,17,,0.0,2,2,0,0,0,2,2,2,,mob
+5317,an imperial sword,Old Thalos,Weapon,17,,0.0,2,2,0,0,0,2,2,2,,mob
+5318,an imperial mace,Old Thalos,Weapon,17,,0.0,2,2,0,0,0,2,2,2,,mob
+5319,an imperial chest plate,Old Thalos,Armor,17,body,4.5,0,0,0,0,0,0,2,0,,mob
+5320,an imperial shield,Old Thalos,Armor,17,shield,4.5,0,0,0,0,0,0,2,0,,mob
+5321,an imperial cloak,Old Thalos,Armor,17,neck,4.5,0,0,0,0,0,0,2,0,,mob
+5322,an imperial helm,Old Thalos,Armor,17,head,4.5,0,0,0,0,0,0,2,0,,mob
+5323,a pair of imperial plate leggings,Old Thalos,Armor,17,legs,4.5,0,0,0,0,0,0,2,0,,mob
+5324,a pair of imperial plate boots,Old Thalos,Armor,17,feet,4.5,0,0,0,0,0,0,2,0,,mob
+5325,a pair of imperial plate gloves,Old Thalos,Armor,17,hands,4.5,0,0,0,0,0,0,2,0,,mob
+5326,a pair of imperial plate sleeves,Old Thalos,Armor,17,arms,4.5,0,0,0,0,0,0,2,0,,mob
+5327,an imperial cape,Old Thalos,Armor,17,about,4.5,0,0,0,0,0,0,2,0,,mob
+5328,an imperial belt,Old Thalos,Armor,17,waist,4.5,0,0,0,0,0,0,2,0,,mob
+5329,an imperial metal bracer,Old Thalos,Armor,17,wrist,4.5,0,0,0,0,0,0,2,0,,mob
+5330,an imperial city guard signet ring,Old Thalos,Armor,17,finger,10.5,0,0,0,0,0,0,2,8,,mob
+6155,the morning star,Haon Dor,Weapon,17,,0.0,0,0,0,0,0,0,2,0,,mob
+8008,a Hoover vacuum cleaner,Mega-City One,Weapon,17,,0.0,0,0,0,0,0,0,2,0,,mob
+8010,a wet noodle,Mega-City One,Weapon,17,,0.0,0,0,0,0,1,1,2,1,,mob
+16045,an ebony morning star,UnderDark,Weapon,17,,0.0,2,2,0,0,1,3,2,3,,mob
+16062,svirfneblin leggings,UnderDark,Armor,17,legs,9.5,0,0,0,0,1,1,2,6,,mob
+16064,a broadsword named 'Vision',UnderDark,Weapon,17,,0.0,2,2,0,0,0,2,2,2,,mob
+16084,a demon clan signet ring,UnderDark,Armor,17,finger,4.5,1,0,15,10,0,6,2,6,,mob
+1100,the rainbow staff,The Shire,Light,18,ears,0.0,0,0,0,0,1,1,2,1,,mob
+1104,a silvery cloak,The Shire,Armor,18,about,4.5,0,0,0,0,0,0,2,2,AntiEvil,mob
+1381,a huge spiked club,High Tower of Sorcery,Weapon,18,,0.0,0,0,0,0,0,0,2,0,,mob
+1603,a long elven dagger,Wyvern Tower,Weapon,18,,0.0,2,0,0,0,0,1,2,1,,container
+1615,a mithril bracer,Wyvern Tower,Armor,18,arms,4.5,0,0,0,0,1,1,2,1,,mob
+2223,a stone club,Dragon Tower,Weapon,18,,0.0,0,0,0,0,0,0,2,0,,mob
+2243,a golden wand,Dragon Tower,Wand,18,hold,0.0,0,0,0,0,0,0,2,0,,mob
+2244,a silver staff,Dragon Tower,Staff,18,hold,0.0,0,0,0,0,0,0,2,0,,mob
+2260,a golden scimitar,Dragon Tower,Weapon,18,,0.0,0,0,0,0,2,2,2,2,,mob
+2286,a copper hammer,Dragon Tower,Weapon,18,,0.0,0,0,0,0,0,0,2,0,,mob
+2436,a sword,Ultima,Weapon,18,,0.0,0,0,0,0,0,0,2,0,,mob
+3106,an iron bracer,Midgaard,Armor,18,wrist,4.25,0,0,0,0,0,0,2,0,,
+3387,an officer's blade,Midgaard,Weapon,18,,0.0,0,0,0,0,0,0,2,0,,mob
+5020,a platinum wand,Sands of Sorrow,Wand,18,hold,0.0,0,0,0,0,0,0,2,0,,mob
+5021,a strange energy bow,Sands of Sorrow,Weapon,18,,0.0,0,0,0,0,0,0,2,0,,mob
+5106,a snake headed whip,Drow City,Weapon,18,,0.0,0,0,0,0,-2,0,2,0,AntiGood,
+9232,a stone axe,Elemental Canyon,Weapon,18,,0.0,0,0,0,0,0,0,2,0,,mob
+9593,the jail key,New Thalos,Key,18,hold,0.0,0,0,0,0,0,0,2,0,,mob
+12020,a longbow from the lands of Lorien,Imladris,Weapon,18,,0.0,0,0,0,0,0,0,2,0,,mob
+12021,"a pair of maroon, silk sleeves",Imladris,Armor,18,arms,3.0,0,0,0,8,0,2,2,2,,mob
+12022,a pair of silent boots,Imladris,Armor,18,feet,3.75,0,0,0,0,2,2,2,2,,mob
+12031,the Wraithblade,Imladris,Weapon,18,,0.0,2,2,0,0,0,3,2,3,,mob
+16002,blood shot eye,UnderDark,Wand,18,hold,0.0,0,0,0,0,0,0,2,0,,mob
+16066,thief's gloves,UnderDark,Armor,18,hands,4.5,2,0,0,0,2,4,2,4,,mob
+30175,a scroll of God's strength,Lore Keep,Scroll,18,hold,0.0,0,0,0,0,0,0,2,0,,shop
+620,an Ofcol signet ring,New Ofcol,Armor,19,finger,4.5,0,0,5,0,0,1,2,2,,mob
+621,brass plate,New Ofcol,Armor,19,body,4.5,0,0,10,0,0,2,2,4,,mob
+622,a brass helm,New Ofcol,Armor,19,head,4.5,0,0,5,0,0,1,2,2,,mob
+623,brass leggings,New Ofcol,Armor,19,legs,4.5,0,0,5,0,0,1,2,2,,mob
+624,brass boots,New Ofcol,Armor,19,feet,4.5,0,0,5,0,0,1,2,2,,mob
+625,brass gauntlets,New Ofcol,Armor,19,hands,4.5,0,0,5,0,0,1,2,2,,mob
+626,brass sleeves,New Ofcol,Armor,19,arms,4.5,0,0,5,0,0,1,2,2,,mob
+627,a brass shield,New Ofcol,Armor,19,shield,4.5,0,0,5,0,0,1,2,2,,mob
+628,a brass girth,New Ofcol,Armor,19,waist,4.5,0,0,5,0,0,1,2,2,,mob
+629,a brass bracer,New Ofcol,Armor,19,wrist,4.5,0,0,5,0,0,1,2,2,,mob
+630,a claymore,New Ofcol,Weapon,19,,0.0,-2,5,0,0,0,1,2,1,,mob
+1101,Sting,The Shire,Weapon,19,,0.0,0,0,0,0,2,2,2,2,AntiEvil,mob
+1105,the One Ring,The Shire,Armor,19,finger hold,-5.5,0,0,0,20,0,3,2,3,,mob
+1616,a dark blue cloak,Wyvern Tower,Armor,19,neck,10.5,0,0,0,5,0,1,2,7,,mob
+2387,an ogre war club,The Keep of Mahn-Tor,Weapon,19,,0.0,0,0,0,0,0,0,2,0,,mob
+8013,a key card,Mega-City One,Key,19,hold,0.0,0,0,0,0,0,0,2,0,,mob
+8016,a reinforced steel bashball bat,Mega-City One,Weapon,19,,0.0,0,0,0,0,0,0,2,0,,mob
+9302,the Titanic Arm plates of Hercules,Galaxy,Armor,19,arms,4.5,0,2,0,0,1,3,2,3,AntiEvil,mob
+9304,the Titanic Belt of Orion,Galaxy,Armor,19,waist,4.5,0,0,0,0,2,2,2,2,AntiEvil,mob
+12029,a shadowy cloak,Imladris,Armor,19,about,4.0,0,0,35,-15,-1,5,2,5,AntiGood,mob
+12030,a shadowy hood,Imladris,Armor,19,head,5.5,0,0,25,0,-2,4,2,4,AntiGood,mob
+16006,glinting gnome mace,UnderDark,Weapon,19,,0.0,1,1,1,0,0,2,2,2,,mob
+16067,a gold chain,UnderDark,Armor,19,neck,4.5,1,0,0,0,0,1,2,9,,mob
+529,a green cabbage,Camelot,Food,20,hold,0.0,0,0,0,0,0,0,3,0,,shop
+530,an orange carrot,Camelot,Food,20,hold,0.0,0,0,0,0,0,0,3,0,,shop
+531,a baked potato,Camelot,Food,20,hold,0.0,0,0,0,0,0,0,3,0,,shop
+606,an emerald ring,New Ofcol,Treasure,20,finger,0.0,0,0,0,0,0,0,3,0,,shop
+607,a glass trinket,New Ofcol,Treasure,20,hold,0.0,0,0,0,0,0,0,3,1,,shop
+608,a golden necklace,New Ofcol,Treasure,20,neck,0.0,0,0,0,0,-1,0,3,0,,shop
+664,a golden robe,New Ofcol,Armor,20,about,5.25,0,0,0,0,2,2,3,2,AntiEvil,mob
+1355,a meat cleaver,High Tower of Sorcery,Weapon,20,,0.0,0,0,0,0,0,0,3,0,,mob
+1387,a black robe,High Tower of Sorcery,Container,20,about,9.0,0,0,0,0,0,0,3,11,AntiGood AntiNeutral,mob
+1388,an onyx bracelet,High Tower of Sorcery,Armor,20,wrist,5.25,0,2,0,0,0,2,3,2,,mob
+1391,a white robe,High Tower of Sorcery,Container,20,about,9.0,0,0,0,0,0,0,3,11,AntiEvil AntiNeutral,mob
+1392,a white gold bracelet,High Tower of Sorcery,Armor,20,wrist,5.25,2,0,0,0,0,2,3,2,,mob
+1704,an ancient long sword,Wyvern Tower,Weapon,20,,0.0,3,3,0,0,0,3,3,3,,
+2012,a dragonscale shield,Dwarven Catacombs,Armor,20,shield,5.25,0,0,0,0,0,0,3,0,,mob
+2013,a prism wand,Dwarven Catacombs,Wand,20,hold,0.0,0,0,0,0,0,0,3,0,,mob
+2203,a dragon skin bracelet,Dragon Tower,Armor,20,wrist,5.25,0,0,0,0,0,0,3,0,,mob
+2204,a black silk belt,Dragon Tower,Armor,20,waist,5.25,0,0,0,0,2,2,3,2,,mob
+2287,a gem encrusted dagger,Dragon Tower,Weapon,20,,0.0,0,0,0,0,0,0,3,0,,mob
+2360,a pair of fur lined boots,The Keep of Mahn-Tor,Armor,20,feet,5.25,0,0,0,0,0,2,3,2,,mob
+2388,a bearskin cloak,The Keep of Mahn-Tor,Armor,20,about,5.25,0,0,0,0,0,0,3,0,,mob
+2389,a pair of feathered earrings,The Keep of Mahn-Tor,Armor,20,head,5.25,0,0,0,0,0,0,3,0,,mob
+2392,a thick fur cape,The Keep of Mahn-Tor,Armor,20,neck,5.25,0,0,0,0,0,0,3,0,,mob
+2393,a fur lined tunic,The Keep of Mahn-Tor,Armor,20,body,5.25,0,0,0,0,0,0,3,0,,mob
+3082,a potion of divine protection,Midgaard,Potion,20,hold,0.0,0,0,0,0,0,0,3,0,,shop
+5107,a snake headed whip,Drow City,Weapon,20,,0.0,0,0,0,0,-4,0,3,0,AntiGood,
+5302,a green serpentine staff,Old Thalos,Staff,20,hold,0.0,0,0,0,0,0,0,3,0,,mob
+5334,a brown cloak,Old Thalos,Armor,20,neck,5.25,0,0,4,0,0,1,3,1,,mob
+5819,A canteen,Mos Eisley,Drink,20,neck,0.0,0,0,0,0,0,0,3,0,,shop
+6504,a hammer,Dwarven Kingdom,Weapon,20,,0.0,0,0,0,0,0,0,3,0,,mob shop
+6505,dwarven plate mail,Dwarven Kingdom,Armor,20,body,5.25,0,0,0,0,0,0,3,0,,mob shop
+6510,A dwarven helmet,Dwarven Kingdom,Armor,20,head,5.25,0,0,0,0,0,0,3,0,,mob shop
+6511,a dwarven golden ring,Dwarven Kingdom,Treasure,20,finger,0.0,1,1,0,0,0,2,3,2,,mob shop
+6512,Dwarven gloves,Dwarven Kingdom,Armor,20,hands,5.25,0,0,0,0,2,2,3,2,,mob shop
+8011,a billy club,Mega-City One,Weapon,20,,0.0,0,2,0,0,0,1,3,1,,mob
+8306,"A huge, wicked-looking scythe",Old Marsh,Weapon,20,,0.0,3,3,0,0,0,3,3,3,AntiGood,mob
+8911,a brown robe,Holy Grove,Armor,20,body,5.25,0,0,0,10,0,2,3,2,AntiEvil,mob
+8920,a fine oaken staff,Holy Grove,Weapon,20,,0.0,0,0,0,0,0,0,3,0,AntiEvil,mob
+9211,an elemental amulet,Elemental Canyon,Armor,20,neck,5.25,0,0,0,0,0,0,3,5,,mob
+9212,an elemental bracelet,Elemental Canyon,Armor,20,wrist,5.25,0,0,25,0,0,4,3,4,,mob
+9501,the Key to the City of New Thalos,New Thalos,Key,20,neck hold,0.0,0,0,0,0,0,0,3,0,,mob
+9508,a fauchard,New Thalos,Weapon,20,,0.0,0,0,0,0,0,0,3,0,,shop
+9522,a buckler,New Thalos,Armor,20,shield,5.25,0,0,0,0,0,0,3,0,,shop
+9523,a leather jacket,New Thalos,Armor,20,body,5.25,0,0,0,0,0,0,3,0,,shop
+9524,a pair of leather sleeves,New Thalos,Armor,20,arms,5.25,0,0,0,0,0,0,3,0,,shop
+9525,a leather cap,New Thalos,Armor,20,head,5.25,0,0,0,0,0,0,3,0,,shop
+9526,a pair of leather pants,New Thalos,Armor,20,legs,5.25,0,0,0,0,0,0,3,0,,shop
+9527,a pair of leather gloves,New Thalos,Armor,20,hands,5.25,0,0,0,0,0,0,3,0,,shop
+9528,a pair of padded leather boots,New Thalos,Armor,20,feet,5.25,0,0,0,0,0,0,3,0,,shop
+9529,a studded leather jacket,New Thalos,Armor,20,body,5.25,0,0,0,0,0,0,3,0,,shop
+9530,a pair of studded leather sleeves,New Thalos,Armor,20,arms,5.25,0,0,0,0,0,0,3,0,,shop
+9531,a pair of studded leather pants,New Thalos,Armor,20,legs,5.25,0,0,0,0,0,0,3,0,,shop
+9532,a pair of studded leather gloves,New Thalos,Armor,20,hands,5.25,0,0,0,0,0,0,3,0,,shop
+9533,a leather shield,New Thalos,Armor,20,shield,5.25,0,0,0,0,0,0,3,0,,shop
+9604,a bronzed saddle,New Thalos,Armor,20,body,5.25,2,0,0,0,0,2,3,2,,shop
+12014,the emerald DragonWing shield,Imladris,Armor,20,shield,4.0,0,0,0,0,0,1,3,7,,mob
+12015,the sword of an Elflord,Imladris,Weapon,20,,0.0,0,0,15,0,0,3,3,3,,mob
+12016,"a pair of maroon, silk leggings",Imladris,Armor,20,legs,3.25,0,0,0,0,0,0,3,0,,mob
+12017,"a maroon silk shirt, embroidered with silver thread",Imladris,Armor,20,body,3.25,0,0,0,0,2,2,3,2,,mob
+12018,the helm of an Elflord,Imladris,Armor,20,head,4.0,0,0,0,0,1,1,3,1,,mob
+13001,a pile of tattered rags,The Flying Citadel,Clothing,20,body,0.0,0,0,0,0,0,0,3,0,,mob
+13212,a pixie's wings,The Enchanted Forest,Pill,20,body,0.0,0,0,0,0,0,0,3,0,,mob
+13219,faerie love dust,The Enchanted Forest,Pill,20,neck,0.0,0,0,0,0,0,0,3,0,,mob
+16018,a very sharp pin,UnderDark,Weapon,20,,0.0,2,1,-15,0,-3,1,3,1,,mob
+16019,very muddy branch,UnderDark,Weapon,20,,0.0,-5,2,0,0,-2,-2,3,-2,AntiNeutral,mob
+16060,hand of shocking grasp,UnderDark,Wand,20,hold,0.0,0,0,0,0,0,0,3,0,,shop
+16074,a blade of poison,UnderDark,Weapon,20,,0.0,1,3,0,0,0,2,3,2,,mob
+30206,(|bBlack Aura|w) the Helm of a Shadow Soldier,Penthouse,Armor,20,head,5.25,1,2,0,0,0,3,3,3,,
+654,a golden dragonscale torso,New Ofcol,Armor,21,body,10.25,2,0,0,0,0,2,3,7,AntiEvil,mob
+660,a golden dragonscale shield,New Ofcol,Armor,21,shield,8.25,1,0,0,0,0,1,3,4,AntiEvil,mob
+662,the Golden Claw,New Ofcol,Weapon,21,,0.0,0,4,0,0,0,2,3,2,AntiEvil,mob
+1376,a runed chisel,High Tower of Sorcery,Weapon,21,,0.0,0,0,0,0,1,1,3,1,,mob
+1377,a beltpouch,High Tower of Sorcery,Container,21,waist,0.0,0,0,0,0,0,0,3,0,,mob
+2366,a steel breast plate,The Keep of Mahn-Tor,Armor,21,body,5.25,0,0,0,0,0,0,3,0,,mob
+2367,a steel helm,The Keep of Mahn-Tor,Armor,21,head,5.25,0,0,0,0,0,0,3,0,,mob
+2368,a huge halberd,The Keep of Mahn-Tor,Weapon,21,,0.0,1,1,0,0,0,1,3,1,,mob
+5104,a snake headed whip,Drow City,Weapon,21,,0.0,2,2,0,0,0,2,3,2,,mob
+5105,a black longsword,Drow City,Weapon,21,,0.0,2,2,0,0,0,2,3,2,,mob
+5110,a silvery blue wand,Drow City,Wand,21,hold,0.0,0,0,0,0,0,0,3,0,,mob
+13022,some filthy rags,The Flying Citadel,Armor,21,body,3.5,0,0,0,0,0,0,3,0,,mob
+16008,dark grey helm,UnderDark,Armor,21,head,5.25,0,1,0,0,1,2,3,2,,mob
+16039,a pair of manacles,UnderDark,Armor,21,hands,5.25,0,0,-25,0,-6,0,3,0,,mob
+16068,lucky dice,UnderDark,Armor,21,hold,5.25,1,0,20,0,0,4,3,10,,mob
+16085,demon bracer,UnderDark,Armor,21,wrist,5.25,0,0,0,15,0,3,3,3,,mob
+1360,a bound scroll,High Tower of Sorcery,Scroll,22,hold,6.0,0,0,0,0,0,0,3,6,,mob
+1371,a black staff,High Tower of Sorcery,Staff,22,hold,0.0,0,0,0,0,0,0,3,0,,mob
+2210,a white silk belt,Dragon Tower,Container,22,waist,0.0,0,0,0,0,2,2,3,2,,mob
+2211,a platinum bracelet.,Dragon Tower,Armor,22,wrist,5.25,0,0,0,0,0,0,3,0,,mob
+2220,a holy symbol,Dragon Tower,Armor,22,neck hold,5.25,0,0,0,20,0,3,3,3,,mob
+2250,a black staff,Dragon Tower,Staff,22,hold,0.0,0,0,0,0,0,0,3,0,AntiGood,mob
+2261,a diamond brooch,Dragon Tower,Armor,22,neck,5.25,0,0,0,25,0,4,3,4,,mob
+2270,a runed scroll,Dragon Tower,Scroll,22,hold,0.0,0,0,0,0,0,0,3,0,,mob
+2363,a pair of steel vambraces,The Keep of Mahn-Tor,Armor,22,arms,5.25,0,0,0,0,0,0,3,0,,mob
+2364,a pair of steel greaves,The Keep of Mahn-Tor,Armor,22,legs,5.25,0,0,0,0,0,0,3,0,,mob
+2365,a battle axe,The Keep of Mahn-Tor,Weapon,22,,0.0,0,0,0,0,0,0,3,0,,mob
+2435,a sword,Ultima,Weapon,22,,0.0,0,0,0,0,1,1,3,1,AntiEvil,mob
+8012,a vault key,Mega-City One,Key,22,hold,0.0,0,0,0,0,0,0,3,0,,mob
+9213,some platinum arm bands,Elemental Canyon,Armor,22,arms,5.25,0,0,0,0,3,3,3,3,,mob
+9214,some platinum leg bands,Elemental Canyon,Armor,22,legs,5.25,0,0,0,0,3,3,3,3,,mob
+9230,The Shock Whip,Elemental Canyon,Weapon,22,,0.0,0,3,0,0,1,2,3,2,,mob
+9306,the Titanic Fleece of Aries,Galaxy,Armor,22,neck,7.25,0,0,0,0,0,0,3,2,AntiEvil,mob
+9307,the Titanic Hoof of Taurus,Galaxy,Armor,22,feet,5.25,0,1,0,0,0,9,3,9,AntiEvil,mob
+9308,the Titanic Mask of Gemini,Galaxy,Armor,22,head,5.25,0,0,0,0,3,3,3,3,AntiEvil,mob
+9309,the Titanic Shell of Cancer,Galaxy,Armor,22,body,7.25,0,0,0,0,0,0,3,2,AntiEvil,mob
+9310,the Titanic Skin of Leo,Galaxy,Armor,22,about,5.25,0,0,0,0,0,0,3,0,AntiEvil,mob
+9311,the Titanic Bracelet of Virgo,Galaxy,Armor,22,wrist,5.25,0,0,0,0,2,2,3,2,AntiEvil,mob
+9312,the Titanic Scale of Libra,Galaxy,Armor,22,shield,8.25,0,0,5,0,0,1,3,4,AntiEvil,mob
+9313,the Titanic Scale of Libra,Galaxy,Armor,22,shield,-0.75,0,0,-30,0,0,0,3,0,,mob
+9314,the Sting of Scorpio,Galaxy,Weapon,22,,0.0,3,1,0,0,0,2,3,2,AntiEvil,mob
+9315,the Arrow of Sagittarius,Galaxy,Wand,22,hold,0.0,0,0,0,0,0,0,3,0,AntiEvil,mob
+9316,the Titanic Bow of Sagittarius,Galaxy,Weapon,22,,0.0,1,3,0,0,0,2,3,2,AntiEvil,mob
+9317,the Titanic Horns of Capricon,Galaxy,Armor,22,hands,5.25,3,2,0,0,0,5,3,5,AntiEvil,mob
+9318,the Ancient Vessel of Aquarius,Galaxy,Staff,22,hold,0.0,0,0,0,0,0,0,3,0,AntiEvil,mob
+9319,the Titanic Tail of Pisces,Galaxy,Armor,22,legs,7.25,0,0,0,0,-2,0,3,2,AntiEvil,mob
+12004,"a mighty, two-handed sword",Imladris,Weapon,22,,0.0,2,2,0,0,0,2,3,2,AntiEvil,mob
+12005,an intricately carved ivory Great Horn,Imladris,Wand,22,hold,0.0,0,0,0,0,0,0,3,0,AntiEvil,mob
+12006,"a pair of gleaming, bronze boots",Imladris,Armor,22,feet,5.0,0,0,0,0,2,2,3,2,,mob
+13023,the dead lizard,The Flying Citadel,Bomb,22,hold,0.0,0,0,0,0,0,0,3,0,,mob
+16075,assassin's sleeves,UnderDark,Armor,22,arms,5.25,1,1,0,0,0,2,3,2,,mob
+16095,a large tower shield,UnderDark,Armor,22,shield,5.25,0,0,0,0,0,0,3,0,,mob
+1372,a golden flute,High Tower of Sorcery,Staff,23,hold,0.0,0,0,0,0,-6,0,3,0,,mob
+1373,a small figurine,High Tower of Sorcery,Staff,23,hold,0.0,0,0,0,0,0,0,3,0,,mob
+1374,a holstered belt,High Tower of Sorcery,Container,23,waist,0.0,0,0,0,0,0,0,3,0,,mob
+1907,a silvery dagger,The Astral Plane,Weapon,23,,0.0,2,1,0,0,0,1,3,1,,mob
+5109,a pair of gauntlets,Drow City,Armor,23,hands,5.25,0,0,0,0,3,3,3,3,,mob
+8007,the Vibroblade,Mega-City One,Weapon,23,,0.0,2,2,0,0,2,4,3,4,,container
+9104,magenta potion,Dylan's Wilderness,Potion,23,hold,0.0,0,0,0,0,0,0,3,0,AntiGood,mob
+9105,an ancient illustrated parchment,Dylan's Wilderness,Scroll,23,hold,0.0,0,0,0,0,0,0,3,0,,mob
+9228,the Avalanche,Elemental Canyon,Weapon,23,,0.0,1,0,0,0,0,0,3,0,,mob
+9503,a morningstar,New Thalos,Weapon,23,,0.0,0,0,0,0,0,0,3,0,,shop
+9512,a two-handed bastard sword,New Thalos,Weapon,23,,0.0,0,0,0,0,0,0,3,0,,shop
+9514,a rapier,New Thalos,Weapon,23,,0.0,0,0,0,0,0,0,3,0,,shop
+9515,a suit of banded mail,New Thalos,Armor,23,body,5.25,0,0,0,0,0,0,3,0,,mob shop
+9516,a suit of brigandine,New Thalos,Armor,23,body,5.25,0,0,0,0,0,0,3,0,,shop
+9518,a suit of ringmail,New Thalos,Armor,23,body,5.25,0,0,0,-20,0,0,3,0,,shop
+9519,a suit of splintmail,New Thalos,Armor,23,body,5.25,0,0,0,-10,0,0,3,0,,shop
+9520,a wooden shield,New Thalos,Armor,23,shield,5.25,0,0,0,0,0,0,3,0,,shop
+9534,a sack,New Thalos,Container,23,hold,0.0,0,0,0,0,0,0,3,0,,shop
+9536,a backpack,New Thalos,Container,23,about,0.0,0,0,0,0,0,0,3,0,,shop
+9538,a belt pouch,New Thalos,Container,23,waist,0.0,0,0,0,0,0,0,3,0,,shop
+9539,a candle,New Thalos,Light,23,hold,0.0,0,0,0,0,0,0,3,0,,shop
+9546,a belt,New Thalos,Clothing,23,wrist,0.0,0,0,0,0,0,0,3,0,,shop
+9547,a pair of hiking boots,New Thalos,Clothing,23,feet,0.0,0,0,0,0,0,0,3,0,,shop
+9548,a fur cloak,New Thalos,Clothing,23,about,0.0,0,0,0,0,0,0,3,0,,shop
+9549,a girdle,New Thalos,Clothing,23,waist,0.0,0,0,0,0,0,0,3,0,,shop
+9550,a pair of hose,New Thalos,Clothing,23,legs,0.0,0,0,0,0,0,0,3,0,,shop
+9551,a common robe,New Thalos,Clothing,23,body,0.0,0,0,0,0,0,0,3,0,,shop
+9552,an embroiderd robe,New Thalos,Clothing,23,body about,0.0,0,0,0,0,0,0,3,0,,shop
+9553,a pair of sandles,New Thalos,Clothing,23,feet,0.0,0,0,0,0,0,0,3,0,,shop
+9554,a sash,New Thalos,Clothing,23,waist,0.0,0,0,0,0,0,0,3,0,,shop
+9555,a silk jacket,New Thalos,Clothing,23,about,0.0,0,0,0,0,0,0,3,0,,shop
+9583,a pair of sewing shears,New Thalos,Weapon,23,,0.0,0,0,0,0,0,0,3,0,,shop
+9584,a meat cleaver,New Thalos,Weapon,23,,0.0,0,0,0,0,0,0,3,0,AntiEvil AntiNeutral,shop
+9591,a sesame seed,New Thalos,Key,23,hold,0.0,0,0,0,0,0,0,3,0,,shop
+12023,a cloak,Imladris,Armor,23,about,5.5,0,0,25,0,0,19,3,19,AntiEvil,mob
+12024,a scabbard,Imladris,Container,23,waist,10.0,0,0,0,0,0,0,3,10,,mob
+12109,nothing,The Dell,Container,23,about,0.0,0,0,0,0,3,3,3,3,,mob
+13024,a notched sword,The Flying Citadel,Weapon,23,,0.0,0,0,0,0,0,0,3,0,,mob
+13220,a teeny tiny spear,The Enchanted Forest,Weapon,23,,0.0,0,0,0,0,5,6,3,6,AntiGood AntiEvil,mob
+16038,slaver's whip,UnderDark,Weapon,23,,0.0,3,0,0,0,0,1,3,1,,mob
+16069,a dark cloak,UnderDark,Armor,23,neck,9.25,3,0,0,0,1,4,3,8,,mob
+16076,skull tattoo,UnderDark,Armor,23,wrist,5.25,0,2,5,0,0,3,3,3,,mob
+16086,a demon blade,UnderDark,Weapon,23,,0.0,2,2,0,0,0,2,3,2,AntiGood,mob
+310,a strange template,Plains of the North,Scroll,24,hold,0.0,0,0,0,0,0,0,3,0,,mob
+1364,a leather pouch,High Tower of Sorcery,Container,24,hold,0.0,0,0,0,0,0,0,3,0,,mob
+1382,a grey robe,High Tower of Sorcery,Container,24,about,9.0,0,0,0,0,0,0,3,11,AntiGood AntiEvil,mob
+1384,a glinting silver bracelet,High Tower of Sorcery,Armor,24,wrist,10.25,0,0,0,0,0,0,3,5,,mob
+2002,a suit of granite platemail,Dwarven Catacombs,Armor,24,body,5.25,0,0,0,0,-1,0,3,0,AntiGood,mob
+2003,an onyx ring,Dwarven Catacombs,Armor,24,finger,5.25,0,0,0,0,1,1,3,1,AntiGood,mob
+2006,A kingly crown,Dwarven Catacombs,Key,24,head,8.0,0,0,0,0,0,0,3,8,,mob
+5108,a pair of bracers,Drow City,Armor,24,arms,5.25,0,0,0,0,0,0,3,0,,mob
+5111,a small helmet,Drow City,Armor,24,head,5.25,0,0,0,0,3,3,3,3,,mob
+5114,a small bright green hat,Drow City,Armor,24,head,7.25,0,0,0,0,0,0,3,2,,mob
+6304,a black knight's visor,Arachnos,Armor,24,head,5.25,0,0,0,0,3,3,3,3,,mob
+9227,an icicle,Elemental Canyon,Weapon,24,,0.0,0,2,0,0,1,2,3,2,,mob
+12000,an ebony smoking pipe,Imladris,Staff,24,hold,0.0,0,0,0,0,0,0,3,0,,mob
+12001,the ornate robes of the Elf Lord,Imladris,Armor,24,about,5.0,0,0,0,25,0,4,3,4,,mob
+12002,"a black hilted dagger called ""Loriana""",Imladris,Weapon,24,,0.0,0,0,0,0,3,4,3,4,,mob
+12003,the silver-winged helm of the Elf Lord,Imladris,Armor,24,head,5.0,0,0,0,0,2,2,3,2,,mob
+13042,some gunpowder,The Flying Citadel,Bomb,24,hold,0.0,0,0,0,0,0,0,3,0,,mob
+1116,a finely etched bardiche,The Shire,Weapon,25,,0.0,0,0,0,0,0,1,3,1,,mob
+1379,a dark cowl,High Tower of Sorcery,Armor,25,neck,14.0,0,0,0,0,0,0,3,11,AntiGood,mob
+1380,an ashen wand,High Tower of Sorcery,Wand,25,hold,0.0,0,0,0,0,0,0,3,0,AntiGood,mob
+1395,a spiked collar,High Tower of Sorcery,Armor,25,neck,8.0,0,3,0,0,0,3,3,5,,mob
+1926,a rusted sword,The Astral Plane,Weapon,25,,0.0,-2,5,0,0,0,1,3,1,,mob
+2346,a suit of ethereal plate,The Keep of Mahn-Tor,Armor,25,body,6.0,0,0,0,0,0,0,3,3,AntiGood,mob
+2347,an ethereal helm,The Keep of Mahn-Tor,Armor,25,head,6.0,0,0,0,0,0,0,3,0,AntiGood,mob
+2348,an ethereal blade,The Keep of Mahn-Tor,Weapon,25,,0.0,1,1,0,0,0,1,3,1,AntiGood,mob
+2349,a willow branch,The Keep of Mahn-Tor,Wand,25,hold,0.0,0,0,0,0,0,0,3,0,,mob
+2369,a blue steel helm and visor,The Keep of Mahn-Tor,Armor,25,head,6.0,0,0,0,0,0,0,3,0,,mob
+2370,a pair of blue steel greaves,The Keep of Mahn-Tor,Armor,25,legs,6.0,0,0,0,0,0,0,3,0,,mob
+2371,a pair of blue steel vambraces,The Keep of Mahn-Tor,Armor,25,arms,6.0,0,0,0,0,0,0,3,0,,mob
+2372,a two-handed sword,The Keep of Mahn-Tor,Weapon,25,,0.0,2,2,0,0,0,2,3,2,,mob
+2390,gauntlets of ogre power,The Keep of Mahn-Tor,Armor,25,hands,6.0,0,1,0,0,2,3,3,3,,mob
+2391,a massive club,The Keep of Mahn-Tor,Weapon,25,,0.0,0,0,0,0,0,0,3,0,,mob
+2423,horseshoes,Ultima,Armor,25,feet,6.0,0,3,0,0,0,3,3,3,,mob
+2438,a hammer,Ultima,Weapon,25,,0.0,0,0,0,0,0,0,3,0,,mob
+5112,a small ruby ring,Drow City,Armor,25,finger,6.0,0,0,25,0,0,4,3,4,,mob
+5200,a mithril vest,Thalos,Armor,25,body,6.0,0,1,0,0,2,3,3,3,AntiEvil,mob
+5201,a mithril helm,Thalos,Armor,25,head,6.0,2,0,0,0,0,2,3,2,AntiEvil,mob
+5202,a pair of mithril gauntlets,Thalos,Armor,25,hands,6.0,1,1,0,0,0,2,3,2,AntiEvil,mob
+5203,some mithril sleeves,Thalos,Armor,25,arms,6.0,1,1,0,0,0,2,3,2,AntiEvil,mob
+5204,a pair of mithril boots,Thalos,Armor,25,feet,6.0,1,0,0,0,1,2,3,2,AntiEvil,mob
+5205,a set of mithril leggings,Thalos,Armor,25,legs,6.0,1,0,0,0,1,2,3,2,AntiEvil,mob
+5206,a mithril girth,Thalos,Armor,25,waist,6.0,0,0,0,0,2,2,3,2,AntiEvil,mob
+5208,a sturdy iron shield,Thalos,Armor,25,shield,6.0,0,0,0,0,0,0,3,4,AntiGood,mob
+5221,a two-handed sword,Thalos,Weapon,25,,0.0,2,3,0,0,0,2,3,2,AntiEvil,mob
+5223,a dark green cloak,Thalos,Armor,25,neck,6.0,0,0,5,0,0,1,3,1,AntiGood,mob
+5254,a gold earring,Thalos,Armor,25,ears,5.25,2,0,0,0,0,2,3,2,,mob
+6111,a large round shield,Haon Dor,Armor,25,shield,6.0,0,0,0,0,0,0,3,0,,mob
+6112,an iron crown,Haon Dor,Armor,25,head,6.0,0,0,0,0,0,0,3,0,,mob
+7217,a silvery breast plate,Sewer,Armor,25,body,8.0,0,0,0,0,3,3,3,3,AntiEvil AntiNeutral,mob
+7218,some silvery leg plates,Sewer,Armor,25,legs,8.0,0,0,0,0,3,3,3,3,AntiEvil AntiNeutral,mob
+7219,a pair of silvery gloves,Sewer,Armor,25,hands,8.0,2,2,0,0,0,4,3,4,AntiEvil AntiNeutral,mob
+7220,a silvery helmet,Sewer,Armor,25,head,8.25,0,0,0,0,3,3,3,3,AntiEvil AntiNeutral,mob
+7221,the shield of the rose,Sewer,Armor,25,shield,18.5,0,0,0,0,0,0,3,10,AntiEvil AntiNeutral,mob
+7222,a pair of silvery boots,Sewer,Armor,25,feet,8.0,0,0,0,0,3,3,3,3,AntiEvil AntiNeutral,mob
+7223,some silvery arm plates,Sewer,Armor,25,arms,8.0,0,0,0,0,3,3,3,3,AntiEvil AntiNeutral,mob
+7224,a white cloak,Sewer,Armor,25,about,8.5,0,0,0,0,0,0,3,5,AntiEvil AntiNeutral,mob
+7825,a darkened quarterstaff,Valley of the Elves,Weapon,25,,0.0,0,2,0,0,2,3,3,3,,mob
+8003,a lawgiver,Mega-City One,Wand,25,hold,0.0,0,0,0,0,0,0,3,0,,mob
+8005,a code box,Mega-City One,Key,25,hold,0.0,0,0,0,0,0,0,3,0,,mob
+9305,An ugly skull of Draco,Galaxy,Staff,25,hold,0.0,0,0,0,0,0,0,3,0,,mob
+9507,a bill-guisarme,New Thalos,Weapon,25,,0.0,0,0,0,0,0,0,3,0,,shop
+9600,the halberd,New Thalos,Weapon,25,,0.0,2,2,0,0,0,2,3,2,,mob
+9608,glowing horseshoes,New Thalos,Armor,25,feet,6.25,0,3,0,0,0,3,3,3,,shop
+10075,Wolf Dagger,Wolf Pointe,Weapon,25,,0.0,0,0,0,0,0,0,3,0,,shop
+10076,Wolf Sword,Wolf Pointe,Weapon,25,,0.0,1,1,0,0,0,1,3,1,,shop
+10077,Wolf Mace,Wolf Pointe,Weapon,25,,0.0,1,1,0,0,0,1,3,1,,shop
+12044,a creamy coloured potion,Imladris,Potion,25,hold,0.0,0,0,0,0,0,0,3,0,,floor
+12045,an icy cold potion,Imladris,Potion,25,hold,0.0,0,0,0,0,0,0,3,0,,floor
+13041,a dirty loincloth,The Flying Citadel,Armor,25,waist,2.75,0,0,0,0,0,0,3,0,,mob
+16070,golden earring,UnderDark,Armor,25,ears,4.5,0,0,10,0,2,4,3,4,,mob
+16077,a garotte,UnderDark,Weapon,25,,0.0,-5,4,0,0,0,-1,3,-1,,mob
+16090,a fire gem,UnderDark,Wand,25,hold,0.0,0,0,0,0,0,0,3,0,,mob
+30151,|Gflowing green robes of the Lore|w,Lore Keep,Armor,25,about,9.5,0,0,0,15,1,4,3,4,,mob
+1909,a thin two-handed sword,The Astral Plane,Weapon,26,,0.0,2,4,0,0,0,3,3,3,,mob
+1915,a splint mail vest,The Astral Plane,Armor,26,body,6.0,0,0,0,0,0,0,3,0,,mob
+2222,an emerald sword,Dragon Tower,Weapon,26,,0.0,0,0,0,0,0,0,3,0,,mob
+2242,a crested shield,Dragon Tower,Armor,26,shield,6.0,0,0,0,0,1,1,3,1,,mob
+2254,a pair of spiked gauntlets,Dragon Tower,Armor,26,hands,6.0,0,2,0,0,1,3,3,3,,mob
+2276,a fur cloak,Dragon Tower,Armor,26,about,6.0,0,0,10,0,1,3,3,3,,mob
+2373,a red steel helm and visor,The Keep of Mahn-Tor,Armor,26,head,6.0,0,0,0,0,0,0,3,0,,mob
+2374,a pair of red steel greaves,The Keep of Mahn-Tor,Armor,26,legs,6.0,0,0,0,0,0,0,3,0,,mob
+2375,a pair of red steel vambraces,The Keep of Mahn-Tor,Armor,26,arms,6.0,0,0,0,0,0,0,3,0,,mob
+2376,a minotaur glaive,The Keep of Mahn-Tor,Weapon,26,,0.0,1,1,0,0,0,1,3,1,,mob
+6303,a pontiff's headress,Arachnos,Armor,26,head,8.0,0,0,0,0,3,3,3,5,,mob
+9226,a flame lance,Elemental Canyon,Weapon,26,,0.0,2,0,20,0,0,4,3,4,,mob
+9320,the Ring of Dignity,Galaxy,Armor,26,finger,6.0,0,0,0,25,2,6,3,6,AntiEvil,mob
+9321,the Sceptre of Might,Galaxy,Light,26,body head feet hands arms shield about waist neck wrist,0.0,2,2,0,0,0,4,3,4,AntiEvil,mob
+13040,a horsewhip,The Flying Citadel,Weapon,26,,0.0,0,0,0,0,0,0,3,0,,mob
+16041,a jagged long sword,UnderDark,Weapon,26,,10.0,4,0,0,0,0,2,3,12,,mob
+16042,an ebony dagger,UnderDark,Weapon,26,,8.0,3,3,0,0,0,3,3,11,,mob
+30176,a scroll of God's speed,Lore Keep,Scroll,26,hold,0.0,0,0,0,0,0,0,3,0,,shop
+631,silver plate,New Ofcol,Armor,27,body,6.0,0,0,0,10,1,3,3,3,AntiEvil,mob
+632,A silver helm,New Ofcol,Armor,27,head,6.0,0,0,0,5,1,2,3,2,AntiEvil,mob
+633,silver leggings,New Ofcol,Armor,27,legs,6.0,0,0,0,5,1,2,3,2,AntiEvil,mob
+634,silver boots,New Ofcol,Armor,27,feet,6.0,0,0,0,5,1,2,3,2,AntiEvil,mob
+635,silver gauntlets,New Ofcol,Armor,27,hands,6.0,0,0,0,5,1,2,3,2,AntiEvil,mob
+636,silver sleeves,New Ofcol,Armor,27,arms,6.0,1,0,0,5,0,2,3,2,AntiEvil,mob
+637,the silver shield,New Ofcol,Armor,27,shield,9.0,0,0,0,5,0,1,3,4,AntiEvil,mob
+638,the silver girth,New Ofcol,Armor,27,waist,6.0,0,1,0,5,0,2,3,2,AntiEvil,mob
+653,a ranseur,New Ofcol,Weapon,27,,0.0,5,-1,0,0,0,2,3,2,AntiEvil,mob
+2202,a dragon's tooth knife,Dragon Tower,Weapon,27,,0.0,0,2,0,0,1,2,3,2,,mob
+2271,a pair of dragon skin gloves,Dragon Tower,Armor,27,hands,6.0,0,0,0,0,2,2,3,2,,mob
+2281,a set of dragon scale sleeves,Dragon Tower,Armor,27,arms,6.0,0,0,0,0,0,0,3,0,,mob
+4706,a large dwarven battle axe,Kingdom of Juargan,Weapon,27,,0.0,1,1,0,0,0,1,3,1,,mob
+8018,a Judge's club,Mega-City One,Weapon,27,,0.0,0,3,0,0,0,1,3,1,,mob
+9102,a pair of carved bronze bracers,Dylan's Wilderness,Armor,27,arms,6.0,0,0,0,0,0,0,3,0,,mob
+9103,an ornate brooch,Dylan's Wilderness,Armor,27,neck,6.0,0,0,0,0,2,2,3,2,,mob
+11001,Turtle Dragon Shell,Crystalmir Lake,Armor,27,about,6.0,0,0,0,0,0,0,3,0,,mob
+16078,an assassin's mask,UnderDark,Armor,27,head,6.0,0,0,20,0,0,4,3,4,,mob
+16087,gem of gate,UnderDark,Wand,27,hold,0.0,0,0,0,0,0,0,3,0,,mob
+2377,a crimson steel helm and visor,The Keep of Mahn-Tor,Armor,28,head,6.0,0,0,0,0,0,0,3,0,,mob
+2378,a pair of crimson steel greaves,The Keep of Mahn-Tor,Armor,28,legs,6.0,0,0,0,0,0,0,3,0,,mob
+2379,a pair of crimson steel vambraces,The Keep of Mahn-Tor,Armor,28,arms,6.0,0,0,0,0,0,0,3,0,,mob
+2380,a huge morningstar,The Keep of Mahn-Tor,Weapon,28,,0.0,2,2,0,0,0,2,3,2,,mob
+2439,a sword,Ultima,Weapon,28,,0.0,-2,3,0,0,0,0,3,0,AntiEvil,mob
+8017,a bracer of devious deeds,Mega-City One,Armor,28,waist,3.75,0,0,0,0,0,0,3,0,,mob
+9229,the Morning Star,Elemental Canyon,Weapon,28,,0.0,0,0,0,0,2,2,3,7,,mob
+13038,a dirty loincloth,The Flying Citadel,Armor,28,waist,3.75,0,0,0,0,0,0,3,0,,
+13039,some filthy clothing,The Flying Citadel,Armor,28,about,1.5,0,0,0,0,0,0,3,0,,
+16040,a mage cloak,UnderDark,Armor,28,neck,6.0,0,0,0,25,0,4,3,4,,mob
+656,golden dragonscale leggings,New Ofcol,Armor,29,legs,9.0,1,0,0,0,0,1,3,4,AntiEvil,mob
+657,golden dragonscale boots,New Ofcol,Armor,29,feet,9.0,1,0,0,0,0,1,3,4,AntiEvil,mob
+658,golden dragonscale gauntlets,New Ofcol,Armor,29,hands,9.0,1,0,0,0,0,1,3,4,AntiEvil AntiNeutral,mob
+659,golden dragonscale sleeves,New Ofcol,Armor,29,arms,9.0,1,0,0,0,0,1,3,4,AntiEvil,mob
+661,a golden dragonscale girth,New Ofcol,Armor,29,waist,9.0,1,0,0,0,0,1,3,4,AntiEvil,mob
+2381,some huge spiked brass knuckles,The Keep of Mahn-Tor,Weapon,29,,0.0,0,0,0,0,0,0,3,0,,mob
+2382,a multi-coloured key ring,The Keep of Mahn-Tor,Container,29,neck,0.0,0,0,0,0,0,0,3,0,,mob
+2383,a huge wooden maul,The Keep of Mahn-Tor,Weapon,29,,0.0,0,0,0,0,0,0,3,0,,mob
+16079,flaming dagger tattoo,UnderDark,Armor,29,wrist,6.0,0,2,0,0,0,2,3,2,,mob
+528,an ornate key,Camelot,Key,30,hold,0.0,0,0,0,0,0,0,4,0,,floor
+600,a hand axe,New Ofcol,Weapon,30,,0.0,0,0,0,0,0,0,4,0,,shop
+616,a leather vest,New Ofcol,Armor,30,body,6.75,0,0,0,0,0,0,4,0,,shop
+617,some leather sleeves,New Ofcol,Armor,30,arms,6.75,0,0,0,0,0,0,4,0,,shop
+618,some leather leggings,New Ofcol,Armor,30,legs,6.75,0,0,0,0,0,0,4,0,,shop
+619,some leather boots,New Ofcol,Armor,30,feet,6.75,0,0,0,0,0,0,4,0,,shop
+652,the Holy Symbol of Bahamut,New Ofcol,Armor,30,neck,6.75,0,0,0,10,2,4,4,4,AntiEvil AntiNeutral,mob
+1383,a long grey cloak,High Tower of Sorcery,Armor,30,neck,18.75,0,0,0,0,0,0,4,15,AntiGood AntiEvil,mob
+1385,an iron shod staff,High Tower of Sorcery,Weapon,30,,0.0,3,0,0,0,0,1,4,1,,mob
+1386,a ward minor,High Tower of Sorcery,Armor,30,hold,11.75,0,0,0,0,0,0,4,5,,mob
+1389,a dark black cloak,High Tower of Sorcery,Armor,30,neck,14.75,0,0,0,0,0,0,4,11,AntiGood AntiNeutral,mob
+1390,a sharp shard of obsidian,High Tower of Sorcery,Weapon,30,,0.0,0,3,0,0,0,1,4,1,AntiGood,mob
+1393,a white cloak,High Tower of Sorcery,Armor,30,neck,18.75,0,0,0,0,0,0,4,15,AntiEvil AntiNeutral,mob
+1394,an ivory hilted dagger,High Tower of Sorcery,Weapon,30,,0.0,1,2,0,0,0,1,4,1,AntiEvil,mob
+2005,The sword Excalibur,Dwarven Catacombs,Weapon,30,,0.0,3,0,0,0,1,2,4,2,AntiEvil AntiNeutral,container
+2300,a pair of minotaur combat gloves,The Keep of Mahn-Tor,Armor,30,hands,6.75,1,1,0,0,0,2,4,2,,mob
+2301,a suit of spiked garde armor,The Keep of Mahn-Tor,Armor,30,body,6.75,0,2,0,0,0,2,4,2,,mob
+2302,a pair of black minotaur greaves,The Keep of Mahn-Tor,Armor,30,legs,6.75,0,0,0,0,0,0,4,0,,mob
+2303,a pair of black minotaur vambraces,The Keep of Mahn-Tor,Armor,30,arms,6.75,0,0,0,0,0,0,4,0,,mob
+2304,the rod of weaponry,The Keep of Mahn-Tor,Weapon,30,,0.0,3,3,0,0,0,3,4,3,,mob
+2305,a pitch black cloak,The Keep of Mahn-Tor,Container,30,about,0.0,0,0,0,0,0,0,4,3,,mob
+2306,a black plate neckguard,The Keep of Mahn-Tor,Armor,30,neck,6.75,0,0,0,0,1,1,4,1,AntiGood AntiNeutral,mob
+2307,a pair of spiked gauntlets,The Keep of Mahn-Tor,Armor,30,hands,6.75,0,2,0,0,0,2,4,2,,mob
+2308,the shadow shield,The Keep of Mahn-Tor,Armor,30,shield,6.75,0,0,0,0,0,0,4,2,AntiGood AntiNeutral,mob
+2309,"a shortsword named ""Nightbringer""",The Keep of Mahn-Tor,Weapon,30,,0.0,3,3,0,0,0,3,4,3,AntiGood AntiNeutral,mob
+2310,a golden helm and visor,The Keep of Mahn-Tor,Armor,30,head,6.75,0,0,0,0,2,2,4,2,AntiEvil AntiNeutral,mob
+2311,a gilded gold breast plate,The Keep of Mahn-Tor,Armor,30,body,6.75,0,0,25,0,0,4,4,4,AntiEvil AntiNeutral,mob
+2312,a billowing white cape ,The Keep of Mahn-Tor,Armor,30,neck,6.75,0,0,0,0,0,0,4,0,,mob
+2313,a huge tower shield,The Keep of Mahn-Tor,Armor,30,shield,6.75,0,0,0,0,0,0,4,0,,mob
+2314,"a huge mace named ""Dawnbringer""",The Keep of Mahn-Tor,Weapon,30,,0.0,3,3,0,0,0,3,4,3,AntiEvil AntiNeutral,mob
+2315,a pair of wire rimmed spectacles,The Keep of Mahn-Tor,Armor,30,head,6.75,0,0,0,0,2,2,4,2,,mob
+2316,a banded ring,The Keep of Mahn-Tor,Armor,30,finger,6.75,0,0,0,30,0,5,4,5,,mob
+2317,a minor globe of invulnerability,The Keep of Mahn-Tor,Armor,30,about,6.75,0,0,0,0,0,0,4,5,,mob
+2318,a gnarled magius staff,The Keep of Mahn-Tor,Weapon,30,,0.0,3,3,0,0,0,3,4,3,,mob
+2319,a girdle of many pouches,The Keep of Mahn-Tor,Container,30,waist,0.0,0,0,0,0,0,0,4,0,,mob
+2320,a heavy woolen robe,The Keep of Mahn-Tor,Armor,30,about,6.75,0,0,0,0,0,0,4,0,,mob
+2321,a broach of life,The Keep of Mahn-Tor,Armor,30,neck,6.75,0,0,30,0,0,5,4,5,,mob
+2322,a manual of healing arts,The Keep of Mahn-Tor,Scroll,30,hold,0.0,0,0,0,0,0,0,4,0,,mob
+2323,a huge mithril mace,The Keep of Mahn-Tor,Weapon,30,,0.0,2,2,0,0,0,2,4,2,,mob
+2324,a golden holy symbol,The Keep of Mahn-Tor,Armor,30,neck,6.75,0,0,0,10,0,2,4,2,,mob
+2325,a thick marble ring,The Keep of Mahn-Tor,Armor,30,finger,6.75,0,0,0,0,0,0,4,0,,mob
+2326,a thick marble bracelet,The Keep of Mahn-Tor,Armor,30,wrist,6.75,0,0,0,0,1,1,4,1,,mob
+2327,boots of striding,The Keep of Mahn-Tor,Armor,30,feet,6.75,0,0,0,0,0,5,4,5,,mob
+2328,an icy white cloak,The Keep of Mahn-Tor,Armor,30,about,6.75,0,0,0,0,0,0,4,0,,mob
+2329,an ice staff,The Keep of Mahn-Tor,Weapon,30,,0.0,2,0,0,20,0,4,4,4,,mob
+2330,a carved wooden ring,The Keep of Mahn-Tor,Armor,30,finger,6.75,1,1,0,0,0,2,4,2,,mob
+2331,the horn of life,The Keep of Mahn-Tor,Wand,30,hold,0.0,0,0,0,0,0,0,4,0,,mob
+2332,the belt of life,The Keep of Mahn-Tor,Armor,30,waist,6.75,0,0,0,0,3,3,4,3,,mob
+2333,a blood red stone,The Keep of Mahn-Tor,Armor,30,hold,6.75,0,0,20,0,0,3,4,3,,mob
+2334,a huge crossbow,The Keep of Mahn-Tor,Weapon,30,,0.0,1,1,0,0,0,1,4,1,,mob
+2335,a small leather pack,The Keep of Mahn-Tor,Container,30,about,0.0,0,0,0,0,0,0,4,0,,mob
+2336,a black leather hood,The Keep of Mahn-Tor,Armor,30,head,6.75,0,0,0,0,0,0,4,0,,mob
+2337,a pair of black leather sleeves,The Keep of Mahn-Tor,Armor,30,arms,6.75,0,0,0,0,0,0,4,0,,mob
+2338,a pair of black leather pants,The Keep of Mahn-Tor,Armor,30,legs,6.75,0,0,0,0,0,0,4,0,,mob
+2339,a wicked shortsword,The Keep of Mahn-Tor,Weapon,30,,0.0,1,1,0,0,0,1,4,1,,mob
+2421,a magic dagger,Ultima,Weapon,30,,0.0,2,0,0,0,2,3,4,3,,mob
+2441,a shiny sword,Ultima,Weapon,30,,0.0,2,0,0,0,0,1,4,1,,mob
+2442,shiny armour,Ultima,Armor,30,body,11.75,0,0,0,0,1,1,4,6,,mob
+5001,A glowing suit of banded mail,Sands of Sorrow,Armor,30,body,10.75,0,0,0,0,2,2,4,6,,mob
+5002,the halberd,Sands of Sorrow,Weapon,30,,0.0,2,2,0,0,0,2,4,2,,mob
+7216,a red dragon claw,Sewer,Weapon,30,,-5.0,0,5,0,0,0,2,4,2,AntiGood,mob
+7303,the Red DragonOrb,Sewer,Staff,30,hold,0.0,0,0,0,0,4,4,4,4,AntiGood,mob
+7304,a red dragon torso,Sewer,Armor,30,body,6.75,0,2,0,0,-1,2,4,2,AntiGood,mob
+7305,red dragonscale leggings,Sewer,Armor,30,legs,6.75,0,2,0,0,-1,2,4,2,AntiGood,mob
+7306,a pair of red dragon claws,Sewer,Furniture,30,hands,0.0,0,2,0,0,0,2,4,2,AntiGood,mob
+7307,a red dragonhelm,Sewer,Armor,30,head,6.75,0,2,0,0,1,4,4,4,AntiGood,mob
+7308,the red dragon shield,Sewer,Armor,30,shield,6.75,0,2,0,0,0,2,4,2,AntiGood,mob
+7309,a pair of a red dragon's rear claws,Sewer,Armor,30,feet,6.75,0,2,0,0,-1,2,4,2,AntiGood,mob
+7310,red dragon arm guards,Sewer,Armor,30,arms,6.75,0,2,0,0,-1,2,4,2,AntiGood,mob
+8303,A suit of chainmail,Old Marsh,Armor,30,body,6.75,0,0,0,0,0,0,4,0,AntiGood,mob
+8308,"a razor-sharp, jagged spear",Old Marsh,Weapon,30,,0.0,0,0,0,0,0,0,4,0,,mob
+9201,the earth ring,Elemental Canyon,Furniture,30,finger,0.0,0,0,0,0,2,2,4,2,,mob
+9202,a stoney breastplate,Elemental Canyon,Armor,30,body,6.75,0,0,0,0,1,1,4,1,,mob
+9203,a fiery dagger,Elemental Canyon,Weapon,30,,0.0,0,4,0,0,0,2,4,2,,mob
+9204,a flame red cape,Elemental Canyon,Armor,30,neck,6.75,1,1,0,0,1,3,4,3,,mob
+9205,the wind boots,Elemental Canyon,Armor,30,feet,8.0,0,0,0,0,3,18,4,18,,mob
+9206,a hurricane helmet,Elemental Canyon,Armor,30,head,8.0,0,0,15,0,2,5,4,9,,mob
+9207,a sparking lightning sword,Elemental Canyon,Weapon,30,,0.0,2,2,0,0,0,2,4,2,,mob
+9208,an electric shield,Elemental Canyon,Armor,30,shield,8.0,0,0,0,0,4,4,4,4,,mob
+9209,an icy girth,Elemental Canyon,Armor,30,waist,8.0,0,0,20,0,2,5,4,5,,mob
+9210,a waterfall cloak,Elemental Canyon,Armor,30,about,8.0,2,0,0,25,0,6,4,6,,mob
+9322,the ring of the universe,Galaxy,Armor,30,finger,6.75,0,0,30,10,0,7,4,7,,mob
+9323,the Great Dipper of the Skies,Galaxy,Weapon,30,,0.0,2,2,0,0,0,2,4,2,,mob
+9506,a bec de corbine,New Thalos,Weapon,30,,0.0,0,0,0,0,0,0,4,0,,shop
+9570,a glowing blue vial,New Thalos,Potion,30,hold,0.0,0,0,0,0,0,0,4,0,,shop
+9571,a deep-green potion,New Thalos,Potion,30,hold,0.0,0,0,0,0,0,0,4,0,,shop
+9572,a crystal clear potion,New Thalos,Potion,30,hold,0.0,0,0,0,0,0,0,4,0,,shop
+9574,a dark blue potion,New Thalos,Potion,30,hold,0.0,0,0,0,0,0,0,4,0,,shop
+9578,a scroll of recall,New Thalos,Scroll,30,hold,0.0,0,0,0,0,0,0,4,0,,shop
+9579,a grey-silver wand,New Thalos,Wand,30,hold,0.0,0,0,0,0,0,0,4,0,,shop
+9581,a wand of oak,New Thalos,Wand,30,hold,0.0,0,0,0,0,0,0,4,0,,shop
+9582,a pink wand,New Thalos,Wand,30,hold,0.0,0,0,0,0,0,0,4,0,,shop
+9587,a horse shoe,New Thalos,Armor,30,neck hold,6.75,1,0,0,0,0,1,4,1,,shop
+9589,a riding crop,New Thalos,Weapon,30,,0.0,0,0,0,0,0,0,4,0,,shop
+9607,some reigns made from twisted vines,New Thalos,Armor,30,head,7.0,0,0,0,0,3,3,4,3,,shop
+9609,a dagger,New Thalos,Weapon,30,,0.0,0,0,0,0,0,1,4,1,,shop
+10408,flaming claw,Descent to Hell,Weapon,30,,0.0,0,0,0,0,0,0,4,0,,mob
+11008,silver longsword,Crystalmir Lake,Weapon,30,,0.0,0,0,3,0,0,1,4,1,AntiEvil,mob
+13035,the orcish sword,The Flying Citadel,Weapon,30,,0.0,0,0,0,0,0,0,4,0,,mob
+13214,a scroll of one sylph's nutrients,The Enchanted Forest,Boat,30,hold,0.0,0,0,0,0,0,0,4,0,,mob
+13221,a ball of fire,The Enchanted Forest,Wand,30,hold,0.0,0,0,0,0,0,0,4,0,AntiEvil,mob
+16035,a gnome hat,UnderDark,Armor,30,head,6.75,2,0,0,0,2,4,4,4,,mob
+16037,bracer of strength,UnderDark,Armor,30,wrist,6.75,0,0,0,0,2,2,4,2,,mob
+16088,demon Plate,UnderDark,Armor,30,body,11.75,0,1,0,0,0,1,4,6,AntiGood,mob
+30103,TOKEN FOR Amulet of the Great Wyrm,Temple of the Great Wyrm,Trash,30,hold,0.0,0,0,0,0,0,0,4,0,,mob
+30104,TOKEN FOR Sword of the Great Wyrm,Temple of the Great Wyrm,Trash,30,hold,0.0,0,0,0,0,0,0,4,0,,mob
+30123,Amulet of the Great Wyrm,Temple of the Great Wyrm,Armor,30,neck,5.0,0,0,0,30,0,5,4,5,,
+30124,Sword of the Great Wyrm,Temple of the Great Wyrm,Weapon,30,,0.0,2,1,0,0,0,3,4,3,,
+30156,the ring of enlightenment,Lore Keep,Armor,30,finger,10.0,0,0,0,0,2,2,4,2,,
+30161,the boots of an initiate of the Lore,Lore Keep,Armor,30,feet,10.0,0,0,0,0,2,2,4,2,,container mob
+2430,the Infinity Bow,Ultima,Weapon,31,,0.0,0,5,0,0,3,5,4,5,AntiEvil,mob
+13036,the orc plate,The Flying Citadel,Armor,31,body,9.0,0,0,0,0,1,1,4,1,,mob
+16036,boots of flying,UnderDark,Armor,31,feet,6.75,0,0,0,0,0,10,4,10,,mob
+16080,wyvern tattoo,UnderDark,Armor,31,wrist,6.75,1,2,0,0,0,3,4,3,,mob
+2433,a gavel,Ultima,Weapon,32,,0.0,0,0,0,10,3,5,4,5,AntiEvil,mob
+13029,a green orc jacket,The Flying Citadel,Armor,32,about,9.0,0,0,0,0,0,0,4,0,,mob
+16001,scale of the enforcer,UnderDark,Armor,32,body,6.75,0,0,1,0,1,2,4,2,,mob
+639,platinum plate,New Ofcol,Armor,33,body,6.75,0,0,15,0,2,5,4,5,AntiEvil,mob
+640,the platinum helmet,New Ofcol,Armor,33,head,6.75,0,0,0,10,2,4,4,4,AntiEvil,mob
+641,platinum leggings,New Ofcol,Armor,33,legs,6.75,0,0,10,0,2,4,4,4,AntiEvil,mob
+642,platinum boots,New Ofcol,Armor,33,feet,6.75,0,0,10,0,0,17,4,17,AntiEvil,mob
+643,platinum gauntlets,New Ofcol,Armor,33,hands,6.75,2,0,10,0,0,4,4,4,AntiEvil,mob
+644,platinum sleeves,New Ofcol,Armor,33,arms,6.75,0,0,10,0,2,4,4,4,AntiEvil,mob
+645,the platinum spiked shield,New Ofcol,Armor,33,shield,6.75,0,3,10,0,0,5,4,5,AntiEvil,mob
+646,the platinum girth,New Ofcol,Armor,33,waist,6.75,0,0,10,0,0,2,4,7,AntiEvil,mob
+647,Holy Avenger,New Ofcol,Weapon,33,,0.0,1,6,0,0,0,3,4,3,AntiEvil,mob
+1904,a small demon's amulet,The Astral Plane,Wand,33,hold,0.0,0,0,0,0,-2,0,4,0,,mob
+2340,a major globe of invulnerability,The Keep of Mahn-Tor,Armor,33,about,6.75,0,0,0,0,0,0,4,5,,mob
+2341,a suit of black minotaur chainmail,The Keep of Mahn-Tor,Armor,33,body,6.75,0,0,0,0,2,2,4,2,,mob
+2342,a spiked buckler,The Keep of Mahn-Tor,Armor,33,shield,6.75,0,2,0,0,0,2,4,2,,mob
+2343,a studded ring,The Keep of Mahn-Tor,Armor,33,finger,6.75,0,1,0,0,0,1,4,1,,mob
+2344,a horned minotaur helm,The Keep of Mahn-Tor,Armor,33,head,6.75,0,0,0,0,0,0,4,0,,mob
+2345,Mahn-Tor's Great Axe,The Keep of Mahn-Tor,Weapon,33,,0.0,2,2,0,0,0,2,4,2,,mob
+2429,a chicken,Ultima,Weapon,33,,0.0,0,3,0,0,0,1,4,1,AntiEvil,mob
+2437,a bastard sword,Ultima,Weapon,33,,0.0,0,0,0,0,4,4,4,4,AntiEvil,mob
+2443,a rapier,Ultima,Weapon,33,,0.0,0,0,0,0,2,2,4,2,AntiEvil,mob
+2445,a rusty sword,Ultima,Weapon,33,,0.0,4,0,0,0,0,2,4,2,,mob
+2446,a rusty shield,Ultima,Armor,33,shield,9.75,0,3,0,0,0,3,4,6,,mob
+10053,Wolf plate,Wolf Pointe,Armor,33,body,9.0,0,0,10,10,2,6,4,6,,mob
+10054,Wolf sleeves,Wolf Pointe,Armor,33,arms,9.5,0,0,0,7,2,3,4,3,,mob
+10055,Wolf girth,Wolf Pointe,Armor,33,waist,8.75,0,0,7,0,0,1,4,1,,mob
+10056,Wolf leggings,Wolf Pointe,Armor,33,legs,8.5,0,0,7,7,1,3,4,3,,mob
+10057,Wolf boots,Wolf Pointe,Armor,33,feet,9.0,0,0,0,0,0,0,4,0,,mob
+10058,Wolf gloves,Wolf Pointe,Armor,33,hands,9.0,1,2,0,0,0,3,4,3,,mob
+10059,Wolf shield,Wolf Pointe,Armor,33,shield,9.75,0,0,0,20,0,3,4,3,,mob
+10113,Wolf bracers,Wolf Pointe,Armor,33,wrist,15.25,0,0,5,5,0,2,4,7,,mob
+13027,a pair of stompers,The Flying Citadel,Armor,33,feet,8.5,0,0,0,0,0,0,4,0,,mob
+13030,a pair of orc trousers,The Flying Citadel,Armor,33,legs,7.0,0,0,0,0,0,0,4,0,,mob
+13031,a pair of manacles,The Flying Citadel,Armor,33,wrist,2.0,0,0,0,0,-3,0,4,0,,mob
+16034,a pair of dusty boots,UnderDark,Armor,33,feet,6.75,0,-3,0,0,-3,-3,4,-3,,mob
+904,a pair of winged sandals,Olympus,Armor,34,feet,6.75,0,0,0,0,0,0,4,0,AntiEvil,mob
+908,flaming gauntlets,Olympus,Armor,34,hands,6.75,0,0,25,0,0,4,4,4,AntiEvil,mob
+911,a sapphire ring,Olympus,Armor,34,finger,6.75,0,4,0,0,2,6,4,6,AntiEvil,mob
+2440,the Amulet of Love,Ultima,Armor,34,neck,6.75,0,0,0,0,4,4,4,4,AntiEvil AntiNeutral,mob
+5332,"a great, two-handed sword",Old Thalos,Weapon,34,,0.0,0,0,0,0,0,0,4,0,,mob
+13005,the silver bracelet,The Flying Citadel,Armor,34,wrist,7.0,0,0,0,14,0,2,4,6,AntiGood,mob
+13010,the draconian breastplate,The Flying Citadel,Armor,34,body,7.25,1,1,0,0,0,2,4,2,,mob
+13026,the orc chain-mail jerkin,The Flying Citadel,Armor,34,body,8.5,0,0,0,0,0,0,4,0,,mob
+13028,a pair of chain-mail sleeves,The Flying Citadel,Armor,34,arms,8.25,0,0,0,0,0,0,4,0,,mob
+913,a notched axe,Olympus,Weapon,35,,0.0,0,0,0,0,0,0,4,0,AntiEvil,mob
+1905,a devilish talisman,The Astral Plane,Staff,35,neck hold,0.0,0,0,-10,0,0,0,4,0,,mob
+2444,a boomerang,Ultima,Weapon,35,,0.0,0,0,0,0,0,0,4,0,,mob
+2447,a magic cloak,Ultima,Armor,35,neck,7.5,0,0,10,10,0,4,4,4,,mob
+2454,Sentri's helmet,Ultima,Armor,35,head,7.5,0,0,0,15,2,5,4,5,AntiEvil,mob
+2455,Sentri's sleeves,Ultima,Armor,35,arms,7.5,0,0,15,0,2,5,4,5,AntiEvil,mob
+2456,Sentri's girth,Ultima,Armor,35,waist,7.5,0,0,15,0,0,3,4,9,AntiEvil,mob
+2457,Sentri's two-handed sword,Ultima,Weapon,35,,0.0,3,3,0,0,0,3,4,3,AntiEvil,mob
+2458,Sentri's gloves,Ultima,Armor,35,hands,7.5,3,0,15,0,0,6,4,6,AntiEvil,mob
+2459,Sentri's boots,Ultima,Armor,35,feet,7.5,0,0,15,0,1,4,4,4,AntiEvil,mob
+2460,Sentri's leggings,Ultima,Armor,35,legs,7.5,3,0,0,0,1,4,4,4,AntiEvil,mob
+2461,Sentri's armour,Ultima,Armor,35,body,7.5,3,0,20,0,0,6,4,6,AntiEvil,mob
+5113,a spider shaped dagger,Drow City,Weapon,35,,0.0,3,3,0,0,0,3,4,3,AntiGood,mob
+5301,a beautiful iron breast plate,Old Thalos,Armor,35,body,7.5,1,0,0,0,0,1,4,1,,mob
+5829,A rusty hand blaster,Mos Eisley,Weapon,35,,0.0,0,0,0,0,0,1,4,1,,mob
+9505,a bardiche,New Thalos,Weapon,35,,0.0,0,0,0,0,0,0,4,0,,shop
+9605,a jewelled saddle,New Thalos,Armor,35,body,9.75,3,2,0,0,0,5,4,5,,shop
+9903,a looking glass,Yggdrasil,Staff,35,hold,0.0,0,0,0,0,0,0,4,0,,mob
+9908,a hollyphant tusk,Yggdrasil,Wand,35,hold,0.0,0,0,0,0,0,0,4,0,AntiEvil,mob
+10402,a black leather whip,Descent to Hell,Weapon,35,,0.0,0,0,0,0,0,0,4,0,AntiGood,mob
+10403,hickey maker,Descent to Hell,Weapon,35,,0.0,0,0,0,0,0,0,4,0,,mob
+10406,rotting flesh,Descent to Hell,Armor,35,body,7.5,0,0,0,0,0,0,4,0,,mob
+10407,vorpal blade,Descent to Hell,Weapon,35,,0.0,0,0,0,0,0,0,4,0,,mob
+10444,mane's claws,Descent to Hell,Weapon,35,,0.0,0,0,0,0,0,0,4,0,,mob
+13002,the draconian axe,The Flying Citadel,Weapon,35,,0.0,0,0,0,0,0,1,4,6,AntiGood,mob
+13006,the draconian shield,The Flying Citadel,Armor,35,shield,11.5,0,0,0,0,2,2,4,4,,mob
+13215,bark of a tree ent,The Enchanted Forest,Scroll,35,hold,0.0,0,0,0,0,0,0,4,0,AntiEvil,mob
+30177,a scroll of God's wrath,Lore Keep,Scroll,35,hold,0.0,0,0,0,0,0,0,4,0,,shop
+668,the Golden Talons,New Ofcol,Weapon,36,,0.0,0,6,0,0,0,3,4,3,AntiEvil,mob
+13003,the draconian breastplate,The Flying Citadel,Armor,36,body,9.25,1,3,0,0,0,4,4,4,,mob
+13004,the draconian loincloth,The Flying Citadel,Armor,36,waist,7.0,0,0,0,0,0,2,4,4,,mob
+13025,the spear,The Flying Citadel,Weapon,36,,0.0,0,0,0,0,-1,1,4,1,,mob
+663,the Gold Dragon Orb,New Ofcol,Staff,37,hold,0.0,0,0,0,0,3,3,4,3,AntiEvil AntiNeutral,mob
+1908,an extremely sharp and thin sword,The Astral Plane,Weapon,37,,0.0,1,3,0,0,1,3,4,3,,mob
+2246,scale mail,Dragon Tower,Armor,37,body,7.5,0,0,0,0,0,0,4,0,,mob
+2453,an evil gem,Ultima,Staff,37,hold,0.0,0,0,0,28,0,4,4,4,AntiGood AntiNeutral,mob
+2462,a Fellowship medallion,Ultima,Armor,37,neck,7.5,0,0,0,10,-1,2,4,2,,mob
+9000,THE long sword,Nirvana,Weapon,37,,0.0,5,5,0,0,0,6,4,6,AntiGood AntiEvil,mob
+13009,an effigy of the draconian god D'zkhul,The Flying Citadel,Wand,37,neck hold,0.0,1,0,0,0,0,1,4,1,,mob
+16089,demon fire,UnderDark,Armor,37,shield,15.5,0,2,0,0,0,2,4,10,,mob
+10107,Apache tear,Wolf Pointe,Armor,38,hold,5.25,0,0,0,40,0,6,4,6,,floor
+12106,a prayer book,The Dell,Bomb,38,hold,0.0,0,0,0,0,3,3,4,3,,mob
+13008,some evil black robes,The Flying Citadel,Armor,38,about,9.5,0,0,0,30,0,5,4,5,AntiGood,mob
+16023,dull eyes,UnderDark,Armor,38,head,7.5,0,0,0,0,-3,0,4,0,,mob
+1910,a silvery sword,The Astral Plane,Weapon,39,,0.0,4,2,0,0,2,5,4,5,,mob
+2280,a pair of dragon scale leggings,Dragon Tower,Armor,39,legs,7.5,0,0,0,0,0,0,4,0,,mob
+2452,an evil charm,Ultima,Armor,39,neck,7.5,0,0,0,28,0,4,4,4,AntiGood AntiNeutral,mob
+10108,Wolf feet,Wolf Pointe,Armor,39,feet,5.25,0,0,0,10,0,10,4,10,,mob
+13007,(|gHideous|w) the draconian mace,The Flying Citadel,Weapon,39,,0.0,0,0,0,0,-1,1,4,1,AntiGood,mob
+13033,the shamanic headdress,The Flying Citadel,Armor,39,head,8.75,0,0,0,20,0,3,4,3,AntiGood,mob
+16025,a huge stone mace,UnderDark,Weapon,39,,0.0,2,2,0,0,0,2,4,2,,mob
+16027,a small black stone,UnderDark,Armor,39,hold,7.5,-5,-5,0,0,-6,-10,4,-10,AntiNeutral,mob
+509,a HUGE meat cleaver,Camelot,Weapon,40,,0.0,2,2,0,0,0,3,5,3,,mob
+524,a blood covered apron,Camelot,Armor,40,about,9.25,2,2,0,0,3,7,5,7,,mob
+1906,a silvery knife,The Astral Plane,Weapon,40,,0.0,1,1,0,0,0,1,5,1,,mob
+2416,the Hourglass,Ultima,Key,40,hold,0.0,0,0,0,0,2,2,5,2,,mob
+2448,an aura of power,Ultima,Armor,40,body,-1.75,0,0,0,0,2,2,5,2,,mob
+5813,A hand blaster,Mos Eisley,Weapon,40,,0.0,2,0,0,0,0,2,5,2,,mob
+9504,an awl-pike,New Thalos,Weapon,40,,0.0,0,0,0,0,0,0,5,0,,shop
+10109,Wolf skin belt,Wolf Pointe,Armor,40,waist,5.0,0,0,0,10,0,2,5,2,,mob
+10110,Wolf claw gauntlets,Wolf Pointe,Armor,40,hands,5.25,2,2,0,0,0,4,5,4,,mob
+10111,Wolf coat,Wolf Pointe,Armor,40,about,8.0,0,0,0,20,0,3,5,3,,mob
+13032,the shamanic cloak,The Flying Citadel,Armor,40,about,10.0,0,0,0,0,2,2,5,2,AntiGood,mob
+13210,the staff of the dragon,The Enchanted Forest,Staff,40,hold,0.0,0,0,0,0,0,0,5,0,AntiNeutral,mob
+13211,a unicorn's horn,The Enchanted Forest,Wand,40,hold,0.0,0,0,0,0,0,0,5,0,AntiEvil,mob
+16024,an iron sword,UnderDark,Weapon,40,,0.0,2,4,0,0,0,3,5,3,,mob
+16028,demon horn,UnderDark,Weapon,40,,0.0,0,4,0,0,0,2,5,2,AntiGood,mob
+16072,a hand grasping an orb,UnderDark,Light,40,hold,0.0,0,0,0,35,0,5,5,5,,mob
+16073,a long flowing robe,UnderDark,Armor,40,about,8.25,0,0,0,35,2,7,5,7,,mob
+16097,a miniature emblem of Xevior,UnderDark,Armor,40,ears,7.5,0,0,0,0,2,2,5,2,,mob
+27017,a biologists coat,The Seminary,Armor,40,about,11.0,0,0,0,0,4,4,5,8,AntiGood,mob
+28001,Nighthawk Amulet,Sethanon,Armor,40,neck,7.75,2,2,0,0,1,5,5,5,AntiGood,mob
+30207,(|bBlack Aura|w) the Cloak of a Shadow Warrior,Penthouse,Armor,40,about,11.5,2,2,0,0,0,4,5,4,,
+2285,a dragon tailed whip,Dragon Tower,Weapon,41,,0.0,2,2,0,0,0,2,5,2,AntiGood,mob
+2451,a completely black armour,Ultima,Armor,41,body,6.25,0,3,0,0,0,3,5,3,AntiGood AntiNeutral,mob
+10409,demonskin,Descent to Hell,Armor,41,body,8.25,0,0,0,0,0,0,5,0,,mob
+10410,demon teeth,Descent to Hell,Weapon,41,,0.0,0,0,0,0,0,0,5,0,,mob
+13417,the torturer's whip,Ciquala's Lair,Weapon,41,,0.0,0,5,0,0,0,2,5,2,,mob
+1916,a splint mail skirt,The Astral Plane,Armor,42,legs,8.25,0,0,0,0,0,0,5,0,,mob
+1917,a pair of splint mail sleeves,The Astral Plane,Armor,42,arms,8.25,0,0,0,0,0,0,5,0,,mob
+10060,Headress of a Wolf,Wolf Pointe,Armor,42,head,9.5,0,0,0,0,4,4,5,4,AntiNeutral,mob
+10112,Wolf eye,Wolf Pointe,Light,42,hold,0.0,0,0,20,20,0,6,5,6,,mob
+10401,a wicked looking trident,Descent to Hell,Weapon,42,,0.0,0,0,0,0,0,0,5,0,AntiGood,mob
+10411,burning flesh,Descent to Hell,Armor,42,arms,8.25,0,0,0,0,0,0,5,0,,mob
+16026,black shield of protection,UnderDark,Armor,42,shield,18.25,0,0,0,0,0,0,5,10,,mob
+16096,a fractured long sword,UnderDark,Weapon,42,,0.0,4,4,0,0,0,4,5,4,,mob
+2450,a spiked mace,Ultima,Weapon,43,,0.0,5,5,0,0,0,5,5,5,AntiGood AntiNeutral,mob
+5812,A gaffi stick,Mos Eisley,Weapon,43,,0.0,2,2,0,0,0,2,5,2,AntiGood AntiNeutral,mob
+13012,(|MRepel|w) a shield made of energy,The Flying Citadel,Armor,43,shield,11.25,0,0,17,0,0,3,5,7,AntiGood,mob
+16009,sleeves of knowledge,UnderDark,Armor,43,arms,8.25,0,0,0,15,1,4,5,4,,mob
+16011,breast plate of strength,UnderDark,Armor,43,body,8.25,1,1,20,0,2,7,5,7,,mob
+16012,a shining holy symbol of Xevior,UnderDark,Armor,43,hold,8.25,0,0,0,0,2,2,5,2,AntiGood,mob
+16016,gauntlets of the eye,UnderDark,Armor,43,hands,8.25,2,0,10,0,0,4,5,4,,mob
+13011,the energy whip,The Flying Citadel,Weapon,44,,0.0,0,2,0,0,1,4,5,4,AntiGood,mob
+16014,small purple worm scale,UnderDark,Armor,44,wrist,8.25,4,0,25,0,0,8,5,8,,mob
+2245,the staff of the dragon,Dragon Tower,Staff,45,hold,0.0,0,0,0,0,0,0,5,0,,mob
+2275,a helm of dragonkind,Dragon Tower,Armor,45,head,9.0,0,0,15,0,0,3,5,3,,mob
+2449,a big red face,Ultima,Armor,45,head,9.0,0,0,20,20,5,11,5,11,AntiGood AntiNeutral,mob
+2901,horns,Fire Newt Mountain,Weapon,45,,0.0,0,0,0,0,0,0,5,0,,mob
+3423,an artist's smock,Chapel Catacombs,Armor,45,body,9.0,0,0,0,0,0,0,5,0,,mob
+10074,Wolf Tooth Dagger,Wolf Pointe,Weapon,45,,0.0,0,2,0,0,0,1,5,1,,mob
+10404,"a black hilted sword called, ""Farslayer""",Descent to Hell,Weapon,45,,0.0,5,5,0,0,0,5,5,5,AntiGood,mob
+10405,angel's skull,Descent to Hell,Armor,45,head,9.0,0,0,0,33,2,7,5,7,,mob
+10412,rivet gun,Descent to Hell,Wand,45,hold,0.0,0,0,0,0,0,0,5,0,,mob
+10413,circular saw,Descent to Hell,Weapon,45,,0.0,0,0,0,0,0,0,5,0,,mob
+10420,large meat hook,Descent to Hell,Weapon,45,,0.0,0,0,0,0,0,0,5,0,,mob
+10442,black jumpsuit,Descent to Hell,Armor,45,body,9.0,0,0,0,0,0,0,5,0,,mob
+10445,welding torch,Descent to Hell,Weapon,45,,0.0,0,0,0,0,0,0,5,0,,mob
+11003,a blue crystal staff,Crystalmir Lake,Staff,45,hold,0.0,0,0,0,0,0,0,5,0,AntiEvil AntiNeutral,mob
+16021,a black wand inlaid with gold symbols,UnderDark,Wand,45,hold,0.0,0,0,0,0,0,0,5,0,,mob
+16022,girth of protection,UnderDark,Armor,45,waist,14.0,0,0,10,0,0,2,5,7,,mob
+27018,a pair of high quality dungarees,The Seminary,Armor,45,legs,11.5,0,0,20,0,1,4,5,4,,mob
+27034,a cyberstaff,The Seminary,Weapon,45,,0.0,6,6,0,0,0,7,5,7,AntiEvil,mob
+27250,a flagon of seafarer's ale,The Valkyrie,Potion,45,hold,0.0,0,0,0,0,-5,0,5,0,,mob
+30178,a scroll of God's skin,Lore Keep,Scroll,45,hold,0.0,0,0,0,0,0,0,5,0,,shop
+1918,a pair of ornately designed gauntlets,The Astral Plane,Armor,46,hands,9.0,1,1,0,0,2,4,5,4,,mob
+10417,hell hound teeth,Descent to Hell,Weapon,46,,0.0,0,0,0,0,0,0,5,0,,mob
+13044,a talisman of the draconian god D'zkhul,The Flying Citadel,Wand,46,neck hold,0.0,5,0,0,0,0,5,5,5,AntiGood,mob
+16017,helm of the eye,UnderDark,Armor,46,head,9.0,0,0,15,15,0,6,5,6,,mob
+16081,dragon tattoo,UnderDark,Armor,46,arms,9.0,0,4,0,0,0,4,5,4,,mob
+2903,a shovel,Fire Newt Mountain,Weapon,47,,0.0,0,0,0,0,0,0,5,0,,mob
+13013,a minotaur tooth,The Flying Citadel,Bomb,47,hold,0.0,0,0,-80,0,-3,0,5,0,AntiGood,mob
+13043,a draconian dagger,The Flying Citadel,Weapon,47,,0.0,0,0,0,35,0,5,5,5,AntiGood,mob
+13045,a shroud of darkness,The Flying Citadel,Armor,47,body,10.5,0,0,0,40,0,6,5,6,AntiGood,mob
+16071,a jewelled dagger,UnderDark,Weapon,47,,0.0,8,2,0,0,2,7,5,7,,mob
+16082,a diamond helm,UnderDark,Armor,47,head,9.0,0,2,25,0,0,6,5,6,,mob
+515,a golden crucifix,Camelot,Armor,48,waist neck,11.0,0,0,0,0,4,4,5,4,AntiEvil,mob
+521,Arthurian chainmail,Camelot,Armor,48,body,11.5,2,2,25,0,0,8,5,8,,mob
+10414,box of matches,Descent to Hell,Staff,48,hold,0.0,0,0,0,0,0,0,5,0,,mob
+13017,a pair of barbed gloves,The Flying Citadel,Armor,48,hands,12.75,0,3,0,0,2,5,5,5,AntiGood,mob
+16015,huge purple worm scale,UnderDark,Armor,48,shield,9.0,0,4,15,20,0,10,5,10,,mob
+27019,a wildman's outdoor jacket,The Seminary,Armor,48,about,12.75,0,0,20,20,0,6,5,6,AntiEvil,mob
+28002,Moredhel Longsword,Sethanon,Weapon,48,,0.0,0,0,0,0,1,1,5,1,AntiGood,mob
+28003,Eledhel Longsword,Sethanon,Weapon,48,,0.0,0,0,0,0,1,1,5,1,AntiEvil,mob
+28004,Elven Chain,Sethanon,Armor,48,body,10.75,0,0,0,0,3,3,5,3,,mob
+10431,ionic torque wrench,Descent to Hell,Weapon,49,,0.0,0,0,0,0,0,0,5,0,,mob
+10441,photon displacement matrix,Descent to Hell,Wand,49,hold,0.0,0,0,0,0,0,0,5,0,,mob
+10447,yellow jumpsuit,Descent to Hell,Armor,49,body,9.0,0,0,0,0,0,0,5,0,,mob
+13016,some barbed leggings,The Flying Citadel,Armor,49,legs,14.75,0,0,21,0,1,5,5,5,AntiGood,mob
+13019,"the mutant claw of a half-dragon, half-minotaur creature",The Flying Citadel,Staff,49,hold,0.0,0,0,0,0,0,1,5,1,,mob
+16005,beholder's eyestalk,UnderDark,Staff,49,hold,0.0,0,0,0,0,0,0,5,0,,mob
+16083,the keeper's shield,UnderDark,Armor,49,shield,19.0,0,0,0,0,0,0,5,10,,mob
+507,the long arm of justice,Camelot,Weapon,50,,16.0,0,0,0,0,2,4,6,20,AntiEvil,mob
+905,an ivory staff,Olympus,Staff,50,hold,0.0,0,0,0,0,0,0,6,0,AntiEvil,mob
+907,a silver bow,Olympus,Weapon,50,,0.0,1,1,0,0,0,1,6,1,AntiEvil,mob
+910,a glowing necklace,Olympus,Armor,50,neck,9.75,0,0,0,25,0,4,6,4,AntiEvil,mob
+1339,an intricately carved key,High Tower of Sorcery,Key,50,hold,0.0,0,0,0,0,0,0,6,1,,mob
+1397,a small emerald ring,High Tower of Sorcery,Armor,50,finger,9.75,0,0,0,20,0,3,6,3,,mob
+1398,an emerald bracelet,High Tower of Sorcery,Armor,50,wrist,14.75,0,0,0,0,1,1,6,6,,mob
+1399,a ward major,High Tower of Sorcery,Armor,50,hold,19.75,0,0,0,0,0,0,6,12,,mob
+1400,the ebony kris,High Tower of Sorcery,Weapon,50,,0.0,0,5,0,0,2,4,6,4,,mob
+1401,a tight fitting green dragon scale shirt,High Tower of Sorcery,Armor,50,body,14.75,0,0,0,0,3,3,6,8,,mob
+1900,a massive slate-grey sledgehammer,The Astral Plane,Weapon,50,,0.0,-3,10,0,0,-2,3,6,3,AntiGood AntiEvil,mob
+2463,The Glass Sword,Ultima,Weapon,50,,0.0,5,5,0,0,1,6,6,6,,mob
+5820,A large backpack,Mos Eisley,Container,50,about,0.0,0,0,0,0,0,0,6,0,,shop
+9610,a dagger,New Thalos,Weapon,50,,0.0,0,0,0,0,0,1,6,1,,shop
+9904,a cloudy glass staff,Yggdrasil,Staff,50,hold,0.0,0,0,0,0,0,0,6,0,,mob
+9909,a cast iron girth,Yggdrasil,Armor,50,waist,21.75,0,0,0,0,0,0,6,12,,mob
+10428,golden ring,Descent to Hell,Money,50,finger,0.0,0,0,0,0,0,0,6,0,,shop
+10429,engagement ring,Descent to Hell,Money,50,finger,0.0,0,0,0,0,0,0,6,0,,shop
+13015,the immense axe,The Flying Citadel,Weapon,50,,0.0,-2,4,7,7,2,5,6,5,AntiGood,mob
+13020,the shoulder reinforcer,The Flying Citadel,Armor,50,neck,11.5,0,0,6,0,0,1,6,1,AntiGood,mob
+16004,a huge eye of justice,UnderDark,Staff,50,hold,0.0,0,0,0,0,0,0,6,0,,mob
+27020,a soup ladle,The Seminary,Weapon,50,,0.0,4,4,0,0,0,5,6,5,AntiGood,mob
+27021,a chequered skirt,The Seminary,Armor,50,legs,13.5,0,0,20,0,2,5,6,5,AntiGood,mob
+27267,a fistful of gunpowder,The Valkyrie,Wand,50,hold,0.0,0,0,0,0,0,0,6,0,,container
+28005,Yabon Tabard,Sethanon,Armor,50,body,10.0,0,0,20,0,1,4,6,4,,mob
+28006,Grey Robe,Sethanon,Armor,50,about,12.25,0,0,0,40,0,6,6,6,,mob
+30105,TOKEN FOR Armour of the Great Wyrm,Temple of the Great Wyrm,Trash,50,hold,0.0,0,0,0,0,0,0,6,0,,container
+30125,Armour of the Great Wyrm,Temple of the Great Wyrm,Armor,50,body,8.75,0,0,45,0,0,7,6,7,,
+30159,the shield of the protector of the Lore,Lore Keep,Armor,50,shield,15.0,0,0,0,0,0,0,6,0,,mob
+30208,(|bBlack Aura|w) the Gauntlets of a Shadow Master,Penthouse,Armor,50,hands,14.0,4,0,0,0,0,4,6,4,,
+10422,blueprint,Descent to Hell,Food,51,hold,0.0,0,0,0,0,0,0,6,0,,mob
+27249,a length of mystical rope,The Valkyrie,Armor,51,waist,10.5,0,0,0,25,2,6,6,6,,mob
+27251,a buccaneer's hat,The Valkyrie,Armor,51,head,12.5,0,0,0,0,0,0,6,0,,mob
+821,a pair of boxing gloves,Strange World,Armor,52,hands,13.5,3,0,0,0,0,3,6,3,,mob
+1911,an iron barbed flail,The Astral Plane,Weapon,52,,0.0,3,7,0,0,0,5,6,5,,mob
+1924,a black pentagram,The Astral Plane,Key,52,hold,0.0,0,0,0,0,0,0,6,0,,mob
+9900,a body-wrecker,Yggdrasil,Weapon,52,,0.0,0,6,0,0,0,3,6,3,,mob
+10427,sharp teeth of a lawyer,Descent to Hell,Weapon,52,,0.0,0,0,0,0,0,0,6,0,,mob
+10448,cleaver,Descent to Hell,Weapon,52,,0.0,0,0,0,0,0,0,6,0,,mob
+13400,Ciquala's sword,Ciquala's Lair,Weapon,52,,0.0,3,3,0,0,0,3,6,3,AntiGood,mob
+13401,Ciquala's robe,Ciquala's Lair,Armor,52,about,19.75,0,0,0,0,0,0,6,10,,mob
+13402,Ciquala's staff,Ciquala's Lair,Staff,52,hold,0.0,0,4,0,0,0,4,6,4,,mob
+27033,the Swiss Army Knife,The Seminary,Weapon,52,,0.0,4,4,0,0,0,5,6,5,AntiEvil,mob
+27054,a vampire tooth ring,The Seminary,Armor,52,finger,12.75,0,0,45,0,2,9,6,9,,mob
+30179,a scroll of God's healing touch,Lore Keep,Scroll,52,hold,0.0,0,0,0,0,0,0,6,0,,shop
+10419,ice spear,Descent to Hell,Weapon,53,,0.0,0,0,0,0,0,0,6,0,,mob
+10423,electric eraser,Descent to Hell,Weapon,53,,0.0,0,0,0,0,0,0,6,0,,mob
+10440,geiger counter,Descent to Hell,Wand,53,hold,0.0,0,0,0,0,0,0,6,0,,mob
+10446,blond wig,Descent to Hell,Armor,53,head,9.75,0,0,0,0,0,0,6,0,,mob
+824,Heart of Love,Strange World,Armor,54,hold,13.25,0,0,35,0,2,7,6,7,AntiEvil,mob
+2224,a diamond ring,Dragon Tower,Armor,54,finger,9.75,3,3,0,0,0,6,6,6,,mob
+2230,a copper ring,Dragon Tower,Armor,54,finger,9.75,0,0,0,0,2,2,6,2,,mob
+10424,spectacles,Descent to Hell,Armor,54,head,9.75,0,0,0,0,2,2,6,2,,mob
+10425,unholy symbol,Descent to Hell,Wand,54,hold,0.0,0,0,0,0,0,0,6,0,,mob
+10426,unholy robe,Descent to Hell,Armor,54,about,9.75,0,0,0,50,0,8,6,8,AntiGood,mob
+10432,figurine of a horse,Descent to Hell,Wand,54,hold,0.0,0,0,0,0,0,3,6,3,,shop
+10433,figurine of a winged horse,Descent to Hell,Wand,54,hold,0.0,0,0,0,0,0,4,6,4,,shop
+10434,figurine of a nightmare,Descent to Hell,Wand,54,hold,0.0,0,0,0,0,0,5,6,5,,shop
+10435,figurine of a black dragon,Descent to Hell,Wand,54,hold,0.0,0,0,0,0,0,5,6,5,,shop
+10436,figurine of a red dragon,Descent to Hell,Wand,54,hold,0.0,0,0,0,0,0,5,6,5,,shop
+10437,figurine of a white dragon,Descent to Hell,Wand,54,hold,0.0,0,0,0,0,0,5,6,5,,shop
+10438,figurine of a green dragon,Descent to Hell,Wand,54,hold,0.0,0,0,0,0,0,5,6,5,,shop
+10439,figurine of a blue dragon,Descent to Hell,Wand,54,hold,0.0,0,0,0,0,0,5,6,5,,shop
+27044,Wolfgang's stethoscope,The Seminary,Weapon,54,,0.0,3,3,0,0,1,5,6,5,,mob
+27243,a gold plated cutlass,The Valkyrie,Weapon,54,,10.0,0,0,0,0,0,0,6,10,,mob
+27248,a spiked ramming rod,The Valkyrie,Weapon,54,,0.0,3,0,0,0,0,2,6,2,,mob
+912,a brightly glowing shield,Olympus,Armor,55,shield,10.5,0,0,0,0,1,1,6,1,AntiEvil,mob
+1801,a gardener's spade,Japan,Weapon,55,,0.0,0,0,0,0,0,0,6,0,,mob
+2904,a short sword,Fire Newt Mountain,Weapon,55,,0.0,0,0,0,0,0,0,6,0,,mob
+2905,a hand axe,Fire Newt Mountain,Weapon,55,,0.0,0,0,0,0,0,0,6,0,,mob
+5814,A blaster,Mos Eisley,Weapon,55,,0.0,2,4,0,0,0,3,6,3,,mob
+27252,a silver-plated telescope,The Valkyrie,Armor,55,hold,13.25,0,0,0,20,6,9,6,9,,mob
+30152,|Cflowing blue robes of the Lore|w,Lore Keep,Armor,55,about,15.0,0,0,0,25,2,6,6,6,,mob
+902,A Winged Helmet,Olympus,Armor,56,head,10.5,0,0,0,0,2,2,6,2,AntiEvil,mob
+10415,bloody black talon,Descent to Hell,Weapon,56,,0.0,0,0,0,0,0,0,6,0,,mob
+27055,a diamond studded earring,The Seminary,Armor,56,ears,9.0,0,0,20,0,2,5,6,5,,mob
+27257,a barbed harpoon,The Valkyrie,Weapon,56,,0.0,0,0,0,0,0,0,6,0,,mob
+1913,a bright flaming stone,The Astral Plane,Light,57,hold,2.0,0,0,0,0,0,0,6,7,,mob
+27258,a stormsummoner's ring,The Valkyrie,Armor,57,finger,11.25,0,0,0,25,4,8,6,8,,mob
+508,a bladder on a stick,Camelot,Weapon,58,hold,0.0,0,3,0,0,1,4,6,4,,mob
+522,a pair of baggy pants,Camelot,Armor,58,legs,14.0,0,0,0,20,5,8,6,8,,mob
+2906,a chainmail shirt,Fire Newt Mountain,Armor,58,body,14.25,0,0,0,0,0,0,6,0,,floor mob
+2907,a pick,Fire Newt Mountain,Weapon,58,,0.0,0,0,0,0,0,0,6,0,,mob
+27043,a pendant of sobriety,The Seminary,Armor,58,neck,15.5,0,0,-40,0,8,8,6,8,AntiEvil,mob
+523,a brightly coloured shirt,Camelot,Armor,59,about,17.5,0,0,0,30,0,5,6,5,,
+906,Poseidon's Trident,Olympus,Weapon,59,,0.0,0,0,0,0,2,2,6,2,AntiEvil,mob
+900,The Aegis,Olympus,Armor,60,body,11.25,0,0,0,0,1,1,7,1,AntiEvil,mob
+901,The Thunder Bolt,Olympus,Weapon,60,,0.0,3,0,0,0,0,1,7,1,AntiEvil,mob
+922,the Amulet of Ra,Olympus,Armor,60,neck,11.25,0,0,0,50,0,8,7,8,AntiEvil,mob
+923,the Sword of the Sun,Olympus,Weapon,60,,0.0,0,2,0,0,0,1,7,1,AntiEvil,mob
+924,a blue robe,Olympus,Armor,60,about,11.25,0,0,15,0,0,3,7,3,AntiEvil,mob
+925,a wide brimmed hat,Olympus,Armor,60,head,11.25,0,0,0,0,0,0,7,0,AntiEvil,mob
+1004,a cocoon,The Heavens,Wand,60,hold,0.0,0,0,0,0,2,2,7,2,,mob
+1833,a loincloth,Japan,Clothing,60,waist,0.0,0,0,0,0,0,0,7,0,,shop
+1834,a silk kimono,Japan,Clothing,60,about,0.0,0,0,0,0,0,0,7,0,,shop
+1912,The unholy sword of the githyanki,The Astral Plane,Weapon,60,,0.0,8,0,0,0,-1,6,7,6,,mob
+1919,a decaying vest made from cracked leather,The Astral Plane,Armor,60,body,17.25,0,0,0,0,0,0,7,8,,mob
+2464,British's crown,Ultima,Armor,60,head,11.25,0,0,0,50,0,8,7,8,,mob
+2465,British's sceptre,Ultima,Armor,60,hold,11.25,4,3,0,0,0,7,7,7,,mob
+2466,British's amulet,Ultima,Armor,60,neck,11.25,0,0,50,0,0,8,7,8,,mob
+5801,A Storm trooper's helmet,Mos Eisley,Armor,60,head,10.75,0,0,0,0,3,3,7,3,,mob
+5802,The leg plates of a Storm trooper,Mos Eisley,Armor,60,legs,10.75,0,2,0,0,2,4,7,4,,mob
+5803,The arm guards of a storm trooper,Mos Eisley,Armor,60,arms,10.75,2,2,0,0,2,6,7,6,,mob
+5804,The boots of a storm trooper,Mos Eisley,Armor,60,feet,11.0,0,2,0,0,0,2,7,2,,mob
+5805,The plate of a storm trooper,Mos Eisley,Armor,60,body,11.25,2,2,0,0,2,6,7,6,,mob
+9831,a black pen,Dragon Cult,Weapon,60,,0.0,0,0,0,0,0,0,7,0,,mob
+10127,a studded leather collar,Uruk's Fortress,Armor,60,neck,13.5,2,3,0,0,0,5,7,5,AntiGood,mob
+18101,A Gory Key,Den of Monsters,Key,60,hold,0.0,0,0,0,0,0,0,7,0,,mob
+18102,A Brown Belt,Den of Monsters,Armor,60,waist,12.0,3,3,0,0,0,6,7,6,AntiEvil,mob
+27246,a pair of fireproof armguards,The Valkyrie,Armor,60,arms,17.0,0,0,0,0,5,5,7,35,,mob
+28008,Zun Plate Mail,Sethanon,Armor,60,body,16.0,2,0,30,0,0,7,7,7,AntiEvil,mob
+30155,the axe of the Protector of the Lore,Lore Keep,Weapon,60,,0.0,2,2,0,0,0,3,7,3,,mob
+30160,cloak of the Protector of the Lore,Lore Keep,Armor,60,neck,16.0,0,0,0,0,2,2,7,2,,
+30180,a scroll of God's radar,Lore Keep,Scroll,60,hold,0.0,0,0,0,0,0,0,7,0,,shop
+27051,Ajandurah's staff of utter negativity,The Seminary,Weapon,61,,0.0,0,0,0,30,0,6,7,6,AntiEvil AntiNeutral,mob
+27244,voyager's gauntlets,The Valkyrie,Armor,61,hands,12.75,4,0,22,0,0,8,7,8,,mob
+27274,a privateer's gold stud,The Valkyrie,Armor,61,ears,9.75,0,0,15,0,4,7,7,7,,mob
+3425,An auburn-colored orb,Chapel Catacombs,Staff,62,hold,0.0,0,0,0,0,0,0,7,0,,mob
+12107,a sword belt,The Dell,Armor,62,waist,17.25,3,4,0,0,0,7,7,7,,mob
+12108,(Magical) a huge sword,The Dell,Weapon,62,,0.0,0,0,0,45,0,9,7,9,,mob
+27245,a seafarer's tattoo,The Valkyrie,Armor,62,wrist,12.75,0,4,0,0,0,4,7,4,,mob
+27247,a swashbuckling buckler,The Valkyrie,Armor,62,shield,12.75,0,0,0,0,5,5,7,5,,mob
+28016,Shield of Zun,Sethanon,Armor,62,shield,20.0,0,0,24,0,1,5,7,9,AntiEvil,mob
+1807,a kimono,Japan,Armor,64,about,13.25,0,0,0,0,0,0,7,8,,mob
+5831,an imperial blaster,Mos Eisley,Weapon,64,,0.0,4,4,0,0,0,4,7,4,,mob
+1802,Leonardo's Katana blade,Japan,Weapon,65,,0.0,3,4,0,0,0,4,7,4,,mob
+1803,Michaelangelo's numchucks,Japan,Weapon,65,,0.0,3,4,0,0,0,3,7,3,,mob
+1804,Donatello's bokken,Japan,Weapon,65,,0.0,3,4,0,0,0,3,7,3,,mob
+1805,Raphael's sai,Japan,Weapon,65,,0.0,3,4,0,0,0,3,7,3,,mob
+2911,a broad axe,Fire Newt Mountain,Weapon,65,,0.0,1,2,0,0,0,1,7,1,AntiGood,mob
+2912,a leather suit,Fire Newt Mountain,Armor,65,body,15.75,0,0,0,0,1,1,7,1,,mob
+2913,a flaming mace,Fire Newt Mountain,Weapon,65,,0.0,2,2,0,0,0,2,7,2,,mob
+3421,a rusty curved scimitar,Chapel Catacombs,Weapon,65,,0.0,0,0,0,0,0,0,7,0,,mob
+10066,Executioner's Axe,Wolf Pointe,Weapon,65,,0.0,2,6,0,0,2,7,7,7,AntiGood,mob
+10067,Sheriff's Plate,Wolf Pointe,Armor,65,body,13.75,0,0,30,20,0,8,7,8,,mob
+10068,Sheriff's Mace,Wolf Pointe,Weapon,65,,0.0,4,2,0,0,2,5,7,5,,mob
+10071,Wolf Pointe Cloak,Wolf Pointe,Armor,65,about,15.25,0,0,20,10,0,5,7,5,,mob
+10072,Wolf Bone Dagger,Wolf Pointe,Weapon,65,,0.0,2,3,0,0,2,4,7,4,,mob
+10073,Wolf Eye Ring,Wolf Pointe,Armor,65,finger,12.0,0,0,0,45,0,7,7,7,,mob
+18103,Guppy Guts,Den of Monsters,Pill,65,head,0.0,0,0,0,0,0,0,7,0,,mob
+27046,some swimming goggles,The Seminary,Armor,65,neck,16.0,-6,0,0,40,1,1,7,1,,mob
+27047,a dolphin skin cap,The Seminary,Armor,65,head,17.25,0,0,0,0,12,12,7,12,AntiGood,mob
+27048,a dorsal fin,The Seminary,Weapon,65,,0.0,5,5,0,0,1,8,7,8,AntiGood,mob
+27253,an adamantite neckbrace,The Valkyrie,Armor,65,neck,15.75,0,0,30,0,0,7,7,7,,mob
+27259,a shrimpscale bracelet,The Valkyrie,Armor,65,wrist,15.0,0,0,25,0,0,4,7,4,,mob
+27260,a pair of shrimpscale boots,The Valkyrie,Armor,65,feet,15.0,0,0,25,0,0,4,7,4,,mob
+27273,a length of elven rope,The Valkyrie,Armor,65,waist,15.0,0,0,0,30,4,9,7,9,AntiEvil,mob
+28009,snake amulet,Sethanon,Armor,65,neck,11.0,0,0,0,40,0,6,7,6,AntiGood,mob
+28012,Black Slayer Talisman,Sethanon,Armor,65,neck,14.5,0,0,49,0,0,7,7,7,AntiGood,mob
+1828,a loincloth,Japan,Armor,66,waist,8.75,0,0,0,0,0,0,7,0,,mob
+28010,Circlet of Lims-Kragma,Sethanon,Armor,66,head,15.25,0,0,0,35,2,7,7,7,AntiGood,mob
+520,a priest's white robes,Camelot,Armor,68,about,20.0,0,0,0,30,3,8,7,15,AntiEvil,mob
+822,a pair of roller-skates,Strange World,Armor,68,feet,13.0,0,0,0,0,3,15,7,15,,mob
+1812,a red stiletto,Japan,Weapon,68,,0.0,0,4,0,0,0,3,7,3,,mob
+1814,black stiletto,Japan,Weapon,68,,0.0,0,3,0,0,0,1,7,1,,mob
+18117,The Gorgon's Head,Den of Monsters,Staff,68,hold,0.0,0,0,0,0,0,0,7,0,,mob
+27254,a poisoned quill,The Valkyrie,Wand,68,hold,0.0,0,0,0,0,0,0,7,0,,mob
+27269,a shipwright's hatchet,The Valkyrie,Weapon,68,,0.0,3,0,0,0,3,4,7,4,,mob
+506,a heavy pewter candlestick,Camelot,Weapon,70,hold,0.0,0,3,0,0,2,4,8,4,AntiEvil,mob
+823,The Flaming Dragon,Strange World,Weapon,70,,0.0,3,0,0,0,0,2,8,2,,mob
+1808,the chief's blade,Japan,Weapon,70,,0.0,4,0,0,0,0,2,8,2,,mob
+1835,a pair of miniature shuriken,Japan,Armor,70,ears,13.5,0,0,0,25,4,8,8,8,,mob
+3414,a whisper thin rapier,Chapel Catacombs,Weapon,70,,0.0,1,0,0,0,2,2,8,2,,mob
+3429,a worn and dented breast plate,Chapel Catacombs,Armor,70,body,12.75,0,0,0,0,0,0,8,0,,mob
+3431,a pair of tiny skull earrings,Chapel Catacombs,Armor,70,ears,13.5,0,0,25,0,4,8,8,8,,mob
+5807,A droid restraining bolt,Mos Eisley,Wand,70,hold,0.0,0,0,0,0,0,0,8,0,,mob
+5809,A mechanic's utility belt,Mos Eisley,Armor,70,waist,17.5,0,0,0,50,0,8,8,8,,mob
+5810,A clear plastic bracelet,Mos Eisley,Armor,70,wrist,17.25,0,0,0,40,0,6,8,6,AntiEvil AntiNeutral,mob
+5811,A pipe,Mos Eisley,Wand,70,hold,0.0,0,0,0,0,0,0,8,0,,mob
+9611,a dagger,New Thalos,Weapon,70,,0.0,0,0,0,0,0,1,8,1,,shop
+9902,a holy bastard sword,Yggdrasil,Weapon,70,,0.0,0,3,25,0,0,5,8,5,AntiEvil,mob
+9905,a set of sleeves of crystal,Yggdrasil,Armor,70,arms,12.75,2,3,0,0,0,5,8,5,,mob
+18106,The Hunchback,Den of Monsters,Armor,70,body,17.5,0,0,0,0,-2,0,8,10,AntiGood,mob
+18123,Blue Bracer,Den of Monsters,Armor,70,wrist,12.75,0,5,0,0,0,5,8,5,,mob
+18137,Wing of Bat,Den of Monsters,Staff,70,hold,0.0,0,0,0,0,0,0,8,0,,shop
+18139,Claw of Frog,Den of Monsters,Wand,70,hold,0.0,0,0,0,0,0,0,8,0,,shop
+27255,a bloody gown,The Valkyrie,Armor,70,about,17.75,0,0,0,0,3,3,8,33,,mob
+27263,a shrimpscale carapace,The Valkyrie,Armor,70,body,16.0,0,0,25,0,0,4,8,4,,mob
+28011,Black Robe,Sethanon,Armor,70,about,17.75,0,0,0,56,0,8,8,8,,mob
+30181,a scroll of God's purging power,Lore Keep,Scroll,70,hold,0.0,0,0,0,0,0,0,8,0,,shop
+30209,(|bBlack Aura|w) the Shield of an Avatar of Mephistopheles,Penthouse,Armor,70,shield,26.0,0,3,0,0,0,3,8,8,,
+9850,A brochure,Dragon Cult,Treasure,71,hold,0.0,0,0,0,0,0,0,8,0,,floor mob
+27045,an enormous neckbeard,The Seminary,Armor,71,neck,23.0,0,0,0,0,6,6,8,18,AntiEvil,mob
+1813,numchucks,Japan,Weapon,72,,0.0,3,0,0,0,0,1,8,1,,mob
+1818,a bamboo rod,Japan,Weapon,72,,0.0,3,1,0,0,0,2,8,2,,mob
+18124,White Bracer,Den of Monsters,Armor,72,wrist,12.75,5,0,0,0,0,5,8,5,,mob
+27024,a chocolate brown suit,The Seminary,Armor,72,body,18.0,0,0,0,0,4,4,8,4,AntiEvil,mob
+27242,a training manual,The Valkyrie,Armor,72,hold,15.0,0,0,0,0,5,5,8,35,,mob
+28017,A Silver Cylinder,Sethanon,Wand,72,hold,0.0,0,0,0,0,0,8,8,8,,mob
+1809,a samurai sword,Japan,Weapon,73,,0.0,0,4,0,0,0,3,8,3,,mob
+27240,a scarlet neckerchief,The Valkyrie,Armor,73,neck,15.75,0,0,30,0,6,11,8,11,,mob
+27241,a fine silver compass,The Valkyrie,Armor,73,neck hold,15.75,0,0,30,0,8,13,8,13,,mob
+27025,a geological sample bag,The Seminary,Container,74,about,4.0,0,0,0,0,1,1,8,5,,mob
+505,a Knight of the Round Table's sword,Camelot,Weapon,75,,0.0,0,4,0,0,4,7,8,7,AntiEvil,mob
+1817,a grey staff,Japan,Weapon,75,,0.0,0,4,0,0,0,2,8,2,,mob
+3402,a nightgaunt's tickler,Chapel Catacombs,Weapon,75,,0.0,1,2,0,0,0,1,8,1,,mob
+5808,A bad motivator,Mos Eisley,Key,75,hold,0.0,0,0,30,20,0,8,8,8,,floor
+10051,A marble gavel,Wolf Pointe,Weapon,75,,0.0,3,3,10,0,0,5,8,5,AntiGood,mob
+10052,Judge's robes,Wolf Pointe,Armor,75,about,13.5,0,0,30,40,0,11,8,11,AntiGood,mob
+18119,The Mummy's Wrappings,Den of Monsters,Armor,75,arms,9.75,0,0,40,0,-2,6,8,6,AntiGood,mob
+18122,A Ghostly Mask,Den of Monsters,Armor,75,head,20.75,0,0,0,40,0,6,8,14,AntiGood,mob
+18125,Red Bracer,Den of Monsters,Armor,75,wrist,24.75,0,0,0,0,0,0,8,12,,mob
+27234,a Harrison chronometer,The Valkyrie,Armor,75,hold,16.5,4,4,25,0,0,12,8,12,,mob
+27235,a steel peg leg,The Valkyrie,Armor,75,legs,16.5,5,5,25,0,0,14,8,14,,mob
+27236,Vengeance,The Valkyrie,Weapon,75,,0.0,4,4,0,0,0,5,8,5,,mob
+27237,an officer's waistcoat,The Valkyrie,Armor,75,about,16.5,0,0,0,0,8,8,8,38,,mob
+27272,a talkative parrot,The Valkyrie,Armor,75,wrist,16.5,5,5,25,0,0,14,8,14,,mob
+30106,TOKEN FOR Axe of the Great Wyrm,Temple of the Great Wyrm,Trash,75,hold,0.0,0,0,0,0,0,0,8,0,,container
+30126,Axe of the Great Wyrm,Temple of the Great Wyrm,Weapon,75,,0.0,0,0,0,0,3,3,8,3,,
+30182,a scroll of God's blessing,Lore Keep,Scroll,75,hold,0.0,0,0,0,0,0,0,8,0,,shop
+18110,The Bubble Blower,Den of Monsters,Weapon,76,,0.0,1,1,0,0,0,1,8,11,,mob
+27026,a roll of burning parchment,The Seminary,Weapon,76,,0.0,3,0,0,70,0,12,8,12,,mob
+516,Arthurian platemail,Camelot,Armor,78,body,17.5,4,0,25,25,0,12,8,12,,mob
+1810,a Fujimoto blade,Japan,Weapon,78,,0.0,2,2,0,0,0,3,8,3,,mob
+1819,the Medallion of Honour,Japan,Armor,78,neck,13.25,0,0,40,0,0,6,8,6,,mob
+9828,a bone sword,Dragon Cult,Weapon,78,,0.0,2,3,0,0,1,4,8,4,AntiGood,mob
+9829,a helm made from a dragon's skull,Dragon Cult,Armor,78,head,13.5,0,0,0,0,1,2,8,2,,mob
+9851,earring of co-ordination,Dragon Cult,Armor,78,ears,12.0,0,0,25,25,3,11,8,11,,mob
+10130,(Deadly) Coiled Vipers,Uruk's Fortress,Armor,78,arms,15.75,0,0,0,40,2,8,8,8,,mob
+27027,an explorer's shield,The Seminary,Armor,78,shield,22.0,0,0,20,30,2,10,8,10,,mob
+27028,an explorer's monocle,The Seminary,Armor,78,head,19.0,0,0,0,0,0,0,8,12,,mob
+27238,kris of a thousand lies,The Valkyrie,Weapon,78,,0.0,5,0,0,0,0,2,8,2,,mob
+27239,an ambassador's signet ring,The Valkyrie,Armor,78,finger,16.5,0,0,0,40,6,12,8,12,,mob
+814,The Cloud,Strange World,Armor,80,feet,22.0,0,0,0,0,3,18,9,18,,mob
+816,Golden Armor,Strange World,Armor,80,body,20.25,0,0,0,0,3,3,9,3,,mob
+3005,Clawfist,Midgaard,Armor,80,hands,19.0,5,5,0,0,0,10,9,10,,mob
+5832,a custom blaster,Mos Eisley,Weapon,80,,0.0,5,5,0,0,0,5,9,5,,mob
+9830,some dark robes,Dragon Cult,Armor,80,body,14.25,0,0,0,30,0,5,9,5,,mob
+9833,a black staff,Dragon Cult,Weapon,80,,0.0,3,0,0,0,0,1,9,1,,mob
+18104,Clawed Feet,Den of Monsters,Armor,80,feet,12.75,4,4,0,0,-1,8,9,8,AntiGood,mob
+18107,The Manual of the Undead,Den of Monsters,Armor,80,hold,23.75,2,2,0,50,0,12,9,12,AntiGood,mob
+18109,A Decaying Arm,Den of Monsters,Weapon,80,,0.0,0,10,0,0,0,5,9,5,AntiGood,mob
+18111,The Wings of Mothra,Den of Monsters,Armor,80,arms,11.25,0,0,0,0,2,8,9,8,,mob
+18112,Rhodan's Claws,Den of Monsters,Armor,80,hands,11.25,-2,6,0,0,0,4,9,4,AntiGood,mob
+18115,A Huge Banana,Den of Monsters,Staff,80,hold,0.0,0,0,0,0,0,0,9,0,,mob
+18126,Black Bracer,Den of Monsters,Armor,80,wrist,13.5,0,0,20,20,0,6,9,6,,mob
+27022,a pair of comfortable slippers,The Seminary,Armor,80,feet,19.5,0,0,0,40,0,6,9,8,AntiGood,mob
+27023,the blade of destruction,The Seminary,Weapon,80,,0.0,0,0,0,0,-2,2,9,16,,mob
+27030,the Moog's notebook,The Seminary,Staff,80,hold,0.0,0,0,55,0,3,11,9,11,AntiEvil,mob
+28014,A Small Talisman,Sethanon,Armor,80,neck,22.0,0,0,0,0,0,0,9,18,AntiEvil,mob
+9832,an evil looking black dagger,Dragon Cult,Weapon,81,,0.0,0,3,0,0,0,1,9,1,,mob
+9835,dragonfang robes,Dragon Cult,Armor,81,body,14.25,0,2,0,0,0,2,9,2,,mob
+1806,the Takashima blade,Japan,Weapon,82,,0.0,3,3,0,0,0,3,9,3,,mob
+1815,the Stiehl,Japan,Weapon,82,,0.0,0,0,0,0,2,3,9,3,,mob
+1822,the Nightshroud,Japan,Armor,82,about,15.75,0,0,0,69,1,11,9,11,,mob
+28013,steel rapier,Sethanon,Weapon,82,,0.0,0,0,0,0,2,3,9,3,,mob
+28015,Ring of the Assembly,Sethanon,Armor,82,finger,21.5,0,0,0,63,0,9,9,9,,mob
+803,The Sabre of Wind,Strange World,Weapon,83,,0.0,4,4,0,0,0,5,9,5,,mob
+804,The Gauntlets of Thunder,Strange World,Armor,83,hands,21.25,3,5,0,0,0,8,9,8,,mob
+805,The Armor of Rain,Strange World,Armor,83,body,21.25,3,3,0,35,0,11,9,11,,mob
+9834,dragonscale robes,Dragon Cult,Armor,83,body,14.25,0,0,65,0,0,10,9,10,AntiGood AntiNeutral,mob
+27038,a set of false toe nails,The Seminary,Armor,83,feet,21.5,0,0,0,50,0,8,9,8,AntiEvil,mob
+27039,a beauty spot,The Seminary,Armor,83,neck,21.0,0,0,0,60,3,12,9,12,AntiEvil,mob
+28018,Murmandus's Birthmark,Sethanon,Armor,83,body,8.5,0,0,0,63,0,9,9,9,AntiGood,mob
+28019,Girdle of Murmandus,Sethanon,Armor,83,waist,18.75,0,0,20,0,3,6,9,6,AntiGood,mob
+806,The Badge of Lightning,Strange World,Armor,84,neck,21.0,3,4,0,0,0,7,9,7,,mob
+503,sword of the deceiver,Camelot,Weapon,85,,0.0,0,4,0,0,5,9,9,9,,mob
+513,Merlin's cloak,Camelot,Armor,85,about neck,20.25,0,0,55,55,3,19,9,19,AntiEvil,mob
+1811,a Minowara blade,Japan,Weapon,85,,0.0,6,0,0,0,1,4,9,4,,mob
+1820,the Shogun's Armplates,Japan,Armor,85,arms,14.75,0,0,0,0,3,3,9,3,,mob
+1821,the Shogun's Headplate,Japan,Armor,85,head,11.0,0,0,0,0,2,2,9,2,,mob
+1823,the Eye of Izanagi,Japan,Armor,85,finger,12.0,0,0,0,0,4,4,9,4,,mob
+3389,a fine linen toga,Midgaard,Armor,85,body,22.0,0,0,0,0,0,0,9,35,,mob
+5815,A double-barrelled laser pistol,Mos Eisley,Weapon,85,,0.0,8,3,0,0,0,5,9,5,,mob
+5830,A reinforced handcannon,Mos Eisley,Weapon,85,,0.0,4,3,0,0,0,3,9,3,,mob
+9901,a huge hammer of cold iron,Yggdrasil,Weapon,85,,0.0,0,5,0,0,0,2,9,2,AntiGood,mob
+18108,Scrambled Brains,Den of Monsters,Armor,85,head,15.0,0,0,0,0,-9,0,9,0,AntiGood,mob
+18113,A Smoggy Aura,Den of Monsters,Armor,85,about,18.0,0,0,45,0,0,7,9,13,,mob
+18120,Cowl of the Reaper,Den of Monsters,Armor,85,neck,17.5,0,0,0,50,0,8,9,8,AntiGood,mob
+18121,The Reaper's Scythe,Den of Monsters,Weapon,85,,0.0,4,4,0,0,0,5,9,5,AntiGood,mob
+18127,The Bloody Stake,Den of Monsters,Weapon,85,,0.0,0,0,0,0,0,0,9,0,,mob
+27031,a curious pencil,The Seminary,Wand,85,hold,0.0,6,6,0,0,-2,12,9,12,,mob
+27032,an unfashionable tie,The Seminary,Armor,85,neck,21.75,0,0,0,50,2,10,9,14,,mob
+27050,the bracelet of dragonkind,The Seminary,Armor,85,wrist,22.0,0,0,0,50,0,8,9,12,AntiGood,mob
+512,King Arthur's Platemail,Camelot,Armor,86,body,20.25,0,0,80,0,3,15,9,15,AntiEvil,mob
+526,a strange set of beads,Camelot,Armor,86,neck,22.25,0,0,50,0,0,8,9,8,,mob
+527,a golden mirror,Camelot,Wand,86,hold,0.0,0,0,0,0,0,0,9,0,,mob
+818,Water Snake,Strange World,Armor,86,neck,22.5,0,0,0,50,0,8,9,18,,mob
+820,Claw of Earth,Strange World,Weapon,86,,0.0,0,6,0,0,0,4,9,4,,mob
+3388,the Arbiter's shield,Midgaard,Armor,86,shield,23.0,2,2,0,0,0,4,9,9,,mob
+27035,midnight wraps,The Seminary,Armor,86,body,22.5,0,0,35,0,2,7,9,19,,mob
+27037,hands of emptiness,The Seminary,Weapon,86,,0.0,15,15,0,30,0,22,9,22,,mob
+502,jewelled dagger of Anwe,Camelot,Weapon,87,,0.0,4,4,0,0,0,6,9,6,AntiNeutral,mob
+514,Arthur's chainmail boots,Camelot,Armor,87,feet,20.25,0,4,0,0,4,16,9,16,,mob
+517,the heart of Queen Gwenefwhar,Camelot,Armor,87,neck,17.5,0,0,50,0,4,12,9,12,AntiEvil,mob
+525,Morgana's Blue robes,Camelot,Armor,87,about,21.75,0,0,0,80,4,16,9,16,,mob
+810,Blood Sucker,Strange World,Weapon,87,,0.0,5,3,0,0,0,5,9,5,,mob
+817,Wooden Mask,Strange World,Armor,87,head,22.25,0,0,0,0,8,8,9,8,,mob
+819,Belt of Fire,Strange World,Armor,87,waist,22.25,0,3,0,0,2,5,9,5,,mob
+10132,a silvery spiders web,Uruk's Fortress,Armor,87,about,23.75,5,0,0,0,2,7,9,7,AntiGood,mob
+504,a huge black hilted sword,Camelot,Weapon,88,,25.0,4,4,25,0,0,10,9,35,AntiGood,mob
+510,the staff of Anwe,Camelot,Staff,88,hold,20.0,4,4,0,0,0,8,9,28,,mob
+518,Prince Markham's Chainmail,Camelot,Armor,88,body,22.75,2,4,35,0,2,14,9,14,AntiGood,mob
+815,The Gold Aura,Strange World,Armor,88,about,29.5,0,0,0,0,3,3,9,21,AntiEvil,mob
+511,the Jewelled Scabbard of the druids,Camelot,Armor,89,waist,22.0,0,0,0,50,3,11,9,11,AntiEvil,mob
+501,Excalibur,Camelot,Weapon,90,,0.0,5,5,50,25,1,20,10,20,AntiEvil,mob
+808,The Baseball Cap,Strange World,Armor,90,head,25.75,3,5,0,0,0,8,10,8,,mob
+809,Saint Sword,Strange World,Weapon,90,,0.0,2,2,0,0,5,8,10,8,AntiEvil,mob
+811,The Wrist Band of Angel,Strange World,Armor,90,wrist,24.75,0,0,0,40,0,6,10,6,AntiEvil,mob
+812,Sceptre of Soul,Strange World,Armor,90,hold,24.0,0,3,0,0,4,7,10,7,,mob
+813,Shield of Wish,Strange World,Armor,90,shield,24.25,2,3,0,0,0,5,10,5,,mob
+1002,The Mighty Horn of Perseus,The Heavens,Armor,90,head,26.75,7,7,0,0,0,14,10,14,,mob
+1003,The Mighty Wings of Icarus,The Heavens,Armor,90,about,26.75,0,0,0,0,0,0,10,16,,mob
+1005,The Mighty Girth of Nitrius,The Heavens,Armor,90,waist,28.0,0,0,0,75,0,11,10,11,,mob
+1006,The Fangs of Nitrius,The Heavens,Weapon,90,,0.0,0,0,0,0,0,2,10,9,,mob
+3403,disgusting pinkish plasma webbing,Chapel Catacombs,Armor,90,body,30.75,0,0,0,0,2,2,10,17,AntiGood AntiNeutral,mob
+5828,A tripod-mounted blaster,Mos Eisley,Weapon,90,,0.0,3,3,0,0,1,6,10,6,,mob
+9612,a dagger,New Thalos,Weapon,90,,0.0,0,0,0,0,0,1,10,1,,shop
+10128,leather shorts,Uruk's Fortress,Armor,90,legs,23.25,3,4,0,0,0,7,10,7,,mob
+10131,a swirling magical mist,Uruk's Fortress,Armor,90,legs,23.75,0,0,0,70,0,10,10,10,,mob
+10133,a long black whip,Uruk's Fortress,Weapon,90,,0.0,0,0,0,12,3,6,10,6,AntiGood,mob
+18114,The Orb of the Dragon Kings,Den of Monsters,Armor,90,hold,23.0,6,6,0,0,0,12,10,12,AntiGood,mob
+18116,Kong's Hairy Chest,Den of Monsters,Armor,90,body,16.5,0,0,40,0,2,8,10,8,,mob
+18128,The Fangs of the Vampire,Den of Monsters,Weapon,90,,0.0,5,5,0,0,0,6,10,6,,mob
+18143,a pair of reinforced steel bolts,Den of Monsters,Armor,90,ears,15.0,4,4,0,0,6,14,10,14,,mob
+27261,the eye of eternity,The Valkyrie,Armor,90,hold,24.75,0,0,50,50,5,21,10,21,,mob
+27262,cloak of the abyssal depths,The Valkyrie,Armor,90,about,24.75,0,0,50,50,5,21,10,21,,mob
+28020,Valheru Armour,Sethanon,Armor,90,body,30.0,0,0,0,0,0,0,10,20,AntiNeutral,mob
+30107,TOKEN FOR Bracelet of the Great Wyrm,Temple of the Great Wyrm,Trash,90,hold,0.0,0,0,0,0,0,0,10,0,,mob
+30108,TOKEN FOR Pike of the Great Wyrm,Temple of the Great Wyrm,Trash,90,hold,0.0,0,0,0,0,0,0,10,0,,mob
+30127,Bracelet of the Great Wyrm,Temple of the Great Wyrm,Armor,90,wrist,19.25,0,0,0,0,0,0,10,7,,
+30128,Pike of the Great Wyrm,Temple of the Great Wyrm,Weapon,90,,0.0,3,3,0,0,0,4,10,4,,
+30153,|Bflowing indigo robes of the Lore|w,Lore Keep,Armor,90,about,20.0,0,0,20,50,0,11,10,11,,mob
+30154,a pair of fine satin gloves,Lore Keep,Armor,90,hands,10.0,0,0,25,35,0,9,10,9,,mob
+30157,|Wthe amulet of the Lore Binder|w,Lore Keep,Armor,90,neck,20.0,0,0,0,45,0,7,10,7,,mob
+30210,(|bBlack Aura|w) the Pendant of the Shadow King,Penthouse,Armor,90,neck,26.25,4,4,-20,0,0,8,10,8,,
+30211,(|bBlack Aura|w) the Shroud of the Shadow King,Penthouse,Armor,90,body,35.0,0,0,0,0,0,0,10,11,,
+3427,a dark black cape,Chapel Catacombs,Armor,91,about,27.0,0,0,50,0,0,8,10,18,,mob
+3428,a pitch-black gavel that flames brightly...,Chapel Catacombs,Weapon,91,,0.0,4,4,0,0,0,4,10,4,,mob
+10125,Uruk's lesser spell book,Uruk's Fortress,Wand,91,hold,0.0,0,0,0,0,0,0,10,0,,container
+10129,an axe,Uruk's Fortress,Weapon,91,,0.0,0,0,0,0,0,1,10,1,AntiGood,mob
+10135,Uruk's spell book,Uruk's Fortress,Wand,91,hold,0.0,0,0,0,0,0,0,10,0,,container
+18105,A Shark's Tooth,Den of Monsters,Weapon,91,,0.0,5,5,0,0,0,6,10,6,AntiGood,mob
+18129,The Cloak of Darkness,Den of Monsters,Armor,91,about,23.0,5,5,0,0,0,10,10,10,AntiGood,mob
+18130,The Runed Cube,Den of Monsters,Weapon,91,,0.0,3,3,0,0,0,3,10,3,AntiGood,mob
+18131,The Pinhead,Den of Monsters,Armor,91,head,18.75,3,5,0,0,0,8,10,8,AntiGood,mob
+18132,Your Leg,Den of Monsters,Weapon,91,,0.0,0,0,0,0,0,0,10,0,AntiGood,mob
+18133,Freddy's Claw,Den of Monsters,Weapon,91,,0.0,7,7,0,0,0,7,10,7,,mob
+18134,Hockey Mask,Den of Monsters,Armor,91,head,25.0,0,0,0,0,6,6,10,6,,mob
+18135,THE Machete,Den of Monsters,Weapon,91,,0.0,4,4,0,0,0,4,10,4,AntiGood,mob
+18136,Mom's Finger,Den of Monsters,Armor,91,finger,18.75,0,0,35,0,0,5,10,5,,mob
+28021,Sword of Ashen-Shugar,Sethanon,Weapon,91,,0.0,2,2,24,24,0,12,10,12,AntiNeutral,mob
+28022,Milamber's Robe,Sethanon,Armor,91,about,34.75,0,0,0,70,0,10,10,10,AntiNeutral,mob
+30004,Shadow of Death,Penthouse,Armor,91,about,26.25,0,0,0,100,0,15,10,35,,mob
+30005,a rusty looking scythe,Penthouse,Weapon,91,,0.0,3,3,0,0,0,5,10,11,,mob
+30006,a terrifying skull face,Penthouse,Armor,91,head,26.25,0,0,0,0,0,0,10,20,,mob
+30007,an hourglass,Penthouse,Treasure,91,hold,0.0,0,0,-500,0,0,0,10,0,,mob
+30109,TOKEN FOR Crown of the High Dragon,Temple of the Great Wyrm,Trash,91,hold,0.0,0,0,0,0,0,0,10,0,,container
+30110,TOKEN FOR Armour of the High Dragon,Temple of the Great Wyrm,Trash,91,hold,0.0,0,0,0,0,0,0,10,0,,container
+30129,Crown of the High Dragon,Temple of the Great Wyrm,Armor,91,head,19.5,0,0,0,45,4,11,10,11,,
+30130,Armour of the High Dragon,Temple of the Great Wyrm,Armor,91,body,21.0,0,0,35,0,1,6,10,11,,
+30212,a JoinT,Penthouse,Pill,91,hold,0.0,0,0,0,0,0,0,10,0,,
+5822,One of Angela's friendship bracelets,Mos Eisley,Armor,93,wrist,500.0,100,100,3000,3000,0,1058,10,1058,,shop
+30001,The robes of Ithil,Penthouse,Armor,99,body,28.75,0,5,100,0,6,26,10,62,,
+30002,Staff of Gondor,Penthouse,Weapon,99,,0.0,0,0,0,100,8,24,10,44,,
+30008,some manky old trainers,Penthouse,Armor,99,feet,28.75,0,0,0,0,0,0,10,0,,
+30009,a pair of jeans,Penthouse,Armor,99,legs,28.75,0,0,0,0,0,0,10,0,,
+30010,a cheap t-shirt,Penthouse,Armor,99,body,28.75,0,0,0,0,0,0,10,0,,
+30011,a sunshine grin,Penthouse,Armor,99,head,28.75,0,0,0,0,0,0,10,0,,
+30012,a black leather belt,Penthouse,Armor,99,waist,28.75,0,0,0,0,0,0,10,0,,
+30013,CAT boots,Penthouse,Armor,99,feet,28.75,0,0,0,0,0,0,10,0,,
+30014,a tie dye t-shirt,Penthouse,Armor,99,body,28.75,0,0,0,0,0,0,10,0,,
+30015,contact lenses,Penthouse,Armor,99,head,28.75,0,0,0,0,5,5,10,5,,
+30016,a pendant of Saint Christopher,Penthouse,Armor,99,neck,29.75,0,0,0,0,0,0,10,0,,
+30017,a pair of green jeans,Penthouse,Armor,99,legs,28.75,0,0,0,0,0,0,10,0,,
+30018,a portable RISC PC,Penthouse,Container,99,hold,0.0,0,0,0,0,0,0,10,0,,
+3424,a tightly rolled scroll,Chapel Catacombs,Scroll,106,hold,0.0,0,0,0,0,0,0,11,0,,mob

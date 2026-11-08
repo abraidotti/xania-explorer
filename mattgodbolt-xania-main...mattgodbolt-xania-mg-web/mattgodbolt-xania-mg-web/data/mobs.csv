@@ -1,0 +1,1179 @@
+vnum,name,area,level,category,population,hp_avg,damage_avg,hitroll,mean_ac,aggressive,in_area_band,act,offensive
+101,a smurf,Smurf Village,1,combat,3,19.0,1.5,0,-6.0,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+102,a smurf,Smurf Village,1,combat,3,19.0,1.5,0,-6.0,0,1,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+309,the cute rabbit,Plains of the North,1,combat,7,17.0,1.5,0,-6.0,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+612,a hen,New Ofcol,1,combat,4,21.0,1.5,0,-6.0,0,0,Npc Wimpy Pet,Disarm Dodge Trip AssistVnum
+1302,Edgar,High Tower of Sorcery,1,combat,1,21.0,1.5,0,-6.0,0,0,Npc Scavenger bit4 Wimpy,Disarm Dodge Trip AssistVnum
+1319,a small kitten,High Tower of Sorcery,1,combat,1,21.0,1.5,0,-6.0,0,0,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1508,a field mouse,Gnome Village,1,combat,2,19.0,1.5,0,-6.0,0,0,Npc Sentinel Scavenger Pet,Disarm Dodge Trip AssistVnum
+3061,the janitor,Midgaard,1,combat,1,17.0,4.0,0,-5.0,0,,StayArea Wimpy,Trip AssistVnum
+3062,a gutter rat,Midgaard,0,combat,4,7.5,2.5,0,-5.0,1,,Aggressive StayArea Wimpy NoAlign,
+3065,the beggar,Midgaard,1,combat,2,17.0,4.0,0,-6.5,0,,Sentinel,Dodge KickDirt Trip AssistVnum
+3066,an alley cat,Midgaard,0,combat,1,7.5,3.5,1,-6.75,1,,Aggressive StayArea Wimpy NoAlign,Berserk AssistRace
+3090,the kitten,Midgaard,1,combat,1,18.0,2.5,2,-6.5,0,,Sentinel NoAlign,
+3121,the swan,Midgaard,1,combat,1,17.0,3.0,0,-6.5,0,,Sentinel NoAlign,Bash Dodge AssistRace
+3122,the duckling,Midgaard,0,combat,1,2.5,1.0,0,-5.0,0,,Sentinel NoAlign,Dodge AssistRace
+3123,the sparrow,Midgaard,0,combat,1,7.0,2.0,0,-5.0,0,,StayArea Wimpy NoAlign,AssistRace
+3124,the duck,Midgaard,1,combat,2,12.0,2.5,0,-5.0,0,,StayArea NoAlign,Dodge AssistRace
+3144,the town crier,Midgaard,1,combat,1,17.0,3.0,0,-5.0,0,,Wimpy,Berserk
+3702,a grizzly monster,Mud School,1,combat,1,8.0,2.0,0,-5.0,0,1,Sentinel,
+3703,a cowering beast,Mud School,1,combat,1,8.0,1.5,0,-5.0,0,1,Sentinel Wimpy,Crush
+3704,an angry cave beast,Mud School,1,combat,1,8.0,2.5,0,-5.0,1,1,Sentinel Aggressive,Disarm Parry
+3705,a morian cave serpent,Mud School,1,combat,1,8.0,2.0,0,-5.0,1,1,Sentinel Aggressive Wimpy,KickDirt
+3709,a grey hare,Mud School,1,combat,1,11.0,2.0,0,-5.0,0,1,StayArea Wimpy NoAlign,
+3712,a silvery fox,Mud School,1,combat,1,13.0,3.0,1,-6.5,0,1,StayArea Wimpy NoAlign,Trip AssistRace
+3713,a girdle shell snail,Mud School,0,combat,1,1.0,1.0,0,-5.0,0,0,StayArea NoAlign,
+5100,the goblin slave,Drow City,1,combat,1,21.0,1.5,0,-6.0,0,0,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+5332,the janitor,Old Thalos,1,combat,1,21.0,1.5,0,-6.0,0,1,Npc,Disarm Dodge Trip AssistVnum
+6601,a teddy bear,Dwarven Day Care,1,combat,2,15.5,2.5,0,-7.0,0,1,Scavenger StayArea,Trip AssistRace
+6605,an old doll,Dwarven Day Care,1,combat,3,6.5,2.5,0,-7.0,0,1,Scavenger StayArea,AssistRace
+6608,the spoiled brat,Dwarven Day Care,1,combat,1,20.0,4.0,0,-6.5,0,1,Sentinel Scavenger,Kick KickDirt Trip
+7001,the small bat,Sewer,1,combat,4,21.0,1.5,0,-6.0,1,0,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+7003,the small spider,Sewer,1,combat,6,17.0,1.5,0,-6.0,1,0,Npc Aggressive,Disarm Dodge Trip AssistVnum
+9203,a tiny elemental,Elemental Canyon,1,combat,7,21.0,1.5,0,-6.0,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+9509,a beggar,New Thalos,1,combat,1,17.0,1.5,0,-6.0,0,0,Npc Scavenger StayArea Wimpy Thief,Disarm Dodge Trip AssistVnum
+9547,the dirt devil,New Thalos,1,combat,1,17.0,1.5,0,-6.0,1,0,Npc Scavenger Aggressive NoAlign,Disarm Dodge Trip AssistVnum
+10077,A scavenger rat,Wolf Pointe,1,combat,1,17.0,4.0,1,-6.5,0,,Sentinel NoAlign,Dodge
+10080,some birds,Wolf Pointe,1,never spawns,0,7.0,2.0,0,-5.0,0,,StayArea Wimpy NoAlign,AssistRace
+1103,a toddler,The Shire,2,combat,6,41.0,2.5,1,-6.75,0,0,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+1107,a chicken,The Shire,2,combat,6,41.0,2.5,1,-6.75,0,0,Npc StayArea Pet,Disarm Dodge Trip AssistVnum
+1509,a rat,Gnome Village,2,combat,1,33.0,2.5,1,-6.75,0,0,Npc Scavenger,Disarm Dodge Trip AssistVnum
+2322,the Harem Girl,The Keep of Mahn-Tor,2,combat,5,41.0,2.5,1,-6.75,0,0,Npc Sentinel Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+3064,the drunk,Midgaard,2,combat,1,29.0,3.5,-1,-6.5,0,,StayArea,AssistVnum
+3706,a lumbering basement ogre,Mud School,2,combat,1,23.0,3.5,1,-6.5,0,1,Sentinel,Dodge Trip
+3710,a red-scaled lizard,Mud School,2,combat,1,23.0,3.5,0,-6.5,0,1,StayArea NoAlign,AssistRace
+5325,a small bunny,Old Thalos,2,combat,1,41.0,2.5,1,-6.75,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+6004,the fallow deer,Haon Dor,2,combat,1,36.0,2.5,1,-6.75,0,0,Npc Sentinel bit4 StayArea Pet,Disarm Dodge Trip AssistVnum
+6005,the brown fox,Haon Dor,2,combat,1,36.0,2.5,1,-6.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+6602,a raggedy anne doll,Dwarven Day Care,2,combat,2,20.0,3.0,0,-7.75,0,1,Scavenger StayArea,Dodge Fast AssistRace
+8907,a small bunny,Holy Grove,2,combat,2,36.0,2.5,1,-6.75,0,0,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9225,an eddie,Elemental Canyon,2,combat,8,41.0,2.5,1,-6.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+9404,The revolving drunk,Mob Factory,2,combat,2,36.0,2.5,1,-6.75,0,0,Npc Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9507,a panhandler,New Thalos,2,combat,1,36.0,2.5,1,-6.75,0,0,Npc Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9543,the alley cat,New Thalos,2,combat,6,36.0,2.5,1,-6.75,0,0,Npc Scavenger Wimpy NoAlign,Disarm Dodge Trip AssistVnum
+9544,the vulture,New Thalos,2,combat,13,36.0,2.5,1,-6.75,0,0,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9560,a servant boy,New Thalos,2,combat,2,36.0,2.5,1,-6.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+103,Brainy Smurf,Smurf Village,3,combat,1,49.0,5.0,1,-6.75,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+104,Handy Smurf,Smurf Village,3,combat,1,49.0,5.0,1,-6.75,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+105,Sleepy Smurf,Smurf Village,3,combat,1,49.0,5.0,1,-6.75,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+106,Hefty Smurf,Smurf Village,3,combat,1,49.0,5.0,1,-6.75,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+107,Grumpy Smurf,Smurf Village,3,combat,1,49.0,5.0,1,-6.75,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+108,Jokey Smurf,Smurf Village,3,combat,1,49.0,5.0,1,-6.75,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+109,Smurfette,Smurf Village,3,combat,1,53.0,5.0,1,-6.75,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+619,the boy,New Ofcol,3,combat,2,61.0,5.0,1,-6.75,0,0,Npc Wimpy,Disarm Dodge Trip AssistVnum
+620,the girl,New Ofcol,3,combat,2,61.0,5.0,1,-6.75,0,0,Npc Wimpy,Disarm Dodge Trip AssistVnum
+1106,a pig,The Shire,3,combat,5,61.0,5.0,1,-6.75,0,0,Npc StayArea Pet,Disarm Dodge Trip AssistVnum
+1122,a halfling youth,The Shire,3,combat,9,61.0,5.0,1,-6.75,0,0,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1500,a gnome child,Gnome Village,3,combat,3,51.0,5.0,1,-6.75,0,0,Npc Scavenger bit4,Disarm Dodge Trip AssistVnum
+1517,the hobgoblin soldier,Gnome Village,3,combat,12,51.0,5.0,1,-6.75,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+1522,a gnome prisoner,Gnome Village,3,combat,3,51.0,5.0,1,-6.75,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+1523,a human prisoner,Gnome Village,3,combat,2,51.0,5.0,1,-6.75,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+2806,a fat worm,Troll Den,3,combat,5,51.0,5.0,1,-6.75,1,0,Npc Scavenger Aggressive Wimpy,Disarm Dodge Trip AssistVnum
+3091,the puppy,Midgaard,3,combat,1,39.0,3.5,2,-7.25,0,,Sentinel NoAlign,Trip
+3120,the sexton,Midgaard,3,combat,1,42.0,4.0,0,-7.25,0,,Sentinel Wimpy,
+3603,a dusty skeleton,Graveyard,3,combat,4,51.0,5.0,1,-6.75,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+3604,a dusty skeleton,Graveyard,3,combat,4,51.0,5.0,1,-6.75,1,0,Npc Aggressive,Disarm Dodge Trip AssistVnum
+3711,a fang-toothed entelodont,Mud School,3,combat,1,36.0,4.5,1,-7.5,0,1,StayArea NoAlign,Bash Berserk Dodge AssistRace
+3720,the diploma beast,Mud School,3,combat,1,35.0,4.5,1,-6.5,0,1,Sentinel,Disarm Dodge Trip
+5003,The small scorpion,Sands of Sorrow,3,combat,1,51.0,5.0,1,-6.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+5009,The slave,Sands of Sorrow,3,combat,1,51.0,5.0,1,-6.75,0,0,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+5207,The horned lizard,Thalos,3,combat,4,51.0,5.0,1,-6.75,0,0,Npc Wimpy,Disarm Dodge Trip AssistVnum
+6003,the ferocious rabbit,Haon Dor,3,never spawns,0,51.0,5.0,1,-6.75,1,0,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+6102,"the large, grey wolf",Haon Dor,3,combat,4,51.0,5.0,1,-6.75,1,0,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+6103,"the large, black wolf",Haon Dor,3,combat,4,51.0,5.0,1,-6.75,1,0,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+6510,the dwarven peon,Dwarven Kingdom,3,combat,2,61.0,5.0,1,-6.75,0,0,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+6600,the dwarven youth,Dwarven Day Care,3,combat,7,27.5,4.5,0,-7.5,0,1,Scavenger StayArea Warrior,Berserk KickDirt AssistRace
+6603,a toy soldier,Dwarven Day Care,3,combat,4,39.0,5.5,1,-8.0,0,1,Scavenger StayArea Warrior,Kick AssistRace
+6604,the ugly bear,Dwarven Day Care,3,combat,2,31.5,4.5,0,-8.5,1,1,Scavenger Aggressive,Berserk KickDirt Trip AssistRace
+7005,the maggot,Sewer,3,combat,3,51.0,5.0,1,-6.75,0,0,Npc,Disarm Dodge Trip AssistVnum
+7810,an old hermit,Valley of the Elves,3,combat,1,51.0,5.0,1,-6.75,0,0,Npc Sentinel Scavenger Wimpy,Disarm Dodge Trip AssistVnum
+8307,a rather small beast,Old Marsh,3,combat,2,61.0,5.0,1,-6.75,0,0,Npc Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9201,the mountain climber,Elemental Canyon,3,combat,3,55.0,5.0,1,-7.75,0,0,Scavenger StayArea Warrior,Disarm Dodge KickDirt Trip AssistVnum
+9216,a small snowflake,Elemental Canyon,3,combat,4,51.0,5.0,1,-6.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+9217,a small rock,Elemental Canyon,3,combat,8,51.0,5.0,1,-6.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+9406,The factory worker,Mob Factory,3,combat,8,51.0,5.0,1,-6.75,0,0,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9407,The factory worker,Mob Factory,3,combat,3,51.0,5.0,1,-6.75,0,0,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+9508,a panhandler,New Thalos,3,combat,1,51.0,5.0,1,-6.75,0,0,Npc Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9551,a harem girl,New Thalos,3,combat,8,51.0,5.0,1,-6.75,0,0,Npc Sentinel,Disarm Dodge Trip AssistVnum
+301,Sorbus the Hermit,Plains of the North,4,combat,1,66.0,6.0,2,-7.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+616,the pig,New Ofcol,4,combat,4,81.0,6.0,2,-7.75,0,0,Npc Sentinel Pet,Disarm Dodge Trip AssistVnum
+1105,a cow,The Shire,4,combat,3,81.0,6.0,2,-7.75,0,0,Npc StayArea Pet,Disarm Dodge Trip AssistVnum
+1109,a horse,The Shire,4,combat,4,81.0,6.0,2,-7.75,0,0,Npc Sentinel StayArea Pet,Disarm Dodge Trip AssistVnum
+1124,a local gossip,The Shire,4,combat,2,81.0,6.0,2,-7.75,0,0,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+1127,a chic urbanite,The Shire,4,combat,7,81.0,6.0,2,-7.75,0,0,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+1510,a large rat,Gnome Village,4,combat,1,61.0,6.0,2,-7.75,0,0,Npc Scavenger,Disarm Dodge Trip AssistVnum
+3502,the small boy,Miden'nir,4,combat,1,53.5,3.5,0,-6.5,0,0,Sentinel Wimpy,Kick
+3600,Henry the Gardener,Graveyard,4,combat,1,66.0,6.0,2,-7.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+3601,the rotting zombie,Graveyard,4,combat,1,66.0,6.0,2,-7.75,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+3605,the rotting zombie,Graveyard,4,combat,3,66.0,6.0,2,-7.75,1,0,Npc Aggressive,Disarm Dodge Trip AssistVnum
+3715,a juargan mountain bear,Mud School,4,combat,1,54.0,5.5,1,-9.0,0,1,StayArea NoAlign,Bash AssistRace
+3716,a blackforest pine wolf,Mud School,4,combat,1,54.0,5.5,0,-7.25,0,1,StayArea NoAlign,Trip AssistRace
+5002,The coral snake,Sands of Sorrow,4,combat,1,66.0,6.0,2,-7.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+5301,the pet lamia,Old Thalos,4,combat,20,81.0,6.0,2,-7.75,0,1,Npc Scavenger Wimpy,Disarm Dodge Trip AssistVnum
+5318,a beautiful masseuse,Old Thalos,4,combat,1,81.0,6.0,2,-7.75,0,1,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+5326,a harmless snake,Old Thalos,4,combat,2,81.0,6.0,2,-7.75,1,1,Npc Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+7006,the slithering snake,Sewer,4,combat,3,66.0,6.0,2,-7.75,1,0,Npc Aggressive,Disarm Dodge Trip AssistVnum
+7813,a wolf,Valley of the Elves,4,combat,3,71.0,6.0,2,-7.75,1,0,Npc Aggressive Wimpy,Disarm Dodge Trip AssistVnum
+8908,a harmless snake,Holy Grove,4,combat,1,66.0,6.0,2,-7.75,1,0,Npc Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9215,a flame,Elemental Canyon,4,combat,6,61.0,6.0,2,-7.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+9218,a small spark,Elemental Canyon,4,combat,8,61.0,6.0,2,-7.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+9301,a poor mudder,Galaxy,4,combat,1,81.0,6.0,2,-7.75,0,0,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+9405,The toxic slime,Mob Factory,4,combat,7,66.0,6.0,2,-7.75,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+9545,the old man,New Thalos,4,combat,2,66.0,6.0,2,-7.75,0,0,Npc Wimpy,Disarm Dodge Trip AssistVnum
+9567,a horse,New Thalos,4,combat,6,66.0,6.0,2,-7.75,0,0,Npc Scavenger StayArea Wimpy NoAlign,Disarm Dodge Trip AssistVnum
+9568,a tourist,New Thalos,4,combat,2,66.0,6.0,2,-7.75,0,0,Npc Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+11015,a field mouse,Crystalmir Lake,4,combat,2,61.0,6.0,2,-16.0,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+304,the citizen,Plains of the North,5,combat,2,81.0,6.0,2,-8.5,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+611,Farmer Sara,New Ofcol,5,combat,1,101.0,6.0,2,-8.5,0,1,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+613,the cow,New Ofcol,5,combat,3,101.0,6.0,2,-8.5,0,1,Npc Pet,Disarm Dodge Trip AssistVnum
+614,the elephant,New Ofcol,5,combat,2,101.0,6.0,2,-8.5,0,1,Npc Sentinel Pet Sentient,Disarm Dodge Trip AssistVnum
+617,the citizen,New Ofcol,5,combat,3,101.0,6.0,2,-8.5,0,1,Npc Wimpy,Disarm Dodge Trip AssistVnum
+618,the citizen,New Ofcol,5,combat,3,101.0,6.0,2,-8.5,0,1,Npc Wimpy,Disarm Dodge Trip AssistVnum
+621,the maid,New Ofcol,5,combat,3,101.0,6.0,2,-8.5,0,1,Npc Wimpy,Disarm Dodge Trip AssistVnum
+627,a page,New Ofcol,5,combat,1,101.0,6.0,2,-8.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+1104,a nursemaid,The Shire,5,combat,2,101.0,6.0,2,-8.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1115,the mill worker,The Shire,5,combat,6,101.0,6.0,2,-8.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1126,a trainee,The Shire,5,combat,3,101.0,6.0,2,-8.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1128,a country bumpkin,The Shire,5,combat,4,101.0,6.0,2,-8.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1501,a gnome woman,Gnome Village,5,combat,3,81.0,6.0,2,-8.5,0,1,Npc Scavenger bit4,Disarm Dodge Trip AssistVnum
+1513,a black bat,Gnome Village,5,combat,5,81.0,6.0,2,-8.5,0,1,Npc,Disarm Dodge Trip AssistVnum
+1520,a hobgoblin miner,Gnome Village,5,combat,3,81.0,6.0,2,-8.5,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+1524,a hermit,Gnome Village,5,combat,1,81.0,6.0,2,-8.5,1,1,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+1601,a killer frog,Wyvern Tower,5,combat,3,81.0,6.0,2,-8.5,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+2001,a bat,Dwarven Catacombs,5,combat,6,81.0,6.0,2,-8.5,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+2101,a gang member,Dangerous Neighbourhood,5,combat,23,81.0,6.0,2,-8.5,0,1,Npc Scavenger bit4 StayArea,Disarm Dodge Trip AssistVnum
+2102,a gang member,Dangerous Neighbourhood,5,combat,25,81.0,6.0,2,-8.5,0,1,Npc Scavenger bit4 StayArea,Disarm Dodge Trip AssistVnum
+2108,a pitbull,Dangerous Neighbourhood,5,combat,8,81.0,6.0,2,-8.5,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+2227,A human slave,Dragon Tower,5,combat,3,101.0,6.0,2,-8.5,0,1,Npc Sentinel,Bash Disarm Dodge Trip AssistVnum
+2242,the draconian fool,Dragon Tower,5,combat,3,101.0,6.0,2,-8.5,0,1,Npc StayArea Wimpy,Bash Disarm Dodge Trip AssistVnum
+2803,a baby troll,Troll Den,5,combat,4,81.0,6.0,2,-8.5,1,0,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+3063,the vagabond,Midgaard,5,combat,1,61.0,5.5,1,-8.25,0,,Scavenger Thief,Backstab KickDirt Trip AssistAlign
+3092,the beagle,Midgaard,5,combat,1,69.5,3.5,3,-9.0,0,,Sentinel NoAlign,Trip
+3701,an acidic blob,Mud School,5,combat,1,50.0,1.0,-5,-30.0,0,1,Sentinel StayArea,AreaAttack Trip
+3714,a Vricillian jungle beast,Mud School,5,combat,1,70.0,6.5,1,-9.25,1,1,Aggressive Warrior NoAlign,Disarm Parry Tail
+4701,the small dwarf,Kingdom of Juargan,5,combat,6,101.0,6.0,2,-8.5,0,0,Npc Scavenger,Disarm Dodge Trip AssistVnum
+5000,The dervish,Sands of Sorrow,5,combat,3,81.0,6.0,2,-8.5,0,0,Npc Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+5012,The dark dwarf,Sands of Sorrow,5,combat,1,81.0,6.0,2,-8.5,1,0,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+5017,The rabid camel,Sands of Sorrow,5,combat,1,81.0,6.0,2,-8.5,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+5300,the baby beholder,Old Thalos,5,combat,1,101.0,6.0,2,-8.5,0,1,Npc Sentinel Scavenger Wimpy,Disarm Dodge Trip AssistVnum
+5302,a citizen of Thalos,Old Thalos,5,combat,9,101.0,6.0,2,-8.5,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+5304,a female citizen of Thalos,Old Thalos,5,combat,9,101.0,6.0,2,-8.5,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+5319,a man,Old Thalos,5,combat,1,101.0,6.0,2,-8.5,0,1,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+5322,a doe,Old Thalos,5,combat,1,101.0,6.0,2,-8.5,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+6000,John the Lumberjack,Haon Dor,5,combat,1,81.0,6.0,2,-8.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+6100,the vicious warg,Haon Dor,5,combat,2,81.0,6.0,2,-8.5,1,1,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+6101,the ferocious warg,Haon Dor,5,combat,2,81.0,6.0,2,-8.5,1,1,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+6301,the young spider,Arachnos,5,combat,4,101.0,6.0,2,-8.5,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+6304,the orc,Arachnos,5,combat,1,101.0,6.0,2,-8.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+6606,the nanny,Dwarven Day Care,5,combat,2,52.0,4.5,1,-8.75,0,1,StayArea Sentient,Bash Berserk AssistRace
+7002,the great sewer rat,Sewer,5,combat,5,81.0,6.0,2,-8.5,1,1,Npc Aggressive,Disarm Dodge Trip AssistVnum
+7044,the lemure blob,Sewer,5,combat,1,81.0,6.0,2,-8.5,1,1,Npc Aggressive,Disarm Dodge Trip AssistVnum
+7800,a cooshee,Valley of the Elves,5,combat,6,81.0,6.0,2,-8.5,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+8000,a juve,Mega-City One,5,combat,4,101.0,6.0,2,-8.5,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+8904,a doe,Holy Grove,5,combat,1,81.0,6.0,2,-8.5,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9205,a small elemental,Elemental Canyon,5,combat,6,81.0,6.0,2,-8.5,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9223,a particle,Elemental Canyon,5,combat,4,81.0,6.0,2,-8.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9236,a little imp,Elemental Canyon,5,combat,7,81.0,6.0,2,-8.5,0,1,Npc Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9537,the tax collector,New Thalos,5,combat,1,81.0,6.0,2,-8.5,0,0,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9564,the mercenary,New Thalos,5,combat,1,81.0,6.0,2,-8.5,0,0,Npc Sentinel Warrior NoAlign,Disarm Dodge Trip AssistVnum
+9577,the giant hornet,New Thalos,5,combat,1,81.0,6.0,2,-8.5,1,0,Npc Aggressive StayArea NoAlign,Disarm Dodge Trip AssistVnum
+10073,the dart players,Wolf Pointe,5,combat,1,49.0,5.5,2,-13.5,0,,Sentinel StayArea,AssistVnum
+10083,a little boy,Wolf Pointe,5,combat,1,52.0,3.0,0,-5.0,0,,Scavenger StayArea Wimpy,Berserk
+10084,the small puppy dog,Wolf Pointe,5,combat,1,52.0,6.0,2,-5.0,0,,Scavenger StayArea Wimpy,Berserk
+10085,a little girl,Wolf Pointe,5,combat,1,52.0,5.0,1,-5.0,0,,Scavenger StayArea Wimpy,Berserk
+10086,a small kitten,Wolf Pointe,5,combat,1,52.0,8.0,2,-5.0,0,,Scavenger StayArea Wimpy,Berserk
+10457,rancid turkey leg,Descent to Hell,5,combat,1,101.0,6.0,2,-16.0,0,0,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+11006,Farm worker,Crystalmir Lake,5,combat,1,81.0,6.0,2,-16.0,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+11010,strange fish,Crystalmir Lake,5,combat,12,81.0,6.0,2,-16.0,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+11013,Old pooh bear,Crystalmir Lake,5,combat,1,81.0,6.0,2,-16.0,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+11014,a large rat,Crystalmir Lake,5,combat,3,81.0,6.0,2,-16.0,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+303,the citizen,Plains of the North,6,combat,2,126.0,7.0,3,-8.5,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+609,Granny Jenkins,New Ofcol,6,combat,1,139.0,7.0,3,-8.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+615,the young horse,New Ofcol,6,combat,4,139.0,7.0,3,-8.5,1,1,Npc Aggressive Wimpy Pet,Disarm Dodge Trip AssistVnum
+625,a servant,New Ofcol,6,combat,2,139.0,7.0,3,-8.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+912,A serving boy,Olympus,6,combat,2,139.0,7.0,3,-8.5,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+923,A citizen,Olympus,6,combat,7,139.0,7.0,3,-8.5,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+1108,a bull,The Shire,6,combat,1,139.0,7.0,3,-8.5,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+1114,the Miller,The Shire,6,combat,1,139.0,7.0,3,-8.5,0,1,Npc Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1125,a halfling beauty,The Shire,6,combat,1,139.0,7.0,3,-8.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1502,a gnome man,Gnome Village,6,combat,3,126.0,7.0,3,-8.5,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+1511,a giant rat,Gnome Village,6,combat,1,126.0,7.0,3,-8.5,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+1516,the hobgoblin guard,Gnome Village,6,never spawns,0,126.0,7.0,3,-8.5,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+1702,a trapper,Wyvern Tower,6,combat,2,126.0,7.0,3,-8.5,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+1712,an old centaur,Wyvern Tower,6,combat,3,126.0,7.0,3,-8.5,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+2206,a concubine,Dragon Tower,6,combat,4,139.0,7.0,3,-8.5,0,1,Npc Sentinel,Bash Disarm Dodge Trip AssistVnum
+2801,the young troll,Troll Den,6,combat,2,126.0,7.0,3,-8.5,1,0,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+3416,The half-decomposed body,Chapel Catacombs,6,combat,4,139.0,7.0,3,-8.5,1,0,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+3501,the goblin,Miden'nir,6,combat,6,75.0,6.0,1,-9.25,1,1,Aggressive StayArea Warrior,Parry AssistRace
+3602,the ghastly ghoul,Graveyard,6,combat,1,126.0,7.0,3,-8.5,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+5013,the myconoid,Sands of Sorrow,6,combat,1,126.0,7.0,3,-8.5,0,0,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+5316,a young scholar,Old Thalos,6,combat,1,139.0,7.0,3,-8.5,0,1,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+5323,a deer,Old Thalos,6,combat,2,139.0,7.0,3,-8.5,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+5329,bard of Thalos,Old Thalos,6,combat,2,139.0,7.0,3,-8.5,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+5333,the beastly fido,Old Thalos,6,combat,1,126.0,7.0,3,-8.5,1,1,Npc Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+6303,the Wolf Spider,Arachnos,6,combat,1,139.0,7.0,3,-8.5,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+6306,the drone spider,Arachnos,6,combat,3,139.0,7.0,3,-8.5,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+7046,Herald,Sewer,6,combat,1,126.0,7.0,3,-8.5,0,1,Npc Scavenger,Bash Disarm Dodge Trip AssistVnum
+7202,the junior mindflayer,Sewer,6,combat,2,126.0,7.0,3,-8.5,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+7203,the ugly wererat,Sewer,6,combat,10,126.0,7.0,3,-8.5,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+7805,a valley elf scout,Valley of the Elves,6,combat,5,126.0,7.0,3,-8.5,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+7806,a valley elf,Valley of the Elves,6,combat,5,126.0,7.0,3,-8.5,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+7814,an antelope,Valley of the Elves,6,combat,3,126.0,7.0,3,-8.5,0,1,Npc Wimpy,Disarm Dodge Trip AssistVnum
+8905,a deer,Holy Grove,6,combat,1,126.0,7.0,3,-8.5,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9222,an elemental mist,Elemental Canyon,6,combat,4,121.0,7.0,2,-8.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9224,a dust cloud,Elemental Canyon,6,combat,4,109.0,7.0,2,-8.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9401,The mutant beastly fido,Mob Factory,6,combat,4,126.0,7.0,3,-8.5,1,1,Npc Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9408,A large rat,Mob Factory,6,combat,1,126.0,7.0,0,-18.0,1,1,Scavenger Aggressive StayArea,Disarm Dodge Fast Trip AssistVnum
+11011,hobgoblin flunky,Crystalmir Lake,6,combat,4,126.0,7.0,3,-16.75,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+626,a squire,New Ofcol,7,combat,2,162.0,9.0,3,-9.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+1102,Farmer Gamgee,The Shire,7,combat,1,162.0,9.0,3,-9.5,0,1,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+1311,a broom,High Tower of Sorcery,7,combat,2,162.0,9.0,3,-9.5,1,0,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1315,a young apprentice magic user,High Tower of Sorcery,7,combat,2,162.0,9.0,3,-9.5,0,0,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1316,a young apprentice,High Tower of Sorcery,7,combat,2,162.0,9.0,3,-9.5,0,0,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1317,a young apprentice,High Tower of Sorcery,7,combat,2,162.0,9.0,3,-9.5,0,0,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1318,A young apprentice,High Tower of Sorcery,7,combat,3,162.0,9.0,3,-9.5,0,0,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1503,a gnome scientist,Gnome Village,7,combat,3,142.0,9.0,3,-9.5,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+1514,the zombie gnome,Gnome Village,7,combat,5,142.0,9.0,3,-9.5,0,1,Npc,Disarm Dodge Trip AssistVnum
+1518,the hobgoblin bodyguard,Gnome Village,7,combat,5,152.0,9.0,3,-9.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1526,the cook,Gnome Village,7,combat,1,152.0,9.0,3,-9.5,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+1710,a centaur,Wyvern Tower,7,combat,3,146.0,9.0,3,-9.5,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+1711,a centaur,Wyvern Tower,7,combat,2,146.0,9.0,3,-9.5,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+2002,a templar page,Dwarven Catacombs,7,combat,8,142.0,9.0,3,-9.5,0,0,Npc Wimpy,Disarm Dodge Trip AssistVnum
+2105,a doll,Dangerous Neighbourhood,7,combat,4,146.0,9.0,3,-9.5,0,1,Npc Scavenger bit4 StayArea Wimpy,Disarm Dodge Trip AssistVnum
+2200,the dragon hatchling,Dragon Tower,7,combat,5,162.0,9.0,3,-9.5,0,1,Npc Sentinel StayArea,Bash Disarm Dodge Trip AssistVnum
+2800,the guardian beast,Troll Den,7,combat,2,146.0,9.0,3,-9.5,1,0,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+2807,the roving beast,Troll Den,7,combat,1,146.0,9.0,3,-9.5,1,0,Npc Sentinel Scavenger Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+3093,the rottweiler,Midgaard,7,combat,1,93.0,6.0,3,-10.0,0,,Sentinel NoAlign,Bash Berserk Rescue
+3506,the goblin lieutenant,Miden'nir,7,combat,2,106.5,6.5,1,-10.25,1,1,Aggressive StayArea Warrior,Berserk Parry Trip AssistRace
+4700,the small dwarf,Kingdom of Juargan,7,combat,10,162.0,9.0,3,-9.5,0,0,Npc Scavenger,Disarm Dodge Trip AssistVnum
+5015,The dustdigger,Sands of Sorrow,7,combat,4,152.0,9.0,3,-9.5,1,0,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+5111,the drow scout,Drow City,7,combat,2,162.0,9.0,3,-9.5,1,0,Npc Aggressive Wimpy,Disarm Dodge Trip AssistVnum
+5330,bard of Thalos,Old Thalos,7,combat,1,162.0,9.0,3,-9.5,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+6311,the Hermit,Arachnos,7,combat,1,162.0,9.0,3,-9.5,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+7803,a valley elf sentry,Valley of the Elves,7,combat,4,146.0,9.0,3,-9.5,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+7804,a valley elf sentry,Valley of the Elves,7,combat,1,146.0,9.0,3,-9.5,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+9221,a mud monster,Elemental Canyon,7,combat,4,162.0,9.0,3,-9.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9530,Mustafah,New Thalos,7,combat,1,146.0,9.0,3,-9.5,0,0,Npc Scavenger StayArea Wimpy Thief,Disarm Dodge Trip AssistVnum
+9535,the skinny kid,New Thalos,7,combat,3,146.0,9.0,3,-9.5,0,0,Npc Scavenger Wimpy Thief,Disarm Dodge Trip AssistVnum
+9542,the wandering prophet,New Thalos,7,combat,7,146.0,9.0,3,-9.5,0,0,Npc Wimpy,Disarm Dodge Trip AssistVnum
+11004,Baaz Draconian,Crystalmir Lake,7,combat,1,152.0,9.0,3,-16.75,0,1,Npc Sentinel StayArea,Bash Disarm Dodge Trip AssistVnum
+11007,Barracuda,Crystalmir Lake,7,combat,6,146.0,9.0,3,-16.75,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+11009,Farmer's guard dog,Crystalmir Lake,7,combat,1,146.0,9.0,3,-16.75,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+112,Azreal,Smurf Village,8,combat,1,173.0,10.0,3,-9.5,0,1,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+925,A Cook,Olympus,8,combat,2,185.0,10.0,4,-9.5,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+1110,a shiriff,The Shire,8,combat,8,185.0,10.0,4,-9.5,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+1111,a shiriff,The Shire,8,combat,4,185.0,10.0,4,-9.5,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+1123,a seasoned adventurer,The Shire,8,combat,5,185.0,10.0,4,-9.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1132,a shiriff,The Shire,8,never spawns,0,185.0,10.0,4,-9.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1301,a lost adventurer,High Tower of Sorcery,8,combat,1,185.0,10.0,4,-9.5,0,0,Npc Sentinel Scavenger Wimpy,Disarm Dodge Trip AssistVnum
+1320,a student,High Tower of Sorcery,8,combat,4,185.0,10.0,4,-9.5,0,0,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1322,a student of spells,High Tower of Sorcery,8,combat,4,185.0,10.0,4,-9.5,0,0,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1345,a cloth golem,High Tower of Sorcery,8,combat,1,185.0,10.0,4,-9.5,0,0,Npc Sentinel Scavenger StayArea,Disarm Dodge Trip AssistVnum
+1504,a gnome guard,Gnome Village,8,combat,5,165.0,10.0,3,-9.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1507,a small troll,Gnome Village,8,combat,1,170.0,10.0,3,-9.5,1,1,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+1704,a hunter,Wyvern Tower,8,combat,2,170.0,10.0,4,-9.5,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+2003,a spelunker,Dwarven Catacombs,8,combat,2,175.0,10.0,3,-9.5,0,0,Npc Scavenger Wimpy,Bash Disarm Dodge Trip AssistVnum
+2106,a patrolman,Dangerous Neighbourhood,8,combat,10,170.0,10.0,4,-9.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+2802,the medium troll,Troll Den,8,combat,1,170.0,10.0,4,-9.5,1,0,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+2808,the medium troll,Troll Den,8,combat,1,170.0,10.0,4,-9.5,1,0,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+3005,the thief,Midgaard,8,combat,2,107.0,4.0,1,-11.0,0,,Scavenger Wimpy Thief,Disarm Dodge KickDirt Trip
+3500,the wyvern,Miden'nir,8,combat,2,116.0,8.0,2,-10.0,0,1,StayArea,Berserk Trip AssistRace
+3504,the bard,Miden'nir,8,combat,1,116.5,7.0,3,-10.75,0,1,Sentinel Thief Warrior,Dodge Kick KickDirt Parry Trip AssistAlign
+3505,the dark horseman,Miden'nir,8,combat,2,116.5,8.0,2,-10.75,0,1,StayArea Wimpy Thief,Backstab Dodge KickDirt Parry AssistAlign
+4705,the duergar dwarf,Kingdom of Juargan,8,combat,10,185.0,10.0,4,-9.5,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+5001,The dervish,Sands of Sorrow,8,combat,1,165.0,10.0,3,-9.5,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+5011,The drider,Sands of Sorrow,8,combat,1,169.0,10.0,3,-9.5,1,0,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+5014,The myconoid shaman,Sands of Sorrow,8,combat,1,175.0,10.0,3,-9.5,0,0,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+5315,the librarian,Old Thalos,8,combat,1,185.0,10.0,4,-9.5,0,1,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+5324,a stag,Old Thalos,8,combat,1,185.0,10.0,4,-9.5,1,1,Npc Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+6002,the brown bear,Haon Dor,8,combat,1,170.0,10.0,4,-9.5,1,1,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+6308,the slave of Arachnos,Arachnos,8,combat,5,185.0,10.0,4,-9.5,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+6318,"the huge, poisonous spider",Arachnos,8,combat,3,185.0,10.0,4,-9.5,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+6507,the dwarven miner,Dwarven Kingdom,8,combat,3,185.0,10.0,4,-9.5,0,0,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+6607,the armed guard,Dwarven Day Care,8,combat,1,116.5,7.0,1,-11.0,0,0,Sentinel Scavenger Warrior,Bash Berserk KickDirt AssistRace
+7004,the giant earth beetle,Sewer,8,combat,1,170.0,10.0,4,-9.5,0,1,Npc,Disarm Dodge Trip AssistVnum
+7201,the senior mindflayer,Sewer,8,combat,1,170.0,10.0,4,-9.5,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+7801,a valley elf,Valley of the Elves,8,combat,6,170.0,10.0,4,-9.5,1,1,Npc Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+7802,a valley elf,Valley of the Elves,8,combat,6,170.0,10.0,4,-9.5,1,1,Npc Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+8314,a marsh wolf,Old Marsh,8,combat,6,185.0,10.0,4,-9.5,1,0,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+8600,the keeper,Machine Dreams,8,combat,1,185.0,10.0,4,-9.5,0,0,Npc,Disarm Dodge Trip AssistVnum
+8906,a stag,Holy Grove,8,combat,1,170.0,10.0,3,-9.5,1,1,Npc Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9000,the tridrone,Nirvana,8,combat,5,111.5,9.0,0,-11.0,0,0,Scavenger StayArea,Trip
+9214,a puddle,Elemental Canyon,8,combat,8,161.0,10.0,4,-9.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9220,a lava beast,Elemental Canyon,8,combat,4,161.0,10.0,4,-9.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9302,a beautiful star,Galaxy,8,combat,7,185.0,10.0,4,-9.5,0,0,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9548,the lamia,New Thalos,8,combat,1,170.0,10.0,4,-9.5,1,0,Npc Scavenger Aggressive Mage Warrior,Disarm Dodge Trip AssistVnum
+9570,the cryohydra,New Thalos,8,combat,1,170.0,10.0,4,-9.5,1,0,Npc Aggressive StayArea Warrior bit22,Disarm Dodge Trip AssistVnum
+9571,the minotaur lizard,New Thalos,8,combat,1,170.0,10.0,4,-9.5,1,0,Npc Aggressive StayArea Warrior,Disarm Dodge Trip AssistVnum
+9572,the death dog,New Thalos,8,combat,5,170.0,10.0,4,-9.5,1,0,Npc Aggressive StayArea NoAlign,Disarm Dodge Trip AssistVnum
+9573,the spotted lion,New Thalos,8,combat,1,170.0,10.0,4,-9.5,1,0,Npc Aggressive StayArea NoAlign,Disarm Dodge Trip AssistVnum
+1300,a shadow guardian,High Tower of Sorcery,9,combat,5,208.0,10.0,4,-10.25,1,0,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1312,a pair of disembodied hands,High Tower of Sorcery,9,combat,7,208.0,10.0,4,-10.25,1,0,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1324,a student of spells,High Tower of Sorcery,9,combat,3,208.0,10.0,4,-10.25,0,0,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1326,a young mage,High Tower of Sorcery,9,combat,3,208.0,10.0,4,-10.25,0,0,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1602,the stone gargoyle,Wyvern Tower,9,combat,6,191.0,10.0,4,-10.25,1,1,Npc Sentinel Aggressive StayArea Wimpy,Bash Disarm Dodge Trip AssistVnum
+1606,a carnivorous plant,Wyvern Tower,9,combat,1,191.0,10.0,4,-10.25,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1714,an elder centaur,Wyvern Tower,9,combat,3,191.0,10.0,4,-10.25,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+2004,a graverobber,Dwarven Catacombs,9,combat,4,191.0,10.0,4,-10.25,1,0,Npc Scavenger Aggressive,Bash Disarm Dodge Trip AssistVnum
+2240,a Draconian zombie,Dragon Tower,9,combat,5,208.0,10.0,4,-10.25,1,1,Npc Sentinel Scavenger Aggressive,Bash Disarm Dodge Trip AssistVnum
+3094,the wolf,Midgaard,9,combat,1,113.0,7.0,3,-10.0,0,,Sentinel NoAlign,Bash
+3507,the goblin leader,Miden'nir,9,combat,1,126.5,9.5,2,-12.25,1,1,Scavenger Aggressive StayArea Warrior,Berserk KickDirt Parry Trip AssistRace
+5201,The lamia,Thalos,9,combat,12,186.0,10.0,4,-10.25,1,0,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+6509,the dwarven doctor,Dwarven Kingdom,9,combat,1,208.0,10.0,4,-10.25,0,0,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+6511,the dwarf,Dwarven Kingdom,9,combat,6,208.0,10.0,4,-10.25,0,0,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+6512,the unwanted son,Dwarven Kingdom,9,combat,2,208.0,10.0,4,-10.25,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+8312,the Marsh Hag,Old Marsh,9,combat,2,208.0,10.0,4,-10.25,0,0,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+9219,a small blob of acid,Elemental Canyon,9,combat,4,181.0,10.0,3,-10.25,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9314,a baby draco,Galaxy,9,combat,2,208.0,10.0,4,-10.25,0,0,Npc Scavenger StayArea Wimpy,Bash Disarm Dodge Trip AssistVnum
+9403,The Cityguard head,Mob Factory,9,combat,7,188.0,10.0,4,-10.25,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9531,Fatima,New Thalos,9,combat,1,186.0,10.0,4,-10.25,0,0,Npc Scavenger StayArea Wimpy Mage NoAlign,Disarm Dodge Trip AssistVnum
+9549,the raggety dervish,New Thalos,9,combat,1,190.0,10.0,4,-10.25,1,0,Npc bit4 Aggressive Mage,Disarm Dodge Trip AssistVnum
+9575,the chimera,New Thalos,9,combat,1,190.0,10.0,4,-10.25,1,0,Npc Sentinel Aggressive Warrior,Disarm Dodge Trip AssistVnum
+10094,wolf pup,Wolf Pointe,9,combat,1,113.0,7.0,3,-20.0,0,,Sentinel NoAlign,Bash
+110,Papa Smurf,Smurf Village,10,combat,1,186.0,11.0,4,-11.25,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+111,Gargamel,Smurf Village,10,combat,1,186.0,11.0,4,-11.25,0,1,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+201,a wedding outfitter,Wedding Rites,10,service,1,100.0,8.0,6,-18.0,0,,Sentinel NoPurge,
+202,a barman,Wedding Rites,10,service,1,100.0,8.0,6,-18.0,0,,Sentinel NoPurge,
+350,the pet dragon,Plains of the North,10,combat,1,216.0,11.0,5,-11.25,0,1,Npc Sentinel Wimpy,Bash Disarm Dodge Trip AssistVnum
+1304,a mage,High Tower of Sorcery,10,combat,7,231.0,11.0,5,-11.25,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1335,a dancing sword,High Tower of Sorcery,10,combat,1,231.0,11.0,5,-11.25,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1521,the treasurer,Gnome Village,10,combat,1,211.0,11.0,4,-11.25,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+1603,an angry gargoyle,Wyvern Tower,10,combat,3,216.0,11.0,5,-11.25,1,1,Npc Scavenger Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+1607,a gruesome ogre,Wyvern Tower,10,combat,1,216.0,11.0,5,-11.25,1,1,Npc Sentinel Scavenger Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+1608,a shadow,Wyvern Tower,10,combat,1,216.0,11.0,5,-11.25,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1715,a centaur guard,Wyvern Tower,10,combat,2,216.0,11.0,5,-11.25,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1720,a displacer beast,Wyvern Tower,10,never spawns,0,216.0,11.0,5,-11.25,0,1,Npc Wimpy,Disarm Dodge Trip AssistVnum
+1916,An imprisoned githzerai,The Astral Plane,10,combat,1,231.0,11.0,5,-17.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+2005,some mist,Dwarven Catacombs,10,combat,9,211.0,11.0,4,-11.25,0,1,Npc,Disarm Dodge Trip AssistVnum
+2006,It,Dwarven Catacombs,10,combat,7,211.0,11.0,4,-11.25,1,1,Npc Aggressive,Disarm Dodge Trip AssistVnum
+2104,a bruiser,Dangerous Neighbourhood,10,combat,5,216.0,11.0,4,-11.25,1,1,Npc Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+2107,a vandal,Dangerous Neighbourhood,10,combat,4,216.0,11.0,4,-11.25,0,1,Npc Wimpy,Disarm Dodge Trip AssistVnum
+2241,the phase dragon,Dragon Tower,10,combat,1,231.0,11.0,5,-11.25,1,1,Npc Scavenger Aggressive StayArea Wimpy,Bash Disarm Dodge Trip AssistVnum
+2307,the Ogre Villager,The Keep of Mahn-Tor,10,combat,5,231.0,11.0,5,-11.25,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+3503,the Innkeeper,Miden'nir,10,combat,1,206.5,10.0,1,-11.5,0,1,Sentinel Warrior,Backstab Dodge Parry AssistAlign
+4702,the dwarf guard,Kingdom of Juargan,10,combat,11,231.0,11.0,5,-11.25,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+4703,Yentle the dwarf,Kingdom of Juargan,10,combat,1,231.0,11.0,5,-11.25,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+5008,The nomad warrior,Sands of Sorrow,10,combat,1,211.0,11.0,5,-11.25,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+5101,the drow commoner,Drow City,10,combat,2,231.0,11.0,5,-11.25,1,0,Npc bit3 Aggressive StayArea,Disarm Dodge Trip AssistVnum
+5306,the fanatic priest,Old Thalos,10,combat,1,231.0,11.0,5,-11.25,0,1,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+5327,a druid,Old Thalos,10,combat,2,231.0,11.0,5,-11.25,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+5328,a druidess,Old Thalos,10,combat,2,231.0,11.0,5,-11.25,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+6115,Shargugh,Haon Dor,10,combat,1,216.0,11.0,4,-11.25,0,1,Npc Scavenger bit4 Wimpy,Disarm Dodge Trip AssistVnum
+6307,the ethereal spider,Arachnos,10,combat,2,231.0,11.0,5,-11.25,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+6309,the quasit,Arachnos,10,combat,1,231.0,11.0,5,-11.25,0,1,Npc Scavenger bit4 Wimpy,Disarm Dodge Trip AssistVnum
+6316,the young dragon wormkin,Arachnos,10,combat,1,231.0,11.0,5,-11.25,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+6513,the unwanted daughter,Dwarven Kingdom,10,combat,2,231.0,11.0,5,-11.25,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+7007,the evil wanderer,Sewer,10,combat,1,216.0,11.0,4,-11.25,0,1,Npc Scavenger Wimpy,Bash Disarm Dodge Trip AssistVnum
+7011,the shadowy morkoth,Sewer,10,combat,1,216.0,11.0,4,-11.25,1,1,Npc Aggressive Wimpy,Disarm Dodge Trip AssistVnum
+7045,Jones,Sewer,10,combat,1,216.0,11.0,5,-11.25,1,1,Npc Scavenger Aggressive,Bash Disarm Dodge Trip AssistVnum
+8001,a punk,Mega-City One,10,combat,3,231.0,11.0,5,-11.25,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+8004,a dunk,Mega-City One,10,combat,3,231.0,11.0,5,-11.25,0,1,Npc Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+8308,the Will-O-Wisp,Old Marsh,10,combat,1,231.0,11.0,5,-11.25,0,0,Npc Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+8909,a druid,Holy Grove,10,combat,2,216.0,11.0,4,-11.25,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+8910,a druidess,Holy Grove,10,combat,2,216.0,11.0,4,-11.25,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9206,a medium elemental,Elemental Canyon,10,combat,4,201.0,11.0,5,-11.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9303,a young nebula,Galaxy,10,combat,4,231.0,11.0,5,-11.25,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+9304,a speedy comet,Galaxy,10,combat,3,231.0,11.0,5,-11.25,1,0,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+9520,a construction worker,New Thalos,10,combat,2,216.0,11.0,5,-11.25,0,1,Npc Sentinel StayArea Warrior,Disarm Dodge Trip AssistVnum
+9533,A nomad merchant,New Thalos,10,combat,6,216.0,11.0,4,-11.25,1,1,Npc Scavenger Aggressive Wimpy Warrior,Disarm Dodge Trip AssistVnum
+9561,the sultan's guard,New Thalos,10,combat,12,216.0,11.0,4,-11.25,0,1,Npc StayArea Wimpy Warrior,Disarm Dodge Trip AssistVnum
+9562,the sultans guard,New Thalos,10,combat,8,216.0,11.0,4,-11.25,0,1,Npc Sentinel StayArea Warrior,Disarm Dodge Trip AssistVnum
+9578,the pegasus,New Thalos,10,combat,1,231.0,11.0,5,-11.25,0,1,Npc Sentinel Wimpy NoAlign,Disarm Dodge Trip AssistVnum
+9588,the mimic,New Thalos,10,combat,1,216.0,11.0,5,-11.25,0,1,Npc Sentinel Mage,Disarm Dodge Trip AssistVnum
+9592,the bodyguard,New Thalos,10,combat,9,216.0,11.0,4,-11.25,0,1,Npc Warrior,Disarm Dodge Trip AssistVnum
+9598,the pony,New Thalos,10,combat,1,231.0,11.0,3,-18.75,0,1,Pet CanBeRidden,Bash Disarm Dodge Tail Trip Crush AssistVnum
+10068,the white Wolf pup,Wolf Pointe,10,combat,1,130.0,12.5,5,-15.0,0,,Wimpy NoAlign,Trip
+10072,the recycler,Wolf Pointe,10,combat,1,130.0,14.0,5,-14.25,0,,Scavenger StayArea Wimpy,Disarm Trip
+11005,The Farmer,Crystalmir Lake,10,combat,1,216.0,11.0,4,-17.75,0,1,Npc,Disarm Dodge Trip AssistVnum
+1308,The cook's assistant,High Tower of Sorcery,11,combat,1,276.0,12.5,5,-11.25,0,1,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+2007,a skeleton,Dwarven Catacombs,11,combat,4,256.0,12.5,5,-11.25,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+2805,the large female troll,Troll Den,11,combat,1,256.0,12.5,5,-11.25,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+5202,The mimic,Thalos,11,combat,1,256.0,12.5,5,-11.25,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+5203,The mimic,Thalos,11,combat,1,256.0,12.5,5,-11.25,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+5204,The mimic,Thalos,11,combat,1,256.0,12.5,5,-11.25,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+5205,The mimic,Thalos,11,combat,1,256.0,12.5,5,-11.25,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+5206,The mimic,Thalos,11,combat,1,256.0,12.5,5,-11.25,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+7008,the homonculus,Sewer,11,combat,1,261.0,12.5,5,-11.25,0,1,Npc,Disarm Dodge Trip AssistVnum
+8310,a large snake,Old Marsh,11,combat,2,276.0,12.5,5,-11.25,1,0,Npc Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9001,the quadrone,Nirvana,11,combat,3,147.0,9.5,3,-14.0,1,0,Aggressive StayArea Warrior,Bash Disarm Parry
+9312,the Pleiades,Galaxy,11,combat,7,276.0,12.5,5,-11.25,0,0,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9529,Aziz,New Thalos,11,combat,1,251.0,12.5,5,-11.25,0,1,Npc Scavenger StayArea Wimpy Cleric,Disarm Dodge Trip AssistVnum
+610,Jack,New Ofcol,12,combat,1,301.0,13.5,6,-12.0,1,1,Npc Sentinel Aggressive Wimpy,Disarm Dodge Trip AssistVnum
+1113,the Innkeeper,The Shire,12,service,1,301.0,13.5,6,-12.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1130,the Innkeeper,The Shire,12,service,1,301.0,13.5,6,-12.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1131,the receptionist,The Shire,12,combat,1,301.0,13.5,6,-12.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1314,the mage,High Tower of Sorcery,12,combat,1,301.0,13.5,6,-12.0,0,1,Npc Sentinel Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1344,a flesh golem,High Tower of Sorcery,12,combat,1,301.0,13.5,6,-12.0,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1515,the fire bat,Gnome Village,12,combat,1,281.0,13.5,5,-12.0,1,1,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+1519,the king of the hobgoblins,Gnome Village,12,combat,1,281.0,13.5,5,-12.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1604,the elite gargoyle,Wyvern Tower,12,combat,2,271.0,13.5,6,-12.0,0,1,Npc Sentinel Scavenger,Bash Disarm Dodge Trip AssistVnum
+1609,an evil wight,Wyvern Tower,12,combat,1,271.0,13.5,6,-12.0,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1706,a ranger,Wyvern Tower,12,combat,1,271.0,13.5,6,-12.0,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+1716,the centaur chief,Wyvern Tower,12,combat,1,271.0,13.5,6,-12.0,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+2008,a templar,Dwarven Catacombs,12,combat,12,281.0,13.5,6,-12.0,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+2009,a mysterious wraith,Dwarven Catacombs,12,combat,2,281.0,13.5,6,-12.0,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+3142,the secretary,Midgaard,12,combat,1,174.0,9.0,2,-13.0,0,,Sentinel,Dodge Fast Kick
+5007,The nomad commander,Sands of Sorrow,12,combat,1,281.0,13.5,5,-12.0,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+5102,the drow warrior noble,Drow City,12,combat,4,301.0,13.5,6,-12.0,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+5110,the drow guard,Drow City,12,combat,2,301.0,13.5,6,-12.0,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+6305,the Queen Wasp,Arachnos,12,combat,1,301.0,13.5,6,-12.0,1,1,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+6501,the dwarven worker,Dwarven Kingdom,12,combat,3,301.0,13.5,6,-12.0,0,1,Npc StayArea Sentient,Disarm Dodge Trip AssistVnum
+7000,the horrifying Mudmonster,Sewer,12,combat,6,271.0,13.5,6,-12.0,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+7010,the evil chreffn,Sewer,12,combat,1,271.0,13.5,6,-12.0,0,1,Npc Scavenger Wimpy,Disarm Dodge Trip AssistVnum
+7013,the horrifying mudmonster,Sewer,12,combat,3,271.0,13.5,5,-12.0,1,1,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+7042,the guardian naga,Sewer,12,combat,1,271.0,13.5,6,-12.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+7204,the gigantic rat,Sewer,12,combat,1,271.0,13.5,5,-12.0,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+8319,the orc shaman,Old Marsh,12,never spawns,0,301.0,13.5,6,-12.0,1,0,Npc Sentinel Scavenger bit3 Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+8321,a gargoyle,Old Marsh,12,combat,2,301.0,13.5,6,-12.0,1,0,Npc Sentinel Scavenger bit3 Aggressive StayArea,Disarm Dodge Trip AssistVnum
+9233,an illusionist,Elemental Canyon,12,combat,3,271.0,13.5,5,-12.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9402,Foreman Floyd,Mob Factory,12,combat,1,281.0,13.5,6,-12.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9532,Kareem,New Thalos,12,combat,1,271.0,13.5,6,-12.0,0,1,Npc Scavenger StayArea Wimpy Warrior,Disarm Dodge Trip AssistVnum
+9534,A bodyguard,New Thalos,12,never spawns,0,271.0,13.5,5,-12.0,0,1,Npc StayArea Warrior,Bash Disarm Dodge Trip AssistVnum
+9536,the dockworker,New Thalos,12,combat,7,271.0,13.5,5,-12.0,0,1,Npc StayArea Warrior,Bash Disarm Dodge Trip AssistVnum
+9574,the behir,New Thalos,12,combat,1,271.0,13.5,6,-12.0,1,1,Npc Sentinel Aggressive Warrior,Disarm Dodge Trip AssistVnum
+9586,the nightmare,New Thalos,12,combat,1,271.0,13.5,5,-12.0,0,1,Npc Sentinel StayArea Warrior NoAlign,Disarm Dodge Trip AssistVnum
+9587,the wolverine,New Thalos,12,combat,1,271.0,13.5,5,-12.0,0,1,Npc Sentinel bit4 Warrior NoAlign bit22,Disarm Dodge Trip AssistVnum
+11002,Fewmaster Toede,Crystalmir Lake,12,combat,1,281.0,13.5,6,-18.75,1,1,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+300,Aruncus the Druid,Plains of the North,13,combat,1,311.0,16.0,6,-13.0,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+624,a bard,New Ofcol,13,combat,1,326.0,16.0,6,-13.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1605,the gargoyle shaman,Wyvern Tower,13,combat,1,311.0,16.0,6,-13.0,0,1,Npc Sentinel Scavenger StayArea,Bash Disarm Dodge Trip AssistVnum
+2010,the templar officer,Dwarven Catacombs,13,combat,6,306.0,16.0,6,-13.0,1,1,Npc Aggressive,Disarm Dodge Trip AssistVnum
+2011,zombie,Dwarven Catacombs,13,combat,4,306.0,16.0,6,-13.0,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+2103,the gang leader,Dangerous Neighbourhood,13,combat,2,306.0,16.0,5,-13.0,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+2201,the Draconian,Dragon Tower,13,combat,5,326.0,16.0,6,-13.0,1,1,Npc Sentinel Scavenger Aggressive,Bash Disarm Dodge Trip AssistVnum
+2804,the giant troll,Troll Den,13,combat,1,306.0,16.0,5,-13.0,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+6317,the medium dragon wormkin,Arachnos,13,combat,1,326.0,16.0,6,-13.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+7043,the scaled basilisk,Sewer,13,combat,1,311.0,16.0,6,-13.0,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+8318,a shambling mound,Old Marsh,13,combat,2,326.0,16.0,6,-13.0,0,0,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+8902,an elder druid,Holy Grove,13,combat,1,306.0,16.0,6,-13.0,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+8903,an elder druidess,Holy Grove,13,combat,1,306.0,16.0,6,-13.0,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9234,an alchemist,Elemental Canyon,13,combat,2,306.0,16.0,6,-13.0,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+911,an apprentice musician,Olympus,14,combat,2,351.0,17.0,7,-13.0,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+924,a pegasus,Olympus,14,combat,2,351.0,17.0,7,-13.0,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+1112,the Thain,The Shire,14,combat,1,351.0,17.0,7,-13.0,0,1,Npc StayArea Sentient,Disarm Dodge Trip AssistVnum
+1321,an instructor of magic,High Tower of Sorcery,14,combat,1,351.0,17.0,7,-13.0,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1330,a scribe,High Tower of Sorcery,14,combat,1,351.0,17.0,7,-13.0,0,1,Npc Sentinel Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1512,the troll,Gnome Village,14,combat,1,331.0,17.0,6,-13.0,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+1610,A burly minotaur,Wyvern Tower,14,combat,2,321.0,17.0,7,-13.0,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+2012,the shadow,Dwarven Catacombs,14,combat,1,331.0,17.0,6,-13.0,0,1,Npc,Disarm Dodge Trip AssistVnum
+2303,the Rock Toad,The Keep of Mahn-Tor,14,combat,4,351.0,17.0,7,-13.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+5006,The nomad leader,Sands of Sorrow,14,combat,1,331.0,17.0,6,-13.0,0,1,Npc StayArea Wimpy Sentient,Disarm Dodge Trip AssistVnum
+6310,the Bird Spider,Arachnos,14,combat,1,351.0,17.0,7,-13.0,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+7041,the sea hag,Sewer,14,combat,1,336.0,17.0,6,-13.0,1,1,Npc Aggressive,Disarm Dodge Trip AssistVnum
+7200,the master mindflayer,Sewer,14,combat,1,321.0,17.0,7,-13.0,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+8005,a tap,Mega-City One,14,combat,3,351.0,17.0,7,-13.0,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+8302,a green troll,Old Marsh,14,combat,3,351.0,17.0,7,-13.0,1,0,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+9002,the pentadrone,Nirvana,14,combat,6,207.5,13.0,3,-16.25,1,0,Sentinel Aggressive StayArea Warrior,Bash Disarm Dodge Rescue Trip
+1313,a pair of disembodied eyes,High Tower of Sorcery,15,combat,5,376.0,17.0,7,-13.75,1,1,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1323,a spell teacher,High Tower of Sorcery,15,combat,1,376.0,17.0,7,-13.75,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1328,a spell teacher,High Tower of Sorcery,15,combat,1,376.0,17.0,7,-13.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1331,a scribe,High Tower of Sorcery,15,combat,2,376.0,17.0,7,-13.75,0,1,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1347,a clay golem,High Tower of Sorcery,15,combat,1,376.0,17.0,7,-13.75,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1350,an animated skeleton,High Tower of Sorcery,15,combat,2,376.0,17.0,7,-13.75,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1355,a grey cat,High Tower of Sorcery,15,combat,1,376.0,17.0,7,-13.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1361,a white cat,High Tower of Sorcery,15,combat,1,376.0,17.0,7,-13.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1505,the chief gnome,Gnome Village,15,combat,1,346.0,17.0,6,-13.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1612,the savage minotaur,Wyvern Tower,15,combat,1,356.0,17.0,6,-13.75,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1614,the black pudding,Wyvern Tower,15,combat,1,356.0,17.0,6,-13.75,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1707,a ranger leader,Wyvern Tower,15,never spawns,0,356.0,17.0,6,-13.75,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+2013,The vampire,Dwarven Catacombs,15,combat,1,356.0,17.0,6,-13.75,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+2014,the evil necromancer,Dwarven Catacombs,15,combat,1,356.0,17.0,6,-13.75,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+2302,the Cave Dweller,The Keep of Mahn-Tor,15,combat,1,376.0,17.0,7,-13.75,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+2305,the Mistling,The Keep of Mahn-Tor,15,combat,3,376.0,17.0,7,-13.75,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+2308,the Ogre Warrior,The Keep of Mahn-Tor,15,combat,4,376.0,17.0,7,-13.75,1,1,Npc Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+2315,the Minotaur Citizen,The Keep of Mahn-Tor,15,combat,5,376.0,17.0,7,-13.75,0,1,Npc Sentinel Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+3060,the cityguard,Midgaard,15,combat,9,280.0,9.0,3,-13.0,0,,Scavenger StayArea Warrior,Bash Berserk Disarm Parry Rescue AssistGuard AssistVnum
+3067,the cityguard,Midgaard,15,combat,2,270.0,9.0,3,-13.0,0,,Sentinel Warrior,Bash Berserk Disarm Parry Rescue AssistGuard AssistVnum
+3068,the cityguard,Midgaard,15,combat,2,270.0,9.0,3,-13.0,0,,Sentinel Warrior,Bash Berserk Disarm Parry Rescue AssistGuard AssistVnum
+3071,the cityguard,Midgaard,15,combat,2,280.0,9.0,3,-13.0,0,,Sentinel Warrior,Bash Berserk Disarm Parry Rescue AssistGuard AssistVnum
+3072,the cityguard,Midgaard,15,combat,1,270.0,9.0,3,-13.0,0,,Sentinel Warrior,Bash Berserk Disarm Parry Rescue AssistGuard AssistVnum
+3141,the cityguard,Midgaard,15,combat,4,130.0,9.0,3,-13.0,1,,Sentinel Scavenger Aggressive Warrior,Bash Berserk Disarm Fast Parry Rescue AssistVnum
+3161,Lister,Midgaard,15,combat,1,260.5,18.0,3,-17.25,0,,Sentinel NoPurge,Dodge Fast Trip AssistRace
+4708,a dwarven spirit,Kingdom of Juargan,15,combat,3,376.0,17.0,7,-13.75,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+5103,the drow mage noble,Drow City,15,combat,4,376.0,17.0,7,-13.75,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+5331,the cityguard,Old Thalos,15,combat,1,376.0,17.0,7,-13.75,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+5334,the cityguard,Old Thalos,15,combat,1,376.0,17.0,7,-13.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+6319,the Queen Spider,Arachnos,15,combat,1,376.0,17.0,7,-13.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+6515,the man in waiting,Dwarven Kingdom,15,combat,2,376.0,17.0,7,-13.75,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+6517,the giant snake,Dwarven Kingdom,15,combat,2,376.0,17.0,7,-13.75,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+7807,a valley elf elder,Valley of the Elves,15,combat,1,346.0,17.0,7,-13.75,1,1,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+7808,a valley elf elder,Valley of the Elves,15,combat,1,346.0,17.0,7,-13.75,1,1,Npc Sentinel Scavenger Aggressive Sentient,Disarm Dodge Trip AssistVnum
+8320,a marsh giant,Old Marsh,15,combat,5,376.0,17.0,7,-13.75,1,1,Npc Sentinel Scavenger bit3 Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+9207,a large elemental,Elemental Canyon,15,combat,5,346.0,17.0,7,-13.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9305,a red supergiant,Galaxy,15,combat,1,376.0,17.0,7,-13.75,0,0,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9306,a white dwarf,Galaxy,15,combat,1,376.0,17.0,7,-13.75,0,0,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+9318,Gemini,Galaxy,15,combat,1,376.0,17.0,7,-13.75,1,0,Npc Sentinel Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9519,the foreman,New Thalos,15,combat,1,346.0,17.0,6,-13.75,0,1,Npc Sentinel StayArea Warrior,Disarm Dodge Trip AssistVnum
+9553,a eunich,New Thalos,15,combat,4,346.0,17.0,6,-13.75,1,1,Npc Sentinel Aggressive Warrior,Disarm Dodge Trip AssistVnum
+9576,the couatl,New Thalos,15,combat,1,346.0,17.0,7,-13.75,0,1,Npc Sentinel bit4 Cleric NoAlign,Disarm Dodge Trip AssistVnum
+10074,the citizen,Wolf Pointe,15,combat,2,130.0,16.0,7,-13.0,0,,Scavenger StayArea Wimpy Warrior,Disarm Parry
+10075,a citizen,Wolf Pointe,15,combat,2,130.0,16.0,7,-13.0,0,,Scavenger StayArea Wimpy Warrior,Disarm Parry
+10078,an adventurer,Wolf Pointe,15,combat,1,130.0,16.0,7,-13.0,0,,Scavenger StayArea Wimpy Warrior,Bash Berserk Disarm Fast Parry Rescue AssistVnum
+10088,the resident,Wolf Pointe,15,combat,1,130.0,17.0,7,-13.0,0,,Scavenger StayArea Warrior,Bash
+10089,a resident,Wolf Pointe,15,combat,1,130.0,19.0,7,-13.0,0,,Scavenger StayArea Warrior,Bash
+10411,the half-eaten person,Descent to Hell,15,combat,1,376.0,17.0,7,-19.5,0,0,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1309,The prisoner,High Tower of Sorcery,16,combat,1,465.0,18.0,8,-13.75,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy,Bash Disarm Dodge Trip AssistVnum
+1333,the scribe's assistant,High Tower of Sorcery,16,combat,1,465.0,18.0,8,-13.75,1,1,Npc Sentinel Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1339,a wooden golem,High Tower of Sorcery,16,combat,5,465.0,18.0,8,-13.75,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1358,a black cat,High Tower of Sorcery,16,combat,1,465.0,18.0,8,-13.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1615,a lesser golem,Wyvern Tower,16,combat,1,445.0,18.0,7,-13.75,0,1,Npc Sentinel StayArea,Bash Disarm Dodge Trip AssistVnum
+2015,the grand templar,Dwarven Catacombs,16,combat,1,465.0,18.0,8,-13.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+2313,the White Yeti,The Keep of Mahn-Tor,16,combat,3,465.0,18.0,8,-13.75,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+6506,the giant,Dwarven Kingdom,16,combat,1,465.0,18.0,8,-13.75,0,1,Npc StayArea,Bash Disarm Dodge Trip AssistVnum
+6514,the barracks guard,Dwarven Kingdom,16,combat,2,465.0,18.0,8,-13.75,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+8003,a Citi-Def Militiaman,Mega-City One,16,combat,2,465.0,18.0,8,-13.75,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+8301,a swamp troll,Old Marsh,16,combat,2,465.0,18.0,8,-13.75,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+8309,the monstrous snake,Old Marsh,16,combat,2,465.0,18.0,8,-13.75,1,1,Npc Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9235,a baby rainbow dragon,Elemental Canyon,16,combat,2,445.0,18.0,7,-13.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1116,the elven warrior,The Shire,17,combat,1,494.0,18.0,8,-14.75,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+1117,the dwarven prince,The Shire,17,combat,1,494.0,18.0,8,-14.75,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+1310,the Jailor,High Tower of Sorcery,17,combat,1,494.0,18.0,8,-14.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1327,the battle mistress,High Tower of Sorcery,17,combat,1,494.0,18.0,8,-14.75,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1365,a wizard,High Tower of Sorcery,17,never spawns,0,494.0,18.0,8,-14.75,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+1613,the captain,Wyvern Tower,17,combat,1,464.0,18.0,8,-14.75,1,1,Npc Sentinel Scavenger Aggressive StayArea Sentient,Disarm Dodge Trip AssistVnum
+3140,the captain,Midgaard,17,combat,1,310.0,11.0,4,-15.0,1,,Sentinel Scavenger Aggressive Warrior,Bash Berserk Disarm Fast Parry Rescue AssistVnum
+5104,the drow priestess,Drow City,17,combat,4,494.0,18.0,8,-14.75,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+5303,an imperial cityguard,Old Thalos,17,combat,11,494.0,18.0,8,-14.75,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+5320,An imperial cityguard,Old Thalos,17,combat,3,494.0,18.0,8,-14.75,0,1,Npc Sentinel Scavenger StayArea,Disarm Dodge Trip AssistVnum
+5321,an imperial cityguard,Old Thalos,17,combat,2,494.0,18.0,8,-14.75,0,1,Npc Sentinel Scavenger StayArea,Disarm Dodge Trip AssistVnum
+6116,the elder druid,Haon Dor,17,combat,1,464.0,18.0,7,-14.75,1,0,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+6313,The guardian,Arachnos,17,combat,1,494.0,18.0,8,-14.75,1,1,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+8002,a Futsie,Mega-City One,17,combat,2,494.0,18.0,8,-14.75,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+9003,the decaton,Nirvana,17,combat,1,207.5,15.0,4,-17.5,1,0,Sentinel Aggressive StayArea Cleric Warrior,AreaAttack Bash Disarm Parry Trip
+9231,an elemental magician,Elemental Canyon,17,combat,2,494.0,18.0,8,-14.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9310,the wild Pegasus,Galaxy,17,combat,1,494.0,18.0,8,-14.75,0,0,Npc Sentinel StayArea Wimpy,Disarm Dodge Trip AssistVnum
+11012,the White Stag,Crystalmir Lake,17,combat,1,454.0,18.0,8,-19.75,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+1100,the Elven Wizard,The Shire,18,combat,1,523.0,19.0,9,-15.5,0,1,Npc Sentinel StayArea Sentient,Disarm Dodge Trip AssistVnum
+1325,a wizard,High Tower of Sorcery,18,combat,1,523.0,19.0,9,-15.5,0,1,Npc Sentinel StayArea Wimpy,Bash Disarm Dodge Trip AssistVnum
+1343,a bronze golem,High Tower of Sorcery,18,combat,1,523.0,19.0,9,-15.5,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1351,an undead giant,High Tower of Sorcery,18,combat,1,523.0,19.0,9,-15.5,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1616,the ancient wyvern,Wyvern Tower,18,combat,1,491.0,19.0,7,-15.5,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+2207,A bodyguard,Dragon Tower,18,combat,6,523.0,19.0,9,-15.5,1,1,Npc Sentinel Aggressive,Bash Disarm Dodge Trip AssistVnum
+2226,a large hydra,Dragon Tower,18,combat,1,523.0,19.0,9,-15.5,1,1,Npc Sentinel Scavenger Aggressive,Bash Disarm Dodge Trip AssistVnum
+5004,"The giant, purple sand worm",Sands of Sorrow,18,combat,1,501.0,19.0,8,-15.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+6505,the giant lizard,Dwarven Kingdom,18,combat,1,523.0,19.0,9,-15.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9232,a rainbow warrior,Elemental Canyon,18,combat,2,523.0,19.0,9,-15.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9307,a horsehead nebula,Galaxy,18,combat,1,523.0,19.0,9,-15.5,0,0,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9308,poor Andromeda,Galaxy,18,combat,1,523.0,19.0,9,-15.5,0,0,Npc Sentinel bit4 StayArea,Disarm Dodge Trip AssistVnum
+9506,Brother John,New Thalos,18,combat,1,480.0,19.0,9,-15.5,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9552,the jailer,New Thalos,18,combat,1,503.0,19.0,8,-15.5,0,1,Npc Sentinel Scavenger Wimpy Warrior,Disarm Dodge Trip AssistVnum
+600,the Ofcol cityguard,New Ofcol,19,combat,8,552.0,19.0,9,-15.5,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+623,the Ofcol cityguard,New Ofcol,19,combat,3,552.0,19.0,9,-15.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+634,the Ofcol cityguard,New Ofcol,19,combat,3,552.0,19.0,9,-15.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1101,the Keeper of the Ring,The Shire,19,combat,1,552.0,19.0,9,-15.5,0,1,Npc Sentinel StayArea Sentient,Disarm Dodge Trip AssistVnum
+1617,the spectre,Wyvern Tower,19,combat,1,522.0,19.0,9,-15.5,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+2309,the Ogre Guard,The Keep of Mahn-Tor,19,combat,4,552.0,19.0,9,-15.5,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+8009,Ernie Ramirez,Mega-City One,19,combat,1,552.0,19.0,9,-15.5,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+9309,the mighty Hercules,Galaxy,19,combat,1,552.0,19.0,9,-15.5,0,0,Npc Sentinel StayArea,Bash Disarm Dodge Trip AssistVnum
+9311,Orion the hunter,Galaxy,19,combat,1,552.0,19.0,9,-15.5,0,0,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+606,Madam Tracy,New Ofcol,20,service,1,581.0,22.0,10,-16.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+608,Farmer Elizabeth,New Ofcol,20,service,1,581.0,22.0,10,-16.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+629,Chaplain Jerrold,New Ofcol,20,combat,1,581.0,22.0,10,-16.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+1307,Ezmerelda,High Tower of Sorcery,20,combat,1,581.0,22.0,10,-16.5,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1329,an aged wizard,High Tower of Sorcery,20,combat,1,581.0,22.0,10,-16.5,1,1,Npc Sentinel Aggressive StayArea Wimpy Sentient,Disarm Dodge Trip AssistVnum
+1342,a granite golem,High Tower of Sorcery,20,combat,1,581.0,22.0,10,-16.5,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1352,an ugly witch,High Tower of Sorcery,20,combat,3,581.0,22.0,10,-16.5,1,1,Npc Sentinel Scavenger Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+1357,a black robed apprentice,High Tower of Sorcery,20,combat,1,581.0,22.0,10,-16.5,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1360,a white robed apprentice,High Tower of Sorcery,20,combat,1,581.0,22.0,10,-16.5,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1708,the Lord of the Rangers,Wyvern Tower,20,never spawns,0,551.0,22.0,10,-16.5,0,1,Npc Sentinel Scavenger Sentient,Disarm Dodge Trip AssistVnum
+1917,A tortured mindflayer prisoner,The Astral Plane,20,combat,1,581.0,22.0,10,-20.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+2016,the prism dragon,Dwarven Catacombs,20,combat,1,581.0,22.0,10,-16.5,1,1,Npc Sentinel Aggressive,Bash Disarm Dodge Trip AssistVnum
+2243,the Draconian Queen,Dragon Tower,20,combat,1,581.0,22.0,10,-16.5,0,1,Npc Sentinel Scavenger,Bash Disarm Dodge Trip AssistVnum
+2301,the Old Treant,The Keep of Mahn-Tor,20,combat,1,581.0,22.0,10,-16.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+2306,the Swamp Wraith,The Keep of Mahn-Tor,20,combat,1,581.0,22.0,10,-16.5,1,1,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+2310,The Ogre Shaman,The Keep of Mahn-Tor,20,combat,1,581.0,22.0,10,-16.5,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+2312,the Plains Barbarian,The Keep of Mahn-Tor,20,combat,3,581.0,22.0,10,-16.5,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+2314,the Ice Worm,The Keep of Mahn-Tor,20,combat,3,581.0,22.0,10,-16.5,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+2323,the Minotaur Butler,The Keep of Mahn-Tor,20,combat,1,581.0,22.0,10,-16.5,0,1,Npc Sentinel Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+3069,the cityguard,Midgaard,20,combat,4,390.0,12.0,4,-19.0,0,,Sentinel Warrior,Bash Berserk Disarm Fast Parry Rescue AssistGuard AssistVnum
+4707,The dreaded rock worm,Kingdom of Juargan,20,combat,1,581.0,22.0,10,-19.5,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+5307,the priest of Thalos,Old Thalos,20,combat,1,581.0,22.0,10,-16.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+5309,the mayor of Thalos,Old Thalos,20,combat,1,581.0,22.0,10,-16.5,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+6500,the dwarven guard,Dwarven Kingdom,20,combat,6,581.0,22.0,10,-16.5,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+7809,the pyrohydra,Valley of the Elves,20,combat,1,551.0,22.0,10,-16.5,1,1,Npc Sentinel Aggressive,Bash Disarm Dodge Trip AssistVnum
+8006,a rookie judge,Mega-City One,20,combat,3,581.0,22.0,10,-16.5,0,1,Npc StayArea,Bash Disarm Dodge Trip AssistVnum
+8012,a bite fighter,Mega-City One,20,combat,2,581.0,22.0,10,-16.5,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+8303,an ogre,Old Marsh,20,combat,3,581.0,22.0,10,-16.5,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+8313,a Death Slaad,Old Marsh,20,combat,1,581.0,22.0,10,-16.5,0,1,Npc Scavenger StayArea,Bash Disarm Dodge Trip AssistVnum
+8900,The Hierophant,Holy Grove,20,combat,1,561.0,22.0,9,-16.5,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+8901,The Hierophant,Holy Grove,20,combat,1,561.0,22.0,9,-16.5,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9004,the nonaton,Nirvana,20,combat,1,299.5,18.0,5,-18.25,1,0,Sentinel Aggressive StayArea Cleric Warrior,AreaAttack Disarm Dodge Trip
+9101,"the screaming, filthy harpy",Dylan's Area,20,combat,35,581.0,22.0,10,-16.5,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+9204,the elemental guardian,Elemental Canyon,20,combat,1,581.0,22.0,10,-16.5,0,1,Npc Sentinel Sentient Talkative,Disarm Dodge Trip AssistVnum
+9237,a HUGE elemental,Elemental Canyon,20,never spawns,0,581.0,22.0,10,-16.5,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9504,the receptionist,New Thalos,20,combat,1,581.0,22.0,10,-16.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+9546,Conan the Librarian,New Thalos,20,never spawns,0,581.0,22.0,10,-16.5,0,1,Npc Sentinel bit4 Warrior NoAlign,Bash Disarm Dodge Trip AssistVnum
+9554,"Nichole, the sultan's favorite",New Thalos,20,combat,1,551.0,22.0,9,-16.5,0,1,Npc bit4 Warrior,Disarm Dodge Trip AssistVnum
+9563,The chief guard,New Thalos,20,never spawns,0,551.0,22.0,9,-16.5,0,1,Npc Sentinel StayArea Warrior NoAlign,Disarm Dodge Trip AssistVnum
+9583,Patch the bartender,New Thalos,20,service,1,551.0,22.0,10,-16.5,0,1,Npc Sentinel Wimpy NoPurge bit23 bit24 bit25,Bash Disarm Dodge Trip AssistVnum
+9584,"Stitch, the leather dude.",New Thalos,20,service,1,551.0,22.0,10,-16.5,0,1,Npc Sentinel Wimpy NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9585,the gardener,New Thalos,20,combat,1,551.0,22.0,10,-16.5,0,1,Npc Sentinel NoAlign,Disarm Dodge Trip AssistVnum
+9589,the mayor,New Thalos,20,combat,1,551.0,22.0,10,-16.5,0,1,Npc StayArea Sentient,Disarm Dodge Trip AssistVnum
+9590,the chef,New Thalos,20,combat,1,551.0,22.0,10,-16.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+9596,a cart horse,New Thalos,20,combat,1,581.0,22.0,3,-22.5,0,1,Pet CanBeRidden,Bash Disarm Dodge Tail Trip Crush AssistVnum
+10069,the brown Wolf,Wolf Pointe,20,combat,1,355.0,24.0,10,-17.0,0,,Wimpy NoAlign,Trip
+632,an attendant of the dragon,New Ofcol,21,combat,2,710.0,25.0,10,-17.25,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+633,a Dragonknight,New Ofcol,21,combat,3,696.0,25.0,10,-17.25,0,1,Npc StayArea,Bash Disarm Dodge Trip AssistVnum
+1118,the shopkeeper,The Shire,21,service,1,698.0,25.0,10,-17.25,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1119,the grocer,The Shire,21,service,1,705.0,25.0,10,-17.25,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1341,the golem maker,High Tower of Sorcery,21,combat,1,695.0,25.0,10,-17.25,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1348,the master of illusions,High Tower of Sorcery,21,combat,1,695.0,25.0,10,-17.25,0,1,Npc Sentinel Scavenger StayArea Wimpy Sentient,Bash Disarm Dodge Trip AssistVnum
+2317,the Minotaur Warrior,The Keep of Mahn-Tor,21,combat,3,699.0,25.0,10,-17.25,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+5105,The drow master,Drow City,21,combat,3,728.0,25.0,10,-17.25,1,1,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+6508,the dwarven mine leader,Dwarven Kingdom,21,combat,1,696.0,25.0,10,-17.25,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+8306,a huge hairy beast,Old Marsh,21,combat,2,696.0,25.0,10,-17.25,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+9556,the guildguard,New Thalos,21,combat,1,697.0,25.0,10,-17.25,0,1,Npc Sentinel Mage Warrior,Disarm Dodge Trip AssistVnum
+9557,the guildguard,New Thalos,21,combat,1,702.0,25.0,10,-17.25,0,1,Npc Sentinel Cleric Warrior,Disarm Dodge Trip AssistVnum
+9558,the guildguard,New Thalos,21,combat,1,703.0,25.0,10,-17.25,0,1,Npc Sentinel Warrior NoAlign,Disarm Dodge Trip AssistVnum
+9559,the guildguard,New Thalos,21,combat,1,703.0,25.0,10,-17.25,0,1,Npc Sentinel Thief Warrior,Disarm Dodge Trip AssistVnum
+926,The Jailer,Olympus,22,combat,1,732.0,26.0,11,-17.25,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+1332,the master scribe,High Tower of Sorcery,22,combat,1,727.0,26.0,11,-17.25,1,1,Npc Sentinel Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1337,the master summoner,High Tower of Sorcery,22,combat,1,736.0,26.0,11,-17.25,1,1,Npc Sentinel Aggressive StayArea Wimpy Sentient,Bash Disarm Dodge Trip AssistVnum
+2203,a powerful mage,Dragon Tower,22,combat,1,743.0,26.0,11,-17.25,0,1,Npc Sentinel,Bash Disarm Dodge Trip AssistVnum
+2204,the holy Draconian,Dragon Tower,22,combat,1,731.0,26.0,11,-17.25,1,1,Npc Sentinel Scavenger Aggressive,Bash Disarm Dodge Trip AssistVnum
+2316,the Minotaur Guard,The Keep of Mahn-Tor,22,combat,3,743.0,26.0,11,-17.25,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+8007,Wallaby Gleep,Mega-City One,22,combat,1,758.0,26.0,11,-17.25,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+9005,the octon,Nirvana,22,combat,4,437.5,19.0,5,-19.25,1,0,Sentinel Aggressive StayArea Cleric,AreaAttack Bash Disarm Fast Parry
+9202,the cyclops,Elemental Canyon,22,never spawns,0,732.0,26.0,7,-20.75,1,1,Sentinel Aggressive Cleric Warrior,AreaAttack Bash Berserk Disarm Dodge Kick Trip Crush AssistVnum
+9227,the Magneto,Elemental Canyon,22,combat,1,734.0,26.0,11,-17.25,0,1,Npc Sentinel StayArea Sentient,Disarm Dodge Trip AssistVnum
+9315,Aries,Galaxy,22,combat,1,732.0,26.0,11,-17.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9316,Taurus,Galaxy,22,combat,1,749.0,26.0,11,-17.25,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+9317,Gemini,Galaxy,22,combat,1,738.0,26.0,11,-17.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9319,Cancer,Galaxy,22,combat,1,749.0,26.0,11,-17.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9320,Leo,Galaxy,22,combat,1,746.0,26.0,11,-17.25,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+9321,Virgo,Galaxy,22,combat,1,742.0,26.0,11,-17.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9322,Libra,Galaxy,22,combat,1,757.0,26.0,11,-17.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9323,Scorpio,Galaxy,22,combat,1,761.0,26.0,11,-17.25,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+9324,Sagittarius,Galaxy,22,combat,1,759.0,26.0,11,-17.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9325,Capricorn,Galaxy,22,combat,1,735.0,26.0,11,-17.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9326,Aquarius,Galaxy,22,combat,1,751.0,26.0,11,-17.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9327,Pisces the mermaid,Galaxy,22,combat,1,734.0,26.0,11,-17.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9328,Pisces the fish,Galaxy,22,combat,1,737.0,26.0,11,-17.25,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+13401,the vampire lab assistant,Ciquala's Lair,22,combat,2,732.0,26.0,11,-17.25,1,0,Npc Sentinel Scavenger Aggressive Wimpy,Disarm Dodge Trip AssistVnum
+306,Luxan,Plains of the North,23,service,1,780.0,26.0,11,-18.25,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+308,the Innkeeper,Plains of the North,23,service,1,791.0,26.0,11,-18.25,0,0,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1303,the golem,High Tower of Sorcery,23,combat,1,761.0,26.0,11,-18.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1334,the Enchanter,High Tower of Sorcery,23,combat,1,770.0,26.0,11,-18.25,1,1,Npc Sentinel Aggressive StayArea Sentient,Disarm Dodge Trip AssistVnum
+1338,the master charmer,High Tower of Sorcery,23,combat,1,795.0,26.0,11,-18.25,1,1,Npc Sentinel Aggressive,Bash Disarm Dodge Trip AssistVnum
+1340,the master spell binder,High Tower of Sorcery,23,combat,1,790.0,26.0,11,-18.25,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy Sentient,Bash Disarm Dodge Trip AssistVnum
+1353,the Librarian,High Tower of Sorcery,23,combat,1,794.0,26.0,11,-18.25,1,1,Npc Sentinel Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+1905,A githyanki hunter,The Astral Plane,23,combat,4,766.0,26.0,11,-21.5,0,1,Npc Scavenger StayArea Wimpy,Bash Disarm Dodge Trip AssistVnum
+3000,Dawnstone,Midgaard,23,service,1,1000.0,36.5,0,-30.0,0,,Sentinel NoPurge,AreaAttack Dodge
+3001,Mister Cholmondley-Warner,Midgaard,23,service,1,1000.0,24.5,0,-30.0,0,,Sentinel NoPurge,Bash Berserk Dodge
+3002,the grocer,Midgaard,23,service,1,1000.0,24.5,0,-30.0,0,,Sentinel NoPurge,Disarm Dodge KickDirt
+3006,the captain,Midgaard,23,service,1,1000.0,36.5,10,-30.0,0,,Sentinel Warrior NoPurge,Bash Disarm Kick
+3007,the sailor,Midgaard,23,service,1,1000.0,25.5,5,-30.0,0,,Sentinel Train Warrior NoPurge,Dodge Fast KickDirt Trip
+3008,the pet shop boy,Midgaard,23,service,1,1000.0,24.5,0,-30.0,0,,Sentinel NoPurge,
+3009,the jeweller,Midgaard,23,service,1,1000.0,26.5,0,-30.0,0,,Sentinel NoPurge,AreaAttack Dodge
+3010,the leather worker,Midgaard,23,service,1,1000.0,24.5,0,-30.0,0,,Sentinel NoPurge,AreaAttack Dodge Trip
+3040,the bartender,Midgaard,23,service,1,500.0,22.5,0,-19.5,0,,Sentinel NoPurge,Dodge Fast KickDirt Trip
+3041,the waiter,Midgaard,23,never spawns,0,500.0,22.5,0,-19.5,0,,Sentinel NoPurge,Dodge Fast KickDirt Trip
+3042,the waiter,Midgaard,23,service,1,500.0,22.5,0,-19.5,0,,Sentinel Mage NoPurge,Dodge KickDirt Trip
+3043,the waiter,Midgaard,23,service,1,500.0,22.5,0,-19.5,0,,Sentinel Cleric NoPurge,Dodge Fast KickDirt Trip
+3044,the waiter,Midgaard,23,service,1,500.0,22.5,0,-19.5,0,,Sentinel Thief NoPurge,Dodge Fast KickDirt Trip
+3045,the waiter,Midgaard,23,service,1,500.0,22.5,0,-19.5,0,,Sentinel Warrior NoPurge,Backstab Dodge Fast KickDirt Trip
+3046,Filthy,Midgaard,23,service,1,500.0,22.5,2,-22.0,0,,Sentinel Thief NoPurge,Backstab Disarm Dodge KickDirt Trip
+3100,the maid,Midgaard,23,service,1,500.0,16.5,2,-30.0,0,,Sentinel NoPurge,Dodge Fade
+3143,the mayor,Midgaard,23,combat,1,533.0,16.5,6,-30.0,0,,Sentinel Sentient,Disarm Dodge Trip AssistPlayers
+5106,The weapons master,Drow City,23,combat,2,773.0,26.0,11,-18.25,1,1,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+9102,the screaming harpy leader,Dylan's Area,23,combat,2,791.0,26.0,11,-18.25,1,1,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+9229,the Rock Monster,Elemental Canyon,23,combat,1,780.0,26.0,11,-18.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9505,the withered mage/bartender,New Thalos,23,service,1,797.0,26.0,11,-18.25,0,1,Npc Sentinel Mage NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9510,the baker,New Thalos,23,service,1,772.0,26.0,11,-18.25,0,1,Npc Sentinel NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9511,the shopkeeper,New Thalos,23,service,1,772.0,26.0,11,-18.25,0,1,Npc Sentinel NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9512,the banker,New Thalos,23,never spawns,0,788.0,26.0,11,-18.25,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+9513,Ahkeem the tailor,New Thalos,23,service,1,796.0,26.0,11,-18.25,0,1,Npc Sentinel NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9514,Vera the veggie lady,New Thalos,23,service,1,787.0,26.0,11,-18.25,0,1,Npc Sentinel NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9515,Butch the meatcutter,New Thalos,23,service,1,784.0,26.0,11,-18.25,0,1,Npc Sentinel Warrior NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9516,Abdul the armorer,New Thalos,23,service,1,790.0,26.0,11,-18.25,0,1,Npc Sentinel Warrior NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9517,Igor the weaponsmith,New Thalos,23,service,1,786.0,26.0,11,-18.25,0,1,Npc Sentinel Warrior NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9518,Cassandra,New Thalos,23,combat,1,773.0,26.0,11,-18.25,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+9599,the horse seller,New Thalos,23,service,1,787.0,26.0,0,-30.0,0,1,Sentinel NoPurge,Disarm Dodge Trip AssistVnum
+12103,a nonbeliver,The Dell,23,combat,1,1151.0,26.0,11,-16.5,0,,Scavenger Wimpy,Disarm Trip
+305,Shudde-M'ell,Plains of the North,24,combat,1,815.0,27.0,12,-18.25,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+1336,the Mad Alchemist,High Tower of Sorcery,24,combat,1,806.0,27.0,12,-18.25,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy Sentient,Disarm Dodge Trip AssistVnum
+1354,the master's apprentice,High Tower of Sorcery,24,combat,1,828.0,27.0,12,-18.25,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+2017,The DarkenBeast,Dwarven Catacombs,24,combat,1,822.0,27.0,12,-18.25,1,0,Npc Sentinel Aggressive,Bash Disarm Dodge Trip AssistVnum
+5107,the matron mother,Drow City,24,combat,3,803.0,27.0,12,-18.25,1,1,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+6302,Yevaud,Arachnos,24,combat,1,804.0,27.0,12,-18.25,0,0,Npc Sentinel Scavenger StayArea Sentient,Disarm Dodge Trip AssistVnum
+8304,the Swamp Thing,Old Marsh,24,combat,1,802.0,27.0,12,-18.25,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+9006,the septon,Nirvana,24,combat,2,515.0,20.0,5,-20.5,1,0,Sentinel Aggressive StayArea Cleric Mage,AreaAttack Dodge Parry Crush
+9105,the gigantic roc,Dylan's Area,24,combat,1,817.0,27.0,12,-18.25,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9228,the Ice Bandit,Elemental Canyon,24,combat,1,798.0,27.0,12,-18.25,0,1,Npc Sentinel StayArea Wimpy Sentient,Disarm Dodge Trip AssistVnum
+922,a roc,Olympus,25,combat,2,838.0,27.0,12,-19.0,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+1121,the battle master,The Shire,25,combat,1,852.0,27.0,12,-19.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1305,Strick the bartender,High Tower of Sorcery,25,service,1,856.0,27.0,12,-19.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1306,Tatorious,High Tower of Sorcery,25,service,1,849.0,27.0,12,-19.0,0,1,Npc Sentinel StayArea Sentient,Disarm Dodge Trip AssistVnum
+1346,an adamantite golem,High Tower of Sorcery,25,combat,1,831.0,27.0,12,-19.0,0,1,Npc Sentinel Scavenger StayArea,Disarm Dodge Trip AssistVnum
+1349,the Necromancer,High Tower of Sorcery,25,combat,1,858.0,27.0,12,-19.0,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy Sentient,Bash Disarm Dodge Trip AssistVnum
+1363,A calico cat,High Tower of Sorcery,25,combat,1,848.0,27.0,12,-19.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1903,An invisible stalker,The Astral Plane,25,combat,4,851.0,27.0,12,-22.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+1904,A poor soulless being,The Astral Plane,25,combat,10,862.0,27.0,12,-22.5,0,1,Npc StayArea Wimpy,Disarm Dodge Trip AssistVnum
+2300,the Dark Ethereal Knight,The Keep of Mahn-Tor,25,combat,1,853.0,27.0,12,-19.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+2304,the Weeping Willow,The Keep of Mahn-Tor,25,combat,1,846.0,27.0,12,-19.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+2311,the Ogre Chieftain,The Keep of Mahn-Tor,25,combat,1,826.0,27.0,12,-19.0,1,1,Npc Sentinel Scavenger Aggressive StayArea Wimpy Sentient,Disarm Dodge Trip AssistVnum
+2318,the Minotaur Gatekeeper,The Keep of Mahn-Tor,25,combat,1,857.0,27.0,12,-19.0,0,1,Npc Sentinel Scavenger StayArea,Disarm Dodge Trip AssistVnum
+2319,the High Minotaur Guard,The Keep of Mahn-Tor,25,combat,2,839.0,27.0,12,-19.0,1,1,Npc Sentinel Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+3150,Esme,Midgaard,25,service,1,1000.0,14.5,0,-30.0,0,,Sentinel NoPurge,Dodge Fade
+3160,Melancholy,Midgaard,25,service,1,1000.0,37.5,0,-30.0,0,,Sentinel NoPurge,Dodge Fade
+5108,the matron mother,Drow City,25,combat,1,864.0,27.0,12,-19.0,1,1,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+5200,The mighty beholder,Thalos,25,combat,1,865.0,27.0,12,-19.0,1,1,Npc Sentinel Aggressive Wimpy Sentient,Disarm Dodge Trip AssistVnum
+5208,The stone golem,Thalos,25,combat,4,858.0,27.0,12,-19.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+6112,"the huge, green dragon",Haon Dor,25,combat,1,827.0,27.0,12,-19.0,1,0,Npc Sentinel Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+6312,the Donjonkeeper,Arachnos,25,combat,1,838.0,27.0,12,-19.0,0,0,Npc Sentinel Scavenger Sentient,Disarm Dodge Trip AssistVnum
+7811,Talemon,Valley of the Elves,25,combat,1,857.0,27.0,12,-19.0,1,0,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+7812,the guardian daemon,Valley of the Elves,25,combat,1,857.0,27.0,12,-19.0,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+8008,Pinkerton Throt,Mega-City One,25,combat,1,861.0,27.0,12,-19.0,1,1,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+8011,Judge Beddows,Mega-City One,25,combat,1,854.0,27.0,12,-19.0,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9103,the ghostly air elemental,Dylan's Area,25,combat,5,853.0,27.0,12,-19.0,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+9313,the Head of Draco,Galaxy,25,combat,1,843.0,27.0,12,-19.0,1,1,Npc Sentinel Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+9538,Gord,New Thalos,25,combat,1,843.0,27.0,12,-19.0,0,1,Npc Scavenger StayArea Talkative Thief Warrior NoAlign,Disarm Dodge Trip AssistVnum
+9539,Caramon,New Thalos,25,combat,1,852.0,27.0,12,-19.0,0,1,Npc StayArea Talkative Warrior NoAlign,Disarm Dodge Trip AssistVnum
+9540,Raistlin,New Thalos,25,combat,1,827.0,27.0,12,-19.0,0,1,Npc Scavenger StayArea Wimpy Sentient Talkative Mage,Disarm Dodge Trip AssistVnum
+9541,Curley GreenLeaf,New Thalos,25,combat,1,828.0,27.0,12,-19.0,0,1,Npc StayArea Cleric Warrior,Disarm Dodge Trip AssistVnum
+909,A Golden Maiden,Olympus,26,combat,2,862.0,28.0,13,-20.0,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+1906,A githyanki warrior,The Astral Plane,26,combat,2,867.0,28.0,13,-22.5,0,1,Npc Scavenger StayArea,Bash Disarm Dodge Trip AssistVnum
+2205,the Draconian King,Dragon Tower,26,combat,1,900.0,28.0,13,-20.0,0,1,Npc Sentinel Scavenger,Bash Disarm Dodge Trip AssistVnum
+2320,the Royal Minotaur Guard,The Keep of Mahn-Tor,26,combat,2,876.0,28.0,13,-20.0,1,1,Npc Sentinel Scavenger Aggressive StayArea Sentient,Disarm Dodge Trip AssistVnum
+6314,Arachnos,Arachnos,26,combat,1,894.0,28.0,13,-20.0,1,0,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+6315,the Ki-Rin,Arachnos,26,combat,1,868.0,28.0,13,-20.0,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+9007,the hexton,Nirvana,26,combat,8,667.5,24.0,7,-22.0,1,0,Sentinel Aggressive StayArea Cleric Warrior,AreaAttack Bash Disarm Dodge Fast Kick Parry Rescue Trip
+9226,the Blue Flame,Elemental Canyon,26,combat,1,891.0,28.0,13,-20.0,0,1,Npc Sentinel StayArea Sentient,Disarm Dodge Trip AssistVnum
+9330,Cassiopeia the Queen,Galaxy,26,combat,1,884.0,28.0,13,-20.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9331,Cepheus the King,Galaxy,26,combat,1,859.0,28.0,13,-20.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+602,Captain Derrick,New Ofcol,27,combat,1,925.0,28.0,13,-20.0,0,1,Npc StayArea Sentient,Disarm Dodge Trip AssistVnum
+603,Captain Jacklyn,New Ofcol,27,combat,1,929.0,28.0,13,-20.0,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+2202,the dragon master,Dragon Tower,27,combat,1,899.0,28.0,13,-20.0,1,1,Npc Sentinel Scavenger Aggressive Sentient,Bash Disarm Dodge Trip AssistVnum
+4704,Juargan the Dwarven King,Kingdom of Juargan,27,combat,1,912.0,28.0,13,-20.0,0,0,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+4706,Grimdale the ancient king,Kingdom of Juargan,27,combat,1,907.0,28.0,13,-20.0,1,0,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+9104,the mysterious effreeti,Dylan's Area,27,combat,2,894.0,28.0,13,-20.0,0,0,Npc Scavenger,Disarm Dodge Trip AssistVnum
+9329,Ursa Major the bear,Galaxy,27,combat,1,907.0,28.0,13,-20.0,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+11008,Turtle dragon,Crystalmir Lake,27,combat,1,893.0,28.0,13,-23.25,1,1,Npc Sentinel Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+13407,the lurker above,Ciquala's Lair,27,combat,1,924.0,28.0,13,-20.0,0,0,Npc Sentinel Wimpy,Disarm Dodge Trip AssistVnum
+2321,the Elite Minotaur Guard,The Keep of Mahn-Tor,28,combat,2,956.0,29.0,14,-20.75,1,1,Npc Sentinel Scavenger Aggressive StayArea Sentient,Disarm Dodge Trip AssistVnum
+9008,the quinton,Nirvana,28,combat,4,655.0,25.0,6,-22.25,1,0,Sentinel Aggressive StayArea Cleric,AreaAttack Parry Tail Crush
+9106,the gigantic roc,Dylan's Area,28,combat,1,950.0,29.0,14,-20.75,0,0,Npc StayArea,Disarm Dodge Trip AssistVnum
+9230,the Hurricane,Elemental Canyon,28,combat,1,956.0,29.0,14,-20.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+630,a Dragonlord,New Ofcol,29,combat,3,963.0,29.0,14,-21.75,0,1,Npc Sentinel,Bash Disarm Dodge Trip AssistVnum
+2324,the Minotaur Ring-Keeper,The Keep of Mahn-Tor,29,combat,1,964.0,29.0,14,-21.75,0,1,Npc Sentinel Scavenger StayArea,Disarm Dodge Trip AssistVnum
+6502,the wraith,Dwarven Kingdom,29,combat,2,1000.0,29.0,14,-21.75,0,0,Npc Sentinel,Disarm Dodge Trip AssistVnum
+6516,the mazekeeper,Dwarven Kingdom,29,combat,1,1002.0,29.0,14,-21.75,1,0,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+7900,the Grand Knight of paladins,Redferne's Residence,29,combat,1,974.0,29.0,14,-21.75,0,1,Npc StayArea Sentient,Disarm Dodge Trip AssistVnum
+10402,the pile of gold coins,Descent to Hell,29,combat,1,960.0,29.0,14,-23.5,0,0,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10455,half eaten horse carcass,Descent to Hell,29,combat,1,989.0,29.0,14,-23.5,0,0,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10456,stomach dragon,Descent to Hell,29,combat,1,982.0,29.0,14,-23.5,0,0,Npc Sentinel StayArea,Bash Disarm Dodge Trip AssistVnum
+604,Jim the Blacksmith,New Ofcol,30,service,1,1006.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+605,Sam,New Ofcol,30,service,1,1035.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+607,Marty,New Ofcol,30,service,1,1014.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+622,Nyles the Bartender,New Ofcol,30,service,1,1040.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+628,the Priestess of Ofcol,New Ofcol,30,combat,1,1021.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1356,the master of Neutrality,High Tower of Sorcery,30,combat,1,1019.0,30.0,15,-21.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1359,the master of the black robes,High Tower of Sorcery,30,combat,1,1034.0,30.0,15,-21.75,0,1,Npc Sentinel Scavenger StayArea,Bash Disarm Dodge Trip AssistVnum
+1362,The master of goodness,High Tower of Sorcery,30,combat,1,1002.0,30.0,15,-21.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+2325,Gorak,The Keep of Mahn-Tor,30,combat,1,1029.0,30.0,15,-21.75,1,1,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+2326,Darkoth,The Keep of Mahn-Tor,30,combat,1,1023.0,30.0,15,-21.75,1,1,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+2327,Tyrgoth,The Keep of Mahn-Tor,30,combat,1,1022.0,30.0,15,-21.75,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+2328,Amyrok,The Keep of Mahn-Tor,30,combat,1,1032.0,30.0,15,-21.75,1,1,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+2329,Sumaron,The Keep of Mahn-Tor,30,combat,1,993.0,30.0,15,-21.75,1,1,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+2330,Nasturn,The Keep of Mahn-Tor,30,combat,1,1007.0,30.0,15,-21.75,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+2331,Belrak,The Keep of Mahn-Tor,30,combat,1,1037.0,30.0,15,-21.75,1,1,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+2332,Dorgar,The Keep of Mahn-Tor,30,combat,1,1010.0,30.0,15,-21.75,1,1,Npc Sentinel Scavenger Aggressive Sentient,Disarm Dodge Trip AssistVnum
+3024,the sorcerer,Midgaard,30,combat,1,1000.0,35.0,5,-24.5,0,,Sentinel Mage Warrior NoPurge,AreaAttack Disarm Fade
+3025,the knight templar,Midgaard,30,combat,1,1000.0,32.5,5,-24.25,0,,Sentinel Cleric Warrior NoPurge,Berserk Disarm Kick Parry
+3026,the knight,Midgaard,30,combat,1,1000.0,34.0,8,-25.5,0,,Sentinel Warrior NoPurge,Backstab Disarm Dodge KickDirt Trip
+3027,the barbarian,Midgaard,30,combat,1,1000.0,37.5,10,-23.5,0,,Sentinel Warrior NoPurge,AreaAttack Bash Berserk Disarm Fast Kick Parry
+3700,the acolyte of Tempest,Mud School,30,combat,1,1000.0,35.0,10,-30.0,0,0,Sentinel StayArea Talkative Cleric Warrior NoPurge,AreaAttack Bash Disarm Dodge Fast Kick Parry Trip
+3707,the adept of Ezra,Mud School,30,combat,1,1000.0,35.0,10,-30.0,0,0,Sentinel StayArea Cleric Warrior NoPurge,AreaAttack Bash Disarm Dodge Fast Kick Parry Trip
+3708,the adept of Alander,Mud School,30,combat,1,1000.0,35.0,10,-30.0,0,0,Sentinel StayArea Cleric Warrior NoPurge,AreaAttack Bash Disarm Dodge Fast Kick Parry Trip
+3717,the adept of Goose,Mud School,30,service,1,1000.0,35.0,10,-30.0,0,0,Sentinel Scavenger Cleric Warrior NoPurge,AreaAttack Bash Disarm Dodge Fast Kick Parry Trip
+3718,the adept of Furey,Mud School,30,service,1,1000.0,35.0,10,-30.0,0,0,Sentinel Scavenger Train Cleric Warrior NoPurge,AreaAttack Bash Disarm Dodge Fast Kick Parry Trip
+3719,the priest of Seth,Mud School,30,service,1,1000.0,35.0,10,-30.0,0,0,Sentinel Scavenger Practice Cleric Warrior NoPurge,AreaAttack Bash Disarm Dodge Fast Kick Parry Trip
+5005,the brass dragon,Sands of Sorrow,30,combat,1,1036.0,30.0,15,-21.75,1,0,Npc Sentinel Scavenger Aggressive,Bash Disarm Dodge Trip AssistVnum
+5010,The dracolich,Sands of Sorrow,30,combat,1,1032.0,30.0,15,-21.75,1,0,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+5308,the stone golem,Old Thalos,30,combat,4,1014.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+5310,Dan the Barkeep,Old Thalos,30,service,1,998.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+5311,George the Butcher,Old Thalos,30,service,1,1012.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+5312,Farmer Betty,Old Thalos,30,service,1,1034.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+5313,Thaellor the dwarf,Old Thalos,30,service,1,1013.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+5314,Ben the Smith,Old Thalos,30,service,1,1021.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+5317,an old wizard,Old Thalos,30,service,1,1014.0,30.0,15,-21.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+7040,the red dragon,Sewer,30,combat,1,1024.0,30.0,15,-21.75,1,1,Npc Sentinel Aggressive,Bash Disarm Dodge Trip AssistVnum
+8010,Judge Eckersely,Mega-City One,30,combat,1,1035.0,30.0,15,-21.75,0,1,Npc StayArea,Bash Disarm Dodge Trip AssistVnum
+8305,a gnoll,Old Marsh,30,combat,1,1013.0,30.0,15,-21.75,0,0,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+9208,the Earth Ruler,Elemental Canyon,30,combat,1,1003.0,30.0,15,-21.75,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+9209,the Fire Ruler,Elemental Canyon,30,combat,1,1036.0,30.0,15,-21.75,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+9210,The Air Ruler,Elemental Canyon,30,combat,1,995.0,30.0,15,-21.75,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+9211,The Lightning Ruler,Elemental Canyon,30,combat,1,1032.0,30.0,15,-21.75,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+9212,The Water Ruler,Elemental Canyon,30,combat,1,1012.0,30.0,15,-21.75,0,1,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+9238,the elixir vendor,Elemental Canyon,30,service,1,995.0,30.0,15,-21.75,0,1,Npc Sentinel bit4 StayArea,Disarm Dodge Trip AssistVnum
+9332,"Polaris, the polar star",Galaxy,30,combat,1,1022.0,30.0,15,-21.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9565,the shipwright,New Thalos,30,service,1,1036.0,30.0,15,-21.75,0,1,Npc Sentinel NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9566,the blacksmith,New Thalos,30,service,1,1037.0,30.0,15,-21.75,0,1,Npc Sentinel NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9569,Shelbye,New Thalos,30,combat,1,1022.0,30.0,15,-21.75,0,1,Npc,Disarm Dodge Trip AssistVnum
+9579,Elvira,New Thalos,30,service,1,1005.0,30.0,15,-21.75,0,1,Npc Sentinel Mage NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9580,Braheem,New Thalos,30,service,1,1024.0,30.0,15,-21.75,0,1,Npc Sentinel Mage NoPurge bit23 bit24 bit25,Disarm Dodge Trip AssistVnum
+9581,the high priest,New Thalos,30,combat,1,991.0,30.0,15,-21.75,0,1,Npc Sentinel bit4 Cleric,Disarm Dodge Trip AssistVnum
+9591,the Ixitxachitl,New Thalos,30,combat,1,1023.0,30.0,15,-21.75,0,1,Npc Sentinel bit4 Sentient Cleric Warrior,Disarm Dodge Trip AssistVnum
+9595,a mare,New Thalos,30,combat,1,1028.0,30.0,3,-26.25,0,1,Pet CanBeRidden,Bash Disarm Dodge Tail Trip Crush AssistVnum
+9908,a nabassu,Yggdrasil,30,combat,2,1033.0,30.0,15,-24.25,0,0,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+10070,the grey adult Wolf,Wolf Pointe,30,combat,1,590.0,34.0,15,-19.0,0,,Wimpy NoAlign,Trip
+10419,crispy critter,Descent to Hell,30,combat,1,1028.0,30.0,15,-24.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+11003,Riverwind,Crystalmir Lake,30,combat,1,1021.0,30.0,15,-24.25,0,1,Npc StayArea,Bash Disarm Dodge Trip AssistVnum
+13409,the human automaton,Ciquala's Lair,30,combat,1,1013.0,30.0,15,-21.75,0,0,Npc Sentinel,Disarm Dodge Trip AssistVnum
+9107,"the ugly, wicked witch",Dylan's Area,31,combat,1,1127.0,33.0,15,-22.5,1,0,Npc Sentinel Scavenger Aggressive,Bash Disarm Dodge Trip AssistVnum
+9522,The statue of Wandera,New Thalos,31,combat,1,1136.0,33.0,15,-22.5,0,1,Npc Sentinel Cleric Warrior bit23,Disarm Dodge Trip AssistVnum
+9523,The statue of Faramir,New Thalos,31,combat,1,1098.0,33.0,15,-22.5,0,1,Npc Sentinel Cleric Warrior bit23,Disarm Dodge Trip AssistVnum
+9524,The statue of Death,New Thalos,31,combat,1,1136.0,33.0,15,-22.5,0,1,Npc Sentinel Cleric Warrior bit23,Disarm Dodge Trip AssistVnum
+9525,The statue of Rohan,New Thalos,31,combat,1,1109.0,33.0,15,-22.5,0,1,Npc Sentinel Cleric Warrior bit23,Disarm Dodge Trip AssistVnum
+9526,The statue of Luxor,New Thalos,31,combat,1,1131.0,33.0,15,-22.5,0,1,Npc Sentinel Cleric Warrior bit23,Disarm Dodge Trip AssistVnum
+9582,The Royal Guard,New Thalos,31,combat,8,1122.0,33.0,15,-22.5,0,1,Npc StayArea Wimpy Warrior NoAlign,Disarm Dodge Trip AssistVnum
+10469,side of frozen beef,Descent to Hell,31,combat,2,1136.0,33.0,15,-24.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+1915,An insubstantial ghost,The Astral Plane,32,combat,3,1159.0,37.0,16,-24.5,1,1,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+3070,the ancient potion-brewer,Midgaard,32,service,1,1000.0,65.0,0,-30.0,0,,Sentinel Cleric Mage NoPurge,Dodge Fade Fast
+5805,The small droid,Mos Eisley,32,combat,6,901.0,17.0,0,-6.25,0,0,StayArea Warrior NoAlign,Bash Crush
+10423,a prisoner in hell,Descent to Hell,32,combat,1,1162.0,37.0,16,-24.5,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10424,a prisoner in hell,Descent to Hell,32,combat,1,1137.0,37.0,16,-24.5,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+601,Marshall Diana,New Ofcol,33,combat,1,1173.0,37.0,16,-23.5,0,1,Npc Sentinel Sentient Talkative,Disarm Dodge Trip AssistVnum
+1901,A pitch-black nightmare,The Astral Plane,33,combat,2,1170.0,37.0,16,-25.25,1,1,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+2333,Mahn-Tor,The Keep of Mahn-Tor,33,combat,1,1211.0,37.0,16,-23.5,0,1,Npc Sentinel Scavenger Sentient,Disarm Dodge Trip AssistVnum
+9009,the tertian,Nirvana,33,combat,4,1000.0,40.0,12,-25.75,1,1,Sentinel Aggressive StayArea Cleric Mage Warrior,Bash Disarm Dodge
+13400,Guardian Lich,Ciquala's Lair,33,combat,1,1178.0,37.0,16,-23.5,1,0,Npc Sentinel Scavenger Aggressive Sentient,Disarm Dodge Trip AssistVnum
+13410,the human automaton,Ciquala's Lair,33,combat,1,1167.0,37.0,16,-23.5,0,0,Npc Sentinel,Disarm Dodge Trip AssistVnum
+918,Samuel the Armourer,Olympus,34,combat,1,1211.0,38.0,17,-24.25,1,1,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+920,a chimera,Olympus,34,combat,2,1232.0,38.0,17,-24.25,1,1,Npc Sentinel Scavenger Aggressive,Bash Disarm Dodge Trip AssistVnum
+9527,The statue of Elmet,New Thalos,34,combat,1,1203.0,38.0,17,-24.25,0,1,Npc Sentinel Cleric Mage Warrior bit23,Disarm Dodge Trip AssistVnum
+10410,a tortured soul,Descent to Hell,34,combat,1,1243.0,38.0,17,-25.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10414,bloody severed arm,Descent to Hell,34,combat,1,1249.0,38.0,17,-25.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10415,bloody severed foot,Descent to Hell,34,combat,1,1215.0,38.0,17,-25.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10416,bloody severed nose,Descent to Hell,34,combat,1,1218.0,38.0,17,-25.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10422,the prisoner Raiden,Descent to Hell,34,combat,1,1201.0,38.0,17,-25.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+910,A Soldier,Olympus,35,combat,2,1278.0,38.0,17,-24.25,1,1,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+913,A hound of war,Olympus,35,combat,3,1255.0,38.0,17,-24.25,1,1,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+1902,An evil night hag,The Astral Plane,35,combat,1,1251.0,38.0,17,-25.25,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+1919,A massive blast of fire,The Astral Plane,35,combat,6,1232.0,38.0,17,-25.25,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+5109,the yochlol,Drow City,35,combat,1,1250.0,38.0,17,-24.25,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+5305,Gordon the Brave,Old Thalos,35,combat,1,1272.0,38.0,17,-24.25,0,0,Npc Sentient,Disarm Dodge Trip AssistVnum
+5802,The Jawa,Mos Eisley,35,combat,9,845.0,20.5,0,-22.5,0,0,Scavenger Wimpy Thief,Disarm Dodge Kick Parry Trip
+5828,a grinning alien,Mos Eisley,35,combat,2,845.0,20.5,0,-22.5,0,0,Scavenger Wimpy Thief,Disarm Dodge Kick Parry Trip
+6503,the storekeeper,Dwarven Kingdom,35,service,1,1229.0,38.0,17,-24.25,0,0,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+6504,the baker,Dwarven Kingdom,35,service,1,1272.0,38.0,17,-24.25,0,0,Npc Sentinel Sentient,Disarm Dodge Trip AssistVnum
+9521,The statue of TheMoog,New Thalos,35,combat,1,1231.0,38.0,17,-24.25,0,1,Npc Sentinel Cleric Warrior bit23,Disarm Dodge Trip AssistVnum
+9528,The statue of Alander,New Thalos,35,combat,1,1243.0,38.0,17,-24.25,0,1,Npc Sentinel Sentient Cleric Mage Warrior NoAlign bit22 bit23,Disarm Dodge Trip AssistVnum
+9550,The Sultan,New Thalos,35,combat,1,1228.0,38.0,17,-24.25,0,1,Npc Sentinel Sentient Warrior bit22,Disarm Dodge Trip AssistVnum
+9600,the leather tanner,New Thalos,35,service,1,1280.0,38.0,0,-45.0,0,1,Sentinel NoPurge,Disarm Dodge Trip AssistVnum
+9900,a Hollyphant,Yggdrasil,35,combat,2,1260.0,38.0,17,-25.25,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9911,a wemic,Yggdrasil,35,combat,2,1264.0,38.0,17,-25.25,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+10061,A wolf pointe guard,Wolf Pointe,35,combat,2,1175.0,36.0,17,-23.75,0,,Scavenger StayArea Warrior,Bash Dodge Trip AssistVnum
+10062,A wolf pointe guard,Wolf Pointe,35,combat,2,1175.0,40.0,16,-23.75,0,,Scavenger StayArea Warrior,Bash Dodge Trip AssistVnum
+10063,A wolf pointe guard,Wolf Pointe,35,combat,2,1175.0,36.0,16,-23.75,0,,Sentinel Scavenger Warrior,Bash Dodge Trip AssistVnum
+10064,A wolf pointe guard,Wolf Pointe,35,combat,2,1175.0,43.0,16,-23.75,0,,Scavenger StayArea Warrior,Bash Dodge Trip AssistVnum
+10065,A wolf pointe guard,Wolf Pointe,35,combat,1,1175.0,38.0,16,-23.75,0,,Scavenger StayArea Warrior,Bash Dodge Trip AssistVnum
+10066,A wolf pointe guard,Wolf Pointe,35,combat,1,1175.0,40.0,16,-23.75,0,,Scavenger StayArea Warrior,Bash Dodge Trip AssistVnum
+10067,A wolf pointe guard,Wolf Pointe,35,combat,1,1175.0,41.0,16,-23.75,0,,Scavenger StayArea Warrior,Bash Dodge Trip AssistVnum
+10403,the male Dee,Descent to Hell,35,combat,1,1268.0,38.0,17,-25.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10404,the female Dee,Descent to Hell,35,combat,1,1232.0,38.0,17,-25.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10413,skeletal warrior,Descent to Hell,35,combat,2,1254.0,38.0,17,-25.25,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+10421,the manes,Descent to Hell,35,combat,2,1244.0,38.0,17,-25.25,1,1,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+10471,juicy steak,Descent to Hell,35,combat,1,1264.0,38.0,17,-25.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+13403,a docile creature,Ciquala's Lair,35,combat,2,1254.0,38.0,17,-24.25,0,0,Npc Sentinel,Disarm Dodge Trip AssistVnum
+3020,the guildmaster,Midgaard,36,service,1,2000.0,37.5,0,-30.0,0,,Sentinel Practice Mage NoPurge,Dodge Fade
+3021,the guildmaster,Midgaard,36,service,1,2000.0,37.5,0,-30.0,0,,Sentinel Practice Cleric NoPurge,Disarm Dodge Fast Kick Parry
+3022,the guildmaster,Midgaard,36,service,1,2000.0,37.5,0,-30.0,0,,Sentinel Practice Thief NoPurge,Backstab Disarm Dodge Fast KickDirt Trip
+3023,the guildmaster,Midgaard,36,service,1,2000.0,37.5,0,-35.0,0,,Sentinel Practice Warrior NoPurge,AreaAttack Bash Berserk Disarm Kick Parry
+9010,secundus,Nirvana,36,combat,4,1600.0,46.5,15,-27.0,1,0,Sentinel Aggressive StayArea Cleric Mage Warrior,Disarm Dodge Fast Kick Parry Trip
+10409,a damned soul,Descent to Hell,36,combat,3,1319.0,39.0,18,-26.25,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+10418,the lost soul,Descent to Hell,36,combat,2,1301.0,39.0,18,-26.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+13411,the human automaton,Ciquala's Lair,36,combat,1,1282.0,39.0,18,-25.25,0,0,Npc Sentinel,Disarm Dodge Trip AssistVnum
+631,The Ancient Gold Dragon,New Ofcol,37,combat,1,1359.0,39.0,18,-26.0,0,0,Npc Sentinel Scavenger,Bash Disarm Dodge Trip AssistVnum
+1907,A githyanki guardian,The Astral Plane,37,combat,8,1341.0,39.0,18,-26.25,1,1,Npc Sentinel Scavenger Aggressive,Bash Disarm Dodge Trip AssistVnum
+2223,the Great White Dragon,Dragon Tower,37,combat,1,1358.0,39.0,18,-26.0,1,1,Npc Sentinel Scavenger Aggressive Sentient,Bash Disarm Dodge Trip AssistVnum
+10405,the gold bar,Descent to Hell,37,combat,1,1319.0,39.0,18,-26.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10420,pile of bones,Descent to Hell,37,combat,1,1329.0,39.0,18,-26.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+13404,the black pudding,Ciquala's Lair,37,combat,2,1344.0,39.0,18,-26.0,0,0,Npc Sentinel,Disarm Dodge Trip AssistVnum
+13408,a vampire servant,Ciquala's Lair,37,combat,1,1349.0,39.0,18,-26.0,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+13416,Lich,Ciquala's Lair,37,combat,2,1303.0,39.0,18,-26.0,1,0,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+1912,A warlock of the Gith,The Astral Plane,39,combat,4,1374.0,40.0,19,-27.0,1,1,Npc Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+2222,the Great Black Dragon,Dragon Tower,39,combat,1,1404.0,40.0,19,-27.0,1,1,Npc Sentinel Scavenger Aggressive Sentient,Bash Disarm Dodge Trip AssistVnum
+13412,the human automaton,Ciquala's Lair,39,combat,1,1369.0,40.0,19,-27.0,0,0,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1910,An evil gish,The Astral Plane,40,combat,2,1458.0,41.0,20,-27.25,0,1,Npc Scavenger StayArea Wimpy,Bash Disarm Dodge Trip AssistVnum
+1911,An evil gish,The Astral Plane,40,combat,6,1453.0,41.0,20,-27.25,1,1,Npc Scavenger Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+3413,the rock slug,Chapel Catacombs,40,combat,5,1427.0,41.0,20,-27.0,0,1,Npc Scavenger,Disarm Dodge Trip AssistVnum
+5808,The town person,Mos Eisley,40,combat,10,1155.0,21.0,0,-30.0,0,1,Scavenger StayArea Wimpy Mage Warrior,Disarm Dodge Kick Parry Crush AssistVnum
+9011,Primus,Nirvana,40,combat,1,4000.0,58.0,20,-30.0,1,0,Sentinel Aggressive StayArea Sentient Cleric Mage Warrior,AreaAttack Fast
+9500,the guildmaster,New Thalos,40,service,1,1460.0,41.0,10,-30.0,0,0,Sentinel Train Practice Mage NoPurge Gain,Disarm Dodge Fast Trip AssistVnum
+9501,the guildmaster,New Thalos,40,service,1,1427.0,41.0,10,-30.0,0,0,Sentinel Train Practice Cleric NoPurge Gain,Disarm Dodge Fade Kick Parry Trip AssistVnum
+9502,the guildmaster,New Thalos,40,service,1,1459.0,41.0,20,-30.0,0,0,Sentinel Train Practice Warrior NoPurge Gain,AreaAttack Bash Disarm Dodge Fast Kick Parry Trip AssistVnum
+9503,the guildmaster,New Thalos,40,service,1,1423.0,41.0,15,-30.0,0,0,Sentinel Train Practice Warrior NoPurge Gain,Backstab Disarm Dodge Fast KickDirt Parry Trip AssistVnum
+9594,a Shire horse,New Thalos,40,combat,1,1464.0,41.0,3,-30.0,0,0,Pet CanBeRidden,Bash Disarm Dodge Tail Trip Crush AssistVnum
+9903,a dretch,Yggdrasil,40,combat,2,1401.0,41.0,20,-27.25,0,1,Npc Scavenger StayArea Wimpy,Disarm Dodge Trip AssistVnum
+9913,a gorgimera,Yggdrasil,40,combat,1,1429.0,41.0,20,-27.25,1,1,Npc Sentinel Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+10071,black Wolf elder,Wolf Pointe,40,combat,1,810.0,37.0,20,-20.0,0,,Wimpy NoAlign,Trip
+10090,a wandering Wolf,Wolf Pointe,40,combat,2,533.0,42.0,20,-30.0,0,,StayArea,Disarm Dodge Trip
+10093,a wandering wolf,Wolf Pointe,40,combat,2,533.0,42.0,20,-30.0,0,,StayArea,Disarm Dodge Trip
+10447,jury member,Descent to Hell,40,combat,1,1465.0,41.0,20,-27.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+13402,a warped creature from a nightmare,Ciquala's Lair,40,combat,2,1449.0,41.0,20,-27.0,1,1,Npc Aggressive StayArea Wimpy,Disarm Dodge Trip AssistVnum
+2225,the Ancient Green Dragon,Dragon Tower,41,combat,1,1643.0,41.0,20,-27.75,1,1,Npc Sentinel Scavenger Aggressive Sentient,Bash Disarm Dodge Trip AssistVnum
+10425,demonguard,Descent to Hell,41,combat,3,1658.0,41.0,20,-27.25,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+13413,the torturer lich,Ciquala's Lair,41,combat,1,1717.0,41.0,20,-27.75,0,1,Npc Sentinel,Bash Disarm Dodge Trip AssistVnum
+1908,A githyanki knight,The Astral Plane,42,combat,2,1735.0,42.0,21,-28.0,0,1,Npc Scavenger StayArea,Bash Disarm Dodge Trip AssistVnum
+10091,a Mother Wolf,Wolf Pointe,42,combat,1,720.0,44.0,21,-30.5,0,,Sentinel Cleric NoAlign,Parry Trip AssistRace AssistVnum
+10092,an elder wolf,Wolf Pointe,42,combat,1,720.0,44.0,21,-31.25,0,,Sentinel StayArea NoAlign,Parry Trip AssistVnum
+10401,the Guardian of Hell,Descent to Hell,42,combat,2,1682.0,42.0,21,-28.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10426,the burning fool,Descent to Hell,42,combat,2,1732.0,42.0,21,-28.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+12101,a follower,The Dell,42,combat,1,2101.0,45.0,21,-18.75,0,,StayArea Wimpy,AssistAlign
+5803,The Sand Person,Mos Eisley,43,combat,2,1505.0,42.5,0,-37.5,1,1,Scavenger Aggressive StayArea Warrior,Bash Berserk Disarm Dodge Parry Trip AssistVnum
+9904,a chasme,Yggdrasil,43,combat,2,1794.0,45.5,21,-28.0,0,1,Npc Scavenger StayArea,Disarm Dodge Trip AssistVnum
+10406,a scrumptious chicken pot pie,Descent to Hell,43,combat,1,1740.0,45.5,21,-28.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10407,a yummy beef pot pie,Descent to Hell,43,combat,1,1738.0,45.5,21,-28.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10408,a yummy vegetable pot pie,Descent to Hell,43,combat,1,1788.0,45.5,21,-28.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10417,the blood from the fountain,Descent to Hell,43,combat,1,1789.0,45.5,21,-28.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+2909,a fire newt baby,Fire Newt Mountain,44,combat,12,1821.0,46.5,22,-28.0,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+5806,The droid,Mos Eisley,44,combat,4,1502.0,112.5,0,-17.5,0,1,Sentinel StayArea Warrior NoAlign,Bash Disarm Dodge Crush
+10465,stray proton,Descent to Hell,44,combat,1,1831.0,46.5,22,-28.25,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+2221,the Great Red Dragon,Dragon Tower,45,combat,1,1869.0,50.0,22,-30.5,1,1,Npc Sentinel Scavenger Aggressive Sentient,Bash Disarm Dodge Trip AssistVnum
+2901,a mountain goat,Fire Newt Mountain,45,combat,2,1810.0,50.0,22,-28.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+3414,The mad etcher,Chapel Catacombs,45,combat,1,1884.0,50.0,22,-30.5,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+3415,The spectral etcher's wife,Chapel Catacombs,45,combat,1,1824.0,50.0,22,-30.5,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+10412,the living wall,Descent to Hell,45,combat,2,1868.0,50.0,22,-29.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10427,male construction worker,Descent to Hell,45,combat,2,1819.0,50.0,22,-29.0,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+10428,female construction worker,Descent to Hell,45,combat,3,1842.0,50.0,22,-29.0,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+10429,female construction worker,Descent to Hell,45,combat,1,1801.0,50.0,22,-29.0,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+10431,wall of fire,Descent to Hell,45,combat,1,1822.0,50.0,22,-29.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10436,half frozen body,Descent to Hell,45,combat,2,1877.0,50.0,22,-29.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10464,nuclear technician,Descent to Hell,45,combat,1,1852.0,50.0,22,-29.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10470,guard dog,Descent to Hell,45,combat,1,1871.0,50.0,22,-29.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+11001,Goldmoon,Crystalmir Lake,45,combat,1,1853.0,50.0,22,-29.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+13406,the undead guardian,Ciquala's Lair,45,combat,1,1817.0,50.0,22,-30.5,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+1909,A githyanki protector,The Astral Plane,46,combat,2,1847.0,51.0,23,-29.0,1,1,Npc Sentinel Scavenger Aggressive,Bash Disarm Dodge Trip AssistVnum
+2906,a fire newt worker,Fire Newt Mountain,46,combat,4,1870.0,51.0,23,-29.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+9905,a babau,Yggdrasil,46,combat,2,1884.0,51.0,23,-29.0,0,1,Npc StayArea,Bash Disarm Dodge Trip AssistVnum
+10432,hell hound,Descent to Hell,46,combat,1,1926.0,51.0,23,-29.0,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+2902,a mountain ewe,Fire Newt Mountain,47,combat,2,1884.0,51.0,23,-29.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+2904,a fire newt worker,Fire Newt Mountain,47,combat,10,1957.0,51.0,23,-29.75,1,1,Npc Scavenger Aggressive StayArea,Disarm Dodge Trip AssistVnum
+13417,vampire,Ciquala's Lair,47,combat,2,1933.0,51.0,23,-31.25,1,1,Npc Sentinel Scavenger Aggressive Sentient,Disarm Dodge Trip AssistVnum
+10430,fire devil,Descent to Hell,48,combat,1,1943.0,52.0,24,-30.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10463,frantic lady,Descent to Hell,48,combat,2,1989.0,52.0,24,-30.0,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+27232,an oily black rat,The Valkyrie,48,combat,6,2484.5,53.0,24,-32.0,0,0,StayArea Wimpy Thief,Dodge AssistRace
+10435,soul trapped under the ice,Descent to Hell,49,combat,1,1981.0,52.0,24,-30.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10446,a bowl of blood,Descent to Hell,49,combat,1,1968.0,52.0,24,-30.0,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+10452,maintenance worker,Descent to Hell,49,combat,3,1972.0,52.0,24,-30.0,0,1,Npc Sentinel StayArea,Bash Disarm Dodge Trip AssistVnum
+10459,reactor worker,Descent to Hell,49,combat,1,1965.0,52.0,24,-30.0,0,1,Npc Sentinel StayArea,Bash Disarm Dodge Trip AssistVnum
+27213,a powder monkey,The Valkyrie,49,combat,4,2714.5,54.0,24,-32.0,0,0,Sentinel StayArea Wimpy Warrior,Dodge Parry AssistAlign AssistRace
+915,Julius the Green Grocer,Olympus,50,service,1,2061.0,53.0,25,-33.0,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+916,the Alchemist,Olympus,50,combat,1,2080.0,53.0,25,-33.0,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+917,Clive the Weapons Master,Olympus,50,combat,1,2065.0,53.0,25,-33.0,0,1,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+1120,the blacksmith,The Shire,50,service,1,2066.0,53.0,25,-33.0,0,0,Npc Sentinel,Disarm Dodge Trip AssistVnum
+1364,The Grand Mistress,High Tower of Sorcery,50,combat,1,2065.0,53.0,25,-33.0,0,0,Npc Sentinel StayArea Sentient,Disarm Dodge Trip AssistVnum
+1900,The Astral Guardian,The Astral Plane,50,combat,1,2035.0,53.0,25,-30.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+2903,a mountain kid,Fire Newt Mountain,50,combat,3,2094.0,53.0,25,-30.75,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+5809,The town person,Mos Eisley,50,combat,9,1255.0,41.0,0,-30.0,0,1,Scavenger StayArea Wimpy Mage Warrior,Disarm Dodge Kick Parry Crush AssistVnum
+9597,a war horse,New Thalos,50,combat,1,2036.0,53.0,3,-37.5,0,0,Pet CanBeRidden,Bash Disarm Dodge Kick Tail Trip Crush AssistVnum
+9902,a Shedu,Yggdrasil,50,combat,2,2083.0,53.0,25,-30.0,0,1,Npc StayArea,Disarm Dodge Trip AssistVnum
+9912,a frost giant,Yggdrasil,50,combat,4,2019.0,53.0,25,-30.0,1,1,Npc Sentinel Aggressive StayArea,Bash Disarm Dodge Trip AssistVnum
+10051,the magical shop keeper,Wolf Pointe,50,service,1,2500.0,65.0,0,-35.0,0,,Sentinel NoPurge,Dodge Parry
+10052,the baker,Wolf Pointe,50,service,1,2500.0,80.0,25,-35.0,0,,Sentinel NoPurge,Bash Berserk Disarm Dodge Parry Crush
+10053,the food clerk,Wolf Pointe,50,service,1,2500.0,80.0,25,-35.0,0,,Sentinel NoPurge,Bash Berserk Disarm Dodge Parry Crush
+10054,the butcher,Wolf Pointe,50,service,1,2500.0,74.0,24,-35.0,0,,Sentinel NoPurge,Bash Berserk Disarm Dodge Parry Crush
+10055,the weaponsmaster,Wolf Pointe,50,service,1,2500.0,85.0,30,-35.0,0,,Sentinel NoPurge,Bash Berserk Disarm Dodge Parry Crush
+10056,the armourer,Wolf Pointe,50,service,1,2500.0,85.0,30,-35.0,0,,Sentinel NoPurge,Bash Berserk Disarm Dodge Parry Crush
+10057,the wolf trainer,Wolf Pointe,50,service,1,2500.0,85.0,30,-35.0,0,,Sentinel NoPurge,Bash Berserk Disarm Dodge Parry Crush
+10058,the wandering gypsy,Wolf Pointe,50,service,1,2500.0,57.5,30,-35.0,0,,Scavenger StayArea NoPurge,Bash Berserk Disarm Dodge Parry Crush
+10059,the wolf pointe monk,Wolf Pointe,50,combat,1,3500.0,52.5,25,-35.0,0,,Sentinel Cleric NoPurge,Bash Berserk Disarm Dodge Fast Parry Trip Crush
+10060,Gus the bartender,Wolf Pointe,50,service,1,2500.0,73.0,25,-33.75,0,,Sentinel NoPurge,Dodge Fast Trip
+10433,frozen body,Descent to Hell,50,combat,1,2039.0,53.0,25,-30.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10438,I-scream worker,Descent to Hell,50,combat,2,2045.0,53.0,25,-30.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10439,Ice Screamer,Descent to Hell,50,combat,1,2072.0,53.0,25,-30.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10450,Complaints Officer,Descent to Hell,50,combat,1,2068.0,53.0,25,-30.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10451,bastard hiramoto,Descent to Hell,50,service,1,2009.0,53.0,25,-30.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10453,weeds,Descent to Hell,50,combat,2,2009.0,53.0,25,-30.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+13405,a gigantic automaton,Ciquala's Lair,50,combat,1,2011.0,53.0,25,-33.0,0,1,Npc Sentinel,Bash Disarm Dodge Trip AssistVnum
+13414,Ciquala's undead pet dragon,Ciquala's Lair,50,combat,1,2081.0,53.0,25,-33.0,0,1,Npc Sentinel Sentient,Bash Disarm Dodge Trip AssistVnum
+27206,a swarthy seafarer,The Valkyrie,50,combat,7,2784.5,55.0,25,-32.0,0,1,StayArea Warrior,Dodge Parry AssistAlign AssistRace
+27231,an emaciated oarsman,The Valkyrie,50,combat,3,2784.5,55.0,25,-32.0,0,1,StayArea Wimpy Warrior,Dodge AssistRace
+902,Prometheus,Olympus,51,combat,1,2664.0,53.0,25,-33.0,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+10440,Demonic Foreman,Descent to Hell,51,combat,1,2633.0,53.0,25,-30.75,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+27214,a senior coxswain,The Valkyrie,51,combat,4,2914.5,55.0,25,-32.0,0,1,Sentinel StayArea Wimpy Warrior,Dodge Parry AssistAlign AssistRace
+27215,a seaman's apprentice,The Valkyrie,51,combat,4,2914.5,55.0,25,-32.0,0,1,Sentinel StayArea Wimpy Warrior,Dodge Parry AssistAlign AssistRace
+1913,The lich-queen,The Astral Plane,52,combat,1,2633.0,54.0,26,-31.0,1,1,Npc Sentinel Aggressive,Bash Disarm Dodge Trip AssistVnum
+9906,a yagnodemon,Yggdrasil,52,combat,2,2727.0,54.0,26,-31.0,0,1,Npc Scavenger StayArea,Bash Disarm Dodge Trip AssistVnum
+10437,killer penguin,Descent to Hell,52,combat,4,2645.0,54.0,26,-31.0,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+10443,records worker,Descent to Hell,52,combat,3,2676.0,54.0,26,-31.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10449,Lawyer from Hell,Descent to Hell,52,combat,1,2615.0,54.0,26,-31.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10460,Homer Simpson,Descent to Hell,52,combat,1,2687.0,54.0,26,-31.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10461,devils food cake,Descent to Hell,52,combat,1,2663.0,54.0,26,-31.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10462,mad cook,Descent to Hell,52,combat,1,2712.0,54.0,26,-31.0,1,1,Npc Sentinel Aggressive StayArea,Disarm Dodge Trip AssistVnum
+10466,radiation,Descent to Hell,52,combat,2,2623.0,54.0,26,-31.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+13415,the lich Ciquala,Ciquala's Lair,52,combat,1,2691.0,54.0,26,-34.0,1,0,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+27207,a bearded seadog,The Valkyrie,52,combat,3,2904.5,56.0,26,-32.0,1,1,Aggressive StayArea Warrior,Dodge Parry AssistAlign AssistRace
+10434,ice devil,Descent to Hell,53,combat,1,2728.0,54.0,26,-31.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10441,Secretary of Hell,Descent to Hell,53,combat,1,2663.0,54.0,26,-31.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10442,office worker from hell,Descent to Hell,53,combat,2,2763.0,54.0,26,-31.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10448,Judge Whopper,Descent to Hell,53,combat,1,2750.0,54.0,26,-31.0,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10458,reactor specialist,Descent to Hell,53,combat,1,2661.0,54.0,26,-31.0,0,1,Npc Sentinel StayArea,Bash Disarm Dodge Trip AssistVnum
+2908,a fire newt mother,Fire Newt Mountain,54,combat,2,2740.0,55.0,27,-32.0,0,1,Npc Sentinel,Disarm Dodge Trip AssistVnum
+10444,Santa Claus,Descent to Hell,54,combat,1,2833.0,55.0,27,-31.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+10445,High Priest of Hell,Descent to Hell,54,combat,1,2715.0,55.0,27,-31.75,0,1,Npc Sentinel StayArea,Bash Disarm Dodge Trip AssistVnum
+10454,Stanley,Descent to Hell,54,service,1,2758.0,55.0,27,-31.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip
+10467,the Chief Engineer of Hell,Descent to Hell,54,combat,1,2775.0,55.0,27,-31.75,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+27208,an angry seadog,The Valkyrie,54,combat,3,3004.5,60.0,27,-33.0,1,1,Aggressive StayArea Warrior,Dodge Parry AssistAlign AssistRace
+27216,a flock of hungry seagulls,The Valkyrie,54,combat,2,3004.5,60.0,27,-33.0,1,1,Sentinel Aggressive StayArea Warrior,Dodge Fast Parry AssistRace
+27217,a sleepy lookout,The Valkyrie,54,combat,1,3004.5,60.0,27,-32.0,0,1,Sentinel StayArea Warrior,Dodge Parry
+801,A stone-head creature,Strange World,55,combat,9,2705.0,25.0,8,-33.5,0,1,Scavenger Thief,Backstab Berserk Disarm Dodge Trip AssistVnum
+908,Hephaestus,Olympus,55,combat,1,2786.0,55.0,27,-35.75,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+1000,A fairy dragon,The Heavens,55,combat,3,2808.0,55.0,10,-30.75,0,1,StayArea Sentient Warrior,Bash Disarm Dodge Fast Parry Trip AssistVnum
+1801,a peasant gardener,Japan,55,combat,8,2392.5,53.0,20,5.0,0,0,StayArea Wimpy,Dodge Fast Parry
+2220,Tiamat,Dragon Tower,55,combat,1,2833.0,55.0,27,-35.75,1,1,Npc Sentinel Scavenger Aggressive Sentient,Bash Disarm Dodge Trip AssistVnum
+2905,a fire newt guard,Fire Newt Mountain,55,combat,6,2771.0,55.0,27,-32.0,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+2907,fire newt guard,Fire Newt Mountain,55,combat,6,2810.0,55.0,27,-32.0,1,1,Npc Aggressive StayArea,Disarm Dodge Trip AssistVnum
+5810,The spaceman,Mos Eisley,55,combat,5,2010.0,50.0,0,-33.75,0,1,StayArea Wimpy Thief Warrior,Bash Berserk Disarm Dodge Fast Crush
+5815,The smuggler,Mos Eisley,55,combat,1,2010.0,50.0,0,-40.0,0,1,Scavenger StayArea Wimpy Mage Thief Warrior,Backstab Bash Berserk Disarm Dodge Fast Kick KickDirt Parry Crush
+27212,a canon loader,The Valkyrie,55,combat,4,3004.5,60.0,27,-33.0,0,1,Sentinel StayArea Wimpy Warrior,Dodge Parry AssistAlign AssistRace
+903,Hermes,Olympus,56,combat,1,2872.0,56.0,28,-35.75,0,0,Npc Scavenger,Disarm Dodge Trip AssistVnum
+907,Athena,Olympus,56,combat,1,2856.0,56.0,28,-35.75,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+10468,Greater Fire Demon,Descent to Hell,56,combat,1,2938.0,56.0,28,-32.0,0,0,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+27223,a sharp-eyed harpoonist,The Valkyrie,56,combat,1,3104.5,61.0,28,-33.0,0,1,Sentinel StayArea Wimpy Sentient Warrior,Dodge Parry AssistRace
+1200,Heimdall,Immortal Zone,57,combat,1,20000.0,52.5,30,-32.5,0,,Sentinel Warrior NoPurge,AreaAttack Bash Berserk Disarm Dodge Fast Kick Parry Rescue Trip Crush AssistGuard
+1918,The enslaved red dragon,The Astral Plane,57,combat,1,2882.0,60.0,28,-32.75,0,1,Npc Sentinel,Bash Disarm Dodge Trip AssistVnum
+27224,a wailing stormsister,The Valkyrie,57,combat,2,3104.5,61.0,28,-33.0,0,1,Sentinel StayArea Wimpy Sentient Warrior,Dodge Parry AssistRace AssistVnum
+802,A bird-head creature,Strange World,58,combat,6,3105.0,38.0,15,-39.0,1,1,Aggressive StayArea,Disarm Dodge Kick Trip AssistVnum
+905,Apollo,Olympus,58,combat,1,2919.0,61.0,29,-37.5,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+2910,a fire newt sergeant,Fire Newt Mountain,58,combat,2,3032.0,61.0,29,-33.0,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+904,Poseidon,Olympus,59,combat,1,2967.0,61.0,29,-37.5,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+906,Ares,Olympus,59,combat,1,3053.0,61.0,29,-37.5,1,0,Npc Sentinel Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+921,Hera,Olympus,59,combat,1,3081.0,61.0,29,-37.5,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+2911,a fire newt general,Fire Newt Mountain,59,combat,4,3024.0,61.0,29,-34.25,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+803,A magnet-head,Strange World,60,combat,5,3305.0,43.0,10,-35.25,0,1,Scavenger Wimpy,Disarm Dodge Kick Trip AssistVnum
+901,Zeus,Olympus,60,combat,1,3147.0,62.0,30,-38.25,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+914,Odin,Olympus,60,combat,1,3113.0,62.0,30,-38.25,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+919,Ra the Sun God,Olympus,60,combat,1,3070.0,62.0,30,-38.25,0,0,Npc Sentinel Scavenger,Disarm Dodge Trip AssistVnum
+1011,Butterfly of Chaos,The Heavens,60,combat,1,3123.0,62.0,15,-32.75,0,1,StayArea Wimpy Cleric,Disarm Dodge Fast KickDirt Trip AssistVnum
+1914,Lord Gith,The Astral Plane,60,combat,1,3051.0,62.0,30,-33.75,1,1,Npc Sentinel Aggressive,Bash Disarm Dodge Trip AssistVnum
+27211,a master gunner,The Valkyrie,60,combat,1,3304.5,65.0,30,-35.0,0,1,Sentinel StayArea Wimpy Warrior,Dodge Parry AssistAlign AssistRace
+1001,A griffin,The Heavens,61,combat,2,3685.0,66.0,20,-32.5,0,1,StayArea Sentient Warrior,Disarm Dodge Fast Parry Trip AssistVnum
+3409,some cave weeds,Chapel Catacombs,61,combat,4,3735.0,66.0,30,-39.25,1,1,Npc Scavenger Aggressive,Disarm Dodge Trip AssistVnum
+27209,a burly boatswain,The Valkyrie,61,combat,4,3304.5,65.0,30,-35.0,0,1,StayArea Wimpy Warrior,Dodge Parry AssistAlign AssistRace
+2914,a fire lizard,Fire Newt Mountain,62,combat,2,3729.0,64.0,31,-36.0,1,0,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+3403,The wraith,Chapel Catacombs,62,combat,1,3749.0,67.0,31,-39.25,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+27210,Quartermaster Kirkelly,The Valkyrie,62,combat,1,3344.5,66.0,31,-35.0,0,1,StayArea Sentient Warrior,Dodge Parry AssistRace
+1808,a beautiful maiden,Japan,64,combat,3,4070.0,60.0,30,-5.0,0,1,StayArea Wimpy,Dodge Trip AssistVnum
+12102,a knight,The Dell,64,combat,1,3201.0,68.0,32,-23.75,0,,Sentinel,Bash Berserk Disarm Dodge Fast Kick Parry Trip
+1802,a statue of Leonardo,Japan,65,combat,1,5270.0,66.0,30,15.0,0,1,Sentinel StayArea Warrior,Bash Berserk Disarm Fast Parry Trip
+1803,a statue of Michaelangelo,Japan,65,combat,1,5270.0,66.0,30,15.0,0,1,Sentinel StayArea Warrior,Bash Berserk Disarm Fast Parry Trip
+1804,a statue of Donatello,Japan,65,combat,1,5270.0,66.0,30,15.0,0,1,Sentinel StayArea Warrior,Bash Berserk Disarm Fast Parry Trip
+1805,a statue of Raphael,Japan,65,combat,1,5270.0,66.0,30,15.0,0,1,Sentinel StayArea Warrior,Bash Berserk Disarm Dodge Fast Parry Trip
+2912,a fire newt leader,Fire Newt Mountain,65,combat,1,3958.0,68.0,32,-37.0,1,0,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+2913,a fire newt priest,Fire Newt Mountain,65,combat,1,4030.0,68.0,32,-37.0,1,0,Npc Sentinel Aggressive Sentient,Disarm Dodge Trip AssistVnum
+3400,the bony skeleton,Chapel Catacombs,65,combat,4,3928.0,68.0,32,-41.0,1,1,Npc Aggressive,Disarm Dodge Trip AssistVnum
+5801,The Storm Trooper,Mos Eisley,65,combat,14,1752.5,40.0,0,-32.5,0,1,StayArea Warrior,Dodge Trip AssistVnum
+5811,The keyboardist,Mos Eisley,65,combat,1,2257.5,75.0,0,-28.5,0,1,Sentinel StayArea Wimpy Mage Warrior,Bash Berserk Disarm Dodge Kick Parry Trip Crush
+10079,the executioner,Wolf Pointe,65,combat,1,3775.0,63.0,37,-62.5,0,,Sentinel Warrior,Berserk Dodge
+10087,the prisoner,Wolf Pointe,65,combat,1,4720.0,58.0,25,-37.5,1,,Sentinel Aggressive Warrior,Berserk Dodge
+27221,a duergar stowaway,The Valkyrie,65,combat,3,3544.5,68.0,32,-36.0,0,1,Sentinel StayArea Wimpy Warrior,Dodge AssistRace
+27222,Helmsman Pyke,The Valkyrie,65,combat,1,3544.5,68.0,32,-36.0,0,1,Sentinel StayArea Sentient Warrior,Dodge Parry AssistRace
+27229,the ship's cook,The Valkyrie,65,combat,1,3544.5,68.0,32,-36.0,0,1,Sentinel StayArea Wimpy Warrior,Dodge AssistRace
+27230,a master ropemaker,The Valkyrie,65,combat,1,3544.5,68.0,32,-36.0,0,1,Sentinel StayArea Wimpy Warrior,Dodge AssistRace
+1807,a fisherman,Japan,66,combat,5,4270.0,56.0,30,5.0,0,1,StayArea Wimpy,Dodge Parry
+1813,the red ninja,Japan,66,combat,10,4170.0,69.0,36,10.0,0,1,Sentinel StayArea Wimpy Warrior,Disarm Dodge Fast Kick Parry Trip
+1815,the black ninja,Japan,68,combat,8,4357.5,70.0,48,17.0,1,1,Sentinel Aggressive StayArea Mage Thief,Bash Disarm Dodge AssistVnum
+27218,Sentry McTavish,The Valkyrie,68,combat,1,3783.0,74.0,34,-39.0,0,1,Sentinel StayArea Warrior,Dodge Parry AssistRace
+27225,a hammerhead shark,The Valkyrie,68,combat,1,3864.5,75.0,39,-38.0,1,1,Sentinel Aggressive StayArea Warrior,Bash Dodge
+27226,a school of remora fish,The Valkyrie,68,combat,1,3864.5,75.0,39,-38.0,0,1,Sentinel StayArea Sentient Warrior,Dodge
+3401,the undead zombie,Chapel Catacombs,69,combat,7,4329.0,70.0,34,-43.5,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+3402,The ghoul,Chapel Catacombs,69,combat,5,4154.0,70.0,34,-43.5,1,1,Npc Aggressive,Disarm Dodge Trip AssistVnum
+804,A flying-disc,Strange World,70,combat,5,4065.0,29.5,18,-42.25,0,1,StayArea Wimpy NoAlign,AreaAttack Disarm Dodge Crush AssistVnum
+805,Skull-head,Strange World,70,combat,5,4065.0,27.0,18,-42.0,1,1,Aggressive StayArea,Backstab Berserk Disarm AssistVnum
+1809,the village chief,Japan,70,combat,1,5357.5,70.0,32,15.0,0,1,Sentinel StayArea Sentient Warrior,Bash Berserk Disarm Dodge Fast Kick Parry
+1821,a half-asleep samurai,Japan,70,combat,1,4857.5,79.0,42,15.0,0,1,Sentinel StayArea Warrior,Bash Berserk Disarm Dodge Parry AssistVnum
+1822,the Commander of the Red,Japan,70,combat,2,5357.5,76.5,35,17.0,1,1,Sentinel Aggressive StayArea Mage Thief,Disarm Dodge Parry
+1823,Hiro-matsu,Japan,70,service,1,10857.5,76.5,30,35.0,0,1,Sentinel StayArea,Bash Kick
+1824,Midiori,Japan,70,service,1,4857.5,76.5,35,35.0,0,1,Sentinel StayArea,Dodge
+1825,Torinaga,Japan,70,service,1,4857.5,76.5,35,35.0,0,1,Sentinel StayArea Warrior,Dodge Fast
+1827,Mariko,Japan,70,service,1,45357.5,76.5,35,35.0,0,1,Sentinel StayArea,Dodge
+3410,Snapper Joe,Chapel Catacombs,70,combat,1,4379.0,71.0,35,-43.5,0,1,Npc Sentinel,Bash Disarm Dodge Trip AssistVnum
+3411,The X-ist flesh eater,Chapel Catacombs,70,combat,1,4279.0,71.0,35,-43.5,1,1,Npc Sentinel Aggressive,Disarm Dodge Trip AssistVnum
+5813,The man,Mos Eisley,70,combat,1,3510.0,57.5,0,-32.5,0,1,StayArea Warrior,Bash Disarm Dodge Trip
+5817,The drunk pilot,Mos Eisley,70,combat,2,2505.0,61.0,0,-43.25,1,1,Aggressive StayArea Warrior,AreaAttack Backstab Bash Disarm Dodge Fast Kick KickDirt Parry Crush AssistAll
+9901,a planetar,Yggdrasil,70,combat,1,4353.0,71.0,35,-36.5,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+9909,a cloud dragon,Yggdrasil,70,combat,1,4248.0,71.0,35,-36.5,0,1,Npc Sentinel StayArea,Bash Disarm Dodge Trip AssistVnum
+9910,a solar,Yggdrasil,70,combat,1,4408.0,71.0,35,-36.5,0,1,Npc Sentinel StayArea,Disarm Dodge Trip AssistVnum
+27219,a Vricillian infiltrator,The Valkyrie,70,combat,1,4083.0,75.0,35,-39.0,0,1,Sentinel StayArea Warrior,Backstab Dodge Parry
+27220,an overworked surgeon,The Valkyrie,70,combat,1,4083.0,75.0,35,-39.0,0,1,Sentinel StayArea Wimpy Warrior,Dodge AssistRace
+1002,A white pegasus,The Heavens,72,combat,2,5171.0,72.0,15,-36.5,0,1,StayArea Sentient Warrior,Disarm Dodge Fast Parry Trip AssistVnum
+1003,A black pegasus,The Heavens,72,combat,2,5078.0,72.0,15,-36.5,0,1,StayArea Sentient Warrior,Disarm Dodge Fast Parry Trip AssistVnum
+1810,a samurai warrior,Japan,72,combat,8,5857.5,63.5,32,15.0,0,1,StayArea Warrior,Bash Berserk Disarm Dodge Parry AssistVnum
+1814,the white ninja,Japan,72,combat,10,4757.5,76.0,48,16.25,0,1,Sentinel StayArea Wimpy Mage,Dodge Fast Parry Trip AssistVnum
+27205,Ensign Hicks,The Valkyrie,72,combat,1,5193.5,75.0,35,-39.0,0,1,Sentinel StayArea Sentient Warrior,Dodge Parry AssistAlign AssistRace
+27227,a sentient ibliat,The Valkyrie,72,combat,1,4193.0,76.0,36,-39.0,0,1,Sentinel StayArea Wimpy Sentient Warrior,Bash Dodge
+5812,The Musician,Mos Eisley,73,combat,2,2505.0,75.0,0,-25.25,0,1,Sentinel StayArea Mage Warrior,Bash Berserk Disarm Dodge Fade Kick Parry Trip Crush
+27202,Petty Officer Vazquez,The Valkyrie,73,combat,1,5393.5,76.0,36,-39.0,0,1,Sentinel StayArea Sentient Warrior,Bash Dodge Parry AssistAlign AssistRace
+27203,Warrant Officer Hudson,The Valkyrie,73,combat,1,5393.5,76.0,36,-39.0,0,1,Sentinel StayArea Sentient Warrior,Dodge Parry AssistAlign AssistRace
+1820,the Commander of the White,Japan,74,combat,2,4857.5,80.5,36,5.0,0,1,Sentinel StayArea Sentient Mage,Dodge Fast Parry Trip
+1818,an attendant,Japan,75,combat,1,4857.5,76.5,40,5.0,0,1,Sentinel StayArea,Dodge Trip AssistAlign AssistVnum
+1819,the grey ninja,Japan,75,combat,2,4857.5,76.5,36,12.5,0,1,Sentinel StayArea Thief Warrior,Disarm Dodge Fast Kick Parry
+3012,the acolyte,Midgaard,75,service,1,1000.0,35.0,0,-31.25,0,,Sentinel Talkative Cleric NoPurge Healer,Dodge Fast Kick Parry
+3163,Astradamus the Summoner,Midgaard,75,service,1,1000.0,35.0,0,-31.25,0,,Sentinel NoPurge,Dodge Fast Kick Parry
+3407,The nightgaunt,Chapel Catacombs,75,combat,5,5501.0,77.5,37,-46.25,1,1,Npc Aggressive StayArea,Disarm Dodge Fast Trip AssistVnum
+3408,The hunting horror,Chapel Catacombs,75,combat,1,5255.0,77.5,37,-46.25,1,1,Npc Aggressive,Disarm Dodge Fast Trip AssistVnum
+5807,A large droid,Mos Eisley,75,combat,2,5010.0,105.0,0,-45.0,0,1,StayArea Warrior,Bash Berserk Disarm Dodge Fast Kick KickDirt Parry Crush
+9914,Ratatosk,Yggdrasil,75,combat,1,5275.0,77.5,37,-38.25,0,1,Npc Scavenger StayArea,Disarm Dodge Fast Trip AssistVnum
+10076,Town Judge,Wolf Pointe,75,combat,1,5330.0,70.0,36,-62.5,0,,Sentinel Warrior,Berserk Dodge
+10081,the sheriff,Wolf Pointe,75,combat,1,5330.0,70.0,37,-62.5,0,,Sentinel Warrior,Berserk Dodge
+10082,the town lord,Wolf Pointe,75,combat,1,5330.0,70.0,37,-62.5,0,,StayArea Warrior,Berserk Dodge
+27201,Lieutenant Gorlami,The Valkyrie,75,combat,1,5897.0,89.5,37,-40.0,0,1,Sentinel StayArea Sentient Warrior,Dodge Parry AssistAlign AssistRace
+1811,the elite samurai guard,Japan,76,combat,8,5857.5,82.5,33,17.5,0,1,Sentinel StayArea Warrior,Bash Disarm Dodge Fast Parry AssistVnum
+5822,The retired Jedi master,Mos Eisley,78,combat,1,4010.0,117.5,0,-70.0,0,1,Sentinel Scavenger StayArea Mage Warrior,Disarm Dodge Fast Parry Trip AssistAlign
+12104,a wise man,The Dell,78,service,1,3901.0,101.0,39,-45.0,0,,Sentinel,Backstab Bash Berserk Dodge KickDirt Parry
+806,Pacman,Strange World,80,combat,1,6105.0,65.0,23,-47.5,0,1,Thief,Disarm Dodge Fast Trip AssistVnum
+3162,Aquila,Midgaard,80,combat,1,3005.0,47.5,30,-38.0,0,,Sentinel NoPurge,Dodge Fast AssistAlign AssistGuard
+3412,the spirit of King Crotus,Chapel Catacombs,80,combat,1,5726.0,85.0,40,-48.75,0,1,Npc Sentinel,Disarm Dodge Fast Trip AssistVnum
+5816,The pilot,Mos Eisley,80,combat,3,3005.0,47.5,0,-43.25,0,1,StayArea Warrior,AreaAttack Backstab Bash Berserk Disarm Dodge Fast Kick KickDirt Parry Crush AssistVnum
+27200,Captain Crueltooth,The Valkyrie,80,combat,1,6897.0,85.0,40,-41.0,0,0,Sentinel StayArea Sentient Warrior,Bash Dodge Fast Parry AssistAlign AssistRace
+1004,A black unicorn,The Heavens,82,combat,2,6897.0,86.0,20,-40.25,0,1,StayArea Sentient Warrior,Disarm Dodge Fast Parry Trip AssistVnum
+1005,A white unicorn,The Heavens,82,combat,2,7032.0,86.0,20,-40.25,0,1,StayArea Sentient Warrior,Disarm Dodge Fast Parry Trip AssistVnum
+1806,the daimyo,Japan,82,combat,1,7390.0,80.5,40,35.0,0,1,Sentinel StayArea Sentient Warrior,Bash Berserk Disarm Kick Parry
+1816,the Shadow Ninja,Japan,82,combat,1,7390.0,85.0,48,25.0,1,1,Sentinel Aggressive StayArea Warrior,Disarm Dodge Fade Fast Parry AssistVnum
+27204,"Kirtok, Ambassador of Uk`tet",The Valkyrie,82,combat,1,7297.0,86.0,41,-42.0,0,0,Sentinel StayArea Sentient Warrior,Dodge Parry
+807,An evil bomb,Strange World,83,combat,3,5865.0,56.0,20,-50.5,0,1,Scavenger,AreaAttack Disarm Dodge Trip Crush
+1812,the Shogun,Japan,85,combat,1,7390.0,85.0,50,30.0,0,1,Sentinel StayArea Sentient Warrior,Disarm Dodge Parry
+1817,the Emperor,Japan,85,combat,1,9390.0,85.0,55,22.5,0,1,Sentinel StayArea Sentient Mage,Disarm Parry
+5814,The mechanic,Mos Eisley,85,combat,2,4010.0,110.0,0,-77.5,0,0,Sentinel StayArea Mage Warrior,Bash Berserk Disarm Dodge Fast Kick KickDirt Parry Trip AssistAll
+5819,Greedo,Mos Eisley,85,combat,1,4020.0,97.5,0,-43.75,0,0,StayArea Warrior,Bash Berserk Disarm Dodge Fast Kick KickDirt Parry Crush
+9907,Kostchtchie,Yggdrasil,85,combat,1,7070.0,87.0,42,-41.25,1,1,Npc Sentinel Aggressive StayArea,Bash Disarm Dodge Fast Trip AssistVnum
+3011,Concordius,Midgaard,86,combat,1,7000.0,52.0,30,-41.0,0,,Sentinel Talkative Warrior NoPurge,AreaAttack Bash Berserk Disarm Dodge Fast Kick Parry Rescue Trip Crush AssistGuard
+808,Windman,Strange World,88,combat,1,6510.0,51.0,35,-58.25,1,1,Sentinel Aggressive StayArea Warrior,Berserk Disarm Dodge Fast Trip AssistVnum
+809,Thunderman,Strange World,88,combat,1,4755.0,48.0,24,-52.75,0,1,Sentinel StayArea Warrior,Bash Disarm Dodge Fast Trip AssistVnum
+810,Rainman,Strange World,88,combat,1,6610.0,54.0,35,-52.0,1,1,Sentinel Aggressive StayArea Warrior,Bash Berserk Disarm Dodge Fast Trip AssistVnum
+811,Lightningman,Strange World,88,combat,1,5760.0,50.5,30,-53.0,0,1,Sentinel StayArea Warrior,Bash Disarm Dodge Fast Trip AssistVnum
+1006,An evil cloud giant,The Heavens,90,combat,2,7780.0,90.0,22,-42.25,1,1,Aggressive StayArea Mage Warrior,Berserk Disarm Dodge Fast Parry Trip AssistVnum
+1007,A cloud giant,The Heavens,90,combat,2,7593.0,90.0,22,-42.25,0,1,StayArea Sentient Mage Warrior,Berserk Disarm Dodge Fast Parry Trip AssistVnum
+3406,the Mi-Go,Chapel Catacombs,90,combat,3,7809.0,90.0,45,-55.0,1,1,Npc Aggressive,Disarm Dodge Fast Trip AssistVnum
+5823,The bartender,Mos Eisley,90,service,1,10001.0,101.0,0,-765.0,0,0,Sentinel,Trip Crush
+5824,The shopkeeper,Mos Eisley,90,service,1,10001.0,101.0,0,-765.0,0,0,Sentinel,Trip Crush
+5825,Tom,Mos Eisley,90,service,1,10001.0,101.0,0,-765.0,0,0,Sentinel,Trip Crush
+5826,Rain,Mos Eisley,90,service,1,10001.0,101.0,0,-765.0,0,0,Sentinel,Trip Crush
+5827,Angela,Mos Eisley,90,service,1,30000.0,101.0,0,-765.0,0,0,Sentinel NoPurge,Trip Crush
+10095,the guildmaster,Wolf Pointe,91,service,1,25001.0,27.5,10,-30.0,0,,Sentinel Train Practice Mage NoPurge Gain,Dodge Fast Trip
+10096,the guildmaster,Wolf Pointe,91,service,1,25001.0,32.0,10,-30.0,0,,Sentinel Train Practice Cleric NoPurge Gain,Disarm Dodge Fade Kick Parry
+10097,the guildmaster,Wolf Pointe,91,service,1,30001.0,35.0,20,-30.0,0,,Sentinel Train Practice Warrior NoPurge Gain,AreaAttack Bash Disarm Dodge Fast Kick Parry
+10098,the guildmaster,Wolf Pointe,91,service,1,25001.0,12.5,15,-30.0,0,,Sentinel Train Practice Thief NoPurge Gain,Backstab Disarm Dodge Fast KickDirt Parry Trip
+812,GoldLord,Strange World,93,above hero,1,6765.0,54.5,31,-54.75,0,0,Sentinel StayArea Warrior,Berserk Disarm Dodge Trip AssistVnum
+813,WoodLord,Strange World,93,above hero,1,7265.0,54.0,38,-54.75,0,0,Sentinel StayArea Warrior,Berserk Disarm Dodge Trip AssistVnum
+814,WaterLord,Strange World,93,above hero,1,6765.0,58.5,32,-54.0,1,0,Sentinel Aggressive StayArea Warrior,Berserk Disarm Dodge Fast AssistVnum
+815,FireLord,Strange World,93,above hero,1,6965.0,57.0,35,-54.25,0,0,Sentinel StayArea Warrior,Bash Disarm Dodge AssistVnum
+816,EarthLord,Strange World,93,above hero,1,6965.0,68.0,37,-54.0,0,0,Sentinel StayArea Warrior,AreaAttack Disarm Dodge Fast Kick Trip AssistVnum
+5820,The Informant,Mos Eisley,95,above hero,1,8020.0,175.0,20,-72.5,0,0,Scavenger StayArea Mage Warrior,AreaAttack Backstab Bash Berserk Disarm Dodge Fast Kick KickDirt Parry Crush AssistAlign
+1008,Perseus,The Heavens,96,above hero,1,8836.0,98.0,24,-44.25,0,0,Sentinel StayArea Sentient Cleric Mage Thief Warrior,Bash Berserk Disarm Dodge Fast Parry Trip AssistVnum
+1009,Icarus,The Heavens,96,above hero,1,8689.0,98.0,24,-44.25,0,0,Sentinel StayArea Sentient Cleric Mage Thief Warrior,Bash Berserk Disarm Dodge Fast Parry Trip AssistVnum
+5821,Chewey,Mos Eisley,98,above hero,1,8010.0,255.0,20,-63.75,0,0,Sentinel Scavenger StayArea Warrior,Bash Berserk Disarm Dodge Fast Kick KickDirt Parry AssistAlign
+1010,Nitrius,The Heavens,100,above hero,1,9435.0,105.0,25,-45.5,1,0,Sentinel Aggressive StayArea Cleric Mage Thief Warrior,Bash Berserk Disarm Dodge Fast Parry Trip AssistVnum
+1826,Mika,Japan,100,above hero,1,9357.5,105.0,50,35.0,0,0,Sentinel StayArea Pet,
+5818,Uncle Owen,Mos Eisley,100,above hero,1,8515.0,205.0,0,-80.0,0,0,Scavenger StayArea Wimpy Mage Warrior,Bash Berserk Disarm Dodge Fast Kick KickDirt Parry Crush
+817,A dark figure,Strange World,105,above hero,1,8910.0,37.0,40,-58.25,1,0,Sentinel Aggressive Warrior,AreaAttack Bash Berserk Disarm Dodge Rescue AssistVnum
+3404,The guardian vampire,Chapel Catacombs,106,above hero,1,10202.0,108.0,53,-63.75,1,0,Npc Sentinel Aggressive,Disarm Dodge Fast Trip AssistVnum
+27228,Nereus,The Valkyrie,110,above hero,1,12166.0,110.0,55,-61.75,0,0,Sentinel StayArea Sentient Warrior,Bash Tail Crush
+12100,a priest of Wandera,The Dell,112,above hero,1,7601.0,116.0,56,-65.0,0,,Sentinel Cleric,Disarm Dodge Fast Kick Parry
+3405,the priest,Chapel Catacombs,120,above hero,1,11708.0,126.0,60,-70.75,0,0,Npc Sentinel Sentient,Disarm Dodge Fast Trip AssistVnum
+5804,The Bantha,Mos Eisley,120,above hero,1,20020.0,80.0,0,-165.0,0,0,Sentinel StayArea Wimpy Warrior,Bash Berserk Disarm Dodge Fast Parry Crush
+9593,Teppic,New Thalos,130,service,1,12650.0,131.0,65,-76.75,0,0,Npc Sentinel Warrior NoPurge bit23 bit24 bit25,Disarm Dodge Fast Trip AssistVnum
+3003,the Imperial Quartermaster,Midgaard,150,service,1,1000.0,36.5,10,-30.0,0,,Sentinel Warrior NoPurge,Bash Disarm Kick Parry
+3004,Razorblade the armourer,Midgaard,150,service,1,1000.0,36.5,10,-30.0,0,,Sentinel NoPurge,Bash Disarm Dodge KickDirt Parry Trip

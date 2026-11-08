@@ -1,0 +1,165 @@
+check,kind,severity,status,where,area,file,line,detail
+code.affect-worth-ac,code,wrong-behaviour,present,AFFECT_DATA.cpp:86,,src/AFFECT_DATA.cpp,86,`if (modifier < 0) if (modifier > 0)` can never be true
+code.lose-level-asymmetry,code,wrong-behaviour,present,update.cpp:480,,src/update.cpp,480,advance_level adds HP/mana from curr_stat with the squared mana factor
+code.lose-level-asymmetry,code,wrong-behaviour,present,update.cpp:539,,src/update.cpp,539,lose_level removes them using max_stat and a different mana formula
+code.reverse-exit-null,code,crash,latent,db.cpp:811,,src/db.cpp,811,dereferences the reverse exit's destination without checking it for null
+code.shop-keeper-null,code,crash,latent,db.cpp:514,,src/db.cpp,514,uses the shopkeeper's prototype without checking get_mob_index found one
+code.dot-tools-stdout,code,cosmetic,present,apps/areas.cpp:69,,src/apps/areas.cpp,69,"DOT output printed to stdout, not to out_file"
+code.dot-tools-stdout,code,cosmetic,present,apps/map.cpp:25,,src/apps/map.cpp,25,"DOT output printed to stdout, not to out_file"
+code.dot-tools-stdout,code,cosmetic,present,apps/map.cpp:35,,src/apps/map.cpp,35,"DOT output printed to stdout, not to out_file"
+code.dot-tools-stdout,code,cosmetic,present,apps/map.cpp:39,,src/apps/map.cpp,39,"DOT output printed to stdout, not to out_file"
+code.dot-tools-stdout,code,cosmetic,present,apps/map.cpp:85,,src/apps/map.cpp,85,"DOT output printed to stdout, not to out_file"
+code.mudschool-reset-comment,code,cosmetic,present,Area.cpp:62,,src/Area.cpp,62,comment: Mud School resets every 1–2 minutes
+code.mudschool-reset-comment,code,cosmetic,present,Area.cpp:89,,src/Area.cpp,89,"code: age set to 10 against a threshold of 15, i.e. every ~5 area pulses (2.5–7.5 min)"
+data.unlisted-broken,data,cosmetic,present,HelpLore.are:1,,area/HelpLore.are,1,Boot_db: # not found.
+data.unlisted-broken,data,cosmetic,present,LairOfTheShadowCouncil.are:243,,area/LairOfTheShadowCouncil.are,243,"fread_spnumber: quoted spell names not allowed, use spellname~ instead"
+data.unlisted-broken,data,cosmetic,present,proto.are:46,,area/proto.are,46,fread_number: bad format (got '')
+content.unobtainable-items,content,wrong-behaviour,present,#9592 something,New Thalos,,0,"weapon, level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#1114 a flail,The Shire,,0,"weapon, level 6"
+content.unobtainable-items,content,wrong-behaviour,present,#1703 a gnarled staff,Wyvern Tower,,0,"weapon, level 6"
+content.unobtainable-items,content,wrong-behaviour,present,#4053 a thieves dirk,Moria,,0,"weapon, level 10"
+content.unobtainable-items,content,wrong-behaviour,present,#4153 a morning star,Moria,,0,"weapon, level 10"
+content.unobtainable-items,content,wrong-behaviour,present,#7299 a short sword,Sewer,,0,"weapon, level 10"
+content.unobtainable-items,content,wrong-behaviour,present,"#16020 a small, deadly dart",UnderDark,,0,"weapon, level 10"
+content.unobtainable-items,content,wrong-behaviour,present,#5106 a snake headed whip,Drow City,,0,"weapon, level 18"
+content.unobtainable-items,content,wrong-behaviour,present,#1704 an ancient long sword,Wyvern Tower,,0,"weapon, level 20"
+content.unobtainable-items,content,wrong-behaviour,present,#5107 a snake headed whip,Drow City,,0,"weapon, level 20"
+content.unobtainable-items,content,wrong-behaviour,present,#30124 Sword of the Great Wyrm,Temple of the Great Wyrm,,0,"weapon, level 30"
+content.unobtainable-items,content,wrong-behaviour,present,#30126 Axe of the Great Wyrm,Temple of the Great Wyrm,,0,"weapon, level 75"
+content.unobtainable-items,content,wrong-behaviour,present,#30128 Pike of the Great Wyrm,Temple of the Great Wyrm,,0,"weapon, level 90"
+content.unobtainable-items,content,wrong-behaviour,present,#4 template,Limbo,,0,"gear (body, head, legs, feet, hands, arms, shield, about, waist, neck, wrist, finger, ears, hold), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#655 a golden dragonhelm,New Ofcol,,0,"gear (head), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#1001 a red rose,The Heavens,,0,"gear (head), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#1396 a shimmering cloak of many colors,High Tower of Sorcery,,0,"gear (neck), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#1515 a pair of gnome boots,Gnome Village,,0,"gear (feet), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#1519 a stone shield,Gnome Village,,0,"gear (shield), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#2221 a plain black robe,Dragon Tower,,0,"gear (about), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#3129 a pair of hand cuffs,Midgaard,,0,"gear (hold), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#3161 a white key,Midgaard,,0,"gear (hold), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#3371 a diamond wedding ring,Midgaard,,0,"gear (finger), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#3372 a gold wedding band,Midgaard,,0,"gear (finger), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#3600 a candlestick,Graveyard,,0,"gear (hold), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#5234 a pink stone,Thalos,,0,"gear (hold), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#7301 a large beltpouch,Sewer,,0,"gear (waist), level 1"
+content.unobtainable-items,content,wrong-behaviour,present,#9101 a pair of winged boots,Dylan's Wilderness,,0,"gear (feet), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#9573 an off white potion,New Thalos,,0,"gear (hold), level 1"
+content.unobtainable-items,content,wrong-behaviour,present,#9580 a wand of glinting yellow,New Thalos,,0,"gear (hold), level 1"
+content.unobtainable-items,content,wrong-behaviour,present,#9594 the dungeon key,New Thalos,,0,"gear (hold), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#9595 a tie-dye shirt,New Thalos,,0,"gear (body), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#9596 a pair of Bugle Boy jeans,New Thalos,,0,"gear (legs), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#9597 a pair of Reebok Pumps,New Thalos,,0,"gear (feet), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#9838 A pair of cheap plaid pants,Dragon Cult,,0,"gear (legs), level 1"
+content.unobtainable-items,content,wrong-behaviour,present,#30000 a rod of divine power,Penthouse,,0,"gear (hold), level 1"
+content.unobtainable-items,content,wrong-behaviour,present,#30003 a seal of stewardship,Penthouse,,0,"gear (hold), level 0"
+content.unobtainable-items,content,wrong-behaviour,present,#30024 a sacred Krellstone clan gem,Penthouse,,0,"gear (hold), level 1"
+content.unobtainable-items,content,wrong-behaviour,present,#1712 a pair of travelling boots,Wyvern Tower,,0,"gear (feet), level 5"
+content.unobtainable-items,content,wrong-behaviour,present,#30121 Shield of the Great Wyrm,Temple of the Great Wyrm,,0,"gear (shield), level 5"
+content.unobtainable-items,content,wrong-behaviour,present,#30122 Helm of the Great Wyrm,Temple of the Great Wyrm,,0,"gear (head), level 10"
+content.unobtainable-items,content,wrong-behaviour,present,#3046 a bronze breast plate,Midgaard,,0,"gear (body), level 15"
+content.unobtainable-items,content,wrong-behaviour,present,#3106 an iron bracer,Midgaard,,0,"gear (wrist), level 18"
+content.unobtainable-items,content,wrong-behaviour,present,#30206 (|bBlack Aura|w) the Helm of a Shadow Soldier,Penthouse,,0,"gear (head), level 20"
+content.unobtainable-items,content,wrong-behaviour,present,#13038 a dirty loincloth,The Flying Citadel,,0,"gear (waist), level 28"
+content.unobtainable-items,content,wrong-behaviour,present,#13039 some filthy clothing,The Flying Citadel,,0,"gear (about), level 28"
+content.unobtainable-items,content,wrong-behaviour,present,#30123 Amulet of the Great Wyrm,Temple of the Great Wyrm,,0,"gear (neck), level 30"
+content.unobtainable-items,content,wrong-behaviour,present,#30156 the ring of enlightenment,Lore Keep,,0,"gear (finger), level 30"
+content.unobtainable-items,content,wrong-behaviour,present,#30207 (|bBlack Aura|w) the Cloak of a Shadow Warrior,Penthouse,,0,"gear (about), level 40"
+content.unobtainable-items,content,wrong-behaviour,present,#30125 Armour of the Great Wyrm,Temple of the Great Wyrm,,0,"gear (body), level 50"
+content.unobtainable-items,content,wrong-behaviour,present,#30208 (|bBlack Aura|w) the Gauntlets of a Shadow Master,Penthouse,,0,"gear (hands), level 50"
+content.unobtainable-items,content,wrong-behaviour,present,#523 a brightly coloured shirt,Camelot,,0,"gear (about), level 59"
+content.unobtainable-items,content,wrong-behaviour,present,#30160 cloak of the Protector of the Lore,Lore Keep,,0,"gear (neck), level 60"
+content.unobtainable-items,content,wrong-behaviour,present,#30209 (|bBlack Aura|w) the Shield of an Avatar of Mephistopheles,Penthouse,,0,"gear (shield), level 70"
+content.unobtainable-items,content,wrong-behaviour,present,#30127 Bracelet of the Great Wyrm,Temple of the Great Wyrm,,0,"gear (wrist), level 90"
+content.unobtainable-items,content,wrong-behaviour,present,#30210 (|bBlack Aura|w) the Pendant of the Shadow King,Penthouse,,0,"gear (neck), level 90"
+content.unobtainable-items,content,wrong-behaviour,present,#30211 (|bBlack Aura|w) the Shroud of the Shadow King,Penthouse,,0,"gear (body), level 90"
+content.unobtainable-items,content,wrong-behaviour,present,#30129 Crown of the High Dragon,Temple of the Great Wyrm,,0,"gear (head), level 91"
+content.unobtainable-items,content,wrong-behaviour,present,#30130 Armour of the High Dragon,Temple of the Great Wyrm,,0,"gear (body), level 91"
+content.unobtainable-items,content,wrong-behaviour,present,#30212 a JoinT,Penthouse,,0,"gear (hold), level 91"
+content.mobs-never-spawn,content,wrong-behaviour,present,#10080 some birds,Wolf Pointe,,0,level 1; every M reset has a world cap ≤ 0
+content.mobs-never-spawn,content,wrong-behaviour,present,#6003 the ferocious rabbit,Haon Dor,,0,level 3; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1516 the hobgoblin guard,Gnome Village,,0,level 6; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#5111 the drow scout,Drow City,,0,level 7; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1132 a shiriff,The Shire,,0,level 8; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#2 a zombie,Limbo,,0,level 10; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1720 a displacer beast,Wyvern Tower,,0,level 10; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#5110 the drow guard,Drow City,,0,level 12; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#8319 the orc shaman,Old Marsh,,0,level 12; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9534 A bodyguard,New Thalos,,0,level 12; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1707 a ranger leader,Wyvern Tower,,0,level 15; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1365 a wizard,High Tower of Sorcery,,0,level 17; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1708 the Lord of the Rangers,Wyvern Tower,,0,level 20; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9237 a HUGE elemental,Elemental Canyon,,0,level 20; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9546 Conan the Librarian,New Thalos,,0,level 20; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9563 The chief guard,New Thalos,,0,level 20; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9202 the cyclops,Elemental Canyon,,0,level 22; every M reset has a world cap ≤ 0
+content.mobs-never-spawn,content,wrong-behaviour,present,#3041 the waiter,Midgaard,,0,level 23; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9512 the banker,New Thalos,,0,level 23; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#30003 A large vicious looking wolf,Penthouse,,0,level 60; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#30002 the Death of Rats,Penthouse,,0,level 100; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#30005 Shaiga the Bengal Tiger,Penthouse,,0,level 113; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#30014 Forbidden,Penthouse,,0,level 113; no M reset
+content.unreachable-rooms,content,cosmetic,present,room #563 The North Western Battlement,Camelot,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #564 The South Western Battlement,Camelot,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #565 The North Eastern Battlement,Camelot,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #566 The South Eastern Battlement,Camelot,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #1205 The Eye of the Hurricane,Immortal Zone,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #1206 Walking on the Moon,Immortal Zone,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #1263 The Villa Straylight,Immortal Zone,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #1499 Skylar's Hideout,High Tower of Sorcery,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #3032 Pet Shop Store,Midgaard,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #5577 Ravan's hideout,Ofcol,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #5820 Droid Storage,Mos Eisley,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #5858 The Brophy Stairs,Mos Eisley,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #5859 The Xavier Courtyard,Mos Eisley,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #6201 On the spider web,Arachnos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #6202 On the spider web,Arachnos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #7130 The sewer pipe.,Sewer,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #7301 The Entrance to the Realm of silence,Sewer,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #7903 The Artifact room of Naris,Redferne's Residence,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #8699 The Void,Machine Dreams,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #8999 The fog,Holy Grove,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9039 A Junction in the hallway,Nirvana,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9040 Office of an Octon,Nirvana,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9041 Office of a Septon,Nirvana,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9042 An east-west passage,Nirvana,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9043 The Barracks,Nirvana,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9044 The Commander's Post,Nirvana,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9045 The chamber of the second Secundus,Nirvana,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9153 Calm cloud.,Dylan's Wilderness,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9154 Mountainside.,Dylan's Wilderness,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9155 Mountainside.,Dylan's Wilderness,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9156 Roc's Nest.,Dylan's Wilderness,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9347 Inside a Luxurious Bedroom,Galaxy,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9594 Common Room of the Clan MacCleod,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9595 Zippoii's Room,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9596 Ice's Room,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9597 Naazgul's Room,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9598 Tank's Room,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9599 Inside the Castle of Clan MacCleod,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9631 The Mercenary's Guild,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9719 Headwaters of the River of Lost Souls,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9734 The River of Lost Souls,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9735 The River of Lost Souls,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9778 Freefall,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9801 store,New Thalos,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9897 Ravenwing's Study,Dragon Cult,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9898 Morpheus's Study,Dragon Cult,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #9899 Sandman's Study,Dragon Cult,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #10113 A Small Hidden Room Behind the Falls.,Wolf Pointe,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #10147 Store Room,Uruk's Fortress,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #10441 Hidden Room,Descent to Hell,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #10451 Crack in Wall,Descent to Hell,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #16361 Foyer of Svirfneblin Embassy,UnderDark,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #16362 Svirfneblin Hallway,UnderDark,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #16363 Svirfneblin Hallway,UnderDark,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #16364 Svirfneblin Chamber,UnderDark,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #16365 Svirfneblin Hallway,UnderDark,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #16366 Svirfneblin Chamber,UnderDark,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #16367 Svirfneblin Hallway,UnderDark,,0,no walking route from recall
+content.unreachable-rooms,content,cosmetic,present,room #16368 Svirfneblin Chamber,UnderDark,,0,no walking route from recall
+content.unlisted-areas,content,cosmetic,present,CausewayToImmortality.are,,area/CausewayToImmortality.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,HelpLore.are,,area/HelpLore.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,LairOfTheShadowCouncil.are,,area/LairOfTheShadowCouncil.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,TantricObstacles.are,,area/TantricObstacles.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,proto.are,,area/proto.are,0,"on disk but not in area.lst, so never loaded"
+data.fatal-load,data,crash,clean,,,,,
+data.load-warnings,data,wrong-behaviour,clean,,,,,

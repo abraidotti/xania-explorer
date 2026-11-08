@@ -1,0 +1,4879 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and level 1–91 balance reports for the Xania MUD">
+      
+      
+      
+        <link rel="canonical" href="https://abraidotti.github.io/xania-explorer/builds/mattgodbolt-xania-main...mattgodbolt-xania-mg-web/mattgodbolt-xania-main/areas/UnderDark/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>UnderDark - Xania Explorer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/xania.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#underdark" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Xania Explorer" class="md-header__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xania Explorer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UnderDark
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Xania Explorer" class="md-nav__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    Xania Explorer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore any repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture & game loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02-area-file-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area file format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-world-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04-characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05-combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06-skills-and-magic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & magic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../07-items-and-economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Items & economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assessments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About the assessments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../mattgodbolt-xania-mg-web/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mob-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mob programs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- GENERATED by `python -m xania_explorer docs` from xania/area. Do not edit by hand. -->
+
+<h1 id="underdark">UnderDark<a class="headerlink" href="#underdark" title="Permanent link">&para;</a></h1>
+<ul>
+<li>File: <code>UnderDark.are</code> (load order #49)</li>
+<li>Description: <code>{13 50} Silence UnderDark</code></li>
+<li>Level band: 13–50</li>
+<li>Declared vnums: 16000–16499; effective: 16000–16499</li>
+<li>Sections: AREA ROOMS MOBILES OBJECTS RESETS SHOPS MOBPROGS SPECIALS</li>
+<li>Rooms 488, mobs 129, objects 97, resets 968</li>
+<li>Exits lead to: New Thalos, Sewer</li>
+<li>Sectors: City 488</li>
+<li>Exits: 1061 (274 doors, 0 one-way, 0 cosmetic)</li>
+<li>Resets by command: D 266, E 238, G 54, M 408, O 1, P 1</li>
+</ul>
+<h2 id="mobs">Mobs<a class="headerlink" href="#mobs" title="Permanent link">&para;</a></h2>
+<p>HP/damage shown as dice (average). AC is pierce/bash/slash/exotic (more negative = better). Flags are as written in the file, before race flags are merged.</p>
+<table>
+<thead>
+<tr>
+<th>Vnum</th>
+<th>Name</th>
+<th>Lvl</th>
+<th>HP</th>
+<th>Damage</th>
+<th>Hitroll</th>
+<th>AC</th>
+<th>Attack</th>
+<th>Align</th>
+<th>Race</th>
+<th>Act</th>
+<th>Offensive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16001</td>
+<td>the enforcer eye</td>
+<td>32</td>
+<td>1d1+1175 (1176)</td>
+<td>6d6+16 (37)</td>
+<td>16</td>
+<td>-25/-25/-25/-15</td>
+<td>slash</td>
+<td>0</td>
+<td>unique</td>
+<td>Npc</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16002</td>
+<td>the floating eye</td>
+<td>18</td>
+<td>1d1+522 (523)</td>
+<td>4d4+9 (19)</td>
+<td>9</td>
+<td>-17/-17/-17/-11</td>
+<td>slash</td>
+<td>-350</td>
+<td>unique</td>
+<td>Npc</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16003</td>
+<td>the prisoner</td>
+<td>18</td>
+<td>1d1+522 (523)</td>
+<td>4d4+9 (19)</td>
+<td>9</td>
+<td>-17/-17/-17/-11</td>
+<td>pound</td>
+<td>-200</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16004</td>
+<td>the great enforcing eye</td>
+<td>43</td>
+<td>1d1+1801 (1802)</td>
+<td>7d6+21 (45.5)</td>
+<td>21</td>
+<td>-32/-32/-32/-19</td>
+<td>pound</td>
+<td>0</td>
+<td>unique</td>
+<td>Npc Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16005</td>
+<td>the huge beholder</td>
+<td>50</td>
+<td>1d1+2067 (2068)</td>
+<td>7d7+25 (53)</td>
+<td>25</td>
+<td>-37/-37/-37/-21</td>
+<td>pound</td>
+<td>0</td>
+<td>unique</td>
+<td>Npc Sentinel Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16006</td>
+<td>the beholder</td>
+<td>49</td>
+<td>1d1+2003 (2004)</td>
+<td>7d7+24 (52)</td>
+<td>24</td>
+<td>-36/-36/-36/-21</td>
+<td>slash</td>
+<td>-1000</td>
+<td>unique</td>
+<td>Npc Sentinel Scavenger Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16007</td>
+<td>the svirfneblin</td>
+<td>19</td>
+<td>1d1+551 (552)</td>
+<td>4d4+9 (19)</td>
+<td>9</td>
+<td>-17/-17/-17/-11</td>
+<td>slash</td>
+<td>-500</td>
+<td>hobbit</td>
+<td>Npc Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16008</td>
+<td>the drow trader</td>
+<td>16</td>
+<td>1d1+464 (465)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-15/-15/-15/-10</td>
+<td>slice</td>
+<td>-750</td>
+<td>half-elf</td>
+<td>Npc</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16009</td>
+<td>the duergar</td>
+<td>21</td>
+<td>1d1+702 (703)</td>
+<td>5d5+10 (25)</td>
+<td>10</td>
+<td>-19/-19/-19/-12</td>
+<td>chop</td>
+<td>-600</td>
+<td>dwarf</td>
+<td>Npc</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16010</td>
+<td>the necromancer</td>
+<td>43</td>
+<td>1d1+1778 (1779)</td>
+<td>7d6+21 (45.5)</td>
+<td>21</td>
+<td>-32/-32/-32/-19</td>
+<td>slash</td>
+<td>-150</td>
+<td>human</td>
+<td>Npc Sentinel Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16011</td>
+<td>the behir</td>
+<td>38</td>
+<td>1d1+1383 (1384)</td>
+<td>6d6+19 (40)</td>
+<td>19</td>
+<td>-29/-29/-29/-17</td>
+<td>shbite</td>
+<td>-100</td>
+<td>snake</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16012</td>
+<td>the fighter</td>
+<td>43</td>
+<td>1d1+1725 (1726)</td>
+<td>7d6+21 (45.5)</td>
+<td>21</td>
+<td>-32/-32/-32/-19</td>
+<td>slash</td>
+<td>-750</td>
+<td>orc</td>
+<td>Npc Sentinel</td>
+<td>Bash Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16013</td>
+<td>a high priest of Xevior</td>
+<td>43</td>
+<td>1d1+1759 (1760)</td>
+<td>7d6+21 (45.5)</td>
+<td>21</td>
+<td>-32/-32/-32/-19</td>
+<td>beating</td>
+<td>-666</td>
+<td>elf</td>
+<td>Npc Sentinel Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16014</td>
+<td>the lizard man</td>
+<td>16</td>
+<td>1d1+464 (465)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-15/-15/-15/-10</td>
+<td>punch</td>
+<td>-600</td>
+<td>lizard</td>
+<td>Npc</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16015</td>
+<td>the purple worm</td>
+<td>44</td>
+<td>1d1+1765 (1766)</td>
+<td>7d6+22 (46.5)</td>
+<td>22</td>
+<td>-33/-33/-33/-19</td>
+<td>slash</td>
+<td>-100</td>
+<td>unique</td>
+<td>Npc Sentinel Aggressive</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16016</td>
+<td>the huge purple worm</td>
+<td>48</td>
+<td>1d1+2014 (2015)</td>
+<td>7d7+24 (52)</td>
+<td>24</td>
+<td>-35/-35/-35/-20</td>
+<td>slash</td>
+<td>-250</td>
+<td>unique</td>
+<td>Npc Sentinel Aggressive</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16017</td>
+<td>the beholder's underling</td>
+<td>43</td>
+<td>1d1+1774 (1775)</td>
+<td>7d6+21 (45.5)</td>
+<td>21</td>
+<td>-32/-32/-32/-19</td>
+<td>punch</td>
+<td>-750</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16018</td>
+<td>the beholder legionnaire</td>
+<td>46</td>
+<td>1d1+1917 (1918)</td>
+<td>7d7+23 (51)</td>
+<td>23</td>
+<td>-34/-34/-34/-20</td>
+<td>punch</td>
+<td>-850</td>
+<td>human</td>
+<td>Npc StayArea Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16019</td>
+<td>the supreme attendant</td>
+<td>48</td>
+<td>1d1+1964 (1965)</td>
+<td>7d7+24 (52)</td>
+<td>24</td>
+<td>-35/-35/-35/-20</td>
+<td>punch</td>
+<td>-900</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16020</td>
+<td>the grell</td>
+<td>46</td>
+<td>1d1+1889 (1890)</td>
+<td>7d7+23 (51)</td>
+<td>23</td>
+<td>-34/-34/-34/-20</td>
+<td>pound</td>
+<td>-750</td>
+<td>unique</td>
+<td>Npc Sentinel Aggressive Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16021</td>
+<td>the Barkeep</td>
+<td>100</td>
+<td>1d1+9389 (9390)</td>
+<td>10d10+50 (105)</td>
+<td>50</td>
+<td>-68/-68/-68/-37</td>
+<td>slash</td>
+<td>0</td>
+<td>dwarf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Fast Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16022</td>
+<td>the duergar patron</td>
+<td>11</td>
+<td>1d1+275 (276)</td>
+<td>3d4+5 (12.5)</td>
+<td>5</td>
+<td>-12/-12/-12/-9</td>
+<td>slash</td>
+<td>-500</td>
+<td>dwarf</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16023</td>
+<td>the drow patron</td>
+<td>13</td>
+<td>1d1+325 (326)</td>
+<td>4d4+6 (16)</td>
+<td>6</td>
+<td>-14/-14/-14/-10</td>
+<td>slash</td>
+<td>-600</td>
+<td>half-elf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16024</td>
+<td>the human patron</td>
+<td>14</td>
+<td>1d1+350 (351)</td>
+<td>4d4+7 (17)</td>
+<td>7</td>
+<td>-14/-14/-14/-10</td>
+<td>slash</td>
+<td>-250</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16025</td>
+<td>Caris</td>
+<td>22</td>
+<td>1d1+733 (734)</td>
+<td>5d5+11 (26)</td>
+<td>11</td>
+<td>-19/-19/-19/-12</td>
+<td>punch</td>
+<td>0</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16026</td>
+<td>Antryg</td>
+<td>22</td>
+<td>1d1+743 (744)</td>
+<td>5d5+11 (26)</td>
+<td>11</td>
+<td>-19/-19/-19/-12</td>
+<td>slash</td>
+<td>0</td>
+<td>orc</td>
+<td>Npc Sentinel</td>
+<td>Bash Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16027</td>
+<td>the gremlin</td>
+<td>17</td>
+<td>1d1+493 (494)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-16/-16/-16/-11</td>
+<td>slash</td>
+<td>-50</td>
+<td>goblin</td>
+<td>Npc Scavenger StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16028</td>
+<td>the slime creature</td>
+<td>20</td>
+<td>1d1+580 (581)</td>
+<td>4d5+10 (22)</td>
+<td>10</td>
+<td>-18/-18/-18/-12</td>
+<td>slash</td>
+<td>0</td>
+<td>unique</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16029</td>
+<td>the huge rat</td>
+<td>19</td>
+<td>1d1+551 (552)</td>
+<td>4d4+9 (19)</td>
+<td>9</td>
+<td>-17/-17/-17/-11</td>
+<td>slash</td>
+<td>0</td>
+<td>unique</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16030</td>
+<td>the jinxkin</td>
+<td>22</td>
+<td>1d1+755 (756)</td>
+<td>5d5+11 (26)</td>
+<td>11</td>
+<td>-19/-19/-19/-12</td>
+<td>punch</td>
+<td>-400</td>
+<td>hobbit</td>
+<td>Npc Scavenger StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16031</td>
+<td>the jermlaine</td>
+<td>21</td>
+<td>1d1+727 (728)</td>
+<td>5d5+10 (25)</td>
+<td>10</td>
+<td>-19/-19/-19/-12</td>
+<td>punch</td>
+<td>-600</td>
+<td>human</td>
+<td>Npc Scavenger StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16032</td>
+<td>the bodak</td>
+<td>45</td>
+<td>1d1+1810 (1811)</td>
+<td>7d7+22 (50)</td>
+<td>22</td>
+<td>-34/-34/-34/-20</td>
+<td>slash</td>
+<td>-999</td>
+<td>human</td>
+<td>Npc Sentinel Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16033</td>
+<td>the mage</td>
+<td>38</td>
+<td>1d1+1341 (1342)</td>
+<td>6d6+19 (40)</td>
+<td>19</td>
+<td>-29/-29/-29/-17</td>
+<td>slash</td>
+<td>-500</td>
+<td>undead</td>
+<td>Npc Sentinel Aggressive</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16034</td>
+<td>the iron golem</td>
+<td>40</td>
+<td>1d1+1455 (1456)</td>
+<td>6d6+20 (41)</td>
+<td>20</td>
+<td>-30/-30/-30/-18</td>
+<td>punch</td>
+<td>0</td>
+<td>unique</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16035</td>
+<td>the stone golem</td>
+<td>39</td>
+<td>1d1+1401 (1402)</td>
+<td>6d6+19 (40)</td>
+<td>19</td>
+<td>-30/-30/-30/-18</td>
+<td>slash</td>
+<td>0</td>
+<td>unique</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16036</td>
+<td>Itreres</td>
+<td>42</td>
+<td>1d1+1712 (1713)</td>
+<td>6d6+21 (42)</td>
+<td>21</td>
+<td>-32/-32/-32/-19</td>
+<td>beating</td>
+<td>-500</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16037</td>
+<td>the imp</td>
+<td>39</td>
+<td>1d1+1400 (1401)</td>
+<td>6d6+19 (40)</td>
+<td>19</td>
+<td>-30/-30/-30/-18</td>
+<td>slash</td>
+<td>-750</td>
+<td>unique</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16038</td>
+<td>the babau</td>
+<td>40</td>
+<td>1d1+1425 (1426)</td>
+<td>6d6+20 (41)</td>
+<td>20</td>
+<td>-30/-30/-30/-18</td>
+<td>pound</td>
+<td>-1000</td>
+<td>unique</td>
+<td>Npc Scavenger Aggressive</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16039</td>
+<td>the servant</td>
+<td>10</td>
+<td>1d1+230 (231)</td>
+<td>3d3+5 (11)</td>
+<td>5</td>
+<td>-12/-12/-12/-9</td>
+<td>slash</td>
+<td>0</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16040</td>
+<td>the gibbering mouther</td>
+<td>41</td>
+<td>1d1+1685 (1686)</td>
+<td>6d6+20 (41)</td>
+<td>20</td>
+<td>-31/-31/-31/-18</td>
+<td>slash</td>
+<td>-1000</td>
+<td>unique</td>
+<td>Npc Scavenger Aggressive</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16041</td>
+<td>the worker of the night</td>
+<td>12</td>
+<td>1d1+300 (301)</td>
+<td>3d4+6 (13.5)</td>
+<td>6</td>
+<td>-13/-13/-13/-9</td>
+<td>slash</td>
+<td>0</td>
+<td>human</td>
+<td>Npc Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16042</td>
+<td>a maid of passion</td>
+<td>13</td>
+<td>1d1+325 (326)</td>
+<td>4d4+6 (16)</td>
+<td>6</td>
+<td>-14/-14/-14/-10</td>
+<td>slash</td>
+<td>0</td>
+<td>elf</td>
+<td>Npc Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16043</td>
+<td>a granter of pleasure</td>
+<td>11</td>
+<td>1d1+275 (276)</td>
+<td>3d4+5 (12.5)</td>
+<td>5</td>
+<td>-12/-12/-12/-9</td>
+<td>scratch</td>
+<td>0</td>
+<td>human</td>
+<td>Npc Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16044</td>
+<td>a preferred customer</td>
+<td>14</td>
+<td>1d1+350 (351)</td>
+<td>4d4+7 (17)</td>
+<td>7</td>
+<td>-14/-14/-14/-10</td>
+<td>slash</td>
+<td>0</td>
+<td>human</td>
+<td>Npc Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16045</td>
+<td>the pimp</td>
+<td>16</td>
+<td>1d1+464 (465)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-15/-15/-15/-10</td>
+<td>slash</td>
+<td>-1000</td>
+<td>human</td>
+<td>Npc Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16046</td>
+<td>the halfling patron</td>
+<td>13</td>
+<td>1d1+325 (326)</td>
+<td>4d4+6 (16)</td>
+<td>6</td>
+<td>-14/-14/-14/-10</td>
+<td>slash</td>
+<td>-500</td>
+<td>hobbit</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16047</td>
+<td>the half-orc</td>
+<td>11</td>
+<td>1d1+275 (276)</td>
+<td>3d4+5 (12.5)</td>
+<td>5</td>
+<td>-12/-12/-12/-9</td>
+<td>pound</td>
+<td>-900</td>
+<td>orc</td>
+<td>Npc Sentinel</td>
+<td>Bash Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16048</td>
+<td>the svirfneblin patron</td>
+<td>12</td>
+<td>1d1+300 (301)</td>
+<td>3d4+6 (13.5)</td>
+<td>6</td>
+<td>-13/-13/-13/-9</td>
+<td>slash</td>
+<td>-750</td>
+<td>hobbit</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16049</td>
+<td>the inn keeper</td>
+<td>100</td>
+<td>1d1+9213 (9214)</td>
+<td>10d10+50 (105)</td>
+<td>50</td>
+<td>-68/-68/-68/-37</td>
+<td>slash</td>
+<td>0</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Fast Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16050</td>
+<td>Limbeck</td>
+<td>33</td>
+<td>1d1+1200 (1201)</td>
+<td>6d6+16 (37)</td>
+<td>16</td>
+<td>-26/-26/-26/-16</td>
+<td>slash</td>
+<td>-500</td>
+<td>dwarf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16051</td>
+<td>Geg</td>
+<td>30</td>
+<td>1d1+999 (1000)</td>
+<td>5d5+15 (30)</td>
+<td>15</td>
+<td>-24/-24/-24/-15</td>
+<td>slash</td>
+<td>-600</td>
+<td>hobbit</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16052</td>
+<td>Drevlin</td>
+<td>31</td>
+<td>1d1+1138 (1139)</td>
+<td>6d5+15 (33)</td>
+<td>15</td>
+<td>-25/-25/-25/-15</td>
+<td>slash</td>
+<td>-999</td>
+<td>half-elf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16053</td>
+<td>Jarre</td>
+<td>30</td>
+<td>1d1+1018 (1019)</td>
+<td>5d5+15 (30)</td>
+<td>15</td>
+<td>-24/-24/-24/-15</td>
+<td>pound</td>
+<td>-999</td>
+<td>orc</td>
+<td>Npc Sentinel</td>
+<td>Bash Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16054</td>
+<td>the serving wench</td>
+<td>13</td>
+<td>1d1+325 (326)</td>
+<td>4d4+6 (16)</td>
+<td>6</td>
+<td>-14/-14/-14/-10</td>
+<td>slice</td>
+<td>0</td>
+<td>half-elf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16055</td>
+<td>the Slave Dealer</td>
+<td>100</td>
+<td>1d1+9131 (9132)</td>
+<td>10d10+50 (105)</td>
+<td>50</td>
+<td>-68/-68/-68/-37</td>
+<td>slash</td>
+<td>-900</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Fast Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16056</td>
+<td>the slave trader</td>
+<td>23</td>
+<td>1d1+777 (778)</td>
+<td>5d5+11 (26)</td>
+<td>11</td>
+<td>-20/-20/-20/-13</td>
+<td>slash</td>
+<td>-500</td>
+<td>human</td>
+<td>Npc Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16057</td>
+<td>a slaver buyer</td>
+<td>21</td>
+<td>1d1+708 (709)</td>
+<td>5d5+10 (25)</td>
+<td>10</td>
+<td>-19/-19/-19/-12</td>
+<td>slash</td>
+<td>-900</td>
+<td>human</td>
+<td>Npc Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16058</td>
+<td>the orc slave</td>
+<td>18</td>
+<td>1d1+522 (523)</td>
+<td>4d4+9 (19)</td>
+<td>9</td>
+<td>-17/-17/-17/-11</td>
+<td>pound</td>
+<td>0</td>
+<td>orc</td>
+<td>Npc Sentinel Scavenger</td>
+<td>Bash Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16059</td>
+<td>the goblin slave</td>
+<td>16</td>
+<td>1d1+464 (465)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-15/-15/-15/-10</td>
+<td>pierce</td>
+<td>0</td>
+<td>goblin</td>
+<td>Npc Sentinel Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16060</td>
+<td>a male human slave</td>
+<td>19</td>
+<td>1d1+551 (552)</td>
+<td>4d4+9 (19)</td>
+<td>9</td>
+<td>-17/-17/-17/-11</td>
+<td>punch</td>
+<td>0</td>
+<td>human</td>
+<td>Npc Sentinel Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16061</td>
+<td>the female human slave</td>
+<td>11</td>
+<td>1d1+275 (276)</td>
+<td>3d4+5 (12.5)</td>
+<td>5</td>
+<td>-12/-12/-12/-9</td>
+<td>punch</td>
+<td>0</td>
+<td>human</td>
+<td>Npc Sentinel Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16062</td>
+<td>the kobold</td>
+<td>20</td>
+<td>1d1+580 (581)</td>
+<td>4d5+10 (22)</td>
+<td>10</td>
+<td>-18/-18/-18/-12</td>
+<td>pound</td>
+<td>0</td>
+<td>kobold</td>
+<td>Npc Sentinel Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16063</td>
+<td>the elven slave</td>
+<td>24</td>
+<td>1d1+811 (812)</td>
+<td>5d5+12 (27)</td>
+<td>12</td>
+<td>-20/-20/-20/-13</td>
+<td>slash</td>
+<td>0</td>
+<td>elf</td>
+<td>Npc Sentinel Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16064</td>
+<td>the dwarven slave</td>
+<td>26</td>
+<td>1d1+881 (882)</td>
+<td>5d5+13 (28)</td>
+<td>13</td>
+<td>-22/-22/-22/-14</td>
+<td>slash</td>
+<td>0</td>
+<td>dwarf</td>
+<td>Npc Sentinel Scavenger</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16065</td>
+<td>the Bar Tender</td>
+<td>100</td>
+<td>1d1+9434 (9435)</td>
+<td>10d10+50 (105)</td>
+<td>50</td>
+<td>-68/-68/-68/-37</td>
+<td>slash</td>
+<td>0</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Fast Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16066</td>
+<td>Prax</td>
+<td>28</td>
+<td>1d1+942 (943)</td>
+<td>5d5+14 (29)</td>
+<td>14</td>
+<td>-23/-23/-23/-14</td>
+<td>slash</td>
+<td>-500</td>
+<td>half-elf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16067</td>
+<td>Thespan</td>
+<td>26</td>
+<td>1d1+863 (864)</td>
+<td>5d5+13 (28)</td>
+<td>13</td>
+<td>-22/-22/-22/-14</td>
+<td>slash</td>
+<td>-600</td>
+<td>half-elf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16068</td>
+<td>Endolar</td>
+<td>26</td>
+<td>1d1+888 (889)</td>
+<td>5d5+13 (28)</td>
+<td>13</td>
+<td>-22/-22/-22/-14</td>
+<td>slash</td>
+<td>-600</td>
+<td>half-elf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16069</td>
+<td>Snaromba</td>
+<td>16</td>
+<td>1d1+464 (465)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-15/-15/-15/-10</td>
+<td>slice</td>
+<td>-600</td>
+<td>hobbit</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16070</td>
+<td>Anmictes</td>
+<td>15</td>
+<td>1d1+375 (376)</td>
+<td>4d4+7 (17)</td>
+<td>7</td>
+<td>-15/-15/-15/-10</td>
+<td>pound</td>
+<td>-700</td>
+<td>hobbit</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16071</td>
+<td>Emba</td>
+<td>17</td>
+<td>1d1+493 (494)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-16/-16/-16/-11</td>
+<td>scratch</td>
+<td>-800</td>
+<td>dwarf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16072</td>
+<td>Shillikif</td>
+<td>16</td>
+<td>1d1+464 (465)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-15/-15/-15/-10</td>
+<td>slice</td>
+<td>-700</td>
+<td>half-elf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16073</td>
+<td>Yie'Stei</td>
+<td>50</td>
+<td>1d1+2089 (2090)</td>
+<td>7d7+25 (53)</td>
+<td>25</td>
+<td>-37/-37/-37/-21</td>
+<td>slash</td>
+<td>0</td>
+<td>half-elf</td>
+<td>Npc Sentinel Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16074</td>
+<td>Zae'tres</td>
+<td>100</td>
+<td>1d1+9282 (9283)</td>
+<td>10d10+50 (105)</td>
+<td>50</td>
+<td>-68/-68/-68/-37</td>
+<td>slash</td>
+<td>0</td>
+<td>half-elf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Fast Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16075</td>
+<td>Raesarnt</td>
+<td>100</td>
+<td>1d1+9105 (9106)</td>
+<td>10d10+50 (105)</td>
+<td>50</td>
+<td>-68/-68/-68/-37</td>
+<td>slash</td>
+<td>0</td>
+<td>dwarf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Fast Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16076</td>
+<td>Satori</td>
+<td>40</td>
+<td>1d1+1431 (1432)</td>
+<td>6d6+20 (41)</td>
+<td>20</td>
+<td>-30/-30/-30/-18</td>
+<td>slash</td>
+<td>-999</td>
+<td>human</td>
+<td>Npc Sentinel Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16077</td>
+<td>Jiestis</td>
+<td>49</td>
+<td>1d1+2034 (2035)</td>
+<td>7d7+24 (52)</td>
+<td>24</td>
+<td>-36/-36/-36/-21</td>
+<td>slash</td>
+<td>0</td>
+<td>hobbit</td>
+<td>Npc Sentinel Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16078</td>
+<td>the svirfneblin</td>
+<td>17</td>
+<td>1d1+493 (494)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-16/-16/-16/-11</td>
+<td>slash</td>
+<td>-500</td>
+<td>hobbit</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16079</td>
+<td>the svirfneblin dignitary</td>
+<td>16</td>
+<td>1d1+464 (465)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-15/-15/-15/-10</td>
+<td>slash</td>
+<td>-500</td>
+<td>hobbit</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16080</td>
+<td>the caretaker</td>
+<td>17</td>
+<td>1d1+493 (494)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-16/-16/-16/-11</td>
+<td>slash</td>
+<td>-700</td>
+<td>hobbit</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16081</td>
+<td>the footpad</td>
+<td>16</td>
+<td>1d1+464 (465)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-15/-15/-15/-10</td>
+<td>slash</td>
+<td>-450</td>
+<td>hobbit</td>
+<td>Npc</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16082</td>
+<td>the cutpurse</td>
+<td>17</td>
+<td>1d1+493 (494)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-16/-16/-16/-11</td>
+<td>slice</td>
+<td>-600</td>
+<td>elf</td>
+<td>Npc Wimpy</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16083</td>
+<td>the filcher</td>
+<td>18</td>
+<td>1d1+522 (523)</td>
+<td>4d4+9 (19)</td>
+<td>9</td>
+<td>-17/-17/-17/-11</td>
+<td>slash</td>
+<td>-600</td>
+<td>elf</td>
+<td>Npc Wimpy</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16084</td>
+<td>the rogue</td>
+<td>19</td>
+<td>1d1+551 (552)</td>
+<td>4d4+9 (19)</td>
+<td>9</td>
+<td>-17/-17/-17/-11</td>
+<td>slash</td>
+<td>-700</td>
+<td>orc</td>
+<td>Npc Wimpy</td>
+<td>Bash Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16085</td>
+<td>the sharper</td>
+<td>21</td>
+<td>1d1+714 (715)</td>
+<td>5d5+10 (25)</td>
+<td>10</td>
+<td>-19/-19/-19/-12</td>
+<td>slice</td>
+<td>-500</td>
+<td>half-elf</td>
+<td>Npc Sentinel Aggressive</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16086</td>
+<td>the magsman</td>
+<td>23</td>
+<td>1d1+766 (767)</td>
+<td>5d5+11 (26)</td>
+<td>11</td>
+<td>-20/-20/-20/-13</td>
+<td>slash</td>
+<td>-500</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16087</td>
+<td>the master thief</td>
+<td>25</td>
+<td>1d1+836 (837)</td>
+<td>5d5+12 (27)</td>
+<td>12</td>
+<td>-21/-21/-21/-13</td>
+<td>slash</td>
+<td>-700</td>
+<td>hobbit</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16088</td>
+<td>the head thief</td>
+<td>47</td>
+<td>1d1+1973 (1974)</td>
+<td>7d7+23 (51)</td>
+<td>23</td>
+<td>-35/-35/-35/-20</td>
+<td>slash</td>
+<td>-1000</td>
+<td>half-elf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16089</td>
+<td>Meliadus</td>
+<td>40</td>
+<td>1d1+1435 (1436)</td>
+<td>6d6+20 (41)</td>
+<td>20</td>
+<td>-30/-30/-30/-18</td>
+<td>slash</td>
+<td>-500</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16090</td>
+<td>the trainer</td>
+<td>50</td>
+<td>1d1+2082 (2083)</td>
+<td>7d7+25 (53)</td>
+<td>25</td>
+<td>-37/-37/-37/-21</td>
+<td>slash</td>
+<td>0</td>
+<td>elf</td>
+<td>Npc Sentinel Practice</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16091</td>
+<td>the bravo</td>
+<td>20</td>
+<td>1d1+580 (581)</td>
+<td>4d5+10 (22)</td>
+<td>10</td>
+<td>-18/-18/-18/-12</td>
+<td>punch</td>
+<td>-900</td>
+<td>elf</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16092</td>
+<td>the murderer</td>
+<td>21</td>
+<td>1d1+694 (695)</td>
+<td>5d5+10 (25)</td>
+<td>10</td>
+<td>-19/-19/-19/-12</td>
+<td>slash</td>
+<td>-999</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16093</td>
+<td>the thug</td>
+<td>22</td>
+<td>1d1+742 (743)</td>
+<td>5d5+11 (26)</td>
+<td>11</td>
+<td>-19/-19/-19/-12</td>
+<td>slash</td>
+<td>-999</td>
+<td>orc</td>
+<td>Npc StayArea</td>
+<td>Bash Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16094</td>
+<td>the killer</td>
+<td>23</td>
+<td>1d1+771 (772)</td>
+<td>5d5+11 (26)</td>
+<td>11</td>
+<td>-20/-20/-20/-13</td>
+<td>slash</td>
+<td>-999</td>
+<td>elf</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16095</td>
+<td>the assassin</td>
+<td>25</td>
+<td>1d1+865 (866)</td>
+<td>5d5+12 (27)</td>
+<td>12</td>
+<td>-21/-21/-21/-13</td>
+<td>slash</td>
+<td>-999</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16096</td>
+<td>the expert assassin</td>
+<td>27</td>
+<td>1d1+907 (908)</td>
+<td>5d5+13 (28)</td>
+<td>13</td>
+<td>-22/-22/-22/-14</td>
+<td>slash</td>
+<td>-999</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16097</td>
+<td>the senior assassin</td>
+<td>29</td>
+<td>1d1+978 (979)</td>
+<td>5d5+14 (29)</td>
+<td>14</td>
+<td>-24/-24/-24/-15</td>
+<td>slash</td>
+<td>-999</td>
+<td>human</td>
+<td>Npc StayArea Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16098</td>
+<td>the prime assassin</td>
+<td>31</td>
+<td>1d1+1128 (1129)</td>
+<td>6d5+15 (33)</td>
+<td>15</td>
+<td>-25/-25/-25/-15</td>
+<td>slash</td>
+<td>-999</td>
+<td>human</td>
+<td>Npc StayArea Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16099</td>
+<td>the guildmaster</td>
+<td>46</td>
+<td>1d1+1897 (1898)</td>
+<td>7d7+23 (51)</td>
+<td>23</td>
+<td>-34/-34/-34/-20</td>
+<td>slash</td>
+<td>-999</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16100</td>
+<td>the trainer</td>
+<td>50</td>
+<td>1d1+2075 (2076)</td>
+<td>7d7+25 (53)</td>
+<td>25</td>
+<td>-37/-37/-37/-21</td>
+<td>slash</td>
+<td>0</td>
+<td>human</td>
+<td>Npc Sentinel Practice</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16101</td>
+<td>the darken beast</td>
+<td>44</td>
+<td>1d1+1774 (1775)</td>
+<td>7d6+22 (46.5)</td>
+<td>22</td>
+<td>-33/-33/-33/-19</td>
+<td>slash</td>
+<td>-500</td>
+<td>unique</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16102</td>
+<td>the skyzorr'n</td>
+<td>45</td>
+<td>1d1+1844 (1845)</td>
+<td>7d7+22 (50)</td>
+<td>22</td>
+<td>-34/-34/-34/-20</td>
+<td>slash</td>
+<td>-600</td>
+<td>unique</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16103</td>
+<td>the dretch</td>
+<td>46</td>
+<td>1d1+1844 (1845)</td>
+<td>7d7+23 (51)</td>
+<td>23</td>
+<td>-34/-34/-34/-20</td>
+<td>slash</td>
+<td>-800</td>
+<td>unique</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16104</td>
+<td>The platinum golem</td>
+<td>47</td>
+<td>1d1+1958 (1959)</td>
+<td>7d7+23 (51)</td>
+<td>23</td>
+<td>-35/-35/-35/-20</td>
+<td>acbite</td>
+<td>0</td>
+<td>unique</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16105</td>
+<td>Gulthac</td>
+<td>46</td>
+<td>1d1+1846 (1847)</td>
+<td>7d7+23 (51)</td>
+<td>23</td>
+<td>-34/-34/-34/-20</td>
+<td>slash</td>
+<td>-800</td>
+<td>dwarf</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16106</td>
+<td>Eurandus</td>
+<td>47</td>
+<td>1d1+1945 (1946)</td>
+<td>7d7+23 (51)</td>
+<td>23</td>
+<td>-35/-35/-35/-20</td>
+<td>slash</td>
+<td>-999</td>
+<td>orc</td>
+<td>Npc Sentinel Sentient</td>
+<td>Bash Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16107</td>
+<td>the Keeper</td>
+<td>49</td>
+<td>1d1+1995 (1996)</td>
+<td>7d7+24 (52)</td>
+<td>24</td>
+<td>-36/-36/-36/-21</td>
+<td>slash</td>
+<td>0</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16108</td>
+<td>the xaren</td>
+<td>48</td>
+<td>1d1+1971 (1972)</td>
+<td>7d7+24 (52)</td>
+<td>24</td>
+<td>-35/-35/-35/-20</td>
+<td>slash</td>
+<td>-500</td>
+<td>unique</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16109</td>
+<td>the cloaker</td>
+<td>48</td>
+<td>1d1+2004 (2005)</td>
+<td>7d7+24 (52)</td>
+<td>24</td>
+<td>-35/-35/-35/-20</td>
+<td>slash</td>
+<td>-999</td>
+<td>unique</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16110</td>
+<td>Lord Rygar</td>
+<td>25</td>
+<td>1d1+863 (864)</td>
+<td>5d5+12 (27)</td>
+<td>12</td>
+<td>-21/-21/-21/-13</td>
+<td>beating</td>
+<td>-500</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16111</td>
+<td>Orak</td>
+<td>26</td>
+<td>1d1+897 (898)</td>
+<td>5d5+13 (28)</td>
+<td>13</td>
+<td>-22/-22/-22/-14</td>
+<td>pound</td>
+<td>-500</td>
+<td>orc</td>
+<td>Npc Sentinel</td>
+<td>Bash Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16112</td>
+<td>Sabrakarn</td>
+<td>26</td>
+<td>1d1+858 (859)</td>
+<td>5d5+13 (28)</td>
+<td>13</td>
+<td>-22/-22/-22/-14</td>
+<td>pound</td>
+<td>-700</td>
+<td>half-elf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16113</td>
+<td>Hangharid</td>
+<td>24</td>
+<td>1d1+815 (816)</td>
+<td>5d5+12 (27)</td>
+<td>12</td>
+<td>-20/-20/-20/-13</td>
+<td>slash</td>
+<td>-500</td>
+<td>dwarf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16114</td>
+<td>Sifrim</td>
+<td>25</td>
+<td>1d1+865 (866)</td>
+<td>5d5+12 (27)</td>
+<td>12</td>
+<td>-21/-21/-21/-13</td>
+<td>slash</td>
+<td>-800</td>
+<td>half-elf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16115</td>
+<td>Wismarel</td>
+<td>26</td>
+<td>1d1+871 (872)</td>
+<td>5d5+13 (28)</td>
+<td>13</td>
+<td>-22/-22/-22/-14</td>
+<td>slash</td>
+<td>-500</td>
+<td>dwarf</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16116</td>
+<td>Methuen</td>
+<td>27</td>
+<td>1d1+920 (921)</td>
+<td>5d5+13 (28)</td>
+<td>13</td>
+<td>-22/-22/-22/-14</td>
+<td>slash</td>
+<td>-400</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16117</td>
+<td>Cedrena</td>
+<td>25</td>
+<td>1d1+841 (842)</td>
+<td>5d5+12 (27)</td>
+<td>12</td>
+<td>-21/-21/-21/-13</td>
+<td>slash</td>
+<td>-250</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16118</td>
+<td>the inn keep</td>
+<td>100</td>
+<td>1d1+9401 (9402)</td>
+<td>10d10+50 (105)</td>
+<td>50</td>
+<td>-68/-68/-68/-37</td>
+<td>slash</td>
+<td>0</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Fast Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16119</td>
+<td>the demon clan member</td>
+<td>17</td>
+<td>1d1+493 (494)</td>
+<td>4d4+8 (18)</td>
+<td>8</td>
+<td>-16/-16/-16/-11</td>
+<td>punch</td>
+<td>-500</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16120</td>
+<td>a demon clan mage</td>
+<td>21</td>
+<td>1d1+726 (727)</td>
+<td>5d5+10 (25)</td>
+<td>10</td>
+<td>-19/-19/-19/-12</td>
+<td>slash</td>
+<td>-600</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16121</td>
+<td>a demon clan fighter</td>
+<td>23</td>
+<td>1d1+775 (776)</td>
+<td>5d5+11 (26)</td>
+<td>11</td>
+<td>-20/-20/-20/-13</td>
+<td>pound</td>
+<td>-900</td>
+<td>human</td>
+<td>Npc Sentinel</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16122</td>
+<td>the demon summoner</td>
+<td>27</td>
+<td>1d1+912 (913)</td>
+<td>5d5+13 (28)</td>
+<td>13</td>
+<td>-22/-22/-22/-14</td>
+<td>slash</td>
+<td>-600</td>
+<td>elf</td>
+<td>Npc Sentinel Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16123</td>
+<td>the cambion</td>
+<td>30</td>
+<td>1d1+1028 (1029)</td>
+<td>5d5+15 (30)</td>
+<td>15</td>
+<td>-24/-24/-24/-15</td>
+<td>punch</td>
+<td>-999</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16124</td>
+<td>a noble cambion</td>
+<td>35</td>
+<td>1d1+1245 (1246)</td>
+<td>6d6+17 (38)</td>
+<td>17</td>
+<td>-27/-27/-27/-16</td>
+<td>punch</td>
+<td>-999</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16125</td>
+<td>Irmugar</td>
+<td>37</td>
+<td>1d1+1344 (1345)</td>
+<td>6d6+18 (39)</td>
+<td>18</td>
+<td>-29/-29/-29/-17</td>
+<td>slash</td>
+<td>-999</td>
+<td>human</td>
+<td>Npc Sentinel Sentient</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16126</td>
+<td>the hezron</td>
+<td>25</td>
+<td>1d1+857 (858)</td>
+<td>5d5+12 (27)</td>
+<td>12</td>
+<td>-21/-21/-21/-13</td>
+<td>slash</td>
+<td>-999</td>
+<td>unique</td>
+<td>Npc Aggressive</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16127</td>
+<td>an eye of fear and flame</td>
+<td>25</td>
+<td>1d1+826 (827)</td>
+<td>5d5+12 (27)</td>
+<td>12</td>
+<td>-21/-21/-21/-13</td>
+<td>slash</td>
+<td>-999</td>
+<td>unique</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16128</td>
+<td>the revenant</td>
+<td>25</td>
+<td>1d1+825 (826)</td>
+<td>5d5+12 (27)</td>
+<td>12</td>
+<td>-21/-21/-21/-13</td>
+<td>punch</td>
+<td>-500</td>
+<td>human</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>16129</td>
+<td>The eye killer</td>
+<td>24</td>
+<td>1d1+809 (810)</td>
+<td>5d5+12 (27)</td>
+<td>12</td>
+<td>-20/-20/-20/-13</td>
+<td>acbite</td>
+<td>-700</td>
+<td>unique</td>
+<td>Npc StayArea</td>
+<td>Disarm Dodge Trip AssistVnum</td>
+</tr>
+</tbody>
+</table>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Vnum</th>
+<th>Name</th>
+<th>Type</th>
+<th>Lvl</th>
+<th>Values</th>
+<th>Affects</th>
+<th>Wear</th>
+<th>Extra</th>
+<th>Wt</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16001</td>
+<td>scale of the enforcer</td>
+<td>Armor</td>
+<td>32</td>
+<td>AC 9/9/9/0</td>
+<td>Str +1, Hit +1</td>
+<td>Body</td>
+<td>Dark</td>
+<td>5</td>
+<td>6615</td>
+</tr>
+<tr>
+<td>16002</td>
+<td>blood shot eye</td>
+<td>Wand</td>
+<td>18</td>
+<td>spell lvl 22, charges 2/2: 65</td>
+<td></td>
+<td>Hold</td>
+<td>Glow</td>
+<td>3</td>
+<td>3757</td>
+</tr>
+<tr>
+<td>16003</td>
+<td>slime of the enforcing eye</td>
+<td>Potion</td>
+<td>43</td>
+<td>spell lvl 23: 19, 28, 44</td>
+<td></td>
+<td></td>
+<td>Magic</td>
+<td>1</td>
+<td>8837</td>
+</tr>
+<tr>
+<td>16004</td>
+<td>a huge eye of justice</td>
+<td>Staff</td>
+<td>50</td>
+<td>spell lvl 20, charges 2/2: 30</td>
+<td></td>
+<td>Hold</td>
+<td>Glow</td>
+<td>3</td>
+<td>10496</td>
+</tr>
+<tr>
+<td>16005</td>
+<td>beholder's eyestalk</td>
+<td>Staff</td>
+<td>49</td>
+<td>spell lvl 20, charges 2/2: 25</td>
+<td></td>
+<td>Hold</td>
+<td>Glow</td>
+<td>3</td>
+<td>9980</td>
+</tr>
+<tr>
+<td>16006</td>
+<td>glinting gnome mace</td>
+<td>Weapon</td>
+<td>19</td>
+<td>mace 5d4 (avg 12.5) pound</td>
+<td>Hit +1, Hitroll +1, Damroll +1</td>
+<td>Wield</td>
+<td>Bless</td>
+<td>4</td>
+<td>3808</td>
+</tr>
+<tr>
+<td>16007</td>
+<td>sword of darkness</td>
+<td>Weapon</td>
+<td>16</td>
+<td>sword 4d4 (avg 10) slice</td>
+<td>Str +1, Hitroll +2</td>
+<td>Wield</td>
+<td>Dark</td>
+<td>4</td>
+<td>3223</td>
+</tr>
+<tr>
+<td>16008</td>
+<td>dark grey helm</td>
+<td>Armor</td>
+<td>21</td>
+<td>AC 7/7/7/0</td>
+<td>Str +1, Damroll +1</td>
+<td>Head</td>
+<td>Magic</td>
+<td>3</td>
+<td>4384</td>
+</tr>
+<tr>
+<td>16009</td>
+<td>sleeves of knowledge</td>
+<td>Armor</td>
+<td>43</td>
+<td>AC 11/11/11/0</td>
+<td>Int +1, Mana +15</td>
+<td>Arms</td>
+<td>Invis Magic</td>
+<td>3</td>
+<td>8667</td>
+</tr>
+<tr>
+<td>16010</td>
+<td>a piece of polished blood stone</td>
+<td>Treasure</td>
+<td>38</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Dark</td>
+<td>1</td>
+<td>11722</td>
+</tr>
+<tr>
+<td>16011</td>
+<td>breast plate of strength</td>
+<td>Armor</td>
+<td>43</td>
+<td>AC 11/11/11/0</td>
+<td>Str +2, Hit +20, Hitroll +1, Damroll +1</td>
+<td>Body</td>
+<td>Glow Magic</td>
+<td>4</td>
+<td>8895</td>
+</tr>
+<tr>
+<td>16012</td>
+<td>a shining holy symbol of Xevior</td>
+<td>Armor</td>
+<td>43</td>
+<td>AC 11/11/11/0</td>
+<td>Wis +2</td>
+<td>Hold</td>
+<td>Hum NoDrop Bless AntiGood Unique</td>
+<td>3</td>
+<td>8727</td>
+</tr>
+<tr>
+<td>16013</td>
+<td>ripped leather pants</td>
+<td>Armor</td>
+<td>16</td>
+<td>AC 6/6/6/0</td>
+<td></td>
+<td>Legs</td>
+<td>Dark</td>
+<td>3</td>
+<td>3207</td>
+</tr>
+<tr>
+<td>16014</td>
+<td>small purple worm scale</td>
+<td>Armor</td>
+<td>44</td>
+<td>AC 11/11/11/0</td>
+<td>Hit +25, Hitroll +4</td>
+<td>Wrist</td>
+<td>Bless</td>
+<td>3</td>
+<td>9026</td>
+</tr>
+<tr>
+<td>16015</td>
+<td>huge purple worm scale</td>
+<td>Armor</td>
+<td>48</td>
+<td>AC 12/12/12/0</td>
+<td>Mana +20, Hit +15, Damroll +4</td>
+<td>Shield</td>
+<td>Dark</td>
+<td>4</td>
+<td>10004</td>
+</tr>
+<tr>
+<td>16016</td>
+<td>gauntlets of the eye</td>
+<td>Armor</td>
+<td>43</td>
+<td>AC 11/11/11/0</td>
+<td>Hit +10, Hitroll +2</td>
+<td>Hands</td>
+<td>Glow</td>
+<td>3</td>
+<td>8730</td>
+</tr>
+<tr>
+<td>16017</td>
+<td>helm of the eye</td>
+<td>Armor</td>
+<td>46</td>
+<td>AC 12/12/12/0</td>
+<td>Mana +15, Hit +15</td>
+<td>Head</td>
+<td>Glow</td>
+<td>4</td>
+<td>9427</td>
+</tr>
+<tr>
+<td>16018</td>
+<td>a very sharp pin</td>
+<td>Weapon</td>
+<td>20</td>
+<td>dagger 4d5 (avg 12) pierce</td>
+<td>Str -3, Hit -15, Hitroll +2, Damroll +1</td>
+<td>Wield</td>
+<td>Invis</td>
+<td>1</td>
+<td>4008</td>
+</tr>
+<tr>
+<td>16019</td>
+<td>very muddy branch</td>
+<td>Weapon</td>
+<td>20</td>
+<td>exotic 3d4 (avg 7.5) blast</td>
+<td>Dex -2, Hitroll -5, Damroll +2</td>
+<td>Wield</td>
+<td>Hum NoDrop AntiNeutral</td>
+<td>15</td>
+<td>4198</td>
+</tr>
+<tr>
+<td>16020</td>
+<td>a small, deadly dart</td>
+<td>Weapon</td>
+<td>10</td>
+<td>spear 4d4 (avg 10) pierce</td>
+<td>Str -2, Int +1, Hitroll +2</td>
+<td>Wield</td>
+<td>Invis</td>
+<td>1</td>
+<td>2027</td>
+</tr>
+<tr>
+<td>16021</td>
+<td>a black wand inlaid with gold symbols</td>
+<td>Wand</td>
+<td>45</td>
+<td>spell lvl 30, charges 10/10: 73</td>
+<td></td>
+<td>Hold</td>
+<td>Hum</td>
+<td>2</td>
+<td>9413</td>
+</tr>
+<tr>
+<td>16022</td>
+<td>girth of protection</td>
+<td>Armor</td>
+<td>45</td>
+<td>AC 12/12/12/0</td>
+<td>Hit +10, Ac -5</td>
+<td>Waist</td>
+<td>Glow Magic</td>
+<td>2</td>
+<td>9395</td>
+</tr>
+<tr>
+<td>16023</td>
+<td>dull eyes</td>
+<td>Armor</td>
+<td>38</td>
+<td>AC 10/10/10/0</td>
+<td>Wis -3</td>
+<td>Head</td>
+<td>Glow Hum NoDrop</td>
+<td>1</td>
+<td>7870</td>
+</tr>
+<tr>
+<td>16024</td>
+<td>an iron sword</td>
+<td>Weapon</td>
+<td>40</td>
+<td>sword 5d8 (avg 22.5) slash</td>
+<td>Hitroll +2, Damroll +4</td>
+<td>Wield</td>
+<td>Hum</td>
+<td>45</td>
+<td>8169</td>
+</tr>
+<tr>
+<td>16025</td>
+<td>a huge stone mace</td>
+<td>Weapon</td>
+<td>39</td>
+<td>mace 5d8 (avg 22.5) pound</td>
+<td>Hitroll +2, Damroll +2</td>
+<td>Wield</td>
+<td>Hum</td>
+<td>25</td>
+<td>7872</td>
+</tr>
+<tr>
+<td>16026</td>
+<td>black shield of protection</td>
+<td>Armor</td>
+<td>42</td>
+<td>AC 11/11/11/0</td>
+<td>Ac -10</td>
+<td>Shield</td>
+<td>Hum NoDrop Bless</td>
+<td>4</td>
+<td>8750</td>
+</tr>
+<tr>
+<td>16027</td>
+<td>a small black stone</td>
+<td>Armor</td>
+<td>39</td>
+<td>AC 10/10/10/0</td>
+<td>Str -3, Con -3, Move -150, Hitroll -5, Damroll -5</td>
+<td>Hold</td>
+<td>Dark Invis Magic AntiNeutral</td>
+<td>1</td>
+<td>7911</td>
+</tr>
+<tr>
+<td>16028</td>
+<td>demon horn</td>
+<td>Weapon</td>
+<td>40</td>
+<td>dagger 5d8 (avg 22.5) stab</td>
+<td>Damroll +4</td>
+<td>Wield</td>
+<td>Glow AntiGood</td>
+<td>4</td>
+<td>8111</td>
+</tr>
+<tr>
+<td>16029</td>
+<td>translucent Robe</td>
+<td>Armor</td>
+<td>13</td>
+<td>AC 5/5/5/0</td>
+<td>Con +1, Hit +10</td>
+<td>About</td>
+<td>Bless</td>
+<td>2</td>
+<td>2615</td>
+</tr>
+<tr>
+<td>16030</td>
+<td>belt of pleasure</td>
+<td>Armor</td>
+<td>11</td>
+<td>AC 5/5/5/0</td>
+<td>Dex +1</td>
+<td>Waist</td>
+<td>Bless</td>
+<td>1</td>
+<td>2232</td>
+</tr>
+<tr>
+<td>16031</td>
+<td>ring of nobility</td>
+<td>Armor</td>
+<td>14</td>
+<td>AC 5/5/5/0</td>
+<td>Int -2, Hit +5, Damroll +1</td>
+<td>Finger</td>
+<td>Bless</td>
+<td>1</td>
+<td>2827</td>
+</tr>
+<tr>
+<td>16032</td>
+<td>gold teeth</td>
+<td>Armor</td>
+<td>16</td>
+<td>AC 6/6/6/0</td>
+<td>Str -1, Damroll +2</td>
+<td>Head</td>
+<td>Bless</td>
+<td>1</td>
+<td>3233</td>
+</tr>
+<tr>
+<td>16033</td>
+<td>a broken bottle</td>
+<td>Weapon</td>
+<td>11</td>
+<td>exotic 4d3 (avg 8) slash</td>
+<td>Dex -1, Damroll +2</td>
+<td>Wield</td>
+<td>Dark</td>
+<td>2</td>
+<td>2308</td>
+</tr>
+<tr>
+<td>16034</td>
+<td>a pair of dusty boots</td>
+<td>Armor</td>
+<td>33</td>
+<td>AC 9/9/9/0</td>
+<td>Dex -3, Move -50, Damroll -3</td>
+<td>Feet</td>
+<td>Dark</td>
+<td>2</td>
+<td>6841</td>
+</tr>
+<tr>
+<td>16035</td>
+<td>a gnome hat</td>
+<td>Armor</td>
+<td>30</td>
+<td>AC 9/9/9/0</td>
+<td>Dex +2, Hitroll +2</td>
+<td>Head</td>
+<td>Hum</td>
+<td>2</td>
+<td>6190</td>
+</tr>
+<tr>
+<td>16036</td>
+<td>boots of flying</td>
+<td>Armor</td>
+<td>31</td>
+<td>AC 9/9/9/0</td>
+<td>Move +70</td>
+<td>Feet</td>
+<td>Invis Magic</td>
+<td>2</td>
+<td>6479</td>
+</tr>
+<tr>
+<td>16037</td>
+<td>bracer of strength</td>
+<td>Armor</td>
+<td>30</td>
+<td>AC 9/9/9/0</td>
+<td>Str +2</td>
+<td>Wrist</td>
+<td>Hum Magic</td>
+<td>3</td>
+<td>6005</td>
+</tr>
+<tr>
+<td>16038</td>
+<td>slaver's whip</td>
+<td>Weapon</td>
+<td>23</td>
+<td>whip 5d5 (avg 15) whip</td>
+<td>Hitroll +3</td>
+<td>Wield</td>
+<td>Hum</td>
+<td>4</td>
+<td>4641</td>
+</tr>
+<tr>
+<td>16039</td>
+<td>a pair of manacles</td>
+<td>Armor</td>
+<td>21</td>
+<td>AC 7/7/7/0</td>
+<td>Str -3, Con -3, Hit -25</td>
+<td>Hands</td>
+<td>Hum</td>
+<td>4</td>
+<td>1</td>
+</tr>
+<tr>
+<td>16040</td>
+<td>a mage cloak</td>
+<td>Armor</td>
+<td>28</td>
+<td>AC 8/8/8/0</td>
+<td>Mana +25</td>
+<td>Neck</td>
+<td>Glow</td>
+<td>2</td>
+<td>5846</td>
+</tr>
+<tr>
+<td>16041</td>
+<td>a jagged long sword</td>
+<td>Weapon</td>
+<td>26</td>
+<td>sword 5d5 (avg 15) slash</td>
+<td>Ac -10, Hitroll +4</td>
+<td>Wield</td>
+<td>Hum</td>
+<td>5</td>
+<td>5433</td>
+</tr>
+<tr>
+<td>16042</td>
+<td>an ebony dagger</td>
+<td>Weapon</td>
+<td>26</td>
+<td>dagger 5d5 (avg 15) pierce</td>
+<td>Ac -8, Hitroll +3, Damroll +3</td>
+<td>Wield</td>
+<td>Hum</td>
+<td>4</td>
+<td>5399</td>
+</tr>
+<tr>
+<td>16043</td>
+<td>a glowing sphere</td>
+<td>Light</td>
+<td>16</td>
+<td>0 0 999 0 0</td>
+<td>Mana +20</td>
+<td>Hold</td>
+<td>Glow</td>
+<td>3</td>
+<td>3256</td>
+</tr>
+<tr>
+<td>16044</td>
+<td>a midnight blue bracer</td>
+<td>Armor</td>
+<td>15</td>
+<td>AC 6/6/6/0</td>
+<td>Dex +1</td>
+<td>Wrist</td>
+<td>Hum</td>
+<td>3</td>
+<td>3148</td>
+</tr>
+<tr>
+<td>16045</td>
+<td>an ebony morning star</td>
+<td>Weapon</td>
+<td>17</td>
+<td>exotic 3d4 (avg 7.5) blast</td>
+<td>Con +1, Hitroll +2, Damroll +2</td>
+<td>Wield</td>
+<td>Hum</td>
+<td>6</td>
+<td>3443</td>
+</tr>
+<tr>
+<td>16046</td>
+<td>black drow chainmail</td>
+<td>Armor</td>
+<td>16</td>
+<td>AC 6/6/6/0</td>
+<td>Dex +1, Hit +4</td>
+<td>Body</td>
+<td>Hum</td>
+<td>5</td>
+<td>3230</td>
+</tr>
+<tr>
+<td>16047</td>
+<td>a drow sword</td>
+<td>Weapon</td>
+<td>10</td>
+<td>sword 2d5 (avg 6) slice</td>
+<td>Hitroll +1, Damroll +1</td>
+<td>Wield</td>
+<td>Magic</td>
+<td>5</td>
+<td>503</td>
+</tr>
+<tr>
+<td>16048</td>
+<td>a drow dagger</td>
+<td>Weapon</td>
+<td>10</td>
+<td>dagger 2d5 (avg 6) pierce</td>
+<td>Hitroll +2, Damroll +1</td>
+<td>Wield</td>
+<td>Magic</td>
+<td>3</td>
+<td>591</td>
+</tr>
+<tr>
+<td>16049</td>
+<td>a drow mace</td>
+<td>Weapon</td>
+<td>10</td>
+<td>mace 2d5 (avg 6) pound</td>
+<td>Hitroll +1, Damroll +2</td>
+<td>Wield</td>
+<td>Magic</td>
+<td>4</td>
+<td>501</td>
+</tr>
+<tr>
+<td>16050</td>
+<td>duergar breastplate</td>
+<td>Armor</td>
+<td>10</td>
+<td>AC 3/3/3/3</td>
+<td>Ac -4</td>
+<td>Body</td>
+<td>Magic</td>
+<td>4</td>
+<td>202</td>
+</tr>
+<tr>
+<td>16051</td>
+<td>a duergar helm</td>
+<td>Armor</td>
+<td>10</td>
+<td>AC 3/3/3/3</td>
+<td>Ac -3</td>
+<td>Head</td>
+<td>Magic</td>
+<td>2</td>
+<td>200</td>
+</tr>
+<tr>
+<td>16052</td>
+<td>a duergar shield</td>
+<td>Armor</td>
+<td>10</td>
+<td>AC 3/3/3/3</td>
+<td>Ac -2</td>
+<td>Shield</td>
+<td>Magic</td>
+<td>3</td>
+<td>206</td>
+</tr>
+<tr>
+<td>16053</td>
+<td>duergar leggings</td>
+<td>Armor</td>
+<td>10</td>
+<td>AC 3/3/3/3</td>
+<td>Ac -2</td>
+<td>Legs</td>
+<td>Magic</td>
+<td>4</td>
+<td>207</td>
+</tr>
+<tr>
+<td>16054</td>
+<td>a duergar bracer</td>
+<td>Armor</td>
+<td>10</td>
+<td>AC 3/3/3/3</td>
+<td>Ac -2</td>
+<td>Wrist</td>
+<td>Magic</td>
+<td>3</td>
+<td>202</td>
+</tr>
+<tr>
+<td>16055</td>
+<td>a brown mushroom</td>
+<td>Food</td>
+<td>1</td>
+<td>12 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Bless</td>
+<td>1</td>
+<td>25</td>
+</tr>
+<tr>
+<td>16056</td>
+<td>a large mushroom</td>
+<td>Food</td>
+<td>1</td>
+<td>25 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Bless</td>
+<td>1</td>
+<td>20</td>
+</tr>
+<tr>
+<td>16057</td>
+<td>red moss</td>
+<td>Pill</td>
+<td>20</td>
+<td>spell lvl 12: 15, 39</td>
+<td></td>
+<td></td>
+<td>Bless</td>
+<td>2</td>
+<td>500</td>
+</tr>
+<tr>
+<td>16058</td>
+<td>a dirty root</td>
+<td>Pill</td>
+<td>20</td>
+<td>spell lvl 15: 1, 34, 66</td>
+<td></td>
+<td></td>
+<td>Bless</td>
+<td>1</td>
+<td>600</td>
+</tr>
+<tr>
+<td>16059</td>
+<td>scroll of reveal</td>
+<td>Scroll</td>
+<td>20</td>
+<td>spell lvl 15: 73</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>400</td>
+</tr>
+<tr>
+<td>16060</td>
+<td>hand of shocking grasp</td>
+<td>Wand</td>
+<td>20</td>
+<td>spell lvl 20, charges 4/4: 37</td>
+<td></td>
+<td>Hold</td>
+<td>Glow</td>
+<td>2</td>
+<td>400</td>
+</tr>
+<tr>
+<td>16061</td>
+<td>potion of detection</td>
+<td>Potion</td>
+<td>50</td>
+<td>spell lvl 15: 18, 44, 19</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>500</td>
+</tr>
+<tr>
+<td>16062</td>
+<td>svirfneblin leggings</td>
+<td>Armor</td>
+<td>17</td>
+<td>AC 6/6/6/0</td>
+<td>Str +1, Ac -5</td>
+<td>Legs</td>
+<td>Magic</td>
+<td>3</td>
+<td>3480</td>
+</tr>
+<tr>
+<td>16063</td>
+<td>necklace of nobility</td>
+<td>Armor</td>
+<td>16</td>
+<td>AC 6/6/6/0</td>
+<td>Str +1, Int -1, Wis -1, Con +1, Ac -4</td>
+<td>Neck</td>
+<td>Magic</td>
+<td>3</td>
+<td>3339</td>
+</tr>
+<tr>
+<td>16064</td>
+<td>a broadsword named 'Vision'</td>
+<td>Weapon</td>
+<td>17</td>
+<td>sword 3d6 (avg 10.5) slice</td>
+<td>Hitroll +2, Damroll +2</td>
+<td>Wield</td>
+<td>Glow Hum Unique</td>
+<td>4</td>
+<td>3433</td>
+</tr>
+<tr>
+<td>16065</td>
+<td>thief's patch</td>
+<td>Armor</td>
+<td>16</td>
+<td>AC 6/6/6/0</td>
+<td>Dex +2, Hitroll +4</td>
+<td>Wrist</td>
+<td>Invis</td>
+<td>2</td>
+<td>3216</td>
+</tr>
+<tr>
+<td>16066</td>
+<td>thief's gloves</td>
+<td>Armor</td>
+<td>18</td>
+<td>AC 6/6/6/0</td>
+<td>Dex +2, Hitroll +2</td>
+<td>Hands</td>
+<td>Magic</td>
+<td>2</td>
+<td>3745</td>
+</tr>
+<tr>
+<td>16067</td>
+<td>a gold chain</td>
+<td>Armor</td>
+<td>19</td>
+<td>AC 6/6/6/0</td>
+<td>Hitroll +1, SavingPara -1, SavingRod -2, SavingPetri -2, SavingBreath -1, SavingSpell -2</td>
+<td>Neck</td>
+<td>Magic</td>
+<td>2</td>
+<td>3925</td>
+</tr>
+<tr>
+<td>16068</td>
+<td>lucky dice</td>
+<td>Armor</td>
+<td>21</td>
+<td>AC 7/7/7/0</td>
+<td>Hit +20, Hitroll +1, SavingPara -1, SavingRod -1, SavingPetri -1, SavingBreath -2, SavingSpell -1</td>
+<td>Hold</td>
+<td>Glow Magic</td>
+<td>2</td>
+<td>4260</td>
+</tr>
+<tr>
+<td>16069</td>
+<td>a dark cloak</td>
+<td>Armor</td>
+<td>23</td>
+<td>AC 7/7/7/0</td>
+<td>Dex +1, Ac -4, Hitroll +3</td>
+<td>Neck</td>
+<td>Dark Magic</td>
+<td>3</td>
+<td>4600</td>
+</tr>
+<tr>
+<td>16070</td>
+<td>golden earring</td>
+<td>Armor</td>
+<td>25</td>
+<td>AC 6/6/6/0</td>
+<td>Dex +1, Int +1, Hit +10</td>
+<td>Ears</td>
+<td>Magic</td>
+<td>1</td>
+<td>2579</td>
+</tr>
+<tr>
+<td>16071</td>
+<td>a jewelled dagger</td>
+<td>Weapon</td>
+<td>47</td>
+<td>dagger 7d7 (avg 28) pierce</td>
+<td>Dex +2, Hitroll +8, Damroll +2</td>
+<td>Wield</td>
+<td>Hum Magic</td>
+<td>3</td>
+<td>9779</td>
+</tr>
+<tr>
+<td>16072</td>
+<td>a hand grasping an orb</td>
+<td>Light</td>
+<td>40</td>
+<td>0 0 999 0 0</td>
+<td>Mana +35</td>
+<td>Hold</td>
+<td>Glow Magic</td>
+<td>3</td>
+<td>8257</td>
+</tr>
+<tr>
+<td>16073</td>
+<td>a long flowing robe</td>
+<td>Armor</td>
+<td>40</td>
+<td>AC 11/11/11/0</td>
+<td>Mana +35, Int +2</td>
+<td>About</td>
+<td>Magic</td>
+<td>4</td>
+<td>8201</td>
+</tr>
+<tr>
+<td>16074</td>
+<td>a blade of poison</td>
+<td>Weapon</td>
+<td>20</td>
+<td>dagger 4d5 (avg 12) pierce</td>
+<td>Hitroll +1, Damroll +3</td>
+<td>Wield</td>
+<td>Hum Dark Magic</td>
+<td>3</td>
+<td>4149</td>
+</tr>
+<tr>
+<td>16075</td>
+<td>assassin's sleeves</td>
+<td>Armor</td>
+<td>22</td>
+<td>AC 7/7/7/0</td>
+<td>Hitroll +1, Damroll +1</td>
+<td>Arms</td>
+<td>Dark Magic</td>
+<td>3</td>
+<td>4406</td>
+</tr>
+<tr>
+<td>16076</td>
+<td>skull tattoo</td>
+<td>Armor</td>
+<td>23</td>
+<td>AC 7/7/7/0</td>
+<td>Hit +5, Damroll +2</td>
+<td>Wrist</td>
+<td>Magic</td>
+<td>1</td>
+<td>4767</td>
+</tr>
+<tr>
+<td>16077</td>
+<td>a garotte</td>
+<td>Weapon</td>
+<td>25</td>
+<td>exotic 5d5 (avg 15) crush</td>
+<td>Hitroll -5, Damroll +4</td>
+<td>Wield</td>
+<td>Hum Dark</td>
+<td>1</td>
+<td>5215</td>
+</tr>
+<tr>
+<td>16078</td>
+<td>an assassin's mask</td>
+<td>Armor</td>
+<td>27</td>
+<td>AC 8/8/8/0</td>
+<td>Str +1, Con -1, Hit +20</td>
+<td>Head</td>
+<td>Dark Magic</td>
+<td>3</td>
+<td>5515</td>
+</tr>
+<tr>
+<td>16079</td>
+<td>flaming dagger tattoo</td>
+<td>Armor</td>
+<td>29</td>
+<td>AC 8/8/8/0</td>
+<td>Damroll +2</td>
+<td>Wrist</td>
+<td>Magic</td>
+<td>1</td>
+<td>5873</td>
+</tr>
+<tr>
+<td>16080</td>
+<td>wyvern tattoo</td>
+<td>Armor</td>
+<td>31</td>
+<td>AC 9/9/9/0</td>
+<td>Hitroll +1, Damroll +2</td>
+<td>Wrist</td>
+<td>Magic</td>
+<td>1</td>
+<td>6460</td>
+</tr>
+<tr>
+<td>16081</td>
+<td>dragon tattoo</td>
+<td>Armor</td>
+<td>46</td>
+<td>AC 12/12/12/0</td>
+<td>Damroll +4</td>
+<td>Arms</td>
+<td>Magic</td>
+<td>1</td>
+<td>9561</td>
+</tr>
+<tr>
+<td>16082</td>
+<td>a diamond helm</td>
+<td>Armor</td>
+<td>47</td>
+<td>AC 12/12/12/0</td>
+<td>Hit +25, Damroll +2</td>
+<td>Head</td>
+<td>Magic</td>
+<td>2</td>
+<td>9754</td>
+</tr>
+<tr>
+<td>16083</td>
+<td>the keeper's shield</td>
+<td>Armor</td>
+<td>49</td>
+<td>AC 12/12/12/0</td>
+<td>Ac -10</td>
+<td>Shield</td>
+<td>Magic</td>
+<td>10</td>
+<td>9851</td>
+</tr>
+<tr>
+<td>16084</td>
+<td>a demon clan signet ring</td>
+<td>Armor</td>
+<td>17</td>
+<td>AC 6/6/6/0</td>
+<td>Mana +10, Hit +15, Hitroll +1</td>
+<td>Finger</td>
+<td>Glow Hum Evil Magic</td>
+<td>1</td>
+<td>3505</td>
+</tr>
+<tr>
+<td>16085</td>
+<td>demon bracer</td>
+<td>Armor</td>
+<td>21</td>
+<td>AC 7/7/7/0</td>
+<td>Mana +15</td>
+<td>Wrist</td>
+<td>Glow Hum Evil Magic</td>
+<td>3</td>
+<td>4398</td>
+</tr>
+<tr>
+<td>16086</td>
+<td>a demon blade</td>
+<td>Weapon</td>
+<td>23</td>
+<td>dagger 5d5 (avg 15) slash</td>
+<td>Hitroll +2, Damroll +2</td>
+<td>Wield</td>
+<td>Hum Evil Magic AntiGood</td>
+<td>6</td>
+<td>4763</td>
+</tr>
+<tr>
+<td>16087</td>
+<td>gem of gate</td>
+<td>Wand</td>
+<td>27</td>
+<td>spell lvl 35, charges 5/5: 2</td>
+<td></td>
+<td>Hold</td>
+<td>Hum Evil Magic</td>
+<td>3</td>
+<td>5510</td>
+</tr>
+<tr>
+<td>16088</td>
+<td>demon Plate</td>
+<td>Armor</td>
+<td>30</td>
+<td>AC 9/9/9/0</td>
+<td>Ac -5, Damroll +1</td>
+<td>Body</td>
+<td>Hum Evil Magic AntiGood</td>
+<td>9</td>
+<td>6154</td>
+</tr>
+<tr>
+<td>16089</td>
+<td>demon fire</td>
+<td>Armor</td>
+<td>37</td>
+<td>AC 10/10/10/0</td>
+<td>Ac -8, Damroll +2</td>
+<td>Shield</td>
+<td>Hum Evil Magic</td>
+<td>5</td>
+<td>7569</td>
+</tr>
+<tr>
+<td>16090</td>
+<td>a fire gem</td>
+<td>Wand</td>
+<td>25</td>
+<td>spell lvl 35, charges 5/5: 26</td>
+<td></td>
+<td>Hold</td>
+<td>Glow Magic</td>
+<td>3</td>
+<td>5089</td>
+</tr>
+<tr>
+<td>16091</td>
+<td>statue of the God</td>
+<td>Container</td>
+<td>0</td>
+<td>capacity 1000, key 0</td>
+<td></td>
+<td></td>
+<td>Invis</td>
+<td>40</td>
+<td>0</td>
+</tr>
+<tr>
+<td>16092</td>
+<td>brains of the God</td>
+<td>Money</td>
+<td>0</td>
+<td>10000 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Glow</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>16093</td>
+<td>merchant's gold</td>
+<td>Money</td>
+<td>40</td>
+<td>2000 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>8155</td>
+</tr>
+<tr>
+<td>16094</td>
+<td>not so rich merchant gold</td>
+<td>Money</td>
+<td>100</td>
+<td>50000 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>30</td>
+<td>20331</td>
+</tr>
+<tr>
+<td>16095</td>
+<td>a large tower shield</td>
+<td>Armor</td>
+<td>22</td>
+<td>AC 7/7/7/0</td>
+<td></td>
+<td>Shield</td>
+<td>Glow Magic</td>
+<td>14</td>
+<td>6158</td>
+</tr>
+<tr>
+<td>16096</td>
+<td>a fractured long sword</td>
+<td>Weapon</td>
+<td>42</td>
+<td>sword 6d7 (avg 24) slash</td>
+<td>Hitroll +4, Damroll +4</td>
+<td>Wield</td>
+<td>Hum Magic</td>
+<td>10</td>
+<td>4075</td>
+</tr>
+<tr>
+<td>16097</td>
+<td>a miniature emblem of Xevior</td>
+<td>Armor</td>
+<td>40</td>
+<td>AC 10/10/10/0</td>
+<td>Wis +1, Con +1</td>
+<td>Ears</td>
+<td>Glow</td>
+<td>1</td>
+<td>1902</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shops">Shops<a class="headerlink" href="#shops" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Keeper</th>
+<th>Buys</th>
+<th>Profit buy %</th>
+<th>Profit sell %</th>
+<th>Hours</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16021 the Barkeep</td>
+<td>Weapon</td>
+<td>110</td>
+<td>90</td>
+<td>0–23</td>
+</tr>
+<tr>
+<td>16049 the inn keeper</td>
+<td>Armor</td>
+<td>110</td>
+<td>90</td>
+<td>0–23</td>
+</tr>
+<tr>
+<td>16055 the Slave Dealer</td>
+<td></td>
+<td>100</td>
+<td>100</td>
+<td>0–23</td>
+</tr>
+<tr>
+<td>16065 the Bar Tender</td>
+<td></td>
+<td>120</td>
+<td>50</td>
+<td>0–23</td>
+</tr>
+<tr>
+<td>16073 Yie'Stei</td>
+<td>Scroll, Wand, Staff, Potion</td>
+<td>150</td>
+<td>75</td>
+<td>0–23</td>
+</tr>
+<tr>
+<td>16074 Zae'tres</td>
+<td>Weapon</td>
+<td>175</td>
+<td>65</td>
+<td>0–23</td>
+</tr>
+<tr>
+<td>16075 Raesarnt</td>
+<td>Armor</td>
+<td>160</td>
+<td>59</td>
+<td>0–23</td>
+</tr>
+<tr>
+<td>16076 Satori</td>
+<td>Treasure, Money</td>
+<td>150</td>
+<td>90</td>
+<td>0–23</td>
+</tr>
+<tr>
+<td>16077 Jiestis</td>
+<td>Food, Pill</td>
+<td>150</td>
+<td>60</td>
+<td>0–23</td>
+</tr>
+<tr>
+<td>16118 the inn keep</td>
+<td></td>
+<td>150</td>
+<td>75</td>
+<td>0–23</td>
+</tr>
+</tbody>
+</table>
+<h2 id="specials">Specials<a class="headerlink" href="#specials" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mob</th>
+<th>Spec function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16004 the great enforcing eye</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16005 the huge beholder</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16006 the beholder</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16013 a high priest of Xevior</td>
+<td>spec_cast_cleric</td>
+</tr>
+<tr>
+<td>16018 the beholder legionnaire</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16019 the supreme attendant</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16025 Caris</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16026 Antryg</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16027 the gremlin</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16030 the jinxkin</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16031 the jermlaine</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16032 the bodak</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16033 the mage</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16037 the imp</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16038 the babau</td>
+<td>spec_cast_cleric</td>
+</tr>
+<tr>
+<td>16066 Prax</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16068 Endolar</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16069 Snaromba</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16072 Shillikif</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16073 Yie'Stei</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16081 the footpad</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16082 the cutpurse</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16083 the filcher</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16084 the rogue</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16085 the sharper</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16086 the magsman</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16087 the master thief</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16088 the head thief</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16089 Meliadus</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16104 The platinum golem</td>
+<td>spec_cast_cleric</td>
+</tr>
+<tr>
+<td>16106 Eurandus</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16107 the Keeper</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16109 the cloaker</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16111 Orak</td>
+<td>spec_thief</td>
+</tr>
+<tr>
+<td>16112 Sabrakarn</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16114 Sifrim</td>
+<td>spec_cast_cleric</td>
+</tr>
+<tr>
+<td>16116 Methuen</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16120 a demon clan mage</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16122 the demon summoner</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16123 the cambion</td>
+<td>spec_breath_fire</td>
+</tr>
+<tr>
+<td>16124 a noble cambion</td>
+<td>spec_breath_fire</td>
+</tr>
+<tr>
+<td>16125 Irmugar</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>16126 the hezron</td>
+<td>spec_breath_acid</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mob-programs">Mob programs<a class="headerlink" href="#mob-programs" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mob</th>
+<th>File</th>
+<th>Triggers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16090 the trainer</td>
+<td>practicer.prg</td>
+<td>greet_prog, rand_prog</td>
+</tr>
+<tr>
+<td>16100 the trainer</td>
+<td>practicer.prg</td>
+<td>greet_prog, rand_prog</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/sorts/tablesort.number.min.js"></script>
+      
+        <script src="../../../javascripts/xania.js"></script>
+      
+        <script src="../../../javascripts/explore-plan.js"></script>
+      
+        <script src="../../../javascripts/explore.js"></script>
+      
+    
+  </body>
+</html>

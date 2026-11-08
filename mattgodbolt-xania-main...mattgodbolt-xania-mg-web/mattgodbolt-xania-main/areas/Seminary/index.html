@@ -1,0 +1,3051 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and level 1–91 balance reports for the Xania MUD">
+      
+      
+      
+        <link rel="canonical" href="https://abraidotti.github.io/xania-explorer/builds/mattgodbolt-xania-main...mattgodbolt-xania-mg-web/mattgodbolt-xania-main/areas/Seminary/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Seminary - Xania Explorer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/xania.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-seminary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Xania Explorer" class="md-header__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xania Explorer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Seminary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Xania Explorer" class="md-nav__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    Xania Explorer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore any repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture & game loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02-area-file-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area file format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-world-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04-characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05-combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06-skills-and-magic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & magic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../07-items-and-economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Items & economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assessments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About the assessments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../mattgodbolt-xania-mg-web/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mattgodbolt-xania-mg-web/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mob-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mob programs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- GENERATED by `python -m xania_explorer docs` from xania/area. Do not edit by hand. -->
+
+<h1 id="the-seminary">The Seminary<a class="headerlink" href="#the-seminary" title="Permanent link">&para;</a></h1>
+<ul>
+<li>File: <code>Seminary.are</code> (load order #44)</li>
+<li>Description: <code>{30 90} Faramir The Seminary</code></li>
+<li>Level band: 30–90</li>
+<li>Declared vnums: 27000–27120; effective: 27000–27120</li>
+<li>Sections: AREA ROOMS MOBILES OBJECTS RESETS SHOPS MOBPROGS SPECIALS</li>
+<li>Rooms 104, mobs 43, objects 61, resets 232</li>
+<li>Exits lead to: Crystalmir Lake, Den of Monsters</li>
+<li>Sectors: City 11, Field 2, Forest 14, Hills 9, Inside 65, SwimmableWater 3</li>
+<li>Exits: 238 (75 doors, 4 one-way, 0 cosmetic)</li>
+<li>Resets by command: D 71, E 32, G 8, M 75, O 42, P 4</li>
+</ul>
+<h2 id="mobs">Mobs<a class="headerlink" href="#mobs" title="Permanent link">&para;</a></h2>
+<p>HP/damage shown as dice (average). AC is pierce/bash/slash/exotic (more negative = better). Flags are as written in the file, before race flags are merged.</p>
+<table>
+<thead>
+<tr>
+<th>Vnum</th>
+<th>Name</th>
+<th>Lvl</th>
+<th>HP</th>
+<th>Damage</th>
+<th>Hitroll</th>
+<th>AC</th>
+<th>Attack</th>
+<th>Align</th>
+<th>Race</th>
+<th>Act</th>
+<th>Offensive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27000</td>
+<td>a young student</td>
+<td>35</td>
+<td>1d6+1190 (1193.5)</td>
+<td>6d7+18 (42)</td>
+<td>18</td>
+<td>-25/-25/-25/-25</td>
+<td>punch</td>
+<td>900</td>
+<td>human</td>
+<td>StayArea Mage</td>
+<td>Dodge Parry AssistAlign AssistVnum</td>
+</tr>
+<tr>
+<td>27001</td>
+<td>a biologist</td>
+<td>40</td>
+<td>2d6+1432 (1439)</td>
+<td>7d6+20 (44.5)</td>
+<td>20</td>
+<td>-26/-26/-26/-26</td>
+<td>slap</td>
+<td>-900</td>
+<td>human</td>
+<td>StayArea Wimpy Cleric</td>
+<td>Dodge KickDirt Trip AssistAlign AssistVnum</td>
+</tr>
+<tr>
+<td>27002</td>
+<td>a haughty postgraduate</td>
+<td>80</td>
+<td>2d6+6890 (6897)</td>
+<td>10d8+40 (85)</td>
+<td>40</td>
+<td>-36/-36/-36/-36</td>
+<td>shbite</td>
+<td>50</td>
+<td>elf</td>
+<td>Scavenger StayArea Wimpy Sentient Cleric Mage</td>
+<td>Bash Disarm Dodge Fast Parry Trip AssistVnum</td>
+</tr>
+<tr>
+<td>27003</td>
+<td>Wildman Wallace</td>
+<td>48</td>
+<td>3d6+1999 (2009.5)</td>
+<td>6d8+24 (51)</td>
+<td>24</td>
+<td>-34/-34/-34/-34</td>
+<td>charge</td>
+<td>900</td>
+<td>human</td>
+<td>Sentinel Scavenger StayArea Sentient Warrior</td>
+<td>Bash Berserk Disarm Dodge Fast Kick Parry</td>
+</tr>
+<tr>
+<td>27004</td>
+<td>Jessop von Thunderpant</td>
+<td>45</td>
+<td>1d6+1700 (1703.5)</td>
+<td>5d9+22 (47)</td>
+<td>22</td>
+<td>-27/-27/-27/-27</td>
+<td>blast</td>
+<td>-50</td>
+<td>dwarf</td>
+<td>Sentinel Scavenger StayArea Wimpy Thief</td>
+<td>Berserk Dodge Fast Kick KickDirt Trip</td>
+</tr>
+<tr>
+<td>27005</td>
+<td>Butros Butros Butros</td>
+<td>43</td>
+<td>3d6+2250 (2260.5)</td>
+<td>6d8+22 (49)</td>
+<td>22</td>
+<td>-32/-32/-32/-32</td>
+<td>bite</td>
+<td>-900</td>
+<td>unique</td>
+<td>Sentinel Scavenger Aggressive Warrior</td>
+<td>Berserk Disarm Dodge Kick Tail Trip</td>
+</tr>
+<tr>
+<td>27006</td>
+<td>Smokey Joe</td>
+<td>36</td>
+<td>3d6+1275 (1285.5)</td>
+<td>6d6+18 (39)</td>
+<td>18</td>
+<td>-30/-30/-30/-30</td>
+<td>punch</td>
+<td>900</td>
+<td>human</td>
+<td>Sentinel Sentient Warrior</td>
+<td>Bash Berserk Disarm Dodge Parry</td>
+</tr>
+<tr>
+<td>27007</td>
+<td>Bennie</td>
+<td>37</td>
+<td>3d6+1275 (1285.5)</td>
+<td>7d6+18 (42.5)</td>
+<td>18</td>
+<td>-30/-30/-30/-30</td>
+<td>punch</td>
+<td>900</td>
+<td>human</td>
+<td>Sentinel Sentient Warrior</td>
+<td>Bash Berserk Disarm Dodge Parry</td>
+</tr>
+<tr>
+<td>27008</td>
+<td>Madam Breakfast</td>
+<td>50</td>
+<td>2d6+2650 (2657)</td>
+<td>9d6+25 (56.5)</td>
+<td>25</td>
+<td>-32/-32/-32/-32</td>
+<td>beating</td>
+<td>-950</td>
+<td>human</td>
+<td>Sentinel Wimpy Cleric</td>
+<td>Bash Berserk Disarm Dodge Fast Parry Trip</td>
+</tr>
+<tr>
+<td>27009</td>
+<td>the Administrator</td>
+<td>65</td>
+<td>3d6+3500 (3510.5)</td>
+<td>6d12+33 (72)</td>
+<td>33</td>
+<td>-40/-40/-40/-40</td>
+<td>wrath</td>
+<td>950</td>
+<td>human</td>
+<td>Sentinel StayArea Wimpy Sentient Cleric Warrior</td>
+<td>Dodge Fast Kick KickDirt Parry Trip AssistGuard</td>
+</tr>
+<tr>
+<td>27010</td>
+<td>Warden Ripley</td>
+<td>80</td>
+<td>3d6+5945 (5955.5)</td>
+<td>8d10+40 (84)</td>
+<td>40</td>
+<td>-45/-45/-45/-45</td>
+<td>acbite</td>
+<td>-980</td>
+<td>dragon</td>
+<td>Sentinel Scavenger StayArea Sentient Cleric Mage Warrior</td>
+<td>Bash Berserk Disarm Dodge Fast Kick KickDirt Parry Tail Crush AssistRace</td>
+</tr>
+<tr>
+<td>27011</td>
+<td>Professor Gutenberg</td>
+<td>80</td>
+<td>3d6+6200 (6210.5)</td>
+<td>8d10+40 (84)</td>
+<td>40</td>
+<td>-45/-45/-45/-45</td>
+<td>crush</td>
+<td>1000</td>
+<td>giant</td>
+<td>Sentinel Scavenger StayArea Sentient Mage Warrior</td>
+<td>Berserk Disarm Parry Trip Crush AssistRace</td>
+</tr>
+<tr>
+<td>27012</td>
+<td>the working atmosphere</td>
+<td>78</td>
+<td>2d6+4320 (4327)</td>
+<td>9d9+39 (84)</td>
+<td>39</td>
+<td>-42/-42/-42/-42</td>
+<td>divine</td>
+<td>0</td>
+<td>giant</td>
+<td>Sentinel Cleric</td>
+<td>Backstab Berserk Parry Crush AssistVnum</td>
+</tr>
+<tr>
+<td>27013</td>
+<td>Rogan Josh</td>
+<td>85</td>
+<td>3d6+5635 (5645.5)</td>
+<td>9d10+42 (91.5)</td>
+<td>42</td>
+<td>-47/-47/-47/-47</td>
+<td>pierce</td>
+<td>0</td>
+<td>human</td>
+<td>Wimpy Warrior</td>
+<td>Disarm Dodge Fast Kick Parry</td>
+</tr>
+<tr>
+<td>27014</td>
+<td>the pressurised water reactor</td>
+<td>80</td>
+<td>3d6+6300 (6310.5)</td>
+<td>8d10+40 (84)</td>
+<td>50</td>
+<td>-45/-45/-45/-45</td>
+<td>pound</td>
+<td>-1000</td>
+<td>unique</td>
+<td>Sentinel StayArea Warrior</td>
+<td>Disarm Parry Trip</td>
+</tr>
+<tr>
+<td>27015</td>
+<td>Piotr</td>
+<td>52</td>
+<td>1d6+2598 (2601.5)</td>
+<td>5d11+26 (56)</td>
+<td>26</td>
+<td>-34/-34/-34/-34</td>
+<td>bite</td>
+<td>900</td>
+<td>elf</td>
+<td>Sentinel Wimpy Mage</td>
+<td>Dodge Fast Trip</td>
+</tr>
+<tr>
+<td>27016</td>
+<td>a tangle of enchanted gears</td>
+<td>43</td>
+<td>3d6+1823 (1833.5)</td>
+<td>6d8+22 (49)</td>
+<td>22</td>
+<td>-32/-32/-32/-32</td>
+<td>whip</td>
+<td>-900</td>
+<td>unique</td>
+<td>Sentinel StayArea Warrior</td>
+<td>Disarm Fast Trip AssistVnum</td>
+</tr>
+<tr>
+<td>27017</td>
+<td>a cybercop</td>
+<td>45</td>
+<td>2d6+1600 (1607)</td>
+<td>5d9+22 (47)</td>
+<td>22</td>
+<td>-33/-33/-33/-33</td>
+<td>divine</td>
+<td>980</td>
+<td>human</td>
+<td>StayArea Wimpy Cleric</td>
+<td>Disarm Dodge Parry AssistVnum</td>
+</tr>
+<tr>
+<td>27018</td>
+<td>the trojan virus</td>
+<td>48</td>
+<td>3d6+2230 (2240.5)</td>
+<td>8d6+24 (52)</td>
+<td>24</td>
+<td>-34/-34/-34/-34</td>
+<td>chomp</td>
+<td>-990</td>
+<td>unique</td>
+<td>Scavenger Aggressive StayArea Mage Thief Warrior</td>
+<td>Dodge Fast Crush AssistVnum</td>
+</tr>
+<tr>
+<td>27019</td>
+<td>Dr Hill</td>
+<td>55</td>
+<td>2d6+2550 (2557)</td>
+<td>5d11+26 (56)</td>
+<td>26</td>
+<td>-36/-36/-36/-36</td>
+<td>wrath</td>
+<td>-25</td>
+<td>orc</td>
+<td>Sentinel Wimpy Cleric</td>
+<td>Bash Disarm Parry</td>
+</tr>
+<tr>
+<td>27020</td>
+<td>the vice chancellor</td>
+<td>95</td>
+<td>3d6+7610 (7620.5)</td>
+<td>9d11+46 (100)</td>
+<td>46</td>
+<td>-51/-51/-51/-51</td>
+<td>acbite</td>
+<td>-1000</td>
+<td>dragon</td>
+<td>Sentinel StayArea Sentient Cleric Mage Warrior</td>
+<td>Backstab Bash Disarm Dodge Fast Kick KickDirt Parry Tail Trip Crush</td>
+</tr>
+<tr>
+<td>27021</td>
+<td>the ninja</td>
+<td>99</td>
+<td>3d6+9232 (9242.5)</td>
+<td>10d10+50 (105)</td>
+<td>50</td>
+<td>-51/-51/-51/-51</td>
+<td>magic</td>
+<td>0</td>
+<td>elf</td>
+<td>Sentinel StayArea Sentient Cleric Mage Thief Warrior</td>
+<td>Backstab Bash Disarm Fade Fast Kick KickDirt Parry Trip</td>
+</tr>
+<tr>
+<td>27022</td>
+<td>the slime</td>
+<td>91</td>
+<td>1d6+7695 (7698.5)</td>
+<td>10d9+45 (95)</td>
+<td>45</td>
+<td>-48/-48/-48/-48</td>
+<td>suction</td>
+<td>-900</td>
+<td>unique</td>
+<td>Sentinel Scavenger Undead Mage</td>
+<td>Dodge Tail Trip AssistVnum</td>
+</tr>
+<tr>
+<td>27023</td>
+<td>the wife</td>
+<td>92</td>
+<td>2d6+8596 (8603)</td>
+<td>9d10+46 (95.5)</td>
+<td>46</td>
+<td>-48/-48/-48/-48</td>
+<td>peck</td>
+<td>950</td>
+<td>dragon</td>
+<td>Sentinel StayArea Wimpy Cleric</td>
+<td>Fast Tail Trip</td>
+</tr>
+<tr>
+<td>27024</td>
+<td>Greasy Joe</td>
+<td>50</td>
+<td>1d1+999 (1000)</td>
+<td>5d10+25 (52.5)</td>
+<td>25</td>
+<td>-32/-32/-32/-21</td>
+<td>claw</td>
+<td>0</td>
+<td>orc</td>
+<td>Sentinel StayArea Warrior NoPurge</td>
+<td>Bash Berserk Disarm Dodge Fast Parry AssistGuard</td>
+</tr>
+<tr>
+<td>27025</td>
+<td>a wizened old porter</td>
+<td>147</td>
+<td>3d6+25146 (25156.5)</td>
+<td>20d20+90 (300)</td>
+<td>90</td>
+<td>-64/-64/-64/-43</td>
+<td>divine</td>
+<td>1000</td>
+<td>human</td>
+<td>Sentinel StayArea Train Practice Talkative Cleric Mage Thief Warrior NoPurge Healer Gain</td>
+<td>Backstab Bash Disarm Dodge Fast Kick KickDirt Parry Rescue Trip Crush</td>
+</tr>
+<tr>
+<td>27026</td>
+<td>Julia the bookworm</td>
+<td>58</td>
+<td>1d6+2792 (2795.5)</td>
+<td>7d9+29 (64)</td>
+<td>29</td>
+<td>-36/-36/-36/-36</td>
+<td>magic</td>
+<td>1000</td>
+<td>elf</td>
+<td>Sentinel Wimpy Sentient Mage</td>
+<td>Dodge Trip AssistAlign</td>
+</tr>
+<tr>
+<td>27027</td>
+<td>a reluctant porter</td>
+<td>50</td>
+<td>3d6+2745 (2755.5)</td>
+<td>7d8+25 (56.5)</td>
+<td>25</td>
+<td>-36/-36/-36/-36</td>
+<td>punch</td>
+<td>-850</td>
+<td>human</td>
+<td>StayArea Warrior</td>
+<td>Disarm Kick Parry AssistGuard AssistVnum</td>
+</tr>
+<tr>
+<td>27028</td>
+<td>Dr Lorenzo</td>
+<td>52</td>
+<td>2d6+2764 (2771)</td>
+<td>8d7+26 (58)</td>
+<td>26</td>
+<td>-34/-34/-34/-34</td>
+<td>charge</td>
+<td>-900</td>
+<td>dwarf</td>
+<td>Sentinel StayArea Cleric</td>
+<td>Dodge Fast Trip</td>
+</tr>
+<tr>
+<td>27029</td>
+<td>Dr Wolfgang</td>
+<td>54</td>
+<td>2d6+2719 (2726)</td>
+<td>8d7+27 (59)</td>
+<td>27</td>
+<td>-36/-36/-36/-36</td>
+<td>whip</td>
+<td>0</td>
+<td>elf</td>
+<td>Sentinel StayArea Cleric Mage</td>
+<td>Dodge Fast Trip</td>
+</tr>
+<tr>
+<td>27030</td>
+<td>a drunken youth</td>
+<td>50</td>
+<td>3d6+2745 (2755.5)</td>
+<td>5d10+25 (52.5)</td>
+<td>25</td>
+<td>-36/-36/-36/-36</td>
+<td>beating</td>
+<td>-30</td>
+<td>human</td>
+<td>StayArea Warrior</td>
+<td>Bash Berserk Parry AssistAll AssistVnum</td>
+</tr>
+<tr>
+<td>27031</td>
+<td>an alcoholic partygoer</td>
+<td>51</td>
+<td>3d6+2774 (2784.5)</td>
+<td>5d10+26 (53.5)</td>
+<td>26</td>
+<td>-36/-36/-36/-36</td>
+<td>digestion</td>
+<td>0</td>
+<td>orc</td>
+<td>StayArea Wimpy Warrior</td>
+<td>Bash Parry Trip AssistVnum</td>
+</tr>
+<tr>
+<td>27032</td>
+<td>the enchanted bagpipes</td>
+<td>54</td>
+<td>3d6+3060 (3070.5)</td>
+<td>5d11+27 (57)</td>
+<td>27</td>
+<td>-36/-36/-36/-36</td>
+<td>blast</td>
+<td>-900</td>
+<td>unique</td>
+<td>Sentinel StayArea Warrior</td>
+<td>Parry Crush AssistAlign AssistVnum</td>
+</tr>
+<tr>
+<td>27033</td>
+<td>Nikos</td>
+<td>71</td>
+<td>3d6+4575 (4585.5)</td>
+<td>10d7+35 (75)</td>
+<td>35</td>
+<td>-42/-42/-42/-42</td>
+<td>chop</td>
+<td>1000</td>
+<td>human</td>
+<td>Sentinel Wimpy Sentient Mage Warrior</td>
+<td>Bash Berserk Disarm Dodge Fast Parry Trip AssistAlign</td>
+</tr>
+<tr>
+<td>27034</td>
+<td>a zealous gymrat</td>
+<td>65</td>
+<td>3d6+3410 (3420.5)</td>
+<td>7d10+32 (70.5)</td>
+<td>32</td>
+<td>-40/-40/-40/-40</td>
+<td>crush</td>
+<td>0</td>
+<td>human</td>
+<td>StayArea Wimpy Warrior</td>
+<td>Kick Parry Trip Crush AssistVnum</td>
+</tr>
+<tr>
+<td>27035</td>
+<td>a flexible gymnast</td>
+<td>68</td>
+<td>2d6+4276 (4283)</td>
+<td>10d7+34 (74)</td>
+<td>34</td>
+<td>-41/-41/-41/-41</td>
+<td>smash</td>
+<td>-499</td>
+<td>human</td>
+<td>StayArea Wimpy Cleric</td>
+<td>Berserk Disarm Fast Trip AssistVnum</td>
+</tr>
+<tr>
+<td>27036</td>
+<td>a pool attendant</td>
+<td>65</td>
+<td>1d6+3953 (3956.5)</td>
+<td>11d6+32 (70.5)</td>
+<td>32</td>
+<td>-40/-40/-40/-40</td>
+<td>slap</td>
+<td>30</td>
+<td>elf</td>
+<td>Sentinel StayArea Wimpy Mage</td>
+<td>Dodge Fast Trip AssistVnum</td>
+</tr>
+<tr>
+<td>27037</td>
+<td>a mutant dolphin</td>
+<td>65</td>
+<td>3d6+5300 (5310.5)</td>
+<td>9d8+35 (75.5)</td>
+<td>35</td>
+<td>-39/-39/-39/-39</td>
+<td>shbite</td>
+<td>-900</td>
+<td>unique</td>
+<td>Sentinel Aggressive StayArea Mage Warrior</td>
+<td>Berserk Fast Tail Crush AssistAll</td>
+</tr>
+<tr>
+<td>27038</td>
+<td>an historian</td>
+<td>72</td>
+<td>3d6+3880 (3890.5)</td>
+<td>8d9+36 (76)</td>
+<td>36</td>
+<td>-41/-41/-41/-41</td>
+<td>magic</td>
+<td>850</td>
+<td>human</td>
+<td>StayArea Wimpy Sentient Cleric Mage</td>
+<td>Dodge Trip AssistVnum</td>
+</tr>
+<tr>
+<td>27039</td>
+<td>a curious geologist</td>
+<td>74</td>
+<td>3d6+4745 (4755.5)</td>
+<td>9d8+37 (77.5)</td>
+<td>37</td>
+<td>-43/-43/-43/-43</td>
+<td>frbite</td>
+<td>850</td>
+<td>dragon</td>
+<td>StayArea Wimpy Sentient Mage Warrior</td>
+<td>Bash Berserk Disarm Parry Tail</td>
+</tr>
+<tr>
+<td>27040</td>
+<td>an econometrist</td>
+<td>76</td>
+<td>3d6+4730 (4740.5)</td>
+<td>8d10+38 (82)</td>
+<td>38</td>
+<td>-44/-44/-44/-44</td>
+<td>pierce</td>
+<td>0</td>
+<td>human</td>
+<td>StayArea Wimpy Sentient Cleric Thief</td>
+<td>Backstab Disarm Dodge Fast Parry Trip</td>
+</tr>
+<tr>
+<td>27041</td>
+<td>the unknown explorer</td>
+<td>78</td>
+<td>3d6+5215 (5225.5)</td>
+<td>10d8+39 (84)</td>
+<td>39</td>
+<td>-44/-44/-44/-44</td>
+<td>divine</td>
+<td>0</td>
+<td>human</td>
+<td>Scavenger StayArea Sentient Cleric Warrior</td>
+<td>Disarm Fast Parry</td>
+</tr>
+<tr>
+<td>27042</td>
+<td>Counsellor Roy</td>
+<td>55</td>
+<td>2d6+3046 (3053)</td>
+<td>5d11+27 (57)</td>
+<td>27</td>
+<td>-38/-38/-38/-38</td>
+<td>whip</td>
+<td>950</td>
+<td>elf</td>
+<td>Sentinel StayArea Sentient Cleric Mage</td>
+<td>Dodge Fast Trip</td>
+</tr>
+</tbody>
+</table>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Vnum</th>
+<th>Name</th>
+<th>Type</th>
+<th>Lvl</th>
+<th>Values</th>
+<th>Affects</th>
+<th>Wear</th>
+<th>Extra</th>
+<th>Wt</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27029</td>
+<td>the admin key</td>
+<td>Key</td>
+<td>50</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Invis</td>
+<td>1</td>
+<td>20</td>
+</tr>
+<tr>
+<td>27036</td>
+<td>the key to beyond</td>
+<td>Key</td>
+<td>65</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Glow Invis</td>
+<td>1</td>
+<td>20</td>
+</tr>
+<tr>
+<td>27062</td>
+<td>the data key</td>
+<td>Key</td>
+<td>36</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>20</td>
+</tr>
+<tr>
+<td>27084</td>
+<td>a dusty key</td>
+<td>Key</td>
+<td>62</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>20</td>
+</tr>
+<tr>
+<td>27111</td>
+<td>a spine chilling key</td>
+<td>Key</td>
+<td>70</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Hum Magic AntiGood</td>
+<td>1</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>27112</td>
+<td>a slimy key</td>
+<td>Key</td>
+<td>70</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Invis Magic NoPurge</td>
+<td>1</td>
+<td>450</td>
+</tr>
+<tr>
+<td>27115</td>
+<td>an old key</td>
+<td>Key</td>
+<td>70</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Invis</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>27000</td>
+<td>a cobweb</td>
+<td>Container</td>
+<td>0</td>
+<td>capacity 2, key 0</td>
+<td></td>
+<td></td>
+<td>Glow Magic NoPurge</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>27001</td>
+<td>a bucket</td>
+<td>Container</td>
+<td>0</td>
+<td>capacity 50, key 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>27002</td>
+<td>a table</td>
+<td>Furniture</td>
+<td>0</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>50</td>
+<td>100</td>
+</tr>
+<tr>
+<td>27003</td>
+<td>a book</td>
+<td>Furniture</td>
+<td>0</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>8</td>
+<td>30</td>
+</tr>
+<tr>
+<td>27004</td>
+<td>a chair</td>
+<td>Furniture</td>
+<td>0</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>20</td>
+<td>20</td>
+</tr>
+<tr>
+<td>27005</td>
+<td>a percussion set</td>
+<td>Furniture</td>
+<td>0</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>150</td>
+<td>400</td>
+</tr>
+<tr>
+<td>27006</td>
+<td>a Psychology book</td>
+<td>Furniture</td>
+<td>0</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>8</td>
+<td>30</td>
+</tr>
+<tr>
+<td>27007</td>
+<td>a table</td>
+<td>Furniture</td>
+<td>0</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>50</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>27008</td>
+<td>a Babbus Computational Device</td>
+<td>Furniture</td>
+<td>100</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Glow Hum</td>
+<td>150</td>
+<td>50000</td>
+</tr>
+<tr>
+<td>27009</td>
+<td>an automated abacus</td>
+<td>Furniture</td>
+<td>0</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Glow Hum</td>
+<td>45</td>
+<td>9000</td>
+</tr>
+<tr>
+<td>27010</td>
+<td>a clockwork printer</td>
+<td>Furniture</td>
+<td>0</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>Hum</td>
+<td>65</td>
+<td>8000</td>
+</tr>
+<tr>
+<td>27011</td>
+<td>a bench</td>
+<td>Furniture</td>
+<td>0</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>200</td>
+<td>450</td>
+</tr>
+<tr>
+<td>27012</td>
+<td>the Fountain of Knowledge</td>
+<td>Fountain</td>
+<td>0</td>
+<td>999/999 of water</td>
+<td></td>
+<td></td>
+<td>AntiEvil NoPurge</td>
+<td>1500</td>
+<td>500000</td>
+</tr>
+<tr>
+<td>27013</td>
+<td>some nuts</td>
+<td>Food</td>
+<td>0</td>
+<td>12 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>27014</td>
+<td>a draughts board</td>
+<td>Furniture</td>
+<td>0</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>40</td>
+<td>35</td>
+</tr>
+<tr>
+<td>27015</td>
+<td>some utensils</td>
+<td>Trash</td>
+<td>0</td>
+<td>0 0 0 0 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>6</td>
+<td>25</td>
+</tr>
+<tr>
+<td>27016</td>
+<td>a mahogany desk</td>
+<td>Container</td>
+<td>0</td>
+<td>capacity 50, key 27029</td>
+<td></td>
+<td></td>
+<td>Lock NoPurge</td>
+<td>100</td>
+<td>11500</td>
+</tr>
+<tr>
+<td>27049</td>
+<td>a big bed</td>
+<td>Container</td>
+<td>0</td>
+<td>capacity 300, key 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>100</td>
+<td>600</td>
+</tr>
+<tr>
+<td>27018</td>
+<td>a pair of high quality dungarees</td>
+<td>Armor</td>
+<td>45</td>
+<td>AC 12/12/11/11</td>
+<td>Dex +1, Hit +20</td>
+<td>Legs</td>
+<td>Glow Magic</td>
+<td>6</td>
+<td>7875</td>
+</tr>
+<tr>
+<td>27017</td>
+<td>a biologists coat</td>
+<td>Armor</td>
+<td>40</td>
+<td>AC 11/11/11/11</td>
+<td>Wis +2, Dex +2, SavingSpell -4</td>
+<td>About</td>
+<td>Evil Magic AntiGood</td>
+<td>5</td>
+<td>7000</td>
+</tr>
+<tr>
+<td>27019</td>
+<td>a wildman's outdoor jacket</td>
+<td>Armor</td>
+<td>48</td>
+<td>AC 13/13/13/12</td>
+<td>Mana +20, Hit +20, SavingRod +4</td>
+<td>About</td>
+<td>Glow Magic AntiEvil Unique</td>
+<td>12</td>
+<td>24000</td>
+</tr>
+<tr>
+<td>27020</td>
+<td>a soup ladle</td>
+<td>Weapon</td>
+<td>50</td>
+<td>exotic 10d5 (avg 30) beating Vampiric</td>
+<td>Hitroll +4, Damroll +4</td>
+<td>Wield</td>
+<td>Glow Evil AntiGood</td>
+<td>15</td>
+<td>25000</td>
+</tr>
+<tr>
+<td>27021</td>
+<td>a chequered skirt</td>
+<td>Armor</td>
+<td>50</td>
+<td>AC 14/14/14/12</td>
+<td>Con +2, Hit +20</td>
+<td>Legs</td>
+<td>Evil AntiGood</td>
+<td>12</td>
+<td>12500</td>
+</tr>
+<tr>
+<td>27022</td>
+<td>a pair of comfortable slippers</td>
+<td>Armor</td>
+<td>80</td>
+<td>AC 20/19/20/19</td>
+<td>Mana +40, SavingSpell -2</td>
+<td>Feet</td>
+<td>Glow Hum Evil AntiGood Unique</td>
+<td>10</td>
+<td>40000</td>
+</tr>
+<tr>
+<td>27023</td>
+<td>the blade of destruction</td>
+<td>Weapon</td>
+<td>80</td>
+<td>polearm 10d8 (avg 45) cleave Frost Sharp TwoHands</td>
+<td>Int -2, SavingSpell -14</td>
+<td>Wield TwoHands</td>
+<td>Glow Hum Dark Evil Unique</td>
+<td>38</td>
+<td>49000</td>
+</tr>
+<tr>
+<td>27024</td>
+<td>a chocolate brown suit</td>
+<td>Armor</td>
+<td>72</td>
+<td>AC 18/18/18/18</td>
+<td>Int +2, Wis +2</td>
+<td>Body</td>
+<td>Bless AntiEvil Unique</td>
+<td>18</td>
+<td>12600</td>
+</tr>
+<tr>
+<td>27025</td>
+<td>a geological sample bag</td>
+<td>Container</td>
+<td>74</td>
+<td>capacity 1000, key 0</td>
+<td>Int +1, Ac -4</td>
+<td>About</td>
+<td>Bless</td>
+<td>9</td>
+<td>12950</td>
+</tr>
+<tr>
+<td>27026</td>
+<td>a roll of burning parchment</td>
+<td>Weapon</td>
+<td>76</td>
+<td>mace 8d9 (avg 40) scratch Flaming</td>
+<td>Mana +70, Hitroll +3</td>
+<td>Wield</td>
+<td>Glow Evil NoRemove</td>
+<td>5</td>
+<td>19000</td>
+</tr>
+<tr>
+<td>27027</td>
+<td>an explorer's shield</td>
+<td>Armor</td>
+<td>78</td>
+<td>AC 23/23/23/19</td>
+<td>Con +2, Mana +30, Hit +20, SavingSpell +4</td>
+<td>Shield</td>
+<td>Glow Bless Unique</td>
+<td>33</td>
+<td>39000</td>
+</tr>
+<tr>
+<td>27028</td>
+<td>an explorer's monocle</td>
+<td>Armor</td>
+<td>78</td>
+<td>AC 19/19/19/19</td>
+<td>Sex -1, SavingBreath -6, SavingPara -6</td>
+<td>Head</td>
+<td>Magic NoDrop Bless Unique</td>
+<td>6</td>
+<td>37000</td>
+</tr>
+<tr>
+<td>27030</td>
+<td>the Moog's notebook</td>
+<td>Staff</td>
+<td>80</td>
+<td>spell lvl 80, charges 5/5: 37</td>
+<td>Hit +55, Int +3</td>
+<td>Hold</td>
+<td>Hum Bless AntiEvil Unique</td>
+<td>5</td>
+<td>20000</td>
+</tr>
+<tr>
+<td>27031</td>
+<td>a curious pencil</td>
+<td>Wand</td>
+<td>85</td>
+<td>spell lvl 85, charges 5/5: 69</td>
+<td>Str -2, Hitroll +6, Damroll +6</td>
+<td>Hold</td>
+<td>Dark Evil Magic</td>
+<td>1</td>
+<td>14875</td>
+</tr>
+<tr>
+<td>27032</td>
+<td>an unfashionable tie</td>
+<td>Armor</td>
+<td>85</td>
+<td>AC 22/22/22/21</td>
+<td>Wis +2, Mana +50, SavingSpell -4</td>
+<td>Neck</td>
+<td>Glow Evil</td>
+<td>3</td>
+<td>21250</td>
+</tr>
+<tr>
+<td>27033</td>
+<td>the Swiss Army Knife</td>
+<td>Weapon</td>
+<td>52</td>
+<td>dagger 6d9 (avg 30) pierce Sharp</td>
+<td>Hitroll +4, Damroll +4</td>
+<td>Wield</td>
+<td>Bless AntiEvil Unique</td>
+<td>3</td>
+<td>13000</td>
+</tr>
+<tr>
+<td>27034</td>
+<td>a cyberstaff</td>
+<td>Weapon</td>
+<td>45</td>
+<td>exotic 6d8 (avg 27) blast Frost</td>
+<td>Hitroll +6, Damroll +6, SavingSpell +4</td>
+<td>Wield</td>
+<td>Glow Bless AntiEvil</td>
+<td>30</td>
+<td>11250</td>
+</tr>
+<tr>
+<td>27035</td>
+<td>midnight wraps</td>
+<td>Armor</td>
+<td>86</td>
+<td>AC 23/23/23/21</td>
+<td>Str +2, Hit +35, SavingSpell -12</td>
+<td>Body</td>
+<td>Dark Unique</td>
+<td>5</td>
+<td>43000</td>
+</tr>
+<tr>
+<td>27037</td>
+<td>hands of emptiness</td>
+<td>Weapon</td>
+<td>86</td>
+<td>exotic 9d9 (avg 45) punch Frost Vorpal TwoHands</td>
+<td>Hitroll +15, Damroll +15, Mana +30</td>
+<td>Wield TwoHands</td>
+<td>Dark Invis Magic Bless Unique</td>
+<td>25</td>
+<td>45000</td>
+</tr>
+<tr>
+<td>27038</td>
+<td>a set of false toe nails</td>
+<td>Armor</td>
+<td>83</td>
+<td>AC 22/22/22/20</td>
+<td>Mana +50</td>
+<td>Feet</td>
+<td>Glow Hum Magic Bless AntiEvil Unique</td>
+<td>12</td>
+<td>20750</td>
+</tr>
+<tr>
+<td>27039</td>
+<td>a beauty spot</td>
+<td>Armor</td>
+<td>83</td>
+<td>AC 22/22/22/18</td>
+<td>Wis +3, Sex +1, Mana +60, SavingSpell +6</td>
+<td>Neck</td>
+<td>Glow Magic Bless AntiEvil Unique</td>
+<td>1</td>
+<td>41500</td>
+</tr>
+<tr>
+<td>27040</td>
+<td>a burger</td>
+<td>Food</td>
+<td>0</td>
+<td>14 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>NoPurge</td>
+<td>1</td>
+<td>12</td>
+</tr>
+<tr>
+<td>27041</td>
+<td>a double egg and cheese burger</td>
+<td>Food</td>
+<td>0</td>
+<td>45 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>NoPurge</td>
+<td>1</td>
+<td>100</td>
+</tr>
+<tr>
+<td>27042</td>
+<td>roast chestnuts</td>
+<td>Food</td>
+<td>0</td>
+<td>45 0 0 0 0</td>
+<td></td>
+<td></td>
+<td>NoPurge</td>
+<td>1</td>
+<td>100</td>
+</tr>
+<tr>
+<td>27043</td>
+<td>a pendant of sobriety</td>
+<td>Armor</td>
+<td>58</td>
+<td>AC 16/16/16/14</td>
+<td>Int +4, Wis +4, Hit -40</td>
+<td>Neck</td>
+<td>Magic AntiEvil Unique</td>
+<td>5</td>
+<td>14500</td>
+</tr>
+<tr>
+<td>27044</td>
+<td>Wolfgang's stethoscope</td>
+<td>Weapon</td>
+<td>54</td>
+<td>flail 9d6 (avg 31.5) whip Frost</td>
+<td>Dex +1, Hitroll +3, Damroll +3</td>
+<td>Wield</td>
+<td>Bless Unique</td>
+<td>8</td>
+<td>9450</td>
+</tr>
+<tr>
+<td>27045</td>
+<td>an enormous neckbeard</td>
+<td>Armor</td>
+<td>71</td>
+<td>AC 23/23/23/23</td>
+<td>Con +2, Wis +2, Int +2, SavingBreath -12</td>
+<td>Neck</td>
+<td>Glow AntiEvil</td>
+<td>1</td>
+<td>17500</td>
+</tr>
+<tr>
+<td>27046</td>
+<td>some swimming goggles</td>
+<td>Armor</td>
+<td>65</td>
+<td>AC 16/16/16/16</td>
+<td>Int +1, Mana +40, Hitroll -6</td>
+<td>Neck</td>
+<td></td>
+<td>2</td>
+<td>11375</td>
+</tr>
+<tr>
+<td>27047</td>
+<td>a dolphin skin cap</td>
+<td>Armor</td>
+<td>65</td>
+<td>AC 21/16/16/16</td>
+<td>Str +3, Int +3, Wis +3, Con +3, SavingRod +8, SavingPara +6</td>
+<td>Head</td>
+<td>Glow Hum Evil Magic AntiGood</td>
+<td>12</td>
+<td>32500</td>
+</tr>
+<tr>
+<td>27048</td>
+<td>a dorsal fin</td>
+<td>Weapon</td>
+<td>65</td>
+<td>exotic 11d6 (avg 38.5) cleave Frost Sharp</td>
+<td>Str +1, Hitroll +5, Damroll +5</td>
+<td>Wield</td>
+<td>Evil AntiGood</td>
+<td>27</td>
+<td>33000</td>
+</tr>
+<tr>
+<td>27050</td>
+<td>the bracelet of dragonkind</td>
+<td>Armor</td>
+<td>85</td>
+<td>AC 24/22/22/20</td>
+<td>Mana +50, SavingSpell -4</td>
+<td>Wrist</td>
+<td>Evil AntiGood Unique</td>
+<td>9</td>
+<td>45500</td>
+</tr>
+<tr>
+<td>27051</td>
+<td>Ajandurah's staff of utter negativity</td>
+<td>Weapon</td>
+<td>61</td>
+<td>polearm 10d6 (avg 35) magic Frost TwoHands</td>
+<td>Mana +30</td>
+<td>Wield TwoHands</td>
+<td>Magic Bless AntiEvil AntiNeutral Unique</td>
+<td>22</td>
+<td>30500</td>
+</tr>
+<tr>
+<td>27052</td>
+<td>a smoking joss stick</td>
+<td>Light</td>
+<td>30</td>
+<td>0 0 999 0 0</td>
+<td>Int +2, Wis +2</td>
+<td></td>
+<td></td>
+<td>4</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>27053</td>
+<td>a light nightie</td>
+<td>Armor</td>
+<td>1</td>
+<td>AC 5/5/5/5</td>
+<td></td>
+<td>Body</td>
+<td></td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>27054</td>
+<td>a vampire tooth ring</td>
+<td>Armor</td>
+<td>52</td>
+<td>AC 17/17/17/0</td>
+<td>Hit +45, Dex +2</td>
+<td>Finger</td>
+<td>Magic</td>
+<td>1</td>
+<td>5043</td>
+</tr>
+<tr>
+<td>27055</td>
+<td>a diamond studded earring</td>
+<td>Armor</td>
+<td>56</td>
+<td>AC 12/12/12/0</td>
+<td>Wis +1, Con +1, Hit +20</td>
+<td>Ears</td>
+<td>Glow</td>
+<td>1</td>
+<td>3902</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shops">Shops<a class="headerlink" href="#shops" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Keeper</th>
+<th>Buys</th>
+<th>Profit buy %</th>
+<th>Profit sell %</th>
+<th>Hours</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27024 Greasy Joe</td>
+<td></td>
+<td>110</td>
+<td>100</td>
+<td>0–23</td>
+</tr>
+</tbody>
+</table>
+<h2 id="specials">Specials<a class="headerlink" href="#specials" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mob</th>
+<th>Spec function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27008 Madam Breakfast</td>
+<td>spec_cast_cleric</td>
+</tr>
+<tr>
+<td>27010 Warden Ripley</td>
+<td>spec_breath_acid</td>
+</tr>
+<tr>
+<td>27011 Professor Gutenberg</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>27013 Rogan Josh</td>
+<td>spec_breath_gas</td>
+</tr>
+<tr>
+<td>27019 Dr Hill</td>
+<td>spec_breath_acid</td>
+</tr>
+<tr>
+<td>27020 the vice chancellor</td>
+<td>spec_breath_fire</td>
+</tr>
+<tr>
+<td>27021 the ninja</td>
+<td>spec_cast_mage</td>
+</tr>
+<tr>
+<td>27023 the wife</td>
+<td>spec_breath_frost</td>
+</tr>
+<tr>
+<td>27025 a wizened old porter</td>
+<td>spec_cast_adept</td>
+</tr>
+<tr>
+<td>27037 a mutant dolphin</td>
+<td>spec_breath_lightning</td>
+</tr>
+<tr>
+<td>27041 the unknown explorer</td>
+<td>spec_cast_cleric</td>
+</tr>
+<tr>
+<td>27024 Greasy Joe</td>
+<td>spec_greasy_joe</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mob-programs">Mob programs<a class="headerlink" href="#mob-programs" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mob</th>
+<th>File</th>
+<th>Triggers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27025 a wizened old porter</td>
+<td>guildmaster.prg</td>
+<td>greet_prog, rand_prog</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/sorts/tablesort.number.min.js"></script>
+      
+        <script src="../../../javascripts/xania.js"></script>
+      
+        <script src="../../../javascripts/explore-plan.js"></script>
+      
+        <script src="../../../javascripts/explore.js"></script>
+      
+    
+  </body>
+</html>

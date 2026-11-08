@@ -1,0 +1,413 @@
+/* Warm theme for Xania Explorer: parchment and terracotta by day, lantern-lit brown by night.
+   Material reads these custom properties (palette primary/accent: custom in mkdocs.yml). */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap");
+
+:root {
+  --xu-heading-font: "Fraunces", Georgia, "Times New Roman", serif;
+}
+
+/* -- Light: parchment ------------------------------------------------------- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #a8482a;          /* terracotta */
+  --md-primary-fg-color--light: #c4683f;
+  --md-primary-fg-color--dark: #86361d;
+  --md-primary-bg-color: #fdf8ef;
+  --md-primary-bg-color--light: rgba(253, 248, 239, 0.75);
+  --md-accent-fg-color: #c27c0e;           /* amber */
+  --md-accent-fg-color--transparent: rgba(194, 124, 14, 0.12);
+
+  --md-default-bg-color: #fbf6ec;          /* parchment */
+  --md-default-fg-color: rgba(58, 38, 28, 0.9);
+  --md-default-fg-color--light: rgba(58, 38, 28, 0.66);
+  --md-default-fg-color--lighter: rgba(58, 38, 28, 0.36);
+  --md-default-fg-color--lightest: rgba(58, 38, 28, 0.1);
+
+  --md-typeset-color: #3a261c;
+  --md-typeset-a-color: #a8482a;
+  --md-code-bg-color: #f3eadb;
+  --md-code-fg-color: #4a3428;
+  --md-footer-bg-color: #3a261c;
+  --md-footer-bg-color--dark: #2c1d15;
+
+  --xu-card-bg: #fffaf2;
+  --xu-card-border: #ead9c0;
+  --xu-table-head: #f1e3cd;
+  --xu-table-stripe: rgba(168, 72, 42, 0.035);
+  --xu-table-hover: rgba(194, 124, 14, 0.1);
+}
+
+/* -- Dark: lantern light ------------------------------------------------------ */
+[data-md-color-scheme="slate"] {
+  --md-hue: 24;                            /* warms all of Material's slate greys */
+  --md-primary-fg-color: #d9774e;
+  --md-primary-fg-color--light: #e89470;
+  --md-primary-fg-color--dark: #b85a33;
+  --md-primary-bg-color: #fdf3e6;
+  --md-accent-fg-color: #f0b04a;
+  --md-accent-fg-color--transparent: rgba(240, 176, 74, 0.12);
+
+  --md-default-bg-color: #1e1814;
+  --md-default-fg-color: rgba(244, 231, 214, 0.88);
+  --md-default-fg-color--light: rgba(244, 231, 214, 0.62);
+  --md-default-fg-color--lighter: rgba(244, 231, 214, 0.34);
+  --md-default-fg-color--lightest: rgba(244, 231, 214, 0.1);
+
+  --md-typeset-color: #efe2d0;
+  --md-typeset-a-color: #eb9a6c;
+  --md-code-bg-color: #2a221c;
+  --md-code-fg-color: #efd9bd;
+  --md-footer-bg-color: #16110e;
+  --md-footer-bg-color--dark: #110d0a;
+
+  --xu-card-bg: #261f1a;
+  --xu-card-border: #3b2f27;
+  --xu-table-head: #31271f;
+  --xu-table-stripe: rgba(240, 176, 74, 0.03);
+  --xu-table-hover: rgba(240, 176, 74, 0.08);
+}
+
+/* Header in light mode: a deeper, warmer bar than the body accent. */
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: #8f3c22;
+}
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #2b211b;
+  color: #f4e4cf;
+}
+
+/* -- Typography --------------------------------------------------------------- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-header__topic:first-child {
+  font-family: var(--xu-heading-font);
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+.md-typeset h1 {
+  font-weight: 650;
+  color: var(--md-primary-fg-color--dark);
+}
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: var(--md-primary-fg-color--light);
+}
+.md-typeset h2 {
+  font-weight: 600;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid var(--xu-card-border);
+}
+.md-typeset h3 {
+  font-weight: 500;
+}
+.md-typeset {
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+/* -- Key-number tiles --------------------------------------------------------------- */
+.xu-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5.4rem, 1fr));
+  gap: 0.6rem;
+  margin: 1.2em 0 1.4em;
+}
+.xu-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 0.75rem 0.6rem;
+  background: var(--xu-card-bg);
+  border: 1px solid var(--xu-card-border);
+  border-top: 3px solid var(--md-primary-fg-color);
+  border-radius: 10px;
+}
+.xu-stat-value {
+  font-family: var(--xu-heading-font);
+  font-size: 1.55rem;
+  font-weight: 650;
+  line-height: 1.1;
+  color: var(--md-primary-fg-color);
+}
+.xu-stat-label {
+  font-size: 0.66rem;
+  line-height: 1.35;
+  color: var(--md-default-fg-color--light);
+}
+
+/* -- Dashboard cards ----------------------------------------------------------------- */
+.md-typeset .xu-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
+  gap: 0.75rem;
+  margin: 1em 0 1.6em;
+}
+.md-typeset .xu-finding-card,
+.md-typeset .xu-system-card {
+  background: var(--xu-card-bg);
+  border: 1px solid var(--xu-card-border);
+  border-left: 4px solid var(--xu-card-border);
+  border-radius: 10px;
+  padding: 0.7rem 0.85rem 0.6rem;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+.md-typeset .xu-finding-card > p,
+.md-typeset .xu-system-card > p {
+  margin: 0.35em 0;
+}
+.md-typeset .xu-finding-card a,
+.md-typeset .xu-system-card a {
+  color: var(--md-typeset-color);
+}
+.md-typeset .xu-finding-card a:hover,
+.md-typeset .xu-system-card a:hover {
+  color: var(--md-typeset-a-color);
+}
+.md-typeset .xu-impact-3 { border-left-color: #b4532a; }
+.md-typeset .xu-impact-2 { border-left-color: #e0a030; }
+.md-typeset .xu-impact-1 { border-left-color: #9a8b7e; }
+.md-typeset .xu-chip {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.05rem 0.4rem;
+  margin-right: 0.3rem;
+  border-radius: 999px;
+  background: var(--xu-table-head);
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .xu-impact-3 .xu-chip-impact { background: #b4532a; color: #fffaf2; }
+.md-typeset .xu-impact-2 .xu-chip-impact { background: #e0a030; color: #3a261c; }
+.md-typeset .xu-card-metric {
+  font-family: var(--xu-heading-font);
+  font-size: 1.15rem;
+  font-weight: 650;
+  color: var(--md-primary-fg-color);
+}
+.md-typeset .xu-card-label {
+  color: var(--md-default-fg-color--light);
+}
+/* Bug statuses */
+.md-typeset .xu-status-present { background: #b4532a; color: #fffaf2; }
+.md-typeset .xu-status-latent { background: #e0a030; color: #3a261c; }
+.md-typeset .xu-status-fixed,
+.md-typeset .xu-status-clean { background: #5f8a5b; color: #fffaf2; }
+.md-typeset h3 + p .xu-chip { margin-bottom: 0.3rem; }
+
+/* Scorecard verdicts */
+.md-typeset .xu-improved { color: #3d7a3a; font-weight: 700; }
+.md-typeset .xu-worse { color: #b4532a; font-weight: 700; }
+[data-md-color-scheme="slate"] .md-typeset .xu-improved { color: #8cc485; }
+[data-md-color-scheme="slate"] .md-typeset .xu-worse { color: #eb9a6c; }
+
+/* Finding headings read as statements: give them room. */
+.md-typeset h2 {
+  margin-top: 2.2em;
+}
+
+/* Collapsed "Details" blocks: quiet, parchment-toned. */
+.md-typeset details.abstract,
+.md-typeset details.info {
+  border-color: var(--xu-card-border);
+  background: var(--xu-card-bg);
+  box-shadow: none;
+  font-size: 0.72rem;
+}
+.md-typeset details.abstract > summary,
+.md-typeset details.info > summary {
+  background: var(--xu-table-head);
+  font-weight: 600;
+}
+.md-typeset details.abstract > summary::before,
+.md-typeset details.info > summary::before {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* -- Charts as cards ------------------------------------------------------------ */
+.xu-chart {
+  margin: 1.2em 0 1.8em;
+  width: 100%;
+  padding: 0.9rem 1rem 0.6rem;
+  background: var(--xu-card-bg);
+  border: 1px solid var(--xu-card-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(58, 38, 28, 0.06), 0 6px 18px -10px rgba(58, 38, 28, 0.18);
+  box-sizing: border-box;
+}
+.xu-chart .xu-chart-body,
+.xu-chart .vega-embed {
+  width: 100%;
+}
+/* vega-embed's actions menu is a <details>; Material styles every <details> as a collapsible
+   admonition (blue border, icon, chevron). Undo that inside charts. */
+.md-typeset .xu-chart .vega-embed details {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7rem;
+  overflow: visible;
+}
+.md-typeset .xu-chart .vega-embed details > summary {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: 0;
+  min-height: 0;
+  opacity: 0.55;
+}
+.md-typeset .xu-chart .vega-embed details > summary::before,
+.md-typeset .xu-chart .vega-embed details > summary::after {
+  display: none;
+}
+.md-typeset .xu-chart .vega-embed details > summary:hover {
+  opacity: 1;
+}
+
+/* -- Tables ----------------------------------------------------------------------- */
+.md-typeset table:not([class]) {
+  font-size: 0.68rem;
+  border: 1px solid var(--xu-card-border);
+  border-radius: 10px;
+  box-shadow: none;
+}
+.md-typeset table:not([class]) th {
+  background: var(--xu-table-head);
+  font-weight: 700;
+}
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background: var(--xu-table-stripe);
+}
+.md-typeset table:not([class]) tbody tr:hover {
+  background: var(--xu-table-hover);
+  box-shadow: none;
+}
+.md-typeset table:not([class]) th[role="columnheader"] {
+  cursor: pointer;
+  white-space: nowrap;
+}
+.md-typeset table:not([class]) th[aria-sort="ascending"]::after {
+  content: " ▲";
+  color: var(--md-accent-fg-color);
+}
+.md-typeset table:not([class]) th[aria-sort="descending"]::after {
+  content: " ▼";
+  color: var(--md-accent-fg-color);
+}
+
+/* Inline code: a little ink-on-parchment. */
+.md-typeset code {
+  border-radius: 4px;
+}
+
+/* -- Live explorer (docs/explore.md, javascripts/explore.js) -------------------- */
+.xe-form {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.8rem;
+  align-items: stretch;
+  margin: 1rem 0;
+}
+.xe-side {
+  border: 1px solid var(--xu-card-border);
+  background: var(--xu-card-bg);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.9rem 0.8rem;
+  margin: 0;
+  min-width: 0;
+}
+.xe-side legend {
+  font-family: var(--xu-heading-font);
+  font-weight: 650;
+  padding: 0 0.3rem;
+}
+.xe-side label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.4rem;
+}
+.xe-side input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.15rem;
+  padding: 0.35rem 0.5rem;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--md-typeset-color);
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--xu-card-border);
+  border-radius: 0.3rem;
+}
+.xe-side input:focus { outline: 2px solid var(--md-accent-fg-color); outline-offset: 0; }
+.xe-hint { font-size: 0.68rem; color: var(--md-default-fg-color--light); margin: 0.5rem 0 0; }
+.xe-side-error {
+  margin: 0.5rem 0 0;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.74rem;
+  border-left: 3px solid #b4532a;
+  background: rgba(180, 83, 42, 0.08);
+  border-radius: 0 0.3rem 0.3rem 0;
+}
+.md-typeset .xe-swap { align-self: center; padding: 0.3rem 0.7rem; margin: 0; }
+.xe-actions { grid-column: 1 / -1; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.md-typeset .xe-actions .md-button { margin: 0; }
+.xe-rate { font-size: 0.68rem; color: var(--md-default-fg-color--light); }
+.md-typeset ol.xe-status { list-style: none; margin: 0.5rem 0; padding: 0; }
+.md-typeset ol.xe-status li { margin: 0.15rem 0; padding-left: 1.4rem; position: relative; font-size: 0.78rem; }
+.xe-step::before { position: absolute; left: 0.2rem; }
+.xe-step-active::before { content: "\25cc"; color: var(--md-accent-fg-color); }
+.xe-step-done::before { content: "\2713"; color: #3d7a3a; }
+.xe-step-warning::before { content: "!"; font-weight: 700; color: #c27c0e; }
+.xe-step-failed { color: #b4532a; font-weight: 600; }
+.xe-step-failed::before { content: "\2715"; }
+[data-md-color-scheme="slate"] .xe-step-done::before { color: #8cc485; }
+[data-md-color-scheme="slate"] .xe-step-failed { color: #eb9a6c; }
+.xe-notice p {
+  font-size: 0.78rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--xu-card-border);
+  background: var(--xu-card-bg);
+  border-radius: 0.4rem;
+}
+.xe-pages { margin: 1rem 0 0.5rem; border-bottom: 1px solid var(--xu-card-border); padding-bottom: 0.6rem; }
+.xe-group { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; margin: 0.25rem 0; }
+.xe-group-label { font-weight: 700; font-size: 0.74rem; margin-right: 0.4rem; min-width: 12rem; }
+.xe-page {
+  font: inherit;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  border: 1px solid var(--xu-card-border);
+  background: var(--xu-card-bg);
+  color: var(--md-typeset-color);
+  cursor: pointer;
+}
+.xe-page:hover { border-color: var(--md-accent-fg-color); }
+.xe-page.xe-current { background: var(--md-primary-fg-color); border-color: var(--md-primary-fg-color); color: var(--md-primary-bg-color); }
+@media (max-width: 44em) {
+  .xe-form { grid-template-columns: 1fr; }
+  .md-typeset .xe-swap { justify-self: center; }
+  .xe-group-label { min-width: 0; width: 100%; }
+}
+.xe-step-stopped { color: var(--md-default-fg-color--light); }
+.xe-fallback {
+  margin: 0.6rem 0;
+  padding: 0.2rem 0.9rem;
+  border: 1px dashed var(--md-accent-fg-color);
+  border-radius: 0.4rem;
+  font-size: 0.78rem;
+}
+.md-typeset .xe-notice .xe-fallback p { border: 0; background: none; padding: 0; }
+.md-typeset .xe-fallback pre { margin: 0.4rem 0; }
+.md-typeset .xe-fallback code { white-space: pre-wrap; word-break: break-all; }

@@ -1,0 +1,4303 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and level 1–91 balance reports for the Xania MUD">
+      
+      
+      
+        <link rel="canonical" href="https://abraidotti.github.io/xania-explorer/builds/mattgodbolt-xania-main...mattgodbolt-xania-mg-web/mattgodbolt-xania-mg-web/bugs/">
+      
+      
+        <link rel="prev" href="../mobs/">
+      
+      
+        <link rel="next" href="../areas/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Bugs - Xania Explorer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/xania.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bugs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Xania Explorer" class="md-header__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xania Explorer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bugs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Xania Explorer" class="md-nav__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    Xania Explorer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore any repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture & game loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-area-file-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area file format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-world-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-skills-and-magic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & magic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-items-and-economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Items & economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assessments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About the assessments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../mattgodbolt-xania-main/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bugs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 code defects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugs-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        349 area-data errors in the loaded files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugs-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26 pieces of content never reach players
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugs-by-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the defects are
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug catalogue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug catalogue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-affect-worth-ac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Armour-class and saving-throw bonuses are free under the item-points rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-lose-level-asymmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Losing a level doesn't undo what gaining it gave
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-reverse-exit-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booting crashes if a two-way exit's return exit leads nowhere
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-shop-keeper-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booting crashes if a shop names a missing shopkeeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-dot-tools-stdout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The area and map tools write part of their output to the screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-mudschool-reset-comment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Mud School reset comment contradicts the code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-data-fatal-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Area data the MUD would refuse to boot with
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-data-load-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Area data the MUD loads with a warning or silently mishandles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-data-unlisted-broken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unlisted area files that wouldn't load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-content-unobtainable-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Items that no reset places
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-content-mobs-never-spawn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobs that never spawn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-content-unreachable-rooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rooms no one can walk to
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-content-unlisted-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Area files that are never loaded
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bugs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 code defects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugs-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        349 area-data errors in the loaded files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugs-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26 pieces of content never reach players
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugs-by-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the defects are
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug catalogue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug catalogue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-affect-worth-ac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Armour-class and saving-throw bonuses are free under the item-points rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-lose-level-asymmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Losing a level doesn't undo what gaining it gave
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-reverse-exit-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booting crashes if a two-way exit's return exit leads nowhere
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-shop-keeper-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booting crashes if a shop names a missing shopkeeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-dot-tools-stdout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The area and map tools write part of their output to the screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-code-mudschool-reset-comment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Mud School reset comment contradicts the code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-data-fatal-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Area data the MUD would refuse to boot with
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-data-load-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Area data the MUD loads with a warning or silently mishandles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-data-unlisted-broken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unlisted area files that wouldn't load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-content-unobtainable-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Items that no reset places
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-content-mobs-never-spawn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobs that never spawn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-content-unreachable-rooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rooms no one can walk to
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-content-unlisted-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Area files that are never loaded
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="bugs">Bugs<a class="headerlink" href="#bugs" title="Permanent link">&para;</a></h1>
+<p>Defects found in this version's C++ code, area data and content, each explained with a fix. Everything is re-detected on every build, so a branch that fixes a bug shows it as fixed.</p>
+<div class="xu-stats"><div class="xu-stat"><span class="xu-stat-value">8</span><span class="xu-stat-label">open of 13 checks</span></div><div class="xu-stat"><span class="xu-stat-value">1</span><span class="xu-stat-label">crash risks in the code or data</span></div><div class="xu-stat"><span class="xu-stat-value">391</span><span class="xu-stat-label">occurrences across open checks</span></div><div class="xu-stat"><span class="xu-stat-value">3 / 3 / 2</span><span class="xu-stat-label">open code / data / content</span></div></div>
+
+<h2 id="bugs-code">3 code defects<a class="headerlink" href="#bugs-code" title="Permanent link">&para;</a></h2>
+<p>3 defects in the C++ source: <a href="#bug-code-affect-worth-ac">Armour-class and saving-throw bonuses are free under the item-points rule</a> (wrong behaviour), <a href="#bug-code-lose-level-asymmetry">Losing a level doesn't undo what gaining it gave</a> (wrong behaviour) and <a href="#bug-code-dot-tools-stdout">The area and map tools write part of their output to the screen</a> (cosmetic). Each has a suggested patch in the catalogue below. 1 check couldn't run on this checkout (<a href="#bug-code-mudschool-reset-comment">The Mud School reset comment contradicts the code</a>), so its result is unknown, not fixed.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Code checks: status and occurrences","anchor":"start"},"width":"container","height":180,"data":{"values":[{"check":"Armour-class and saving-throw bonuses are free under the item-points rule","status":"present","count":1,"occurrences":1,"severity":"wrong behaviour"},{"check":"Losing a level doesn't undo what gaining it gave","status":"present","count":2,"occurrences":2,"severity":"wrong behaviour"},{"check":"Booting crashes if a two-way exit's return exit leads nowhere","status":"fixed","count":1,"occurrences":0,"severity":"crash risk"},{"check":"Booting crashes if a shop names a missing shopkeeper","status":"fixed","count":1,"occurrences":0,"severity":"crash risk"},{"check":"The area and map tools write part of their output to the screen","status":"present","count":5,"occurrences":5,"severity":"cosmetic"},{"check":"The Mud School reset comment contradicts the code","status":"unknown","count":1,"occurrences":0,"severity":"cosmetic"}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":"bar","encoding":{"y":{"field":"check","type":"nominal","title":null,"sort":null,"axis":{"labelLimit":360}},"x":{"field":"count","type":"quantitative","title":"Occurrences (at least 1 per open check)"},"color":{"field":"status","type":"nominal","title":"Status","scale":{"domain":["present","latent","fixed","clean","unknown"],"range":["#b4532a","#e0a030","#5f8a5b","#5f8a5b","#b8ab9c"]}},"tooltip":[{"field":"check","title":"Check"},{"field":"status","title":"Status"},{"field":"severity","title":"Severity"},{"field":"occurrences","title":"Occurrences"}]}}</script></div>
+
+<h2 id="bugs-data">349 area-data errors in the loaded files<a class="headerlink" href="#bugs-data" title="Permanent link">&para;</a></h2>
+<p>The area parser mirrors what the C++ loader rejects or logs. <a href="#bug-data-fatal-load">Area data the MUD would refuse to boot with</a>: 320 and <a href="#bug-data-load-warnings">Area data the MUD loads with a warning or silently mishandles</a>: 29. 8 area files that aren't in <code>area.lst</code> would also fail to load if added (<a href="#bug-data-unlisted-broken">Unlisted area files that wouldn't load</a>).</p>
+<h2 id="bugs-content">26 pieces of content never reach players<a class="headerlink" href="#bugs-content" title="Permanent link">&para;</a></h2>
+<p>Built content that players can't reach: 16 × <a href="#bug-content-mobs-never-spawn">Mobs that never spawn</a> and 10 × <a href="#bug-content-unlisted-areas">Area files that are never loaded</a>. Some is deliberate (immortal rooms, items handed out by mob programs), so treat these as a review list rather than certain bugs. 2 checks couldn't run on this checkout (<a href="#bug-content-unobtainable-items">Items that no reset places</a> and <a href="#bug-content-unreachable-rooms">Rooms no one can walk to</a>), so their results are unknown, not fixed.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Content that never reaches players","anchor":"start"},"width":"container","height":140,"data":{"values":[{"check":"Items that no reset places","count":0,"severity":"wrong behaviour"},{"check":"Mobs that never spawn","count":16,"severity":"wrong behaviour"},{"check":"Rooms no one can walk to","count":0,"severity":"cosmetic"},{"check":"Area files that are never loaded","count":10,"severity":"cosmetic"}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":"bar","encoding":{"y":{"field":"check","type":"nominal","title":null,"sort":"-x","axis":{"labelLimit":360}},"x":{"field":"count","type":"quantitative","title":"Occurrences"},"color":{"field":"severity","type":"nominal","title":"Severity","scale":{"domain":["crash risk","wrong behaviour","cosmetic"],"range":["#b4532a","#e0a030","#9a8b7e"]}},"tooltip":[{"field":"check","title":"Check"},{"field":"count","title":"Occurrences"}]}}</script></div>
+
+<h2 id="bugs-by-area">Where the defects are<a class="headerlink" href="#bugs-by-area" title="Permanent link">&para;</a></h2>
+<p><strong>Midgaard</strong> has the most (108), and 31 areas have at least one. Each cell counts one kind of defect in one area.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Open defects per area (top 15)","anchor":"start"},"width":"container","height":390,"data":{"values":[{"area":"Midgaard","check":"Area data the MUD would refuse to boot with","count":101},{"area":"Midgaard","check":"Area data the MUD loads with a warning or silently mishandles","count":6},{"area":"Midgaard","check":"Mobs that never spawn","count":1},{"area":"Japan","check":"Area data the MUD would refuse to boot with","count":90},{"area":"Japan","check":"Area data the MUD loads with a warning or silently mishandles","count":0},{"area":"Japan","check":"Mobs that never spawn","count":0},{"area":"Mos Eisley","check":"Area data the MUD would refuse to boot with","count":41},{"area":"Mos Eisley","check":"Area data the MUD loads with a warning or silently mishandles","count":0},{"area":"Mos Eisley","check":"Mobs that never spawn","count":0},{"area":"Old Thalos","check":"Area data the MUD would refuse to boot with","count":20},{"area":"Old Thalos","check":"Area data the MUD loads with a warning or silently mishandles","count":0},{"area":"Old Thalos","check":"Mobs that never spawn","count":0},{"area":"Mud School","check":"Area data the MUD would refuse to boot with","count":13},{"area":"Mud School","check":"Area data the MUD loads with a warning or silently mishandles","count":0},{"area":"Mud School","check":"Mobs that never spawn","count":0},{"area":"Thalos","check":"Area data the MUD would refuse to boot with","count":12},{"area":"Thalos","check":"Area data the MUD loads with a warning or silently mishandles","count":0},{"area":"Thalos","check":"Mobs that never spawn","count":0},{"area":"Miden'nir","check":"Area data the MUD would refuse to boot with","count":6},{"area":"Miden'nir","check":"Area data the MUD loads with a warning or silently mishandles","count":1},{"area":"Miden'nir","check":"Mobs that never spawn","count":0},{"area":"Wyvern Tower","check":"Area data the MUD would refuse to boot with","count":1},{"area":"Wyvern Tower","check":"Area data the MUD loads with a warning or silently mishandles","count":1},{"area":"Wyvern Tower","check":"Mobs that never spawn","count":3},{"area":"Dwarven Day Care","check":"Area data the MUD would refuse to boot with","count":5},{"area":"Dwarven Day Care","check":"Area data the MUD loads with a warning or silently mishandles","count":0},{"area":"Dwarven Day Care","check":"Mobs that never spawn","count":0},{"area":"New Thalos","check":"Area data the MUD would refuse to boot with","count":0},{"area":"New Thalos","check":"Area data the MUD loads with a warning or silently mishandles","count":1},{"area":"New Thalos","check":"Mobs that never spawn","count":4},{"area":"Graveyard","check":"Area data the MUD would refuse to boot with","count":3},{"area":"Graveyard","check":"Area data the MUD loads with a warning or silently mishandles","count":0},{"area":"Graveyard","check":"Mobs that never spawn","count":0},{"area":"Sewer","check":"Area data the MUD would refuse to boot with","count":1},{"area":"Sewer","check":"Area data the MUD loads with a warning or silently mishandles","count":2},{"area":"Sewer","check":"Mobs that never spawn","count":0},{"area":"Crystalmir Lake","check":"Area data the MUD would refuse to boot with","count":2},{"area":"Crystalmir Lake","check":"Area data the MUD loads with a warning or silently mishandles","count":1},{"area":"Crystalmir Lake","check":"Mobs that never spawn","count":0},{"area":"Strange World","check":"Area data the MUD would refuse to boot with","count":3},{"area":"Strange World","check":"Area data the MUD loads with a warning or silently mishandles","count":0},{"area":"Strange World","check":"Mobs that never spawn","count":0},{"area":"Immortal Zone","check":"Area data the MUD would refuse to boot with","count":0},{"area":"Immortal Zone","check":"Area data the MUD loads with a warning or silently mishandles","count":3},{"area":"Immortal Zone","check":"Mobs that never spawn","count":0}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"encoding":{"x":{"field":"check","type":"ordinal","title":null,"sort":["Area data the MUD would refuse to boot with","Area data the MUD loads with a warning or silently mishandles","Mobs that never spawn"],"axis":{"orient":"top","labelAngle":-20,"labelLimit":160}},"y":{"field":"area","type":"ordinal","title":null,"sort":["Midgaard","Japan","Mos Eisley","Old Thalos","Mud School","Thalos","Miden'nir","Wyvern Tower","Dwarven Day Care","New Thalos","Graveyard","Sewer","Crystalmir Lake","Strange World","Immortal Zone"]}},"layer":[{"mark":{"type":"rect","stroke":"#fffaf2","strokeWidth":2,"cornerRadius":3},"encoding":{"color":{"field":"count","type":"quantitative","title":"Occurrences","scale":{"range":["#fbf0dc","#e7b37a","#b4532a"]},"legend":null},"tooltip":[{"field":"area"},{"field":"check"},{"field":"count","title":"Occurrences","format":"d"}]}},{"mark":{"type":"text","fontSize":11},"encoding":{"text":{"field":"count","type":"quantitative","format":"d"},"color":{"condition":{"test":"datum['count'] > 50.5","value":"#fffaf2"},"value":"#3a261c"}}}]}</script></div>
+
+<h2 id="catalogue">Bug catalogue<a class="headerlink" href="#catalogue" title="Permanent link">&para;</a></h2>
+<p>Every check, open or not: what it looks for, why it matters, and how to fix it.</p>
+<details class="abstract">
+<summary>Summary of all checks</summary>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Kind</th>
+<th>Severity</th>
+<th>Status</th>
+<th>Occurrences</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Armour-class and saving-throw bonuses are free under the item-points rule</td>
+<td>code</td>
+<td>wrong behaviour</td>
+<td>present</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Losing a level doesn't undo what gaining it gave</td>
+<td>code</td>
+<td>wrong behaviour</td>
+<td>present</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Booting crashes if a two-way exit's return exit leads nowhere</td>
+<td>code</td>
+<td>crash risk</td>
+<td>fixed</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Booting crashes if a shop names a missing shopkeeper</td>
+<td>code</td>
+<td>crash risk</td>
+<td>fixed</td>
+<td>0</td>
+</tr>
+<tr>
+<td>The area and map tools write part of their output to the screen</td>
+<td>code</td>
+<td>cosmetic</td>
+<td>present</td>
+<td>5</td>
+</tr>
+<tr>
+<td>The Mud School reset comment contradicts the code</td>
+<td>code</td>
+<td>cosmetic</td>
+<td>unknown</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Area data the MUD would refuse to boot with</td>
+<td>data</td>
+<td>crash risk</td>
+<td>present</td>
+<td>320</td>
+</tr>
+<tr>
+<td>Area data the MUD loads with a warning or silently mishandles</td>
+<td>data</td>
+<td>wrong behaviour</td>
+<td>present</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Unlisted area files that wouldn't load</td>
+<td>data</td>
+<td>cosmetic</td>
+<td>present</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Items that no reset places</td>
+<td>content</td>
+<td>wrong behaviour</td>
+<td>unknown</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Mobs that never spawn</td>
+<td>content</td>
+<td>wrong behaviour</td>
+<td>present</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Rooms no one can walk to</td>
+<td>content</td>
+<td>cosmetic</td>
+<td>unknown</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Area files that are never loaded</td>
+<td>content</td>
+<td>cosmetic</td>
+<td>present</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="bug-code-affect-worth-ac">Armour-class and saving-throw bonuses are free under the item-points rule<a class="headerlink" href="#bug-code-affect-worth-ac" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-present">present</span><span class="xu-chip">code</span><span class="xu-chip">wrong behaviour</span></p>
+<p><code>AFFECT_DATA::worth</code> prices each affect for the item-points balance rule (<code>immworth</code>). Its case for <code>Ac</code> and the <code>Saving*</code> locations reads <code>if (modifier &lt; 0) if (modifier &gt; 0)</code>, which can never be true, so these bonuses cost nothing. Builders' items can carry any amount of AC and saves without the check noticing (see Equipment).</p>
+<p><strong>Fix.</strong> Charge one point per −1, as the code intends:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">AffectLocation</span><span class="o">::</span><span class="no">Ac</span><span class="p">:</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Value</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">modifier</span><span class="p">};</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+</code></pre></div>
+<p>Then re-run <code>immworth</code> on existing items: Equipment lists the ones that would newly exceed the limit.</p>
+<details class="abstract">
+<summary>Where: 1 occurrence</summary>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Area</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/src/AFFECT_DATA.cpp#L80">AFFECT_DATA.cpp:80</a></td>
+<td>—</td>
+<td><code>if (modifier &lt; 0) if (modifier &gt; 0)</code> can never be true</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="bug-code-lose-level-asymmetry">Losing a level doesn't undo what gaining it gave<a class="headerlink" href="#bug-code-lose-level-asymmetry" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-present">present</span><span class="xu-chip">code</span><span class="xu-chip">wrong behaviour</span></p>
+<p>From level 26, dying can cost a level (fight.cpp, <code>lose_level</code>). <code>advance_level</code> adds HP and mana from the character's <em>current</em> stats with a squared mana factor; <code>lose_level</code> removes them using <em>maximum</em> stats and an older mana formula. A death followed by re-levelling therefore changes a character's max HP and mana: for mages, mana grows a little with each cycle.</p>
+<p><strong>Fix.</strong> Make the two mirror each other. Simplest: have <code>lose_level</code> remove the average of what <code>advance_level</code> would give at the same stats (share one helper for both), or record each level's actual gains in the player file and remove exactly those.</p>
+<details class="abstract">
+<summary>Where: 2 occurrences</summary>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Area</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/src/update.cpp#L51">update.cpp:51</a></td>
+<td>—</td>
+<td>advance_level adds HP/mana from curr_stat with the squared mana factor</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/src/update.cpp#L112">update.cpp:112</a></td>
+<td>—</td>
+<td>lose_level removes them using max_stat and a different mana formula</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="bug-code-reverse-exit-null">Booting crashes if a two-way exit's return exit leads nowhere<a class="headerlink" href="#bug-code-reverse-exit-null" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-fixed">fixed</span><span class="xu-chip">code</span><span class="xu-chip">crash risk</span></p>
+<p><code>map_exit_destinations</code> checks that each two-way exit's reverse exit leads back. The test <code>exit_rev &amp;&amp; exit_rev-&gt;u1.to_room-&gt;vnum != room.vnum</code> dereferences <code>to_room</code> without checking it; the logging two lines later does check it, so the case was anticipated. An area whose return exit is cosmetic (−1) or dangling would crash the MUD at boot.</p>
+<p><strong>Fix.</strong> Check the destination first:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">exit_rev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">to_room</span><span class="o">-&gt;</span><span class="n">exits</span><span class="p">[</span><span class="n">reverse</span><span class="p">(</span><span class="n">direction</span><span class="p">)];</span>
+<span class="w">    </span><span class="n">exit_rev</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">exit_rev</span><span class="o">-&gt;</span><span class="n">u1</span><span class="p">.</span><span class="n">to_room</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">exit_rev</span><span class="o">-&gt;</span><span class="n">u1</span><span class="p">.</span><span class="n">to_room</span><span class="o">-&gt;</span><span class="n">vnum</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">room</span><span class="p">.</span><span class="n">vnum</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">exit</span><span class="o">-&gt;</span><span class="n">is_one_way</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</code></pre></div>
+<h3 id="bug-code-shop-keeper-null">Booting crashes if a shop names a missing shopkeeper<a class="headerlink" href="#bug-code-shop-keeper-null" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-fixed">fixed</span><span class="xu-chip">code</span><span class="xu-chip">crash risk</span></p>
+<p><code>load_shops</code> looks up the shopkeeper's prototype and immediately writes to it. If the vnum doesn't exist, <code>get_mob_index</code> returns null and the MUD crashes during boot instead of reporting the bad shop.</p>
+<p><strong>Fix.</strong> Report and skip the shop:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mobIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_mob_index</span><span class="p">(</span><span class="n">shop</span><span class="p">.</span><span class="n">keeper</span><span class="p">,</span><span class="w"> </span><span class="n">logger</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">mobIndex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="n">bug</span><span class="p">(</span><span class="s">"Load_shops: shopkeeper #{} not found."</span><span class="p">,</span><span class="w"> </span><span class="n">shop</span><span class="p">.</span><span class="n">keeper</span><span class="p">);</span>
+<span class="w">    </span><span class="k">continue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">mobIndex</span><span class="o">-&gt;</span><span class="n">shop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">shop</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="bug-code-dot-tools-stdout">The area and map tools write part of their output to the screen<a class="headerlink" href="#bug-code-dot-tools-stdout" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-present">present</span><span class="xu-chip">code</span><span class="xu-chip">cosmetic</span></p>
+<p>The <code>areas</code> and <code>map</code> utilities (src/apps) take an output file, but some of their DOT output is printed with <code>fmt::print("…")</code>, which goes to stdout. Writing to a file produces a broken graph.</p>
+<p><strong>Fix.</strong> Pass the file handle to every DOT line, e.g. <code>fmt::print(out_file, "}}\n");</code>, and give <code>render_area</code> the <code>out_file</code> it already receives for its room and exit lines.</p>
+<details class="abstract">
+<summary>Where: 5 occurrences</summary>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Area</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/src/apps/areas.cpp#L65">apps/areas.cpp:65</a></td>
+<td>—</td>
+<td>DOT output printed to stdout, not to out_file</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/src/apps/map.cpp#L26">apps/map.cpp:26</a></td>
+<td>—</td>
+<td>DOT output printed to stdout, not to out_file</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/src/apps/map.cpp#L36">apps/map.cpp:36</a></td>
+<td>—</td>
+<td>DOT output printed to stdout, not to out_file</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/src/apps/map.cpp#L40">apps/map.cpp:40</a></td>
+<td>—</td>
+<td>DOT output printed to stdout, not to out_file</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/src/apps/map.cpp#L83">apps/map.cpp:83</a></td>
+<td>—</td>
+<td>DOT output printed to stdout, not to out_file</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="bug-code-mudschool-reset-comment">The Mud School reset comment contradicts the code<a class="headerlink" href="#bug-code-mudschool-reset-comment" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-unknown">unknown</span><span class="xu-chip">code</span><span class="xu-chip">cosmetic</span> <span class="xu-card-label">Area.cpp isn't in this checkout</span></p>
+<p>Area.cpp's comment says Mud School resets every 2 minutes when occupied and every minute when empty. The code sets its age to 10 after each reset against a threshold of 15 (it is never flagged empty), so it resets every ~5 area pulses, about 2.5–7.5 minutes.</p>
+<p><strong>Fix.</strong> Decide which is intended. To match the comment, set <code>age_</code> to <code>RoomResetAgeOccupiedArea - 2</code> (and <code>- 1</code> when empty); otherwise correct the comment.</p>
+<h3 id="bug-data-fatal-load">Area data the MUD would refuse to boot with<a class="headerlink" href="#bug-data-fatal-load" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-present">present</span><span class="xu-chip">data</span><span class="xu-chip">crash risk</span></p>
+<p>Problems the C++ loader treats as fatal (<code>exit(1)</code>), found by the area parser: duplicate vnums, bad door resets, missing files, unparseable sections, invalid drop rates (which crash at reset time, not boot).</p>
+<p><strong>Fix.</strong> Fix each listed file and line; <code>python -m xania_explorer check</code> re-tests them.</p>
+<details class="abstract">
+<summary>Where: 320 occurrences</summary>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Area</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/social.are#L15">social.are:15</a></td>
+<td>—</td>
+<td>[fatal-parse] Boot_db: # not found.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/limbo.are#L73">limbo.are:73</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 4 template</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/moria.are#L456">moria.are:456</a></td>
+<td>—</td>
+<td>[fatal-parse] Unrecognized sex '3'.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/seminary.are#L3496">seminary.are:3496</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 27112 slimy key</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/xrom.are#L215">xrom.are:215</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 30004 shadow death dark</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/sethanon.are#L467">sethanon.are:467</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 28012 slayer talisman black</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/cult.are#L1498">cult.are:1498</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 9850 brochure</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/under_un.are#L14498">under_un.are:14498</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 16022 girth</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/uruk.are#L262">uruk.are:262</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 10132 web silvery</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/ultima.are#L5070">ultima.are:5070</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 2446 rusty shield</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/imladris.are#L2432">imladris.are:2432</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 12000 ebony smoking pipe</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/den.are#L817">den.are:817</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 18114 Orb Dragon Kings</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/flying.are#L1134">flying.are:1134</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 13000 helmet stupidity</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/enchanted.are#L210">enchanted.are:210</a></td>
+<td>—</td>
+<td>[fatal-parse] Unrecognized sex '1'.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/wyrm.are#L222">wyrm.are:222</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 30101 token wyrm dragon shield</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/lore.are#L314">lore.are:314</a></td>
+<td>—</td>
+<td>[fatal-parse] fread_spnumber: quoted spell names not allowed, use spellname~ instead</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/camelot.are#L672">camelot.are:672</a></td>
+<td>—</td>
+<td>[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 526 beads</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/wyvern.are#L1756">wyvern.are:1756</a></td>
+<td>Wyvern Tower</td>
+<td>[bad-drop-rate] 'E' reset of object #3387 on mob #1613: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6588">midgaard.are:6588</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3022 on mob #3026: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6591">midgaard.are:6591</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3022 on mob #3027: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6615">midgaard.are:6615</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6616">midgaard.are:6616</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6617">midgaard.are:6617</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6618">midgaard.are:6618</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6619">midgaard.are:6619</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3355 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6622">midgaard.are:6622</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6623">midgaard.are:6623</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6624">midgaard.are:6624</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6625">midgaard.are:6625</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6626">midgaard.are:6626</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3356 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6629">midgaard.are:6629</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6630">midgaard.are:6630</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6631">midgaard.are:6631</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6632">midgaard.are:6632</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6633">midgaard.are:6633</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3357 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6636">midgaard.are:6636</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6637">midgaard.are:6637</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6638">midgaard.are:6638</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6639">midgaard.are:6639</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6640">midgaard.are:6640</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3358 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6643">midgaard.are:6643</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6644">midgaard.are:6644</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6645">midgaard.are:6645</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6646">midgaard.are:6646</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6647">midgaard.are:6647</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3359 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6650">midgaard.are:6650</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3067: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6651">midgaard.are:6651</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3067: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6652">midgaard.are:6652</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3067: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6653">midgaard.are:6653</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3067: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6654">midgaard.are:6654</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3360 on mob #3067: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6657">midgaard.are:6657</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3067: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6658">midgaard.are:6658</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3067: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6659">midgaard.are:6659</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3067: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6660">midgaard.are:6660</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3067: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6661">midgaard.are:6661</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3354 on mob #3067: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6664">midgaard.are:6664</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3068: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6665">midgaard.are:6665</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3068: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6666">midgaard.are:6666</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3068: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6667">midgaard.are:6667</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3068: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6668">midgaard.are:6668</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3361 on mob #3068: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6671">midgaard.are:6671</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3068: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6672">midgaard.are:6672</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3068: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6673">midgaard.are:6673</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3068: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6674">midgaard.are:6674</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3068: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6675">midgaard.are:6675</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3362 on mob #3068: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6678">midgaard.are:6678</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3071: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6679">midgaard.are:6679</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3071: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6680">midgaard.are:6680</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3071: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6681">midgaard.are:6681</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3071: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6682">midgaard.are:6682</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3361 on mob #3071: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6685">midgaard.are:6685</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3071: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6686">midgaard.are:6686</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3071: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6687">midgaard.are:6687</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3071: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6688">midgaard.are:6688</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3071: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6689">midgaard.are:6689</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3362 on mob #3071: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6692">midgaard.are:6692</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3072: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6693">midgaard.are:6693</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3072: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6694">midgaard.are:6694</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3072: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6695">midgaard.are:6695</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3072: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6696">midgaard.are:6696</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3354 on mob #3072: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6699">midgaard.are:6699</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3021 on mob #3063: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6700">midgaard.are:6700</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3066 on mob #3063: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6701">midgaard.are:6701</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3052 on mob #3063: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6722">midgaard.are:6722</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3351 on mob #3005: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6724">midgaard.are:6724</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3351 on mob #3005: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6756">midgaard.are:6756</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3387 on mob #3140: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6760">midgaard.are:6760</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3387 on mob #3141: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6762">midgaard.are:6762</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3387 on mob #3141: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6764">midgaard.are:6764</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3387 on mob #3141: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6766">midgaard.are:6766</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3387 on mob #3141: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6774">midgaard.are:6774</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6775">midgaard.are:6775</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6776">midgaard.are:6776</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6777">midgaard.are:6777</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6781">midgaard.are:6781</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6782">midgaard.are:6782</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6783">midgaard.are:6783</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6784">midgaard.are:6784</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6785">midgaard.are:6785</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3363 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6788">midgaard.are:6788</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6789">midgaard.are:6789</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6790">midgaard.are:6790</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6791">midgaard.are:6791</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6794">midgaard.are:6794</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6795">midgaard.are:6795</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6796">midgaard.are:6796</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6797">midgaard.are:6797</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6805">midgaard.are:6805</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6806">midgaard.are:6806</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6807">midgaard.are:6807</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3387 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6809">midgaard.are:6809</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6810">midgaard.are:6810</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6811">midgaard.are:6811</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3387 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6813">midgaard.are:6813</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6814">midgaard.are:6814</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6815">midgaard.are:6815</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3387 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6817">midgaard.are:6817</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3365 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6818">midgaard.are:6818</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3364 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6819">midgaard.are:6819</a></td>
+<td>Midgaard</td>
+<td>[bad-drop-rate] 'E' reset of object #3387 on mob #3069: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midennir.are#L1330">midennir.are:1330</a></td>
+<td>Miden'nir</td>
+<td>[bad-drop-rate] 'E' reset of object #3502 on mob #3506: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midennir.are#L1336">midennir.are:1336</a></td>
+<td>Miden'nir</td>
+<td>[bad-drop-rate] 'E' reset of object #3502 on mob #3506: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midennir.are#L1340">midennir.are:1340</a></td>
+<td>Miden'nir</td>
+<td>[bad-drop-rate] 'E' reset of object #3072 on mob #3507: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midennir.are#L1342">midennir.are:1342</a></td>
+<td>Miden'nir</td>
+<td>[bad-drop-rate] 'E' reset of object #3502 on mob #3507: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midennir.are#L1353">midennir.are:1353</a></td>
+<td>Miden'nir</td>
+<td>[bad-drop-rate] 'E' reset of object #3022 on mob #3505: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midennir.are#L1357">midennir.are:1357</a></td>
+<td>Miden'nir</td>
+<td>[bad-drop-rate] 'E' reset of object #3022 on mob #3505: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/grave.are#L893">grave.are:893</a></td>
+<td>Graveyard</td>
+<td>[bad-drop-rate] 'G' reset of object #3601 on mob #3600: drop rate 1000 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/grave.are#L905">grave.are:905</a></td>
+<td>Graveyard</td>
+<td>[bad-drop-rate] 'G' reset of object #3612 on mob #3602: drop rate 1000 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/grave.are#L923">grave.are:923</a></td>
+<td>Graveyard</td>
+<td>[bad-drop-rate] 'G' reset of object #3611 on mob #3601: drop rate 1000 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2057">school.are:2057</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3715 on mob #3720: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2063">school.are:2063</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3705 on mob #3702: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2064">school.are:2064</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3705 on mob #3702: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2066">school.are:2066</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3706 on mob #3703: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2067">school.are:2067</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3711 on mob #3703: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2069">school.are:2069</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3707 on mob #3704: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2070">school.are:2070</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3712 on mob #3704: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2072">school.are:2072</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3708 on mob #3705: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2073">school.are:2073</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3713 on mob #3705: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2082">school.are:2082</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3709 on mob #3706: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2083">school.are:2083</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3710 on mob #3706: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2084">school.are:2084</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3714 on mob #3706: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L2085">school.are:2085</a></td>
+<td>Mud School</td>
+<td>[bad-drop-rate] 'E' reset of object #3713 on mob #3706: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2160">thalos.are:2160</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2163">thalos.are:2163</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2166">thalos.are:2166</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2169">thalos.are:2169</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2172">thalos.are:2172</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2175">thalos.are:2175</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2178">thalos.are:2178</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2180">thalos.are:2180</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2183">thalos.are:2183</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2186">thalos.are:2186</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2189">thalos.are:2189</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/thalos.are#L2192">thalos.are:2192</a></td>
+<td>Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L2836">mirror.are:2836</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5252 on mob #5306: drop rate 150 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L2970">mirror.are:2970</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5317 on mob #5320: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L2977">mirror.are:2977</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5318 on mob #5320: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L2984">mirror.are:2984</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5317 on mob #5320: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L2993">mirror.are:2993</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5318 on mob #5321: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3001">mirror.are:3001</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5317 on mob #5321: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3007">mirror.are:3007</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3012">mirror.are:3012</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5317 on mob #5303: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3018">mirror.are:3018</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3024">mirror.are:3024</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5317 on mob #5303: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3030">mirror.are:3030</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3035">mirror.are:3035</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5317 on mob #5303: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3041">mirror.are:3041</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3047">mirror.are:3047</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5317 on mob #5303: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3052">mirror.are:3052</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3057">mirror.are:3057</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5317 on mob #5303: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3063">mirror.are:3063</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3102">mirror.are:3102</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #5334: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3108">mirror.are:3108</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #3386 on mob #5331: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mirror.are#L3110">mirror.are:3110</a></td>
+<td>Old Thalos</td>
+<td>[bad-drop-rate] 'E' reset of object #3355 on mob #5331: drop rate 199 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/daycare.are#L600">daycare.are:600</a></td>
+<td>Dwarven Day Care</td>
+<td>[bad-drop-rate] 'E' reset of object #3023 on mob #6607: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/daycare.are#L644">daycare.are:644</a></td>
+<td>Dwarven Day Care</td>
+<td>[bad-drop-rate] 'E' reset of object #6647 on mob #6603: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/daycare.are#L656">daycare.are:656</a></td>
+<td>Dwarven Day Care</td>
+<td>[bad-drop-rate] 'E' reset of object #6647 on mob #6603: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/daycare.are#L663">daycare.are:663</a></td>
+<td>Dwarven Day Care</td>
+<td>[bad-drop-rate] 'E' reset of object #6647 on mob #6603: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/daycare.are#L671">daycare.are:671</a></td>
+<td>Dwarven Day Care</td>
+<td>[bad-drop-rate] 'E' reset of object #6647 on mob #6603: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/sewer.are#L4801">sewer.are:4801</a></td>
+<td>Sewer</td>
+<td>[bad-drop-rate] 'G' reset of object #7205 on mob #7200: drop rate 7200 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/ciquala.are#L1006">ciquala.are:1006</a></td>
+<td>Ciquala's Lair</td>
+<td>[bad-drop-rate] 'G' reset of object #13406 on mob #13415: drop rate 0 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/crystal.are#L2455">crystal.are:2455</a></td>
+<td>Crystalmir Lake</td>
+<td>[bad-drop-rate] 'G' reset of object #11010 on mob #11008: drop rate 0 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/crystal.are#L2458">crystal.are:2458</a></td>
+<td>Crystalmir Lake</td>
+<td>[bad-drop-rate] 'G' reset of object #11006 on mob #11009: drop rate 0 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2083">mos.are:2083</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2089">mos.are:2089</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2097">mos.are:2097</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2103">mos.are:2103</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2113">mos.are:2113</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2117">mos.are:2117</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2121">mos.are:2121</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2124">mos.are:2124</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2127">mos.are:2127</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2155">mos.are:2155</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5812 on mob #5803: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2158">mos.are:2158</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5812 on mob #5803: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2185">mos.are:2185</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5806 on mob #5807: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2192">mos.are:2192</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5813 on mob #5808: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2197">mos.are:2197</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5813 on mob #5808: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2200">mos.are:2200</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'G' reset of object #5816 on mob #5808: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2208">mos.are:2208</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5813 on mob #5808: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2213">mos.are:2213</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5813 on mob #5808: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2221">mos.are:2221</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'G' reset of object #5816 on mob #5809: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2235">mos.are:2235</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5814 on mob #5810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2238">mos.are:2238</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5814 on mob #5810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2242">mos.are:2242</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5809 on mob #5814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2243">mos.are:2243</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5832 on mob #5814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2246">mos.are:2246</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5832 on mob #5814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2250">mos.are:2250</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'G' reset of object #5816 on mob #5816: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2251">mos.are:2251</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5832 on mob #5816: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2254">mos.are:2254</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5832 on mob #5816: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2258">mos.are:2258</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5832 on mob #5818: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2287">mos.are:2287</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2291">mos.are:2291</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2294">mos.are:2294</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2302">mos.are:2302</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5829 on mob #5802: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2310">mos.are:2310</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5813 on mob #5808: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2317">mos.are:2317</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5814 on mob #5810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2320">mos.are:2320</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5814 on mob #5810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2334">mos.are:2334</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5811 on mob #5813: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2338">mos.are:2338</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5814 on mob #5815: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2342">mos.are:2342</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5832 on mob #5816: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2346">mos.are:2346</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5817: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2349">mos.are:2349</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5831 on mob #5817: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2353">mos.are:2353</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5830 on mob #5819: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mos.are#L2357">mos.are:2357</a></td>
+<td>Mos Eisley</td>
+<td>[bad-drop-rate] 'E' reset of object #5810 on mob #5822: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/str.are#L1628">str.are:1628</a></td>
+<td>Strange World</td>
+<td>[bad-drop-rate] 'G' reset of object #826 on mob #803: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/str.are#L1631">str.are:1631</a></td>
+<td>Strange World</td>
+<td>[bad-drop-rate] 'G' reset of object #827 on mob #803: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/str.are#L1659">str.are:1659</a></td>
+<td>Strange World</td>
+<td>[bad-drop-rate] 'E' reset of object #803 on mob #808: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2907">japan.are:2907</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2909">japan.are:2909</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2911">japan.are:2911</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2913">japan.are:2913</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2915">japan.are:2915</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2917">japan.are:2917</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2919">japan.are:2919</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2921">japan.are:2921</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2924">japan.are:2924</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1802 on mob #1802: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2926">japan.are:2926</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1803 on mob #1803: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2928">japan.are:2928</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1804 on mob #1804: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2930">japan.are:2930</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1805 on mob #1805: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2933">japan.are:2933</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1806 on mob #1806: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2934">japan.are:2934</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'G' reset of object #1825 on mob #1806: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2937">japan.are:2937</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1828 on mob #1807: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2939">japan.are:2939</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1828 on mob #1807: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2941">japan.are:2941</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1828 on mob #1807: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2943">japan.are:2943</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1828 on mob #1807: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2945">japan.are:2945</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1828 on mob #1807: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2948">japan.are:2948</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1807 on mob #1808: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2950">japan.are:2950</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1807 on mob #1808: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2952">japan.are:2952</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1807 on mob #1808: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2957">japan.are:2957</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1808 on mob #1809: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2960">japan.are:2960</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2962">japan.are:2962</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2964">japan.are:2964</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2966">japan.are:2966</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2968">japan.are:2968</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2970">japan.are:2970</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2972">japan.are:2972</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2974">japan.are:2974</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2977">japan.are:2977</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2978">japan.are:2978</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'G' reset of object #1824 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2980">japan.are:2980</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2981">japan.are:2981</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'G' reset of object #1824 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2983">japan.are:2983</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2984">japan.are:2984</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2986">japan.are:2986</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2987">japan.are:2987</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2989">japan.are:2989</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2990">japan.are:2990</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2992">japan.are:2992</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2993">japan.are:2993</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2995">japan.are:2995</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2996">japan.are:2996</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2998">japan.are:2998</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L2999">japan.are:2999</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3002">japan.are:3002</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1811 on mob #1812: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3003">japan.are:3003</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1820 on mob #1812: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3004">japan.are:3004</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1821 on mob #1812: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3007">japan.are:3007</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3009">japan.are:3009</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3011">japan.are:3011</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3013">japan.are:3013</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3015">japan.are:3015</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3017">japan.are:3017</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3019">japan.are:3019</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3021">japan.are:3021</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3023">japan.are:3023</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3025">japan.are:3025</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3028">japan.are:3028</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3030">japan.are:3030</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3032">japan.are:3032</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3034">japan.are:3034</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3036">japan.are:3036</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3038">japan.are:3038</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3040">japan.are:3040</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3042">japan.are:3042</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3044">japan.are:3044</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3046">japan.are:3046</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3049">japan.are:3049</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3051">japan.are:3051</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3053">japan.are:3053</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3055">japan.are:3055</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3057">japan.are:3057</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3059">japan.are:3059</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3061">japan.are:3061</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3063">japan.are:3063</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3066">japan.are:3066</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1815 on mob #1816: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3067">japan.are:3067</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1822 on mob #1816: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3068">japan.are:3068</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'G' reset of object #1827 on mob #1816: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3071">japan.are:3071</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1816 on mob #1817: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3072">japan.are:3072</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1823 on mob #1817: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3077">japan.are:3077</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1817 on mob #1819: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3078">japan.are:3078</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'G' reset of object #1826 on mob #1819: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3080">japan.are:3080</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1817 on mob #1819: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3083">japan.are:3083</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1818 on mob #1820: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3085">japan.are:3085</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1818 on mob #1820: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3090">japan.are:3090</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1818 on mob #1822: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/japan.are#L3093">japan.are:3093</a></td>
+<td>Japan</td>
+<td>[bad-drop-rate] 'E' reset of object #1818 on mob #1822: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/firenewt.are#L929">firenewt.are:929</a></td>
+<td>Fire Newt Mountain</td>
+<td>[bad-drop-rate] 'E' reset of object #2901 on mob #2901: drop rate 500 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/firenewt.are#L931">firenewt.are:931</a></td>
+<td>Fire Newt Mountain</td>
+<td>[bad-drop-rate] 'E' reset of object #2901 on mob #2901: drop rate 500 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/valkyrie.are#L3267">valkyrie.are:3267</a></td>
+<td>The Valkyrie</td>
+<td>[bad-drop-rate] 'G' reset of object #27200 on mob #27200: drop rate -1 not in 1..100</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/valkyrie.are#L3386">valkyrie.are:3386</a></td>
+<td>The Valkyrie</td>
+<td>[bad-drop-rate] 'G' reset of object #27201 on mob #27218: drop rate -1 not in 1..100</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="bug-data-load-warnings">Area data the MUD loads with a warning or silently mishandles<a class="headerlink" href="#bug-data-load-warnings" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-present">present</span><span class="xu-chip">data</span><span class="xu-chip">wrong behaviour</span></p>
+<p>Problems the loader only logs (unknown attack types, body sizes or positions defaulted) and references it gets wrong without noticing (dangling exits and resets, asymmetric exits, resets outside the area's vnum range).</p>
+<p><strong>Fix.</strong> Fix each listed file and line, or accept the default the loader applies.</p>
+<details class="abstract">
+<summary>Where: 29 occurrences</summary>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Area</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L19">school.are:19</a></td>
+<td>—</td>
+<td>Invalid attack type 13 in mob #3700, defaulting to hit</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L124">school.are:124</a></td>
+<td>—</td>
+<td>Invalid attack type 13 in mob #3707, defaulting to hit</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/school.are#L138">school.are:138</a></td>
+<td>—</td>
+<td>Invalid attack type 13 in mob #3708, defaulting to hit</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6841">midgaard.are:6841</a></td>
+<td>Midgaard</td>
+<td>[reset-outside-range] 'O' reset on room #30012, outside Midgaard's vnum range 3000-3399</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L6842">midgaard.are:6842</a></td>
+<td>Midgaard</td>
+<td>[reset-outside-range] 'O' reset on room #30012, outside Midgaard's vnum range 3000-3399</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/immort.are#L72">immort.are:72</a></td>
+<td>Immortal Zone</td>
+<td>[dangling-exit] room #1203 up -&gt; #1 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/immort.are#L428">immort.are:428</a></td>
+<td>Immortal Zone</td>
+<td>[dangling-exit] room #1218 up -&gt; #2 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/immort.are#L467">immort.are:467</a></td>
+<td>Immortal Zone</td>
+<td>[dangling-exit] room #1219 east -&gt; #30001 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/plains.are#L8">plains.are:8</a></td>
+<td>Plains of the North</td>
+<td>[dangling-exit] room #300 south -&gt; #3904 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/plains.are#L279">plains.are:279</a></td>
+<td>Plains of the North</td>
+<td>[dangling-exit] room #312 east -&gt; #12000 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/plains.are#L352">plains.are:352</a></td>
+<td>Plains of the North</td>
+<td>[dangling-exit] room #315 up -&gt; #2400 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/olympus.are#L8">olympus.are:8</a></td>
+<td>Olympus</td>
+<td>[dangling-exit] room #901 north -&gt; #10135 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/olympus.are#L8">olympus.are:8</a></td>
+<td>Olympus</td>
+<td>[dangling-exit] room #901 east -&gt; #13000 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/wyvern.are#L8">wyvern.are:8</a></td>
+<td>Wyvern Tower</td>
+<td>[dangling-exit] room #1601 north -&gt; #30100 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/mahntor.are#L567">mahntor.are:567</a></td>
+<td>The Keep of Mahn-Tor</td>
+<td>[dangling-exit] room #2326 east -&gt; #28001 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L3557">midgaard.are:3557</a></td>
+<td>Midgaard</td>
+<td>[dangling-exit] room #3025 down -&gt; #9850 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L4182">midgaard.are:4182</a></td>
+<td>Midgaard</td>
+<td>[dangling-exit] room #3052 north -&gt; #3900 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L4227">midgaard.are:4227</a></td>
+<td>Midgaard</td>
+<td>[dangling-exit] room #3053 north -&gt; #3908 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midgaard.are#L5847">midgaard.are:5847</a></td>
+<td>Midgaard</td>
+<td>[dangling-exit] room #3268 north -&gt; #3904 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/midennir.are#L215">midennir.are:215</a></td>
+<td>Miden'nir</td>
+<td>[dangling-exit] room #3500 north -&gt; #4000 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/haon.are#L1960">haon.are:1960</a></td>
+<td>Haon Dor</td>
+<td>[dangling-exit] room #6151 north -&gt; #30150 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/haon.are#L2077">haon.are:2077</a></td>
+<td>Haon Dor</td>
+<td>[dangling-exit] room #6157 north -&gt; #501 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/dwarven.are#L817">dwarven.are:817</a></td>
+<td>Dwarven Kingdom</td>
+<td>[dangling-exit] room #6562 west -&gt; #4000 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/sewer.are#L2886">sewer.are:2886</a></td>
+<td>Sewer</td>
+<td>[dangling-exit] room #7399 down -&gt; #16223 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/sewer.are#L2908">sewer.are:2908</a></td>
+<td>Sewer</td>
+<td>[dangling-exit] room #7400 south -&gt; #16219 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/valley.are#L705">valley.are:705</a></td>
+<td>Valley of the Elves</td>
+<td>[dangling-exit] room #7802 west -&gt; #13244 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/newthalo.are#L260">newthalo.are:260</a></td>
+<td>New Thalos</td>
+<td>[dangling-exit] room #9510 down -&gt; #16000 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/crystal.are#L68">crystal.are:68</a></td>
+<td>Crystalmir Lake</td>
+<td>[dangling-exit] room #11003 north -&gt; #27116 does not exist</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/juargan.are#L1389">juargan.are:1389</a></td>
+<td>Kingdom of Juargan</td>
+<td>[dangling-exit] room #4785 west -&gt; #4001 does not exist</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="bug-data-unlisted-broken">Unlisted area files that wouldn't load<a class="headerlink" href="#bug-data-unlisted-broken" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-present">present</span><span class="xu-chip">data</span><span class="xu-chip">cosmetic</span></p>
+<p>Area files that aren't in <code>area.lst</code> and would also fail to parse. They don't affect the running game, but anyone adding them to <code>area.lst</code> would stop the MUD booting.</p>
+<p><strong>Fix.</strong> Fix the listed error before listing the file, or delete the file.</p>
+<details class="abstract">
+<summary>Where: 8 occurrences</summary>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Area</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/budo.are#L27">budo.are:27</a></td>
+<td>—</td>
+<td>fread_number: bad format (got 'A')</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/cause.are#L9">cause.are:9</a></td>
+<td>—</td>
+<td>Boot_db: # not found.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/checkm.are#L8">checkm.are:8</a></td>
+<td>—</td>
+<td>fread_number: bad format (got 'A')</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/hell.are#L7">hell.are:7</a></td>
+<td>—</td>
+<td>fread_number: bad format (got 'A')</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/lorehelp.are#L1">lorehelp.are:1</a></td>
+<td>—</td>
+<td>Boot_db: # not found.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/neuro.are#L1">neuro.are:1</a></td>
+<td>—</td>
+<td>Boot_db: bad section name '1263'.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/proto.are#L46">proto.are:46</a></td>
+<td>—</td>
+<td>fread_number: bad format (got '')</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattgodbolt/xania/blob/7e1edd2cc2b465900d375d4651d6402c5c3607e2/area/shad.are#L243">shad.are:243</a></td>
+<td>—</td>
+<td>fread_spnumber: quoted spell names not allowed, use spellname~ instead</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="bug-content-unobtainable-items">Items that no reset places<a class="headerlink" href="#bug-content-unobtainable-items" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-unknown">unknown</span><span class="xu-chip">content</span><span class="xu-chip">wrong behaviour</span> <span class="xu-card-label">couldn't run on this checkout (FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/xania-explorer/xania-explorer/build-head/src/SkillTables.cpp')</span></p>
+<p>Weapons and wearable gear (level ≤ 91) that no reset puts anywhere, so players never see them unless a mob program, special or immortal creates them.</p>
+<p><strong>Fix.</strong> Give each a reset (a mob to carry it or a room to hold it) or remove it from the area file.</p>
+<h3 id="bug-content-mobs-never-spawn">Mobs that never spawn<a class="headerlink" href="#bug-content-mobs-never-spawn" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-present">present</span><span class="xu-chip">content</span><span class="xu-chip">wrong behaviour</span></p>
+<p>Mob prototypes with no <code>M</code> reset, or whose resets all have a world cap of 0 or less.</p>
+<p><strong>Fix.</strong> Add an <code>M</code> reset with a positive cap, check whether a mob program loads it (<code>mpmload</code>), or remove it.</p>
+<details class="abstract">
+<summary>Where: 16 occurrences</summary>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Area</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#10080 some birds</td>
+<td>Wolf Pointe</td>
+<td>level 1; every M reset has a world cap ≤ 0</td>
+</tr>
+<tr>
+<td>#6003 the ferocious rabbit</td>
+<td>Haon Dor</td>
+<td>level 3; no M reset</td>
+</tr>
+<tr>
+<td>#1516 the hobgoblin guard</td>
+<td>Gnome Village</td>
+<td>level 6; no M reset</td>
+</tr>
+<tr>
+<td>#1132 a shiriff</td>
+<td>The Shire</td>
+<td>level 8; no M reset</td>
+</tr>
+<tr>
+<td>#1720 a displacer beast</td>
+<td>Wyvern Tower</td>
+<td>level 10; no M reset</td>
+</tr>
+<tr>
+<td>#8319 the orc shaman</td>
+<td>Old Marsh</td>
+<td>level 12; no M reset</td>
+</tr>
+<tr>
+<td>#9534 A bodyguard</td>
+<td>New Thalos</td>
+<td>level 12; no M reset</td>
+</tr>
+<tr>
+<td>#1707 a ranger leader</td>
+<td>Wyvern Tower</td>
+<td>level 15; no M reset</td>
+</tr>
+<tr>
+<td>#1365 a wizard</td>
+<td>High Tower of Sorcery</td>
+<td>level 17; no M reset</td>
+</tr>
+<tr>
+<td>#1708 the Lord of the Rangers</td>
+<td>Wyvern Tower</td>
+<td>level 20; no M reset</td>
+</tr>
+<tr>
+<td>#9237 a HUGE elemental</td>
+<td>Elemental Canyon</td>
+<td>level 20; no M reset</td>
+</tr>
+<tr>
+<td>#9546 Conan the Librarian</td>
+<td>New Thalos</td>
+<td>level 20; no M reset</td>
+</tr>
+<tr>
+<td>#9563 The chief guard</td>
+<td>New Thalos</td>
+<td>level 20; no M reset</td>
+</tr>
+<tr>
+<td>#9202 the cyclops</td>
+<td>Elemental Canyon</td>
+<td>level 22; every M reset has a world cap ≤ 0</td>
+</tr>
+<tr>
+<td>#3041 the waiter</td>
+<td>Midgaard</td>
+<td>level 23; no M reset</td>
+</tr>
+<tr>
+<td>#9512 the banker</td>
+<td>New Thalos</td>
+<td>level 23; no M reset</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="bug-content-unreachable-rooms">Rooms no one can walk to<a class="headerlink" href="#bug-content-unreachable-rooms" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-unknown">unknown</span><span class="xu-chip">content</span><span class="xu-chip">cosmetic</span> <span class="xu-card-label">couldn't run on this checkout (FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/xania-explorer/xania-explorer/build-head/src/Class.cpp')</span></p>
+<p>Rooms with no walking route from the Midgaard temple. Some are deliberate (immortal rooms, portal destinations, one-way traps); others are broken exits.</p>
+<p><strong>Fix.</strong> For each room, confirm how players are meant to arrive; add the missing exit if it's a mistake.</p>
+<h3 id="bug-content-unlisted-areas">Area files that are never loaded<a class="headerlink" href="#bug-content-unlisted-areas" title="Permanent link">&para;</a></h3>
+<p><span class="xu-chip xu-status-present">present</span><span class="xu-chip">content</span><span class="xu-chip">cosmetic</span></p>
+<p><code>.are</code> files on disk that <code>area.lst</code> doesn't list, so their content isn't in the game.</p>
+<p><strong>Fix.</strong> Add them to <code>area.lst</code> (after fixing any load errors above) or delete them.</p>
+<details class="abstract">
+<summary>Where: 10 occurrences</summary>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Area</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>budo.are</td>
+<td>—</td>
+<td>on disk but not in area.lst, so never loaded</td>
+</tr>
+<tr>
+<td>cause.are</td>
+<td>—</td>
+<td>on disk but not in area.lst, so never loaded</td>
+</tr>
+<tr>
+<td>checkm.are</td>
+<td>—</td>
+<td>on disk but not in area.lst, so never loaded</td>
+</tr>
+<tr>
+<td>hell.are</td>
+<td>—</td>
+<td>on disk but not in area.lst, so never loaded</td>
+</tr>
+<tr>
+<td>lorehelp.are</td>
+<td>—</td>
+<td>on disk but not in area.lst, so never loaded</td>
+</tr>
+<tr>
+<td>neuro.are</td>
+<td>—</td>
+<td>on disk but not in area.lst, so never loaded</td>
+</tr>
+<tr>
+<td>ozric.are</td>
+<td>—</td>
+<td>on disk but not in area.lst, so never loaded</td>
+</tr>
+<tr>
+<td>proto.are</td>
+<td>—</td>
+<td>on disk but not in area.lst, so never loaded</td>
+</tr>
+<tr>
+<td>quifael.are</td>
+<td>—</td>
+<td>on disk but not in area.lst, so never loaded</td>
+</tr>
+<tr>
+<td>shad.are</td>
+<td>—</td>
+<td>on disk but not in area.lst, so never loaded</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
+<details class="info">
+<summary>How these numbers are calculated</summary>
+<ul>
+<li><strong>Code checks</strong> search the C++ source for a specific faulty pattern, each verified by reading the code. A branch that fixes the code shows the check as <em>fixed</em>. Checks whose faulty code only crashes on bad data are <em>latent</em> until some data triggers them.</li>
+<li><strong>Data checks</strong> use the area parser's load-integrity results, which mirror what the C++ loader rejects (fatal) or logs.</li>
+<li><strong>Content checks</strong> reuse the other systems: items no reset places (objects the C++ creates itself, like corpses and the Mud School kit, are excluded), mobs that never spawn, rooms with no walking route from recall, and area files that aren't loaded.</li>
+<li><strong>Severity</strong>: crash risk, wrong behaviour, cosmetic. Kinds: code, data, content.</li>
+<li>Statuses counted as open: latent, present.</li>
+</ul>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../mobs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mobs">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Mobs
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../areas/" class="md-footer__link md-footer__link--next" aria-label="Next: Area catalogue">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Area catalogue
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/sorts/tablesort.number.min.js"></script>
+      
+        <script src="../../javascripts/xania.js"></script>
+      
+        <script src="../../javascripts/explore-plan.js"></script>
+      
+        <script src="../../javascripts/explore.js"></script>
+      
+    
+  </body>
+</html>

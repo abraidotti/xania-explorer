@@ -1,0 +1,397 @@
+check,kind,severity,status,where,area,file,line,detail
+code.affect-worth-ac,code,wrong-behaviour,present,AFFECT_DATA.cpp:80,,src/AFFECT_DATA.cpp,80,`if (modifier < 0) if (modifier > 0)` can never be true
+code.lose-level-asymmetry,code,wrong-behaviour,present,update.cpp:51,,src/update.cpp,51,advance_level adds HP/mana from curr_stat with the squared mana factor
+code.lose-level-asymmetry,code,wrong-behaviour,present,update.cpp:112,,src/update.cpp,112,lose_level removes them using max_stat and a different mana formula
+code.dot-tools-stdout,code,cosmetic,present,apps/areas.cpp:65,,src/apps/areas.cpp,65,"DOT output printed to stdout, not to out_file"
+code.dot-tools-stdout,code,cosmetic,present,apps/map.cpp:26,,src/apps/map.cpp,26,"DOT output printed to stdout, not to out_file"
+code.dot-tools-stdout,code,cosmetic,present,apps/map.cpp:36,,src/apps/map.cpp,36,"DOT output printed to stdout, not to out_file"
+code.dot-tools-stdout,code,cosmetic,present,apps/map.cpp:40,,src/apps/map.cpp,40,"DOT output printed to stdout, not to out_file"
+code.dot-tools-stdout,code,cosmetic,present,apps/map.cpp:83,,src/apps/map.cpp,83,"DOT output printed to stdout, not to out_file"
+data.fatal-load,data,crash,present,social.are:15,,area/social.are,15,[fatal-parse] Boot_db: # not found.
+data.fatal-load,data,crash,present,limbo.are:73,,area/limbo.are,73,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 4 template
+data.fatal-load,data,crash,present,moria.are:456,,area/moria.are,456,[fatal-parse] Unrecognized sex '3'.
+data.fatal-load,data,crash,present,seminary.are:3496,,area/seminary.are,3496,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 27112 slimy key
+data.fatal-load,data,crash,present,xrom.are:215,,area/xrom.are,215,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 30004 shadow death dark
+data.fatal-load,data,crash,present,sethanon.are:467,,area/sethanon.are,467,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 28012 slayer talisman black
+data.fatal-load,data,crash,present,cult.are:1498,,area/cult.are,1498,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 9850 brochure
+data.fatal-load,data,crash,present,under_un.are:14498,,area/under_un.are,14498,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 16022 girth
+data.fatal-load,data,crash,present,uruk.are:262,,area/uruk.are,262,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 10132 web silvery
+data.fatal-load,data,crash,present,ultima.are:5070,,area/ultima.are,5070,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 2446 rusty shield
+data.fatal-load,data,crash,present,imladris.are:2432,,area/imladris.are,2432,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 12000 ebony smoking pipe
+data.fatal-load,data,crash,present,den.are:817,,area/den.are,817,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 18114 Orb Dragon Kings
+data.fatal-load,data,crash,present,flying.are:1134,,area/flying.are,1134,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 13000 helmet stupidity
+data.fatal-load,data,crash,present,enchanted.are:210,,area/enchanted.are,210,[fatal-parse] Unrecognized sex '1'.
+data.fatal-load,data,crash,present,wyrm.are:222,,area/wyrm.are,222,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 30101 token wyrm dragon shield
+data.fatal-load,data,crash,present,lore.are:314,,area/lore.are,314,"[fatal-parse] fread_spnumber: quoted spell names not allowed, use spellname~ instead"
+data.fatal-load,data,crash,present,camelot.are:672,,area/camelot.are,672,[fatal-parse] Only weapons are meant to have ObjectExtraFlag::NoRemove: 526 beads
+data.fatal-load,data,crash,present,wyvern.are:1756,Wyvern Tower,area/wyvern.are,1756,[bad-drop-rate] 'E' reset of object #3387 on mob #1613: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6588,Midgaard,area/midgaard.are,6588,[bad-drop-rate] 'E' reset of object #3022 on mob #3026: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6591,Midgaard,area/midgaard.are,6591,[bad-drop-rate] 'E' reset of object #3022 on mob #3027: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6615,Midgaard,area/midgaard.are,6615,[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6616,Midgaard,area/midgaard.are,6616,[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6617,Midgaard,area/midgaard.are,6617,[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6618,Midgaard,area/midgaard.are,6618,[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6619,Midgaard,area/midgaard.are,6619,[bad-drop-rate] 'E' reset of object #3355 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6622,Midgaard,area/midgaard.are,6622,[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6623,Midgaard,area/midgaard.are,6623,[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6624,Midgaard,area/midgaard.are,6624,[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6625,Midgaard,area/midgaard.are,6625,[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6626,Midgaard,area/midgaard.are,6626,[bad-drop-rate] 'E' reset of object #3356 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6629,Midgaard,area/midgaard.are,6629,[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6630,Midgaard,area/midgaard.are,6630,[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6631,Midgaard,area/midgaard.are,6631,[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6632,Midgaard,area/midgaard.are,6632,[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6633,Midgaard,area/midgaard.are,6633,[bad-drop-rate] 'E' reset of object #3357 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6636,Midgaard,area/midgaard.are,6636,[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6637,Midgaard,area/midgaard.are,6637,[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6638,Midgaard,area/midgaard.are,6638,[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6639,Midgaard,area/midgaard.are,6639,[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6640,Midgaard,area/midgaard.are,6640,[bad-drop-rate] 'E' reset of object #3358 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6643,Midgaard,area/midgaard.are,6643,[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6644,Midgaard,area/midgaard.are,6644,[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6645,Midgaard,area/midgaard.are,6645,[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6646,Midgaard,area/midgaard.are,6646,[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6647,Midgaard,area/midgaard.are,6647,[bad-drop-rate] 'E' reset of object #3359 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6650,Midgaard,area/midgaard.are,6650,[bad-drop-rate] 'E' reset of object #3365 on mob #3067: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6651,Midgaard,area/midgaard.are,6651,[bad-drop-rate] 'E' reset of object #3364 on mob #3067: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6652,Midgaard,area/midgaard.are,6652,[bad-drop-rate] 'E' reset of object #3386 on mob #3067: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6653,Midgaard,area/midgaard.are,6653,[bad-drop-rate] 'E' reset of object #3353 on mob #3067: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6654,Midgaard,area/midgaard.are,6654,[bad-drop-rate] 'E' reset of object #3360 on mob #3067: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6657,Midgaard,area/midgaard.are,6657,[bad-drop-rate] 'E' reset of object #3365 on mob #3067: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6658,Midgaard,area/midgaard.are,6658,[bad-drop-rate] 'E' reset of object #3364 on mob #3067: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6659,Midgaard,area/midgaard.are,6659,[bad-drop-rate] 'E' reset of object #3386 on mob #3067: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6660,Midgaard,area/midgaard.are,6660,[bad-drop-rate] 'E' reset of object #3353 on mob #3067: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6661,Midgaard,area/midgaard.are,6661,[bad-drop-rate] 'E' reset of object #3354 on mob #3067: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6664,Midgaard,area/midgaard.are,6664,[bad-drop-rate] 'E' reset of object #3365 on mob #3068: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6665,Midgaard,area/midgaard.are,6665,[bad-drop-rate] 'E' reset of object #3364 on mob #3068: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6666,Midgaard,area/midgaard.are,6666,[bad-drop-rate] 'E' reset of object #3386 on mob #3068: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6667,Midgaard,area/midgaard.are,6667,[bad-drop-rate] 'E' reset of object #3353 on mob #3068: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6668,Midgaard,area/midgaard.are,6668,[bad-drop-rate] 'E' reset of object #3361 on mob #3068: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6671,Midgaard,area/midgaard.are,6671,[bad-drop-rate] 'E' reset of object #3365 on mob #3068: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6672,Midgaard,area/midgaard.are,6672,[bad-drop-rate] 'E' reset of object #3364 on mob #3068: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6673,Midgaard,area/midgaard.are,6673,[bad-drop-rate] 'E' reset of object #3386 on mob #3068: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6674,Midgaard,area/midgaard.are,6674,[bad-drop-rate] 'E' reset of object #3353 on mob #3068: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6675,Midgaard,area/midgaard.are,6675,[bad-drop-rate] 'E' reset of object #3362 on mob #3068: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6678,Midgaard,area/midgaard.are,6678,[bad-drop-rate] 'E' reset of object #3365 on mob #3071: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6679,Midgaard,area/midgaard.are,6679,[bad-drop-rate] 'E' reset of object #3364 on mob #3071: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6680,Midgaard,area/midgaard.are,6680,[bad-drop-rate] 'E' reset of object #3386 on mob #3071: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6681,Midgaard,area/midgaard.are,6681,[bad-drop-rate] 'E' reset of object #3353 on mob #3071: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6682,Midgaard,area/midgaard.are,6682,[bad-drop-rate] 'E' reset of object #3361 on mob #3071: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6685,Midgaard,area/midgaard.are,6685,[bad-drop-rate] 'E' reset of object #3365 on mob #3071: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6686,Midgaard,area/midgaard.are,6686,[bad-drop-rate] 'E' reset of object #3364 on mob #3071: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6687,Midgaard,area/midgaard.are,6687,[bad-drop-rate] 'E' reset of object #3386 on mob #3071: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6688,Midgaard,area/midgaard.are,6688,[bad-drop-rate] 'E' reset of object #3353 on mob #3071: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6689,Midgaard,area/midgaard.are,6689,[bad-drop-rate] 'E' reset of object #3362 on mob #3071: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6692,Midgaard,area/midgaard.are,6692,[bad-drop-rate] 'E' reset of object #3365 on mob #3072: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6693,Midgaard,area/midgaard.are,6693,[bad-drop-rate] 'E' reset of object #3364 on mob #3072: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6694,Midgaard,area/midgaard.are,6694,[bad-drop-rate] 'E' reset of object #3386 on mob #3072: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6695,Midgaard,area/midgaard.are,6695,[bad-drop-rate] 'E' reset of object #3353 on mob #3072: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6696,Midgaard,area/midgaard.are,6696,[bad-drop-rate] 'E' reset of object #3354 on mob #3072: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6699,Midgaard,area/midgaard.are,6699,[bad-drop-rate] 'E' reset of object #3021 on mob #3063: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6700,Midgaard,area/midgaard.are,6700,[bad-drop-rate] 'E' reset of object #3066 on mob #3063: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6701,Midgaard,area/midgaard.are,6701,[bad-drop-rate] 'E' reset of object #3052 on mob #3063: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6722,Midgaard,area/midgaard.are,6722,[bad-drop-rate] 'E' reset of object #3351 on mob #3005: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6724,Midgaard,area/midgaard.are,6724,[bad-drop-rate] 'E' reset of object #3351 on mob #3005: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6756,Midgaard,area/midgaard.are,6756,[bad-drop-rate] 'E' reset of object #3387 on mob #3140: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6760,Midgaard,area/midgaard.are,6760,[bad-drop-rate] 'E' reset of object #3387 on mob #3141: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6762,Midgaard,area/midgaard.are,6762,[bad-drop-rate] 'E' reset of object #3387 on mob #3141: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6764,Midgaard,area/midgaard.are,6764,[bad-drop-rate] 'E' reset of object #3387 on mob #3141: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6766,Midgaard,area/midgaard.are,6766,[bad-drop-rate] 'E' reset of object #3387 on mob #3141: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6774,Midgaard,area/midgaard.are,6774,[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6775,Midgaard,area/midgaard.are,6775,[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6776,Midgaard,area/midgaard.are,6776,[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6777,Midgaard,area/midgaard.are,6777,[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6781,Midgaard,area/midgaard.are,6781,[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6782,Midgaard,area/midgaard.are,6782,[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6783,Midgaard,area/midgaard.are,6783,[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6784,Midgaard,area/midgaard.are,6784,[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6785,Midgaard,area/midgaard.are,6785,[bad-drop-rate] 'E' reset of object #3363 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6788,Midgaard,area/midgaard.are,6788,[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6789,Midgaard,area/midgaard.are,6789,[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6790,Midgaard,area/midgaard.are,6790,[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6791,Midgaard,area/midgaard.are,6791,[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6794,Midgaard,area/midgaard.are,6794,[bad-drop-rate] 'E' reset of object #3365 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6795,Midgaard,area/midgaard.are,6795,[bad-drop-rate] 'E' reset of object #3364 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6796,Midgaard,area/midgaard.are,6796,[bad-drop-rate] 'E' reset of object #3386 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6797,Midgaard,area/midgaard.are,6797,[bad-drop-rate] 'E' reset of object #3353 on mob #3060: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6805,Midgaard,area/midgaard.are,6805,[bad-drop-rate] 'E' reset of object #3365 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6806,Midgaard,area/midgaard.are,6806,[bad-drop-rate] 'E' reset of object #3364 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6807,Midgaard,area/midgaard.are,6807,[bad-drop-rate] 'E' reset of object #3387 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6809,Midgaard,area/midgaard.are,6809,[bad-drop-rate] 'E' reset of object #3365 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6810,Midgaard,area/midgaard.are,6810,[bad-drop-rate] 'E' reset of object #3364 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6811,Midgaard,area/midgaard.are,6811,[bad-drop-rate] 'E' reset of object #3387 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6813,Midgaard,area/midgaard.are,6813,[bad-drop-rate] 'E' reset of object #3365 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6814,Midgaard,area/midgaard.are,6814,[bad-drop-rate] 'E' reset of object #3364 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6815,Midgaard,area/midgaard.are,6815,[bad-drop-rate] 'E' reset of object #3387 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6817,Midgaard,area/midgaard.are,6817,[bad-drop-rate] 'E' reset of object #3365 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6818,Midgaard,area/midgaard.are,6818,[bad-drop-rate] 'E' reset of object #3364 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midgaard.are:6819,Midgaard,area/midgaard.are,6819,[bad-drop-rate] 'E' reset of object #3387 on mob #3069: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midennir.are:1330,Miden'nir,area/midennir.are,1330,[bad-drop-rate] 'E' reset of object #3502 on mob #3506: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midennir.are:1336,Miden'nir,area/midennir.are,1336,[bad-drop-rate] 'E' reset of object #3502 on mob #3506: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midennir.are:1340,Miden'nir,area/midennir.are,1340,[bad-drop-rate] 'E' reset of object #3072 on mob #3507: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midennir.are:1342,Miden'nir,area/midennir.are,1342,[bad-drop-rate] 'E' reset of object #3502 on mob #3507: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midennir.are:1353,Miden'nir,area/midennir.are,1353,[bad-drop-rate] 'E' reset of object #3022 on mob #3505: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,midennir.are:1357,Miden'nir,area/midennir.are,1357,[bad-drop-rate] 'E' reset of object #3022 on mob #3505: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,grave.are:893,Graveyard,area/grave.are,893,[bad-drop-rate] 'G' reset of object #3601 on mob #3600: drop rate 1000 not in 1..100
+data.fatal-load,data,crash,present,grave.are:905,Graveyard,area/grave.are,905,[bad-drop-rate] 'G' reset of object #3612 on mob #3602: drop rate 1000 not in 1..100
+data.fatal-load,data,crash,present,grave.are:923,Graveyard,area/grave.are,923,[bad-drop-rate] 'G' reset of object #3611 on mob #3601: drop rate 1000 not in 1..100
+data.fatal-load,data,crash,present,school.are:2057,Mud School,area/school.are,2057,[bad-drop-rate] 'E' reset of object #3715 on mob #3720: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2063,Mud School,area/school.are,2063,[bad-drop-rate] 'E' reset of object #3705 on mob #3702: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2064,Mud School,area/school.are,2064,[bad-drop-rate] 'E' reset of object #3705 on mob #3702: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2066,Mud School,area/school.are,2066,[bad-drop-rate] 'E' reset of object #3706 on mob #3703: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2067,Mud School,area/school.are,2067,[bad-drop-rate] 'E' reset of object #3711 on mob #3703: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2069,Mud School,area/school.are,2069,[bad-drop-rate] 'E' reset of object #3707 on mob #3704: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2070,Mud School,area/school.are,2070,[bad-drop-rate] 'E' reset of object #3712 on mob #3704: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2072,Mud School,area/school.are,2072,[bad-drop-rate] 'E' reset of object #3708 on mob #3705: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2073,Mud School,area/school.are,2073,[bad-drop-rate] 'E' reset of object #3713 on mob #3705: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2082,Mud School,area/school.are,2082,[bad-drop-rate] 'E' reset of object #3709 on mob #3706: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2083,Mud School,area/school.are,2083,[bad-drop-rate] 'E' reset of object #3710 on mob #3706: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2084,Mud School,area/school.are,2084,[bad-drop-rate] 'E' reset of object #3714 on mob #3706: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,school.are:2085,Mud School,area/school.are,2085,[bad-drop-rate] 'E' reset of object #3713 on mob #3706: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2160,Thalos,area/thalos.are,2160,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2163,Thalos,area/thalos.are,2163,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2166,Thalos,area/thalos.are,2166,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2169,Thalos,area/thalos.are,2169,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2172,Thalos,area/thalos.are,2172,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2175,Thalos,area/thalos.are,2175,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2178,Thalos,area/thalos.are,2178,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2180,Thalos,area/thalos.are,2180,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2183,Thalos,area/thalos.are,2183,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2186,Thalos,area/thalos.are,2186,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2189,Thalos,area/thalos.are,2189,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,thalos.are:2192,Thalos,area/thalos.are,2192,[bad-drop-rate] 'E' reset of object #5252 on mob #5201: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:2836,Old Thalos,area/mirror.are,2836,[bad-drop-rate] 'E' reset of object #5252 on mob #5306: drop rate 150 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:2970,Old Thalos,area/mirror.are,2970,[bad-drop-rate] 'E' reset of object #5317 on mob #5320: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:2977,Old Thalos,area/mirror.are,2977,[bad-drop-rate] 'E' reset of object #5318 on mob #5320: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:2984,Old Thalos,area/mirror.are,2984,[bad-drop-rate] 'E' reset of object #5317 on mob #5320: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:2993,Old Thalos,area/mirror.are,2993,[bad-drop-rate] 'E' reset of object #5318 on mob #5321: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3001,Old Thalos,area/mirror.are,3001,[bad-drop-rate] 'E' reset of object #5317 on mob #5321: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3007,Old Thalos,area/mirror.are,3007,[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3012,Old Thalos,area/mirror.are,3012,[bad-drop-rate] 'E' reset of object #5317 on mob #5303: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3018,Old Thalos,area/mirror.are,3018,[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3024,Old Thalos,area/mirror.are,3024,[bad-drop-rate] 'E' reset of object #5317 on mob #5303: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3030,Old Thalos,area/mirror.are,3030,[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3035,Old Thalos,area/mirror.are,3035,[bad-drop-rate] 'E' reset of object #5317 on mob #5303: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3041,Old Thalos,area/mirror.are,3041,[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3047,Old Thalos,area/mirror.are,3047,[bad-drop-rate] 'E' reset of object #5317 on mob #5303: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3052,Old Thalos,area/mirror.are,3052,[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3057,Old Thalos,area/mirror.are,3057,[bad-drop-rate] 'E' reset of object #5317 on mob #5303: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3063,Old Thalos,area/mirror.are,3063,[bad-drop-rate] 'E' reset of object #5318 on mob #5303: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3102,Old Thalos,area/mirror.are,3102,[bad-drop-rate] 'E' reset of object #3386 on mob #5334: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3108,Old Thalos,area/mirror.are,3108,[bad-drop-rate] 'E' reset of object #3386 on mob #5331: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,mirror.are:3110,Old Thalos,area/mirror.are,3110,[bad-drop-rate] 'E' reset of object #3355 on mob #5331: drop rate 199 not in 1..100
+data.fatal-load,data,crash,present,daycare.are:600,Dwarven Day Care,area/daycare.are,600,[bad-drop-rate] 'E' reset of object #3023 on mob #6607: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,daycare.are:644,Dwarven Day Care,area/daycare.are,644,[bad-drop-rate] 'E' reset of object #6647 on mob #6603: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,daycare.are:656,Dwarven Day Care,area/daycare.are,656,[bad-drop-rate] 'E' reset of object #6647 on mob #6603: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,daycare.are:663,Dwarven Day Care,area/daycare.are,663,[bad-drop-rate] 'E' reset of object #6647 on mob #6603: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,daycare.are:671,Dwarven Day Care,area/daycare.are,671,[bad-drop-rate] 'E' reset of object #6647 on mob #6603: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,sewer.are:4801,Sewer,area/sewer.are,4801,[bad-drop-rate] 'G' reset of object #7205 on mob #7200: drop rate 7200 not in 1..100
+data.fatal-load,data,crash,present,ciquala.are:1006,Ciquala's Lair,area/ciquala.are,1006,[bad-drop-rate] 'G' reset of object #13406 on mob #13415: drop rate 0 not in 1..100
+data.fatal-load,data,crash,present,crystal.are:2455,Crystalmir Lake,area/crystal.are,2455,[bad-drop-rate] 'G' reset of object #11010 on mob #11008: drop rate 0 not in 1..100
+data.fatal-load,data,crash,present,crystal.are:2458,Crystalmir Lake,area/crystal.are,2458,[bad-drop-rate] 'G' reset of object #11006 on mob #11009: drop rate 0 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2083,Mos Eisley,area/mos.are,2083,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2089,Mos Eisley,area/mos.are,2089,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2097,Mos Eisley,area/mos.are,2097,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2103,Mos Eisley,area/mos.are,2103,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2113,Mos Eisley,area/mos.are,2113,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2117,Mos Eisley,area/mos.are,2117,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2121,Mos Eisley,area/mos.are,2121,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2124,Mos Eisley,area/mos.are,2124,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2127,Mos Eisley,area/mos.are,2127,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2155,Mos Eisley,area/mos.are,2155,[bad-drop-rate] 'E' reset of object #5812 on mob #5803: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2158,Mos Eisley,area/mos.are,2158,[bad-drop-rate] 'E' reset of object #5812 on mob #5803: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2185,Mos Eisley,area/mos.are,2185,[bad-drop-rate] 'E' reset of object #5806 on mob #5807: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2192,Mos Eisley,area/mos.are,2192,[bad-drop-rate] 'E' reset of object #5813 on mob #5808: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2197,Mos Eisley,area/mos.are,2197,[bad-drop-rate] 'E' reset of object #5813 on mob #5808: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2200,Mos Eisley,area/mos.are,2200,[bad-drop-rate] 'G' reset of object #5816 on mob #5808: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2208,Mos Eisley,area/mos.are,2208,[bad-drop-rate] 'E' reset of object #5813 on mob #5808: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2213,Mos Eisley,area/mos.are,2213,[bad-drop-rate] 'E' reset of object #5813 on mob #5808: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2221,Mos Eisley,area/mos.are,2221,[bad-drop-rate] 'G' reset of object #5816 on mob #5809: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2235,Mos Eisley,area/mos.are,2235,[bad-drop-rate] 'E' reset of object #5814 on mob #5810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2238,Mos Eisley,area/mos.are,2238,[bad-drop-rate] 'E' reset of object #5814 on mob #5810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2242,Mos Eisley,area/mos.are,2242,[bad-drop-rate] 'E' reset of object #5809 on mob #5814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2243,Mos Eisley,area/mos.are,2243,[bad-drop-rate] 'E' reset of object #5832 on mob #5814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2246,Mos Eisley,area/mos.are,2246,[bad-drop-rate] 'E' reset of object #5832 on mob #5814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2250,Mos Eisley,area/mos.are,2250,[bad-drop-rate] 'G' reset of object #5816 on mob #5816: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2251,Mos Eisley,area/mos.are,2251,[bad-drop-rate] 'E' reset of object #5832 on mob #5816: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2254,Mos Eisley,area/mos.are,2254,[bad-drop-rate] 'E' reset of object #5832 on mob #5816: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2258,Mos Eisley,area/mos.are,2258,[bad-drop-rate] 'E' reset of object #5832 on mob #5818: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2287,Mos Eisley,area/mos.are,2287,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2291,Mos Eisley,area/mos.are,2291,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2294,Mos Eisley,area/mos.are,2294,[bad-drop-rate] 'E' reset of object #5831 on mob #5801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2302,Mos Eisley,area/mos.are,2302,[bad-drop-rate] 'E' reset of object #5829 on mob #5802: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2310,Mos Eisley,area/mos.are,2310,[bad-drop-rate] 'E' reset of object #5813 on mob #5808: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2317,Mos Eisley,area/mos.are,2317,[bad-drop-rate] 'E' reset of object #5814 on mob #5810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2320,Mos Eisley,area/mos.are,2320,[bad-drop-rate] 'E' reset of object #5814 on mob #5810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2334,Mos Eisley,area/mos.are,2334,[bad-drop-rate] 'E' reset of object #5811 on mob #5813: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2338,Mos Eisley,area/mos.are,2338,[bad-drop-rate] 'E' reset of object #5814 on mob #5815: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2342,Mos Eisley,area/mos.are,2342,[bad-drop-rate] 'E' reset of object #5832 on mob #5816: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2346,Mos Eisley,area/mos.are,2346,[bad-drop-rate] 'E' reset of object #5831 on mob #5817: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2349,Mos Eisley,area/mos.are,2349,[bad-drop-rate] 'E' reset of object #5831 on mob #5817: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2353,Mos Eisley,area/mos.are,2353,[bad-drop-rate] 'E' reset of object #5830 on mob #5819: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,mos.are:2357,Mos Eisley,area/mos.are,2357,[bad-drop-rate] 'E' reset of object #5810 on mob #5822: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,str.are:1628,Strange World,area/str.are,1628,[bad-drop-rate] 'G' reset of object #826 on mob #803: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,str.are:1631,Strange World,area/str.are,1631,[bad-drop-rate] 'G' reset of object #827 on mob #803: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,str.are:1659,Strange World,area/str.are,1659,[bad-drop-rate] 'E' reset of object #803 on mob #808: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2907,Japan,area/japan.are,2907,[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2909,Japan,area/japan.are,2909,[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2911,Japan,area/japan.are,2911,[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2913,Japan,area/japan.are,2913,[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2915,Japan,area/japan.are,2915,[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2917,Japan,area/japan.are,2917,[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2919,Japan,area/japan.are,2919,[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2921,Japan,area/japan.are,2921,[bad-drop-rate] 'E' reset of object #1801 on mob #1801: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2924,Japan,area/japan.are,2924,[bad-drop-rate] 'E' reset of object #1802 on mob #1802: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2926,Japan,area/japan.are,2926,[bad-drop-rate] 'E' reset of object #1803 on mob #1803: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2928,Japan,area/japan.are,2928,[bad-drop-rate] 'E' reset of object #1804 on mob #1804: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2930,Japan,area/japan.are,2930,[bad-drop-rate] 'E' reset of object #1805 on mob #1805: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2933,Japan,area/japan.are,2933,[bad-drop-rate] 'E' reset of object #1806 on mob #1806: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2934,Japan,area/japan.are,2934,[bad-drop-rate] 'G' reset of object #1825 on mob #1806: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2937,Japan,area/japan.are,2937,[bad-drop-rate] 'E' reset of object #1828 on mob #1807: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2939,Japan,area/japan.are,2939,[bad-drop-rate] 'E' reset of object #1828 on mob #1807: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2941,Japan,area/japan.are,2941,[bad-drop-rate] 'E' reset of object #1828 on mob #1807: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2943,Japan,area/japan.are,2943,[bad-drop-rate] 'E' reset of object #1828 on mob #1807: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2945,Japan,area/japan.are,2945,[bad-drop-rate] 'E' reset of object #1828 on mob #1807: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2948,Japan,area/japan.are,2948,[bad-drop-rate] 'E' reset of object #1807 on mob #1808: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2950,Japan,area/japan.are,2950,[bad-drop-rate] 'E' reset of object #1807 on mob #1808: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2952,Japan,area/japan.are,2952,[bad-drop-rate] 'E' reset of object #1807 on mob #1808: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2957,Japan,area/japan.are,2957,[bad-drop-rate] 'E' reset of object #1808 on mob #1809: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2960,Japan,area/japan.are,2960,[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2962,Japan,area/japan.are,2962,[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2964,Japan,area/japan.are,2964,[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2966,Japan,area/japan.are,2966,[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2968,Japan,area/japan.are,2968,[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2970,Japan,area/japan.are,2970,[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2972,Japan,area/japan.are,2972,[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2974,Japan,area/japan.are,2974,[bad-drop-rate] 'E' reset of object #1809 on mob #1810: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2977,Japan,area/japan.are,2977,[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2978,Japan,area/japan.are,2978,[bad-drop-rate] 'G' reset of object #1824 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2980,Japan,area/japan.are,2980,[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2981,Japan,area/japan.are,2981,[bad-drop-rate] 'G' reset of object #1824 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2983,Japan,area/japan.are,2983,[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2984,Japan,area/japan.are,2984,[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2986,Japan,area/japan.are,2986,[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2987,Japan,area/japan.are,2987,[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2989,Japan,area/japan.are,2989,[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2990,Japan,area/japan.are,2990,[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2992,Japan,area/japan.are,2992,[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2993,Japan,area/japan.are,2993,[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2995,Japan,area/japan.are,2995,[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2996,Japan,area/japan.are,2996,[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2998,Japan,area/japan.are,2998,[bad-drop-rate] 'E' reset of object #1810 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:2999,Japan,area/japan.are,2999,[bad-drop-rate] 'E' reset of object #1819 on mob #1811: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3002,Japan,area/japan.are,3002,[bad-drop-rate] 'E' reset of object #1811 on mob #1812: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3003,Japan,area/japan.are,3003,[bad-drop-rate] 'E' reset of object #1820 on mob #1812: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3004,Japan,area/japan.are,3004,[bad-drop-rate] 'E' reset of object #1821 on mob #1812: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3007,Japan,area/japan.are,3007,[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3009,Japan,area/japan.are,3009,[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3011,Japan,area/japan.are,3011,[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3013,Japan,area/japan.are,3013,[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3015,Japan,area/japan.are,3015,[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3017,Japan,area/japan.are,3017,[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3019,Japan,area/japan.are,3019,[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3021,Japan,area/japan.are,3021,[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3023,Japan,area/japan.are,3023,[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3025,Japan,area/japan.are,3025,[bad-drop-rate] 'E' reset of object #1812 on mob #1813: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3028,Japan,area/japan.are,3028,[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3030,Japan,area/japan.are,3030,[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3032,Japan,area/japan.are,3032,[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3034,Japan,area/japan.are,3034,[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3036,Japan,area/japan.are,3036,[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3038,Japan,area/japan.are,3038,[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3040,Japan,area/japan.are,3040,[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3042,Japan,area/japan.are,3042,[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3044,Japan,area/japan.are,3044,[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3046,Japan,area/japan.are,3046,[bad-drop-rate] 'E' reset of object #1813 on mob #1814: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3049,Japan,area/japan.are,3049,[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3051,Japan,area/japan.are,3051,[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3053,Japan,area/japan.are,3053,[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3055,Japan,area/japan.are,3055,[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3057,Japan,area/japan.are,3057,[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3059,Japan,area/japan.are,3059,[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3061,Japan,area/japan.are,3061,[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3063,Japan,area/japan.are,3063,[bad-drop-rate] 'E' reset of object #1814 on mob #1815: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3066,Japan,area/japan.are,3066,[bad-drop-rate] 'E' reset of object #1815 on mob #1816: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3067,Japan,area/japan.are,3067,[bad-drop-rate] 'E' reset of object #1822 on mob #1816: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3068,Japan,area/japan.are,3068,[bad-drop-rate] 'G' reset of object #1827 on mob #1816: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3071,Japan,area/japan.are,3071,[bad-drop-rate] 'E' reset of object #1816 on mob #1817: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3072,Japan,area/japan.are,3072,[bad-drop-rate] 'E' reset of object #1823 on mob #1817: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3077,Japan,area/japan.are,3077,[bad-drop-rate] 'E' reset of object #1817 on mob #1819: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3078,Japan,area/japan.are,3078,[bad-drop-rate] 'G' reset of object #1826 on mob #1819: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3080,Japan,area/japan.are,3080,[bad-drop-rate] 'E' reset of object #1817 on mob #1819: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3083,Japan,area/japan.are,3083,[bad-drop-rate] 'E' reset of object #1818 on mob #1820: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3085,Japan,area/japan.are,3085,[bad-drop-rate] 'E' reset of object #1818 on mob #1820: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3090,Japan,area/japan.are,3090,[bad-drop-rate] 'E' reset of object #1818 on mob #1822: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,japan.are:3093,Japan,area/japan.are,3093,[bad-drop-rate] 'E' reset of object #1818 on mob #1822: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,firenewt.are:929,Fire Newt Mountain,area/firenewt.are,929,[bad-drop-rate] 'E' reset of object #2901 on mob #2901: drop rate 500 not in 1..100
+data.fatal-load,data,crash,present,firenewt.are:931,Fire Newt Mountain,area/firenewt.are,931,[bad-drop-rate] 'E' reset of object #2901 on mob #2901: drop rate 500 not in 1..100
+data.fatal-load,data,crash,present,valkyrie.are:3267,The Valkyrie,area/valkyrie.are,3267,[bad-drop-rate] 'G' reset of object #27200 on mob #27200: drop rate -1 not in 1..100
+data.fatal-load,data,crash,present,valkyrie.are:3386,The Valkyrie,area/valkyrie.are,3386,[bad-drop-rate] 'G' reset of object #27201 on mob #27218: drop rate -1 not in 1..100
+data.load-warnings,data,wrong-behaviour,present,school.are:19,,area/school.are,19,"Invalid attack type 13 in mob #3700, defaulting to hit"
+data.load-warnings,data,wrong-behaviour,present,school.are:124,,area/school.are,124,"Invalid attack type 13 in mob #3707, defaulting to hit"
+data.load-warnings,data,wrong-behaviour,present,school.are:138,,area/school.are,138,"Invalid attack type 13 in mob #3708, defaulting to hit"
+data.load-warnings,data,wrong-behaviour,present,midgaard.are:6841,Midgaard,area/midgaard.are,6841,"[reset-outside-range] 'O' reset on room #30012, outside Midgaard's vnum range 3000-3399"
+data.load-warnings,data,wrong-behaviour,present,midgaard.are:6842,Midgaard,area/midgaard.are,6842,"[reset-outside-range] 'O' reset on room #30012, outside Midgaard's vnum range 3000-3399"
+data.load-warnings,data,wrong-behaviour,present,immort.are:72,Immortal Zone,area/immort.are,72,[dangling-exit] room #1203 up -> #1 does not exist
+data.load-warnings,data,wrong-behaviour,present,immort.are:428,Immortal Zone,area/immort.are,428,[dangling-exit] room #1218 up -> #2 does not exist
+data.load-warnings,data,wrong-behaviour,present,immort.are:467,Immortal Zone,area/immort.are,467,[dangling-exit] room #1219 east -> #30001 does not exist
+data.load-warnings,data,wrong-behaviour,present,plains.are:8,Plains of the North,area/plains.are,8,[dangling-exit] room #300 south -> #3904 does not exist
+data.load-warnings,data,wrong-behaviour,present,plains.are:279,Plains of the North,area/plains.are,279,[dangling-exit] room #312 east -> #12000 does not exist
+data.load-warnings,data,wrong-behaviour,present,plains.are:352,Plains of the North,area/plains.are,352,[dangling-exit] room #315 up -> #2400 does not exist
+data.load-warnings,data,wrong-behaviour,present,olympus.are:8,Olympus,area/olympus.are,8,[dangling-exit] room #901 north -> #10135 does not exist
+data.load-warnings,data,wrong-behaviour,present,olympus.are:8,Olympus,area/olympus.are,8,[dangling-exit] room #901 east -> #13000 does not exist
+data.load-warnings,data,wrong-behaviour,present,wyvern.are:8,Wyvern Tower,area/wyvern.are,8,[dangling-exit] room #1601 north -> #30100 does not exist
+data.load-warnings,data,wrong-behaviour,present,mahntor.are:567,The Keep of Mahn-Tor,area/mahntor.are,567,[dangling-exit] room #2326 east -> #28001 does not exist
+data.load-warnings,data,wrong-behaviour,present,midgaard.are:3557,Midgaard,area/midgaard.are,3557,[dangling-exit] room #3025 down -> #9850 does not exist
+data.load-warnings,data,wrong-behaviour,present,midgaard.are:4182,Midgaard,area/midgaard.are,4182,[dangling-exit] room #3052 north -> #3900 does not exist
+data.load-warnings,data,wrong-behaviour,present,midgaard.are:4227,Midgaard,area/midgaard.are,4227,[dangling-exit] room #3053 north -> #3908 does not exist
+data.load-warnings,data,wrong-behaviour,present,midgaard.are:5847,Midgaard,area/midgaard.are,5847,[dangling-exit] room #3268 north -> #3904 does not exist
+data.load-warnings,data,wrong-behaviour,present,midennir.are:215,Miden'nir,area/midennir.are,215,[dangling-exit] room #3500 north -> #4000 does not exist
+data.load-warnings,data,wrong-behaviour,present,haon.are:1960,Haon Dor,area/haon.are,1960,[dangling-exit] room #6151 north -> #30150 does not exist
+data.load-warnings,data,wrong-behaviour,present,haon.are:2077,Haon Dor,area/haon.are,2077,[dangling-exit] room #6157 north -> #501 does not exist
+data.load-warnings,data,wrong-behaviour,present,dwarven.are:817,Dwarven Kingdom,area/dwarven.are,817,[dangling-exit] room #6562 west -> #4000 does not exist
+data.load-warnings,data,wrong-behaviour,present,sewer.are:2886,Sewer,area/sewer.are,2886,[dangling-exit] room #7399 down -> #16223 does not exist
+data.load-warnings,data,wrong-behaviour,present,sewer.are:2908,Sewer,area/sewer.are,2908,[dangling-exit] room #7400 south -> #16219 does not exist
+data.load-warnings,data,wrong-behaviour,present,valley.are:705,Valley of the Elves,area/valley.are,705,[dangling-exit] room #7802 west -> #13244 does not exist
+data.load-warnings,data,wrong-behaviour,present,newthalo.are:260,New Thalos,area/newthalo.are,260,[dangling-exit] room #9510 down -> #16000 does not exist
+data.load-warnings,data,wrong-behaviour,present,crystal.are:68,Crystalmir Lake,area/crystal.are,68,[dangling-exit] room #11003 north -> #27116 does not exist
+data.load-warnings,data,wrong-behaviour,present,juargan.are:1389,Kingdom of Juargan,area/juargan.are,1389,[dangling-exit] room #4785 west -> #4001 does not exist
+data.unlisted-broken,data,cosmetic,present,budo.are:27,,area/budo.are,27,fread_number: bad format (got 'A')
+data.unlisted-broken,data,cosmetic,present,cause.are:9,,area/cause.are,9,Boot_db: # not found.
+data.unlisted-broken,data,cosmetic,present,checkm.are:8,,area/checkm.are,8,fread_number: bad format (got 'A')
+data.unlisted-broken,data,cosmetic,present,hell.are:7,,area/hell.are,7,fread_number: bad format (got 'A')
+data.unlisted-broken,data,cosmetic,present,lorehelp.are:1,,area/lorehelp.are,1,Boot_db: # not found.
+data.unlisted-broken,data,cosmetic,present,neuro.are:1,,area/neuro.are,1,Boot_db: bad section name '1263'.
+data.unlisted-broken,data,cosmetic,present,proto.are:46,,area/proto.are,46,fread_number: bad format (got '')
+data.unlisted-broken,data,cosmetic,present,shad.are:243,,area/shad.are,243,"fread_spnumber: quoted spell names not allowed, use spellname~ instead"
+content.mobs-never-spawn,content,wrong-behaviour,present,#10080 some birds,Wolf Pointe,,0,level 1; every M reset has a world cap ≤ 0
+content.mobs-never-spawn,content,wrong-behaviour,present,#6003 the ferocious rabbit,Haon Dor,,0,level 3; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1516 the hobgoblin guard,Gnome Village,,0,level 6; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1132 a shiriff,The Shire,,0,level 8; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1720 a displacer beast,Wyvern Tower,,0,level 10; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#8319 the orc shaman,Old Marsh,,0,level 12; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9534 A bodyguard,New Thalos,,0,level 12; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1707 a ranger leader,Wyvern Tower,,0,level 15; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1365 a wizard,High Tower of Sorcery,,0,level 17; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#1708 the Lord of the Rangers,Wyvern Tower,,0,level 20; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9237 a HUGE elemental,Elemental Canyon,,0,level 20; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9546 Conan the Librarian,New Thalos,,0,level 20; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9563 The chief guard,New Thalos,,0,level 20; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9202 the cyclops,Elemental Canyon,,0,level 22; every M reset has a world cap ≤ 0
+content.mobs-never-spawn,content,wrong-behaviour,present,#3041 the waiter,Midgaard,,0,level 23; no M reset
+content.mobs-never-spawn,content,wrong-behaviour,present,#9512 the banker,New Thalos,,0,level 23; no M reset
+content.unlisted-areas,content,cosmetic,present,budo.are,,area/budo.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,cause.are,,area/cause.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,checkm.are,,area/checkm.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,hell.are,,area/hell.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,lorehelp.are,,area/lorehelp.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,neuro.are,,area/neuro.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,ozric.are,,area/ozric.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,proto.are,,area/proto.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,quifael.are,,area/quifael.are,0,"on disk but not in area.lst, so never loaded"
+content.unlisted-areas,content,cosmetic,present,shad.are,,area/shad.are,0,"on disk but not in area.lst, so never loaded"
+code.reverse-exit-null,code,crash,fixed,,,,,
+code.shop-keeper-null,code,crash,fixed,,,,,
+code.mudschool-reset-comment,code,cosmetic,unknown,,,,,
+content.unobtainable-items,content,wrong-behaviour,unknown,,,,,
+content.unreachable-rooms,content,cosmetic,unknown,,,,,

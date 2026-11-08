@@ -1,0 +1,7256 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and level 1–91 balance reports for the Xania MUD">
+      
+      
+      
+        <link rel="canonical" href="https://abraidotti.github.io/xania-explorer/builds/mattgodbolt-xania-main...mattgodbolt-xania-mg-web/compare/">
+      
+      
+        <link rel="prev" href="../mattgodbolt-xania-mg-web/areas/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Compare - Xania Explorer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/xania.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#compare-versions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Xania Explorer" class="md-header__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xania Explorer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Compare
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Xania Explorer" class="md-nav__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    Xania Explorer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore any repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture & game loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-area-file-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area file format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-world-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-skills-and-magic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & magic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-items-and-economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Items & economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assessments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About the assessments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mattgodbolt-xania-main/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-main/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-main/weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-main/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-main/combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-main/skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-main/economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-main/levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-main/mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-main/bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-main/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../mattgodbolt-xania-mg-web/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-mg-web/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-mg-web/weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-mg-web/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-mg-web/combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-mg-web/skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-mg-web/economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-mg-web/levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-mg-web/mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-mg-web/bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mattgodbolt-xania-mg-web/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scorecard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scorecard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scorecard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bugs fixed or introduced
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mob-population-by-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mob population by band
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtainable-weapons-by-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtainable weapons by band
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-starting-type-weapon-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best starting-type weapon per class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prototype-changes-mattgodbolt-xania-main-mattgodbolt-xania-mg-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prototype changes: mattgodbolt-xania-main → mattgodbolt-xania-mg-web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prototype changes: mattgodbolt-xania-main → mattgodbolt-xania-mg-web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mobs-469-changed-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobs (469 changed fields)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects-857-changed-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objects (857 changed fields)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scorecard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scorecard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scorecard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bugs fixed or introduced
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mob-population-by-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mob population by band
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtainable-weapons-by-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obtainable weapons by band
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-starting-type-weapon-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best starting-type weapon per class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prototype-changes-mattgodbolt-xania-main-mattgodbolt-xania-mg-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prototype changes: mattgodbolt-xania-main → mattgodbolt-xania-mg-web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prototype changes: mattgodbolt-xania-main → mattgodbolt-xania-mg-web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mobs-469-changed-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobs (469 changed fields)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects-857-changed-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objects (857 changed fields)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="compare-versions">Compare versions<a class="headerlink" href="#compare-versions" title="Permanent link">&para;</a></h1>
+<p>Baseline: <strong>mattgodbolt/xania @ main (82171fa)</strong>. Compared: <strong>mattgodbolt/xania @ mg/web (7e1edd2)</strong>.</p>
+<h2 id="scorecard">Scorecard<a class="headerlink" href="#scorecard" title="Permanent link">&para;</a></h2>
+<p>Every finding's headline number, baseline <strong>mattgodbolt/xania @ main (82171fa)</strong> first. ▲ is an improvement and ▼ a regression, judged by each finding's direction; descriptive numbers have no arrow.</p>
+<p><strong>mattgodbolt-xania-mg-web</strong> vs mattgodbolt-xania-main: 2 improved, 4 worse, 0 unchanged. Not comparable: Characters, Weapons, Equipment, Combat &amp; XP, Skills &amp; spells, Economy, Levelling path (unavailable for mattgodbolt-xania-mg-web).</p>
+<h3 id="what-changed">What changed<a class="headerlink" href="#what-changed" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Finding (baseline)</th>
+<th>Number</th>
+<th>mattgodbolt-xania-main</th>
+<th>mattgodbolt-xania-mg-web</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mobs</td>
+<td>70% of mobs are level 30 or below</td>
+<td>% of mobs at level ≤ 30</td>
+<td><a href="../mattgodbolt-xania-main/mobs/#mobs-evenness">70</a></td>
+<td><span class="xu-worse">▼ 74</span></td>
+</tr>
+<tr>
+<td>Mobs</td>
+<td>6 levels have no combat mob at all</td>
+<td>levels with no combat mob</td>
+<td><a href="../mattgodbolt-xania-main/mobs/#mobs-empty-levels">6</a></td>
+<td><span class="xu-worse">▼ 11</span></td>
+</tr>
+<tr>
+<td>Mobs</td>
+<td>Toughness rises smoothly, with 31 outliers</td>
+<td>toughness outliers</td>
+<td><a href="../mattgodbolt-xania-main/mobs/#mobs-toughness">31</a></td>
+<td><span class="xu-improved">▲ 25</span></td>
+</tr>
+<tr>
+<td>Mobs</td>
+<td>9 areas have most mobs outside their advertised level range</td>
+<td>areas with most mobs outside their advertised band</td>
+<td><a href="../mattgodbolt-xania-main/mobs/#mobs-area-bands">9</a></td>
+<td><span class="xu-worse">▼ 10</span></td>
+</tr>
+<tr>
+<td>Mobs</td>
+<td>Left out of these numbers</td>
+<td>mobs that never spawn</td>
+<td><a href="../mattgodbolt-xania-main/mobs/#mobs-excluded">23</a></td>
+<td><span class="xu-improved">▲ 16</span></td>
+</tr>
+<tr>
+<td>Bugs</td>
+<td>6 code defects, 2 crash risks waiting to happen</td>
+<td>open code defects</td>
+<td><a href="../mattgodbolt-xania-main/bugs/#bugs-code">6</a></td>
+<td><span class="xu-n/a">—</span></td>
+</tr>
+<tr>
+<td>Bugs</td>
+<td>Every listed area file loads cleanly</td>
+<td>area-data load errors and warnings</td>
+<td><a href="../mattgodbolt-xania-main/bugs/#bugs-data">0</a></td>
+<td><span class="xu-worse">▼ 349</span></td>
+</tr>
+<tr>
+<td>Bugs</td>
+<td>147 pieces of content never reach players</td>
+<td>pieces of content that never reach players</td>
+<td><a href="../mattgodbolt-xania-main/bugs/#bugs-content">147</a></td>
+<td><span class="xu-n/a">—</span></td>
+</tr>
+<tr>
+<td>Bugs</td>
+<td>Where the defects are</td>
+<td>areas with open data or content defects</td>
+<td><a href="../mattgodbolt-xania-main/bugs/#bugs-by-area">38</a></td>
+<td><span class="xu-n/a">—</span></td>
+</tr>
+</tbody>
+</table>
+<details class="abstract">
+<summary>Findings a compared version can't run (37)</summary>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Finding (baseline)</th>
+<th>Number</th>
+<th>mattgodbolt-xania-main</th>
+<th>mattgodbolt-xania-mg-web</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Characters</td>
+<td>A dragon needs 4× the XP per level of a human</td>
+<td>× XP per level, dearest vs cheapest build</td>
+<td><a href="../mattgodbolt-xania-main/characters/#characters-xp-cost">4</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Characters</td>
+<td>Barbarians finish with 1.5× a mage's HP</td>
+<td>× a barbarian's HP vs a mage's at 91</td>
+<td><a href="../mattgodbolt-xania-main/characters/#characters-hp-by-class">1.48</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Characters</td>
+<td>An elf mage ends with 31% more mana than a wolf mage</td>
+<td>% more mana for the best mage race than the worst</td>
+<td><a href="../mattgodbolt-xania-main/characters/#characters-mana-by-race">31</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Characters</td>
+<td>Expensive races buy very little extra HP</td>
+<td>% more HP at 91 a dragon buys with 4× the XP</td>
+<td><a href="../mattgodbolt-xania-main/characters/#characters-race-value">4.3</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Characters</td>
+<td>Stats are maxed by level 21, then only the caps matter</td>
+<td>level by which every build can max its stats</td>
+<td><a href="../mattgodbolt-xania-main/characters/#characters-stats-maxed">21</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Weapons</td>
+<td>62% of weapons are usable by level 30</td>
+<td>% of weapons usable by level 30</td>
+<td><a href="../mattgodbolt-xania-main/weapons/#weapons-supply">62</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Weapons</td>
+<td>Class access is lopsided: knight 357, barbarian 29</td>
+<td>× more weapons for the best-served class</td>
+<td><a href="../mattgodbolt-xania-main/weapons/#weapons-class-access">12.3</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Weapons</td>
+<td>Barbarians wait 23 levels for a better weapon</td>
+<td>levels a barbarian waits for a better weapon</td>
+<td><a href="../mattgodbolt-xania-main/weapons/#weapons-plateau">23</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Weapons</td>
+<td>Above level 30, 97% of weapons only come from mob drops</td>
+<td>% of weapons above 30 only from mob drops</td>
+<td><a href="../mattgodbolt-xania-main/weapons/#weapons-sources">97</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Weapons</td>
+<td>45 obtainable weapons exceed the damage cap</td>
+<td>obtainable weapons over the damage cap</td>
+<td><a href="../mattgodbolt-xania-main/weapons/#weapons-over-cap">45</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Weapons</td>
+<td>13 weapons can't be obtained</td>
+<td>weapons with no source</td>
+<td><a href="../mattgodbolt-xania-main/weapons/#weapons-no-source">13</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Equipment</td>
+<td>A fully kitted character reaches 407 AC by level 91</td>
+<td>AC from a best-in-slot kit at 91</td>
+<td><a href="../mattgodbolt-xania-main/equipment/#equipment-ac-ceiling">407</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Equipment</td>
+<td>Neck armour stops improving for 41 levels</td>
+<td>levels the worst slot waits for an upgrade</td>
+<td><a href="../mattgodbolt-xania-main/equipment/#equipment-slot-gaps">41</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Equipment</td>
+<td>Gear adds up to +74 damroll by level 91</td>
+<td>damroll from gear at 91</td>
+<td><a href="../mattgodbolt-xania-main/equipment/#equipment-hitdam">74</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Equipment</td>
+<td>160 items break the item-points rule</td>
+<td>obtainable items over the item-points rule</td>
+<td><a href="../mattgodbolt-xania-main/equipment/#equipment-points-rule">160</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Equipment</td>
+<td>Armour-class bonuses are never counted against the rule</td>
+<td>items the AC/saves bug lets through</td>
+<td><a href="../mattgodbolt-xania-main/equipment/#equipment-ac-not-counted">108</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Equipment</td>
+<td>47 pieces of gear can't be obtained</td>
+<td>pieces of gear with no source</td>
+<td><a href="../mattgodbolt-xania-main/equipment/#equipment-no-source">47</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Combat &amp; XP</td>
+<td>Every level takes about the same number of kills</td>
+<td>kills per level on average</td>
+<td><a href="../mattgodbolt-xania-main/combat/#combat-kills-per-level">7.9</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Combat &amp; XP</td>
+<td>Full XP requires 1.5 hours per level, more than any class spends fighting</td>
+<td>hours of combat to hero for a mage (vs a 135 h clock)</td>
+<td><a href="../mattgodbolt-xania-main/combat/#combat-xp-clock">54.4</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Combat &amp; XP</td>
+<td>Fights stretch to 75+ rounds by level 91</td>
+<td>rounds for a knight to kill a level-91 mob</td>
+<td><a href="../mattgodbolt-xania-main/combat/#combat-fight-length">75</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Combat &amp; XP</td>
+<td>Melee turns deadly for mages from level 48</td>
+<td>level from which melee turns deadly for the weakest class</td>
+<td><a href="../mattgodbolt-xania-main/combat/#combat-deadly-melee">48</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Combat &amp; XP</td>
+<td>Players' accuracy dips in the middle levels as mob dex climbs</td>
+<td>% lowest chance per swing for a mage (level 20+)</td>
+<td><a href="../mattgodbolt-xania-main/combat/#combat-accuracy-dip">43</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Skills &amp; spells</td>
+<td>Nothing new to learn after level 70</td>
+<td>final levels with nothing new to learn</td>
+<td><a href="../mattgodbolt-xania-main/skills/#skills-nothing-new">21</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Skills &amp; spells</td>
+<td>Practices only catch up with the default package by level 79</td>
+<td>level by which practices catch up with the default package</td>
+<td><a href="../mattgodbolt-xania-main/skills/#skills-practice-budget">79</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Skills &amp; spells</td>
+<td>A full mana bar buys about 1.1 kills, at every level</td>
+<td>kills per full mana bar (mage)</td>
+<td><a href="../mattgodbolt-xania-main/skills/#skills-mana-per-kill">1.06</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Skills &amp; spells</td>
+<td>Attack spells fall behind mob HP: 41 casts per kill by level 91</td>
+<td>casts of a mage's best spell per level-91 kill</td>
+<td><a href="../mattgodbolt-xania-main/skills/#skills-spells-vs-hp">40.7</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Skills &amp; spells</td>
+<td>Casters out-damage everyone, until the mana runs out</td>
+<td>× a mage's melee damage per round from spells at 91</td>
+<td><a href="../mattgodbolt-xania-main/skills/#skills-spells-vs-melee">2.7</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Economy</td>
+<td>Gold per kill grows 30× from level 5 to 91</td>
+<td>× gold per kill, level 5 → 91</td>
+<td><a href="../mattgodbolt-xania-main/economy/#economy-income">30</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Economy</td>
+<td>The healer's flat prices hit new characters hardest</td>
+<td>kills of gold for one 'heal' at level 5</td>
+<td><a href="../mattgodbolt-xania-main/economy/#economy-healer-prices">26.1</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Economy</td>
+<td>Shop gear tops out at level 35</td>
+<td>last level at which shops sell better armour</td>
+<td><a href="../mattgodbolt-xania-main/economy/#economy-shop-ceiling">35</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Economy</td>
+<td>Gold piles up with little to spend it on</td>
+<td>gold earned by level 91</td>
+<td><a href="../mattgodbolt-xania-main/economy/#economy-gold-hoard">1,586,305</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Economy</td>
+<td>14 mobs carry outsized gold</td>
+<td>mobs with outsized gold</td>
+<td><a href="../mattgodbolt-xania-main/economy/#economy-gold-outliers">14</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Levelling path</td>
+<td>The XP on offer falls 50× between level 3 and level 88</td>
+<td>levels' worth of XP per reset for a level-88 character</td>
+<td><a href="../mattgodbolt-xania-main/levelling/#levelling-xp-supply">2.6</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Levelling path</td>
+<td>16 levels have three or fewer areas to level in</td>
+<td>levels with three or fewer areas to level in</td>
+<td><a href="../mattgodbolt-xania-main/levelling/#levelling-suitable-areas">16</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Levelling path</td>
+<td>UnderDark carries levels 16–23</td>
+<td>% largest share of a level's XP from one area</td>
+<td><a href="../mattgodbolt-xania-main/levelling/#levelling-area-dominance">42</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Levelling path</td>
+<td>Some of the toughest areas are a few steps from recall</td>
+<td>steps from recall to the farthest area</td>
+<td><a href="../mattgodbolt-xania-main/levelling/#levelling-distance">42</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+<tr>
+<td>Levelling path</td>
+<td>59 rooms can't be reached on foot</td>
+<td>rooms unreachable on foot</td>
+<td><a href="../mattgodbolt-xania-main/levelling/#levelling-unreachable">59</a></td>
+<td><span class="xu-n/a">unavailable</span></td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="bug-changes">Bugs fixed or introduced<a class="headerlink" href="#bug-changes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Check</th>
+<th>mattgodbolt-xania-main</th>
+<th>Version</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mattgodbolt-xania-mg-web</td>
+<td><a href="../mattgodbolt-xania-mg-web/bugs/#bug-code-reverse-exit-null">Booting crashes if a two-way exit's return exit leads nowhere</a></td>
+<td>latent (1)</td>
+<td>fixed (0)</td>
+<td><span class="xu-improved">▲ fixed</span></td>
+</tr>
+<tr>
+<td>mattgodbolt-xania-mg-web</td>
+<td><a href="../mattgodbolt-xania-mg-web/bugs/#bug-code-shop-keeper-null">Booting crashes if a shop names a missing shopkeeper</a></td>
+<td>latent (1)</td>
+<td>fixed (0)</td>
+<td><span class="xu-improved">▲ fixed</span></td>
+</tr>
+<tr>
+<td>mattgodbolt-xania-mg-web</td>
+<td><a href="../mattgodbolt-xania-mg-web/bugs/#bug-code-mudschool-reset-comment">The Mud School reset comment contradicts the code</a></td>
+<td>present (2)</td>
+<td>unknown (0)</td>
+<td><span class="xu-improved">▲ fixed</span></td>
+</tr>
+<tr>
+<td>mattgodbolt-xania-mg-web</td>
+<td><a href="../mattgodbolt-xania-mg-web/bugs/#bug-data-fatal-load">Area data the MUD would refuse to boot with</a></td>
+<td>clean (0)</td>
+<td>present (320)</td>
+<td><span class="xu-worse">▼ introduced</span></td>
+</tr>
+<tr>
+<td>mattgodbolt-xania-mg-web</td>
+<td><a href="../mattgodbolt-xania-mg-web/bugs/#bug-data-load-warnings">Area data the MUD loads with a warning or silently mishandles</a></td>
+<td>clean (0)</td>
+<td>present (29)</td>
+<td><span class="xu-worse">▼ introduced</span></td>
+</tr>
+<tr>
+<td>mattgodbolt-xania-mg-web</td>
+<td><a href="../mattgodbolt-xania-mg-web/bugs/#bug-data-unlisted-broken">Unlisted area files that wouldn't load</a></td>
+<td>present (3)</td>
+<td>present (8)</td>
+<td><span class="xu-worse">▼ +5 occurrences</span></td>
+</tr>
+<tr>
+<td>mattgodbolt-xania-mg-web</td>
+<td><a href="../mattgodbolt-xania-mg-web/bugs/#bug-content-unobtainable-items">Items that no reset places</a></td>
+<td>present (60)</td>
+<td>unknown (0)</td>
+<td><span class="xu-improved">▲ fixed</span></td>
+</tr>
+<tr>
+<td>mattgodbolt-xania-mg-web</td>
+<td><a href="../mattgodbolt-xania-mg-web/bugs/#bug-content-mobs-never-spawn">Mobs that never spawn</a></td>
+<td>present (23)</td>
+<td>present (16)</td>
+<td><span class="xu-improved">▲ -7 occurrences</span></td>
+</tr>
+<tr>
+<td>mattgodbolt-xania-mg-web</td>
+<td><a href="../mattgodbolt-xania-mg-web/bugs/#bug-content-unreachable-rooms">Rooms no one can walk to</a></td>
+<td>present (59)</td>
+<td>unknown (0)</td>
+<td><span class="xu-improved">▲ fixed</span></td>
+</tr>
+<tr>
+<td>mattgodbolt-xania-mg-web</td>
+<td><a href="../mattgodbolt-xania-mg-web/bugs/#bug-content-unlisted-areas">Area files that are never loaded</a></td>
+<td>present (5)</td>
+<td>present (10)</td>
+<td><span class="xu-worse">▼ +5 occurrences</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="key-numbers">Key numbers<a class="headerlink" href="#key-numbers" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>mattgodbolt-xania-main</th>
+<th>mattgodbolt-xania-mg-web</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Areas</td>
+<td>72</td>
+<td>56</td>
+</tr>
+<tr>
+<td>Rooms</td>
+<td>4896</td>
+<td>3537</td>
+</tr>
+<tr>
+<td>Mob prototypes</td>
+<td>1643</td>
+<td>1178</td>
+</tr>
+<tr>
+<td>Object prototypes</td>
+<td>2159</td>
+<td>1542</td>
+</tr>
+<tr>
+<td>Load problems</td>
+<td>0</td>
+<td>346</td>
+</tr>
+<tr>
+<td>Obtainable weapons (≤ 91)</td>
+<td>420</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Weapons over damage cap</td>
+<td>49</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Weapons in mage start types</td>
+<td>67</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Weapons in cleric start types</td>
+<td>84</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Weapons in knight start types</td>
+<td>357</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Weapons in barbarian start types</td>
+<td>29</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Combat mobs</td>
+<td>1445</td>
+<td>1042</td>
+</tr>
+<tr>
+<td>Mob population</td>
+<td>3390</td>
+<td>2459</td>
+</tr>
+<tr>
+<td>Mob population CV (bands)</td>
+<td>1</td>
+<td>1.3</td>
+</tr>
+<tr>
+<td>Mob population Gini (bands)</td>
+<td>0.5</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>Levels with no combat mob</td>
+<td>6</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Best-in-slot AC at 91</td>
+<td>407</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Items over the points rule</td>
+<td>160</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Combat hours to 91 (mage)</td>
+<td>54.4</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Combat hours to 91 (knight)</td>
+<td>24.4</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Mean kills per level</td>
+<td>7.9</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Mage casts per kill at 91</td>
+<td>40.7</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Gold earned by 91</td>
+<td>1,586,305</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Levels of XP per reset at 60</td>
+<td>6.1</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Levels with ≤ 3 suitable areas</td>
+<td>16</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Rooms unreachable on foot</td>
+<td>59</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mob-population-by-band">Mob population by band<a class="headerlink" href="#mob-population-by-band" title="Permanent link">&para;</a></h2>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Combat mob population per level band","anchor":"start"},"width":"container","height":300,"data":{"values":[{"band":"1–5","version":"mattgodbolt-xania-main","value":613},{"band":"6–10","version":"mattgodbolt-xania-main","value":631},{"band":"11–15","version":"mattgodbolt-xania-main","value":325},{"band":"16–20","version":"mattgodbolt-xania-main","value":348},{"band":"21–25","version":"mattgodbolt-xania-main","value":300},{"band":"26–30","version":"mattgodbolt-xania-main","value":141},{"band":"31–35","version":"mattgodbolt-xania-main","value":177},{"band":"36–40","version":"mattgodbolt-xania-main","value":120},{"band":"41–45","version":"mattgodbolt-xania-main","value":100},{"band":"46–50","version":"mattgodbolt-xania-main","value":134},{"band":"51–55","version":"mattgodbolt-xania-main","value":141},{"band":"56–60","version":"mattgodbolt-xania-main","value":44},{"band":"61–65","version":"mattgodbolt-xania-main","value":63},{"band":"66–70","version":"mattgodbolt-xania-main","value":78},{"band":"71–75","version":"mattgodbolt-xania-main","value":66},{"band":"76–80","version":"mattgodbolt-xania-main","value":52},{"band":"81–85","version":"mattgodbolt-xania-main","value":34},{"band":"86–90","version":"mattgodbolt-xania-main","value":20},{"band":"91","version":"mattgodbolt-xania-main","value":3},{"band":"1–5","version":"mattgodbolt-xania-mg-web","value":586},{"band":"6–10","version":"mattgodbolt-xania-mg-web","value":572},{"band":"11–15","version":"mattgodbolt-xania-mg-web","value":248},{"band":"16–20","version":"mattgodbolt-xania-mg-web","value":193},{"band":"21–25","version":"mattgodbolt-xania-mg-web","value":127},{"band":"26–30","version":"mattgodbolt-xania-mg-web","value":93},{"band":"31–35","version":"mattgodbolt-xania-mg-web","value":98},{"band":"36–40","version":"mattgodbolt-xania-mg-web","value":69},{"band":"41–45","version":"mattgodbolt-xania-mg-web","value":59},{"band":"46–50","version":"mattgodbolt-xania-mg-web","value":85},{"band":"51–55","version":"mattgodbolt-xania-mg-web","value":91},{"band":"56–60","version":"mattgodbolt-xania-mg-web","value":35},{"band":"61–65","version":"mattgodbolt-xania-mg-web","value":51},{"band":"66–70","version":"mattgodbolt-xania-mg-web","value":62},{"band":"71–75","version":"mattgodbolt-xania-mg-web","value":46},{"band":"76–80","version":"mattgodbolt-xania-mg-web","value":16},{"band":"81–85","version":"mattgodbolt-xania-mg-web","value":16},{"band":"86–90","version":"mattgodbolt-xania-mg-web","value":12},{"band":"91","version":"mattgodbolt-xania-mg-web","value":0}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":"bar","encoding":{"x":{"field":"band","type":"ordinal","title":"Levels","sort":["1–5","6–10","11–15","16–20","21–25","26–30","31–35","36–40","41–45","46–50","51–55","56–60","61–65","66–70","71–75","76–80","81–85","86–90","91"]},"xOffset":{"field":"version"},"y":{"field":"value","type":"quantitative","title":"Instances"},"color":{"field":"version","type":"nominal","title":"Version","scale":{"domain":["mattgodbolt-xania-main","mattgodbolt-xania-mg-web"],"range":["#4f7896","#b4532a"]}},"tooltip":[{"field":"version","title":"Version"},{"field":"band","title":"Levels"},{"field":"value","title":"Instances"}]}}</script></div>
+
+<h2 id="obtainable-weapons-by-band">Obtainable weapons by band<a class="headerlink" href="#obtainable-weapons-by-band" title="Permanent link">&para;</a></h2>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"New obtainable weapons per level band","anchor":"start"},"width":"container","height":300,"data":{"values":[{"band":"1–5","version":"mattgodbolt-xania-main","value":43},{"band":"6–10","version":"mattgodbolt-xania-main","value":49},{"band":"11–15","version":"mattgodbolt-xania-main","value":43},{"band":"16–20","version":"mattgodbolt-xania-main","value":42},{"band":"21–25","version":"mattgodbolt-xania-main","value":39},{"band":"26–30","version":"mattgodbolt-xania-main","value":43},{"band":"31–35","version":"mattgodbolt-xania-main","value":20},{"band":"36–40","version":"mattgodbolt-xania-main","value":13},{"band":"41–45","version":"mattgodbolt-xania-main","value":15},{"band":"46–50","version":"mattgodbolt-xania-main","value":15},{"band":"51–55","version":"mattgodbolt-xania-main","value":15},{"band":"56–60","version":"mattgodbolt-xania-main","value":10},{"band":"61–65","version":"mattgodbolt-xania-main","value":14},{"band":"66–70","version":"mattgodbolt-xania-main","value":9},{"band":"71–75","version":"mattgodbolt-xania-main","value":8},{"band":"76–80","version":"mattgodbolt-xania-main","value":9},{"band":"81–85","version":"mattgodbolt-xania-main","value":12},{"band":"86–90","version":"mattgodbolt-xania-main","value":12},{"band":"91","version":"mattgodbolt-xania-main","value":9},{"band":"1–5","version":"mattgodbolt-xania-mg-web","value":33},{"band":"6–10","version":"mattgodbolt-xania-mg-web","value":39},{"band":"11–15","version":"mattgodbolt-xania-mg-web","value":31},{"band":"16–20","version":"mattgodbolt-xania-mg-web","value":31},{"band":"21–25","version":"mattgodbolt-xania-mg-web","value":30},{"band":"26–30","version":"mattgodbolt-xania-mg-web","value":36},{"band":"31–35","version":"mattgodbolt-xania-mg-web","value":11},{"band":"36–40","version":"mattgodbolt-xania-mg-web","value":7},{"band":"41–45","version":"mattgodbolt-xania-mg-web","value":11},{"band":"46–50","version":"mattgodbolt-xania-mg-web","value":7},{"band":"51–55","version":"mattgodbolt-xania-mg-web","value":13},{"band":"56–60","version":"mattgodbolt-xania-mg-web","value":7},{"band":"61–65","version":"mattgodbolt-xania-mg-web","value":12},{"band":"66–70","version":"mattgodbolt-xania-mg-web","value":8},{"band":"71–75","version":"mattgodbolt-xania-mg-web","value":7},{"band":"76–80","version":"mattgodbolt-xania-mg-web","value":3},{"band":"81–85","version":"mattgodbolt-xania-mg-web","value":7},{"band":"86–90","version":"mattgodbolt-xania-mg-web","value":6},{"band":"91","version":"mattgodbolt-xania-mg-web","value":1}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":"bar","encoding":{"x":{"field":"band","type":"ordinal","title":"Levels","sort":["1–5","6–10","11–15","16–20","21–25","26–30","31–35","36–40","41–45","46–50","51–55","56–60","61–65","66–70","71–75","76–80","81–85","86–90","91"]},"xOffset":{"field":"version"},"y":{"field":"value","type":"quantitative","title":"Weapons"},"color":{"field":"version","type":"nominal","title":"Version","scale":{"domain":["mattgodbolt-xania-main","mattgodbolt-xania-mg-web"],"range":["#4f7896","#b4532a"]}},"tooltip":[{"field":"version","title":"Version"},{"field":"band","title":"Levels"},{"field":"value","title":"Weapons"}]}}</script></div>
+
+<h2 id="best-starting-type-weapon-per-class">Best starting-type weapon per class<a class="headerlink" href="#best-starting-type-weapon-per-class" title="Permanent link">&para;</a></h2>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"mage: best usable weapon by level","anchor":"start"},"width":"container","height":180,"data":{"values":[{"level":1,"version":"mattgodbolt-xania-main","class":"mage","avg":5.0},{"level":2,"version":"mattgodbolt-xania-main","class":"mage","avg":5.0},{"level":3,"version":"mattgodbolt-xania-main","class":"mage","avg":5.0},{"level":4,"version":"mattgodbolt-xania-main","class":"mage","avg":5.0},{"level":5,"version":"mattgodbolt-xania-main","class":"mage","avg":5.0},{"level":6,"version":"mattgodbolt-xania-main","class":"mage","avg":5.0},{"level":7,"version":"mattgodbolt-xania-main","class":"mage","avg":5.0},{"level":8,"version":"mattgodbolt-xania-main","class":"mage","avg":5.0},{"level":9,"version":"mattgodbolt-xania-main","class":"mage","avg":6.0},{"level":10,"version":"mattgodbolt-xania-main","class":"mage","avg":6.0},{"level":11,"version":"mattgodbolt-xania-main","class":"mage","avg":6.0},{"level":12,"version":"mattgodbolt-xania-main","class":"mage","avg":9.0},{"level":13,"version":"mattgodbolt-xania-main","class":"mage","avg":9.0},{"level":14,"version":"mattgodbolt-xania-main","class":"mage","avg":9.0},{"level":15,"version":"mattgodbolt-xania-main","class":"mage","avg":9.0},{"level":16,"version":"mattgodbolt-xania-main","class":"mage","avg":9.0},{"level":17,"version":"mattgodbolt-xania-main","class":"mage","avg":10.0},{"level":18,"version":"mattgodbolt-xania-main","class":"mage","avg":13.5},{"level":19,"version":"mattgodbolt-xania-main","class":"mage","avg":13.5},{"level":20,"version":"mattgodbolt-xania-main","class":"mage","avg":13.5},{"level":21,"version":"mattgodbolt-xania-main","class":"mage","avg":13.5},{"level":22,"version":"mattgodbolt-xania-main","class":"mage","avg":13.5},{"level":23,"version":"mattgodbolt-xania-main","class":"mage","avg":15.0},{"level":24,"version":"mattgodbolt-xania-main","class":"mage","avg":16.0},{"level":25,"version":"mattgodbolt-xania-main","class":"mage","avg":16.0},{"level":26,"version":"mattgodbolt-xania-main","class":"mage","avg":16.0},{"level":27,"version":"mattgodbolt-xania-main","class":"mage","avg":16.0},{"level":28,"version":"mattgodbolt-xania-main","class":"mage","avg":16.0},{"level":29,"version":"mattgodbolt-xania-main","class":"mage","avg":16.0},{"level":30,"version":"mattgodbolt-xania-main","class":"mage","avg":20.0},{"level":31,"version":"mattgodbolt-xania-main","class":"mage","avg":20.0},{"level":32,"version":"mattgodbolt-xania-main","class":"mage","avg":20.0},{"level":33,"version":"mattgodbolt-xania-main","class":"mage","avg":20.0},{"level":34,"version":"mattgodbolt-xania-main","class":"mage","avg":20.0},{"level":35,"version":"mattgodbolt-xania-main","class":"mage","avg":20.0},{"level":36,"version":"mattgodbolt-xania-main","class":"mage","avg":20.0},{"level":37,"version":"mattgodbolt-xania-main","class":"mage","avg":20.0},{"level":38,"version":"mattgodbolt-xania-main","class":"mage","avg":20.0},{"level":39,"version":"mattgodbolt-xania-main","class":"mage","avg":20.0},{"level":40,"version":"mattgodbolt-xania-main","class":"mage","avg":22.5},{"level":41,"version":"mattgodbolt-xania-main","class":"mage","avg":22.5},{"level":42,"version":"mattgodbolt-xania-main","class":"mage","avg":22.5},{"level":43,"version":"mattgodbolt-xania-main","class":"mage","avg":22.5},{"level":44,"version":"mattgodbolt-xania-main","class":"mage","avg":22.5},{"level":45,"version":"mattgodbolt-xania-main","class":"mage","avg":24.0},{"level":46,"version":"mattgodbolt-xania-main","class":"mage","avg":24.0},{"level":47,"version":"mattgodbolt-xania-main","class":"mage","avg":28.0},{"level":48,"version":"mattgodbolt-xania-main","class":"mage","avg":28.0},{"level":49,"version":"mattgodbolt-xania-main","class":"mage","avg":28.0},{"level":50,"version":"mattgodbolt-xania-main","class":"mage","avg":30.0},{"level":51,"version":"mattgodbolt-xania-main","class":"mage","avg":30.0},{"level":52,"version":"mattgodbolt-xania-main","class":"mage","avg":30.0},{"level":53,"version":"mattgodbolt-xania-main","class":"mage","avg":30.0},{"level":54,"version":"mattgodbolt-xania-main","class":"mage","avg":30.0},{"level":55,"version":"mattgodbolt-xania-main","class":"mage","avg":30.0},{"level":56,"version":"mattgodbolt-xania-main","class":"mage","avg":31.5},{"level":57,"version":"mattgodbolt-xania-main","class":"mage","avg":31.5},{"level":58,"version":"mattgodbolt-xania-main","class":"mage","avg":31.5},{"level":59,"version":"mattgodbolt-xania-main","class":"mage","avg":31.5},{"level":60,"version":"mattgodbolt-xania-main","class":"mage","avg":32.5},{"level":61,"version":"mattgodbolt-xania-main","class":"mage","avg":32.5},{"level":62,"version":"mattgodbolt-xania-main","class":"mage","avg":32.5},{"level":63,"version":"mattgodbolt-xania-main","class":"mage","avg":32.5},{"level":64,"version":"mattgodbolt-xania-main","class":"mage","avg":32.5},{"level":65,"version":"mattgodbolt-xania-main","class":"mage","avg":36.0},{"level":66,"version":"mattgodbolt-xania-main","class":"mage","avg":36.0},{"level":67,"version":"mattgodbolt-xania-main","class":"mage","avg":36.0},{"level":68,"version":"mattgodbolt-xania-main","class":"mage","avg":38.5},{"level":69,"version":"mattgodbolt-xania-main","class":"mage","avg":38.5},{"level":70,"version":"mattgodbolt-xania-main","class":"mage","avg":40.0},{"level":71,"version":"mattgodbolt-xania-main","class":"mage","avg":40.0},{"level":72,"version":"mattgodbolt-xania-main","class":"mage","avg":40.0},{"level":73,"version":"mattgodbolt-xania-main","class":"mage","avg":40.0},{"level":74,"version":"mattgodbolt-xania-main","class":"mage","avg":40.0},{"level":75,"version":"mattgodbolt-xania-main","class":"mage","avg":40.0},{"level":76,"version":"mattgodbolt-xania-main","class":"mage","avg":40.0},{"level":77,"version":"mattgodbolt-xania-main","class":"mage","avg":40.0},{"level":78,"version":"mattgodbolt-xania-main","class":"mage","avg":45.0},{"level":79,"version":"mattgodbolt-xania-main","class":"mage","avg":45.0},{"level":80,"version":"mattgodbolt-xania-main","class":"mage","avg":45.0},{"level":81,"version":"mattgodbolt-xania-main","class":"mage","avg":45.0},{"level":82,"version":"mattgodbolt-xania-main","class":"mage","avg":45.0},{"level":83,"version":"mattgodbolt-xania-main","class":"mage","avg":45.0},{"level":84,"version":"mattgodbolt-xania-main","class":"mage","avg":45.0},{"level":85,"version":"mattgodbolt-xania-main","class":"mage","avg":45.0},{"level":86,"version":"mattgodbolt-xania-main","class":"mage","avg":45.0},{"level":87,"version":"mattgodbolt-xania-main","class":"mage","avg":49.5},{"level":88,"version":"mattgodbolt-xania-main","class":"mage","avg":49.5},{"level":89,"version":"mattgodbolt-xania-main","class":"mage","avg":49.5},{"level":90,"version":"mattgodbolt-xania-main","class":"mage","avg":50.0},{"level":91,"version":"mattgodbolt-xania-main","class":"mage","avg":50.0}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":{"type":"line","interpolate":"step-after"},"encoding":{"x":{"field":"level","type":"quantitative","title":"Level"},"y":{"field":"avg","type":"quantitative","title":"Average damage"},"color":{"field":"version","type":"nominal","title":"Version","scale":{"domain":["mattgodbolt-xania-main","mattgodbolt-xania-mg-web"],"range":["#4f7896","#b4532a"]}},"tooltip":[{"field":"version","title":"Version"},{"field":"level","title":"Level"},{"field":"avg","title":"Avg"}]}}</script></div>
+
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"cleric: best usable weapon by level","anchor":"start"},"width":"container","height":180,"data":{"values":[{"level":1,"version":"mattgodbolt-xania-main","class":"cleric","avg":3.0},{"level":2,"version":"mattgodbolt-xania-main","class":"cleric","avg":3.0},{"level":3,"version":"mattgodbolt-xania-main","class":"cleric","avg":4.5},{"level":4,"version":"mattgodbolt-xania-main","class":"cleric","avg":4.5},{"level":5,"version":"mattgodbolt-xania-main","class":"cleric","avg":4.5},{"level":6,"version":"mattgodbolt-xania-main","class":"cleric","avg":5.0},{"level":7,"version":"mattgodbolt-xania-main","class":"cleric","avg":5.0},{"level":8,"version":"mattgodbolt-xania-main","class":"cleric","avg":5.0},{"level":9,"version":"mattgodbolt-xania-main","class":"cleric","avg":7.5},{"level":10,"version":"mattgodbolt-xania-main","class":"cleric","avg":7.5},{"level":11,"version":"mattgodbolt-xania-main","class":"cleric","avg":7.5},{"level":12,"version":"mattgodbolt-xania-main","class":"cleric","avg":8.0},{"level":13,"version":"mattgodbolt-xania-main","class":"cleric","avg":10.0},{"level":14,"version":"mattgodbolt-xania-main","class":"cleric","avg":10.0},{"level":15,"version":"mattgodbolt-xania-main","class":"cleric","avg":10.0},{"level":16,"version":"mattgodbolt-xania-main","class":"cleric","avg":12.0},{"level":17,"version":"mattgodbolt-xania-main","class":"cleric","avg":12.0},{"level":18,"version":"mattgodbolt-xania-main","class":"cleric","avg":12.0},{"level":19,"version":"mattgodbolt-xania-main","class":"cleric","avg":12.5},{"level":20,"version":"mattgodbolt-xania-main","class":"cleric","avg":12.5},{"level":21,"version":"mattgodbolt-xania-main","class":"cleric","avg":12.5},{"level":22,"version":"mattgodbolt-xania-main","class":"cleric","avg":12.5},{"level":23,"version":"mattgodbolt-xania-main","class":"cleric","avg":15.0},{"level":24,"version":"mattgodbolt-xania-main","class":"cleric","avg":15.0},{"level":25,"version":"mattgodbolt-xania-main","class":"cleric","avg":15.0},{"level":26,"version":"mattgodbolt-xania-main","class":"cleric","avg":15.0},{"level":27,"version":"mattgodbolt-xania-main","class":"cleric","avg":16.0},{"level":28,"version":"mattgodbolt-xania-main","class":"cleric","avg":16.0},{"level":29,"version":"mattgodbolt-xania-main","class":"cleric","avg":18.0},{"level":30,"version":"mattgodbolt-xania-main","class":"cleric","avg":18.0},{"level":31,"version":"mattgodbolt-xania-main","class":"cleric","avg":18.0},{"level":32,"version":"mattgodbolt-xania-main","class":"cleric","avg":18.0},{"level":33,"version":"mattgodbolt-xania-main","class":"cleric","avg":18.0},{"level":34,"version":"mattgodbolt-xania-main","class":"cleric","avg":18.0},{"level":35,"version":"mattgodbolt-xania-main","class":"cleric","avg":18.0},{"level":36,"version":"mattgodbolt-xania-main","class":"cleric","avg":18.0},{"level":37,"version":"mattgodbolt-xania-main","class":"cleric","avg":18.0},{"level":38,"version":"mattgodbolt-xania-main","class":"cleric","avg":18.0},{"level":39,"version":"mattgodbolt-xania-main","class":"cleric","avg":24.0},{"level":40,"version":"mattgodbolt-xania-main","class":"cleric","avg":24.0},{"level":41,"version":"mattgodbolt-xania-main","class":"cleric","avg":24.0},{"level":42,"version":"mattgodbolt-xania-main","class":"cleric","avg":24.0},{"level":43,"version":"mattgodbolt-xania-main","class":"cleric","avg":24.5},{"level":44,"version":"mattgodbolt-xania-main","class":"cleric","avg":24.5},{"level":45,"version":"mattgodbolt-xania-main","class":"cleric","avg":25.0},{"level":46,"version":"mattgodbolt-xania-main","class":"cleric","avg":25.0},{"level":47,"version":"mattgodbolt-xania-main","class":"cleric","avg":27.0},{"level":48,"version":"mattgodbolt-xania-main","class":"cleric","avg":27.0},{"level":49,"version":"mattgodbolt-xania-main","class":"cleric","avg":28.0},{"level":50,"version":"mattgodbolt-xania-main","class":"cleric","avg":28.0},{"level":51,"version":"mattgodbolt-xania-main","class":"cleric","avg":28.0},{"level":52,"version":"mattgodbolt-xania-main","class":"cleric","avg":28.0},{"level":53,"version":"mattgodbolt-xania-main","class":"cleric","avg":30.0},{"level":54,"version":"mattgodbolt-xania-main","class":"cleric","avg":33.0},{"level":55,"version":"mattgodbolt-xania-main","class":"cleric","avg":33.0},{"level":56,"version":"mattgodbolt-xania-main","class":"cleric","avg":33.0},{"level":57,"version":"mattgodbolt-xania-main","class":"cleric","avg":33.0},{"level":58,"version":"mattgodbolt-xania-main","class":"cleric","avg":33.0},{"level":59,"version":"mattgodbolt-xania-main","class":"cleric","avg":33.0},{"level":60,"version":"mattgodbolt-xania-main","class":"cleric","avg":33.0},{"level":61,"version":"mattgodbolt-xania-main","class":"cleric","avg":33.0},{"level":62,"version":"mattgodbolt-xania-main","class":"cleric","avg":33.0},{"level":63,"version":"mattgodbolt-xania-main","class":"cleric","avg":33.0},{"level":64,"version":"mattgodbolt-xania-main","class":"cleric","avg":33.0},{"level":65,"version":"mattgodbolt-xania-main","class":"cleric","avg":36.0},{"level":66,"version":"mattgodbolt-xania-main","class":"cleric","avg":36.0},{"level":67,"version":"mattgodbolt-xania-main","class":"cleric","avg":36.0},{"level":68,"version":"mattgodbolt-xania-main","class":"cleric","avg":36.0},{"level":69,"version":"mattgodbolt-xania-main","class":"cleric","avg":36.0},{"level":70,"version":"mattgodbolt-xania-main","class":"cleric","avg":36.0},{"level":71,"version":"mattgodbolt-xania-main","class":"cleric","avg":36.0},{"level":72,"version":"mattgodbolt-xania-main","class":"cleric","avg":40.0},{"level":73,"version":"mattgodbolt-xania-main","class":"cleric","avg":40.0},{"level":74,"version":"mattgodbolt-xania-main","class":"cleric","avg":40.0},{"level":75,"version":"mattgodbolt-xania-main","class":"cleric","avg":42.0},{"level":76,"version":"mattgodbolt-xania-main","class":"cleric","avg":42.0},{"level":77,"version":"mattgodbolt-xania-main","class":"cleric","avg":42.0},{"level":78,"version":"mattgodbolt-xania-main","class":"cleric","avg":42.0},{"level":79,"version":"mattgodbolt-xania-main","class":"cleric","avg":42.0},{"level":80,"version":"mattgodbolt-xania-main","class":"cleric","avg":45.0},{"level":81,"version":"mattgodbolt-xania-main","class":"cleric","avg":45.0},{"level":82,"version":"mattgodbolt-xania-main","class":"cleric","avg":45.0},{"level":83,"version":"mattgodbolt-xania-main","class":"cleric","avg":45.0},{"level":84,"version":"mattgodbolt-xania-main","class":"cleric","avg":45.0},{"level":85,"version":"mattgodbolt-xania-main","class":"cleric","avg":45.0},{"level":86,"version":"mattgodbolt-xania-main","class":"cleric","avg":45.0},{"level":87,"version":"mattgodbolt-xania-main","class":"cleric","avg":45.0},{"level":88,"version":"mattgodbolt-xania-main","class":"cleric","avg":45.0},{"level":89,"version":"mattgodbolt-xania-main","class":"cleric","avg":45.0},{"level":90,"version":"mattgodbolt-xania-main","class":"cleric","avg":45.0},{"level":91,"version":"mattgodbolt-xania-main","class":"cleric","avg":52.5}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":{"type":"line","interpolate":"step-after"},"encoding":{"x":{"field":"level","type":"quantitative","title":"Level"},"y":{"field":"avg","type":"quantitative","title":"Average damage"},"color":{"field":"version","type":"nominal","title":"Version","scale":{"domain":["mattgodbolt-xania-main","mattgodbolt-xania-mg-web"],"range":["#4f7896","#b4532a"]}},"tooltip":[{"field":"version","title":"Version"},{"field":"level","title":"Level"},{"field":"avg","title":"Avg"}]}}</script></div>
+
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"knight: best usable weapon by level","anchor":"start"},"width":"container","height":180,"data":{"values":[{"level":1,"version":"mattgodbolt-xania-main","class":"knight","avg":5.0},{"level":2,"version":"mattgodbolt-xania-main","class":"knight","avg":5.0},{"level":3,"version":"mattgodbolt-xania-main","class":"knight","avg":6.0},{"level":4,"version":"mattgodbolt-xania-main","class":"knight","avg":6.0},{"level":5,"version":"mattgodbolt-xania-main","class":"knight","avg":6.0},{"level":6,"version":"mattgodbolt-xania-main","class":"knight","avg":6.0},{"level":7,"version":"mattgodbolt-xania-main","class":"knight","avg":6.0},{"level":8,"version":"mattgodbolt-xania-main","class":"knight","avg":6.0},{"level":9,"version":"mattgodbolt-xania-main","class":"knight","avg":7.5},{"level":10,"version":"mattgodbolt-xania-main","class":"knight","avg":9.0},{"level":11,"version":"mattgodbolt-xania-main","class":"knight","avg":10.0},{"level":12,"version":"mattgodbolt-xania-main","class":"knight","avg":10.0},{"level":13,"version":"mattgodbolt-xania-main","class":"knight","avg":12.0},{"level":14,"version":"mattgodbolt-xania-main","class":"knight","avg":12.0},{"level":15,"version":"mattgodbolt-xania-main","class":"knight","avg":12.0},{"level":16,"version":"mattgodbolt-xania-main","class":"knight","avg":12.0},{"level":17,"version":"mattgodbolt-xania-main","class":"knight","avg":12.0},{"level":18,"version":"mattgodbolt-xania-main","class":"knight","avg":13.5},{"level":19,"version":"mattgodbolt-xania-main","class":"knight","avg":13.5},{"level":20,"version":"mattgodbolt-xania-main","class":"knight","avg":14.0},{"level":21,"version":"mattgodbolt-xania-main","class":"knight","avg":14.0},{"level":22,"version":"mattgodbolt-xania-main","class":"knight","avg":15.0},{"level":23,"version":"mattgodbolt-xania-main","class":"knight","avg":15.0},{"level":24,"version":"mattgodbolt-xania-main","class":"knight","avg":16.0},{"level":25,"version":"mattgodbolt-xania-main","class":"knight","avg":16.0},{"level":26,"version":"mattgodbolt-xania-main","class":"knight","avg":16.0},{"level":27,"version":"mattgodbolt-xania-main","class":"knight","avg":16.0},{"level":28,"version":"mattgodbolt-xania-main","class":"knight","avg":16.0},{"level":29,"version":"mattgodbolt-xania-main","class":"knight","avg":18.0},{"level":30,"version":"mattgodbolt-xania-main","class":"knight","avg":20.0},{"level":31,"version":"mattgodbolt-xania-main","class":"knight","avg":20.0},{"level":32,"version":"mattgodbolt-xania-main","class":"knight","avg":20.0},{"level":33,"version":"mattgodbolt-xania-main","class":"knight","avg":20.0},{"level":34,"version":"mattgodbolt-xania-main","class":"knight","avg":20.0},{"level":35,"version":"mattgodbolt-xania-main","class":"knight","avg":21.0},{"level":36,"version":"mattgodbolt-xania-main","class":"knight","avg":22.5},{"level":37,"version":"mattgodbolt-xania-main","class":"knight","avg":22.5},{"level":38,"version":"mattgodbolt-xania-main","class":"knight","avg":22.5},{"level":39,"version":"mattgodbolt-xania-main","class":"knight","avg":24.0},{"level":40,"version":"mattgodbolt-xania-main","class":"knight","avg":24.0},{"level":41,"version":"mattgodbolt-xania-main","class":"knight","avg":24.0},{"level":42,"version":"mattgodbolt-xania-main","class":"knight","avg":24.0},{"level":43,"version":"mattgodbolt-xania-main","class":"knight","avg":24.5},{"level":44,"version":"mattgodbolt-xania-main","class":"knight","avg":26.0},{"level":45,"version":"mattgodbolt-xania-main","class":"knight","avg":26.0},{"level":46,"version":"mattgodbolt-xania-main","class":"knight","avg":26.0},{"level":47,"version":"mattgodbolt-xania-main","class":"knight","avg":28.0},{"level":48,"version":"mattgodbolt-xania-main","class":"knight","avg":28.0},{"level":49,"version":"mattgodbolt-xania-main","class":"knight","avg":28.0},{"level":50,"version":"mattgodbolt-xania-main","class":"knight","avg":30.0},{"level":51,"version":"mattgodbolt-xania-main","class":"knight","avg":30.0},{"level":52,"version":"mattgodbolt-xania-main","class":"knight","avg":30.0},{"level":53,"version":"mattgodbolt-xania-main","class":"knight","avg":30.0},{"level":54,"version":"mattgodbolt-xania-main","class":"knight","avg":33.0},{"level":55,"version":"mattgodbolt-xania-main","class":"knight","avg":33.0},{"level":56,"version":"mattgodbolt-xania-main","class":"knight","avg":33.0},{"level":57,"version":"mattgodbolt-xania-main","class":"knight","avg":33.0},{"level":58,"version":"mattgodbolt-xania-main","class":"knight","avg":33.0},{"level":59,"version":"mattgodbolt-xania-main","class":"knight","avg":33.0},{"level":60,"version":"mattgodbolt-xania-main","class":"knight","avg":33.0},{"level":61,"version":"mattgodbolt-xania-main","class":"knight","avg":35.0},{"level":62,"version":"mattgodbolt-xania-main","class":"knight","avg":35.0},{"level":63,"version":"mattgodbolt-xania-main","class":"knight","avg":35.0},{"level":64,"version":"mattgodbolt-xania-main","class":"knight","avg":35.0},{"level":65,"version":"mattgodbolt-xania-main","class":"knight","avg":36.0},{"level":66,"version":"mattgodbolt-xania-main","class":"knight","avg":36.0},{"level":67,"version":"mattgodbolt-xania-main","class":"knight","avg":36.0},{"level":68,"version":"mattgodbolt-xania-main","class":"knight","avg":40.0},{"level":69,"version":"mattgodbolt-xania-main","class":"knight","avg":40.0},{"level":70,"version":"mattgodbolt-xania-main","class":"knight","avg":40.0},{"level":71,"version":"mattgodbolt-xania-main","class":"knight","avg":40.0},{"level":72,"version":"mattgodbolt-xania-main","class":"knight","avg":40.0},{"level":73,"version":"mattgodbolt-xania-main","class":"knight","avg":40.0},{"level":74,"version":"mattgodbolt-xania-main","class":"knight","avg":40.0},{"level":75,"version":"mattgodbolt-xania-main","class":"knight","avg":45.0},{"level":76,"version":"mattgodbolt-xania-main","class":"knight","avg":45.0},{"level":77,"version":"mattgodbolt-xania-main","class":"knight","avg":45.0},{"level":78,"version":"mattgodbolt-xania-main","class":"knight","avg":45.0},{"level":79,"version":"mattgodbolt-xania-main","class":"knight","avg":45.0},{"level":80,"version":"mattgodbolt-xania-main","class":"knight","avg":45.0},{"level":81,"version":"mattgodbolt-xania-main","class":"knight","avg":45.0},{"level":82,"version":"mattgodbolt-xania-main","class":"knight","avg":45.5},{"level":83,"version":"mattgodbolt-xania-main","class":"knight","avg":45.5},{"level":84,"version":"mattgodbolt-xania-main","class":"knight","avg":45.5},{"level":85,"version":"mattgodbolt-xania-main","class":"knight","avg":52.0},{"level":86,"version":"mattgodbolt-xania-main","class":"knight","avg":52.0},{"level":87,"version":"mattgodbolt-xania-main","class":"knight","avg":52.0},{"level":88,"version":"mattgodbolt-xania-main","class":"knight","avg":52.0},{"level":89,"version":"mattgodbolt-xania-main","class":"knight","avg":52.0},{"level":90,"version":"mattgodbolt-xania-main","class":"knight","avg":52.5},{"level":91,"version":"mattgodbolt-xania-main","class":"knight","avg":52.5}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":{"type":"line","interpolate":"step-after"},"encoding":{"x":{"field":"level","type":"quantitative","title":"Level"},"y":{"field":"avg","type":"quantitative","title":"Average damage"},"color":{"field":"version","type":"nominal","title":"Version","scale":{"domain":["mattgodbolt-xania-main","mattgodbolt-xania-mg-web"],"range":["#4f7896","#b4532a"]}},"tooltip":[{"field":"version","title":"Version"},{"field":"level","title":"Level"},{"field":"avg","title":"Avg"}]}}</script></div>
+
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"barbarian: best usable weapon by level","anchor":"start"},"width":"container","height":180,"data":{"values":[{"level":1,"version":"mattgodbolt-xania-main","class":"barbarian","avg":3.5},{"level":2,"version":"mattgodbolt-xania-main","class":"barbarian","avg":3.5},{"level":3,"version":"mattgodbolt-xania-main","class":"barbarian","avg":3.5},{"level":4,"version":"mattgodbolt-xania-main","class":"barbarian","avg":3.5},{"level":5,"version":"mattgodbolt-xania-main","class":"barbarian","avg":3.5},{"level":6,"version":"mattgodbolt-xania-main","class":"barbarian","avg":5.0},{"level":7,"version":"mattgodbolt-xania-main","class":"barbarian","avg":6.0},{"level":8,"version":"mattgodbolt-xania-main","class":"barbarian","avg":6.0},{"level":9,"version":"mattgodbolt-xania-main","class":"barbarian","avg":6.0},{"level":10,"version":"mattgodbolt-xania-main","class":"barbarian","avg":9.0},{"level":11,"version":"mattgodbolt-xania-main","class":"barbarian","avg":9.0},{"level":12,"version":"mattgodbolt-xania-main","class":"barbarian","avg":9.0},{"level":13,"version":"mattgodbolt-xania-main","class":"barbarian","avg":9.0},{"level":14,"version":"mattgodbolt-xania-main","class":"barbarian","avg":9.0},{"level":15,"version":"mattgodbolt-xania-main","class":"barbarian","avg":9.0},{"level":16,"version":"mattgodbolt-xania-main","class":"barbarian","avg":10.0},{"level":17,"version":"mattgodbolt-xania-main","class":"barbarian","avg":10.0},{"level":18,"version":"mattgodbolt-xania-main","class":"barbarian","avg":10.5},{"level":19,"version":"mattgodbolt-xania-main","class":"barbarian","avg":10.5},{"level":20,"version":"mattgodbolt-xania-main","class":"barbarian","avg":10.5},{"level":21,"version":"mattgodbolt-xania-main","class":"barbarian","avg":10.5},{"level":22,"version":"mattgodbolt-xania-main","class":"barbarian","avg":15.0},{"level":23,"version":"mattgodbolt-xania-main","class":"barbarian","avg":15.0},{"level":24,"version":"mattgodbolt-xania-main","class":"barbarian","avg":15.0},{"level":25,"version":"mattgodbolt-xania-main","class":"barbarian","avg":15.0},{"level":26,"version":"mattgodbolt-xania-main","class":"barbarian","avg":15.0},{"level":27,"version":"mattgodbolt-xania-main","class":"barbarian","avg":15.0},{"level":28,"version":"mattgodbolt-xania-main","class":"barbarian","avg":15.0},{"level":29,"version":"mattgodbolt-xania-main","class":"barbarian","avg":15.0},{"level":30,"version":"mattgodbolt-xania-main","class":"barbarian","avg":17.5},{"level":31,"version":"mattgodbolt-xania-main","class":"barbarian","avg":17.5},{"level":32,"version":"mattgodbolt-xania-main","class":"barbarian","avg":17.5},{"level":33,"version":"mattgodbolt-xania-main","class":"barbarian","avg":17.5},{"level":34,"version":"mattgodbolt-xania-main","class":"barbarian","avg":17.5},{"level":35,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":36,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":37,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":38,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":39,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":40,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":41,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":42,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":43,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":44,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":45,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":46,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":47,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":48,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":49,"version":"mattgodbolt-xania-main","class":"barbarian","avg":21.0},{"level":50,"version":"mattgodbolt-xania-main","class":"barbarian","avg":30.0},{"level":51,"version":"mattgodbolt-xania-main","class":"barbarian","avg":30.0},{"level":52,"version":"mattgodbolt-xania-main","class":"barbarian","avg":30.0},{"level":53,"version":"mattgodbolt-xania-main","class":"barbarian","avg":30.0},{"level":54,"version":"mattgodbolt-xania-main","class":"barbarian","avg":30.0},{"level":55,"version":"mattgodbolt-xania-main","class":"barbarian","avg":30.0},{"level":56,"version":"mattgodbolt-xania-main","class":"barbarian","avg":30.0},{"level":57,"version":"mattgodbolt-xania-main","class":"barbarian","avg":30.0},{"level":58,"version":"mattgodbolt-xania-main","class":"barbarian","avg":30.0},{"level":59,"version":"mattgodbolt-xania-main","class":"barbarian","avg":30.0},{"level":60,"version":"mattgodbolt-xania-main","class":"barbarian","avg":33.0},{"level":61,"version":"mattgodbolt-xania-main","class":"barbarian","avg":33.0},{"level":62,"version":"mattgodbolt-xania-main","class":"barbarian","avg":33.0},{"level":63,"version":"mattgodbolt-xania-main","class":"barbarian","avg":33.0},{"level":64,"version":"mattgodbolt-xania-main","class":"barbarian","avg":33.0},{"level":65,"version":"mattgodbolt-xania-main","class":"barbarian","avg":36.0},{"level":66,"version":"mattgodbolt-xania-main","class":"barbarian","avg":36.0},{"level":67,"version":"mattgodbolt-xania-main","class":"barbarian","avg":36.0},{"level":68,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":69,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":70,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":71,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":72,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":73,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":74,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":75,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":76,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":77,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":78,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":79,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":80,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":81,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":82,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":83,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":84,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":85,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":86,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":87,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":88,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":89,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":90,"version":"mattgodbolt-xania-main","class":"barbarian","avg":40.0},{"level":91,"version":"mattgodbolt-xania-main","class":"barbarian","avg":52.5}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":{"type":"line","interpolate":"step-after"},"encoding":{"x":{"field":"level","type":"quantitative","title":"Level"},"y":{"field":"avg","type":"quantitative","title":"Average damage"},"color":{"field":"version","type":"nominal","title":"Version","scale":{"domain":["mattgodbolt-xania-main","mattgodbolt-xania-mg-web"],"range":["#4f7896","#b4532a"]}},"tooltip":[{"field":"version","title":"Version"},{"field":"level","title":"Level"},{"field":"avg","title":"Avg"}]}}</script></div>
+
+<h2 id="prototype-changes-mattgodbolt-xania-main-mattgodbolt-xania-mg-web">Prototype changes: mattgodbolt-xania-main → mattgodbolt-xania-mg-web<a class="headerlink" href="#prototype-changes-mattgodbolt-xania-main-mattgodbolt-xania-mg-web" title="Permanent link">&para;</a></h2>
+<p>469 mobs and 856 objects differ.</p>
+<h3 id="mobs-469-changed-fields">Mobs (469 changed fields)<a class="headerlink" href="#mobs-469-changed-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Vnum</th>
+<th>Name</th>
+<th>Area</th>
+<th>Field</th>
+<th>mattgodbolt-xania-main</th>
+<th>mattgodbolt-xania-mg-web</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Puff</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>a zombie</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>501</td>
+<td>King Arthur</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>502</td>
+<td>Morgana of the Faeries</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>503</td>
+<td>Merlin</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>504</td>
+<td>Queen Gwenefwhar</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>505</td>
+<td>Sir Lancelot</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>506</td>
+<td>Prince Markham</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>507</td>
+<td>a knight of the Round Table</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>508</td>
+<td>the holy chaplain</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>509</td>
+<td>the court jester</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>510</td>
+<td>a lady in waiting</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>511</td>
+<td>a commoner</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>512</td>
+<td>a foot soldier</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>513</td>
+<td>the castle cook</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>514</td>
+<td>the shopkeeper</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2400</td>
+<td>the insects</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2401</td>
+<td>the bat</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2402</td>
+<td>the shepherd</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2403</td>
+<td>the girl</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2404</td>
+<td>the sheep</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2405</td>
+<td>Katrina the Shepherd</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2406</td>
+<td>the giant rat</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2407</td>
+<td>the giant spider</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2408</td>
+<td>the mage</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2409</td>
+<td>Nystul the Librarian</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2410</td>
+<td>Mariah the Mage</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2411</td>
+<td>the slime</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2412</td>
+<td>the snake</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2413</td>
+<td>Mr. Smithy</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2414</td>
+<td>the bard</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2415</td>
+<td>the beggar</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2416</td>
+<td>Iolo the Bard</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2417</td>
+<td>Chuckles the Jester</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2418</td>
+<td>the townsman</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2419</td>
+<td>Gwenno the Bard</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2420</td>
+<td>the orc</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2421</td>
+<td>the troll</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2422</td>
+<td>the wisp</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2423</td>
+<td>the forest druid</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2424</td>
+<td>the city druid</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2425</td>
+<td>The Judge</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2426</td>
+<td>Jaana the Druid</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2427</td>
+<td>the dirty prisoner</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2428</td>
+<td>the prisoner</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2429</td>
+<td>the citizen of yew</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2430</td>
+<td>the bartender</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2431</td>
+<td>the pub owner</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2432</td>
+<td>the ettin</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2433</td>
+<td>the gremlin</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2434</td>
+<td>the headless</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2435</td>
+<td>the fighter</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2436</td>
+<td>Geoffrey the Fighter</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2437</td>
+<td>Lord Simon</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2438</td>
+<td>the mimic</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2439</td>
+<td>the gazer</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2440</td>
+<td>a tinker</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2441</td>
+<td>Julia the Tinker</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2442</td>
+<td>The Lady of Empath Abbey</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2443</td>
+<td>the sandtrap</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2444</td>
+<td>the dragon</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2445</td>
+<td>the paladin</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2446</td>
+<td>Dupre the Paladin</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2447</td>
+<td>the reaper</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2448</td>
+<td>Draxthanum the Gargoyle</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2449</td>
+<td>the spirit</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2450</td>
+<td>the ghost</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2451</td>
+<td>the skeleton</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2452</td>
+<td>the daemon</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2453</td>
+<td>the mourner</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2454</td>
+<td>Shamino the Ranger</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2455</td>
+<td>the Timelord</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2456</td>
+<td>The Guardian</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2457</td>
+<td>Blackthorn</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2458</td>
+<td>Exodus</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2459</td>
+<td>Minax</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2460</td>
+<td>Mondain</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2461</td>
+<td>Sentri</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2462</td>
+<td>Batlin</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2463</td>
+<td>The Avatar</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2464</td>
+<td>Lord British</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2465</td>
+<td>the shark</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2466</td>
+<td>sea horse seahorse</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2467</td>
+<td>the squid</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2468</td>
+<td>the armourer</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2469</td>
+<td>the weaponseller</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2470</td>
+<td>the boatseller</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3700</td>
+<td>the acolyte of Tempest</td>
+<td>Mud School</td>
+<td>attack</td>
+<td>slash</td>
+<td>hit</td>
+</tr>
+<tr>
+<td>3707</td>
+<td>the adept of Ezra</td>
+<td>Mud School</td>
+<td>attack</td>
+<td>slash</td>
+<td>hit</td>
+</tr>
+<tr>
+<td>3708</td>
+<td>the adept of Alander</td>
+<td>Mud School</td>
+<td>attack</td>
+<td>slash</td>
+<td>hit</td>
+</tr>
+<tr>
+<td>4000</td>
+<td>the huge python</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4001</td>
+<td>the garter snake</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4002</td>
+<td>the centipede</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4003</td>
+<td>the kobold</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4004</td>
+<td>the orc</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4005</td>
+<td>the large orc</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4050</td>
+<td>the warrior</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4051</td>
+<td>the warrior</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4052</td>
+<td>the hobgoblin</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4053</td>
+<td>the snake</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4054</td>
+<td>the centipede</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4055</td>
+<td>the large hobgoblin</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4056</td>
+<td>the orc</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4057</td>
+<td>the mountain lion</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4058</td>
+<td>the hill giant</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4100</td>
+<td>the mage</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4101</td>
+<td>the troll</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4102</td>
+<td>the guardian snake</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4104</td>
+<td>the orc</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4105</td>
+<td>a centipede</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4106</td>
+<td>the Warrior</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4107</td>
+<td>the green kobold</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4150</td>
+<td>the blue bat</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4151</td>
+<td>the red bat</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4152</td>
+<td>the green bat</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4153</td>
+<td>the white bat</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4154</td>
+<td>the black bat</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4155</td>
+<td>the thief</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4156</td>
+<td>the troll</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4157</td>
+<td>the Mage</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4158</td>
+<td>the snake</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4159</td>
+<td>the small troll</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4160</td>
+<td>the orc</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5820</td>
+<td>The Informant</td>
+<td>Mos Eisley</td>
+<td>act</td>
+<td>Scavenger Aggressive StayArea Mage Warrior</td>
+<td>Scavenger StayArea Mage Warrior</td>
+</tr>
+<tr>
+<td>9800</td>
+<td>the receptionist</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9801</td>
+<td>the minor priest</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9802</td>
+<td>the robed priest</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9803</td>
+<td>the draconian knight</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9804</td>
+<td>the High Priestess</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9805</td>
+<td>a virgin sacrifice</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9806</td>
+<td>The Black Dragon Wyrmling</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9807</td>
+<td>the minor priest</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9808</td>
+<td>a fanatic monk</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9809</td>
+<td>Bob</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9810</td>
+<td>Marie</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9811</td>
+<td>Gale</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9812</td>
+<td>Fred</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9813</td>
+<td>the Torturer</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9814</td>
+<td>Jim</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9815</td>
+<td>the Zombie</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9816</td>
+<td>the Lich Priest</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9817</td>
+<td>An old monk</td>
+<td>Dragon Cult</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10120</td>
+<td>a guard dog</td>
+<td>Uruk's Fortress</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10121</td>
+<td>The Fire</td>
+<td>Uruk's Fortress</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10122</td>
+<td>a dawn warrior</td>
+<td>Uruk's Fortress</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10123</td>
+<td>Uruk's armourer</td>
+<td>Uruk's Fortress</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10124</td>
+<td>a snake charmer</td>
+<td>Uruk's Fortress</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10125</td>
+<td>Uruk's girlfriend</td>
+<td>Uruk's Fortress</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10126</td>
+<td>The SpideR DemoN</td>
+<td>Uruk's Fortress</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10127</td>
+<td>a nazgul</td>
+<td>Uruk's Fortress</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10128</td>
+<td>a dragon</td>
+<td>Uruk's Fortress</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10129</td>
+<td>a sly servant boy</td>
+<td>Uruk's Fortress</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12000</td>
+<td>the Lord of the Elves</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12001</td>
+<td>a wrinkled old wizard</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12002</td>
+<td>the Lord from the distant south</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12003</td>
+<td>Elvish Presley, the elven minstrel</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12004</td>
+<td>the old storyteller</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12005</td>
+<td>a dwarf of noble blood</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12006</td>
+<td>a beautiful elven princess</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12007</td>
+<td>a mighty elven warrior</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12008</td>
+<td>a brave dwarven Orc-Slayer</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12009</td>
+<td>a slender, elven archer</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12010</td>
+<td>a dark ranger</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12011</td>
+<td>a wounded hobbit</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12012</td>
+<td>a tough hobbit</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12013</td>
+<td>a young hobbit</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12014</td>
+<td>a cunning hobbit</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12015</td>
+<td>a terrifying Ring Wraith</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12016</td>
+<td>a demonic Ring Wraith</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12017</td>
+<td>a burly orc</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12018</td>
+<td>the orc sergeant</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12019</td>
+<td>the white sea horse</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12020</td>
+<td>the orc captain</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12021</td>
+<td>the elven blacksmith</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12022</td>
+<td>the elven tanner</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12023</td>
+<td>the elven guard</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12024</td>
+<td>an elf of Imladris</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12025</td>
+<td>a female elf</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12026</td>
+<td>an elven gardener</td>
+<td>Imladris</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13000</td>
+<td>the orc shaman</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13001</td>
+<td>the orc guard</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13002</td>
+<td>the gully dwarf</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13003</td>
+<td>the draconian warrior</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13004</td>
+<td>the gully dwarf messenger</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13005</td>
+<td>the gully dwarf warrior</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13006</td>
+<td>the gully dwarf</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13007</td>
+<td>the Dewar prisoner</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13008</td>
+<td>the escaped prisoner</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13009</td>
+<td>the Bozak magic-user</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13010</td>
+<td>the evil draconian cleric</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13011</td>
+<td>the draconian warrior</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13012</td>
+<td>the wizened half-man</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13013</td>
+<td>the goblin cannon-loader</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13014</td>
+<td>the goblin sergeant</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13015</td>
+<td>the snotling</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13016</td>
+<td>the goblin</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13017</td>
+<td>the Minotaur High Lord</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13018</td>
+<td>the Draconian Arch-mage</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13019</td>
+<td>the orc trooper</td>
+<td>The Flying Citadel</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13210</td>
+<td>a large beautiful dragon</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13211</td>
+<td>the white pegasus</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13212</td>
+<td>the black pegasus</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13213</td>
+<td>the unicorn</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13214</td>
+<td>a pixie</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13215</td>
+<td>a tiny water sprite</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13216</td>
+<td>a siren</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13217</td>
+<td>a young tree sylph</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13218</td>
+<td>an evil wight</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13219</td>
+<td>a tree ent</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13220</td>
+<td>a dryad</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13221</td>
+<td>a little naked man</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13222</td>
+<td>a leprachaun</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13223</td>
+<td>a tiny dragon</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13224</td>
+<td>a tiny pinpoint of light</td>
+<td>The Enchanted Forest</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16001</td>
+<td>the enforcer eye</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16002</td>
+<td>the floating eye</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16003</td>
+<td>the prisoner</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16004</td>
+<td>the great enforcing eye</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16005</td>
+<td>the huge beholder</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16006</td>
+<td>the beholder</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16007</td>
+<td>the svirfneblin</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16008</td>
+<td>the drow trader</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16009</td>
+<td>the duergar</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16010</td>
+<td>the necromancer</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16011</td>
+<td>the behir</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16012</td>
+<td>the fighter</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16013</td>
+<td>a high priest of Xevior</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16014</td>
+<td>the lizard man</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16015</td>
+<td>the purple worm</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16016</td>
+<td>the huge purple worm</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16017</td>
+<td>the beholder's underling</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16018</td>
+<td>the beholder legionnaire</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16019</td>
+<td>the supreme attendant</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16020</td>
+<td>the grell</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16021</td>
+<td>the Barkeep</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16022</td>
+<td>the duergar patron</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16023</td>
+<td>the drow patron</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16024</td>
+<td>the human patron</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16025</td>
+<td>Caris</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16026</td>
+<td>Antryg</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16027</td>
+<td>the gremlin</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16028</td>
+<td>the slime creature</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16029</td>
+<td>the huge rat</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16030</td>
+<td>the jinxkin</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16031</td>
+<td>the jermlaine</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16032</td>
+<td>the bodak</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16033</td>
+<td>the mage</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16034</td>
+<td>the iron golem</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16035</td>
+<td>the stone golem</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16036</td>
+<td>Itreres</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16037</td>
+<td>the imp</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16038</td>
+<td>the babau</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16039</td>
+<td>the servant</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16040</td>
+<td>the gibbering mouther</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16041</td>
+<td>the worker of the night</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16042</td>
+<td>a maid of passion</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16043</td>
+<td>a granter of pleasure</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16044</td>
+<td>a preferred customer</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16045</td>
+<td>the pimp</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16046</td>
+<td>the halfling patron</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16047</td>
+<td>the half-orc</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16048</td>
+<td>the svirfneblin patron</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16049</td>
+<td>the inn keeper</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16050</td>
+<td>Limbeck</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16051</td>
+<td>Geg</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16052</td>
+<td>Drevlin</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16053</td>
+<td>Jarre</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16054</td>
+<td>the serving wench</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16055</td>
+<td>the Slave Dealer</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16056</td>
+<td>the slave trader</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16057</td>
+<td>a slaver buyer</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16058</td>
+<td>the orc slave</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16059</td>
+<td>the goblin slave</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16060</td>
+<td>a male human slave</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16061</td>
+<td>the female human slave</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16062</td>
+<td>the kobold</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16063</td>
+<td>the elven slave</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16064</td>
+<td>the dwarven slave</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16065</td>
+<td>the Bar Tender</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16066</td>
+<td>Prax</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16067</td>
+<td>Thespan</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16068</td>
+<td>Endolar</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16069</td>
+<td>Snaromba</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16070</td>
+<td>Anmictes</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16071</td>
+<td>Emba</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16072</td>
+<td>Shillikif</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16073</td>
+<td>Yie'Stei</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16074</td>
+<td>Zae'tres</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16075</td>
+<td>Raesarnt</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16076</td>
+<td>Satori</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16077</td>
+<td>Jiestis</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16078</td>
+<td>the svirfneblin</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16079</td>
+<td>the svirfneblin dignitary</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16080</td>
+<td>the caretaker</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16081</td>
+<td>the footpad</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16082</td>
+<td>the cutpurse</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16083</td>
+<td>the filcher</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16084</td>
+<td>the rogue</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16085</td>
+<td>the sharper</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16086</td>
+<td>the magsman</td>
+<td>UnderDark</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>…and 169 more.</p>
+<h3 id="objects-857-changed-fields">Objects (857 changed fields)<a class="headerlink" href="#objects-857-changed-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Vnum</th>
+<th>Name</th>
+<th>Area</th>
+<th>Field</th>
+<th>mattgodbolt-xania-main</th>
+<th>mattgodbolt-xania-mg-web</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>a gold coin</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>%d gold coins</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>template</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>corpse of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>corpse of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>the head of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>the heart of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>the arm of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>the leg of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>the guts of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>the brains of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>the wing of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>the claw of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>a Magic Mushroom</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td>a bright ball of light</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>22</td>
+<td>a magical spring</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>23</td>
+<td>a hand-written scroll of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>24</td>
+<td>a home-brewed potion of %s</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25</td>
+<td>a home-made bomb</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>26</td>
+<td>a portal</td>
+<td>Limbo</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>108</td>
+<td>a smurf well</td>
+<td>Smurf Village</td>
+<td>values</td>
+<td>50 50 water 0 0</td>
+<td>50 50 0 0 0</td>
+</tr>
+<tr>
+<td>501</td>
+<td>Excalibur</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>502</td>
+<td>jewelled dagger of Anwe</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>503</td>
+<td>sword of the deceiver</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>504</td>
+<td>a huge black hilted sword</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>505</td>
+<td>a Knight of the Round Table's sword</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>506</td>
+<td>a heavy pewter candlestick</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>507</td>
+<td>the long arm of justice</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>508</td>
+<td>a bladder on a stick</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>509</td>
+<td>a HUGE meat cleaver</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>510</td>
+<td>the staff of Anwe</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>511</td>
+<td>the Jewelled Scabbard of the druids</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>512</td>
+<td>King Arthur's Platemail</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>513</td>
+<td>Merlin's cloak</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>514</td>
+<td>Arthur's chainmail boots</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>515</td>
+<td>a golden crucifix</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>516</td>
+<td>Arthurian platemail</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>517</td>
+<td>the heart of Queen Gwenefwhar</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>518</td>
+<td>Prince Markham's Chainmail</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>519</td>
+<td>a strange green potion</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>520</td>
+<td>a priest's white robes</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>521</td>
+<td>Arthurian chainmail</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>522</td>
+<td>a pair of baggy pants</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>523</td>
+<td>a brightly coloured shirt</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>524</td>
+<td>a blood covered apron</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>525</td>
+<td>Morgana's Blue robes</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>526</td>
+<td>a strange set of beads</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>527</td>
+<td>a golden mirror</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>528</td>
+<td>an ornate key</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>529</td>
+<td>a green cabbage</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>530</td>
+<td>an orange carrot</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>531</td>
+<td>a baked potato</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>532</td>
+<td>a tourist map</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>533</td>
+<td>a wooden signpost</td>
+<td>Camelot</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>639</td>
+<td>platinum plate</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>640</td>
+<td>the platinum helmet</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>641</td>
+<td>platinum leggings</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>642</td>
+<td>platinum boots</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>643</td>
+<td>platinum gauntlets</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>644</td>
+<td>platinum sleeves</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>645</td>
+<td>the platinum spiked shield</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>646</td>
+<td>the platinum girth</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>647</td>
+<td>Holy Avenger</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>652</td>
+<td>the Holy Symbol of Bahamut</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic Bless AntiEvil AntiNeutral Unique</td>
+<td>Magic Bless AntiEvil AntiNeutral</td>
+</tr>
+<tr>
+<td>656</td>
+<td>golden dragonscale leggings</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>657</td>
+<td>golden dragonscale boots</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>658</td>
+<td>golden dragonscale gauntlets</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic Bless AntiEvil AntiNeutral Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>659</td>
+<td>golden dragonscale sleeves</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>660</td>
+<td>a golden dragonscale shield</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>661</td>
+<td>a golden dragonscale girth</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>662</td>
+<td>the Golden Claw</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>663</td>
+<td>the Gold Dragon Orb</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil AntiNeutral Unique</td>
+<td>Magic AntiEvil AntiNeutral</td>
+</tr>
+<tr>
+<td>664</td>
+<td>a golden robe</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>668</td>
+<td>the Golden Talons</td>
+<td>New Ofcol</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>803</td>
+<td>The Sabre of Wind</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Evil Magic Unique</td>
+<td>Glow Hum Evil Magic</td>
+</tr>
+<tr>
+<td>804</td>
+<td>The Gauntlets of Thunder</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>805</td>
+<td>The Armor of Rain</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>806</td>
+<td>The Badge of Lightning</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>807</td>
+<td>The Light Bulb</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Bless Unique</td>
+<td>Glow Hum Magic Bless</td>
+</tr>
+<tr>
+<td>808</td>
+<td>The Baseball Cap</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>809</td>
+<td>Saint Sword</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic AntiEvil Unique</td>
+<td>Glow Hum Magic AntiEvil</td>
+</tr>
+<tr>
+<td>810</td>
+<td>Blood Sucker</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Dark Magic Unique</td>
+<td>Dark Magic</td>
+</tr>
+<tr>
+<td>812</td>
+<td>Sceptre of Soul</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>813</td>
+<td>Shield of Wish</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>814</td>
+<td>The Cloud</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>815</td>
+<td>The Gold Aura</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic AntiEvil Unique</td>
+<td>Glow Hum Magic AntiEvil</td>
+</tr>
+<tr>
+<td>816</td>
+<td>Golden Armor</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>817</td>
+<td>Wooden Mask</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>818</td>
+<td>Water Snake</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>819</td>
+<td>Belt of Fire</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>820</td>
+<td>Claw of Earth</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>823</td>
+<td>The Flaming Dragon</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>824</td>
+<td>Heart of Love</td>
+<td>Strange World</td>
+<td>extra</td>
+<td>Glow Hum Magic AntiEvil Unique</td>
+<td>Glow Hum Magic AntiEvil</td>
+</tr>
+<tr>
+<td>900</td>
+<td>The Aegis</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>901</td>
+<td>The Thunder Bolt</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>902</td>
+<td>A Winged Helmet</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>903</td>
+<td>the Spear of Ares</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiGood Unique</td>
+<td>Invis Magic AntiGood</td>
+</tr>
+<tr>
+<td>904</td>
+<td>a pair of winged sandals</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>905</td>
+<td>an ivory staff</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>906</td>
+<td>Poseidon's Trident</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>907</td>
+<td>a silver bow</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>908</td>
+<td>flaming gauntlets</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>910</td>
+<td>a glowing necklace</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>911</td>
+<td>a sapphire ring</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>912</td>
+<td>a brightly glowing shield</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>922</td>
+<td>the Amulet of Ra</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>923</td>
+<td>the Sword of the Sun</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>924</td>
+<td>a blue robe</td>
+<td>Olympus</td>
+<td>extra</td>
+<td>Invis Magic AntiEvil Unique</td>
+<td>Invis Magic AntiEvil</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>The Mighty Horn of Perseus</td>
+<td>The Heavens</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>The Mighty Wings of Icarus</td>
+<td>The Heavens</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>The Mighty Girth of Nitrius</td>
+<td>The Heavens</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>The Fangs of Nitrius</td>
+<td>The Heavens</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>1101</td>
+<td>Sting</td>
+<td>The Shire</td>
+<td>extra</td>
+<td>Glow Hum AntiEvil Unique</td>
+<td>Glow Hum AntiEvil</td>
+</tr>
+<tr>
+<td>1105</td>
+<td>the One Ring</td>
+<td>The Shire</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>1106</td>
+<td>an elven bow</td>
+<td>The Shire</td>
+<td>extra</td>
+<td>Hum Magic AntiEvil Unique</td>
+<td>Hum Magic AntiEvil</td>
+</tr>
+<tr>
+<td>1108</td>
+<td>the thain girth</td>
+<td>The Shire</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>1115</td>
+<td>an ancient elven jewel</td>
+<td>The Shire</td>
+<td>extra</td>
+<td>Glow Hum Magic AntiEvil Unique</td>
+<td>Glow Hum Magic AntiEvil</td>
+</tr>
+<tr>
+<td>1326</td>
+<td>a red and white staff</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>1328</td>
+<td>a black rod</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>1329</td>
+<td>a wooden stick</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>1330</td>
+<td>a metal wand</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>1344</td>
+<td>a seashell ring</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>1351</td>
+<td>a herbal brew</td>
+<td>High Tower of Sorcery</td>
+<td>cost</td>
+<td>60</td>
+<td>5176</td>
+</tr>
+<tr>
+<td>1352</td>
+<td>a waybread</td>
+<td>High Tower of Sorcery</td>
+<td>cost</td>
+<td>55</td>
+<td>5224</td>
+</tr>
+<tr>
+<td>1363</td>
+<td>a scroll written on blue paper</td>
+<td>High Tower of Sorcery</td>
+<td>values</td>
+<td>35 24 0 0 0</td>
+<td>35 24 1 1 0</td>
+</tr>
+<tr>
+<td>1382</td>
+<td>a grey robe</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic AntiGood AntiEvil Unique</td>
+<td>Magic AntiGood AntiEvil</td>
+</tr>
+<tr>
+<td>1383</td>
+<td>a long grey cloak</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic AntiGood AntiEvil Unique</td>
+<td>Magic AntiGood AntiEvil</td>
+</tr>
+<tr>
+<td>1384</td>
+<td>a glinting silver bracelet</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>1385</td>
+<td>an iron shod staff</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>1386</td>
+<td>a ward minor</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Glow Magic Unique</td>
+<td>Glow Magic</td>
+</tr>
+<tr>
+<td>1387</td>
+<td>a black robe</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic AntiGood AntiNeutral Unique</td>
+<td>Magic AntiGood AntiNeutral</td>
+</tr>
+<tr>
+<td>1388</td>
+<td>an onyx bracelet</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>1389</td>
+<td>a dark black cloak</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic AntiGood AntiNeutral Unique</td>
+<td>Magic AntiGood AntiNeutral</td>
+</tr>
+<tr>
+<td>1390</td>
+<td>a sharp shard of obsidian</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>AntiGood Unique</td>
+<td>AntiGood</td>
+</tr>
+<tr>
+<td>1391</td>
+<td>a white robe</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic AntiEvil AntiNeutral Unique</td>
+<td>Magic AntiEvil AntiNeutral</td>
+</tr>
+<tr>
+<td>1392</td>
+<td>a white gold bracelet</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>1393</td>
+<td>a white cloak</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic Bless AntiEvil AntiNeutral Unique</td>
+<td>Magic Bless AntiEvil AntiNeutral</td>
+</tr>
+<tr>
+<td>1394</td>
+<td>an ivory hilted dagger</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic Bless AntiEvil Unique</td>
+<td>Magic Bless AntiEvil</td>
+</tr>
+<tr>
+<td>1396</td>
+<td>a shimmering cloak of many colors</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Glow Magic Unique</td>
+<td>Glow Magic</td>
+</tr>
+<tr>
+<td>1397</td>
+<td>a small emerald ring</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>1398</td>
+<td>an emerald bracelet</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>1399</td>
+<td>a ward major</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Glow Magic Unique</td>
+<td>Glow Magic</td>
+</tr>
+<tr>
+<td>1400</td>
+<td>the ebony kris</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>1401</td>
+<td>a tight fitting green dragon scale shirt</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>1402</td>
+<td>a fridge</td>
+<td>High Tower of Sorcery</td>
+<td>extra</td>
+<td>Hum Unique</td>
+<td>Hum</td>
+</tr>
+<tr>
+<td>1510</td>
+<td>An electrum sword</td>
+<td>Gnome Village</td>
+<td>extra</td>
+<td>Glow Magic Unique</td>
+<td>Glow Magic</td>
+</tr>
+<tr>
+<td>1606</td>
+<td>the rod of might</td>
+<td>Wyvern Tower</td>
+<td>extra</td>
+<td>Hum Magic Unique</td>
+<td>Hum Magic</td>
+</tr>
+<tr>
+<td>1615</td>
+<td>a mithril bracer</td>
+<td>Wyvern Tower</td>
+<td>extra</td>
+<td>Hum Magic Unique</td>
+<td>Hum Magic</td>
+</tr>
+<tr>
+<td>1703</td>
+<td>a gnarled staff</td>
+<td>Wyvern Tower</td>
+<td>extra</td>
+<td>Glow Magic Unique</td>
+<td>Glow Magic</td>
+</tr>
+<tr>
+<td>1704</td>
+<td>an ancient long sword</td>
+<td>Wyvern Tower</td>
+<td>extra</td>
+<td>Hum Magic Unique</td>
+<td>Hum Magic</td>
+</tr>
+<tr>
+<td>1802</td>
+<td>Leonardo's Katana blade</td>
+<td>Japan</td>
+<td>extra</td>
+<td>Hum Unique</td>
+<td>Hum</td>
+</tr>
+<tr>
+<td>1803</td>
+<td>Michaelangelo's numchucks</td>
+<td>Japan</td>
+<td>extra</td>
+<td>Hum Unique</td>
+<td>Hum</td>
+</tr>
+<tr>
+<td>1804</td>
+<td>Donatello's bokken</td>
+<td>Japan</td>
+<td>extra</td>
+<td>Hum Unique</td>
+<td>Hum</td>
+</tr>
+<tr>
+<td>1805</td>
+<td>Raphael's sai</td>
+<td>Japan</td>
+<td>extra</td>
+<td>Hum Unique</td>
+<td>Hum</td>
+</tr>
+<tr>
+<td>1806</td>
+<td>the Takashima blade</td>
+<td>Japan</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>1823</td>
+<td>the Eye of Izanagi</td>
+<td>Japan</td>
+<td>extra</td>
+<td>Glow Magic Unique</td>
+<td>Glow Magic</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>the neutralizer</td>
+<td>Dwarven Catacombs</td>
+<td>extra</td>
+<td>Hum AntiGood AntiEvil Unique</td>
+<td>Hum AntiGood AntiEvil</td>
+</tr>
+<tr>
+<td>2005</td>
+<td>The sword Excalibur</td>
+<td>Dwarven Catacombs</td>
+<td>extra</td>
+<td>Glow Magic AntiEvil AntiNeutral Unique</td>
+<td>Glow Magic AntiEvil AntiNeutral</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>A kingly crown</td>
+<td>Dwarven Catacombs</td>
+<td>extra</td>
+<td>Bless Unique</td>
+<td>Bless</td>
+</tr>
+<tr>
+<td>2013</td>
+<td>a prism wand</td>
+<td>Dwarven Catacombs</td>
+<td>extra</td>
+<td>Glow Magic Unique</td>
+<td>Glow Magic</td>
+</tr>
+<tr>
+<td>2202</td>
+<td>a dragon's tooth knife</td>
+<td>Dragon Tower</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>2220</td>
+<td>a holy symbol</td>
+<td>Dragon Tower</td>
+<td>extra</td>
+<td>Glow Unique</td>
+<td>Glow</td>
+</tr>
+<tr>
+<td>2222</td>
+<td>an emerald sword</td>
+<td>Dragon Tower</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>2224</td>
+<td>a diamond ring</td>
+<td>Dragon Tower</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>2243</td>
+<td>a golden wand</td>
+<td>Dragon Tower</td>
+<td>extra</td>
+<td>Glow Unique</td>
+<td>Glow</td>
+</tr>
+<tr>
+<td>2245</td>
+<td>the staff of the dragon</td>
+<td>Dragon Tower</td>
+<td>extra</td>
+<td>Glow Magic Unique</td>
+<td>Glow Magic</td>
+</tr>
+<tr>
+<td>2261</td>
+<td>a diamond brooch</td>
+<td>Dragon Tower</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>2275</td>
+<td>a helm of dragonkind</td>
+<td>Dragon Tower</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>2280</td>
+<td>a pair of dragon scale leggings</td>
+<td>Dragon Tower</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>2281</td>
+<td>a set of dragon scale sleeves</td>
+<td>Dragon Tower</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>2287</td>
+<td>a gem encrusted dagger</td>
+<td>Dragon Tower</td>
+<td>extra</td>
+<td>Unique</td>
+<td></td>
+</tr>
+<tr>
+<td>2304</td>
+<td>the rod of weaponry</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Glow Magic Bless Unique</td>
+<td>Glow Magic Bless</td>
+</tr>
+<tr>
+<td>2308</td>
+<td>the shadow shield</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Glow Magic AntiGood AntiNeutral Unique</td>
+<td>Glow Magic AntiGood AntiNeutral</td>
+</tr>
+<tr>
+<td>2309</td>
+<td>a shortsword named "Nightbringer"</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Dark Magic AntiGood AntiNeutral Unique</td>
+<td>Dark Magic AntiGood AntiNeutral</td>
+</tr>
+<tr>
+<td>2314</td>
+<td>a huge mace named "Dawnbringer"</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Glow Magic AntiEvil AntiNeutral Unique</td>
+<td>Glow Magic AntiEvil AntiNeutral</td>
+</tr>
+<tr>
+<td>2317</td>
+<td>a minor globe of invulnerability</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Glow Magic Unique</td>
+<td>Glow Magic</td>
+</tr>
+<tr>
+<td>2318</td>
+<td>a gnarled magius staff</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>2324</td>
+<td>a golden holy symbol</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>2329</td>
+<td>an ice staff</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>2331</td>
+<td>the horn of life</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>2340</td>
+<td>a major globe of invulnerability</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>2345</td>
+<td>Mahn-Tor's Great Axe</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Hum Magic Unique</td>
+<td>Hum Magic</td>
+</tr>
+<tr>
+<td>2346</td>
+<td>a suit of ethereal plate</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Glow AntiGood Unique</td>
+<td>Glow AntiGood</td>
+</tr>
+<tr>
+<td>2347</td>
+<td>an ethereal helm</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Glow AntiGood Unique</td>
+<td>Glow AntiGood</td>
+</tr>
+<tr>
+<td>2348</td>
+<td>an ethereal blade</td>
+<td>The Keep of Mahn-Tor</td>
+<td>extra</td>
+<td>Glow AntiGood Unique</td>
+<td>Glow AntiGood</td>
+</tr>
+<tr>
+<td>2400</td>
+<td>Mu</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2401</td>
+<td>Lum</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2402</td>
+<td>Beh</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2403</td>
+<td>Ohm</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2404</td>
+<td>Ahm</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2405</td>
+<td>Cah</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2406</td>
+<td>Ra</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2407</td>
+<td>Summ</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2408</td>
+<td>Moonstone</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2409</td>
+<td>Moonstone</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2410</td>
+<td>Moonstone</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2411</td>
+<td>Moonstone</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2412</td>
+<td>Moonstone</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2413</td>
+<td>Moonstone</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2414</td>
+<td>Moonstone</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2415</td>
+<td>Moonstone</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2416</td>
+<td>the Hourglass</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2417</td>
+<td>the shepherd's crook</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2418</td>
+<td>the doll</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2419</td>
+<td>Katrina's sword</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2420</td>
+<td>a wrinkled scroll</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2421</td>
+<td>a magic dagger</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2422</td>
+<td>a robe</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2423</td>
+<td>horseshoes</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2424</td>
+<td>a mandolin</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2425</td>
+<td>a cup</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2426</td>
+<td>some gold pieces</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2427</td>
+<td>the bottle</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2428</td>
+<td>Iolo's bow</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2429</td>
+<td>a chicken</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2430</td>
+<td>the Infinity Bow</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2431</td>
+<td>a wooden spear</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2432</td>
+<td>a stone club</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2433</td>
+<td>a gavel</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2434</td>
+<td>a staff</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2435</td>
+<td>a sword</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2436</td>
+<td>a sword</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2437</td>
+<td>a bastard sword</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2438</td>
+<td>a hammer</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2439</td>
+<td>a sword</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2440</td>
+<td>the Amulet of Love</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2441</td>
+<td>a shiny sword</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2442</td>
+<td>shiny armour</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2443</td>
+<td>a rapier</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2444</td>
+<td>a boomerang</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2445</td>
+<td>a rusty sword</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2446</td>
+<td>a rusty shield</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2447</td>
+<td>a magic cloak</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2448</td>
+<td>an aura of power</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2449</td>
+<td>a big red face</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2450</td>
+<td>a spiked mace</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2451</td>
+<td>a completely black armour</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2452</td>
+<td>an evil charm</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2453</td>
+<td>an evil gem</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2454</td>
+<td>Sentri's helmet</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2455</td>
+<td>Sentri's sleeves</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2456</td>
+<td>Sentri's girth</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2457</td>
+<td>Sentri's two-handed sword</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2458</td>
+<td>Sentri's gloves</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2459</td>
+<td>Sentri's boots</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2460</td>
+<td>Sentri's leggings</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2461</td>
+<td>Sentri's armour</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2462</td>
+<td>a Fellowship medallion</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2463</td>
+<td>The Glass Sword</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2464</td>
+<td>British's crown</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2465</td>
+<td>British's sceptre</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2466</td>
+<td>British's amulet</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2467</td>
+<td>a fountain</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2468</td>
+<td>a boat</td>
+<td>Ultima</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3005</td>
+<td>Clawfist</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Hum Bless Unique</td>
+<td>Hum Bless</td>
+</tr>
+<tr>
+<td>3135</td>
+<td>a fountain</td>
+<td>Midgaard</td>
+<td>values</td>
+<td>50 50 water 0 0</td>
+<td>50 50 0 0 0</td>
+</tr>
+<tr>
+<td>3388</td>
+<td>the Arbiter's shield</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Glow Hum Magic Unique</td>
+<td>Glow Hum Magic</td>
+</tr>
+<tr>
+<td>3389</td>
+<td>a fine linen toga</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Glow Magic Unique</td>
+<td>Glow Magic</td>
+</tr>
+<tr>
+<td>3390</td>
+<td>a lesser summoning shard</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Magic SummonCorpse Unique</td>
+<td>Magic SummonCorpse</td>
+</tr>
+<tr>
+<td>3391</td>
+<td>a minor summoning shard</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Magic SummonCorpse Unique</td>
+<td>Magic SummonCorpse</td>
+</tr>
+<tr>
+<td>3392</td>
+<td>a dull summoning shard</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Magic SummonCorpse Unique</td>
+<td>Magic SummonCorpse</td>
+</tr>
+<tr>
+<td>3393</td>
+<td>a polished summoning shard</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Magic SummonCorpse Unique</td>
+<td>Magic SummonCorpse</td>
+</tr>
+<tr>
+<td>3394</td>
+<td>a burnished summoning shard</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Magic SummonCorpse Unique</td>
+<td>Magic SummonCorpse</td>
+</tr>
+<tr>
+<td>3395</td>
+<td>a greater summoning shard</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Magic SummonCorpse Unique</td>
+<td>Magic SummonCorpse</td>
+</tr>
+<tr>
+<td>3396</td>
+<td>an imbued summoning shard</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Magic SummonCorpse Unique</td>
+<td>Magic SummonCorpse</td>
+</tr>
+<tr>
+<td>3397</td>
+<td>a sanctified summoning shard</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Magic SummonCorpse Unique</td>
+<td>Magic SummonCorpse</td>
+</tr>
+<tr>
+<td>3398</td>
+<td>an octarine summoning shard</td>
+<td>Midgaard</td>
+<td>extra</td>
+<td>Magic SummonCorpse Unique</td>
+<td>Magic SummonCorpse</td>
+</tr>
+<tr>
+<td>3412</td>
+<td>the mummified head of Jubal the Benevolent</td>
+<td>Chapel Catacombs</td>
+<td>extra</td>
+<td>AntiEvil Unique</td>
+<td>AntiEvil</td>
+</tr>
+<tr>
+<td>3418</td>
+<td>a mound of coins fit for a dead king</td>
+<td>Chapel Catacombs</td>
+<td>values</td>
+<td>8000 0 0 0 0</td>
+<td>35000 0 0 0 0</td>
+</tr>
+<tr>
+<td>3428</td>
+<td>a pitch-black gavel that flames brightly...</td>
+<td>Chapel Catacombs</td>
+<td>extra</td>
+<td>Magic Unique</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td>3505</td>
+<td>a rune-covered knife</td>
+<td>Miden'nir</td>
+<td>extra</td>
+<td>Magic AntiEvil Unique</td>
+<td>Magic AntiEvil</td>
+</tr>
+<tr>
+<td>4000</td>
+<td>a yellow and green ring</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4001</td>
+<td>a corpse</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4002</td>
+<td>some coins</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4003</td>
+<td>a rusty dagger</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4004</td>
+<td>a bullwhip</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4005</td>
+<td>a huge club</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4006</td>
+<td>some smelly furs</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4050</td>
+<td>a purple potion</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4051</td>
+<td>a metal helmet</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4052</td>
+<td>a mushroom</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4053</td>
+<td>a thieves dirk</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4054</td>
+<td>a war axe</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4055</td>
+<td>a broad sword</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4056</td>
+<td>a two-headed flail</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4057</td>
+<td>a heavy iron mace</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4058</td>
+<td>a falchion</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4059</td>
+<td>a voulge</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4100</td>
+<td>a black demon blade</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4101</td>
+<td>swordsman's gloves</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4102</td>
+<td>a scroll which reads "ysafg"</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4103</td>
+<td>a green slime mold</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4104</td>
+<td>a green slime mold</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4105</td>
+<td>an iron-shod staff</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4150</td>
+<td>a black potion</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4151</td>
+<td>a heavy oak staff</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4152</td>
+<td>a light silver dagger</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4153</td>
+<td>a morning star</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4154</td>
+<td>a map of the second level of Moria</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4155</td>
+<td>a map of the third level of Moria</td>
+<td>Moria</td>
+<td>removed</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>…and 557 more.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../mattgodbolt-xania-mg-web/areas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Area catalogue">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Area catalogue
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/sorts/tablesort.number.min.js"></script>
+      
+        <script src="../javascripts/xania.js"></script>
+      
+        <script src="../javascripts/explore-plan.js"></script>
+      
+        <script src="../javascripts/explore.js"></script>
+      
+    
+  </body>
+</html>

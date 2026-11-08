@@ -1,0 +1,4638 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and level 1–91 balance reports for the Xania MUD">
+      
+      
+      
+        <link rel="canonical" href="https://abraidotti.github.io/xania-explorer/builds/mattgodbolt-xania-main...mattgodbolt-xania-mg-web/mattgodbolt-xania-main/weapons/">
+      
+      
+        <link rel="prev" href="../characters/">
+      
+      
+        <link rel="next" href="../equipment/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Weapons - Xania Explorer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/xania.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#weapons-by-level-and-class" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Xania Explorer" class="md-header__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xania Explorer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Weapons
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Xania Explorer" class="md-nav__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    Xania Explorer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore any repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture & game loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-area-file-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area file format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-world-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-skills-and-magic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & magic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-items-and-economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Items & economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assessments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About the assessments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        62% of weapons are usable by level 30
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-class-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class access is lopsided: knight 357, barbarian 29
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-plateau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barbarians wait 23 levels for a better weapon
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Above level 30, 97% of weapons only come from mob drops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-over-cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        45 obtainable weapons exceed the damage cap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-no-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13 weapons can't be obtained
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../mattgodbolt-xania-mg-web/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-mg-web/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        62% of weapons are usable by level 30
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-class-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class access is lopsided: knight 357, barbarian 29
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-plateau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barbarians wait 23 levels for a better weapon
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Above level 30, 97% of weapons only come from mob drops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-over-cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        45 obtainable weapons exceed the damage cap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weapons-no-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13 weapons can't be obtained
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="weapons-by-level-and-class">Weapons by level and class<a class="headerlink" href="#weapons-by-level-and-class" title="Permanent link">&para;</a></h1>
+<p>Which weapons a character can find and wield at each level from 1 to 91, how good they are, and whether some classes get a worse deal.</p>
+<div class="xu-stats"><div class="xu-stat"><span class="xu-stat-value">420</span><span class="xu-stat-label">obtainable weapons</span></div><div class="xu-stat"><span class="xu-stat-value">62%</span><span class="xu-stat-label">usable by level 30</span></div><div class="xu-stat"><span class="xu-stat-value">23</span><span class="xu-stat-label">levels a barbarian waits for an upgrade</span></div><div class="xu-stat"><span class="xu-stat-value">49</span><span class="xu-stat-label">over the damage cap</span></div><div class="xu-stat"><span class="xu-stat-value">13</span><span class="xu-stat-label">with no source</span></div></div>
+
+<h2 id="weapons-supply">62% of weapons are usable by level 30<a class="headerlink" href="#weapons-supply" title="Permanent link">&para;</a></h2>
+<p>Of 420 obtainable weapons, 259 become usable by level 30. Up to then each 5-level band brings about <strong>43</strong> new weapons; after it, about <strong>12</strong>, and the thinnest band (71–75) has only 8.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"New obtainable weapons per level band, by type","anchor":"start"},"width":"container","height":300,"data":{"values":[{"band":"1–5","type":"dagger","count":6},{"band":"1–5","type":"sword","count":6},{"band":"1–5","type":"axe","count":5},{"band":"1–5","type":"mace","count":11},{"band":"1–5","type":"spear","count":5},{"band":"1–5","type":"exotic","count":5},{"band":"1–5","type":"flail","count":2},{"band":"1–5","type":"polearm","count":2},{"band":"1–5","type":"whip","count":1},{"band":"6–10","type":"dagger","count":8},{"band":"6–10","type":"mace","count":14},{"band":"6–10","type":"sword","count":12},{"band":"6–10","type":"axe","count":3},{"band":"6–10","type":"exotic","count":1},{"band":"6–10","type":"flail","count":1},{"band":"6–10","type":"spear","count":4},{"band":"6–10","type":"polearm","count":4},{"band":"6–10","type":"whip","count":2},{"band":"11–15","type":"exotic","count":3},{"band":"11–15","type":"spear","count":8},{"band":"11–15","type":"axe","count":3},{"band":"11–15","type":"sword","count":11},{"band":"11–15","type":"dagger","count":5},{"band":"11–15","type":"mace","count":8},{"band":"11–15","type":"polearm","count":4},{"band":"11–15","type":"whip","count":1},{"band":"16–20","type":"axe","count":3},{"band":"16–20","type":"mace","count":12},{"band":"16–20","type":"dagger","count":9},{"band":"16–20","type":"sword","count":8},{"band":"16–20","type":"exotic","count":5},{"band":"16–20","type":"whip","count":2},{"band":"16–20","type":"polearm","count":2},{"band":"16–20","type":"spear","count":1},{"band":"21–25","type":"exotic","count":6},{"band":"21–25","type":"dagger","count":9},{"band":"21–25","type":"polearm","count":5},{"band":"21–25","type":"whip","count":3},{"band":"21–25","type":"sword","count":10},{"band":"21–25","type":"axe","count":1},{"band":"21–25","type":"flail","count":1},{"band":"21–25","type":"mace","count":3},{"band":"21–25","type":"spear","count":1},{"band":"26–30","type":"sword","count":10},{"band":"26–30","type":"polearm","count":4},{"band":"26–30","type":"spear","count":5},{"band":"26–30","type":"whip","count":2},{"band":"26–30","type":"dagger","count":8},{"band":"26–30","type":"axe","count":2},{"band":"26–30","type":"mace","count":8},{"band":"26–30","type":"flail","count":1},{"band":"26–30","type":"exotic","count":3},{"band":"31–35","type":"spear","count":1},{"band":"31–35","type":"mace","count":1},{"band":"31–35","type":"sword","count":5},{"band":"31–35","type":"axe","count":3},{"band":"31–35","type":"exotic","count":6},{"band":"31–35","type":"dagger","count":2},{"band":"31–35","type":"polearm","count":1},{"band":"31–35","type":"whip","count":1},{"band":"36–40","type":"exotic","count":3},{"band":"36–40","type":"spear","count":2},{"band":"36–40","type":"sword","count":4},{"band":"36–40","type":"mace","count":2},{"band":"36–40","type":"dagger","count":2},{"band":"41–45","type":"whip","count":3},{"band":"41–45","type":"exotic","count":5},{"band":"41–45","type":"spear","count":1},{"band":"41–45","type":"sword","count":2},{"band":"41–45","type":"mace","count":1},{"band":"41–45","type":"polearm","count":1},{"band":"41–45","type":"dagger","count":1},{"band":"41–45","type":"flail","count":1},{"band":"46–50","type":"exotic","count":4},{"band":"46–50","type":"mace","count":3},{"band":"46–50","type":"dagger","count":4},{"band":"46–50","type":"sword","count":2},{"band":"46–50","type":"polearm","count":1},{"band":"46–50","type":"axe","count":1},{"band":"51–55","type":"flail","count":2},{"band":"51–55","type":"polearm","count":1},{"band":"51–55","type":"exotic","count":2},{"band":"51–55","type":"axe","count":2},{"band":"51–55","type":"sword","count":3},{"band":"51–55","type":"dagger","count":1},{"band":"51–55","type":"spear","count":2},{"band":"51–55","type":"mace","count":2},{"band":"56–60","type":"dagger","count":2},{"band":"56–60","type":"polearm","count":1},{"band":"56–60","type":"exotic","count":1},{"band":"56–60","type":"mace","count":2},{"band":"56–60","type":"spear","count":1},{"band":"56–60","type":"sword","count":2},{"band":"56–60","type":"axe","count":1},{"band":"61–65","type":"polearm","count":2},{"band":"61–65","type":"sword","count":3},{"band":"61–65","type":"exotic","count":3},{"band":"61–65","type":"mace","count":3},{"band":"61–65","type":"dagger","count":1},{"band":"61–65","type":"axe","count":2},{"band":"66–70","type":"dagger","count":3},{"band":"66–70","type":"axe","count":1},{"band":"66–70","type":"exotic","count":2},{"band":"66–70","type":"sword","count":3},{"band":"71–75","type":"mace","count":2},{"band":"71–75","type":"polearm","count":1},{"band":"71–75","type":"sword","count":3},{"band":"71–75","type":"spear","count":1},{"band":"71–75","type":"whip","count":1},{"band":"76–80","type":"exotic","count":4},{"band":"76–80","type":"mace","count":1},{"band":"76–80","type":"sword","count":1},{"band":"76–80","type":"dagger","count":1},{"band":"76–80","type":"flail","count":1},{"band":"76–80","type":"polearm","count":1},{"band":"81–85","type":"dagger","count":2},{"band":"81–85","type":"sword","count":5},{"band":"81–85","type":"exotic","count":2},{"band":"81–85","type":"mace","count":1},{"band":"81–85","type":"polearm","count":1},{"band":"81–85","type":"spear","count":1},{"band":"86–90","type":"exotic","count":6},{"band":"86–90","type":"dagger","count":2},{"band":"86–90","type":"sword","count":3},{"band":"86–90","type":"whip","count":1},{"band":"91","type":"mace","count":1},{"band":"91","type":"axe","count":2},{"band":"91","type":"dagger","count":1},{"band":"91","type":"whip","count":1},{"band":"91","type":"exotic","count":2},{"band":"91","type":"sword","count":1},{"band":"91","type":"polearm","count":1}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":"bar","encoding":{"x":{"field":"band","type":"ordinal","title":"Levels","sort":["1–5","6–10","11–15","16–20","21–25","26–30","31–35","36–40","41–45","46–50","51–55","56–60","61–65","66–70","71–75","76–80","81–85","86–90","91"]},"y":{"field":"count","type":"quantitative","title":"Weapons","stack":true},"color":{"field":"type","type":"nominal","title":"Type","scale":{"domain":["sword","dagger","spear","mace","axe","flail","whip","polearm","exotic"]}},"tooltip":[{"field":"band","title":"Levels"},{"field":"type","title":"Type"},{"field":"count","title":"Weapons"}]}}</script></div>
+
+<details class="abstract">
+<summary>Details: weapons per band and type</summary>
+<table>
+<thead>
+<tr>
+<th>Levels</th>
+<th>sword</th>
+<th>dagger</th>
+<th>spear</th>
+<th>mace</th>
+<th>axe</th>
+<th>flail</th>
+<th>whip</th>
+<th>polearm</th>
+<th>exotic</th>
+<th>total</th>
+<th>buyable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–5</td>
+<td>6</td>
+<td>6</td>
+<td>5</td>
+<td>11</td>
+<td>5</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>5</td>
+<td>43</td>
+<td>11</td>
+</tr>
+<tr>
+<td>6–10</td>
+<td>12</td>
+<td>8</td>
+<td>4</td>
+<td>14</td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>1</td>
+<td>49</td>
+<td>13</td>
+</tr>
+<tr>
+<td>11–15</td>
+<td>11</td>
+<td>5</td>
+<td>8</td>
+<td>8</td>
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>43</td>
+<td>5</td>
+</tr>
+<tr>
+<td>16–20</td>
+<td>8</td>
+<td>9</td>
+<td>1</td>
+<td>12</td>
+<td>3</td>
+<td>0</td>
+<td>2</td>
+<td>2</td>
+<td>5</td>
+<td>42</td>
+<td>2</td>
+</tr>
+<tr>
+<td>21–25</td>
+<td>10</td>
+<td>9</td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>5</td>
+<td>6</td>
+<td>39</td>
+<td>9</td>
+</tr>
+<tr>
+<td>26–30</td>
+<td>10</td>
+<td>8</td>
+<td>5</td>
+<td>8</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>3</td>
+<td>43</td>
+<td>4</td>
+</tr>
+<tr>
+<td>31–35</td>
+<td>5</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>6</td>
+<td>20</td>
+<td>1</td>
+</tr>
+<tr>
+<td>36–40</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>13</td>
+<td>1</td>
+</tr>
+<tr>
+<td>41–45</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>15</td>
+<td>0</td>
+</tr>
+<tr>
+<td>46–50</td>
+<td>2</td>
+<td>4</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>15</td>
+<td>1</td>
+</tr>
+<tr>
+<td>51–55</td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>15</td>
+<td>0</td>
+</tr>
+<tr>
+<td>56–60</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>0</td>
+</tr>
+<tr>
+<td>61–65</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>3</td>
+<td>14</td>
+<td>0</td>
+</tr>
+<tr>
+<td>66–70</td>
+<td>3</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>9</td>
+<td>1</td>
+</tr>
+<tr>
+<td>71–75</td>
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>76–80</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>9</td>
+<td>0</td>
+</tr>
+<tr>
+<td>81–85</td>
+<td>5</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>12</td>
+<td>0</td>
+</tr>
+<tr>
+<td>86–90</td>
+<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>6</td>
+<td>12</td>
+<td>1</td>
+</tr>
+<tr>
+<td>91</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>9</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>all</strong></td>
+<td>94</td>
+<td>67</td>
+<td>33</td>
+<td>75</td>
+<td>29</td>
+<td>9</td>
+<td>18</td>
+<td>32</td>
+<td>63</td>
+<td>420</td>
+<td>49</td>
+</tr>
+</tbody>
+</table>
+<p>Spread across bands: total 420, mean 22.1/bin, stdev 14.7, CV 0.66, Gini 0.35, range 8–49, 0 empty bin(s).</p>
+</details>
+<h2 id="weapons-class-access">Class access is lopsided: knight 357, barbarian 29<a class="headerlink" href="#weapons-class-access" title="Permanent link">&para;</a></h2>
+<p>Counting weapons in the types each class starts with, a <strong>knight</strong> can choose from <strong>357</strong> and a <strong>barbarian</strong> from <strong>29</strong>. Barbarians (axe) get nothing new in 6 of 19 level bands (36–40, 41–45, 71–75, 76–80, 81–85 and 86–90). Counting the types each class trains cheaply instead (dashed lines), the gap narrows: knight 236, barbarian 204, cleric 151, mage 67.</p>
+<div class="xu-stats"><div class="xu-stat"><span class="xu-stat-value">67</span><span class="xu-stat-label">mage: dagger</span></div><div class="xu-stat"><span class="xu-stat-value">84</span><span class="xu-stat-label">cleric: mace, flail</span></div><div class="xu-stat"><span class="xu-stat-value">357</span><span class="xu-stat-label">knight: all 8 types</span></div><div class="xu-stat"><span class="xu-stat-value">29</span><span class="xu-stat-label">barbarian: axe</span></div></div>
+
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":["New weapons per band in each class's types (solid = start, dashed =","easy)"],"anchor":"start"},"width":"container","height":300,"data":{"values":[{"band":"1–5","class":"mage","view":"start","count":6},{"band":"1–5","class":"mage","view":"easy","count":6},{"band":"1–5","class":"cleric","view":"start","count":13},{"band":"1–5","class":"cleric","view":"easy","count":19},{"band":"1–5","class":"knight","view":"start","count":38},{"band":"1–5","class":"knight","view":"easy","count":23},{"band":"1–5","class":"barbarian","view":"start","count":5},{"band":"1–5","class":"barbarian","view":"easy","count":27},{"band":"6–10","class":"mage","view":"start","count":8},{"band":"6–10","class":"mage","view":"easy","count":8},{"band":"6–10","class":"cleric","view":"start","count":15},{"band":"6–10","class":"cleric","view":"easy","count":23},{"band":"6–10","class":"knight","view":"start","count":48},{"band":"6–10","class":"knight","view":"easy","count":34},{"band":"6–10","class":"barbarian","view":"start","count":3},{"band":"6–10","class":"barbarian","view":"easy","count":29},{"band":"11–15","class":"mage","view":"start","count":5},{"band":"11–15","class":"mage","view":"easy","count":5},{"band":"11–15","class":"cleric","view":"start","count":8},{"band":"11–15","class":"cleric","view":"easy","count":13},{"band":"11–15","class":"knight","view":"start","count":40},{"band":"11–15","class":"knight","view":"easy","count":24},{"band":"11–15","class":"barbarian","view":"start","count":3},{"band":"11–15","class":"barbarian","view":"easy","count":24},{"band":"16–20","class":"mage","view":"start","count":9},{"band":"16–20","class":"mage","view":"easy","count":9},{"band":"16–20","class":"cleric","view":"start","count":12},{"band":"16–20","class":"cleric","view":"easy","count":21},{"band":"16–20","class":"knight","view":"start","count":37},{"band":"16–20","class":"knight","view":"easy","count":29},{"band":"16–20","class":"barbarian","view":"start","count":3},{"band":"16–20","class":"barbarian","view":"easy","count":25},{"band":"21–25","class":"mage","view":"start","count":9},{"band":"21–25","class":"mage","view":"easy","count":9},{"band":"21–25","class":"cleric","view":"start","count":4},{"band":"21–25","class":"cleric","view":"easy","count":13},{"band":"21–25","class":"knight","view":"start","count":33},{"band":"21–25","class":"knight","view":"easy","count":22},{"band":"21–25","class":"barbarian","view":"start","count":1},{"band":"21–25","class":"barbarian","view":"easy","count":14},{"band":"26–30","class":"mage","view":"start","count":8},{"band":"26–30","class":"mage","view":"easy","count":8},{"band":"26–30","class":"cleric","view":"start","count":9},{"band":"26–30","class":"cleric","view":"easy","count":17},{"band":"26–30","class":"knight","view":"start","count":40},{"band":"26–30","class":"knight","view":"easy","count":26},{"band":"26–30","class":"barbarian","view":"start","count":2},{"band":"26–30","class":"barbarian","view":"easy","count":23},{"band":"31–35","class":"mage","view":"start","count":2},{"band":"31–35","class":"mage","view":"easy","count":2},{"band":"31–35","class":"cleric","view":"start","count":1},{"band":"31–35","class":"cleric","view":"easy","count":3},{"band":"31–35","class":"knight","view":"start","count":14},{"band":"31–35","class":"knight","view":"easy","count":8},{"band":"31–35","class":"barbarian","view":"start","count":3},{"band":"31–35","class":"barbarian","view":"easy","count":7},{"band":"36–40","class":"mage","view":"start","count":2},{"band":"36–40","class":"mage","view":"easy","count":2},{"band":"36–40","class":"cleric","view":"start","count":2},{"band":"36–40","class":"cleric","view":"easy","count":4},{"band":"36–40","class":"knight","view":"start","count":10},{"band":"36–40","class":"knight","view":"easy","count":8},{"band":"36–40","class":"barbarian","view":"start","count":0},{"band":"36–40","class":"barbarian","view":"easy","count":6},{"band":"41–45","class":"mage","view":"start","count":1},{"band":"41–45","class":"mage","view":"easy","count":1},{"band":"41–45","class":"cleric","view":"start","count":2},{"band":"41–45","class":"cleric","view":"easy","count":3},{"band":"41–45","class":"knight","view":"start","count":10},{"band":"41–45","class":"knight","view":"easy","count":4},{"band":"41–45","class":"barbarian","view":"start","count":0},{"band":"41–45","class":"barbarian","view":"easy","count":3},{"band":"46–50","class":"mage","view":"start","count":4},{"band":"46–50","class":"mage","view":"easy","count":4},{"band":"46–50","class":"cleric","view":"start","count":3},{"band":"46–50","class":"cleric","view":"easy","count":7},{"band":"46–50","class":"knight","view":"start","count":11},{"band":"46–50","class":"knight","view":"easy","count":9},{"band":"46–50","class":"barbarian","view":"start","count":1},{"band":"46–50","class":"barbarian","view":"easy","count":8},{"band":"51–55","class":"mage","view":"start","count":1},{"band":"51–55","class":"mage","view":"easy","count":1},{"band":"51–55","class":"cleric","view":"start","count":4},{"band":"51–55","class":"cleric","view":"easy","count":5},{"band":"51–55","class":"knight","view":"start","count":13},{"band":"51–55","class":"knight","view":"easy","count":6},{"band":"51–55","class":"barbarian","view":"start","count":2},{"band":"51–55","class":"barbarian","view":"easy","count":7},{"band":"56–60","class":"mage","view":"start","count":2},{"band":"56–60","class":"mage","view":"easy","count":2},{"band":"56–60","class":"cleric","view":"start","count":2},{"band":"56–60","class":"cleric","view":"easy","count":4},{"band":"56–60","class":"knight","view":"start","count":9},{"band":"56–60","class":"knight","view":"easy","count":6},{"band":"56–60","class":"barbarian","view":"start","count":1},{"band":"56–60","class":"barbarian","view":"easy","count":6},{"band":"61–65","class":"mage","view":"start","count":1},{"band":"61–65","class":"mage","view":"easy","count":1},{"band":"61–65","class":"cleric","view":"start","count":3},{"band":"61–65","class":"cleric","view":"easy","count":4},{"band":"61–65","class":"knight","view":"start","count":11},{"band":"61–65","class":"knight","view":"easy","count":7},{"band":"61–65","class":"barbarian","view":"start","count":2},{"band":"61–65","class":"barbarian","view":"easy","count":6},{"band":"66–70","class":"mage","view":"start","count":3},{"band":"66–70","class":"mage","view":"easy","count":3},{"band":"66–70","class":"cleric","view":"start","count":0},{"band":"66–70","class":"cleric","view":"easy","count":3},{"band":"66–70","class":"knight","view":"start","count":7},{"band":"66–70","class":"knight","view":"easy","count":6},{"band":"66–70","class":"barbarian","view":"start","count":1},{"band":"66–70","class":"barbarian","view":"easy","count":4},{"band":"71–75","class":"mage","view":"start","count":0},{"band":"71–75","class":"mage","view":"easy","count":0},{"band":"71–75","class":"cleric","view":"start","count":2},{"band":"71–75","class":"cleric","view":"easy","count":2},{"band":"71–75","class":"knight","view":"start","count":8},{"band":"71–75","class":"knight","view":"easy","count":5},{"band":"71–75","class":"barbarian","view":"start","count":0},{"band":"71–75","class":"barbarian","view":"easy","count":3},{"band":"76–80","class":"mage","view":"start","count":1},{"band":"76–80","class":"mage","view":"easy","count":1},{"band":"76–80","class":"cleric","view":"start","count":2},{"band":"76–80","class":"cleric","view":"easy","count":3},{"band":"76–80","class":"knight","view":"start","count":5},{"band":"76–80","class":"knight","view":"easy","count":3},{"band":"76–80","class":"barbarian","view":"start","count":0},{"band":"76–80","class":"barbarian","view":"easy","count":2},{"band":"81–85","class":"mage","view":"start","count":2},{"band":"81–85","class":"mage","view":"easy","count":2},{"band":"81–85","class":"cleric","view":"start","count":1},{"band":"81–85","class":"cleric","view":"easy","count":3},{"band":"81–85","class":"knight","view":"start","count":10},{"band":"81–85","class":"knight","view":"easy","count":8},{"band":"81–85","class":"barbarian","view":"start","count":0},{"band":"81–85","class":"barbarian","view":"easy","count":4},{"band":"86–90","class":"mage","view":"start","count":2},{"band":"86–90","class":"mage","view":"easy","count":2},{"band":"86–90","class":"cleric","view":"start","count":0},{"band":"86–90","class":"cleric","view":"easy","count":2},{"band":"86–90","class":"knight","view":"start","count":6},{"band":"86–90","class":"knight","view":"easy","count":5},{"band":"86–90","class":"barbarian","view":"start","count":0},{"band":"86–90","class":"barbarian","view":"easy","count":2},{"band":"91","class":"mage","view":"start","count":1},{"band":"91","class":"mage","view":"easy","count":1},{"band":"91","class":"cleric","view":"start","count":1},{"band":"91","class":"cleric","view":"easy","count":2},{"band":"91","class":"knight","view":"start","count":7},{"band":"91","class":"knight","view":"easy","count":3},{"band":"91","class":"barbarian","view":"start","count":2},{"band":"91","class":"barbarian","view":"easy","count":4}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":{"type":"line","point":true},"encoding":{"x":{"field":"band","type":"ordinal","title":"Levels","sort":["1–5","6–10","11–15","16–20","21–25","26–30","31–35","36–40","41–45","46–50","51–55","56–60","61–65","66–70","71–75","76–80","81–85","86–90","91"]},"y":{"field":"count","type":"quantitative","title":"Weapons"},"color":{"field":"class","type":"nominal","title":"Class","scale":{"domain":["mage","cleric","knight","barbarian"],"range":["#4f7896","#e0a030","#5f8a5b","#b4532a"]}},"strokeDash":{"field":"view","type":"nominal","title":"View","scale":{"domain":["start","easy"],"range":[[1,0],[5,3]]},"legend":{"symbolType":"stroke","symbolStrokeWidth":2}},"tooltip":[{"field":"band","title":"Levels"},{"field":"class","title":"Class"},{"field":"view","title":"View"},{"field":"count","title":"Weapons"}]}}</script></div>
+
+<details class="abstract">
+<summary>Details: weapons per band for each class</summary>
+<table>
+<thead>
+<tr>
+<th>Levels</th>
+<th>mage start</th>
+<th>cleric start</th>
+<th>knight start</th>
+<th>barbarian start</th>
+<th>mage easy</th>
+<th>cleric easy</th>
+<th>knight easy</th>
+<th>barbarian easy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–5</td>
+<td>6</td>
+<td>13</td>
+<td>38</td>
+<td>5</td>
+<td>6</td>
+<td>19</td>
+<td>23</td>
+<td>27</td>
+</tr>
+<tr>
+<td>6–10</td>
+<td>8</td>
+<td>15</td>
+<td>48</td>
+<td>3</td>
+<td>8</td>
+<td>23</td>
+<td>34</td>
+<td>29</td>
+</tr>
+<tr>
+<td>11–15</td>
+<td>5</td>
+<td>8</td>
+<td>40</td>
+<td>3</td>
+<td>5</td>
+<td>13</td>
+<td>24</td>
+<td>24</td>
+</tr>
+<tr>
+<td>16–20</td>
+<td>9</td>
+<td>12</td>
+<td>37</td>
+<td>3</td>
+<td>9</td>
+<td>21</td>
+<td>29</td>
+<td>25</td>
+</tr>
+<tr>
+<td>21–25</td>
+<td>9</td>
+<td>4</td>
+<td>33</td>
+<td>1</td>
+<td>9</td>
+<td>13</td>
+<td>22</td>
+<td>14</td>
+</tr>
+<tr>
+<td>26–30</td>
+<td>8</td>
+<td>9</td>
+<td>40</td>
+<td>2</td>
+<td>8</td>
+<td>17</td>
+<td>26</td>
+<td>23</td>
+</tr>
+<tr>
+<td>31–35</td>
+<td>2</td>
+<td>1</td>
+<td>14</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>8</td>
+<td>7</td>
+</tr>
+<tr>
+<td>36–40</td>
+<td>2</td>
+<td>2</td>
+<td>10</td>
+<td>0</td>
+<td>2</td>
+<td>4</td>
+<td>8</td>
+<td>6</td>
+</tr>
+<tr>
+<td>41–45</td>
+<td>1</td>
+<td>2</td>
+<td>10</td>
+<td>0</td>
+<td>1</td>
+<td>3</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr>
+<td>46–50</td>
+<td>4</td>
+<td>3</td>
+<td>11</td>
+<td>1</td>
+<td>4</td>
+<td>7</td>
+<td>9</td>
+<td>8</td>
+</tr>
+<tr>
+<td>51–55</td>
+<td>1</td>
+<td>4</td>
+<td>13</td>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<td>56–60</td>
+<td>2</td>
+<td>2</td>
+<td>9</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>61–65</td>
+<td>1</td>
+<td>3</td>
+<td>11</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>7</td>
+<td>6</td>
+</tr>
+<tr>
+<td>66–70</td>
+<td>3</td>
+<td>0</td>
+<td>7</td>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr>
+<td>71–75</td>
+<td>0</td>
+<td>2</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<td>76–80</td>
+<td>1</td>
+<td>2</td>
+<td>5</td>
+<td>0</td>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td>81–85</td>
+<td>2</td>
+<td>1</td>
+<td>10</td>
+<td>0</td>
+<td>2</td>
+<td>3</td>
+<td>8</td>
+<td>4</td>
+</tr>
+<tr>
+<td>86–90</td>
+<td>2</td>
+<td>0</td>
+<td>6</td>
+<td>0</td>
+<td>2</td>
+<td>2</td>
+<td>5</td>
+<td>2</td>
+</tr>
+<tr>
+<td>91</td>
+<td>1</td>
+<td>1</td>
+<td>7</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>all</strong></td>
+<td>67</td>
+<td>84</td>
+<td>357</td>
+<td>29</td>
+<td>67</td>
+<td>151</td>
+<td>236</td>
+<td>204</td>
+</tr>
+</tbody>
+</table>
+<p>Bands with <strong>no</strong> new weapon of a class's starting types:</p>
+<ul>
+<li><strong>mage</strong> (dagger): 1/19 bands — 71–75</li>
+<li><strong>cleric</strong> (mace, flail): 2/19 bands — 66–70, 86–90</li>
+<li><strong>knight</strong> (sword, dagger, spear, mace, axe, flail, whip, polearm): 0/19 bands</li>
+<li><strong>barbarian</strong> (axe): 6/19 bands — 36–40, 41–45, 71–75, 76–80, 81–85, 86–90</li>
+</ul>
+</details>
+<h2 id="weapons-plateau">Barbarians wait 23 levels for a better weapon<a class="headerlink" href="#weapons-plateau" title="Permanent link">&para;</a></h2>
+<p>From level 68 to 90, the best axe a barbarian can use stays at average damage <strong>40</strong>, while the damage cap for their level rises from 38 to 49. Longest waits for the other classes: mage 10 levels (30–39), cleric 11 levels (54–64), knight 7 levels (54–60).</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":["Best usable weapon at each level (starting types); shaded = longest","wait"],"anchor":"start"},"width":"container","height":300,"data":{"values":[{"level":1,"series":"any type","avg":5.0},{"level":2,"series":"any type","avg":5.0},{"level":3,"series":"any type","avg":6.0},{"level":4,"series":"any type","avg":6.0},{"level":5,"series":"any type","avg":6.0},{"level":6,"series":"any type","avg":6.0},{"level":7,"series":"any type","avg":6.0},{"level":8,"series":"any type","avg":6.0},{"level":9,"series":"any type","avg":7.5},{"level":10,"series":"any type","avg":9.0},{"level":11,"series":"any type","avg":10.0},{"level":12,"series":"any type","avg":10.0},{"level":13,"series":"any type","avg":12.0},{"level":14,"series":"any type","avg":12.0},{"level":15,"series":"any type","avg":12.0},{"level":16,"series":"any type","avg":12.0},{"level":17,"series":"any type","avg":12.0},{"level":18,"series":"any type","avg":13.5},{"level":19,"series":"any type","avg":13.5},{"level":20,"series":"any type","avg":14.0},{"level":21,"series":"any type","avg":14.0},{"level":22,"series":"any type","avg":15.0},{"level":23,"series":"any type","avg":15.0},{"level":24,"series":"any type","avg":16.0},{"level":25,"series":"any type","avg":16.0},{"level":26,"series":"any type","avg":16.0},{"level":27,"series":"any type","avg":16.0},{"level":28,"series":"any type","avg":16.0},{"level":29,"series":"any type","avg":18.0},{"level":30,"series":"any type","avg":20.0},{"level":31,"series":"any type","avg":20.0},{"level":32,"series":"any type","avg":20.0},{"level":33,"series":"any type","avg":20.0},{"level":34,"series":"any type","avg":20.0},{"level":35,"series":"any type","avg":21.0},{"level":36,"series":"any type","avg":22.5},{"level":37,"series":"any type","avg":22.5},{"level":38,"series":"any type","avg":22.5},{"level":39,"series":"any type","avg":24.0},{"level":40,"series":"any type","avg":24.0},{"level":41,"series":"any type","avg":24.0},{"level":42,"series":"any type","avg":24.0},{"level":43,"series":"any type","avg":24.5},{"level":44,"series":"any type","avg":26.0},{"level":45,"series":"any type","avg":26.0},{"level":46,"series":"any type","avg":26.0},{"level":47,"series":"any type","avg":28.0},{"level":48,"series":"any type","avg":28.0},{"level":49,"series":"any type","avg":28.0},{"level":50,"series":"any type","avg":30.0},{"level":51,"series":"any type","avg":30.0},{"level":52,"series":"any type","avg":30.0},{"level":53,"series":"any type","avg":30.0},{"level":54,"series":"any type","avg":33.0},{"level":55,"series":"any type","avg":33.0},{"level":56,"series":"any type","avg":33.0},{"level":57,"series":"any type","avg":33.0},{"level":58,"series":"any type","avg":33.0},{"level":59,"series":"any type","avg":33.0},{"level":60,"series":"any type","avg":33.0},{"level":61,"series":"any type","avg":35.0},{"level":62,"series":"any type","avg":35.0},{"level":63,"series":"any type","avg":35.0},{"level":64,"series":"any type","avg":35.0},{"level":65,"series":"any type","avg":36.0},{"level":66,"series":"any type","avg":36.0},{"level":67,"series":"any type","avg":36.0},{"level":68,"series":"any type","avg":40.0},{"level":69,"series":"any type","avg":40.0},{"level":70,"series":"any type","avg":40.0},{"level":71,"series":"any type","avg":40.0},{"level":72,"series":"any type","avg":40.0},{"level":73,"series":"any type","avg":40.0},{"level":74,"series":"any type","avg":40.0},{"level":75,"series":"any type","avg":45.0},{"level":76,"series":"any type","avg":45.0},{"level":77,"series":"any type","avg":45.0},{"level":78,"series":"any type","avg":45.0},{"level":79,"series":"any type","avg":45.0},{"level":80,"series":"any type","avg":45.0},{"level":81,"series":"any type","avg":45.0},{"level":82,"series":"any type","avg":45.5},{"level":83,"series":"any type","avg":45.5},{"level":84,"series":"any type","avg":45.5},{"level":85,"series":"any type","avg":52.0},{"level":86,"series":"any type","avg":52.0},{"level":87,"series":"any type","avg":52.0},{"level":88,"series":"any type","avg":52.0},{"level":89,"series":"any type","avg":52.0},{"level":90,"series":"any type","avg":52.5},{"level":91,"series":"any type","avg":52.5},{"level":1,"series":"mage","avg":5.0},{"level":2,"series":"mage","avg":5.0},{"level":3,"series":"mage","avg":5.0},{"level":4,"series":"mage","avg":5.0},{"level":5,"series":"mage","avg":5.0},{"level":6,"series":"mage","avg":5.0},{"level":7,"series":"mage","avg":5.0},{"level":8,"series":"mage","avg":5.0},{"level":9,"series":"mage","avg":6.0},{"level":10,"series":"mage","avg":6.0},{"level":11,"series":"mage","avg":6.0},{"level":12,"series":"mage","avg":9.0},{"level":13,"series":"mage","avg":9.0},{"level":14,"series":"mage","avg":9.0},{"level":15,"series":"mage","avg":9.0},{"level":16,"series":"mage","avg":9.0},{"level":17,"series":"mage","avg":10.0},{"level":18,"series":"mage","avg":13.5},{"level":19,"series":"mage","avg":13.5},{"level":20,"series":"mage","avg":13.5},{"level":21,"series":"mage","avg":13.5},{"level":22,"series":"mage","avg":13.5},{"level":23,"series":"mage","avg":15.0},{"level":24,"series":"mage","avg":16.0},{"level":25,"series":"mage","avg":16.0},{"level":26,"series":"mage","avg":16.0},{"level":27,"series":"mage","avg":16.0},{"level":28,"series":"mage","avg":16.0},{"level":29,"series":"mage","avg":16.0},{"level":30,"series":"mage","avg":20.0},{"level":31,"series":"mage","avg":20.0},{"level":32,"series":"mage","avg":20.0},{"level":33,"series":"mage","avg":20.0},{"level":34,"series":"mage","avg":20.0},{"level":35,"series":"mage","avg":20.0},{"level":36,"series":"mage","avg":20.0},{"level":37,"series":"mage","avg":20.0},{"level":38,"series":"mage","avg":20.0},{"level":39,"series":"mage","avg":20.0},{"level":40,"series":"mage","avg":22.5},{"level":41,"series":"mage","avg":22.5},{"level":42,"series":"mage","avg":22.5},{"level":43,"series":"mage","avg":22.5},{"level":44,"series":"mage","avg":22.5},{"level":45,"series":"mage","avg":24.0},{"level":46,"series":"mage","avg":24.0},{"level":47,"series":"mage","avg":28.0},{"level":48,"series":"mage","avg":28.0},{"level":49,"series":"mage","avg":28.0},{"level":50,"series":"mage","avg":30.0},{"level":51,"series":"mage","avg":30.0},{"level":52,"series":"mage","avg":30.0},{"level":53,"series":"mage","avg":30.0},{"level":54,"series":"mage","avg":30.0},{"level":55,"series":"mage","avg":30.0},{"level":56,"series":"mage","avg":31.5},{"level":57,"series":"mage","avg":31.5},{"level":58,"series":"mage","avg":31.5},{"level":59,"series":"mage","avg":31.5},{"level":60,"series":"mage","avg":32.5},{"level":61,"series":"mage","avg":32.5},{"level":62,"series":"mage","avg":32.5},{"level":63,"series":"mage","avg":32.5},{"level":64,"series":"mage","avg":32.5},{"level":65,"series":"mage","avg":36.0},{"level":66,"series":"mage","avg":36.0},{"level":67,"series":"mage","avg":36.0},{"level":68,"series":"mage","avg":38.5},{"level":69,"series":"mage","avg":38.5},{"level":70,"series":"mage","avg":40.0},{"level":71,"series":"mage","avg":40.0},{"level":72,"series":"mage","avg":40.0},{"level":73,"series":"mage","avg":40.0},{"level":74,"series":"mage","avg":40.0},{"level":75,"series":"mage","avg":40.0},{"level":76,"series":"mage","avg":40.0},{"level":77,"series":"mage","avg":40.0},{"level":78,"series":"mage","avg":45.0},{"level":79,"series":"mage","avg":45.0},{"level":80,"series":"mage","avg":45.0},{"level":81,"series":"mage","avg":45.0},{"level":82,"series":"mage","avg":45.0},{"level":83,"series":"mage","avg":45.0},{"level":84,"series":"mage","avg":45.0},{"level":85,"series":"mage","avg":45.0},{"level":86,"series":"mage","avg":45.0},{"level":87,"series":"mage","avg":49.5},{"level":88,"series":"mage","avg":49.5},{"level":89,"series":"mage","avg":49.5},{"level":90,"series":"mage","avg":50.0},{"level":91,"series":"mage","avg":50.0},{"level":1,"series":"cleric","avg":3.0},{"level":2,"series":"cleric","avg":3.0},{"level":3,"series":"cleric","avg":4.5},{"level":4,"series":"cleric","avg":4.5},{"level":5,"series":"cleric","avg":4.5},{"level":6,"series":"cleric","avg":5.0},{"level":7,"series":"cleric","avg":5.0},{"level":8,"series":"cleric","avg":5.0},{"level":9,"series":"cleric","avg":7.5},{"level":10,"series":"cleric","avg":7.5},{"level":11,"series":"cleric","avg":7.5},{"level":12,"series":"cleric","avg":8.0},{"level":13,"series":"cleric","avg":10.0},{"level":14,"series":"cleric","avg":10.0},{"level":15,"series":"cleric","avg":10.0},{"level":16,"series":"cleric","avg":12.0},{"level":17,"series":"cleric","avg":12.0},{"level":18,"series":"cleric","avg":12.0},{"level":19,"series":"cleric","avg":12.5},{"level":20,"series":"cleric","avg":12.5},{"level":21,"series":"cleric","avg":12.5},{"level":22,"series":"cleric","avg":12.5},{"level":23,"series":"cleric","avg":15.0},{"level":24,"series":"cleric","avg":15.0},{"level":25,"series":"cleric","avg":15.0},{"level":26,"series":"cleric","avg":15.0},{"level":27,"series":"cleric","avg":16.0},{"level":28,"series":"cleric","avg":16.0},{"level":29,"series":"cleric","avg":18.0},{"level":30,"series":"cleric","avg":18.0},{"level":31,"series":"cleric","avg":18.0},{"level":32,"series":"cleric","avg":18.0},{"level":33,"series":"cleric","avg":18.0},{"level":34,"series":"cleric","avg":18.0},{"level":35,"series":"cleric","avg":18.0},{"level":36,"series":"cleric","avg":18.0},{"level":37,"series":"cleric","avg":18.0},{"level":38,"series":"cleric","avg":18.0},{"level":39,"series":"cleric","avg":24.0},{"level":40,"series":"cleric","avg":24.0},{"level":41,"series":"cleric","avg":24.0},{"level":42,"series":"cleric","avg":24.0},{"level":43,"series":"cleric","avg":24.5},{"level":44,"series":"cleric","avg":24.5},{"level":45,"series":"cleric","avg":25.0},{"level":46,"series":"cleric","avg":25.0},{"level":47,"series":"cleric","avg":27.0},{"level":48,"series":"cleric","avg":27.0},{"level":49,"series":"cleric","avg":28.0},{"level":50,"series":"cleric","avg":28.0},{"level":51,"series":"cleric","avg":28.0},{"level":52,"series":"cleric","avg":28.0},{"level":53,"series":"cleric","avg":30.0},{"level":54,"series":"cleric","avg":33.0},{"level":55,"series":"cleric","avg":33.0},{"level":56,"series":"cleric","avg":33.0},{"level":57,"series":"cleric","avg":33.0},{"level":58,"series":"cleric","avg":33.0},{"level":59,"series":"cleric","avg":33.0},{"level":60,"series":"cleric","avg":33.0},{"level":61,"series":"cleric","avg":33.0},{"level":62,"series":"cleric","avg":33.0},{"level":63,"series":"cleric","avg":33.0},{"level":64,"series":"cleric","avg":33.0},{"level":65,"series":"cleric","avg":36.0},{"level":66,"series":"cleric","avg":36.0},{"level":67,"series":"cleric","avg":36.0},{"level":68,"series":"cleric","avg":36.0},{"level":69,"series":"cleric","avg":36.0},{"level":70,"series":"cleric","avg":36.0},{"level":71,"series":"cleric","avg":36.0},{"level":72,"series":"cleric","avg":40.0},{"level":73,"series":"cleric","avg":40.0},{"level":74,"series":"cleric","avg":40.0},{"level":75,"series":"cleric","avg":42.0},{"level":76,"series":"cleric","avg":42.0},{"level":77,"series":"cleric","avg":42.0},{"level":78,"series":"cleric","avg":42.0},{"level":79,"series":"cleric","avg":42.0},{"level":80,"series":"cleric","avg":45.0},{"level":81,"series":"cleric","avg":45.0},{"level":82,"series":"cleric","avg":45.0},{"level":83,"series":"cleric","avg":45.0},{"level":84,"series":"cleric","avg":45.0},{"level":85,"series":"cleric","avg":45.0},{"level":86,"series":"cleric","avg":45.0},{"level":87,"series":"cleric","avg":45.0},{"level":88,"series":"cleric","avg":45.0},{"level":89,"series":"cleric","avg":45.0},{"level":90,"series":"cleric","avg":45.0},{"level":91,"series":"cleric","avg":52.5},{"level":1,"series":"knight","avg":5.0},{"level":2,"series":"knight","avg":5.0},{"level":3,"series":"knight","avg":6.0},{"level":4,"series":"knight","avg":6.0},{"level":5,"series":"knight","avg":6.0},{"level":6,"series":"knight","avg":6.0},{"level":7,"series":"knight","avg":6.0},{"level":8,"series":"knight","avg":6.0},{"level":9,"series":"knight","avg":7.5},{"level":10,"series":"knight","avg":9.0},{"level":11,"series":"knight","avg":10.0},{"level":12,"series":"knight","avg":10.0},{"level":13,"series":"knight","avg":12.0},{"level":14,"series":"knight","avg":12.0},{"level":15,"series":"knight","avg":12.0},{"level":16,"series":"knight","avg":12.0},{"level":17,"series":"knight","avg":12.0},{"level":18,"series":"knight","avg":13.5},{"level":19,"series":"knight","avg":13.5},{"level":20,"series":"knight","avg":14.0},{"level":21,"series":"knight","avg":14.0},{"level":22,"series":"knight","avg":15.0},{"level":23,"series":"knight","avg":15.0},{"level":24,"series":"knight","avg":16.0},{"level":25,"series":"knight","avg":16.0},{"level":26,"series":"knight","avg":16.0},{"level":27,"series":"knight","avg":16.0},{"level":28,"series":"knight","avg":16.0},{"level":29,"series":"knight","avg":18.0},{"level":30,"series":"knight","avg":20.0},{"level":31,"series":"knight","avg":20.0},{"level":32,"series":"knight","avg":20.0},{"level":33,"series":"knight","avg":20.0},{"level":34,"series":"knight","avg":20.0},{"level":35,"series":"knight","avg":21.0},{"level":36,"series":"knight","avg":22.5},{"level":37,"series":"knight","avg":22.5},{"level":38,"series":"knight","avg":22.5},{"level":39,"series":"knight","avg":24.0},{"level":40,"series":"knight","avg":24.0},{"level":41,"series":"knight","avg":24.0},{"level":42,"series":"knight","avg":24.0},{"level":43,"series":"knight","avg":24.5},{"level":44,"series":"knight","avg":26.0},{"level":45,"series":"knight","avg":26.0},{"level":46,"series":"knight","avg":26.0},{"level":47,"series":"knight","avg":28.0},{"level":48,"series":"knight","avg":28.0},{"level":49,"series":"knight","avg":28.0},{"level":50,"series":"knight","avg":30.0},{"level":51,"series":"knight","avg":30.0},{"level":52,"series":"knight","avg":30.0},{"level":53,"series":"knight","avg":30.0},{"level":54,"series":"knight","avg":33.0},{"level":55,"series":"knight","avg":33.0},{"level":56,"series":"knight","avg":33.0},{"level":57,"series":"knight","avg":33.0},{"level":58,"series":"knight","avg":33.0},{"level":59,"series":"knight","avg":33.0},{"level":60,"series":"knight","avg":33.0},{"level":61,"series":"knight","avg":35.0},{"level":62,"series":"knight","avg":35.0},{"level":63,"series":"knight","avg":35.0},{"level":64,"series":"knight","avg":35.0},{"level":65,"series":"knight","avg":36.0},{"level":66,"series":"knight","avg":36.0},{"level":67,"series":"knight","avg":36.0},{"level":68,"series":"knight","avg":40.0},{"level":69,"series":"knight","avg":40.0},{"level":70,"series":"knight","avg":40.0},{"level":71,"series":"knight","avg":40.0},{"level":72,"series":"knight","avg":40.0},{"level":73,"series":"knight","avg":40.0},{"level":74,"series":"knight","avg":40.0},{"level":75,"series":"knight","avg":45.0},{"level":76,"series":"knight","avg":45.0},{"level":77,"series":"knight","avg":45.0},{"level":78,"series":"knight","avg":45.0},{"level":79,"series":"knight","avg":45.0},{"level":80,"series":"knight","avg":45.0},{"level":81,"series":"knight","avg":45.0},{"level":82,"series":"knight","avg":45.5},{"level":83,"series":"knight","avg":45.5},{"level":84,"series":"knight","avg":45.5},{"level":85,"series":"knight","avg":52.0},{"level":86,"series":"knight","avg":52.0},{"level":87,"series":"knight","avg":52.0},{"level":88,"series":"knight","avg":52.0},{"level":89,"series":"knight","avg":52.0},{"level":90,"series":"knight","avg":52.5},{"level":91,"series":"knight","avg":52.5},{"level":1,"series":"barbarian","avg":3.5},{"level":2,"series":"barbarian","avg":3.5},{"level":3,"series":"barbarian","avg":3.5},{"level":4,"series":"barbarian","avg":3.5},{"level":5,"series":"barbarian","avg":3.5},{"level":6,"series":"barbarian","avg":5.0},{"level":7,"series":"barbarian","avg":6.0},{"level":8,"series":"barbarian","avg":6.0},{"level":9,"series":"barbarian","avg":6.0},{"level":10,"series":"barbarian","avg":9.0},{"level":11,"series":"barbarian","avg":9.0},{"level":12,"series":"barbarian","avg":9.0},{"level":13,"series":"barbarian","avg":9.0},{"level":14,"series":"barbarian","avg":9.0},{"level":15,"series":"barbarian","avg":9.0},{"level":16,"series":"barbarian","avg":10.0},{"level":17,"series":"barbarian","avg":10.0},{"level":18,"series":"barbarian","avg":10.5},{"level":19,"series":"barbarian","avg":10.5},{"level":20,"series":"barbarian","avg":10.5},{"level":21,"series":"barbarian","avg":10.5},{"level":22,"series":"barbarian","avg":15.0},{"level":23,"series":"barbarian","avg":15.0},{"level":24,"series":"barbarian","avg":15.0},{"level":25,"series":"barbarian","avg":15.0},{"level":26,"series":"barbarian","avg":15.0},{"level":27,"series":"barbarian","avg":15.0},{"level":28,"series":"barbarian","avg":15.0},{"level":29,"series":"barbarian","avg":15.0},{"level":30,"series":"barbarian","avg":17.5},{"level":31,"series":"barbarian","avg":17.5},{"level":32,"series":"barbarian","avg":17.5},{"level":33,"series":"barbarian","avg":17.5},{"level":34,"series":"barbarian","avg":17.5},{"level":35,"series":"barbarian","avg":21.0},{"level":36,"series":"barbarian","avg":21.0},{"level":37,"series":"barbarian","avg":21.0},{"level":38,"series":"barbarian","avg":21.0},{"level":39,"series":"barbarian","avg":21.0},{"level":40,"series":"barbarian","avg":21.0},{"level":41,"series":"barbarian","avg":21.0},{"level":42,"series":"barbarian","avg":21.0},{"level":43,"series":"barbarian","avg":21.0},{"level":44,"series":"barbarian","avg":21.0},{"level":45,"series":"barbarian","avg":21.0},{"level":46,"series":"barbarian","avg":21.0},{"level":47,"series":"barbarian","avg":21.0},{"level":48,"series":"barbarian","avg":21.0},{"level":49,"series":"barbarian","avg":21.0},{"level":50,"series":"barbarian","avg":30.0},{"level":51,"series":"barbarian","avg":30.0},{"level":52,"series":"barbarian","avg":30.0},{"level":53,"series":"barbarian","avg":30.0},{"level":54,"series":"barbarian","avg":30.0},{"level":55,"series":"barbarian","avg":30.0},{"level":56,"series":"barbarian","avg":30.0},{"level":57,"series":"barbarian","avg":30.0},{"level":58,"series":"barbarian","avg":30.0},{"level":59,"series":"barbarian","avg":30.0},{"level":60,"series":"barbarian","avg":33.0},{"level":61,"series":"barbarian","avg":33.0},{"level":62,"series":"barbarian","avg":33.0},{"level":63,"series":"barbarian","avg":33.0},{"level":64,"series":"barbarian","avg":33.0},{"level":65,"series":"barbarian","avg":36.0},{"level":66,"series":"barbarian","avg":36.0},{"level":67,"series":"barbarian","avg":36.0},{"level":68,"series":"barbarian","avg":40.0},{"level":69,"series":"barbarian","avg":40.0},{"level":70,"series":"barbarian","avg":40.0},{"level":71,"series":"barbarian","avg":40.0},{"level":72,"series":"barbarian","avg":40.0},{"level":73,"series":"barbarian","avg":40.0},{"level":74,"series":"barbarian","avg":40.0},{"level":75,"series":"barbarian","avg":40.0},{"level":76,"series":"barbarian","avg":40.0},{"level":77,"series":"barbarian","avg":40.0},{"level":78,"series":"barbarian","avg":40.0},{"level":79,"series":"barbarian","avg":40.0},{"level":80,"series":"barbarian","avg":40.0},{"level":81,"series":"barbarian","avg":40.0},{"level":82,"series":"barbarian","avg":40.0},{"level":83,"series":"barbarian","avg":40.0},{"level":84,"series":"barbarian","avg":40.0},{"level":85,"series":"barbarian","avg":40.0},{"level":86,"series":"barbarian","avg":40.0},{"level":87,"series":"barbarian","avg":40.0},{"level":88,"series":"barbarian","avg":40.0},{"level":89,"series":"barbarian","avg":40.0},{"level":90,"series":"barbarian","avg":40.0},{"level":91,"series":"barbarian","avg":52.5},{"level":1,"series":"cap","avg":4},{"level":2,"series":"cap","avg":5},{"level":3,"series":"cap","avg":5},{"level":4,"series":"cap","avg":6},{"level":5,"series":"cap","avg":6},{"level":6,"series":"cap","avg":7},{"level":7,"series":"cap","avg":7},{"level":8,"series":"cap","avg":8},{"level":9,"series":"cap","avg":8},{"level":10,"series":"cap","avg":9},{"level":11,"series":"cap","avg":9},{"level":12,"series":"cap","avg":10},{"level":13,"series":"cap","avg":10},{"level":14,"series":"cap","avg":11},{"level":15,"series":"cap","avg":11},{"level":16,"series":"cap","avg":12},{"level":17,"series":"cap","avg":12},{"level":18,"series":"cap","avg":13},{"level":19,"series":"cap","avg":13},{"level":20,"series":"cap","avg":14},{"level":21,"series":"cap","avg":14},{"level":22,"series":"cap","avg":15},{"level":23,"series":"cap","avg":15},{"level":24,"series":"cap","avg":16},{"level":25,"series":"cap","avg":16},{"level":26,"series":"cap","avg":17},{"level":27,"series":"cap","avg":17},{"level":28,"series":"cap","avg":18},{"level":29,"series":"cap","avg":18},{"level":30,"series":"cap","avg":19},{"level":31,"series":"cap","avg":19},{"level":32,"series":"cap","avg":20},{"level":33,"series":"cap","avg":20},{"level":34,"series":"cap","avg":21},{"level":35,"series":"cap","avg":21},{"level":36,"series":"cap","avg":22},{"level":37,"series":"cap","avg":22},{"level":38,"series":"cap","avg":23},{"level":39,"series":"cap","avg":23},{"level":40,"series":"cap","avg":24},{"level":41,"series":"cap","avg":24},{"level":42,"series":"cap","avg":25},{"level":43,"series":"cap","avg":25},{"level":44,"series":"cap","avg":26},{"level":45,"series":"cap","avg":26},{"level":46,"series":"cap","avg":27},{"level":47,"series":"cap","avg":27},{"level":48,"series":"cap","avg":28},{"level":49,"series":"cap","avg":28},{"level":50,"series":"cap","avg":29},{"level":51,"series":"cap","avg":29},{"level":52,"series":"cap","avg":30},{"level":53,"series":"cap","avg":30},{"level":54,"series":"cap","avg":31},{"level":55,"series":"cap","avg":31},{"level":56,"series":"cap","avg":32},{"level":57,"series":"cap","avg":32},{"level":58,"series":"cap","avg":33},{"level":59,"series":"cap","avg":33},{"level":60,"series":"cap","avg":34},{"level":61,"series":"cap","avg":34},{"level":62,"series":"cap","avg":35},{"level":63,"series":"cap","avg":35},{"level":64,"series":"cap","avg":36},{"level":65,"series":"cap","avg":36},{"level":66,"series":"cap","avg":37},{"level":67,"series":"cap","avg":37},{"level":68,"series":"cap","avg":38},{"level":69,"series":"cap","avg":38},{"level":70,"series":"cap","avg":39},{"level":71,"series":"cap","avg":39},{"level":72,"series":"cap","avg":40},{"level":73,"series":"cap","avg":40},{"level":74,"series":"cap","avg":41},{"level":75,"series":"cap","avg":41},{"level":76,"series":"cap","avg":42},{"level":77,"series":"cap","avg":42},{"level":78,"series":"cap","avg":43},{"level":79,"series":"cap","avg":43},{"level":80,"series":"cap","avg":44},{"level":81,"series":"cap","avg":44},{"level":82,"series":"cap","avg":45},{"level":83,"series":"cap","avg":45},{"level":84,"series":"cap","avg":46},{"level":85,"series":"cap","avg":46},{"level":86,"series":"cap","avg":47},{"level":87,"series":"cap","avg":47},{"level":88,"series":"cap","avg":48},{"level":89,"series":"cap","avg":48},{"level":90,"series":"cap","avg":49},{"level":91,"series":"cap","avg":49}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"layer":[{"data":{"values":[{"lo":68,"hi":91,"label":"barbarian: 23 levels"}]},"mark":{"type":"rect","opacity":0.13,"color":"#b4532a"},"encoding":{"x":{"field":"lo","type":"quantitative"},"x2":{"field":"hi"}}},{"data":{"values":[{"lo":68,"hi":91,"label":"barbarian: 23 levels"}]},"mark":{"type":"text","align":"left","dx":4,"dy":12,"fontWeight":600,"color":"#b4532a"},"encoding":{"x":{"field":"lo","type":"quantitative"},"y":{"value":0},"text":{"field":"label"}}},{"mark":{"type":"line","interpolate":"step-after"},"encoding":{"x":{"field":"level","type":"quantitative","title":"Character level","scale":{"domain":[1,91],"nice":false}},"y":{"field":"avg","type":"quantitative","title":"Average damage"},"color":{"field":"series","type":"nominal","title":"Series","scale":{"domain":["any type","mage","cleric","knight","barbarian","cap"],"range":["#8a6a45","#4f7896","#e0a030","#5f8a5b","#b4532a","#9a8b7e"]}},"strokeDash":{"condition":{"test":"datum.series === 'cap'","value":[4,4]},"value":[1,0]},"tooltip":[{"field":"series","title":"Series"},{"field":"level","title":"Level"},{"field":"avg","title":"Avg"}]}}]}</script></div>
+
+<details class="abstract">
+<summary>Details: longest waits per class</summary>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Levels</th>
+<th>Length</th>
+<th>Best avg during</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mage</td>
+<td>30–39</td>
+<td>10</td>
+<td>20</td>
+</tr>
+<tr>
+<td>mage</td>
+<td>78–86</td>
+<td>9</td>
+<td>45</td>
+</tr>
+<tr>
+<td>mage</td>
+<td>1–8</td>
+<td>8</td>
+<td>5</td>
+</tr>
+<tr>
+<td>cleric</td>
+<td>54–64</td>
+<td>11</td>
+<td>33</td>
+</tr>
+<tr>
+<td>cleric</td>
+<td>80–90</td>
+<td>11</td>
+<td>45</td>
+</tr>
+<tr>
+<td>cleric</td>
+<td>29–38</td>
+<td>10</td>
+<td>18</td>
+</tr>
+<tr>
+<td>knight</td>
+<td>54–60</td>
+<td>7</td>
+<td>33</td>
+</tr>
+<tr>
+<td>knight</td>
+<td>68–74</td>
+<td>7</td>
+<td>40</td>
+</tr>
+<tr>
+<td>knight</td>
+<td>75–81</td>
+<td>7</td>
+<td>45</td>
+</tr>
+<tr>
+<td>barbarian</td>
+<td>68–90</td>
+<td>23</td>
+<td>40</td>
+</tr>
+<tr>
+<td>barbarian</td>
+<td>35–49</td>
+<td>15</td>
+<td>21</td>
+</tr>
+<tr>
+<td>barbarian</td>
+<td>50–59</td>
+<td>10</td>
+<td>30</td>
+</tr>
+<tr>
+<td>(any type)</td>
+<td>54–60</td>
+<td>7</td>
+<td>33</td>
+</tr>
+<tr>
+<td>(any type)</td>
+<td>68–74</td>
+<td>7</td>
+<td>40</td>
+</tr>
+<tr>
+<td>(any type)</td>
+<td>75–81</td>
+<td>7</td>
+<td>45</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="abstract">
+<summary>Details: best weapon as a share of the cap, per band</summary>
+<table>
+<thead>
+<tr>
+<th>Levels</th>
+<th>any</th>
+<th>mage start</th>
+<th>cleric start</th>
+<th>knight start</th>
+<th>barbarian start</th>
+<th>mage easy</th>
+<th>cleric easy</th>
+<th>knight easy</th>
+<th>barbarian easy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–5</td>
+<td>1</td>
+<td>0.8</td>
+<td>0.8</td>
+<td>1</td>
+<td>0.6</td>
+<td>0.8</td>
+<td>0.8</td>
+<td>0.8</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>6–10</td>
+<td>1</td>
+<td>0.7</td>
+<td>0.8</td>
+<td>1</td>
+<td>1</td>
+<td>0.7</td>
+<td>0.8</td>
+<td>0.9</td>
+<td>1</td>
+</tr>
+<tr>
+<td>11–15</td>
+<td>1.1</td>
+<td>0.8</td>
+<td>0.9</td>
+<td>1.1</td>
+<td>0.8</td>
+<td>0.8</td>
+<td>0.9</td>
+<td>0.9</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>16–20</td>
+<td>1</td>
+<td>1</td>
+<td>0.9</td>
+<td>1</td>
+<td>0.8</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>21–25</td>
+<td>1</td>
+<td>1</td>
+<td>0.9</td>
+<td>1</td>
+<td>0.9</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>26–30</td>
+<td>1.1</td>
+<td>1.1</td>
+<td>0.9</td>
+<td>1.1</td>
+<td>0.9</td>
+<td>1.1</td>
+<td>1.1</td>
+<td>1.1</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>31–35</td>
+<td>1</td>
+<td>1</td>
+<td>0.9</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>36–40</td>
+<td>1</td>
+<td>0.9</td>
+<td>1</td>
+<td>1</td>
+<td>0.9</td>
+<td>0.9</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>41–45</td>
+<td>1</td>
+<td>0.9</td>
+<td>1</td>
+<td>1</td>
+<td>0.8</td>
+<td>0.9</td>
+<td>1</td>
+<td>1</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>46–50</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>51–55</td>
+<td>1.1</td>
+<td>1</td>
+<td>1.1</td>
+<td>1.1</td>
+<td>1</td>
+<td>1</td>
+<td>1.1</td>
+<td>1.1</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>56–60</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>61–65</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>66–70</td>
+<td>1</td>
+<td>1</td>
+<td>0.9</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>71–75</td>
+<td>1.1</td>
+<td>1</td>
+<td>1</td>
+<td>1.1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1.1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>76–80</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0.9</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>81–85</td>
+<td>1.1</td>
+<td>1</td>
+<td>1</td>
+<td>1.1</td>
+<td>0.9</td>
+<td>1</td>
+<td>1</td>
+<td>1.1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>86–90</td>
+<td>1.1</td>
+<td>1</td>
+<td>0.9</td>
+<td>1.1</td>
+<td>0.8</td>
+<td>1</td>
+<td>1</td>
+<td>1.1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>91</td>
+<td>1.1</td>
+<td>1</td>
+<td>1.1</td>
+<td>1.1</td>
+<td>1.1</td>
+<td>1</td>
+<td>1.1</td>
+<td>1.1</td>
+<td>1.1</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="abstract">
+<summary>Details: best weapon at every level</summary>
+<table>
+<thead>
+<tr>
+<th>Lvl</th>
+<th>new</th>
+<th>cap</th>
+<th>best (any type)</th>
+<th>mage</th>
+<th>cleric</th>
+<th>knight</th>
+<th>barbarian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>13</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>5</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>5</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>12</td>
+<td>5</td>
+<td>6</td>
+<td>5</td>
+<td>4.5</td>
+<td>6</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>5</td>
+<td>4.5</td>
+<td>6</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>5</td>
+<td>12</td>
+<td>6</td>
+<td>6</td>
+<td>5</td>
+<td>4.5</td>
+<td>6</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>6</td>
+<td>10</td>
+<td>7</td>
+<td>6</td>
+<td>5</td>
+<td>5</td>
+<td>6</td>
+<td>5</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>7</td>
+<td>6</td>
+<td>5</td>
+<td>5</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>8</td>
+<td>7</td>
+<td>8</td>
+<td>6</td>
+<td>5</td>
+<td>5</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>9</td>
+<td>8</td>
+<td>8</td>
+<td>7.5</td>
+<td>6</td>
+<td>7.5</td>
+<td>7.5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>10</td>
+<td>16</td>
+<td>9</td>
+<td>9</td>
+<td>6</td>
+<td>7.5</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>11</td>
+<td>6</td>
+<td>9</td>
+<td>10</td>
+<td>6</td>
+<td>7.5</td>
+<td>10</td>
+<td>9</td>
+</tr>
+<tr>
+<td>12</td>
+<td>12</td>
+<td>10</td>
+<td>10</td>
+<td>9</td>
+<td>8</td>
+<td>10</td>
+<td>9</td>
+</tr>
+<tr>
+<td>13</td>
+<td>8</td>
+<td>10</td>
+<td>12</td>
+<td>9</td>
+<td>10</td>
+<td>12</td>
+<td>9</td>
+</tr>
+<tr>
+<td>14</td>
+<td>5</td>
+<td>11</td>
+<td>12</td>
+<td>9</td>
+<td>10</td>
+<td>12</td>
+<td>9</td>
+</tr>
+<tr>
+<td>15</td>
+<td>12</td>
+<td>11</td>
+<td>12</td>
+<td>9</td>
+<td>10</td>
+<td>12</td>
+<td>9</td>
+</tr>
+<tr>
+<td>16</td>
+<td>5</td>
+<td>12</td>
+<td>12</td>
+<td>9</td>
+<td>12</td>
+<td>12</td>
+<td>10</td>
+</tr>
+<tr>
+<td>17</td>
+<td>10</td>
+<td>12</td>
+<td>12</td>
+<td>10</td>
+<td>12</td>
+<td>12</td>
+<td>10</td>
+</tr>
+<tr>
+<td>18</td>
+<td>11</td>
+<td>13</td>
+<td>13.5</td>
+<td>13.5</td>
+<td>12</td>
+<td>13.5</td>
+<td>10.5</td>
+</tr>
+<tr>
+<td>19</td>
+<td>5</td>
+<td>13</td>
+<td>13.5</td>
+<td>13.5</td>
+<td>12.5</td>
+<td>13.5</td>
+<td>10.5</td>
+</tr>
+<tr>
+<td>20</td>
+<td>11</td>
+<td>14</td>
+<td>14</td>
+<td>13.5</td>
+<td>12.5</td>
+<td>14</td>
+<td>10.5</td>
+</tr>
+<tr>
+<td>21</td>
+<td>5</td>
+<td>14</td>
+<td>14</td>
+<td>13.5</td>
+<td>12.5</td>
+<td>14</td>
+<td>10.5</td>
+</tr>
+<tr>
+<td>22</td>
+<td>6</td>
+<td>15</td>
+<td>15</td>
+<td>13.5</td>
+<td>12.5</td>
+<td>15</td>
+<td>15</td>
+</tr>
+<tr>
+<td>23</td>
+<td>12</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+</tr>
+<tr>
+<td>24</td>
+<td>2</td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>15</td>
+<td>16</td>
+<td>15</td>
+</tr>
+<tr>
+<td>25</td>
+<td>14</td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>15</td>
+<td>16</td>
+<td>15</td>
+</tr>
+<tr>
+<td>26</td>
+<td>7</td>
+<td>17</td>
+<td>16</td>
+<td>16</td>
+<td>15</td>
+<td>16</td>
+<td>15</td>
+</tr>
+<tr>
+<td>27</td>
+<td>4</td>
+<td>17</td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>15</td>
+</tr>
+<tr>
+<td>28</td>
+<td>3</td>
+<td>18</td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>15</td>
+</tr>
+<tr>
+<td>29</td>
+<td>2</td>
+<td>18</td>
+<td>18</td>
+<td>16</td>
+<td>18</td>
+<td>18</td>
+<td>15</td>
+</tr>
+<tr>
+<td>30</td>
+<td>27</td>
+<td>19</td>
+<td>20</td>
+<td>20</td>
+<td>18</td>
+<td>20</td>
+<td>17.5</td>
+</tr>
+<tr>
+<td>31</td>
+<td>1</td>
+<td>19</td>
+<td>20</td>
+<td>20</td>
+<td>18</td>
+<td>20</td>
+<td>17.5</td>
+</tr>
+<tr>
+<td>32</td>
+<td>1</td>
+<td>20</td>
+<td>20</td>
+<td>20</td>
+<td>18</td>
+<td>20</td>
+<td>17.5</td>
+</tr>
+<tr>
+<td>33</td>
+<td>6</td>
+<td>20</td>
+<td>20</td>
+<td>20</td>
+<td>18</td>
+<td>20</td>
+<td>17.5</td>
+</tr>
+<tr>
+<td>34</td>
+<td>1</td>
+<td>21</td>
+<td>20</td>
+<td>20</td>
+<td>18</td>
+<td>20</td>
+<td>17.5</td>
+</tr>
+<tr>
+<td>35</td>
+<td>11</td>
+<td>21</td>
+<td>21</td>
+<td>20</td>
+<td>18</td>
+<td>21</td>
+<td>21</td>
+</tr>
+<tr>
+<td>36</td>
+<td>2</td>
+<td>22</td>
+<td>22.5</td>
+<td>20</td>
+<td>18</td>
+<td>22.5</td>
+<td>21</td>
+</tr>
+<tr>
+<td>37</td>
+<td>2</td>
+<td>22</td>
+<td>22.5</td>
+<td>20</td>
+<td>18</td>
+<td>22.5</td>
+<td>21</td>
+</tr>
+<tr>
+<td>38</td>
+<td>0</td>
+<td>23</td>
+<td>22.5</td>
+<td>20</td>
+<td>18</td>
+<td>22.5</td>
+<td>21</td>
+</tr>
+<tr>
+<td>39</td>
+<td>3</td>
+<td>23</td>
+<td>24</td>
+<td>20</td>
+<td>24</td>
+<td>24</td>
+<td>21</td>
+</tr>
+<tr>
+<td>40</td>
+<td>6</td>
+<td>24</td>
+<td>24</td>
+<td>22.5</td>
+<td>24</td>
+<td>24</td>
+<td>21</td>
+</tr>
+<tr>
+<td>41</td>
+<td>3</td>
+<td>24</td>
+<td>24</td>
+<td>22.5</td>
+<td>24</td>
+<td>24</td>
+<td>21</td>
+</tr>
+<tr>
+<td>42</td>
+<td>2</td>
+<td>25</td>
+<td>24</td>
+<td>22.5</td>
+<td>24</td>
+<td>24</td>
+<td>21</td>
+</tr>
+<tr>
+<td>43</td>
+<td>2</td>
+<td>25</td>
+<td>24.5</td>
+<td>22.5</td>
+<td>24.5</td>
+<td>24.5</td>
+<td>21</td>
+</tr>
+<tr>
+<td>44</td>
+<td>1</td>
+<td>26</td>
+<td>26</td>
+<td>22.5</td>
+<td>24.5</td>
+<td>26</td>
+<td>21</td>
+</tr>
+<tr>
+<td>45</td>
+<td>7</td>
+<td>26</td>
+<td>26</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>21</td>
+</tr>
+<tr>
+<td>46</td>
+<td>1</td>
+<td>27</td>
+<td>26</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>21</td>
+</tr>
+<tr>
+<td>47</td>
+<td>3</td>
+<td>27</td>
+<td>28</td>
+<td>28</td>
+<td>27</td>
+<td>28</td>
+<td>21</td>
+</tr>
+<tr>
+<td>48</td>
+<td>2</td>
+<td>28</td>
+<td>28</td>
+<td>28</td>
+<td>27</td>
+<td>28</td>
+<td>21</td>
+</tr>
+<tr>
+<td>49</td>
+<td>1</td>
+<td>28</td>
+<td>28</td>
+<td>28</td>
+<td>28</td>
+<td>28</td>
+<td>21</td>
+</tr>
+<tr>
+<td>50</td>
+<td>8</td>
+<td>29</td>
+<td>30</td>
+<td>30</td>
+<td>28</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>51</td>
+<td>0</td>
+<td>29</td>
+<td>30</td>
+<td>30</td>
+<td>28</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>52</td>
+<td>6</td>
+<td>30</td>
+<td>30</td>
+<td>30</td>
+<td>28</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>53</td>
+<td>2</td>
+<td>30</td>
+<td>30</td>
+<td>30</td>
+<td>30</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>54</td>
+<td>3</td>
+<td>31</td>
+<td>33</td>
+<td>30</td>
+<td>33</td>
+<td>33</td>
+<td>30</td>
+</tr>
+<tr>
+<td>55</td>
+<td>4</td>
+<td>31</td>
+<td>33</td>
+<td>30</td>
+<td>33</td>
+<td>33</td>
+<td>30</td>
+</tr>
+<tr>
+<td>56</td>
+<td>2</td>
+<td>32</td>
+<td>33</td>
+<td>31.5</td>
+<td>33</td>
+<td>33</td>
+<td>30</td>
+</tr>
+<tr>
+<td>57</td>
+<td>0</td>
+<td>32</td>
+<td>33</td>
+<td>31.5</td>
+<td>33</td>
+<td>33</td>
+<td>30</td>
+</tr>
+<tr>
+<td>58</td>
+<td>2</td>
+<td>33</td>
+<td>33</td>
+<td>31.5</td>
+<td>33</td>
+<td>33</td>
+<td>30</td>
+</tr>
+<tr>
+<td>59</td>
+<td>1</td>
+<td>33</td>
+<td>33</td>
+<td>31.5</td>
+<td>33</td>
+<td>33</td>
+<td>30</td>
+</tr>
+<tr>
+<td>60</td>
+<td>5</td>
+<td>34</td>
+<td>33</td>
+<td>32.5</td>
+<td>33</td>
+<td>33</td>
+<td>33</td>
+</tr>
+<tr>
+<td>61</td>
+<td>1</td>
+<td>34</td>
+<td>35</td>
+<td>32.5</td>
+<td>33</td>
+<td>35</td>
+<td>33</td>
+</tr>
+<tr>
+<td>62</td>
+<td>1</td>
+<td>35</td>
+<td>35</td>
+<td>32.5</td>
+<td>33</td>
+<td>35</td>
+<td>33</td>
+</tr>
+<tr>
+<td>63</td>
+<td>0</td>
+<td>35</td>
+<td>35</td>
+<td>32.5</td>
+<td>33</td>
+<td>35</td>
+<td>33</td>
+</tr>
+<tr>
+<td>64</td>
+<td>1</td>
+<td>36</td>
+<td>35</td>
+<td>32.5</td>
+<td>33</td>
+<td>35</td>
+<td>33</td>
+</tr>
+<tr>
+<td>65</td>
+<td>11</td>
+<td>36</td>
+<td>36</td>
+<td>36</td>
+<td>36</td>
+<td>36</td>
+<td>36</td>
+</tr>
+<tr>
+<td>66</td>
+<td>0</td>
+<td>37</td>
+<td>36</td>
+<td>36</td>
+<td>36</td>
+<td>36</td>
+<td>36</td>
+</tr>
+<tr>
+<td>67</td>
+<td>0</td>
+<td>37</td>
+<td>36</td>
+<td>36</td>
+<td>36</td>
+<td>36</td>
+<td>36</td>
+</tr>
+<tr>
+<td>68</td>
+<td>3</td>
+<td>38</td>
+<td>40</td>
+<td>38.5</td>
+<td>36</td>
+<td>40</td>
+<td>40</td>
+</tr>
+<tr>
+<td>69</td>
+<td>0</td>
+<td>38</td>
+<td>40</td>
+<td>38.5</td>
+<td>36</td>
+<td>40</td>
+<td>40</td>
+</tr>
+<tr>
+<td>70</td>
+<td>6</td>
+<td>39</td>
+<td>40</td>
+<td>40</td>
+<td>36</td>
+<td>40</td>
+<td>40</td>
+</tr>
+<tr>
+<td>71</td>
+<td>0</td>
+<td>39</td>
+<td>40</td>
+<td>40</td>
+<td>36</td>
+<td>40</td>
+<td>40</td>
+</tr>
+<tr>
+<td>72</td>
+<td>2</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+</tr>
+<tr>
+<td>73</td>
+<td>1</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+</tr>
+<tr>
+<td>74</td>
+<td>0</td>
+<td>41</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+</tr>
+<tr>
+<td>75</td>
+<td>5</td>
+<td>41</td>
+<td>45</td>
+<td>40</td>
+<td>42</td>
+<td>45</td>
+<td>40</td>
+</tr>
+<tr>
+<td>76</td>
+<td>2</td>
+<td>42</td>
+<td>45</td>
+<td>40</td>
+<td>42</td>
+<td>45</td>
+<td>40</td>
+</tr>
+<tr>
+<td>77</td>
+<td>0</td>
+<td>42</td>
+<td>45</td>
+<td>40</td>
+<td>42</td>
+<td>45</td>
+<td>40</td>
+</tr>
+<tr>
+<td>78</td>
+<td>3</td>
+<td>43</td>
+<td>45</td>
+<td>45</td>
+<td>42</td>
+<td>45</td>
+<td>40</td>
+</tr>
+<tr>
+<td>79</td>
+<td>0</td>
+<td>43</td>
+<td>45</td>
+<td>45</td>
+<td>42</td>
+<td>45</td>
+<td>40</td>
+</tr>
+<tr>
+<td>80</td>
+<td>4</td>
+<td>44</td>
+<td>45</td>
+<td>45</td>
+<td>45</td>
+<td>45</td>
+<td>40</td>
+</tr>
+<tr>
+<td>81</td>
+<td>1</td>
+<td>44</td>
+<td>45</td>
+<td>45</td>
+<td>45</td>
+<td>45</td>
+<td>40</td>
+</tr>
+<tr>
+<td>82</td>
+<td>3</td>
+<td>45</td>
+<td>45.5</td>
+<td>45</td>
+<td>45</td>
+<td>45.5</td>
+<td>40</td>
+</tr>
+<tr>
+<td>83</td>
+<td>1</td>
+<td>45</td>
+<td>45.5</td>
+<td>45</td>
+<td>45</td>
+<td>45.5</td>
+<td>40</td>
+</tr>
+<tr>
+<td>84</td>
+<td>0</td>
+<td>46</td>
+<td>45.5</td>
+<td>45</td>
+<td>45</td>
+<td>45.5</td>
+<td>40</td>
+</tr>
+<tr>
+<td>85</td>
+<td>7</td>
+<td>46</td>
+<td>52</td>
+<td>45</td>
+<td>45</td>
+<td>52</td>
+<td>40</td>
+</tr>
+<tr>
+<td>86</td>
+<td>2</td>
+<td>47</td>
+<td>52</td>
+<td>45</td>
+<td>45</td>
+<td>52</td>
+<td>40</td>
+</tr>
+<tr>
+<td>87</td>
+<td>2</td>
+<td>47</td>
+<td>52</td>
+<td>49.5</td>
+<td>45</td>
+<td>52</td>
+<td>40</td>
+</tr>
+<tr>
+<td>88</td>
+<td>1</td>
+<td>48</td>
+<td>52</td>
+<td>49.5</td>
+<td>45</td>
+<td>52</td>
+<td>40</td>
+</tr>
+<tr>
+<td>89</td>
+<td>0</td>
+<td>48</td>
+<td>52</td>
+<td>49.5</td>
+<td>45</td>
+<td>52</td>
+<td>40</td>
+</tr>
+<tr>
+<td>90</td>
+<td>7</td>
+<td>49</td>
+<td>52.5</td>
+<td>50</td>
+<td>45</td>
+<td>52.5</td>
+<td>40</td>
+</tr>
+<tr>
+<td>91</td>
+<td>9</td>
+<td>49</td>
+<td>52.5</td>
+<td>50</td>
+<td>52.5</td>
+<td>52.5</td>
+<td>52.5</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="weapons-sources">Above level 30, 97% of weapons only come from mob drops<a class="headerlink" href="#weapons-sources" title="Permanent link">&para;</a></h2>
+<p>Shops stock 44 weapons up to level 30 but only 5 after it. Past that point a character has to kill for nearly every upgrade; the median best drop chance is <strong>70%</strong>.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Where each band's weapons come from","anchor":"start"},"width":"container","height":300,"data":{"values":[{"band":"1–5","source":"shop","count":11},{"band":"1–5","source":"floor/container","count":6},{"band":"1–5","source":"given by the game","count":4},{"band":"1–5","source":"mob drop","count":22},{"band":"6–10","source":"mob drop","count":30},{"band":"6–10","source":"shop","count":13},{"band":"6–10","source":"floor/container","count":6},{"band":"11–15","source":"mob drop","count":36},{"band":"11–15","source":"shop","count":5},{"band":"11–15","source":"floor/container","count":2},{"band":"16–20","source":"mob drop","count":38},{"band":"16–20","source":"floor/container","count":2},{"band":"16–20","source":"shop","count":2},{"band":"21–25","source":"mob drop","count":29},{"band":"21–25","source":"floor/container","count":1},{"band":"21–25","source":"shop","count":9},{"band":"26–30","source":"mob drop","count":38},{"band":"26–30","source":"shop","count":4},{"band":"26–30","source":"floor/container","count":1},{"band":"31–35","source":"mob drop","count":19},{"band":"31–35","source":"shop","count":1},{"band":"36–40","source":"mob drop","count":12},{"band":"36–40","source":"shop","count":1},{"band":"41–45","source":"mob drop","count":15},{"band":"46–50","source":"mob drop","count":14},{"band":"46–50","source":"shop","count":1},{"band":"51–55","source":"mob drop","count":15},{"band":"56–60","source":"mob drop","count":10},{"band":"61–65","source":"mob drop","count":14},{"band":"66–70","source":"mob drop","count":8},{"band":"66–70","source":"shop","count":1},{"band":"71–75","source":"mob drop","count":8},{"band":"76–80","source":"mob drop","count":9},{"band":"81–85","source":"mob drop","count":12},{"band":"86–90","source":"mob drop","count":11},{"band":"86–90","source":"shop","count":1},{"band":"91","source":"mob drop","count":9}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":"bar","encoding":{"x":{"field":"band","type":"ordinal","title":"Levels","sort":["1–5","6–10","11–15","16–20","21–25","26–30","31–35","36–40","41–45","46–50","51–55","56–60","61–65","66–70","71–75","76–80","81–85","86–90","91"]},"y":{"field":"count","type":"quantitative","title":"Weapons","stack":true},"color":{"field":"source","type":"nominal","title":"Easiest source","scale":{"domain":["shop","floor/container","given by the game","mob drop"],"range":["#e0a030","#5f8a5b","#4f7896","#b4532a"]}},"order":{"field":"source","sort":"descending"},"tooltip":[{"field":"band","title":"Levels"},{"field":"source","title":"Source"},{"field":"count","title":"Weapons"}]}}</script></div>
+
+<details class="abstract">
+<summary>Details: sources per band</summary>
+<table>
+<thead>
+<tr>
+<th>Levels</th>
+<th>weapons</th>
+<th>buyable</th>
+<th>mob drop</th>
+<th>floor/container</th>
+<th>median mob drop %</th>
+<th>median mob − weapon lvl</th>
+<th>max mob − weapon lvl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–5</td>
+<td>43</td>
+<td>11</td>
+<td>31</td>
+<td>6</td>
+<td>100</td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr>
+<td>6–10</td>
+<td>49</td>
+<td>13</td>
+<td>34</td>
+<td>6</td>
+<td>100</td>
+<td>0</td>
+<td>13</td>
+</tr>
+<tr>
+<td>11–15</td>
+<td>43</td>
+<td>5</td>
+<td>37</td>
+<td>2</td>
+<td>100</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>16–20</td>
+<td>42</td>
+<td>2</td>
+<td>39</td>
+<td>2</td>
+<td>100</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>21–25</td>
+<td>39</td>
+<td>9</td>
+<td>29</td>
+<td>1</td>
+<td>63</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>26–30</td>
+<td>43</td>
+<td>4</td>
+<td>38</td>
+<td>1</td>
+<td>63</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>31–35</td>
+<td>20</td>
+<td>1</td>
+<td>19</td>
+<td>0</td>
+<td>90</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>36–40</td>
+<td>13</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>76.5</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>41–45</td>
+<td>15</td>
+<td>0</td>
+<td>15</td>
+<td>0</td>
+<td>90</td>
+<td>0</td>
+<td>20</td>
+</tr>
+<tr>
+<td>46–50</td>
+<td>15</td>
+<td>1</td>
+<td>14</td>
+<td>0</td>
+<td>63</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>51–55</td>
+<td>15</td>
+<td>0</td>
+<td>15</td>
+<td>0</td>
+<td>80</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>56–60</td>
+<td>10</td>
+<td>0</td>
+<td>10</td>
+<td>0</td>
+<td>54</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>61–65</td>
+<td>14</td>
+<td>0</td>
+<td>14</td>
+<td>0</td>
+<td>80</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>66–70</td>
+<td>9</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>80</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>71–75</td>
+<td>8</td>
+<td>0</td>
+<td>8</td>
+<td>0</td>
+<td>80</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>76–80</td>
+<td>9</td>
+<td>0</td>
+<td>9</td>
+<td>0</td>
+<td>45</td>
+<td>0</td>
+<td>15</td>
+</tr>
+<tr>
+<td>81–85</td>
+<td>12</td>
+<td>0</td>
+<td>12</td>
+<td>0</td>
+<td>70</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>86–90</td>
+<td>12</td>
+<td>1</td>
+<td>11</td>
+<td>0</td>
+<td>45</td>
+<td>13</td>
+<td>18</td>
+</tr>
+<tr>
+<td>91</td>
+<td>9</td>
+<td>0</td>
+<td>9</td>
+<td>0</td>
+<td>45</td>
+<td>14</td>
+<td>34</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="weapons-over-cap">45 obtainable weapons exceed the damage cap<a class="headerlink" href="#weapons-over-cap" title="Permanent link">&para;</a></h2>
+<p>19 of them are level 80 or above. The biggest overshoot is <strong>sword of the deceiver</strong> (Camelot, level 85): average 52 against a cap of 46. The most offenders come from Den of Monsters (7), The Valkyrie (6) and New Thalos (5). Another 4 over-cap weapons can't be obtained or are above level 91.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":["Every obtainable weapon: level vs average damage (dashed = cap; drag","to zoom)"],"anchor":"start"},"width":"container","height":340,"data":{"values":[{"level":1,"avg":2.5,"name":"a thin dagger","type":"dagger","vnum":3020,"area":"Midgaard","status":"within cap","sources":"mob, shop"},{"level":1,"avg":3.0,"name":"a small sword","type":"sword","vnum":3021,"area":"Midgaard","status":"within cap","sources":"mob, shop"},{"level":1,"avg":3.5,"name":"a hand axe","type":"axe","vnum":3025,"area":"Midgaard","status":"within cap","sources":"mob, shop"},{"level":1,"avg":5.0,"name":"a silver dagger","type":"dagger","vnum":3613,"area":"Graveyard","status":"over cap","sources":"floor"},{"level":1,"avg":3.0,"name":"a sub issue mace","type":"mace","vnum":3700,"area":"Mud School","status":"within cap","sources":"code"},{"level":1,"avg":2.5,"name":"a sub issue dagger","type":"dagger","vnum":3701,"area":"Mud School","status":"within cap","sources":"code"},{"level":1,"avg":3.0,"name":"a sub issue sword","type":"sword","vnum":3702,"area":"Mud School","status":"within cap","sources":"code"},{"level":1,"avg":2.5,"name":"a sub issue axe","type":"axe","vnum":3717,"area":"Mud School","status":"within cap","sources":"code"},{"level":1,"avg":3.0,"name":"a rusty dagger","type":"dagger","vnum":4003,"area":"Moria","status":"within cap","sources":"mob"},{"level":1,"avg":2.5,"name":"A large leg bone","type":"mace","vnum":5005,"area":"Sands of Sorrow","status":"within cap","sources":"floor"},{"level":1,"avg":3.0,"name":"a toy axe","type":"axe","vnum":6600,"area":"Dwarven Day Care","status":"within cap","sources":"mob"},{"level":1,"avg":4.0,"name":"a broom","type":"spear","vnum":6622,"area":"Dwarven Day Care","status":"within cap","sources":"mob"},{"level":1,"avg":4.0,"name":"a toy gun","type":"spear","vnum":6647,"area":"Dwarven Day Care","status":"within cap","sources":"mob"},{"level":3,"avg":3.0,"name":"a small axe","type":"axe","vnum":103,"area":"Smurf Village","status":"within cap","sources":"mob"},{"level":3,"avg":1.5,"name":"A toy boomerang","type":"exotic","vnum":1502,"area":"Gnome Village","status":"within cap","sources":"mob"},{"level":3,"avg":1.5,"name":"a large club","type":"mace","vnum":1521,"area":"Gnome Village","status":"within cap","sources":"floor, mob"},{"level":3,"avg":4.0,"name":"a club","type":"mace","vnum":3023,"area":"Midgaard","status":"within cap","sources":"mob, shop"},{"level":3,"avg":4.0,"name":"a flail","type":"flail","vnum":3029,"area":"Midgaard","status":"within cap","sources":"mob, shop"},{"level":3,"avg":5.0,"name":"a standard issue sword","type":"sword","vnum":3350,"area":"Midgaard","status":"within cap","sources":"shop"},{"level":3,"avg":4.5,"name":"a standard issue dagger","type":"dagger","vnum":3351,"area":"Midgaard","status":"within cap","sources":"mob, shop"},{"level":3,"avg":4.5,"name":"a standard issue mace","type":"mace","vnum":3352,"area":"Midgaard","status":"within cap","sources":"shop"},{"level":3,"avg":6.0,"name":"a long spear","type":"polearm","vnum":3501,"area":"Miden'nir","status":"over cap","sources":"mob"},{"level":3,"avg":2.5,"name":"a rake","type":"mace","vnum":3605,"area":"Graveyard","status":"within cap","sources":"floor"},{"level":3,"avg":4.0,"name":"a bullwhip","type":"whip","vnum":4004,"area":"Moria","status":"within cap","sources":"mob"},{"level":3,"avg":3.0,"name":"a stone club","type":"mace","vnum":9220,"area":"Elemental Canyon","status":"within cap","sources":"mob"},{"level":4,"avg":1.5,"name":"A gnarled staff","type":"exotic","vnum":1503,"area":"Gnome Village","status":"within cap","sources":"mob"},{"level":4,"avg":1.5,"name":"the shepherd's crook","type":"exotic","vnum":2417,"area":"Ultima","status":"within cap","sources":"mob"},{"level":4,"avg":4.5,"name":"a spear","type":"spear","vnum":3027,"area":"Midgaard","status":"within cap","sources":"mob, shop"},{"level":4,"avg":4.5,"name":"a wooden staff","type":"spear","vnum":3028,"area":"Midgaard","status":"within cap","sources":"shop"},{"level":4,"avg":3.0,"name":"a shovel","type":"mace","vnum":3604,"area":"Graveyard","status":"within cap","sources":"floor"},{"level":4,"avg":3.0,"name":"a chessboard","type":"exotic","vnum":9590,"area":"New Thalos","status":"within cap","sources":"mob"},{"level":5,"avg":4.0,"name":"a pitchfork","type":"spear","vnum":615,"area":"New Ofcol","status":"within cap","sources":"mob, shop"},{"level":5,"avg":1.5,"name":"a broom","type":"exotic","vnum":666,"area":"New Ofcol","status":"within cap","sources":"mob"},{"level":5,"avg":4.0,"name":"a bardiche","type":"polearm","vnum":1113,"area":"The Shire","status":"within cap","sources":"mob"},{"level":5,"avg":4.0,"name":"Katrina's sword","type":"sword","vnum":2419,"area":"Ultima","status":"within cap","sources":"mob"},{"level":5,"avg":4.0,"name":"a cracked bone","type":"mace","vnum":2805,"area":"Troll Den","status":"within cap","sources":"floor"},{"level":5,"avg":5.0,"name":"a goblin's short sword","type":"sword","vnum":3500,"area":"Miden'nir","status":"within cap","sources":"mob"},{"level":5,"avg":4.0,"name":"a two-headed flail","type":"flail","vnum":4056,"area":"Moria","status":"within cap","sources":"mob"},{"level":5,"avg":5.0,"name":"a falchion","type":"sword","vnum":4058,"area":"Moria","status":"within cap","sources":"mob"},{"level":5,"avg":1.5,"name":"A small mining pick","type":"mace","vnum":5000,"area":"Sands of Sorrow","status":"within cap","sources":"mob"},{"level":5,"avg":1.5,"name":"a lumber axe","type":"axe","vnum":6000,"area":"Haon Dor","status":"within cap","sources":"mob"},{"level":5,"avg":4.0,"name":"a splintered bashball bat","type":"mace","vnum":8006,"area":"Mega-City One","status":"within cap","sources":"mob"},{"level":5,"avg":4.0,"name":"a knife","type":"dagger","vnum":8009,"area":"Mega-City One","status":"within cap","sources":"mob"},{"level":6,"avg":4.0,"name":"a silver dagger","type":"dagger","vnum":2201,"area":"Dragon Tower","status":"within cap","sources":"mob"},{"level":6,"avg":5.0,"name":"a steel mace","type":"mace","vnum":3024,"area":"Midgaard","status":"within cap","sources":"shop"},{"level":6,"avg":5.0,"name":"a rune-covered knife","type":"dagger","vnum":3505,"area":"Miden'nir","status":"within cap","sources":"mob"},{"level":6,"avg":5.5,"name":"a broad sword","type":"sword","vnum":4055,"area":"Moria","status":"within cap","sources":"mob"},{"level":6,"avg":5.0,"name":"a heavy iron mace","type":"mace","vnum":4057,"area":"Moria","status":"within cap","sources":"mob"},{"level":6,"avg":5.0,"name":"a sharpened hand axe","type":"axe","vnum":4156,"area":"Moria","status":"within cap","sources":"mob"},{"level":6,"avg":4.0,"name":"a mining pick","type":"mace","vnum":6518,"area":"Dwarven Kingdom","status":"within cap","sources":"floor"},{"level":6,"avg":4.0,"name":"the small mace","type":"mace","vnum":7202,"area":"Sewer","status":"within cap","sources":"mob"},{"level":6,"avg":4.0,"name":"a short sword","type":"sword","vnum":7211,"area":"Sewer","status":"within cap","sources":"mob"},{"level":6,"avg":1.5,"name":"an elven longsword","type":"sword","vnum":7802,"area":"Valley of the Elves","status":"within cap","sources":"mob"},{"level":7,"avg":4.5,"name":"a long sword","type":"sword","vnum":1317,"area":"High Tower of Sorcery","status":"within cap","sources":"container"},{"level":7,"avg":4.0,"name":"a short bow","type":"exotic","vnum":1701,"area":"Wyvern Tower","status":"within cap","sources":"mob"},{"level":7,"avg":6.0,"name":"a long sword","type":"sword","vnum":3022,"area":"Midgaard","status":"within cap","sources":"mob, shop"},{"level":7,"avg":6.0,"name":"a battle axe","type":"axe","vnum":3026,"area":"Midgaard","status":"within cap","sources":"mob, shop"},{"level":7,"avg":5.0,"name":"a shining silvery flail","type":"flail","vnum":3384,"area":"Midgaard","status":"within cap","sources":"shop"},{"level":7,"avg":5.0,"name":"a light silver dagger","type":"dagger","vnum":4152,"area":"Moria","status":"within cap","sources":"mob"},{"level":7,"avg":4.0,"name":"a mining pick","type":"mace","vnum":4701,"area":"Kingdom of Juargan","status":"within cap","sources":"mob"},{"level":7,"avg":4.0,"name":"a Footman's lance","type":"spear","vnum":11015,"area":"Crystalmir Lake","status":"within cap","sources":"mob"},{"level":8,"avg":5.0,"name":"a tiny dagger","type":"dagger","vnum":1109,"area":"The Shire","status":"within cap","sources":"mob"},{"level":8,"avg":5.0,"name":"a wooden staff","type":"spear","vnum":1320,"area":"High Tower of Sorcery","status":"within cap","sources":"floor"},{"level":8,"avg":4.0,"name":"A gnome sword","type":"sword","vnum":1504,"area":"Gnome Village","status":"within cap","sources":"mob"},{"level":8,"avg":4.0,"name":"a patrol club","type":"mace","vnum":2110,"area":"Dangerous Neighbourhood","status":"within cap","sources":"mob"},{"level":8,"avg":6.0,"name":"a forest spear","type":"spear","vnum":3382,"area":"Midgaard","status":"within cap","sources":"shop"},{"level":8,"avg":5.0,"name":"dwarven club","type":"mace","vnum":6508,"area":"Dwarven Kingdom","status":"within cap","sources":"mob"},{"level":8,"avg":5.0,"name":"the large mace","type":"mace","vnum":7201,"area":"Sewer","status":"within cap","sources":"mob"},{"level":9,"avg":6.0,"name":"a silver dagger","type":"dagger","vnum":1318,"area":"High Tower of Sorcery","status":"within cap","sources":"container"},{"level":9,"avg":7.5,"name":"a mandolin","type":"mace","vnum":2424,"area":"Ultima","status":"within cap","sources":"mob"},{"level":9,"avg":6.0,"name":"a studded ebony mace","type":"mace","vnum":3380,"area":"Midgaard","status":"within cap","sources":"shop"},{"level":9,"avg":7.0,"name":"an ebony polearm","type":"polearm","vnum":3383,"area":"Midgaard","status":"within cap","sources":"shop"},{"level":9,"avg":6.0,"name":"a sharpened stiletto dagger","type":"dagger","vnum":3385,"area":"Midgaard","status":"within cap","sources":"mob, shop"},{"level":9,"avg":6.0,"name":"an iron-shod staff","type":"spear","vnum":4105,"area":"Moria","status":"within cap","sources":"mob"},{"level":9,"avg":6.0,"name":"a long slim dagger","type":"dagger","vnum":5252,"area":"Thalos","status":"within cap","sources":"mob"},{"level":9,"avg":6.0,"name":"a long, grey branch","type":"mace","vnum":6104,"area":"Haon Dor","status":"within cap","sources":"floor"},{"level":10,"avg":9.0,"name":"a rusty cleaver","type":"axe","vnum":1601,"area":"Wyvern Tower","status":"within cap","sources":"floor"},{"level":10,"avg":8.0,"name":"a steel broad sword","type":"sword","vnum":1604,"area":"Wyvern Tower","status":"within cap","sources":"mob"},{"level":10,"avg":4.0,"name":"a hefty length of chain","type":"whip","vnum":2103,"area":"Dangerous Neighbourhood","status":"within cap","sources":"mob"},{"level":10,"avg":6.0,"name":"a long sword","type":"sword","vnum":3124,"area":"Midgaard","status":"within cap","sources":"mob"},{"level":10,"avg":7.0,"name":"a voulge","type":"polearm","vnum":4059,"area":"Moria","status":"within cap","sources":"mob"},{"level":10,"avg":4.0,"name":"a long, pointed cutlass","type":"sword","vnum":5018,"area":"Sands of Sorrow","status":"within cap","sources":"mob"},{"level":10,"avg":6.0,"name":"a commoner's longsword","type":"sword","vnum":5100,"area":"Drow City","status":"within cap","sources":"mob"},{"level":10,"avg":6.0,"name":"a polished bashball bat","type":"mace","vnum":8014,"area":"Mega-City One","status":"within cap","sources":"mob"},{"level":10,"avg":4.0,"name":"a comet's tail","type":"whip","vnum":9301,"area":"Galaxy","status":"within cap","sources":"mob"},{"level":10,"avg":6.0,"name":"a sickle","type":"polearm","vnum":9511,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":10,"avg":7.5,"name":"a scimitar","type":"sword","vnum":9513,"area":"New Thalos","status":"within cap","sources":"mob, shop"},{"level":10,"avg":4.0,"name":"a sledge hammer","type":"mace","vnum":9586,"area":"New Thalos","status":"within cap","sources":"mob"},{"level":10,"avg":6.0,"name":"farming scythe","type":"polearm","vnum":11002,"area":"Crystalmir Lake","status":"within cap","sources":"mob"},{"level":10,"avg":6.0,"name":"a drow sword","type":"sword","vnum":16047,"area":"UnderDark","status":"within cap","sources":"shop"},{"level":10,"avg":6.0,"name":"a drow dagger","type":"dagger","vnum":16048,"area":"UnderDark","status":"within cap","sources":"shop"},{"level":10,"avg":6.0,"name":"a drow mace","type":"mace","vnum":16049,"area":"UnderDark","status":"within cap","sources":"shop"},{"level":11,"avg":4.0,"name":"Iolo's bow","type":"exotic","vnum":2428,"area":"Ultima","status":"within cap","sources":"mob"},{"level":11,"avg":10.0,"name":"a wooden spear","type":"spear","vnum":2431,"area":"Ultima","status":"over cap","sources":"mob"},{"level":11,"avg":7.5,"name":"a defiler's axe","type":"axe","vnum":3381,"area":"Midgaard","status":"within cap","sources":"shop"},{"level":11,"avg":7.5,"name":"a war axe","type":"axe","vnum":4054,"area":"Moria","status":"within cap","sources":"mob"},{"level":11,"avg":7.5,"name":"a black demon blade","type":"sword","vnum":4100,"area":"Moria","status":"within cap","sources":"mob"},{"level":11,"avg":8.0,"name":"a broken bottle","type":"exotic","vnum":16033,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":12,"avg":7.5,"name":"a meat cleaver","type":"dagger","vnum":601,"area":"New Ofcol","status":"within cap","sources":"mob, shop"},{"level":12,"avg":7.0,"name":"a mithril hammer","type":"mace","vnum":1314,"area":"High Tower of Sorcery","status":"within cap","sources":"floor"},{"level":12,"avg":7.5,"name":"a long bow","type":"exotic","vnum":1702,"area":"Wyvern Tower","status":"within cap","sources":"mob"},{"level":12,"avg":7.5,"name":"a templar's sword","type":"sword","vnum":2016,"area":"Dwarven Catacombs","status":"within cap","sources":"mob"},{"level":12,"avg":7.5,"name":"a guardsman blade","type":"sword","vnum":3386,"area":"Midgaard","status":"within cap","sources":"mob"},{"level":12,"avg":4.0,"name":"a curved scimitar","type":"sword","vnum":5017,"area":"Sands of Sorrow","status":"within cap","sources":"mob"},{"level":12,"avg":8.0,"name":"a noble's longsword","type":"sword","vnum":5101,"area":"Drow City","status":"within cap","sources":"mob"},{"level":12,"avg":8.0,"name":"a guisarme","type":"polearm","vnum":9510,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":12,"avg":8.0,"name":"the wolverine claw","type":"mace","vnum":9599,"area":"New Thalos","status":"within cap","sources":"mob"},{"level":12,"avg":7.5,"name":"Chamorro Dagger","type":"dagger","vnum":11014,"area":"Crystalmir Lake","status":"within cap","sources":"mob"},{"level":12,"avg":9.0,"name":"a white feathered quill","type":"dagger","vnum":12007,"area":"Imladris","status":"within cap","sources":"mob"},{"level":12,"avg":10.0,"name":"a really nasty Orcish spear","type":"spear","vnum":12033,"area":"Imladris","status":"within cap","sources":"mob"},{"level":13,"avg":8.0,"name":"a curved scimitar","type":"sword","vnum":1319,"area":"High Tower of Sorcery","status":"within cap","sources":"container"},{"level":13,"avg":9.0,"name":"the fine mace","type":"mace","vnum":1602,"area":"Wyvern Tower","status":"within cap","sources":"mob"},{"level":13,"avg":7.5,"name":"a stiletto","type":"dagger","vnum":2106,"area":"Dangerous Neighbourhood","status":"within cap","sources":"mob"},{"level":13,"avg":7.5,"name":"a jagged spear","type":"spear","vnum":2200,"area":"Dragon Tower","status":"within cap","sources":"mob"},{"level":13,"avg":10.0,"name":"a stone club","type":"mace","vnum":2432,"area":"Ultima","status":"within cap","sources":"mob"},{"level":13,"avg":10.0,"name":"a huge club","type":"mace","vnum":4005,"area":"Moria","status":"within cap","sources":"mob"},{"level":13,"avg":7.5,"name":"a wooden staff","type":"spear","vnum":8910,"area":"Holy Grove","status":"within cap","sources":"mob"},{"level":13,"avg":12.0,"name":"a sturdy staff of oak","type":"polearm","vnum":12050,"area":"Imladris","status":"over cap","sources":"mob"},{"level":14,"avg":9.0,"name":"a bronze bardiche","type":"polearm","vnum":1117,"area":"The Shire","status":"within cap","sources":"mob"},{"level":14,"avg":9.0,"name":"a long, curved sabre","type":"sword","vnum":5016,"area":"Sands of Sorrow","status":"within cap","sources":"mob"},{"level":14,"avg":10.0,"name":"the devil rod","type":"mace","vnum":7200,"area":"Sewer","status":"within cap","sources":"mob"},{"level":14,"avg":9.0,"name":"a bronze bashball bat","type":"mace","vnum":8015,"area":"Mega-City One","status":"within cap","sources":"mob"},{"level":14,"avg":9.0,"name":"a visciously sharp axe featuring a skull pommel","type":"axe","vnum":12011,"area":"Imladris","status":"within cap","sources":"mob"},{"level":15,"avg":7.5,"name":"An electrum sword","type":"sword","vnum":1510,"area":"Gnome Village","status":"within cap","sources":"mob"},{"level":15,"avg":9.0,"name":"the neutralizer","type":"sword","vnum":2004,"area":"Dwarven Catacombs","status":"within cap","sources":"mob"},{"level":15,"avg":10.0,"name":"a kopesh sword","type":"sword","vnum":2362,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":15,"avg":9.0,"name":"an ogre spear","type":"spear","vnum":2386,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":15,"avg":10.0,"name":"a staff","type":"spear","vnum":2434,"area":"Ultima","status":"within cap","sources":"mob"},{"level":15,"avg":9.0,"name":"a snake headed whip","type":"whip","vnum":5102,"area":"Drow City","status":"within cap","sources":"mob"},{"level":15,"avg":10.0,"name":"a quarterstaff","type":"spear","vnum":7807,"area":"Valley of the Elves","status":"within cap","sources":"mob"},{"level":15,"avg":9.0,"name":"a long spear","type":"spear","vnum":8301,"area":"Old Marsh","status":"within cap","sources":"mob"},{"level":15,"avg":9.0,"name":"an adamantite club","type":"mace","vnum":9233,"area":"Elemental Canyon","status":"within cap","sources":"mob"},{"level":15,"avg":12.0,"name":"a glaive","type":"polearm","vnum":9509,"area":"New Thalos","status":"over cap","sources":"shop"},{"level":15,"avg":7.5,"name":"a fountain pen","type":"dagger","vnum":9585,"area":"New Thalos","status":"within cap","sources":"mob"},{"level":15,"avg":10.0,"name":"standard steel sword","type":"sword","vnum":10065,"area":"Wolf Pointe","status":"within cap","sources":"shop"},{"level":16,"avg":10.0,"name":"a huge, steel axe","type":"axe","vnum":1107,"area":"The Shire","status":"within cap","sources":"mob"},{"level":16,"avg":12.0,"name":"the rod of might","type":"mace","vnum":1606,"area":"Wyvern Tower","status":"within cap","sources":"mob"},{"level":16,"avg":10.0,"name":"a two-handed dwarven axe","type":"axe","vnum":6509,"area":"Dwarven Kingdom","status":"within cap","sources":"mob"},{"level":16,"avg":9.0,"name":"the Daemon Claw","type":"dagger","vnum":9598,"area":"New Thalos","status":"within cap","sources":"floor"},{"level":16,"avg":10.0,"name":"sword of darkness","type":"sword","vnum":16007,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":17,"avg":10.5,"name":"an elven bow","type":"exotic","vnum":1106,"area":"The Shire","status":"within cap","sources":"mob"},{"level":17,"avg":10.0,"name":"a silvery dagger","type":"dagger","vnum":1357,"area":"High Tower of Sorcery","status":"within cap","sources":"mob"},{"level":17,"avg":10.5,"name":"a snake headed whip","type":"whip","vnum":5103,"area":"Drow City","status":"within cap","sources":"mob"},{"level":17,"avg":10.0,"name":"an imperial sword","type":"sword","vnum":5317,"area":"Old Thalos","status":"within cap","sources":"mob"},{"level":17,"avg":10.0,"name":"an imperial mace","type":"mace","vnum":5318,"area":"Old Thalos","status":"within cap","sources":"mob"},{"level":17,"avg":10.0,"name":"the morning star","type":"mace","vnum":6155,"area":"Haon Dor","status":"within cap","sources":"mob"},{"level":17,"avg":7.5,"name":"a Hoover vacuum cleaner","type":"mace","vnum":8008,"area":"Mega-City One","status":"within cap","sources":"mob"},{"level":17,"avg":10.0,"name":"a wet noodle","type":"whip","vnum":8010,"area":"Mega-City One","status":"within cap","sources":"mob"},{"level":17,"avg":7.5,"name":"an ebony morning star","type":"exotic","vnum":16045,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":17,"avg":10.5,"name":"a broadsword named 'Vision'","type":"sword","vnum":16064,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":18,"avg":7.5,"name":"a huge spiked club","type":"mace","vnum":1381,"area":"High Tower of Sorcery","status":"within cap","sources":"mob"},{"level":18,"avg":12.5,"name":"a long elven dagger","type":"dagger","vnum":1603,"area":"Wyvern Tower","status":"within cap","sources":"container"},{"level":18,"avg":10.5,"name":"a stone club","type":"mace","vnum":2223,"area":"Dragon Tower","status":"within cap","sources":"mob"},{"level":18,"avg":10.5,"name":"a golden scimitar","type":"sword","vnum":2260,"area":"Dragon Tower","status":"within cap","sources":"mob"},{"level":18,"avg":10.5,"name":"a copper hammer","type":"mace","vnum":2286,"area":"Dragon Tower","status":"within cap","sources":"mob"},{"level":18,"avg":12.0,"name":"a sword","type":"sword","vnum":2436,"area":"Ultima","status":"within cap","sources":"mob"},{"level":18,"avg":10.5,"name":"an officer's blade","type":"sword","vnum":3387,"area":"Midgaard","status":"within cap","sources":"mob"},{"level":18,"avg":7.5,"name":"a strange energy bow","type":"exotic","vnum":5021,"area":"Sands of Sorrow","status":"within cap","sources":"mob"},{"level":18,"avg":10.5,"name":"a stone axe","type":"axe","vnum":9232,"area":"Elemental Canyon","status":"within cap","sources":"mob"},{"level":18,"avg":14.0,"name":"a longbow from the lands of Lorien","type":"exotic","vnum":12020,"area":"Imladris","status":"over cap","sources":"mob"},{"level":18,"avg":13.5,"name":"the Wraithblade","type":"dagger","vnum":12031,"area":"Imladris","status":"within cap","sources":"mob"},{"level":19,"avg":10.5,"name":"a claymore","type":"sword","vnum":630,"area":"New Ofcol","status":"within cap","sources":"mob"},{"level":19,"avg":12.0,"name":"Sting","type":"dagger","vnum":1101,"area":"The Shire","status":"within cap","sources":"mob"},{"level":19,"avg":12.5,"name":"an ogre war club","type":"mace","vnum":2387,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":19,"avg":10.5,"name":"a reinforced steel bashball bat","type":"mace","vnum":8016,"area":"Mega-City One","status":"within cap","sources":"mob"},{"level":19,"avg":12.5,"name":"glinting gnome mace","type":"mace","vnum":16006,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":20,"avg":7.5,"name":"a meat cleaver","type":"dagger","vnum":1355,"area":"High Tower of Sorcery","status":"within cap","sources":"mob"},{"level":20,"avg":12.0,"name":"a gem encrusted dagger","type":"dagger","vnum":2287,"area":"Dragon Tower","status":"within cap","sources":"mob"},{"level":20,"avg":12.0,"name":"a hammer","type":"mace","vnum":6504,"area":"Dwarven Kingdom","status":"within cap","sources":"mob, shop"},{"level":20,"avg":12.5,"name":"a billy club","type":"mace","vnum":8011,"area":"Mega-City One","status":"within cap","sources":"mob"},{"level":20,"avg":12.0,"name":"A huge, wicked-looking scythe","type":"polearm","vnum":8306,"area":"Old Marsh","status":"within cap","sources":"mob"},{"level":20,"avg":12.5,"name":"a fine oaken staff","type":"spear","vnum":8920,"area":"Holy Grove","status":"within cap","sources":"mob"},{"level":20,"avg":12.0,"name":"a fauchard","type":"polearm","vnum":9508,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":20,"avg":14.0,"name":"the sword of an Elflord","type":"sword","vnum":12015,"area":"Imladris","status":"within cap","sources":"mob"},{"level":20,"avg":12.0,"name":"a very sharp pin","type":"dagger","vnum":16018,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":20,"avg":7.5,"name":"very muddy branch","type":"exotic","vnum":16019,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":20,"avg":12.0,"name":"a blade of poison","type":"dagger","vnum":16074,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":21,"avg":12.5,"name":"the Golden Claw","type":"exotic","vnum":662,"area":"New Ofcol","status":"within cap","sources":"mob"},{"level":21,"avg":12.0,"name":"a runed chisel","type":"dagger","vnum":1376,"area":"High Tower of Sorcery","status":"within cap","sources":"mob"},{"level":21,"avg":12.0,"name":"a huge halberd","type":"polearm","vnum":2368,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":21,"avg":12.0,"name":"a snake headed whip","type":"whip","vnum":5104,"area":"Drow City","status":"within cap","sources":"mob"},{"level":21,"avg":12.0,"name":"a black longsword","type":"sword","vnum":5105,"area":"Drow City","status":"within cap","sources":"mob"},{"level":22,"avg":15.0,"name":"a battle axe","type":"axe","vnum":2365,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":22,"avg":15.0,"name":"a sword","type":"sword","vnum":2435,"area":"Ultima","status":"within cap","sources":"mob"},{"level":22,"avg":12.0,"name":"The Shock Whip","type":"whip","vnum":9230,"area":"Elemental Canyon","status":"within cap","sources":"mob"},{"level":22,"avg":12.0,"name":"the Sting of Scorpio","type":"exotic","vnum":9314,"area":"Galaxy","status":"within cap","sources":"mob"},{"level":22,"avg":12.0,"name":"the Titanic Bow of Sagittarius","type":"exotic","vnum":9316,"area":"Galaxy","status":"within cap","sources":"mob"},{"level":22,"avg":14.0,"name":"a mighty, two-handed sword","type":"sword","vnum":12004,"area":"Imladris","status":"within cap","sources":"mob"},{"level":23,"avg":15.0,"name":"a silvery dagger","type":"dagger","vnum":1907,"area":"The Astral Plane","status":"within cap","sources":"mob"},{"level":23,"avg":14.0,"name":"the Vibroblade","type":"dagger","vnum":8007,"area":"Mega-City One","status":"within cap","sources":"container"},{"level":23,"avg":12.0,"name":"the Avalanche","type":"exotic","vnum":9228,"area":"Elemental Canyon","status":"within cap","sources":"mob"},{"level":23,"avg":15.0,"name":"a morningstar","type":"flail","vnum":9503,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":23,"avg":15.0,"name":"a two-handed bastard sword","type":"sword","vnum":9512,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":23,"avg":15.0,"name":"a rapier","type":"sword","vnum":9514,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":23,"avg":12.0,"name":"a pair of sewing shears","type":"dagger","vnum":9583,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":23,"avg":12.0,"name":"a meat cleaver","type":"dagger","vnum":9584,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":23,"avg":12.0,"name":"a notched sword","type":"sword","vnum":13024,"area":"The Flying Citadel","status":"within cap","sources":"mob"},{"level":23,"avg":11.0,"name":"a teeny tiny spear","type":"polearm","vnum":13220,"area":"The Enchanted Forest","status":"within cap","sources":"mob"},{"level":23,"avg":15.0,"name":"slaver's whip","type":"whip","vnum":16038,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":23,"avg":15.0,"name":"a demon blade","type":"dagger","vnum":16086,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":24,"avg":15.0,"name":"an icicle","type":"dagger","vnum":9227,"area":"Elemental Canyon","status":"within cap","sources":"mob"},{"level":24,"avg":16.0,"name":"a black hilted dagger called \"Loriana\"","type":"dagger","vnum":12002,"area":"Imladris","status":"within cap","sources":"mob"},{"level":25,"avg":15.0,"name":"a finely etched bardiche","type":"polearm","vnum":1116,"area":"The Shire","status":"within cap","sources":"mob"},{"level":25,"avg":15.0,"name":"a rusted sword","type":"sword","vnum":1926,"area":"The Astral Plane","status":"within cap","sources":"mob"},{"level":25,"avg":15.0,"name":"an ethereal blade","type":"exotic","vnum":2348,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":25,"avg":12.0,"name":"a two-handed sword","type":"sword","vnum":2372,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":25,"avg":15.0,"name":"a massive club","type":"mace","vnum":2391,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":25,"avg":15.0,"name":"a hammer","type":"mace","vnum":2438,"area":"Ultima","status":"within cap","sources":"mob"},{"level":25,"avg":15.0,"name":"a two-handed sword","type":"sword","vnum":5221,"area":"Thalos","status":"within cap","sources":"mob"},{"level":25,"avg":15.0,"name":"a darkened quarterstaff","type":"spear","vnum":7825,"area":"Valley of the Elves","status":"within cap","sources":"mob"},{"level":25,"avg":15.0,"name":"a bill-guisarme","type":"polearm","vnum":9507,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":25,"avg":12.0,"name":"the halberd","type":"polearm","vnum":9600,"area":"New Thalos","status":"within cap","sources":"mob"},{"level":25,"avg":15.0,"name":"Wolf Dagger","type":"dagger","vnum":10075,"area":"Wolf Pointe","status":"within cap","sources":"shop"},{"level":25,"avg":15.0,"name":"Wolf Sword","type":"sword","vnum":10076,"area":"Wolf Pointe","status":"within cap","sources":"shop"},{"level":25,"avg":15.0,"name":"Wolf Mace","type":"mace","vnum":10077,"area":"Wolf Pointe","status":"within cap","sources":"shop"},{"level":25,"avg":15.0,"name":"a garotte","type":"exotic","vnum":16077,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":26,"avg":15.0,"name":"a thin two-handed sword","type":"sword","vnum":1909,"area":"The Astral Plane","status":"within cap","sources":"mob"},{"level":26,"avg":15.0,"name":"an emerald sword","type":"sword","vnum":2222,"area":"Dragon Tower","status":"within cap","sources":"mob"},{"level":26,"avg":16.0,"name":"a minotaur glaive","type":"polearm","vnum":2376,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":26,"avg":12.0,"name":"a flame lance","type":"spear","vnum":9226,"area":"Elemental Canyon","status":"within cap","sources":"mob"},{"level":26,"avg":15.0,"name":"a horsewhip","type":"whip","vnum":13040,"area":"The Flying Citadel","status":"within cap","sources":"mob"},{"level":26,"avg":15.0,"name":"a jagged long sword","type":"sword","vnum":16041,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":26,"avg":15.0,"name":"an ebony dagger","type":"dagger","vnum":16042,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":27,"avg":15.0,"name":"a ranseur","type":"polearm","vnum":653,"area":"New Ofcol","status":"within cap","sources":"mob"},{"level":27,"avg":12.0,"name":"a dragon's tooth knife","type":"dagger","vnum":2202,"area":"Dragon Tower","status":"within cap","sources":"mob"},{"level":27,"avg":15.0,"name":"a large dwarven battle axe","type":"axe","vnum":4706,"area":"Kingdom of Juargan","status":"within cap","sources":"mob"},{"level":27,"avg":16.0,"name":"a Judge's club","type":"mace","vnum":8018,"area":"Mega-City One","status":"within cap","sources":"mob"},{"level":28,"avg":16.0,"name":"a huge morningstar","type":"mace","vnum":2380,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":28,"avg":15.0,"name":"a sword","type":"sword","vnum":2439,"area":"Ultima","status":"within cap","sources":"mob"},{"level":28,"avg":16.0,"name":"the Morning Star","type":"flail","vnum":9229,"area":"Elemental Canyon","status":"within cap","sources":"mob"},{"level":29,"avg":12.0,"name":"some huge spiked brass knuckles","type":"exotic","vnum":2381,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":29,"avg":18.0,"name":"a huge wooden maul","type":"mace","vnum":2383,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":30,"avg":17.5,"name":"a hand axe","type":"axe","vnum":600,"area":"New Ofcol","status":"within cap","sources":"shop"},{"level":30,"avg":12.0,"name":"an iron shod staff","type":"spear","vnum":1385,"area":"High Tower of Sorcery","status":"within cap","sources":"mob"},{"level":30,"avg":12.0,"name":"a sharp shard of obsidian","type":"dagger","vnum":1390,"area":"High Tower of Sorcery","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"an ivory hilted dagger","type":"dagger","vnum":1394,"area":"High Tower of Sorcery","status":"within cap","sources":"mob"},{"level":30,"avg":17.5,"name":"The sword Excalibur","type":"sword","vnum":2005,"area":"Dwarven Catacombs","status":"within cap","sources":"container"},{"level":30,"avg":18.0,"name":"the rod of weaponry","type":"mace","vnum":2304,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"a shortsword named \"Nightbringer\"","type":"sword","vnum":2309,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"a huge mace named \"Dawnbringer\"","type":"mace","vnum":2314,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"a gnarled magius staff","type":"spear","vnum":2318,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":30,"avg":12.0,"name":"a huge mithril mace","type":"mace","vnum":2323,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"an ice staff","type":"spear","vnum":2329,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":30,"avg":12.0,"name":"a huge crossbow","type":"exotic","vnum":2334,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"a wicked shortsword","type":"sword","vnum":2339,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"a magic dagger","type":"dagger","vnum":2421,"area":"Ultima","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"a shiny sword","type":"sword","vnum":2441,"area":"Ultima","status":"within cap","sources":"mob"},{"level":30,"avg":12.0,"name":"the halberd","type":"polearm","vnum":5002,"area":"Sands of Sorrow","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"a red dragon claw","type":"mace","vnum":7216,"area":"Sewer","status":"within cap","sources":"mob"},{"level":30,"avg":16.5,"name":"a razor-sharp, jagged spear","type":"spear","vnum":8308,"area":"Old Marsh","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"a fiery dagger","type":"dagger","vnum":9203,"area":"Elemental Canyon","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"a sparking lightning sword","type":"sword","vnum":9207,"area":"Elemental Canyon","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"the Great Dipper of the Skies","type":"exotic","vnum":9323,"area":"Galaxy","status":"within cap","sources":"mob"},{"level":30,"avg":17.5,"name":"a bec de corbine","type":"polearm","vnum":9506,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":30,"avg":12.0,"name":"a riding crop","type":"whip","vnum":9589,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":30,"avg":20.0,"name":"a dagger","type":"dagger","vnum":9609,"area":"New Thalos","status":"over cap","sources":"shop"},{"level":30,"avg":17.5,"name":"flaming claw","type":"mace","vnum":10408,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":30,"avg":17.5,"name":"silver longsword","type":"dagger","vnum":11008,"area":"Crystalmir Lake","status":"within cap","sources":"mob"},{"level":30,"avg":18.0,"name":"the orcish sword","type":"sword","vnum":13035,"area":"The Flying Citadel","status":"within cap","sources":"mob"},{"level":31,"avg":20.0,"name":"the Infinity Bow","type":"spear","vnum":2430,"area":"Ultima","status":"over cap","sources":"mob"},{"level":32,"avg":17.5,"name":"a gavel","type":"mace","vnum":2433,"area":"Ultima","status":"within cap","sources":"mob"},{"level":33,"avg":18.0,"name":"Holy Avenger","type":"sword","vnum":647,"area":"New Ofcol","status":"within cap","sources":"mob"},{"level":33,"avg":17.5,"name":"Mahn-Tor's Great Axe","type":"axe","vnum":2345,"area":"The Keep of Mahn-Tor","status":"within cap","sources":"mob"},{"level":33,"avg":17.5,"name":"a chicken","type":"exotic","vnum":2429,"area":"Ultima","status":"within cap","sources":"mob"},{"level":33,"avg":20.0,"name":"a bastard sword","type":"sword","vnum":2437,"area":"Ultima","status":"within cap","sources":"mob"},{"level":33,"avg":18.0,"name":"a rapier","type":"sword","vnum":2443,"area":"Ultima","status":"within cap","sources":"mob"},{"level":33,"avg":18.0,"name":"a rusty sword","type":"sword","vnum":2445,"area":"Ultima","status":"within cap","sources":"mob"},{"level":34,"avg":20.0,"name":"a great, two-handed sword","type":"sword","vnum":5332,"area":"Old Thalos","status":"within cap","sources":"mob"},{"level":35,"avg":17.5,"name":"a notched axe","type":"axe","vnum":913,"area":"Olympus","status":"within cap","sources":"mob"},{"level":35,"avg":17.5,"name":"a boomerang","type":"exotic","vnum":2444,"area":"Ultima","status":"within cap","sources":"mob"},{"level":35,"avg":17.5,"name":"Sentri's two-handed sword","type":"exotic","vnum":2457,"area":"Ultima","status":"within cap","sources":"mob"},{"level":35,"avg":17.5,"name":"a spider shaped dagger","type":"dagger","vnum":5113,"area":"Drow City","status":"within cap","sources":"mob"},{"level":35,"avg":20.0,"name":"A rusty hand blaster","type":"exotic","vnum":5829,"area":"Mos Eisley","status":"within cap","sources":"mob"},{"level":35,"avg":20.0,"name":"a bardiche","type":"polearm","vnum":9505,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":35,"avg":20.0,"name":"a black leather whip","type":"whip","vnum":10402,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":35,"avg":20.0,"name":"hickey maker","type":"exotic","vnum":10403,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":35,"avg":20.0,"name":"vorpal blade","type":"dagger","vnum":10407,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":35,"avg":20.0,"name":"mane's claws","type":"exotic","vnum":10444,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":35,"avg":21.0,"name":"the draconian axe","type":"axe","vnum":13002,"area":"The Flying Citadel","status":"within cap","sources":"mob"},{"level":36,"avg":21.0,"name":"the Golden Talons","type":"exotic","vnum":668,"area":"New Ofcol","status":"within cap","sources":"mob"},{"level":36,"avg":22.5,"name":"the spear","type":"spear","vnum":13025,"area":"The Flying Citadel","status":"within cap","sources":"mob"},{"level":37,"avg":21.0,"name":"an extremely sharp and thin sword","type":"sword","vnum":1908,"area":"The Astral Plane","status":"within cap","sources":"mob"},{"level":37,"avg":20.0,"name":"THE long sword","type":"sword","vnum":9000,"area":"Nirvana","status":"within cap","sources":"mob"},{"level":39,"avg":22.5,"name":"a silvery sword","type":"sword","vnum":1910,"area":"The Astral Plane","status":"within cap","sources":"mob"},{"level":39,"avg":24.0,"name":"(|gHideous|w) the draconian mace","type":"mace","vnum":13007,"area":"The Flying Citadel","status":"over cap","sources":"mob"},{"level":39,"avg":22.5,"name":"a huge stone mace","type":"mace","vnum":16025,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":40,"avg":25.0,"name":"a HUGE meat cleaver","type":"exotic","vnum":509,"area":"Camelot","status":"over cap","sources":"mob"},{"level":40,"avg":22.5,"name":"a silvery knife","type":"dagger","vnum":1906,"area":"The Astral Plane","status":"within cap","sources":"mob"},{"level":40,"avg":22.0,"name":"A hand blaster","type":"exotic","vnum":5813,"area":"Mos Eisley","status":"within cap","sources":"mob"},{"level":40,"avg":22.5,"name":"an awl-pike","type":"spear","vnum":9504,"area":"New Thalos","status":"within cap","sources":"shop"},{"level":40,"avg":22.5,"name":"an iron sword","type":"sword","vnum":16024,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":40,"avg":22.5,"name":"demon horn","type":"dagger","vnum":16028,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":41,"avg":20.0,"name":"a dragon tailed whip","type":"whip","vnum":2285,"area":"Dragon Tower","status":"within cap","sources":"mob"},{"level":41,"avg":24.0,"name":"demon teeth","type":"exotic","vnum":10410,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":41,"avg":17.5,"name":"the torturer's whip","type":"whip","vnum":13417,"area":"Ciquala's Lair","status":"within cap","sources":"mob"},{"level":42,"avg":24.0,"name":"a wicked looking trident","type":"spear","vnum":10401,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":42,"avg":24.0,"name":"a fractured long sword","type":"sword","vnum":16096,"area":"UnderDark","status":"within cap","sources":"mob"},{"level":43,"avg":24.5,"name":"a spiked mace","type":"mace","vnum":2450,"area":"Ultima","status":"within cap","sources":"mob"},{"level":43,"avg":24.0,"name":"A gaffi stick","type":"polearm","vnum":5812,"area":"Mos Eisley","status":"within cap","sources":"mob"},{"level":44,"avg":26.0,"name":"the energy whip","type":"whip","vnum":13011,"area":"The Flying Citadel","status":"within cap","sources":"mob"},{"level":45,"avg":27.0,"name":"horns","type":"exotic","vnum":2901,"area":"Fire Newt Mountain","status":"over cap","sources":"mob"},{"level":45,"avg":24.0,"name":"Wolf Tooth Dagger","type":"dagger","vnum":10074,"area":"Wolf Pointe","status":"within cap","sources":"mob"},{"level":45,"avg":25.0,"name":"a black hilted sword called, \"Farslayer\"","type":"sword","vnum":10404,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":45,"avg":25.0,"name":"circular saw","type":"flail","vnum":10413,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":45,"avg":25.0,"name":"large meat hook","type":"exotic","vnum":10420,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":45,"avg":25.0,"name":"welding torch","type":"exotic","vnum":10445,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":45,"avg":27.0,"name":"a cyberstaff","type":"exotic","vnum":27034,"area":"The Seminary","status":"over cap","sources":"mob"},{"level":46,"avg":28.0,"name":"hell hound teeth","type":"exotic","vnum":10417,"area":"Descent to Hell","status":"over cap","sources":"mob"},{"level":47,"avg":27.0,"name":"a shovel","type":"mace","vnum":2903,"area":"Fire Newt Mountain","status":"within cap","sources":"mob"},{"level":47,"avg":27.5,"name":"a draconian dagger","type":"dagger","vnum":13043,"area":"The Flying Citadel","status":"within cap","sources":"mob"},{"level":47,"avg":28.0,"name":"a jewelled dagger","type":"dagger","vnum":16071,"area":"UnderDark","status":"over cap","sources":"mob"},{"level":48,"avg":27.5,"name":"Moredhel Longsword","type":"sword","vnum":28002,"area":"Sethanon","status":"within cap","sources":"mob"},{"level":48,"avg":27.5,"name":"Eledhel Longsword","type":"sword","vnum":28003,"area":"Sethanon","status":"within cap","sources":"mob"},{"level":49,"avg":28.0,"name":"ionic torque wrench","type":"mace","vnum":10431,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":50,"avg":27.5,"name":"the long arm of justice","type":"polearm","vnum":507,"area":"Camelot","status":"within cap","sources":"mob"},{"level":50,"avg":24.0,"name":"a silver bow","type":"exotic","vnum":907,"area":"Olympus","status":"within cap","sources":"mob"},{"level":50,"avg":24.0,"name":"the ebony kris","type":"dagger","vnum":1400,"area":"High Tower of Sorcery","status":"within cap","sources":"mob"},{"level":50,"avg":28.0,"name":"a massive slate-grey sledgehammer","type":"mace","vnum":1900,"area":"The Astral Plane","status":"within cap","sources":"mob"},{"level":50,"avg":24.0,"name":"The Glass Sword","type":"exotic","vnum":2463,"area":"Ultima","status":"within cap","sources":"mob"},{"level":50,"avg":30.0,"name":"a dagger","type":"dagger","vnum":9610,"area":"New Thalos","status":"over cap","sources":"shop"},{"level":50,"avg":30.0,"name":"the immense axe","type":"axe","vnum":13015,"area":"The Flying Citadel","status":"within cap","sources":"mob"},{"level":50,"avg":30.0,"name":"a soup ladle","type":"exotic","vnum":27020,"area":"The Seminary","status":"over cap","sources":"mob"},{"level":52,"avg":21.0,"name":"an iron barbed flail","type":"flail","vnum":1911,"area":"The Astral Plane","status":"within cap","sources":"mob"},{"level":52,"avg":30.0,"name":"a body-wrecker","type":"polearm","vnum":9900,"area":"Yggdrasil","status":"within cap","sources":"mob"},{"level":52,"avg":28.0,"name":"sharp teeth of a lawyer","type":"exotic","vnum":10427,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":52,"avg":28.0,"name":"cleaver","type":"axe","vnum":10448,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":52,"avg":28.0,"name":"Ciquala's sword","type":"sword","vnum":13400,"area":"Ciquala's Lair","status":"within cap","sources":"mob"},{"level":52,"avg":30.0,"name":"the Swiss Army Knife","type":"dagger","vnum":27033,"area":"The Seminary","status":"within cap","sources":"mob"},{"level":53,"avg":30.0,"name":"ice spear","type":"spear","vnum":10419,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":53,"avg":30.0,"name":"electric eraser","type":"mace","vnum":10423,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":54,"avg":31.5,"name":"Wolfgang's stethoscope","type":"flail","vnum":27044,"area":"The Seminary","status":"within cap","sources":"mob"},{"level":54,"avg":33.0,"name":"a gold plated cutlass","type":"sword","vnum":27243,"area":"The Valkyrie","status":"over cap","sources":"mob"},{"level":54,"avg":33.0,"name":"a spiked ramming rod","type":"mace","vnum":27248,"area":"The Valkyrie","status":"over cap","sources":"mob"},{"level":55,"avg":28.0,"name":"a gardener's spade","type":"spear","vnum":1801,"area":"Japan","status":"within cap","sources":"mob"},{"level":55,"avg":30.0,"name":"a short sword","type":"sword","vnum":2904,"area":"Fire Newt Mountain","status":"within cap","sources":"mob"},{"level":55,"avg":30.0,"name":"a hand axe","type":"axe","vnum":2905,"area":"Fire Newt Mountain","status":"within cap","sources":"mob"},{"level":55,"avg":33.0,"name":"A blaster","type":"exotic","vnum":5814,"area":"Mos Eisley","status":"over cap","sources":"mob"},{"level":56,"avg":31.5,"name":"bloody black talon","type":"dagger","vnum":10415,"area":"Descent to Hell","status":"within cap","sources":"mob"},{"level":56,"avg":33.0,"name":"a barbed harpoon","type":"polearm","vnum":27257,"area":"The Valkyrie","status":"over cap","sources":"mob"},{"level":58,"avg":33.0,"name":"a bladder on a stick","type":"exotic","vnum":508,"area":"Camelot","status":"within cap","sources":"mob"},{"level":58,"avg":33.0,"name":"a pick","type":"mace","vnum":2907,"area":"Fire Newt Mountain","status":"within cap","sources":"mob"},{"level":59,"avg":32.5,"name":"Poseidon's Trident","type":"spear","vnum":906,"area":"Olympus","status":"within cap","sources":"mob"},{"level":60,"avg":32.5,"name":"The Thunder Bolt","type":"mace","vnum":901,"area":"Olympus","status":"within cap","sources":"mob"},{"level":60,"avg":31.5,"name":"the Sword of the Sun","type":"sword","vnum":923,"area":"Olympus","status":"within cap","sources":"mob"},{"level":60,"avg":32.5,"name":"The unholy sword of the githyanki","type":"sword","vnum":1912,"area":"The Astral Plane","status":"within cap","sources":"mob"},{"level":60,"avg":32.5,"name":"a black pen","type":"dagger","vnum":9831,"area":"Dragon Cult","status":"within cap","sources":"mob"},{"level":60,"avg":33.0,"name":"the axe of the Protector of the Lore","type":"axe","vnum":30155,"area":"Lore Keep","status":"within cap","sources":"mob"},{"level":61,"avg":35.0,"name":"Ajandurah's staff of utter negativity","type":"polearm","vnum":27051,"area":"The Seminary","status":"within cap","sources":"mob"},{"level":62,"avg":35.0,"name":"(Magical) a huge sword","type":"sword","vnum":12108,"area":"The Dell","status":"within cap","sources":"mob"},{"level":64,"avg":36.0,"name":"an imperial blaster","type":"exotic","vnum":5831,"area":"Mos Eisley","status":"within cap","sources":"mob"},{"level":65,"avg":36.0,"name":"Leonardo's Katana blade","type":"sword","vnum":1802,"area":"Japan","status":"within cap","sources":"mob"},{"level":65,"avg":36.0,"name":"Michaelangelo's numchucks","type":"mace","vnum":1803,"area":"Japan","status":"within cap","sources":"mob"},{"level":65,"avg":36.0,"name":"Donatello's bokken","type":"polearm","vnum":1804,"area":"Japan","status":"within cap","sources":"mob"},{"level":65,"avg":36.0,"name":"Raphael's sai","type":"dagger","vnum":1805,"area":"Japan","status":"within cap","sources":"mob"},{"level":65,"avg":36.0,"name":"a broad axe","type":"axe","vnum":2911,"area":"Fire Newt Mountain","status":"within cap","sources":"mob"},{"level":65,"avg":36.0,"name":"a flaming mace","type":"mace","vnum":2913,"area":"Fire Newt Mountain","status":"within cap","sources":"mob"},{"level":65,"avg":36.0,"name":"a rusty curved scimitar","type":"sword","vnum":3421,"area":"Chapel Catacombs","status":"within cap","sources":"mob"},{"level":65,"avg":36.0,"name":"Executioner's Axe","type":"axe","vnum":10066,"area":"Wolf Pointe","status":"within cap","sources":"mob"},{"level":65,"avg":36.0,"name":"Sheriff's Mace","type":"mace","vnum":10068,"area":"Wolf Pointe","status":"within cap","sources":"mob"},{"level":65,"avg":36.0,"name":"Wolf Bone Dagger","type":"exotic","vnum":10072,"area":"Wolf Pointe","status":"within cap","sources":"mob"},{"level":65,"avg":38.5,"name":"a dorsal fin","type":"exotic","vnum":27048,"area":"The Seminary","status":"over cap","sources":"mob"},{"level":68,"avg":38.5,"name":"a red stiletto","type":"dagger","vnum":1812,"area":"Japan","status":"within cap","sources":"mob"},{"level":68,"avg":36.0,"name":"black stiletto","type":"dagger","vnum":1814,"area":"Japan","status":"within cap","sources":"mob"},{"level":68,"avg":40.0,"name":"a shipwright's hatchet","type":"axe","vnum":27269,"area":"The Valkyrie","status":"over cap","sources":"mob"},{"level":70,"avg":38.5,"name":"a heavy pewter candlestick","type":"exotic","vnum":506,"area":"Camelot","status":"within cap","sources":"mob"},{"level":70,"avg":39.0,"name":"The Flaming Dragon","type":"exotic","vnum":823,"area":"Strange World","status":"within cap","sources":"mob"},{"level":70,"avg":38.5,"name":"the chief's blade","type":"sword","vnum":1808,"area":"Japan","status":"within cap","sources":"mob"},{"level":70,"avg":38.5,"name":"a whisper thin rapier","type":"sword","vnum":3414,"area":"Chapel Catacombs","status":"within cap","sources":"mob"},{"level":70,"avg":40.0,"name":"a dagger","type":"dagger","vnum":9611,"area":"New Thalos","status":"over cap","sources":"shop"},{"level":70,"avg":38.5,"name":"a holy bastard sword","type":"sword","vnum":9902,"area":"Yggdrasil","status":"within cap","sources":"mob"},{"level":72,"avg":40.0,"name":"numchucks","type":"mace","vnum":1813,"area":"Japan","status":"within cap","sources":"mob"},{"level":72,"avg":40.0,"name":"a bamboo rod","type":"polearm","vnum":1818,"area":"Japan","status":"within cap","sources":"mob"},{"level":73,"avg":40.0,"name":"a samurai sword","type":"sword","vnum":1809,"area":"Japan","status":"within cap","sources":"mob"},{"level":75,"avg":40.0,"name":"a Knight of the Round Table's sword","type":"sword","vnum":505,"area":"Camelot","status":"within cap","sources":"mob"},{"level":75,"avg":40.0,"name":"a grey staff","type":"spear","vnum":1817,"area":"Japan","status":"within cap","sources":"mob"},{"level":75,"avg":40.0,"name":"a nightgaunt's tickler","type":"whip","vnum":3402,"area":"Chapel Catacombs","status":"within cap","sources":"mob"},{"level":75,"avg":42.0,"name":"A marble gavel","type":"mace","vnum":10051,"area":"Wolf Pointe","status":"over cap","sources":"mob"},{"level":75,"avg":45.0,"name":"Vengeance","type":"sword","vnum":27236,"area":"The Valkyrie","status":"over cap","sources":"mob"},{"level":76,"avg":42.0,"name":"The Bubble Blower","type":"exotic","vnum":18110,"area":"Den of Monsters","status":"within cap","sources":"mob"},{"level":76,"avg":40.0,"name":"a roll of burning parchment","type":"mace","vnum":27026,"area":"The Seminary","status":"within cap","sources":"mob"},{"level":78,"avg":42.0,"name":"a Fujimoto blade","type":"sword","vnum":1810,"area":"Japan","status":"within cap","sources":"mob"},{"level":78,"avg":42.0,"name":"a bone sword","type":"exotic","vnum":9828,"area":"Dragon Cult","status":"within cap","sources":"mob"},{"level":78,"avg":45.0,"name":"kris of a thousand lies","type":"dagger","vnum":27238,"area":"The Valkyrie","status":"over cap","sources":"mob"},{"level":80,"avg":44.0,"name":"a custom blaster","type":"exotic","vnum":5832,"area":"Mos Eisley","status":"within cap","sources":"mob"},{"level":80,"avg":40.0,"name":"a black staff","type":"exotic","vnum":9833,"area":"Dragon Cult","status":"within cap","sources":"mob"},{"level":80,"avg":45.0,"name":"A Decaying Arm","type":"flail","vnum":18109,"area":"Den of Monsters","status":"over cap","sources":"mob"},{"level":80,"avg":45.0,"name":"the blade of destruction","type":"polearm","vnum":27023,"area":"The Seminary","status":"within cap","sources":"mob"},{"level":81,"avg":45.0,"name":"an evil looking black dagger","type":"dagger","vnum":9832,"area":"Dragon Cult","status":"over cap","sources":"mob"},{"level":82,"avg":45.0,"name":"the Takashima blade","type":"sword","vnum":1806,"area":"Japan","status":"within cap","sources":"mob"},{"level":82,"avg":45.0,"name":"the Stiehl","type":"dagger","vnum":1815,"area":"Japan","status":"within cap","sources":"mob"},{"level":82,"avg":45.5,"name":"steel rapier","type":"sword","vnum":28013,"area":"Sethanon","status":"within cap","sources":"mob"},{"level":83,"avg":45.5,"name":"The Sabre of Wind","type":"sword","vnum":803,"area":"Strange World","status":"within cap","sources":"mob"},{"level":85,"avg":52.0,"name":"sword of the deceiver","type":"sword","vnum":503,"area":"Camelot","status":"over cap","sources":"mob"},{"level":85,"avg":45.5,"name":"a Minowara blade","type":"sword","vnum":1811,"area":"Japan","status":"within cap","sources":"mob"},{"level":85,"avg":45.5,"name":"A double-barrelled laser pistol","type":"exotic","vnum":5815,"area":"Mos Eisley","status":"within cap","sources":"mob"},{"level":85,"avg":45.0,"name":"A reinforced handcannon","type":"exotic","vnum":5830,"area":"Mos Eisley","status":"within cap","sources":"mob"},{"level":85,"avg":45.0,"name":"a huge hammer of cold iron","type":"mace","vnum":9901,"area":"Yggdrasil","status":"within cap","sources":"mob"},{"level":85,"avg":45.0,"name":"The Reaper's Scythe","type":"polearm","vnum":18121,"area":"Den of Monsters","status":"within cap","sources":"mob"},{"level":85,"avg":44.0,"name":"The Bloody Stake","type":"spear","vnum":18127,"area":"Den of Monsters","status":"within cap","sources":"mob"},{"level":86,"avg":44.0,"name":"Claw of Earth","type":"exotic","vnum":820,"area":"Strange World","status":"within cap","sources":"mob"},{"level":86,"avg":45.0,"name":"hands of emptiness","type":"exotic","vnum":27037,"area":"The Seminary","status":"within cap","sources":"mob"},{"level":87,"avg":49.5,"name":"jewelled dagger of Anwe","type":"dagger","vnum":502,"area":"Camelot","status":"over cap","sources":"mob"},{"level":87,"avg":45.0,"name":"Blood Sucker","type":"exotic","vnum":810,"area":"Strange World","status":"within cap","sources":"mob"},{"level":88,"avg":48.0,"name":"a huge black hilted sword","type":"sword","vnum":504,"area":"Camelot","status":"within cap","sources":"mob"},{"level":90,"avg":52.5,"name":"Excalibur","type":"sword","vnum":501,"area":"Camelot","status":"over cap","sources":"mob"},{"level":90,"avg":52.5,"name":"Saint Sword","type":"sword","vnum":809,"area":"Strange World","status":"over cap","sources":"mob"},{"level":90,"avg":52.0,"name":"The Fangs of Nitrius","type":"exotic","vnum":1006,"area":"The Heavens","status":"over cap","sources":"mob"},{"level":90,"avg":48.0,"name":"A tripod-mounted blaster","type":"exotic","vnum":5828,"area":"Mos Eisley","status":"within cap","sources":"mob"},{"level":90,"avg":50.0,"name":"a dagger","type":"dagger","vnum":9612,"area":"New Thalos","status":"over cap","sources":"shop"},{"level":90,"avg":52.5,"name":"a long black whip","type":"whip","vnum":10133,"area":"Uruk's Fortress","status":"over cap","sources":"mob"},{"level":90,"avg":50.0,"name":"The Fangs of the Vampire","type":"exotic","vnum":18128,"area":"Den of Monsters","status":"over cap","sources":"mob"},{"level":91,"avg":52.5,"name":"a pitch-black gavel that flames brightly...","type":"mace","vnum":3428,"area":"Chapel Catacombs","status":"over cap","sources":"mob"},{"level":91,"avg":52.5,"name":"an axe","type":"axe","vnum":10129,"area":"Uruk's Fortress","status":"over cap","sources":"mob"},{"level":91,"avg":50.0,"name":"A Shark's Tooth","type":"dagger","vnum":18105,"area":"Den of Monsters","status":"over cap","sources":"mob"},{"level":91,"avg":52.0,"name":"The Runed Cube","type":"whip","vnum":18130,"area":"Den of Monsters","status":"over cap","sources":"mob"},{"level":91,"avg":52.0,"name":"Your Leg","type":"axe","vnum":18132,"area":"Den of Monsters","status":"over cap","sources":"mob"},{"level":91,"avg":52.0,"name":"Freddy's Claw","type":"exotic","vnum":18133,"area":"Den of Monsters","status":"over cap","sources":"mob"},{"level":91,"avg":52.0,"name":"THE Machete","type":"sword","vnum":18135,"area":"Den of Monsters","status":"over cap","sources":"mob"},{"level":91,"avg":52.0,"name":"Sword of Ashen-Shugar","type":"exotic","vnum":28021,"area":"Sethanon","status":"over cap","sources":"mob"},{"level":91,"avg":52.5,"name":"a rusty looking scythe","type":"polearm","vnum":30005,"area":"Penthouse","status":"over cap","sources":"mob"}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"layer":[{"mark":{"type":"point","filled":true,"opacity":0.75},"params":[{"name":"zoom","select":"interval","bind":"scales"}],"encoding":{"x":{"field":"level","type":"quantitative","title":"Weapon level"},"y":{"field":"avg","type":"quantitative","title":"Average damage"},"color":{"field":"status","type":"nominal","title":"","scale":{"domain":["over cap","within cap"],"range":["#b4532a","#b8ab9c"]}},"size":{"condition":{"test":"datum.status === 'over cap'","value":60},"value":25},"tooltip":[{"field":"name","title":"Weapon"},{"field":"vnum","title":"Vnum"},{"field":"area","title":"Area"},{"field":"type","title":"Type"},{"field":"level","title":"Level"},{"field":"avg","title":"Avg"},{"field":"sources","title":"Sources"}]}},{"data":{"values":[{"level":1,"cap":4},{"level":2,"cap":5},{"level":3,"cap":5},{"level":4,"cap":6},{"level":5,"cap":6},{"level":6,"cap":7},{"level":7,"cap":7},{"level":8,"cap":8},{"level":9,"cap":8},{"level":10,"cap":9},{"level":11,"cap":9},{"level":12,"cap":10},{"level":13,"cap":10},{"level":14,"cap":11},{"level":15,"cap":11},{"level":16,"cap":12},{"level":17,"cap":12},{"level":18,"cap":13},{"level":19,"cap":13},{"level":20,"cap":14},{"level":21,"cap":14},{"level":22,"cap":15},{"level":23,"cap":15},{"level":24,"cap":16},{"level":25,"cap":16},{"level":26,"cap":17},{"level":27,"cap":17},{"level":28,"cap":18},{"level":29,"cap":18},{"level":30,"cap":19},{"level":31,"cap":19},{"level":32,"cap":20},{"level":33,"cap":20},{"level":34,"cap":21},{"level":35,"cap":21},{"level":36,"cap":22},{"level":37,"cap":22},{"level":38,"cap":23},{"level":39,"cap":23},{"level":40,"cap":24},{"level":41,"cap":24},{"level":42,"cap":25},{"level":43,"cap":25},{"level":44,"cap":26},{"level":45,"cap":26},{"level":46,"cap":27},{"level":47,"cap":27},{"level":48,"cap":28},{"level":49,"cap":28},{"level":50,"cap":29},{"level":51,"cap":29},{"level":52,"cap":30},{"level":53,"cap":30},{"level":54,"cap":31},{"level":55,"cap":31},{"level":56,"cap":32},{"level":57,"cap":32},{"level":58,"cap":33},{"level":59,"cap":33},{"level":60,"cap":34},{"level":61,"cap":34},{"level":62,"cap":35},{"level":63,"cap":35},{"level":64,"cap":36},{"level":65,"cap":36},{"level":66,"cap":37},{"level":67,"cap":37},{"level":68,"cap":38},{"level":69,"cap":38},{"level":70,"cap":39},{"level":71,"cap":39},{"level":72,"cap":40},{"level":73,"cap":40},{"level":74,"cap":41},{"level":75,"cap":41},{"level":76,"cap":42},{"level":77,"cap":42},{"level":78,"cap":43},{"level":79,"cap":43},{"level":80,"cap":44},{"level":81,"cap":44},{"level":82,"cap":45},{"level":83,"cap":45},{"level":84,"cap":46},{"level":85,"cap":46},{"level":86,"cap":47},{"level":87,"cap":47},{"level":88,"cap":48},{"level":89,"cap":48},{"level":90,"cap":49},{"level":91,"cap":49}]},"mark":{"type":"line","strokeDash":[4,4],"color":"#9a8b7e"},"encoding":{"x":{"field":"level","type":"quantitative"},"y":{"field":"cap","type":"quantitative"}}}]}</script></div>
+
+<details class="abstract">
+<summary>Details: all 49 weapons over the cap</summary>
+<table>
+<thead>
+<tr>
+<th>Vnum</th>
+<th>Weapon</th>
+<th>Area</th>
+<th>Type</th>
+<th>Lvl</th>
+<th>Dice</th>
+<th>Avg</th>
+<th>Cap</th>
+<th>Over by</th>
+<th>Sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30002</td>
+<td>Staff of Gondor</td>
+<td>Penthouse</td>
+<td>exotic</td>
+<td>99</td>
+<td>20d6</td>
+<td>70</td>
+<td>53</td>
+<td>17</td>
+<td>none</td>
+</tr>
+<tr>
+<td>503</td>
+<td>sword of the deceiver</td>
+<td>Camelot</td>
+<td>sword</td>
+<td>85</td>
+<td>8d12</td>
+<td>52</td>
+<td>46</td>
+<td>6</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>27236</td>
+<td>Vengeance</td>
+<td>The Valkyrie</td>
+<td>sword</td>
+<td>75</td>
+<td>15d5</td>
+<td>45</td>
+<td>41</td>
+<td>4</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>501</td>
+<td>Excalibur</td>
+<td>Camelot</td>
+<td>sword</td>
+<td>90</td>
+<td>15d6</td>
+<td>52.5</td>
+<td>49</td>
+<td>3.5</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>809</td>
+<td>Saint Sword</td>
+<td>Strange World</td>
+<td>sword</td>
+<td>90</td>
+<td>15d6</td>
+<td>52.5</td>
+<td>49</td>
+<td>3.5</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>3428</td>
+<td>a pitch-black gavel that flames brightly...</td>
+<td>Chapel Catacombs</td>
+<td>mace</td>
+<td>91</td>
+<td>15d6</td>
+<td>52.5</td>
+<td>49</td>
+<td>3.5</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>10133</td>
+<td>a long black whip</td>
+<td>Uruk's Fortress</td>
+<td>whip</td>
+<td>90</td>
+<td>15d6</td>
+<td>52.5</td>
+<td>49</td>
+<td>3.5</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>The Fangs of Nitrius</td>
+<td>The Heavens</td>
+<td>exotic</td>
+<td>90</td>
+<td>13d7</td>
+<td>52</td>
+<td>49</td>
+<td>3</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>18130</td>
+<td>The Runed Cube</td>
+<td>Den of Monsters</td>
+<td>whip</td>
+<td>91</td>
+<td>8d12</td>
+<td>52</td>
+<td>49</td>
+<td>3</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>18132</td>
+<td>Your Leg</td>
+<td>Den of Monsters</td>
+<td>axe</td>
+<td>91</td>
+<td>8d12</td>
+<td>52</td>
+<td>49</td>
+<td>3</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>18133</td>
+<td>Freddy's Claw</td>
+<td>Den of Monsters</td>
+<td>exotic</td>
+<td>91</td>
+<td>8d12</td>
+<td>52</td>
+<td>49</td>
+<td>3</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>18135</td>
+<td>THE Machete</td>
+<td>Den of Monsters</td>
+<td>sword</td>
+<td>91</td>
+<td>8d12</td>
+<td>52</td>
+<td>49</td>
+<td>3</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>28021</td>
+<td>Sword of Ashen-Shugar</td>
+<td>Sethanon</td>
+<td>exotic</td>
+<td>91</td>
+<td>13d7</td>
+<td>52</td>
+<td>49</td>
+<td>3</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>502</td>
+<td>jewelled dagger of Anwe</td>
+<td>Camelot</td>
+<td>dagger</td>
+<td>87</td>
+<td>11d8</td>
+<td>49.5</td>
+<td>47</td>
+<td>2.5</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>27048</td>
+<td>a dorsal fin</td>
+<td>The Seminary</td>
+<td>exotic</td>
+<td>65</td>
+<td>11d6</td>
+<td>38.5</td>
+<td>36</td>
+<td>2.5</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>5814</td>
+<td>A blaster</td>
+<td>Mos Eisley</td>
+<td>exotic</td>
+<td>55</td>
+<td>11d5</td>
+<td>33</td>
+<td>31</td>
+<td>2</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>9592</td>
+<td>something</td>
+<td>New Thalos</td>
+<td>exotic</td>
+<td>0</td>
+<td>2d5</td>
+<td>6</td>
+<td>4</td>
+<td>2</td>
+<td>none</td>
+</tr>
+<tr>
+<td>27238</td>
+<td>kris of a thousand lies</td>
+<td>The Valkyrie</td>
+<td>dagger</td>
+<td>78</td>
+<td>10d8</td>
+<td>45</td>
+<td>43</td>
+<td>2</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>27243</td>
+<td>a gold plated cutlass</td>
+<td>The Valkyrie</td>
+<td>sword</td>
+<td>54</td>
+<td>11d5</td>
+<td>33</td>
+<td>31</td>
+<td>2</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>27248</td>
+<td>a spiked ramming rod</td>
+<td>The Valkyrie</td>
+<td>mace</td>
+<td>54</td>
+<td>11d5</td>
+<td>33</td>
+<td>31</td>
+<td>2</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>27269</td>
+<td>a shipwright's hatchet</td>
+<td>The Valkyrie</td>
+<td>axe</td>
+<td>68</td>
+<td>10d7</td>
+<td>40</td>
+<td>38</td>
+<td>2</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>10129</td>
+<td>an axe</td>
+<td>Uruk's Fortress</td>
+<td>axe</td>
+<td>91</td>
+<td>15d6</td>
+<td>52.5</td>
+<td>51</td>
+<td>1.5</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>30005</td>
+<td>a rusty looking scythe</td>
+<td>Penthouse</td>
+<td>polearm</td>
+<td>91</td>
+<td>15d6</td>
+<td>52.5</td>
+<td>51</td>
+<td>1.5</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>30128</td>
+<td>Pike of the Great Wyrm</td>
+<td>Temple of the Great Wyrm</td>
+<td>polearm</td>
+<td>90</td>
+<td>15d6</td>
+<td>52.5</td>
+<td>51</td>
+<td>1.5</td>
+<td>none</td>
+</tr>
+<tr>
+<td>509</td>
+<td>a HUGE meat cleaver</td>
+<td>Camelot</td>
+<td>exotic</td>
+<td>40</td>
+<td>10d4</td>
+<td>25</td>
+<td>24</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>2430</td>
+<td>the Infinity Bow</td>
+<td>Ultima</td>
+<td>spear</td>
+<td>31</td>
+<td>4d9</td>
+<td>20</td>
+<td>19</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>2431</td>
+<td>a wooden spear</td>
+<td>Ultima</td>
+<td>spear</td>
+<td>11</td>
+<td>4d4</td>
+<td>10</td>
+<td>9</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>2901</td>
+<td>horns</td>
+<td>Fire Newt Mountain</td>
+<td>exotic</td>
+<td>45</td>
+<td>9d5</td>
+<td>27</td>
+<td>26</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>3501</td>
+<td>a long spear</td>
+<td>Miden'nir</td>
+<td>polearm</td>
+<td>3</td>
+<td>2d5</td>
+<td>6</td>
+<td>5</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>3613</td>
+<td>a silver dagger</td>
+<td>Graveyard</td>
+<td>dagger</td>
+<td>0</td>
+<td>2d4</td>
+<td>5</td>
+<td>4</td>
+<td>1</td>
+<td>floor</td>
+</tr>
+<tr>
+<td>9509</td>
+<td>a glaive</td>
+<td>New Thalos</td>
+<td>polearm</td>
+<td>15</td>
+<td>4d5</td>
+<td>12</td>
+<td>11</td>
+<td>1</td>
+<td>shop</td>
+</tr>
+<tr>
+<td>9609</td>
+<td>a dagger</td>
+<td>New Thalos</td>
+<td>dagger</td>
+<td>30</td>
+<td>8d4</td>
+<td>20</td>
+<td>19</td>
+<td>1</td>
+<td>shop</td>
+</tr>
+<tr>
+<td>9610</td>
+<td>a dagger</td>
+<td>New Thalos</td>
+<td>dagger</td>
+<td>50</td>
+<td>10d5</td>
+<td>30</td>
+<td>29</td>
+<td>1</td>
+<td>shop</td>
+</tr>
+<tr>
+<td>9611</td>
+<td>a dagger</td>
+<td>New Thalos</td>
+<td>dagger</td>
+<td>70</td>
+<td>10d7</td>
+<td>40</td>
+<td>39</td>
+<td>1</td>
+<td>shop</td>
+</tr>
+<tr>
+<td>9612</td>
+<td>a dagger</td>
+<td>New Thalos</td>
+<td>dagger</td>
+<td>90</td>
+<td>10d9</td>
+<td>50</td>
+<td>49</td>
+<td>1</td>
+<td>shop</td>
+</tr>
+<tr>
+<td>9832</td>
+<td>an evil looking black dagger</td>
+<td>Dragon Cult</td>
+<td>dagger</td>
+<td>81</td>
+<td>9d9</td>
+<td>45</td>
+<td>44</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>10051</td>
+<td>A marble gavel</td>
+<td>Wolf Pointe</td>
+<td>mace</td>
+<td>75</td>
+<td>7d11</td>
+<td>42</td>
+<td>41</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>10417</td>
+<td>hell hound teeth</td>
+<td>Descent to Hell</td>
+<td>exotic</td>
+<td>46</td>
+<td>7d7</td>
+<td>28</td>
+<td>27</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>12020</td>
+<td>a longbow from the lands of Lorien</td>
+<td>Imladris</td>
+<td>exotic</td>
+<td>18</td>
+<td>7d3</td>
+<td>14</td>
+<td>13</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>12050</td>
+<td>a sturdy staff of oak</td>
+<td>Imladris</td>
+<td>polearm</td>
+<td>13</td>
+<td>4d5</td>
+<td>12</td>
+<td>11</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>13007</td>
+<td>(|gHideous|w) the draconian mace</td>
+<td>The Flying Citadel</td>
+<td>mace</td>
+<td>39</td>
+<td>6d7</td>
+<td>24</td>
+<td>23</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>16020</td>
+<td>a small, deadly dart</td>
+<td>UnderDark</td>
+<td>spear</td>
+<td>10</td>
+<td>4d4</td>
+<td>10</td>
+<td>9</td>
+<td>1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>16071</td>
+<td>a jewelled dagger</td>
+<td>UnderDark</td>
+<td>dagger</td>
+<td>47</td>
+<td>7d7</td>
+<td>28</td>
+<td>27</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>18105</td>
+<td>A Shark's Tooth</td>
+<td>Den of Monsters</td>
+<td>dagger</td>
+<td>91</td>
+<td>10d9</td>
+<td>50</td>
+<td>49</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>18109</td>
+<td>A Decaying Arm</td>
+<td>Den of Monsters</td>
+<td>flail</td>
+<td>80</td>
+<td>10d8</td>
+<td>45</td>
+<td>44</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>18128</td>
+<td>The Fangs of the Vampire</td>
+<td>Den of Monsters</td>
+<td>exotic</td>
+<td>90</td>
+<td>10d9</td>
+<td>50</td>
+<td>49</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>27020</td>
+<td>a soup ladle</td>
+<td>The Seminary</td>
+<td>exotic</td>
+<td>50</td>
+<td>10d5</td>
+<td>30</td>
+<td>29</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>27034</td>
+<td>a cyberstaff</td>
+<td>The Seminary</td>
+<td>exotic</td>
+<td>45</td>
+<td>6d8</td>
+<td>27</td>
+<td>26</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+<tr>
+<td>27257</td>
+<td>a barbed harpoon</td>
+<td>The Valkyrie</td>
+<td>polearm</td>
+<td>56</td>
+<td>11d5</td>
+<td>33</td>
+<td>32</td>
+<td>1</td>
+<td>mob</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="weapons-no-source">13 weapons can't be obtained<a class="headerlink" href="#weapons-no-source" title="Permanent link">&para;</a></h2>
+<p>No reset places them, so they never appear in normal play. They may still be loaded by mob programs, specials or immortals.</p>
+<details class="abstract">
+<summary>Details: the 13 weapons</summary>
+<table>
+<thead>
+<tr>
+<th>Vnum</th>
+<th>Weapon</th>
+<th>Area</th>
+<th>Type</th>
+<th>Lvl</th>
+<th>Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9592</td>
+<td>something</td>
+<td>New Thalos</td>
+<td>exotic</td>
+<td>0</td>
+<td>6</td>
+</tr>
+<tr>
+<td>1114</td>
+<td>a flail</td>
+<td>The Shire</td>
+<td>flail</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1703</td>
+<td>a gnarled staff</td>
+<td>Wyvern Tower</td>
+<td>spear</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<td>4053</td>
+<td>a thieves dirk</td>
+<td>Moria</td>
+<td>dagger</td>
+<td>10</td>
+<td>6</td>
+</tr>
+<tr>
+<td>4153</td>
+<td>a morning star</td>
+<td>Moria</td>
+<td>mace</td>
+<td>10</td>
+<td>7</td>
+</tr>
+<tr>
+<td>7299</td>
+<td>a short sword</td>
+<td>Sewer</td>
+<td>sword</td>
+<td>10</td>
+<td>6</td>
+</tr>
+<tr>
+<td>16020</td>
+<td>a small, deadly dart</td>
+<td>UnderDark</td>
+<td>spear</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>5106</td>
+<td>a snake headed whip</td>
+<td>Drow City</td>
+<td>whip</td>
+<td>18</td>
+<td>10.5</td>
+</tr>
+<tr>
+<td>1704</td>
+<td>an ancient long sword</td>
+<td>Wyvern Tower</td>
+<td>sword</td>
+<td>20</td>
+<td>13.5</td>
+</tr>
+<tr>
+<td>5107</td>
+<td>a snake headed whip</td>
+<td>Drow City</td>
+<td>whip</td>
+<td>20</td>
+<td>12</td>
+</tr>
+<tr>
+<td>30124</td>
+<td>Sword of the Great Wyrm</td>
+<td>Temple of the Great Wyrm</td>
+<td>sword</td>
+<td>30</td>
+<td>18</td>
+</tr>
+<tr>
+<td>30126</td>
+<td>Axe of the Great Wyrm</td>
+<td>Temple of the Great Wyrm</td>
+<td>axe</td>
+<td>75</td>
+<td>38.5</td>
+</tr>
+<tr>
+<td>30128</td>
+<td>Pike of the Great Wyrm</td>
+<td>Temple of the Great Wyrm</td>
+<td>polearm</td>
+<td>90</td>
+<td>52.5</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
+<details class="info">
+<summary>How these numbers are calculated</summary>
+<ul>
+<li><strong>Weapons</strong>: 434 weapon prototypes; 433 at level ≤ 91; <strong>420 obtainable</strong> (placed by at least one reset: shop stock, mob drop, floor or container). Level-0 weapons count as level 1.</li>
+<li><strong>Usable at level L</strong> = obtainable and weapon level ≤ L (a character can't wield an object above their level, act_obj.cpp:137).</li>
+<li><strong>Class affinity.</strong> Every class can learn every weapon from level 1 (SkillTables.cpp), but at different <em>difficulty</em> (the class rating): it's the creation-point cost and divides both practice gains (act_info.cpp:1604) and learn-by-use chances (Learning.cpp:52). Weapon skill % multiplies both to-hit and damage (fight.cpp:452, :472), so a class is effectively weaker with a hard-to-train type. Two views per class: <em>start</em> = types granted at creation by <code>rom basics</code> + <code>&lt;class&gt; basics</code> + <code>&lt;class&gt; default</code> (knight default includes <code>weaponsmaster</code> = all types); <em>easy</em> = types with difficulty ≤ 3.</li>
+<li><strong>Exotic</strong> weapons have no skill; every PC uses them at min(2 × level, 90)% (handler.cpp:108), so they're shown in supply figures but excluded from class comparisons.</li>
+<li><strong>Damage</strong> is the dice average <code>n × (s + 1) / 2</code>; skill, damroll, enhanced damage and weapon flags come on top. The <strong>cap</strong> is <code>level/2 + 4</code> (+5% for two-handers), the rule <code>immworth</code> checks (entity_balance.cpp).</li>
+</ul>
+<p>Weapon difficulty by class (lower is easier; from <code>skill_table</code> ratings):</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>start</th>
+<th>easy</th>
+<th>sword</th>
+<th>dagger</th>
+<th>spear</th>
+<th>mace</th>
+<th>axe</th>
+<th>flail</th>
+<th>whip</th>
+<th>polearm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mage</td>
+<td>dagger</td>
+<td>dagger</td>
+<td>8</td>
+<td>2</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>cleric</td>
+<td>mace, flail</td>
+<td>dagger, mace, flail</td>
+<td>6</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>6</td>
+<td>3</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>knight</td>
+<td>sword, dagger, spear, mace, axe, flail, whip, polearm</td>
+<td>sword, dagger, mace</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>barbarian</td>
+<td>axe</td>
+<td>dagger, spear, mace, axe</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../characters/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Characters">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Characters
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../equipment/" class="md-footer__link md-footer__link--next" aria-label="Next: Equipment">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Equipment
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/sorts/tablesort.number.min.js"></script>
+      
+        <script src="../../javascripts/xania.js"></script>
+      
+        <script src="../../javascripts/explore-plan.js"></script>
+      
+        <script src="../../javascripts/explore.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+ "slug": "mattgodbolt-xania-main...mattgodbolt-xania-mg-web",
+ "sides": [
+  {
+   "repo": "mattgodbolt/xania",
+   "branch": "main",
+   "commit": "82171fa4434933217c5995dc45ae730c4c635928"
+  },
+  {
+   "repo": "mattgodbolt/xania",
+   "branch": "mg/web",
+   "commit": "7e1edd2cc2b465900d375d4651d6402c5c3607e2"
+  }
+ ],
+ "labels": [
+  "mattgodbolt/xania @ main (82171fa)",
+  "mattgodbolt/xania @ mg/web (7e1edd2)"
+ ],
+ "built": "2026-11-08T15:53:50+00:00",
+ "run": "https://github.com/abraidotti/xania-explorer/actions/runs/42496992684"
+}

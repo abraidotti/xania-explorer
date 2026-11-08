@@ -1,0 +1,2840 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and level 1–91 balance reports for the Xania MUD">
+      
+      
+      
+        <link rel="canonical" href="https://abraidotti.github.io/xania-explorer/builds/mattgodbolt-xania-main...mattgodbolt-xania-mg-web/mattgodbolt-xania-mg-web/mobs/">
+      
+      
+        <link rel="prev" href="../levelling/">
+      
+      
+        <link rel="next" href="../bugs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Mobs - Xania Explorer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/xania.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mobs-by-level" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Xania Explorer" class="md-header__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xania Explorer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mobs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Xania Explorer" class="md-nav__button md-logo" aria-label="Xania Explorer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6.2 2.44 11.9 11.9 2.12-2.12 1.41 1.41-2.47 2.47 3.18 3.18c.39.39.39 1.02 0 1.41l-.71.71a.996.996 0 0 1-1.41 0L17 18.23l-2.44 2.47-1.41-1.41 2.12-2.12-11.9-11.9V2.44zM15.89 10l4.74-4.74V2.44H17.8l-4.74 4.74zm-4.95 5-2.83-2.87-2.21 2.21-2.12-2.12-1.41 1.41 2.47 2.47-3.18 3.19a.996.996 0 0 0 0 1.41l.71.71c.39.39 1.02.39 1.41 0L7 18.23l2.44 2.47 1.41-1.41-2.12-2.12z"/></svg>
+
+    </a>
+    Xania Explorer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abraidotti/xania-explorer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore any repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture & game loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-area-file-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area file format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-world-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-skills-and-magic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & magic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-items-and-economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Items & economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assessments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About the assessments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../mattgodbolt-xania-main/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ main (82171fa)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/mobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mattgodbolt-xania-main/areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mattgodbolt/xania @ mg/web (7e1edd2)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../weapons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & XP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills & spells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../economy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../levelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Levelling path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mobs-evenness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        74% of mobs are level 30 or below
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobs-empty-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11 levels have no combat mob at all
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobs-toughness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toughness mostly rises with level, with 25 outliers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobs-area-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 areas have most mobs outside their advertised level range
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobs-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Left out of these numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mobs-evenness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        74% of mobs are level 30 or below
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobs-empty-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11 levels have no combat mob at all
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobs-toughness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toughness mostly rises with level, with 25 outliers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobs-area-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 areas have most mobs outside their advertised level range
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobs-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Left out of these numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mobs-by-level">Mobs by level<a class="headerlink" href="#mobs-by-level" title="Permanent link">&para;</a></h1>
+<p>How the mobs a character fights are spread across levels 1 to 91, how tough they are, and whether they match their area's advertised level range.</p>
+<div class="xu-stats"><div class="xu-stat"><span class="xu-stat-value">~2459</span><span class="xu-stat-label">mobs after a full reset</span></div><div class="xu-stat"><span class="xu-stat-value">74%</span><span class="xu-stat-label">are level ≤ 30</span></div><div class="xu-stat"><span class="xu-stat-value">11</span><span class="xu-stat-label">levels with no mobs</span></div><div class="xu-stat"><span class="xu-stat-value">25</span><span class="xu-stat-label">toughness outliers</span></div><div class="xu-stat"><span class="xu-stat-value">24%</span><span class="xu-stat-label">outside their area's band</span></div></div>
+
+<h2 id="mobs-evenness">74% of mobs are level 30 or below<a class="headerlink" href="#mobs-evenness" title="Permanent link">&para;</a></h2>
+<p>Up to level 30, each 5-level band holds 93–586 mobs; after it, 12–98. The busiest band is 1–5 with 586. Spread across bands: CV 1.28, Gini 0.57 (0 would be perfectly even).</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Mobs a fully reset world holds, per level band","anchor":"start"},"width":"container","height":300,"data":{"values":[{"band":"1–5","population":586,"prototypes":186,"phase":"levels 1–30"},{"band":"6–10","population":572,"prototypes":193,"phase":"levels 1–30"},{"band":"11–15","population":248,"prototypes":122,"phase":"levels 1–30"},{"band":"16–20","population":193,"prototypes":91,"phase":"levels 1–30"},{"band":"21–25","population":127,"prototypes":84,"phase":"levels 1–30"},{"band":"26–30","population":93,"prototypes":71,"phase":"levels 1–30"},{"band":"31–35","population":98,"prototypes":52,"phase":"levels 31+"},{"band":"36–40","population":69,"prototypes":28,"phase":"levels 31+"},{"band":"41–45","population":59,"prototypes":32,"phase":"levels 31+"},{"band":"46–50","population":85,"prototypes":34,"phase":"levels 31+"},{"band":"51–55","population":91,"prototypes":37,"phase":"levels 31+"},{"band":"56–60","population":35,"prototypes":21,"phase":"levels 31+"},{"band":"61–65","population":51,"prototypes":23,"phase":"levels 31+"},{"band":"66–70","population":62,"prototypes":22,"phase":"levels 31+"},{"band":"71–75","population":46,"prototypes":20,"phase":"levels 31+"},{"band":"76–80","population":16,"prototypes":7,"phase":"levels 31+"},{"band":"81–85","population":16,"prototypes":11,"phase":"levels 31+"},{"band":"86–90","population":12,"prototypes":8,"phase":"levels 31+"},{"band":"91","population":0,"prototypes":0,"phase":"levels 31+"}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":"bar","encoding":{"x":{"field":"band","type":"ordinal","title":"Levels","sort":["1–5","6–10","11–15","16–20","21–25","26–30","31–35","36–40","41–45","46–50","51–55","56–60","61–65","66–70","71–75","76–80","81–85","86–90","91"]},"y":{"field":"population","type":"quantitative","title":"Mobs"},"color":{"field":"phase","type":"nominal","title":"","scale":{"domain":["levels 1–30","levels 31+"],"range":["#b4532a","#b8ab9c"]}},"tooltip":[{"field":"band","title":"Levels"},{"field":"population","title":"Population"},{"field":"prototypes","title":"Prototypes"}]}}</script></div>
+
+<details class="abstract">
+<summary>Details: mobs per band (counts, toughness, aggression)</summary>
+<table>
+<thead>
+<tr>
+<th>Levels</th>
+<th>prototypes</th>
+<th>population</th>
+<th>aggressive</th>
+<th>median HP</th>
+<th>median dmg</th>
+<th>median hitroll</th>
+<th>median AC</th>
+<th>in area band</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–5</td>
+<td>186</td>
+<td>586</td>
+<td>18%</td>
+<td>52.5</td>
+<td>5</td>
+<td>1</td>
+<td>-7.2</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>6–10</td>
+<td>193</td>
+<td>572</td>
+<td>32%</td>
+<td>170</td>
+<td>10</td>
+<td>4</td>
+<td>-9.5</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>11–15</td>
+<td>122</td>
+<td>248</td>
+<td>46%</td>
+<td>306</td>
+<td>16</td>
+<td>6</td>
+<td>-13</td>
+<td>88%</td>
+</tr>
+<tr>
+<td>16–20</td>
+<td>91</td>
+<td>193</td>
+<td>40%</td>
+<td>523</td>
+<td>19</td>
+<td>9</td>
+<td>-15.5</td>
+<td>91%</td>
+</tr>
+<tr>
+<td>21–25</td>
+<td>84</td>
+<td>127</td>
+<td>45%</td>
+<td>776.5</td>
+<td>26</td>
+<td>11</td>
+<td>-18.2</td>
+<td>88%</td>
+</tr>
+<tr>
+<td>26–30</td>
+<td>71</td>
+<td>93</td>
+<td>27%</td>
+<td>1000</td>
+<td>30</td>
+<td>14</td>
+<td>-21.8</td>
+<td>67%</td>
+</tr>
+<tr>
+<td>31–35</td>
+<td>52</td>
+<td>98</td>
+<td>25%</td>
+<td>1189.5</td>
+<td>38</td>
+<td>16.5</td>
+<td>-24.2</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>36–40</td>
+<td>28</td>
+<td>69</td>
+<td>39%</td>
+<td>1358.5</td>
+<td>40</td>
+<td>18.5</td>
+<td>-27</td>
+<td>64%</td>
+</tr>
+<tr>
+<td>41–45</td>
+<td>32</td>
+<td>59</td>
+<td>12%</td>
+<td>1805.5</td>
+<td>46.5</td>
+<td>21.5</td>
+<td>-28.9</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>46–50</td>
+<td>34</td>
+<td>85</td>
+<td>18%</td>
+<td>2027</td>
+<td>53</td>
+<td>24.5</td>
+<td>-30</td>
+<td>88%</td>
+</tr>
+<tr>
+<td>51–55</td>
+<td>37</td>
+<td>91</td>
+<td>30%</td>
+<td>2727</td>
+<td>54</td>
+<td>26</td>
+<td>-31.8</td>
+<td>89%</td>
+</tr>
+<tr>
+<td>56–60</td>
+<td>21</td>
+<td>35</td>
+<td>24%</td>
+<td>3070</td>
+<td>61</td>
+<td>29</td>
+<td>-35.2</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>61–65</td>
+<td>23</td>
+<td>51</td>
+<td>30%</td>
+<td>3735</td>
+<td>66</td>
+<td>31</td>
+<td>-36</td>
+<td>85%</td>
+</tr>
+<tr>
+<td>66–70</td>
+<td>22</td>
+<td>62</td>
+<td>36%</td>
+<td>4209</td>
+<td>71</td>
+<td>35</td>
+<td>-38</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>71–75</td>
+<td>20</td>
+<td>46</td>
+<td>10%</td>
+<td>5224.2</td>
+<td>76</td>
+<td>36</td>
+<td>-39</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>76–80</td>
+<td>7</td>
+<td>16</td>
+<td>0%</td>
+<td>5726</td>
+<td>82.5</td>
+<td>30</td>
+<td>-43.2</td>
+<td>83%</td>
+</tr>
+<tr>
+<td>81–85</td>
+<td>11</td>
+<td>16</td>
+<td>18%</td>
+<td>7070</td>
+<td>86</td>
+<td>40</td>
+<td>-40.2</td>
+<td>73%</td>
+</tr>
+<tr>
+<td>86–90</td>
+<td>8</td>
+<td>12</td>
+<td>50%</td>
+<td>6805</td>
+<td>53</td>
+<td>30</td>
+<td>-52.4</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>91</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Prototypes per band: total 1042, mean 54.8/bin, stdev 55.8, CV 1.02, Gini 0.51, range 0–193, 1 empty bin(s).</li>
+<li>Population per band: total 2459, mean 129.4/bin, stdev 165.4, CV 1.28, Gini 0.57, range 0–586, 1 empty bin(s).</li>
+</ul>
+</details>
+<h2 id="mobs-empty-levels">11 levels have no combat mob at all<a class="headerlink" href="#mobs-empty-levels" title="Permanent link">&para;</a></h2>
+<p>No combat mob exists at levels <strong>38, 63, 67, 71, 77, 79, 81, 84, 87, 89, 91</strong>. Across single levels the population ranges from 0 to 228 (CV 1.44).</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Mobs at every level (marks = levels with none)","anchor":"start"},"width":"container","height":300,"data":{"values":[]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"layer":[{"data":{"values":[{"level":1,"population":71,"prototypes":35},{"level":2,"population":60,"prototypes":18},{"level":3,"population":132,"prototypes":41},{"level":4,"population":95,"prototypes":28},{"level":5,"population":228,"prototypes":64},{"level":6,"population":102,"prototypes":37},{"level":7,"population":102,"prototypes":34},{"level":8,"population":142,"prototypes":47},{"level":9,"population":79,"prototypes":23},{"level":10,"population":147,"prototypes":52},{"level":11,"population":25,"prototypes":13},{"level":12,"population":67,"prototypes":32},{"level":13,"population":29,"prototypes":14},{"level":14,"population":31,"prototypes":16},{"level":15,"population":96,"prototypes":47},{"level":16,"population":24,"prototypes":13},{"level":17,"population":35,"prototypes":17},{"level":18,"population":20,"prototypes":14},{"level":19,"population":23,"prototypes":9},{"level":20,"population":91,"prototypes":38},{"level":21,"population":20,"prototypes":12},{"level":22,"population":29,"prototypes":23},{"level":23,"population":17,"prototypes":12},{"level":24,"population":13,"prototypes":10},{"level":25,"population":48,"prototypes":27},{"level":26,"population":20,"prototypes":10},{"level":27,"population":10,"prototypes":9},{"level":28,"population":8,"prototypes":4},{"level":29,"population":11,"prototypes":8},{"level":30,"population":44,"prototypes":40},{"level":31,"population":16,"prototypes":8},{"level":32,"population":11,"prototypes":4},{"level":33,"population":10,"prototypes":6},{"level":34,"population":9,"prototypes":8},{"level":35,"population":52,"prototypes":26},{"level":36,"population":10,"prototypes":4},{"level":37,"population":17,"prototypes":8},{"level":38,"population":0,"prototypes":0},{"level":39,"population":6,"prototypes":3},{"level":40,"population":36,"prototypes":13},{"level":41,"population":5,"prototypes":3},{"level":42,"population":9,"prototypes":6},{"level":43,"population":8,"prototypes":6},{"level":44,"population":17,"prototypes":3},{"level":45,"population":20,"prototypes":14},{"level":46,"population":9,"prototypes":4},{"level":47,"population":14,"prototypes":3},{"level":48,"population":9,"prototypes":3},{"level":49,"population":10,"prototypes":5},{"level":50,"population":43,"prototypes":19},{"level":51,"population":10,"prototypes":4},{"level":52,"population":20,"prototypes":11},{"level":53,"population":6,"prototypes":5},{"level":54,"population":11,"prototypes":7},{"level":55,"population":44,"prototypes":10},{"level":56,"population":4,"prototypes":4},{"level":57,"population":4,"prototypes":3},{"level":58,"population":9,"prototypes":3},{"level":59,"population":7,"prototypes":4},{"level":60,"population":11,"prototypes":7},{"level":61,"population":10,"prototypes":3},{"level":62,"population":4,"prototypes":3},{"level":63,"population":0,"prototypes":0},{"level":64,"population":4,"prototypes":2},{"level":65,"population":33,"prototypes":15},{"level":66,"population":15,"prototypes":2},{"level":67,"population":0,"prototypes":0},{"level":68,"population":11,"prototypes":4},{"level":69,"population":12,"prototypes":2},{"level":70,"population":24,"prototypes":14},{"level":71,"population":0,"prototypes":0},{"level":72,"population":24,"prototypes":6},{"level":73,"population":4,"prototypes":3},{"level":74,"population":2,"prototypes":1},{"level":75,"population":16,"prototypes":10},{"level":76,"population":8,"prototypes":1},{"level":77,"population":0,"prototypes":0},{"level":78,"population":1,"prototypes":1},{"level":79,"population":0,"prototypes":0},{"level":80,"population":7,"prototypes":5},{"level":81,"population":0,"prototypes":0},{"level":82,"population":7,"prototypes":5},{"level":83,"population":3,"prototypes":1},{"level":84,"population":0,"prototypes":0},{"level":85,"population":6,"prototypes":5},{"level":86,"population":1,"prototypes":1},{"level":87,"population":0,"prototypes":0},{"level":88,"population":4,"prototypes":4},{"level":89,"population":0,"prototypes":0},{"level":90,"population":7,"prototypes":3},{"level":91,"population":0,"prototypes":0}]},"mark":"bar","encoding":{"x":{"field":"level","type":"ordinal","title":"Level","axis":{"values":[1,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90],"labelAngle":0}},"y":{"field":"population","type":"quantitative","title":"Mobs"},"tooltip":[{"field":"level","title":"Level"},{"field":"population","title":"Population"},{"field":"prototypes","title":"Prototypes"}]}},{"data":{"values":[{"level":38,"note":"no combat mob"},{"level":63,"note":"no combat mob"},{"level":67,"note":"no combat mob"},{"level":71,"note":"no combat mob"},{"level":77,"note":"no combat mob"},{"level":79,"note":"no combat mob"},{"level":81,"note":"no combat mob"},{"level":84,"note":"no combat mob"},{"level":87,"note":"no combat mob"},{"level":89,"note":"no combat mob"},{"level":91,"note":"no combat mob"}]},"mark":{"type":"point","shape":"triangle-up","filled":true,"size":150,"color":"#e0a030","stroke":"#7a4a0c","strokeWidth":1},"encoding":{"x":{"field":"level","type":"ordinal","title":"Level","axis":{"values":[1,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90],"labelAngle":0}},"y":{"value":{"expr":"height - 5"}},"tooltip":[{"field":"level","title":"Level"},{"field":"note","title":"Note"}]}}]}</script></div>
+
+<h2 id="mobs-toughness">Toughness mostly rises with level, with 25 outliers<a class="headerlink" href="#mobs-toughness" title="Permanent link">&para;</a></h2>
+<p>Median HP climbs from <strong>52.5</strong> (1–5) to <strong>2027</strong> (46–50) and <strong>6805</strong> (86–90). It dips going into 86–90 (7070→6805). 2 mobs are far tougher than their level suggests; the most extreme is <strong>Heimdall</strong> (Immortal Zone, level 57) with 6.9× the usual HP. 23 mobs are far weaker than their level suggests, 14 of them level 5 or below (critters like rats and ducks).</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":"Every combat mob: level vs average HP (log scale; drag to zoom)","anchor":"start"},"width":"container","height":380,"data":{"values":[{"level":1,"hp":19.0,"dmg":1.5,"name":"a smurf","area":"Smurf Village","vnum":101,"pop":3,"kind":"typical"},{"level":1,"hp":19.0,"dmg":1.5,"name":"a smurf","area":"Smurf Village","vnum":102,"pop":3,"kind":"typical"},{"level":1,"hp":17.0,"dmg":1.5,"name":"the cute rabbit","area":"Plains of the North","vnum":309,"pop":7,"kind":"typical"},{"level":1,"hp":21.0,"dmg":1.5,"name":"a hen","area":"New Ofcol","vnum":612,"pop":4,"kind":"typical"},{"level":1,"hp":21.0,"dmg":1.5,"name":"Edgar","area":"High Tower of Sorcery","vnum":1302,"pop":1,"kind":"typical"},{"level":1,"hp":21.0,"dmg":1.5,"name":"a small kitten","area":"High Tower of Sorcery","vnum":1319,"pop":1,"kind":"typical"},{"level":1,"hp":19.0,"dmg":1.5,"name":"a field mouse","area":"Gnome Village","vnum":1508,"pop":2,"kind":"typical"},{"level":1,"hp":17.0,"dmg":4.0,"name":"the janitor","area":"Midgaard","vnum":3061,"pop":1,"kind":"typical"},{"level":1,"hp":7.5,"dmg":2.5,"name":"a gutter rat","area":"Midgaard","vnum":3062,"pop":4,"kind":"outlier"},{"level":1,"hp":17.0,"dmg":4.0,"name":"the beggar","area":"Midgaard","vnum":3065,"pop":2,"kind":"typical"},{"level":1,"hp":7.5,"dmg":3.5,"name":"an alley cat","area":"Midgaard","vnum":3066,"pop":1,"kind":"outlier"},{"level":1,"hp":18.0,"dmg":2.5,"name":"the kitten","area":"Midgaard","vnum":3090,"pop":1,"kind":"typical"},{"level":1,"hp":17.0,"dmg":3.0,"name":"the swan","area":"Midgaard","vnum":3121,"pop":1,"kind":"typical"},{"level":1,"hp":2.5,"dmg":1.0,"name":"the duckling","area":"Midgaard","vnum":3122,"pop":1,"kind":"outlier"},{"level":1,"hp":7.0,"dmg":2.0,"name":"the sparrow","area":"Midgaard","vnum":3123,"pop":1,"kind":"outlier"},{"level":1,"hp":12.0,"dmg":2.5,"name":"the duck","area":"Midgaard","vnum":3124,"pop":2,"kind":"outlier"},{"level":1,"hp":17.0,"dmg":3.0,"name":"the town crier","area":"Midgaard","vnum":3144,"pop":1,"kind":"typical"},{"level":1,"hp":8.0,"dmg":2.0,"name":"a grizzly monster","area":"Mud School","vnum":3702,"pop":1,"kind":"outlier"},{"level":1,"hp":8.0,"dmg":1.5,"name":"a cowering beast","area":"Mud School","vnum":3703,"pop":1,"kind":"outlier"},{"level":1,"hp":8.0,"dmg":2.5,"name":"an angry cave beast","area":"Mud School","vnum":3704,"pop":1,"kind":"outlier"},{"level":1,"hp":8.0,"dmg":2.0,"name":"a morian cave serpent","area":"Mud School","vnum":3705,"pop":1,"kind":"outlier"},{"level":1,"hp":11.0,"dmg":2.0,"name":"a grey hare","area":"Mud School","vnum":3709,"pop":1,"kind":"outlier"},{"level":1,"hp":13.0,"dmg":3.0,"name":"a silvery fox","area":"Mud School","vnum":3712,"pop":1,"kind":"outlier"},{"level":1,"hp":1.0,"dmg":1.0,"name":"a girdle shell snail","area":"Mud School","vnum":3713,"pop":1,"kind":"outlier"},{"level":1,"hp":21.0,"dmg":1.5,"name":"the goblin slave","area":"Drow City","vnum":5100,"pop":1,"kind":"typical"},{"level":1,"hp":21.0,"dmg":1.5,"name":"the janitor","area":"Old Thalos","vnum":5332,"pop":1,"kind":"typical"},{"level":1,"hp":15.5,"dmg":2.5,"name":"a teddy bear","area":"Dwarven Day Care","vnum":6601,"pop":2,"kind":"typical"},{"level":1,"hp":6.5,"dmg":2.5,"name":"an old doll","area":"Dwarven Day Care","vnum":6605,"pop":3,"kind":"outlier"},{"level":1,"hp":20.0,"dmg":4.0,"name":"the spoiled brat","area":"Dwarven Day Care","vnum":6608,"pop":1,"kind":"typical"},{"level":1,"hp":21.0,"dmg":1.5,"name":"the small bat","area":"Sewer","vnum":7001,"pop":4,"kind":"typical"},{"level":1,"hp":17.0,"dmg":1.5,"name":"the small spider","area":"Sewer","vnum":7003,"pop":6,"kind":"typical"},{"level":1,"hp":21.0,"dmg":1.5,"name":"a tiny elemental","area":"Elemental Canyon","vnum":9203,"pop":7,"kind":"typical"},{"level":1,"hp":17.0,"dmg":1.5,"name":"a beggar","area":"New Thalos","vnum":9509,"pop":1,"kind":"typical"},{"level":1,"hp":17.0,"dmg":1.5,"name":"the dirt devil","area":"New Thalos","vnum":9547,"pop":1,"kind":"typical"},{"level":1,"hp":17.0,"dmg":4.0,"name":"A scavenger rat","area":"Wolf Pointe","vnum":10077,"pop":1,"kind":"typical"},{"level":2,"hp":41.0,"dmg":2.5,"name":"a toddler","area":"The Shire","vnum":1103,"pop":6,"kind":"typical"},{"level":2,"hp":41.0,"dmg":2.5,"name":"a chicken","area":"The Shire","vnum":1107,"pop":6,"kind":"typical"},{"level":2,"hp":33.0,"dmg":2.5,"name":"a rat","area":"Gnome Village","vnum":1509,"pop":1,"kind":"typical"},{"level":2,"hp":41.0,"dmg":2.5,"name":"the Harem Girl","area":"The Keep of Mahn-Tor","vnum":2322,"pop":5,"kind":"typical"},{"level":2,"hp":29.0,"dmg":3.5,"name":"the drunk","area":"Midgaard","vnum":3064,"pop":1,"kind":"typical"},{"level":2,"hp":23.0,"dmg":3.5,"name":"a lumbering basement ogre","area":"Mud School","vnum":3706,"pop":1,"kind":"typical"},{"level":2,"hp":23.0,"dmg":3.5,"name":"a red-scaled lizard","area":"Mud School","vnum":3710,"pop":1,"kind":"typical"},{"level":2,"hp":41.0,"dmg":2.5,"name":"a small bunny","area":"Old Thalos","vnum":5325,"pop":1,"kind":"typical"},{"level":2,"hp":36.0,"dmg":2.5,"name":"the fallow deer","area":"Haon Dor","vnum":6004,"pop":1,"kind":"typical"},{"level":2,"hp":36.0,"dmg":2.5,"name":"the brown fox","area":"Haon Dor","vnum":6005,"pop":1,"kind":"typical"},{"level":2,"hp":20.0,"dmg":3.0,"name":"a raggedy anne doll","area":"Dwarven Day Care","vnum":6602,"pop":2,"kind":"typical"},{"level":2,"hp":36.0,"dmg":2.5,"name":"a small bunny","area":"Holy Grove","vnum":8907,"pop":2,"kind":"typical"},{"level":2,"hp":41.0,"dmg":2.5,"name":"an eddie","area":"Elemental Canyon","vnum":9225,"pop":8,"kind":"typical"},{"level":2,"hp":36.0,"dmg":2.5,"name":"The revolving drunk","area":"Mob Factory","vnum":9404,"pop":2,"kind":"typical"},{"level":2,"hp":36.0,"dmg":2.5,"name":"a panhandler","area":"New Thalos","vnum":9507,"pop":1,"kind":"typical"},{"level":2,"hp":36.0,"dmg":2.5,"name":"the alley cat","area":"New Thalos","vnum":9543,"pop":6,"kind":"typical"},{"level":2,"hp":36.0,"dmg":2.5,"name":"the vulture","area":"New Thalos","vnum":9544,"pop":13,"kind":"typical"},{"level":2,"hp":36.0,"dmg":2.5,"name":"a servant boy","area":"New Thalos","vnum":9560,"pop":2,"kind":"typical"},{"level":3,"hp":49.0,"dmg":5.0,"name":"Brainy Smurf","area":"Smurf Village","vnum":103,"pop":1,"kind":"typical"},{"level":3,"hp":49.0,"dmg":5.0,"name":"Handy Smurf","area":"Smurf Village","vnum":104,"pop":1,"kind":"typical"},{"level":3,"hp":49.0,"dmg":5.0,"name":"Sleepy Smurf","area":"Smurf Village","vnum":105,"pop":1,"kind":"typical"},{"level":3,"hp":49.0,"dmg":5.0,"name":"Hefty Smurf","area":"Smurf Village","vnum":106,"pop":1,"kind":"typical"},{"level":3,"hp":49.0,"dmg":5.0,"name":"Grumpy Smurf","area":"Smurf Village","vnum":107,"pop":1,"kind":"typical"},{"level":3,"hp":49.0,"dmg":5.0,"name":"Jokey Smurf","area":"Smurf Village","vnum":108,"pop":1,"kind":"typical"},{"level":3,"hp":53.0,"dmg":5.0,"name":"Smurfette","area":"Smurf Village","vnum":109,"pop":1,"kind":"typical"},{"level":3,"hp":61.0,"dmg":5.0,"name":"the boy","area":"New Ofcol","vnum":619,"pop":2,"kind":"typical"},{"level":3,"hp":61.0,"dmg":5.0,"name":"the girl","area":"New Ofcol","vnum":620,"pop":2,"kind":"typical"},{"level":3,"hp":61.0,"dmg":5.0,"name":"a pig","area":"The Shire","vnum":1106,"pop":5,"kind":"typical"},{"level":3,"hp":61.0,"dmg":5.0,"name":"a halfling youth","area":"The Shire","vnum":1122,"pop":9,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"a gnome child","area":"Gnome Village","vnum":1500,"pop":3,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"the hobgoblin soldier","area":"Gnome Village","vnum":1517,"pop":12,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"a gnome prisoner","area":"Gnome Village","vnum":1522,"pop":3,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"a human prisoner","area":"Gnome Village","vnum":1523,"pop":2,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"a fat worm","area":"Troll Den","vnum":2806,"pop":5,"kind":"typical"},{"level":3,"hp":39.0,"dmg":3.5,"name":"the puppy","area":"Midgaard","vnum":3091,"pop":1,"kind":"typical"},{"level":3,"hp":42.0,"dmg":4.0,"name":"the sexton","area":"Midgaard","vnum":3120,"pop":1,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"a dusty skeleton","area":"Graveyard","vnum":3603,"pop":4,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"a dusty skeleton","area":"Graveyard","vnum":3604,"pop":4,"kind":"typical"},{"level":3,"hp":36.0,"dmg":4.5,"name":"a fang-toothed entelodont","area":"Mud School","vnum":3711,"pop":1,"kind":"typical"},{"level":3,"hp":35.0,"dmg":4.5,"name":"the diploma beast","area":"Mud School","vnum":3720,"pop":1,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"The small scorpion","area":"Sands of Sorrow","vnum":5003,"pop":1,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"The slave","area":"Sands of Sorrow","vnum":5009,"pop":1,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"The horned lizard","area":"Thalos","vnum":5207,"pop":4,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"the large, grey wolf","area":"Haon Dor","vnum":6102,"pop":4,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"the large, black wolf","area":"Haon Dor","vnum":6103,"pop":4,"kind":"typical"},{"level":3,"hp":61.0,"dmg":5.0,"name":"the dwarven peon","area":"Dwarven Kingdom","vnum":6510,"pop":2,"kind":"typical"},{"level":3,"hp":27.5,"dmg":4.5,"name":"the dwarven youth","area":"Dwarven Day Care","vnum":6600,"pop":7,"kind":"typical"},{"level":3,"hp":39.0,"dmg":5.5,"name":"a toy soldier","area":"Dwarven Day Care","vnum":6603,"pop":4,"kind":"typical"},{"level":3,"hp":31.5,"dmg":4.5,"name":"the ugly bear","area":"Dwarven Day Care","vnum":6604,"pop":2,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"the maggot","area":"Sewer","vnum":7005,"pop":3,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"an old hermit","area":"Valley of the Elves","vnum":7810,"pop":1,"kind":"typical"},{"level":3,"hp":61.0,"dmg":5.0,"name":"a rather small beast","area":"Old Marsh","vnum":8307,"pop":2,"kind":"typical"},{"level":3,"hp":55.0,"dmg":5.0,"name":"the mountain climber","area":"Elemental Canyon","vnum":9201,"pop":3,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"a small snowflake","area":"Elemental Canyon","vnum":9216,"pop":4,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"a small rock","area":"Elemental Canyon","vnum":9217,"pop":8,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"The factory worker","area":"Mob Factory","vnum":9406,"pop":8,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"The factory worker","area":"Mob Factory","vnum":9407,"pop":3,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"a panhandler","area":"New Thalos","vnum":9508,"pop":1,"kind":"typical"},{"level":3,"hp":51.0,"dmg":5.0,"name":"a harem girl","area":"New Thalos","vnum":9551,"pop":8,"kind":"typical"},{"level":4,"hp":66.0,"dmg":6.0,"name":"Sorbus the Hermit","area":"Plains of the North","vnum":301,"pop":1,"kind":"typical"},{"level":4,"hp":81.0,"dmg":6.0,"name":"the pig","area":"New Ofcol","vnum":616,"pop":4,"kind":"typical"},{"level":4,"hp":81.0,"dmg":6.0,"name":"a cow","area":"The Shire","vnum":1105,"pop":3,"kind":"typical"},{"level":4,"hp":81.0,"dmg":6.0,"name":"a horse","area":"The Shire","vnum":1109,"pop":4,"kind":"typical"},{"level":4,"hp":81.0,"dmg":6.0,"name":"a local gossip","area":"The Shire","vnum":1124,"pop":2,"kind":"typical"},{"level":4,"hp":81.0,"dmg":6.0,"name":"a chic urbanite","area":"The Shire","vnum":1127,"pop":7,"kind":"typical"},{"level":4,"hp":61.0,"dmg":6.0,"name":"a large rat","area":"Gnome Village","vnum":1510,"pop":1,"kind":"typical"},{"level":4,"hp":53.5,"dmg":3.5,"name":"the small boy","area":"Miden'nir","vnum":3502,"pop":1,"kind":"typical"},{"level":4,"hp":66.0,"dmg":6.0,"name":"Henry the Gardener","area":"Graveyard","vnum":3600,"pop":1,"kind":"typical"},{"level":4,"hp":66.0,"dmg":6.0,"name":"the rotting zombie","area":"Graveyard","vnum":3601,"pop":1,"kind":"typical"},{"level":4,"hp":66.0,"dmg":6.0,"name":"the rotting zombie","area":"Graveyard","vnum":3605,"pop":3,"kind":"typical"},{"level":4,"hp":54.0,"dmg":5.5,"name":"a juargan mountain bear","area":"Mud School","vnum":3715,"pop":1,"kind":"typical"},{"level":4,"hp":54.0,"dmg":5.5,"name":"a blackforest pine wolf","area":"Mud School","vnum":3716,"pop":1,"kind":"typical"},{"level":4,"hp":66.0,"dmg":6.0,"name":"The coral snake","area":"Sands of Sorrow","vnum":5002,"pop":1,"kind":"typical"},{"level":4,"hp":81.0,"dmg":6.0,"name":"the pet lamia","area":"Old Thalos","vnum":5301,"pop":20,"kind":"typical"},{"level":4,"hp":81.0,"dmg":6.0,"name":"a beautiful masseuse","area":"Old Thalos","vnum":5318,"pop":1,"kind":"typical"},{"level":4,"hp":81.0,"dmg":6.0,"name":"a harmless snake","area":"Old Thalos","vnum":5326,"pop":2,"kind":"typical"},{"level":4,"hp":66.0,"dmg":6.0,"name":"the slithering snake","area":"Sewer","vnum":7006,"pop":3,"kind":"typical"},{"level":4,"hp":71.0,"dmg":6.0,"name":"a wolf","area":"Valley of the Elves","vnum":7813,"pop":3,"kind":"typical"},{"level":4,"hp":66.0,"dmg":6.0,"name":"a harmless snake","area":"Holy Grove","vnum":8908,"pop":1,"kind":"typical"},{"level":4,"hp":61.0,"dmg":6.0,"name":"a flame","area":"Elemental Canyon","vnum":9215,"pop":6,"kind":"typical"},{"level":4,"hp":61.0,"dmg":6.0,"name":"a small spark","area":"Elemental Canyon","vnum":9218,"pop":8,"kind":"typical"},{"level":4,"hp":81.0,"dmg":6.0,"name":"a poor mudder","area":"Galaxy","vnum":9301,"pop":1,"kind":"typical"},{"level":4,"hp":66.0,"dmg":6.0,"name":"The toxic slime","area":"Mob Factory","vnum":9405,"pop":7,"kind":"typical"},{"level":4,"hp":66.0,"dmg":6.0,"name":"the old man","area":"New Thalos","vnum":9545,"pop":2,"kind":"typical"},{"level":4,"hp":66.0,"dmg":6.0,"name":"a horse","area":"New Thalos","vnum":9567,"pop":6,"kind":"typical"},{"level":4,"hp":66.0,"dmg":6.0,"name":"a tourist","area":"New Thalos","vnum":9568,"pop":2,"kind":"typical"},{"level":4,"hp":61.0,"dmg":6.0,"name":"a field mouse","area":"Crystalmir Lake","vnum":11015,"pop":2,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"the citizen","area":"Plains of the North","vnum":304,"pop":2,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"Farmer Sara","area":"New Ofcol","vnum":611,"pop":1,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"the cow","area":"New Ofcol","vnum":613,"pop":3,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"the elephant","area":"New Ofcol","vnum":614,"pop":2,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"the citizen","area":"New Ofcol","vnum":617,"pop":3,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"the citizen","area":"New Ofcol","vnum":618,"pop":3,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"the maid","area":"New Ofcol","vnum":621,"pop":3,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"a page","area":"New Ofcol","vnum":627,"pop":1,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"a nursemaid","area":"The Shire","vnum":1104,"pop":2,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"the mill worker","area":"The Shire","vnum":1115,"pop":6,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"a trainee","area":"The Shire","vnum":1126,"pop":3,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"a country bumpkin","area":"The Shire","vnum":1128,"pop":4,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a gnome woman","area":"Gnome Village","vnum":1501,"pop":3,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a black bat","area":"Gnome Village","vnum":1513,"pop":5,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a hobgoblin miner","area":"Gnome Village","vnum":1520,"pop":3,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a hermit","area":"Gnome Village","vnum":1524,"pop":1,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a killer frog","area":"Wyvern Tower","vnum":1601,"pop":3,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a bat","area":"Dwarven Catacombs","vnum":2001,"pop":6,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a gang member","area":"Dangerous Neighbourhood","vnum":2101,"pop":23,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a gang member","area":"Dangerous Neighbourhood","vnum":2102,"pop":25,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a pitbull","area":"Dangerous Neighbourhood","vnum":2108,"pop":8,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"A human slave","area":"Dragon Tower","vnum":2227,"pop":3,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"the draconian fool","area":"Dragon Tower","vnum":2242,"pop":3,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a baby troll","area":"Troll Den","vnum":2803,"pop":4,"kind":"typical"},{"level":5,"hp":61.0,"dmg":5.5,"name":"the vagabond","area":"Midgaard","vnum":3063,"pop":1,"kind":"typical"},{"level":5,"hp":69.5,"dmg":3.5,"name":"the beagle","area":"Midgaard","vnum":3092,"pop":1,"kind":"typical"},{"level":5,"hp":50.0,"dmg":1.0,"name":"an acidic blob","area":"Mud School","vnum":3701,"pop":1,"kind":"outlier"},{"level":5,"hp":70.0,"dmg":6.5,"name":"a Vricillian jungle beast","area":"Mud School","vnum":3714,"pop":1,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"the small dwarf","area":"Kingdom of Juargan","vnum":4701,"pop":6,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"The dervish","area":"Sands of Sorrow","vnum":5000,"pop":3,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"The dark dwarf","area":"Sands of Sorrow","vnum":5012,"pop":1,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"The rabid camel","area":"Sands of Sorrow","vnum":5017,"pop":1,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"the baby beholder","area":"Old Thalos","vnum":5300,"pop":1,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"a citizen of Thalos","area":"Old Thalos","vnum":5302,"pop":9,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"a female citizen of Thalos","area":"Old Thalos","vnum":5304,"pop":9,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"a man","area":"Old Thalos","vnum":5319,"pop":1,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"a doe","area":"Old Thalos","vnum":5322,"pop":1,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"John the Lumberjack","area":"Haon Dor","vnum":6000,"pop":1,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"the vicious warg","area":"Haon Dor","vnum":6100,"pop":2,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"the ferocious warg","area":"Haon Dor","vnum":6101,"pop":2,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"the young spider","area":"Arachnos","vnum":6301,"pop":4,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"the orc","area":"Arachnos","vnum":6304,"pop":1,"kind":"typical"},{"level":5,"hp":52.0,"dmg":4.5,"name":"the nanny","area":"Dwarven Day Care","vnum":6606,"pop":2,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"the great sewer rat","area":"Sewer","vnum":7002,"pop":5,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"the lemure blob","area":"Sewer","vnum":7044,"pop":1,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a cooshee","area":"Valley of the Elves","vnum":7800,"pop":6,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"a juve","area":"Mega-City One","vnum":8000,"pop":4,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a doe","area":"Holy Grove","vnum":8904,"pop":1,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a small elemental","area":"Elemental Canyon","vnum":9205,"pop":6,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a particle","area":"Elemental Canyon","vnum":9223,"pop":4,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a little imp","area":"Elemental Canyon","vnum":9236,"pop":7,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"the tax collector","area":"New Thalos","vnum":9537,"pop":1,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"the mercenary","area":"New Thalos","vnum":9564,"pop":1,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"the giant hornet","area":"New Thalos","vnum":9577,"pop":1,"kind":"typical"},{"level":5,"hp":49.0,"dmg":5.5,"name":"the dart players","area":"Wolf Pointe","vnum":10073,"pop":1,"kind":"typical"},{"level":5,"hp":52.0,"dmg":3.0,"name":"a little boy","area":"Wolf Pointe","vnum":10083,"pop":1,"kind":"typical"},{"level":5,"hp":52.0,"dmg":6.0,"name":"the small puppy dog","area":"Wolf Pointe","vnum":10084,"pop":1,"kind":"typical"},{"level":5,"hp":52.0,"dmg":5.0,"name":"a little girl","area":"Wolf Pointe","vnum":10085,"pop":1,"kind":"typical"},{"level":5,"hp":52.0,"dmg":8.0,"name":"a small kitten","area":"Wolf Pointe","vnum":10086,"pop":1,"kind":"typical"},{"level":5,"hp":101.0,"dmg":6.0,"name":"rancid turkey leg","area":"Descent to Hell","vnum":10457,"pop":1,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"Farm worker","area":"Crystalmir Lake","vnum":11006,"pop":1,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"strange fish","area":"Crystalmir Lake","vnum":11010,"pop":12,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"Old pooh bear","area":"Crystalmir Lake","vnum":11013,"pop":1,"kind":"typical"},{"level":5,"hp":81.0,"dmg":6.0,"name":"a large rat","area":"Crystalmir Lake","vnum":11014,"pop":3,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"the citizen","area":"Plains of the North","vnum":303,"pop":2,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"Granny Jenkins","area":"New Ofcol","vnum":609,"pop":1,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"the young horse","area":"New Ofcol","vnum":615,"pop":4,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"a servant","area":"New Ofcol","vnum":625,"pop":2,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"A serving boy","area":"Olympus","vnum":912,"pop":2,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"A citizen","area":"Olympus","vnum":923,"pop":7,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"a bull","area":"The Shire","vnum":1108,"pop":1,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"the Miller","area":"The Shire","vnum":1114,"pop":1,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"a halfling beauty","area":"The Shire","vnum":1125,"pop":1,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"a gnome man","area":"Gnome Village","vnum":1502,"pop":3,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"a giant rat","area":"Gnome Village","vnum":1511,"pop":1,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"a trapper","area":"Wyvern Tower","vnum":1702,"pop":2,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"an old centaur","area":"Wyvern Tower","vnum":1712,"pop":3,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"a concubine","area":"Dragon Tower","vnum":2206,"pop":4,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"the young troll","area":"Troll Den","vnum":2801,"pop":2,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"The half-decomposed body","area":"Chapel Catacombs","vnum":3416,"pop":4,"kind":"typical"},{"level":6,"hp":75.0,"dmg":6.0,"name":"the goblin","area":"Miden'nir","vnum":3501,"pop":6,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"the ghastly ghoul","area":"Graveyard","vnum":3602,"pop":1,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"the myconoid","area":"Sands of Sorrow","vnum":5013,"pop":1,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"a young scholar","area":"Old Thalos","vnum":5316,"pop":1,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"a deer","area":"Old Thalos","vnum":5323,"pop":2,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"bard of Thalos","area":"Old Thalos","vnum":5329,"pop":2,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"the beastly fido","area":"Old Thalos","vnum":5333,"pop":1,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"the Wolf Spider","area":"Arachnos","vnum":6303,"pop":1,"kind":"typical"},{"level":6,"hp":139.0,"dmg":7.0,"name":"the drone spider","area":"Arachnos","vnum":6306,"pop":3,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"Herald","area":"Sewer","vnum":7046,"pop":1,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"the junior mindflayer","area":"Sewer","vnum":7202,"pop":2,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"the ugly wererat","area":"Sewer","vnum":7203,"pop":10,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"a valley elf scout","area":"Valley of the Elves","vnum":7805,"pop":5,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"a valley elf","area":"Valley of the Elves","vnum":7806,"pop":5,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"an antelope","area":"Valley of the Elves","vnum":7814,"pop":3,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"a deer","area":"Holy Grove","vnum":8905,"pop":1,"kind":"typical"},{"level":6,"hp":121.0,"dmg":7.0,"name":"an elemental mist","area":"Elemental Canyon","vnum":9222,"pop":4,"kind":"typical"},{"level":6,"hp":109.0,"dmg":7.0,"name":"a dust cloud","area":"Elemental Canyon","vnum":9224,"pop":4,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"The mutant beastly fido","area":"Mob Factory","vnum":9401,"pop":4,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"A large rat","area":"Mob Factory","vnum":9408,"pop":1,"kind":"typical"},{"level":6,"hp":126.0,"dmg":7.0,"name":"hobgoblin flunky","area":"Crystalmir Lake","vnum":11011,"pop":4,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"a squire","area":"New Ofcol","vnum":626,"pop":2,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"Farmer Gamgee","area":"The Shire","vnum":1102,"pop":1,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"a broom","area":"High Tower of Sorcery","vnum":1311,"pop":2,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"a young apprentice magic user","area":"High Tower of Sorcery","vnum":1315,"pop":2,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"a young apprentice","area":"High Tower of Sorcery","vnum":1316,"pop":2,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"a young apprentice","area":"High Tower of Sorcery","vnum":1317,"pop":2,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"A young apprentice","area":"High Tower of Sorcery","vnum":1318,"pop":3,"kind":"typical"},{"level":7,"hp":142.0,"dmg":9.0,"name":"a gnome scientist","area":"Gnome Village","vnum":1503,"pop":3,"kind":"typical"},{"level":7,"hp":142.0,"dmg":9.0,"name":"the zombie gnome","area":"Gnome Village","vnum":1514,"pop":5,"kind":"typical"},{"level":7,"hp":152.0,"dmg":9.0,"name":"the hobgoblin bodyguard","area":"Gnome Village","vnum":1518,"pop":5,"kind":"typical"},{"level":7,"hp":152.0,"dmg":9.0,"name":"the cook","area":"Gnome Village","vnum":1526,"pop":1,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"a centaur","area":"Wyvern Tower","vnum":1710,"pop":3,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"a centaur","area":"Wyvern Tower","vnum":1711,"pop":2,"kind":"typical"},{"level":7,"hp":142.0,"dmg":9.0,"name":"a templar page","area":"Dwarven Catacombs","vnum":2002,"pop":8,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"a doll","area":"Dangerous Neighbourhood","vnum":2105,"pop":4,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"the dragon hatchling","area":"Dragon Tower","vnum":2200,"pop":5,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"the guardian beast","area":"Troll Den","vnum":2800,"pop":2,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"the roving beast","area":"Troll Den","vnum":2807,"pop":1,"kind":"typical"},{"level":7,"hp":93.0,"dmg":6.0,"name":"the rottweiler","area":"Midgaard","vnum":3093,"pop":1,"kind":"typical"},{"level":7,"hp":106.5,"dmg":6.5,"name":"the goblin lieutenant","area":"Miden'nir","vnum":3506,"pop":2,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"the small dwarf","area":"Kingdom of Juargan","vnum":4700,"pop":10,"kind":"typical"},{"level":7,"hp":152.0,"dmg":9.0,"name":"The dustdigger","area":"Sands of Sorrow","vnum":5015,"pop":4,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"the drow scout","area":"Drow City","vnum":5111,"pop":2,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"bard of Thalos","area":"Old Thalos","vnum":5330,"pop":1,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"the Hermit","area":"Arachnos","vnum":6311,"pop":1,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"a valley elf sentry","area":"Valley of the Elves","vnum":7803,"pop":4,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"a valley elf sentry","area":"Valley of the Elves","vnum":7804,"pop":1,"kind":"typical"},{"level":7,"hp":162.0,"dmg":9.0,"name":"a mud monster","area":"Elemental Canyon","vnum":9221,"pop":4,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"Mustafah","area":"New Thalos","vnum":9530,"pop":1,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"the skinny kid","area":"New Thalos","vnum":9535,"pop":3,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"the wandering prophet","area":"New Thalos","vnum":9542,"pop":7,"kind":"typical"},{"level":7,"hp":152.0,"dmg":9.0,"name":"Baaz Draconian","area":"Crystalmir Lake","vnum":11004,"pop":1,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"Barracuda","area":"Crystalmir Lake","vnum":11007,"pop":6,"kind":"typical"},{"level":7,"hp":146.0,"dmg":9.0,"name":"Farmer's guard dog","area":"Crystalmir Lake","vnum":11009,"pop":1,"kind":"typical"},{"level":8,"hp":173.0,"dmg":10.0,"name":"Azreal","area":"Smurf Village","vnum":112,"pop":1,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"A Cook","area":"Olympus","vnum":925,"pop":2,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"a shiriff","area":"The Shire","vnum":1110,"pop":8,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"a shiriff","area":"The Shire","vnum":1111,"pop":4,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"a seasoned adventurer","area":"The Shire","vnum":1123,"pop":5,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"a lost adventurer","area":"High Tower of Sorcery","vnum":1301,"pop":1,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"a student","area":"High Tower of Sorcery","vnum":1320,"pop":4,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"a student of spells","area":"High Tower of Sorcery","vnum":1322,"pop":4,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"a cloth golem","area":"High Tower of Sorcery","vnum":1345,"pop":1,"kind":"typical"},{"level":8,"hp":165.0,"dmg":10.0,"name":"a gnome guard","area":"Gnome Village","vnum":1504,"pop":5,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"a small troll","area":"Gnome Village","vnum":1507,"pop":1,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"a hunter","area":"Wyvern Tower","vnum":1704,"pop":2,"kind":"typical"},{"level":8,"hp":175.0,"dmg":10.0,"name":"a spelunker","area":"Dwarven Catacombs","vnum":2003,"pop":2,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"a patrolman","area":"Dangerous Neighbourhood","vnum":2106,"pop":10,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"the medium troll","area":"Troll Den","vnum":2802,"pop":1,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"the medium troll","area":"Troll Den","vnum":2808,"pop":1,"kind":"typical"},{"level":8,"hp":107.0,"dmg":4.0,"name":"the thief","area":"Midgaard","vnum":3005,"pop":2,"kind":"typical"},{"level":8,"hp":116.0,"dmg":8.0,"name":"the wyvern","area":"Miden'nir","vnum":3500,"pop":2,"kind":"typical"},{"level":8,"hp":116.5,"dmg":7.0,"name":"the bard","area":"Miden'nir","vnum":3504,"pop":1,"kind":"typical"},{"level":8,"hp":116.5,"dmg":8.0,"name":"the dark horseman","area":"Miden'nir","vnum":3505,"pop":2,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"the duergar dwarf","area":"Kingdom of Juargan","vnum":4705,"pop":10,"kind":"typical"},{"level":8,"hp":165.0,"dmg":10.0,"name":"The dervish","area":"Sands of Sorrow","vnum":5001,"pop":1,"kind":"typical"},{"level":8,"hp":169.0,"dmg":10.0,"name":"The drider","area":"Sands of Sorrow","vnum":5011,"pop":1,"kind":"typical"},{"level":8,"hp":175.0,"dmg":10.0,"name":"The myconoid shaman","area":"Sands of Sorrow","vnum":5014,"pop":1,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"the librarian","area":"Old Thalos","vnum":5315,"pop":1,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"a stag","area":"Old Thalos","vnum":5324,"pop":1,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"the brown bear","area":"Haon Dor","vnum":6002,"pop":1,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"the slave of Arachnos","area":"Arachnos","vnum":6308,"pop":5,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"the huge, poisonous spider","area":"Arachnos","vnum":6318,"pop":3,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"the dwarven miner","area":"Dwarven Kingdom","vnum":6507,"pop":3,"kind":"typical"},{"level":8,"hp":116.5,"dmg":7.0,"name":"the armed guard","area":"Dwarven Day Care","vnum":6607,"pop":1,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"the giant earth beetle","area":"Sewer","vnum":7004,"pop":1,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"the senior mindflayer","area":"Sewer","vnum":7201,"pop":1,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"a valley elf","area":"Valley of the Elves","vnum":7801,"pop":6,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"a valley elf","area":"Valley of the Elves","vnum":7802,"pop":6,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"a marsh wolf","area":"Old Marsh","vnum":8314,"pop":6,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"the keeper","area":"Machine Dreams","vnum":8600,"pop":1,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"a stag","area":"Holy Grove","vnum":8906,"pop":1,"kind":"typical"},{"level":8,"hp":111.5,"dmg":9.0,"name":"the tridrone","area":"Nirvana","vnum":9000,"pop":5,"kind":"typical"},{"level":8,"hp":161.0,"dmg":10.0,"name":"a puddle","area":"Elemental Canyon","vnum":9214,"pop":8,"kind":"typical"},{"level":8,"hp":161.0,"dmg":10.0,"name":"a lava beast","area":"Elemental Canyon","vnum":9220,"pop":4,"kind":"typical"},{"level":8,"hp":185.0,"dmg":10.0,"name":"a beautiful star","area":"Galaxy","vnum":9302,"pop":7,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"the lamia","area":"New Thalos","vnum":9548,"pop":1,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"the cryohydra","area":"New Thalos","vnum":9570,"pop":1,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"the minotaur lizard","area":"New Thalos","vnum":9571,"pop":1,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"the death dog","area":"New Thalos","vnum":9572,"pop":5,"kind":"typical"},{"level":8,"hp":170.0,"dmg":10.0,"name":"the spotted lion","area":"New Thalos","vnum":9573,"pop":1,"kind":"typical"},{"level":9,"hp":208.0,"dmg":10.0,"name":"a shadow guardian","area":"High Tower of Sorcery","vnum":1300,"pop":5,"kind":"typical"},{"level":9,"hp":208.0,"dmg":10.0,"name":"a pair of disembodied hands","area":"High Tower of Sorcery","vnum":1312,"pop":7,"kind":"typical"},{"level":9,"hp":208.0,"dmg":10.0,"name":"a student of spells","area":"High Tower of Sorcery","vnum":1324,"pop":3,"kind":"typical"},{"level":9,"hp":208.0,"dmg":10.0,"name":"a young mage","area":"High Tower of Sorcery","vnum":1326,"pop":3,"kind":"typical"},{"level":9,"hp":191.0,"dmg":10.0,"name":"the stone gargoyle","area":"Wyvern Tower","vnum":1602,"pop":6,"kind":"typical"},{"level":9,"hp":191.0,"dmg":10.0,"name":"a carnivorous plant","area":"Wyvern Tower","vnum":1606,"pop":1,"kind":"typical"},{"level":9,"hp":191.0,"dmg":10.0,"name":"an elder centaur","area":"Wyvern Tower","vnum":1714,"pop":3,"kind":"typical"},{"level":9,"hp":191.0,"dmg":10.0,"name":"a graverobber","area":"Dwarven Catacombs","vnum":2004,"pop":4,"kind":"typical"},{"level":9,"hp":208.0,"dmg":10.0,"name":"a Draconian zombie","area":"Dragon Tower","vnum":2240,"pop":5,"kind":"typical"},{"level":9,"hp":113.0,"dmg":7.0,"name":"the wolf","area":"Midgaard","vnum":3094,"pop":1,"kind":"typical"},{"level":9,"hp":126.5,"dmg":9.5,"name":"the goblin leader","area":"Miden'nir","vnum":3507,"pop":1,"kind":"typical"},{"level":9,"hp":186.0,"dmg":10.0,"name":"The lamia","area":"Thalos","vnum":5201,"pop":12,"kind":"typical"},{"level":9,"hp":208.0,"dmg":10.0,"name":"the dwarven doctor","area":"Dwarven Kingdom","vnum":6509,"pop":1,"kind":"typical"},{"level":9,"hp":208.0,"dmg":10.0,"name":"the dwarf","area":"Dwarven Kingdom","vnum":6511,"pop":6,"kind":"typical"},{"level":9,"hp":208.0,"dmg":10.0,"name":"the unwanted son","area":"Dwarven Kingdom","vnum":6512,"pop":2,"kind":"typical"},{"level":9,"hp":208.0,"dmg":10.0,"name":"the Marsh Hag","area":"Old Marsh","vnum":8312,"pop":2,"kind":"typical"},{"level":9,"hp":181.0,"dmg":10.0,"name":"a small blob of acid","area":"Elemental Canyon","vnum":9219,"pop":4,"kind":"typical"},{"level":9,"hp":208.0,"dmg":10.0,"name":"a baby draco","area":"Galaxy","vnum":9314,"pop":2,"kind":"typical"},{"level":9,"hp":188.0,"dmg":10.0,"name":"The Cityguard head","area":"Mob Factory","vnum":9403,"pop":7,"kind":"typical"},{"level":9,"hp":186.0,"dmg":10.0,"name":"Fatima","area":"New Thalos","vnum":9531,"pop":1,"kind":"typical"},{"level":9,"hp":190.0,"dmg":10.0,"name":"the raggety dervish","area":"New Thalos","vnum":9549,"pop":1,"kind":"typical"},{"level":9,"hp":190.0,"dmg":10.0,"name":"the chimera","area":"New Thalos","vnum":9575,"pop":1,"kind":"typical"},{"level":9,"hp":113.0,"dmg":7.0,"name":"wolf pup","area":"Wolf Pointe","vnum":10094,"pop":1,"kind":"typical"},{"level":10,"hp":186.0,"dmg":11.0,"name":"Papa Smurf","area":"Smurf Village","vnum":110,"pop":1,"kind":"typical"},{"level":10,"hp":186.0,"dmg":11.0,"name":"Gargamel","area":"Smurf Village","vnum":111,"pop":1,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"the pet dragon","area":"Plains of the North","vnum":350,"pop":1,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"a mage","area":"High Tower of Sorcery","vnum":1304,"pop":7,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"a dancing sword","area":"High Tower of Sorcery","vnum":1335,"pop":1,"kind":"typical"},{"level":10,"hp":211.0,"dmg":11.0,"name":"the treasurer","area":"Gnome Village","vnum":1521,"pop":1,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"an angry gargoyle","area":"Wyvern Tower","vnum":1603,"pop":3,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"a gruesome ogre","area":"Wyvern Tower","vnum":1607,"pop":1,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"a shadow","area":"Wyvern Tower","vnum":1608,"pop":1,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"a centaur guard","area":"Wyvern Tower","vnum":1715,"pop":2,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"An imprisoned githzerai","area":"The Astral Plane","vnum":1916,"pop":1,"kind":"typical"},{"level":10,"hp":211.0,"dmg":11.0,"name":"some mist","area":"Dwarven Catacombs","vnum":2005,"pop":9,"kind":"typical"},{"level":10,"hp":211.0,"dmg":11.0,"name":"It","area":"Dwarven Catacombs","vnum":2006,"pop":7,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"a bruiser","area":"Dangerous Neighbourhood","vnum":2104,"pop":5,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"a vandal","area":"Dangerous Neighbourhood","vnum":2107,"pop":4,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the phase dragon","area":"Dragon Tower","vnum":2241,"pop":1,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the Ogre Villager","area":"The Keep of Mahn-Tor","vnum":2307,"pop":5,"kind":"typical"},{"level":10,"hp":206.5,"dmg":10.0,"name":"the Innkeeper","area":"Miden'nir","vnum":3503,"pop":1,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the dwarf guard","area":"Kingdom of Juargan","vnum":4702,"pop":11,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"Yentle the dwarf","area":"Kingdom of Juargan","vnum":4703,"pop":1,"kind":"typical"},{"level":10,"hp":211.0,"dmg":11.0,"name":"The nomad warrior","area":"Sands of Sorrow","vnum":5008,"pop":1,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the drow commoner","area":"Drow City","vnum":5101,"pop":2,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the fanatic priest","area":"Old Thalos","vnum":5306,"pop":1,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"a druid","area":"Old Thalos","vnum":5327,"pop":2,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"a druidess","area":"Old Thalos","vnum":5328,"pop":2,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"Shargugh","area":"Haon Dor","vnum":6115,"pop":1,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the ethereal spider","area":"Arachnos","vnum":6307,"pop":2,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the quasit","area":"Arachnos","vnum":6309,"pop":1,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the young dragon wormkin","area":"Arachnos","vnum":6316,"pop":1,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the unwanted daughter","area":"Dwarven Kingdom","vnum":6513,"pop":2,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"the evil wanderer","area":"Sewer","vnum":7007,"pop":1,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"the shadowy morkoth","area":"Sewer","vnum":7011,"pop":1,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"Jones","area":"Sewer","vnum":7045,"pop":1,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"a punk","area":"Mega-City One","vnum":8001,"pop":3,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"a dunk","area":"Mega-City One","vnum":8004,"pop":3,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the Will-O-Wisp","area":"Old Marsh","vnum":8308,"pop":1,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"a druid","area":"Holy Grove","vnum":8909,"pop":2,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"a druidess","area":"Holy Grove","vnum":8910,"pop":2,"kind":"typical"},{"level":10,"hp":201.0,"dmg":11.0,"name":"a medium elemental","area":"Elemental Canyon","vnum":9206,"pop":4,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"a young nebula","area":"Galaxy","vnum":9303,"pop":4,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"a speedy comet","area":"Galaxy","vnum":9304,"pop":3,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"a construction worker","area":"New Thalos","vnum":9520,"pop":2,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"A nomad merchant","area":"New Thalos","vnum":9533,"pop":6,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"the sultan's guard","area":"New Thalos","vnum":9561,"pop":12,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"the sultans guard","area":"New Thalos","vnum":9562,"pop":8,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the pegasus","area":"New Thalos","vnum":9578,"pop":1,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"the mimic","area":"New Thalos","vnum":9588,"pop":1,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"the bodyguard","area":"New Thalos","vnum":9592,"pop":9,"kind":"typical"},{"level":10,"hp":231.0,"dmg":11.0,"name":"the pony","area":"New Thalos","vnum":9598,"pop":1,"kind":"typical"},{"level":10,"hp":130.0,"dmg":12.5,"name":"the white Wolf pup","area":"Wolf Pointe","vnum":10068,"pop":1,"kind":"typical"},{"level":10,"hp":130.0,"dmg":14.0,"name":"the recycler","area":"Wolf Pointe","vnum":10072,"pop":1,"kind":"typical"},{"level":10,"hp":216.0,"dmg":11.0,"name":"The Farmer","area":"Crystalmir Lake","vnum":11005,"pop":1,"kind":"typical"},{"level":11,"hp":276.0,"dmg":12.5,"name":"The cook's assistant","area":"High Tower of Sorcery","vnum":1308,"pop":1,"kind":"typical"},{"level":11,"hp":256.0,"dmg":12.5,"name":"a skeleton","area":"Dwarven Catacombs","vnum":2007,"pop":4,"kind":"typical"},{"level":11,"hp":256.0,"dmg":12.5,"name":"the large female troll","area":"Troll Den","vnum":2805,"pop":1,"kind":"typical"},{"level":11,"hp":256.0,"dmg":12.5,"name":"The mimic","area":"Thalos","vnum":5202,"pop":1,"kind":"typical"},{"level":11,"hp":256.0,"dmg":12.5,"name":"The mimic","area":"Thalos","vnum":5203,"pop":1,"kind":"typical"},{"level":11,"hp":256.0,"dmg":12.5,"name":"The mimic","area":"Thalos","vnum":5204,"pop":1,"kind":"typical"},{"level":11,"hp":256.0,"dmg":12.5,"name":"The mimic","area":"Thalos","vnum":5205,"pop":1,"kind":"typical"},{"level":11,"hp":256.0,"dmg":12.5,"name":"The mimic","area":"Thalos","vnum":5206,"pop":1,"kind":"typical"},{"level":11,"hp":261.0,"dmg":12.5,"name":"the homonculus","area":"Sewer","vnum":7008,"pop":1,"kind":"typical"},{"level":11,"hp":276.0,"dmg":12.5,"name":"a large snake","area":"Old Marsh","vnum":8310,"pop":2,"kind":"typical"},{"level":11,"hp":147.0,"dmg":9.5,"name":"the quadrone","area":"Nirvana","vnum":9001,"pop":3,"kind":"typical"},{"level":11,"hp":276.0,"dmg":12.5,"name":"the Pleiades","area":"Galaxy","vnum":9312,"pop":7,"kind":"typical"},{"level":11,"hp":251.0,"dmg":12.5,"name":"Aziz","area":"New Thalos","vnum":9529,"pop":1,"kind":"typical"},{"level":12,"hp":301.0,"dmg":13.5,"name":"Jack","area":"New Ofcol","vnum":610,"pop":1,"kind":"typical"},{"level":12,"hp":301.0,"dmg":13.5,"name":"the receptionist","area":"The Shire","vnum":1131,"pop":1,"kind":"typical"},{"level":12,"hp":301.0,"dmg":13.5,"name":"the mage","area":"High Tower of Sorcery","vnum":1314,"pop":1,"kind":"typical"},{"level":12,"hp":301.0,"dmg":13.5,"name":"a flesh golem","area":"High Tower of Sorcery","vnum":1344,"pop":1,"kind":"typical"},{"level":12,"hp":281.0,"dmg":13.5,"name":"the fire bat","area":"Gnome Village","vnum":1515,"pop":1,"kind":"typical"},{"level":12,"hp":281.0,"dmg":13.5,"name":"the king of the hobgoblins","area":"Gnome Village","vnum":1519,"pop":1,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"the elite gargoyle","area":"Wyvern Tower","vnum":1604,"pop":2,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"an evil wight","area":"Wyvern Tower","vnum":1609,"pop":1,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"a ranger","area":"Wyvern Tower","vnum":1706,"pop":1,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"the centaur chief","area":"Wyvern Tower","vnum":1716,"pop":1,"kind":"typical"},{"level":12,"hp":281.0,"dmg":13.5,"name":"a templar","area":"Dwarven Catacombs","vnum":2008,"pop":12,"kind":"typical"},{"level":12,"hp":281.0,"dmg":13.5,"name":"a mysterious wraith","area":"Dwarven Catacombs","vnum":2009,"pop":2,"kind":"typical"},{"level":12,"hp":174.0,"dmg":9.0,"name":"the secretary","area":"Midgaard","vnum":3142,"pop":1,"kind":"typical"},{"level":12,"hp":281.0,"dmg":13.5,"name":"The nomad commander","area":"Sands of Sorrow","vnum":5007,"pop":1,"kind":"typical"},{"level":12,"hp":301.0,"dmg":13.5,"name":"the drow warrior noble","area":"Drow City","vnum":5102,"pop":4,"kind":"typical"},{"level":12,"hp":301.0,"dmg":13.5,"name":"the drow guard","area":"Drow City","vnum":5110,"pop":2,"kind":"typical"},{"level":12,"hp":301.0,"dmg":13.5,"name":"the Queen Wasp","area":"Arachnos","vnum":6305,"pop":1,"kind":"typical"},{"level":12,"hp":301.0,"dmg":13.5,"name":"the dwarven worker","area":"Dwarven Kingdom","vnum":6501,"pop":3,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"the horrifying Mudmonster","area":"Sewer","vnum":7000,"pop":6,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"the evil chreffn","area":"Sewer","vnum":7010,"pop":1,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"the horrifying mudmonster","area":"Sewer","vnum":7013,"pop":3,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"the guardian naga","area":"Sewer","vnum":7042,"pop":1,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"the gigantic rat","area":"Sewer","vnum":7204,"pop":1,"kind":"typical"},{"level":12,"hp":301.0,"dmg":13.5,"name":"a gargoyle","area":"Old Marsh","vnum":8321,"pop":2,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"an illusionist","area":"Elemental Canyon","vnum":9233,"pop":3,"kind":"typical"},{"level":12,"hp":281.0,"dmg":13.5,"name":"Foreman Floyd","area":"Mob Factory","vnum":9402,"pop":1,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"Kareem","area":"New Thalos","vnum":9532,"pop":1,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"the dockworker","area":"New Thalos","vnum":9536,"pop":7,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"the behir","area":"New Thalos","vnum":9574,"pop":1,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"the nightmare","area":"New Thalos","vnum":9586,"pop":1,"kind":"typical"},{"level":12,"hp":271.0,"dmg":13.5,"name":"the wolverine","area":"New Thalos","vnum":9587,"pop":1,"kind":"typical"},{"level":12,"hp":281.0,"dmg":13.5,"name":"Fewmaster Toede","area":"Crystalmir Lake","vnum":11002,"pop":1,"kind":"typical"},{"level":13,"hp":311.0,"dmg":16.0,"name":"Aruncus the Druid","area":"Plains of the North","vnum":300,"pop":1,"kind":"typical"},{"level":13,"hp":326.0,"dmg":16.0,"name":"a bard","area":"New Ofcol","vnum":624,"pop":1,"kind":"typical"},{"level":13,"hp":311.0,"dmg":16.0,"name":"the gargoyle shaman","area":"Wyvern Tower","vnum":1605,"pop":1,"kind":"typical"},{"level":13,"hp":306.0,"dmg":16.0,"name":"the templar officer","area":"Dwarven Catacombs","vnum":2010,"pop":6,"kind":"typical"},{"level":13,"hp":306.0,"dmg":16.0,"name":"zombie","area":"Dwarven Catacombs","vnum":2011,"pop":4,"kind":"typical"},{"level":13,"hp":306.0,"dmg":16.0,"name":"the gang leader","area":"Dangerous Neighbourhood","vnum":2103,"pop":2,"kind":"typical"},{"level":13,"hp":326.0,"dmg":16.0,"name":"the Draconian","area":"Dragon Tower","vnum":2201,"pop":5,"kind":"typical"},{"level":13,"hp":306.0,"dmg":16.0,"name":"the giant troll","area":"Troll Den","vnum":2804,"pop":1,"kind":"typical"},{"level":13,"hp":326.0,"dmg":16.0,"name":"the medium dragon wormkin","area":"Arachnos","vnum":6317,"pop":1,"kind":"typical"},{"level":13,"hp":311.0,"dmg":16.0,"name":"the scaled basilisk","area":"Sewer","vnum":7043,"pop":1,"kind":"typical"},{"level":13,"hp":326.0,"dmg":16.0,"name":"a shambling mound","area":"Old Marsh","vnum":8318,"pop":2,"kind":"typical"},{"level":13,"hp":306.0,"dmg":16.0,"name":"an elder druid","area":"Holy Grove","vnum":8902,"pop":1,"kind":"typical"},{"level":13,"hp":306.0,"dmg":16.0,"name":"an elder druidess","area":"Holy Grove","vnum":8903,"pop":1,"kind":"typical"},{"level":13,"hp":306.0,"dmg":16.0,"name":"an alchemist","area":"Elemental Canyon","vnum":9234,"pop":2,"kind":"typical"},{"level":14,"hp":351.0,"dmg":17.0,"name":"an apprentice musician","area":"Olympus","vnum":911,"pop":2,"kind":"typical"},{"level":14,"hp":351.0,"dmg":17.0,"name":"a pegasus","area":"Olympus","vnum":924,"pop":2,"kind":"typical"},{"level":14,"hp":351.0,"dmg":17.0,"name":"the Thain","area":"The Shire","vnum":1112,"pop":1,"kind":"typical"},{"level":14,"hp":351.0,"dmg":17.0,"name":"an instructor of magic","area":"High Tower of Sorcery","vnum":1321,"pop":1,"kind":"typical"},{"level":14,"hp":351.0,"dmg":17.0,"name":"a scribe","area":"High Tower of Sorcery","vnum":1330,"pop":1,"kind":"typical"},{"level":14,"hp":331.0,"dmg":17.0,"name":"the troll","area":"Gnome Village","vnum":1512,"pop":1,"kind":"typical"},{"level":14,"hp":321.0,"dmg":17.0,"name":"A burly minotaur","area":"Wyvern Tower","vnum":1610,"pop":2,"kind":"typical"},{"level":14,"hp":331.0,"dmg":17.0,"name":"the shadow","area":"Dwarven Catacombs","vnum":2012,"pop":1,"kind":"typical"},{"level":14,"hp":351.0,"dmg":17.0,"name":"the Rock Toad","area":"The Keep of Mahn-Tor","vnum":2303,"pop":4,"kind":"typical"},{"level":14,"hp":331.0,"dmg":17.0,"name":"The nomad leader","area":"Sands of Sorrow","vnum":5006,"pop":1,"kind":"typical"},{"level":14,"hp":351.0,"dmg":17.0,"name":"the Bird Spider","area":"Arachnos","vnum":6310,"pop":1,"kind":"typical"},{"level":14,"hp":336.0,"dmg":17.0,"name":"the sea hag","area":"Sewer","vnum":7041,"pop":1,"kind":"typical"},{"level":14,"hp":321.0,"dmg":17.0,"name":"the master mindflayer","area":"Sewer","vnum":7200,"pop":1,"kind":"typical"},{"level":14,"hp":351.0,"dmg":17.0,"name":"a tap","area":"Mega-City One","vnum":8005,"pop":3,"kind":"typical"},{"level":14,"hp":351.0,"dmg":17.0,"name":"a green troll","area":"Old Marsh","vnum":8302,"pop":3,"kind":"typical"},{"level":14,"hp":207.5,"dmg":13.0,"name":"the pentadrone","area":"Nirvana","vnum":9002,"pop":6,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"a pair of disembodied eyes","area":"High Tower of Sorcery","vnum":1313,"pop":5,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"a spell teacher","area":"High Tower of Sorcery","vnum":1323,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"a spell teacher","area":"High Tower of Sorcery","vnum":1328,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"a scribe","area":"High Tower of Sorcery","vnum":1331,"pop":2,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"a clay golem","area":"High Tower of Sorcery","vnum":1347,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"an animated skeleton","area":"High Tower of Sorcery","vnum":1350,"pop":2,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"a grey cat","area":"High Tower of Sorcery","vnum":1355,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"a white cat","area":"High Tower of Sorcery","vnum":1361,"pop":1,"kind":"typical"},{"level":15,"hp":346.0,"dmg":17.0,"name":"the chief gnome","area":"Gnome Village","vnum":1505,"pop":1,"kind":"typical"},{"level":15,"hp":356.0,"dmg":17.0,"name":"the savage minotaur","area":"Wyvern Tower","vnum":1612,"pop":1,"kind":"typical"},{"level":15,"hp":356.0,"dmg":17.0,"name":"the black pudding","area":"Wyvern Tower","vnum":1614,"pop":1,"kind":"typical"},{"level":15,"hp":356.0,"dmg":17.0,"name":"The vampire","area":"Dwarven Catacombs","vnum":2013,"pop":1,"kind":"typical"},{"level":15,"hp":356.0,"dmg":17.0,"name":"the evil necromancer","area":"Dwarven Catacombs","vnum":2014,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"the Cave Dweller","area":"The Keep of Mahn-Tor","vnum":2302,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"the Mistling","area":"The Keep of Mahn-Tor","vnum":2305,"pop":3,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"the Ogre Warrior","area":"The Keep of Mahn-Tor","vnum":2308,"pop":4,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"the Minotaur Citizen","area":"The Keep of Mahn-Tor","vnum":2315,"pop":5,"kind":"typical"},{"level":15,"hp":280.0,"dmg":9.0,"name":"the cityguard","area":"Midgaard","vnum":3060,"pop":9,"kind":"typical"},{"level":15,"hp":270.0,"dmg":9.0,"name":"the cityguard","area":"Midgaard","vnum":3067,"pop":2,"kind":"typical"},{"level":15,"hp":270.0,"dmg":9.0,"name":"the cityguard","area":"Midgaard","vnum":3068,"pop":2,"kind":"typical"},{"level":15,"hp":280.0,"dmg":9.0,"name":"the cityguard","area":"Midgaard","vnum":3071,"pop":2,"kind":"typical"},{"level":15,"hp":270.0,"dmg":9.0,"name":"the cityguard","area":"Midgaard","vnum":3072,"pop":1,"kind":"typical"},{"level":15,"hp":130.0,"dmg":9.0,"name":"the cityguard","area":"Midgaard","vnum":3141,"pop":4,"kind":"outlier"},{"level":15,"hp":260.5,"dmg":18.0,"name":"Lister","area":"Midgaard","vnum":3161,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"a dwarven spirit","area":"Kingdom of Juargan","vnum":4708,"pop":3,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"the drow mage noble","area":"Drow City","vnum":5103,"pop":4,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"the cityguard","area":"Old Thalos","vnum":5331,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"the cityguard","area":"Old Thalos","vnum":5334,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"the Queen Spider","area":"Arachnos","vnum":6319,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"the man in waiting","area":"Dwarven Kingdom","vnum":6515,"pop":2,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"the giant snake","area":"Dwarven Kingdom","vnum":6517,"pop":2,"kind":"typical"},{"level":15,"hp":346.0,"dmg":17.0,"name":"a valley elf elder","area":"Valley of the Elves","vnum":7807,"pop":1,"kind":"typical"},{"level":15,"hp":346.0,"dmg":17.0,"name":"a valley elf elder","area":"Valley of the Elves","vnum":7808,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"a marsh giant","area":"Old Marsh","vnum":8320,"pop":5,"kind":"typical"},{"level":15,"hp":346.0,"dmg":17.0,"name":"a large elemental","area":"Elemental Canyon","vnum":9207,"pop":5,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"a red supergiant","area":"Galaxy","vnum":9305,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"a white dwarf","area":"Galaxy","vnum":9306,"pop":1,"kind":"typical"},{"level":15,"hp":376.0,"dmg":17.0,"name":"Gemini","area":"Galaxy","vnum":9318,"pop":1,"kind":"typical"},{"level":15,"hp":346.0,"dmg":17.0,"name":"the foreman","area":"New Thalos","vnum":9519,"pop":1,"kind":"typical"},{"level":15,"hp":346.0,"dmg":17.0,"name":"a eunich","area":"New Thalos","vnum":9553,"pop":4,"kind":"typical"},{"level":15,"hp":346.0,"dmg":17.0,"name":"the couatl","area":"New Thalos","vnum":9576,"pop":1,"kind":"typical"},{"level":15,"hp":130.0,"dmg":16.0,"name":"the citizen","area":"Wolf Pointe","vnum":10074,"pop":2,"kind":"outlier"},{"level":15,"hp":130.0,"dmg":16.0,"name":"a citizen","area":"Wolf Pointe","vnum":10075,"pop":2,"kind":"outlier"},{"level":15,"hp":130.0,"dmg":16.0,"name":"an adventurer","area":"Wolf Pointe","vnum":10078,"pop":1,"kind":"outlier"},{"level":15,"hp":130.0,"dmg":17.0,"name":"the resident","area":"Wolf Pointe","vnum":10088,"pop":1,"kind":"outlier"},{"level":15,"hp":130.0,"dmg":19.0,"name":"a resident","area":"Wolf Pointe","vnum":10089,"pop":1,"kind":"outlier"},{"level":15,"hp":376.0,"dmg":17.0,"name":"the half-eaten person","area":"Descent to Hell","vnum":10411,"pop":1,"kind":"typical"},{"level":16,"hp":465.0,"dmg":18.0,"name":"The prisoner","area":"High Tower of Sorcery","vnum":1309,"pop":1,"kind":"typical"},{"level":16,"hp":465.0,"dmg":18.0,"name":"the scribe's assistant","area":"High Tower of Sorcery","vnum":1333,"pop":1,"kind":"typical"},{"level":16,"hp":465.0,"dmg":18.0,"name":"a wooden golem","area":"High Tower of Sorcery","vnum":1339,"pop":5,"kind":"typical"},{"level":16,"hp":465.0,"dmg":18.0,"name":"a black cat","area":"High Tower of Sorcery","vnum":1358,"pop":1,"kind":"typical"},{"level":16,"hp":445.0,"dmg":18.0,"name":"a lesser golem","area":"Wyvern Tower","vnum":1615,"pop":1,"kind":"typical"},{"level":16,"hp":465.0,"dmg":18.0,"name":"the grand templar","area":"Dwarven Catacombs","vnum":2015,"pop":1,"kind":"typical"},{"level":16,"hp":465.0,"dmg":18.0,"name":"the White Yeti","area":"The Keep of Mahn-Tor","vnum":2313,"pop":3,"kind":"typical"},{"level":16,"hp":465.0,"dmg":18.0,"name":"the giant","area":"Dwarven Kingdom","vnum":6506,"pop":1,"kind":"typical"},{"level":16,"hp":465.0,"dmg":18.0,"name":"the barracks guard","area":"Dwarven Kingdom","vnum":6514,"pop":2,"kind":"typical"},{"level":16,"hp":465.0,"dmg":18.0,"name":"a Citi-Def Militiaman","area":"Mega-City One","vnum":8003,"pop":2,"kind":"typical"},{"level":16,"hp":465.0,"dmg":18.0,"name":"a swamp troll","area":"Old Marsh","vnum":8301,"pop":2,"kind":"typical"},{"level":16,"hp":465.0,"dmg":18.0,"name":"the monstrous snake","area":"Old Marsh","vnum":8309,"pop":2,"kind":"typical"},{"level":16,"hp":445.0,"dmg":18.0,"name":"a baby rainbow dragon","area":"Elemental Canyon","vnum":9235,"pop":2,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"the elven warrior","area":"The Shire","vnum":1116,"pop":1,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"the dwarven prince","area":"The Shire","vnum":1117,"pop":1,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"the Jailor","area":"High Tower of Sorcery","vnum":1310,"pop":1,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"the battle mistress","area":"High Tower of Sorcery","vnum":1327,"pop":1,"kind":"typical"},{"level":17,"hp":464.0,"dmg":18.0,"name":"the captain","area":"Wyvern Tower","vnum":1613,"pop":1,"kind":"typical"},{"level":17,"hp":310.0,"dmg":11.0,"name":"the captain","area":"Midgaard","vnum":3140,"pop":1,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"the drow priestess","area":"Drow City","vnum":5104,"pop":4,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"an imperial cityguard","area":"Old Thalos","vnum":5303,"pop":11,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"An imperial cityguard","area":"Old Thalos","vnum":5320,"pop":3,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"an imperial cityguard","area":"Old Thalos","vnum":5321,"pop":2,"kind":"typical"},{"level":17,"hp":464.0,"dmg":18.0,"name":"the elder druid","area":"Haon Dor","vnum":6116,"pop":1,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"The guardian","area":"Arachnos","vnum":6313,"pop":1,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"a Futsie","area":"Mega-City One","vnum":8002,"pop":2,"kind":"typical"},{"level":17,"hp":207.5,"dmg":15.0,"name":"the decaton","area":"Nirvana","vnum":9003,"pop":1,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"an elemental magician","area":"Elemental Canyon","vnum":9231,"pop":2,"kind":"typical"},{"level":17,"hp":494.0,"dmg":18.0,"name":"the wild Pegasus","area":"Galaxy","vnum":9310,"pop":1,"kind":"typical"},{"level":17,"hp":454.0,"dmg":18.0,"name":"the White Stag","area":"Crystalmir Lake","vnum":11012,"pop":1,"kind":"typical"},{"level":18,"hp":523.0,"dmg":19.0,"name":"the Elven Wizard","area":"The Shire","vnum":1100,"pop":1,"kind":"typical"},{"level":18,"hp":523.0,"dmg":19.0,"name":"a wizard","area":"High Tower of Sorcery","vnum":1325,"pop":1,"kind":"typical"},{"level":18,"hp":523.0,"dmg":19.0,"name":"a bronze golem","area":"High Tower of Sorcery","vnum":1343,"pop":1,"kind":"typical"},{"level":18,"hp":523.0,"dmg":19.0,"name":"an undead giant","area":"High Tower of Sorcery","vnum":1351,"pop":1,"kind":"typical"},{"level":18,"hp":491.0,"dmg":19.0,"name":"the ancient wyvern","area":"Wyvern Tower","vnum":1616,"pop":1,"kind":"typical"},{"level":18,"hp":523.0,"dmg":19.0,"name":"A bodyguard","area":"Dragon Tower","vnum":2207,"pop":6,"kind":"typical"},{"level":18,"hp":523.0,"dmg":19.0,"name":"a large hydra","area":"Dragon Tower","vnum":2226,"pop":1,"kind":"typical"},{"level":18,"hp":501.0,"dmg":19.0,"name":"The giant, purple sand worm","area":"Sands of Sorrow","vnum":5004,"pop":1,"kind":"typical"},{"level":18,"hp":523.0,"dmg":19.0,"name":"the giant lizard","area":"Dwarven Kingdom","vnum":6505,"pop":1,"kind":"typical"},{"level":18,"hp":523.0,"dmg":19.0,"name":"a rainbow warrior","area":"Elemental Canyon","vnum":9232,"pop":2,"kind":"typical"},{"level":18,"hp":523.0,"dmg":19.0,"name":"a horsehead nebula","area":"Galaxy","vnum":9307,"pop":1,"kind":"typical"},{"level":18,"hp":523.0,"dmg":19.0,"name":"poor Andromeda","area":"Galaxy","vnum":9308,"pop":1,"kind":"typical"},{"level":18,"hp":480.0,"dmg":19.0,"name":"Brother John","area":"New Thalos","vnum":9506,"pop":1,"kind":"typical"},{"level":18,"hp":503.0,"dmg":19.0,"name":"the jailer","area":"New Thalos","vnum":9552,"pop":1,"kind":"typical"},{"level":19,"hp":552.0,"dmg":19.0,"name":"the Ofcol cityguard","area":"New Ofcol","vnum":600,"pop":8,"kind":"typical"},{"level":19,"hp":552.0,"dmg":19.0,"name":"the Ofcol cityguard","area":"New Ofcol","vnum":623,"pop":3,"kind":"typical"},{"level":19,"hp":552.0,"dmg":19.0,"name":"the Ofcol cityguard","area":"New Ofcol","vnum":634,"pop":3,"kind":"typical"},{"level":19,"hp":552.0,"dmg":19.0,"name":"the Keeper of the Ring","area":"The Shire","vnum":1101,"pop":1,"kind":"typical"},{"level":19,"hp":522.0,"dmg":19.0,"name":"the spectre","area":"Wyvern Tower","vnum":1617,"pop":1,"kind":"typical"},{"level":19,"hp":552.0,"dmg":19.0,"name":"the Ogre Guard","area":"The Keep of Mahn-Tor","vnum":2309,"pop":4,"kind":"typical"},{"level":19,"hp":552.0,"dmg":19.0,"name":"Ernie Ramirez","area":"Mega-City One","vnum":8009,"pop":1,"kind":"typical"},{"level":19,"hp":552.0,"dmg":19.0,"name":"the mighty Hercules","area":"Galaxy","vnum":9309,"pop":1,"kind":"typical"},{"level":19,"hp":552.0,"dmg":19.0,"name":"Orion the hunter","area":"Galaxy","vnum":9311,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"Chaplain Jerrold","area":"New Ofcol","vnum":629,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"Ezmerelda","area":"High Tower of Sorcery","vnum":1307,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"an aged wizard","area":"High Tower of Sorcery","vnum":1329,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"a granite golem","area":"High Tower of Sorcery","vnum":1342,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"an ugly witch","area":"High Tower of Sorcery","vnum":1352,"pop":3,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"a black robed apprentice","area":"High Tower of Sorcery","vnum":1357,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"a white robed apprentice","area":"High Tower of Sorcery","vnum":1360,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"A tortured mindflayer prisoner","area":"The Astral Plane","vnum":1917,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the prism dragon","area":"Dwarven Catacombs","vnum":2016,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the Draconian Queen","area":"Dragon Tower","vnum":2243,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the Old Treant","area":"The Keep of Mahn-Tor","vnum":2301,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the Swamp Wraith","area":"The Keep of Mahn-Tor","vnum":2306,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"The Ogre Shaman","area":"The Keep of Mahn-Tor","vnum":2310,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the Plains Barbarian","area":"The Keep of Mahn-Tor","vnum":2312,"pop":3,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the Ice Worm","area":"The Keep of Mahn-Tor","vnum":2314,"pop":3,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the Minotaur Butler","area":"The Keep of Mahn-Tor","vnum":2323,"pop":1,"kind":"typical"},{"level":20,"hp":390.0,"dmg":12.0,"name":"the cityguard","area":"Midgaard","vnum":3069,"pop":4,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"The dreaded rock worm","area":"Kingdom of Juargan","vnum":4707,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the priest of Thalos","area":"Old Thalos","vnum":5307,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the mayor of Thalos","area":"Old Thalos","vnum":5309,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the dwarven guard","area":"Dwarven Kingdom","vnum":6500,"pop":6,"kind":"typical"},{"level":20,"hp":551.0,"dmg":22.0,"name":"the pyrohydra","area":"Valley of the Elves","vnum":7809,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"a rookie judge","area":"Mega-City One","vnum":8006,"pop":3,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"a bite fighter","area":"Mega-City One","vnum":8012,"pop":2,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"an ogre","area":"Old Marsh","vnum":8303,"pop":3,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"a Death Slaad","area":"Old Marsh","vnum":8313,"pop":1,"kind":"typical"},{"level":20,"hp":561.0,"dmg":22.0,"name":"The Hierophant","area":"Holy Grove","vnum":8900,"pop":1,"kind":"typical"},{"level":20,"hp":561.0,"dmg":22.0,"name":"The Hierophant","area":"Holy Grove","vnum":8901,"pop":1,"kind":"typical"},{"level":20,"hp":299.5,"dmg":18.0,"name":"the nonaton","area":"Nirvana","vnum":9004,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the screaming, filthy harpy","area":"Dylan's Area","vnum":9101,"pop":35,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the elemental guardian","area":"Elemental Canyon","vnum":9204,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"the receptionist","area":"New Thalos","vnum":9504,"pop":1,"kind":"typical"},{"level":20,"hp":551.0,"dmg":22.0,"name":"Nichole, the sultan's favorite","area":"New Thalos","vnum":9554,"pop":1,"kind":"typical"},{"level":20,"hp":551.0,"dmg":22.0,"name":"the gardener","area":"New Thalos","vnum":9585,"pop":1,"kind":"typical"},{"level":20,"hp":551.0,"dmg":22.0,"name":"the mayor","area":"New Thalos","vnum":9589,"pop":1,"kind":"typical"},{"level":20,"hp":551.0,"dmg":22.0,"name":"the chef","area":"New Thalos","vnum":9590,"pop":1,"kind":"typical"},{"level":20,"hp":581.0,"dmg":22.0,"name":"a cart horse","area":"New Thalos","vnum":9596,"pop":1,"kind":"typical"},{"level":20,"hp":355.0,"dmg":24.0,"name":"the brown Wolf","area":"Wolf Pointe","vnum":10069,"pop":1,"kind":"typical"},{"level":21,"hp":710.0,"dmg":25.0,"name":"an attendant of the dragon","area":"New Ofcol","vnum":632,"pop":2,"kind":"typical"},{"level":21,"hp":696.0,"dmg":25.0,"name":"a Dragonknight","area":"New Ofcol","vnum":633,"pop":3,"kind":"typical"},{"level":21,"hp":695.0,"dmg":25.0,"name":"the golem maker","area":"High Tower of Sorcery","vnum":1341,"pop":1,"kind":"typical"},{"level":21,"hp":695.0,"dmg":25.0,"name":"the master of illusions","area":"High Tower of Sorcery","vnum":1348,"pop":1,"kind":"typical"},{"level":21,"hp":699.0,"dmg":25.0,"name":"the Minotaur Warrior","area":"The Keep of Mahn-Tor","vnum":2317,"pop":3,"kind":"typical"},{"level":21,"hp":728.0,"dmg":25.0,"name":"The drow master","area":"Drow City","vnum":5105,"pop":3,"kind":"typical"},{"level":21,"hp":696.0,"dmg":25.0,"name":"the dwarven mine leader","area":"Dwarven Kingdom","vnum":6508,"pop":1,"kind":"typical"},{"level":21,"hp":696.0,"dmg":25.0,"name":"a huge hairy beast","area":"Old Marsh","vnum":8306,"pop":2,"kind":"typical"},{"level":21,"hp":697.0,"dmg":25.0,"name":"the guildguard","area":"New Thalos","vnum":9556,"pop":1,"kind":"typical"},{"level":21,"hp":702.0,"dmg":25.0,"name":"the guildguard","area":"New Thalos","vnum":9557,"pop":1,"kind":"typical"},{"level":21,"hp":703.0,"dmg":25.0,"name":"the guildguard","area":"New Thalos","vnum":9558,"pop":1,"kind":"typical"},{"level":21,"hp":703.0,"dmg":25.0,"name":"the guildguard","area":"New Thalos","vnum":9559,"pop":1,"kind":"typical"},{"level":22,"hp":732.0,"dmg":26.0,"name":"The Jailer","area":"Olympus","vnum":926,"pop":1,"kind":"typical"},{"level":22,"hp":727.0,"dmg":26.0,"name":"the master scribe","area":"High Tower of Sorcery","vnum":1332,"pop":1,"kind":"typical"},{"level":22,"hp":736.0,"dmg":26.0,"name":"the master summoner","area":"High Tower of Sorcery","vnum":1337,"pop":1,"kind":"typical"},{"level":22,"hp":743.0,"dmg":26.0,"name":"a powerful mage","area":"Dragon Tower","vnum":2203,"pop":1,"kind":"typical"},{"level":22,"hp":731.0,"dmg":26.0,"name":"the holy Draconian","area":"Dragon Tower","vnum":2204,"pop":1,"kind":"typical"},{"level":22,"hp":743.0,"dmg":26.0,"name":"the Minotaur Guard","area":"The Keep of Mahn-Tor","vnum":2316,"pop":3,"kind":"typical"},{"level":22,"hp":758.0,"dmg":26.0,"name":"Wallaby Gleep","area":"Mega-City One","vnum":8007,"pop":1,"kind":"typical"},{"level":22,"hp":437.5,"dmg":19.0,"name":"the octon","area":"Nirvana","vnum":9005,"pop":4,"kind":"typical"},{"level":22,"hp":734.0,"dmg":26.0,"name":"the Magneto","area":"Elemental Canyon","vnum":9227,"pop":1,"kind":"typical"},{"level":22,"hp":732.0,"dmg":26.0,"name":"Aries","area":"Galaxy","vnum":9315,"pop":1,"kind":"typical"},{"level":22,"hp":749.0,"dmg":26.0,"name":"Taurus","area":"Galaxy","vnum":9316,"pop":1,"kind":"typical"},{"level":22,"hp":738.0,"dmg":26.0,"name":"Gemini","area":"Galaxy","vnum":9317,"pop":1,"kind":"typical"},{"level":22,"hp":749.0,"dmg":26.0,"name":"Cancer","area":"Galaxy","vnum":9319,"pop":1,"kind":"typical"},{"level":22,"hp":746.0,"dmg":26.0,"name":"Leo","area":"Galaxy","vnum":9320,"pop":1,"kind":"typical"},{"level":22,"hp":742.0,"dmg":26.0,"name":"Virgo","area":"Galaxy","vnum":9321,"pop":1,"kind":"typical"},{"level":22,"hp":757.0,"dmg":26.0,"name":"Libra","area":"Galaxy","vnum":9322,"pop":1,"kind":"typical"},{"level":22,"hp":761.0,"dmg":26.0,"name":"Scorpio","area":"Galaxy","vnum":9323,"pop":1,"kind":"typical"},{"level":22,"hp":759.0,"dmg":26.0,"name":"Sagittarius","area":"Galaxy","vnum":9324,"pop":1,"kind":"typical"},{"level":22,"hp":735.0,"dmg":26.0,"name":"Capricorn","area":"Galaxy","vnum":9325,"pop":1,"kind":"typical"},{"level":22,"hp":751.0,"dmg":26.0,"name":"Aquarius","area":"Galaxy","vnum":9326,"pop":1,"kind":"typical"},{"level":22,"hp":734.0,"dmg":26.0,"name":"Pisces the mermaid","area":"Galaxy","vnum":9327,"pop":1,"kind":"typical"},{"level":22,"hp":737.0,"dmg":26.0,"name":"Pisces the fish","area":"Galaxy","vnum":9328,"pop":1,"kind":"typical"},{"level":22,"hp":732.0,"dmg":26.0,"name":"the vampire lab assistant","area":"Ciquala's Lair","vnum":13401,"pop":2,"kind":"typical"},{"level":23,"hp":761.0,"dmg":26.0,"name":"the golem","area":"High Tower of Sorcery","vnum":1303,"pop":1,"kind":"typical"},{"level":23,"hp":770.0,"dmg":26.0,"name":"the Enchanter","area":"High Tower of Sorcery","vnum":1334,"pop":1,"kind":"typical"},{"level":23,"hp":795.0,"dmg":26.0,"name":"the master charmer","area":"High Tower of Sorcery","vnum":1338,"pop":1,"kind":"typical"},{"level":23,"hp":790.0,"dmg":26.0,"name":"the master spell binder","area":"High Tower of Sorcery","vnum":1340,"pop":1,"kind":"typical"},{"level":23,"hp":794.0,"dmg":26.0,"name":"the Librarian","area":"High Tower of Sorcery","vnum":1353,"pop":1,"kind":"typical"},{"level":23,"hp":766.0,"dmg":26.0,"name":"A githyanki hunter","area":"The Astral Plane","vnum":1905,"pop":4,"kind":"typical"},{"level":23,"hp":533.0,"dmg":16.5,"name":"the mayor","area":"Midgaard","vnum":3143,"pop":1,"kind":"typical"},{"level":23,"hp":773.0,"dmg":26.0,"name":"The weapons master","area":"Drow City","vnum":5106,"pop":2,"kind":"typical"},{"level":23,"hp":791.0,"dmg":26.0,"name":"the screaming harpy leader","area":"Dylan's Area","vnum":9102,"pop":2,"kind":"typical"},{"level":23,"hp":780.0,"dmg":26.0,"name":"the Rock Monster","area":"Elemental Canyon","vnum":9229,"pop":1,"kind":"typical"},{"level":23,"hp":773.0,"dmg":26.0,"name":"Cassandra","area":"New Thalos","vnum":9518,"pop":1,"kind":"typical"},{"level":23,"hp":1151.0,"dmg":26.0,"name":"a nonbeliver","area":"The Dell","vnum":12103,"pop":1,"kind":"typical"},{"level":24,"hp":815.0,"dmg":27.0,"name":"Shudde-M'ell","area":"Plains of the North","vnum":305,"pop":1,"kind":"typical"},{"level":24,"hp":806.0,"dmg":27.0,"name":"the Mad Alchemist","area":"High Tower of Sorcery","vnum":1336,"pop":1,"kind":"typical"},{"level":24,"hp":828.0,"dmg":27.0,"name":"the master's apprentice","area":"High Tower of Sorcery","vnum":1354,"pop":1,"kind":"typical"},{"level":24,"hp":822.0,"dmg":27.0,"name":"The DarkenBeast","area":"Dwarven Catacombs","vnum":2017,"pop":1,"kind":"typical"},{"level":24,"hp":803.0,"dmg":27.0,"name":"the matron mother","area":"Drow City","vnum":5107,"pop":3,"kind":"typical"},{"level":24,"hp":804.0,"dmg":27.0,"name":"Yevaud","area":"Arachnos","vnum":6302,"pop":1,"kind":"typical"},{"level":24,"hp":802.0,"dmg":27.0,"name":"the Swamp Thing","area":"Old Marsh","vnum":8304,"pop":1,"kind":"typical"},{"level":24,"hp":515.0,"dmg":20.0,"name":"the septon","area":"Nirvana","vnum":9006,"pop":2,"kind":"typical"},{"level":24,"hp":817.0,"dmg":27.0,"name":"the gigantic roc","area":"Dylan's Area","vnum":9105,"pop":1,"kind":"typical"},{"level":24,"hp":798.0,"dmg":27.0,"name":"the Ice Bandit","area":"Elemental Canyon","vnum":9228,"pop":1,"kind":"typical"},{"level":25,"hp":838.0,"dmg":27.0,"name":"a roc","area":"Olympus","vnum":922,"pop":2,"kind":"typical"},{"level":25,"hp":852.0,"dmg":27.0,"name":"the battle master","area":"The Shire","vnum":1121,"pop":1,"kind":"typical"},{"level":25,"hp":831.0,"dmg":27.0,"name":"an adamantite golem","area":"High Tower of Sorcery","vnum":1346,"pop":1,"kind":"typical"},{"level":25,"hp":858.0,"dmg":27.0,"name":"the Necromancer","area":"High Tower of Sorcery","vnum":1349,"pop":1,"kind":"typical"},{"level":25,"hp":848.0,"dmg":27.0,"name":"A calico cat","area":"High Tower of Sorcery","vnum":1363,"pop":1,"kind":"typical"},{"level":25,"hp":851.0,"dmg":27.0,"name":"An invisible stalker","area":"The Astral Plane","vnum":1903,"pop":4,"kind":"typical"},{"level":25,"hp":862.0,"dmg":27.0,"name":"A poor soulless being","area":"The Astral Plane","vnum":1904,"pop":10,"kind":"typical"},{"level":25,"hp":853.0,"dmg":27.0,"name":"the Dark Ethereal Knight","area":"The Keep of Mahn-Tor","vnum":2300,"pop":1,"kind":"typical"},{"level":25,"hp":846.0,"dmg":27.0,"name":"the Weeping Willow","area":"The Keep of Mahn-Tor","vnum":2304,"pop":1,"kind":"typical"},{"level":25,"hp":826.0,"dmg":27.0,"name":"the Ogre Chieftain","area":"The Keep of Mahn-Tor","vnum":2311,"pop":1,"kind":"typical"},{"level":25,"hp":857.0,"dmg":27.0,"name":"the Minotaur Gatekeeper","area":"The Keep of Mahn-Tor","vnum":2318,"pop":1,"kind":"typical"},{"level":25,"hp":839.0,"dmg":27.0,"name":"the High Minotaur Guard","area":"The Keep of Mahn-Tor","vnum":2319,"pop":2,"kind":"typical"},{"level":25,"hp":864.0,"dmg":27.0,"name":"the matron mother","area":"Drow City","vnum":5108,"pop":1,"kind":"typical"},{"level":25,"hp":865.0,"dmg":27.0,"name":"The mighty beholder","area":"Thalos","vnum":5200,"pop":1,"kind":"typical"},{"level":25,"hp":858.0,"dmg":27.0,"name":"The stone golem","area":"Thalos","vnum":5208,"pop":4,"kind":"typical"},{"level":25,"hp":827.0,"dmg":27.0,"name":"the huge, green dragon","area":"Haon Dor","vnum":6112,"pop":1,"kind":"typical"},{"level":25,"hp":838.0,"dmg":27.0,"name":"the Donjonkeeper","area":"Arachnos","vnum":6312,"pop":1,"kind":"typical"},{"level":25,"hp":857.0,"dmg":27.0,"name":"Talemon","area":"Valley of the Elves","vnum":7811,"pop":1,"kind":"typical"},{"level":25,"hp":857.0,"dmg":27.0,"name":"the guardian daemon","area":"Valley of the Elves","vnum":7812,"pop":1,"kind":"typical"},{"level":25,"hp":861.0,"dmg":27.0,"name":"Pinkerton Throt","area":"Mega-City One","vnum":8008,"pop":1,"kind":"typical"},{"level":25,"hp":854.0,"dmg":27.0,"name":"Judge Beddows","area":"Mega-City One","vnum":8011,"pop":1,"kind":"typical"},{"level":25,"hp":853.0,"dmg":27.0,"name":"the ghostly air elemental","area":"Dylan's Area","vnum":9103,"pop":5,"kind":"typical"},{"level":25,"hp":843.0,"dmg":27.0,"name":"the Head of Draco","area":"Galaxy","vnum":9313,"pop":1,"kind":"typical"},{"level":25,"hp":843.0,"dmg":27.0,"name":"Gord","area":"New Thalos","vnum":9538,"pop":1,"kind":"typical"},{"level":25,"hp":852.0,"dmg":27.0,"name":"Caramon","area":"New Thalos","vnum":9539,"pop":1,"kind":"typical"},{"level":25,"hp":827.0,"dmg":27.0,"name":"Raistlin","area":"New Thalos","vnum":9540,"pop":1,"kind":"typical"},{"level":25,"hp":828.0,"dmg":27.0,"name":"Curley GreenLeaf","area":"New Thalos","vnum":9541,"pop":1,"kind":"typical"},{"level":26,"hp":862.0,"dmg":28.0,"name":"A Golden Maiden","area":"Olympus","vnum":909,"pop":2,"kind":"typical"},{"level":26,"hp":867.0,"dmg":28.0,"name":"A githyanki warrior","area":"The Astral Plane","vnum":1906,"pop":2,"kind":"typical"},{"level":26,"hp":900.0,"dmg":28.0,"name":"the Draconian King","area":"Dragon Tower","vnum":2205,"pop":1,"kind":"typical"},{"level":26,"hp":876.0,"dmg":28.0,"name":"the Royal Minotaur Guard","area":"The Keep of Mahn-Tor","vnum":2320,"pop":2,"kind":"typical"},{"level":26,"hp":894.0,"dmg":28.0,"name":"Arachnos","area":"Arachnos","vnum":6314,"pop":1,"kind":"typical"},{"level":26,"hp":868.0,"dmg":28.0,"name":"the Ki-Rin","area":"Arachnos","vnum":6315,"pop":1,"kind":"typical"},{"level":26,"hp":667.5,"dmg":24.0,"name":"the hexton","area":"Nirvana","vnum":9007,"pop":8,"kind":"typical"},{"level":26,"hp":891.0,"dmg":28.0,"name":"the Blue Flame","area":"Elemental Canyon","vnum":9226,"pop":1,"kind":"typical"},{"level":26,"hp":884.0,"dmg":28.0,"name":"Cassiopeia the Queen","area":"Galaxy","vnum":9330,"pop":1,"kind":"typical"},{"level":26,"hp":859.0,"dmg":28.0,"name":"Cepheus the King","area":"Galaxy","vnum":9331,"pop":1,"kind":"typical"},{"level":27,"hp":925.0,"dmg":28.0,"name":"Captain Derrick","area":"New Ofcol","vnum":602,"pop":1,"kind":"typical"},{"level":27,"hp":929.0,"dmg":28.0,"name":"Captain Jacklyn","area":"New Ofcol","vnum":603,"pop":1,"kind":"typical"},{"level":27,"hp":899.0,"dmg":28.0,"name":"the dragon master","area":"Dragon Tower","vnum":2202,"pop":1,"kind":"typical"},{"level":27,"hp":912.0,"dmg":28.0,"name":"Juargan the Dwarven King","area":"Kingdom of Juargan","vnum":4704,"pop":1,"kind":"typical"},{"level":27,"hp":907.0,"dmg":28.0,"name":"Grimdale the ancient king","area":"Kingdom of Juargan","vnum":4706,"pop":1,"kind":"typical"},{"level":27,"hp":894.0,"dmg":28.0,"name":"the mysterious effreeti","area":"Dylan's Area","vnum":9104,"pop":2,"kind":"typical"},{"level":27,"hp":907.0,"dmg":28.0,"name":"Ursa Major the bear","area":"Galaxy","vnum":9329,"pop":1,"kind":"typical"},{"level":27,"hp":893.0,"dmg":28.0,"name":"Turtle dragon","area":"Crystalmir Lake","vnum":11008,"pop":1,"kind":"typical"},{"level":27,"hp":924.0,"dmg":28.0,"name":"the lurker above","area":"Ciquala's Lair","vnum":13407,"pop":1,"kind":"typical"},{"level":28,"hp":956.0,"dmg":29.0,"name":"the Elite Minotaur Guard","area":"The Keep of Mahn-Tor","vnum":2321,"pop":2,"kind":"typical"},{"level":28,"hp":655.0,"dmg":25.0,"name":"the quinton","area":"Nirvana","vnum":9008,"pop":4,"kind":"typical"},{"level":28,"hp":950.0,"dmg":29.0,"name":"the gigantic roc","area":"Dylan's Area","vnum":9106,"pop":1,"kind":"typical"},{"level":28,"hp":956.0,"dmg":29.0,"name":"the Hurricane","area":"Elemental Canyon","vnum":9230,"pop":1,"kind":"typical"},{"level":29,"hp":963.0,"dmg":29.0,"name":"a Dragonlord","area":"New Ofcol","vnum":630,"pop":3,"kind":"typical"},{"level":29,"hp":964.0,"dmg":29.0,"name":"the Minotaur Ring-Keeper","area":"The Keep of Mahn-Tor","vnum":2324,"pop":1,"kind":"typical"},{"level":29,"hp":1000.0,"dmg":29.0,"name":"the wraith","area":"Dwarven Kingdom","vnum":6502,"pop":2,"kind":"typical"},{"level":29,"hp":1002.0,"dmg":29.0,"name":"the mazekeeper","area":"Dwarven Kingdom","vnum":6516,"pop":1,"kind":"typical"},{"level":29,"hp":974.0,"dmg":29.0,"name":"the Grand Knight of paladins","area":"Redferne's Residence","vnum":7900,"pop":1,"kind":"typical"},{"level":29,"hp":960.0,"dmg":29.0,"name":"the pile of gold coins","area":"Descent to Hell","vnum":10402,"pop":1,"kind":"typical"},{"level":29,"hp":989.0,"dmg":29.0,"name":"half eaten horse carcass","area":"Descent to Hell","vnum":10455,"pop":1,"kind":"typical"},{"level":29,"hp":982.0,"dmg":29.0,"name":"stomach dragon","area":"Descent to Hell","vnum":10456,"pop":1,"kind":"typical"},{"level":30,"hp":1021.0,"dmg":30.0,"name":"the Priestess of Ofcol","area":"New Ofcol","vnum":628,"pop":1,"kind":"typical"},{"level":30,"hp":1019.0,"dmg":30.0,"name":"the master of Neutrality","area":"High Tower of Sorcery","vnum":1356,"pop":1,"kind":"typical"},{"level":30,"hp":1034.0,"dmg":30.0,"name":"the master of the black robes","area":"High Tower of Sorcery","vnum":1359,"pop":1,"kind":"typical"},{"level":30,"hp":1002.0,"dmg":30.0,"name":"The master of goodness","area":"High Tower of Sorcery","vnum":1362,"pop":1,"kind":"typical"},{"level":30,"hp":1029.0,"dmg":30.0,"name":"Gorak","area":"The Keep of Mahn-Tor","vnum":2325,"pop":1,"kind":"typical"},{"level":30,"hp":1023.0,"dmg":30.0,"name":"Darkoth","area":"The Keep of Mahn-Tor","vnum":2326,"pop":1,"kind":"typical"},{"level":30,"hp":1022.0,"dmg":30.0,"name":"Tyrgoth","area":"The Keep of Mahn-Tor","vnum":2327,"pop":1,"kind":"typical"},{"level":30,"hp":1032.0,"dmg":30.0,"name":"Amyrok","area":"The Keep of Mahn-Tor","vnum":2328,"pop":1,"kind":"typical"},{"level":30,"hp":993.0,"dmg":30.0,"name":"Sumaron","area":"The Keep of Mahn-Tor","vnum":2329,"pop":1,"kind":"typical"},{"level":30,"hp":1007.0,"dmg":30.0,"name":"Nasturn","area":"The Keep of Mahn-Tor","vnum":2330,"pop":1,"kind":"typical"},{"level":30,"hp":1037.0,"dmg":30.0,"name":"Belrak","area":"The Keep of Mahn-Tor","vnum":2331,"pop":1,"kind":"typical"},{"level":30,"hp":1010.0,"dmg":30.0,"name":"Dorgar","area":"The Keep of Mahn-Tor","vnum":2332,"pop":1,"kind":"typical"},{"level":30,"hp":1000.0,"dmg":35.0,"name":"the sorcerer","area":"Midgaard","vnum":3024,"pop":1,"kind":"typical"},{"level":30,"hp":1000.0,"dmg":32.5,"name":"the knight templar","area":"Midgaard","vnum":3025,"pop":1,"kind":"typical"},{"level":30,"hp":1000.0,"dmg":34.0,"name":"the knight","area":"Midgaard","vnum":3026,"pop":1,"kind":"typical"},{"level":30,"hp":1000.0,"dmg":37.5,"name":"the barbarian","area":"Midgaard","vnum":3027,"pop":1,"kind":"typical"},{"level":30,"hp":1000.0,"dmg":35.0,"name":"the acolyte of Tempest","area":"Mud School","vnum":3700,"pop":1,"kind":"typical"},{"level":30,"hp":1000.0,"dmg":35.0,"name":"the adept of Ezra","area":"Mud School","vnum":3707,"pop":1,"kind":"typical"},{"level":30,"hp":1000.0,"dmg":35.0,"name":"the adept of Alander","area":"Mud School","vnum":3708,"pop":1,"kind":"typical"},{"level":30,"hp":1036.0,"dmg":30.0,"name":"the brass dragon","area":"Sands of Sorrow","vnum":5005,"pop":1,"kind":"typical"},{"level":30,"hp":1032.0,"dmg":30.0,"name":"The dracolich","area":"Sands of Sorrow","vnum":5010,"pop":1,"kind":"typical"},{"level":30,"hp":1014.0,"dmg":30.0,"name":"the stone golem","area":"Old Thalos","vnum":5308,"pop":4,"kind":"typical"},{"level":30,"hp":1024.0,"dmg":30.0,"name":"the red dragon","area":"Sewer","vnum":7040,"pop":1,"kind":"typical"},{"level":30,"hp":1035.0,"dmg":30.0,"name":"Judge Eckersely","area":"Mega-City One","vnum":8010,"pop":1,"kind":"typical"},{"level":30,"hp":1013.0,"dmg":30.0,"name":"a gnoll","area":"Old Marsh","vnum":8305,"pop":1,"kind":"typical"},{"level":30,"hp":1003.0,"dmg":30.0,"name":"the Earth Ruler","area":"Elemental Canyon","vnum":9208,"pop":1,"kind":"typical"},{"level":30,"hp":1036.0,"dmg":30.0,"name":"the Fire Ruler","area":"Elemental Canyon","vnum":9209,"pop":1,"kind":"typical"},{"level":30,"hp":995.0,"dmg":30.0,"name":"The Air Ruler","area":"Elemental Canyon","vnum":9210,"pop":1,"kind":"typical"},{"level":30,"hp":1032.0,"dmg":30.0,"name":"The Lightning Ruler","area":"Elemental Canyon","vnum":9211,"pop":1,"kind":"typical"},{"level":30,"hp":1012.0,"dmg":30.0,"name":"The Water Ruler","area":"Elemental Canyon","vnum":9212,"pop":1,"kind":"typical"},{"level":30,"hp":1022.0,"dmg":30.0,"name":"Polaris, the polar star","area":"Galaxy","vnum":9332,"pop":1,"kind":"typical"},{"level":30,"hp":1022.0,"dmg":30.0,"name":"Shelbye","area":"New Thalos","vnum":9569,"pop":1,"kind":"typical"},{"level":30,"hp":991.0,"dmg":30.0,"name":"the high priest","area":"New Thalos","vnum":9581,"pop":1,"kind":"typical"},{"level":30,"hp":1023.0,"dmg":30.0,"name":"the Ixitxachitl","area":"New Thalos","vnum":9591,"pop":1,"kind":"typical"},{"level":30,"hp":1028.0,"dmg":30.0,"name":"a mare","area":"New Thalos","vnum":9595,"pop":1,"kind":"typical"},{"level":30,"hp":1033.0,"dmg":30.0,"name":"a nabassu","area":"Yggdrasil","vnum":9908,"pop":2,"kind":"typical"},{"level":30,"hp":590.0,"dmg":34.0,"name":"the grey adult Wolf","area":"Wolf Pointe","vnum":10070,"pop":1,"kind":"typical"},{"level":30,"hp":1028.0,"dmg":30.0,"name":"crispy critter","area":"Descent to Hell","vnum":10419,"pop":1,"kind":"typical"},{"level":30,"hp":1021.0,"dmg":30.0,"name":"Riverwind","area":"Crystalmir Lake","vnum":11003,"pop":1,"kind":"typical"},{"level":30,"hp":1013.0,"dmg":30.0,"name":"the human automaton","area":"Ciquala's Lair","vnum":13409,"pop":1,"kind":"typical"},{"level":31,"hp":1127.0,"dmg":33.0,"name":"the ugly, wicked witch","area":"Dylan's Area","vnum":9107,"pop":1,"kind":"typical"},{"level":31,"hp":1136.0,"dmg":33.0,"name":"The statue of Wandera","area":"New Thalos","vnum":9522,"pop":1,"kind":"typical"},{"level":31,"hp":1098.0,"dmg":33.0,"name":"The statue of Faramir","area":"New Thalos","vnum":9523,"pop":1,"kind":"typical"},{"level":31,"hp":1136.0,"dmg":33.0,"name":"The statue of Death","area":"New Thalos","vnum":9524,"pop":1,"kind":"typical"},{"level":31,"hp":1109.0,"dmg":33.0,"name":"The statue of Rohan","area":"New Thalos","vnum":9525,"pop":1,"kind":"typical"},{"level":31,"hp":1131.0,"dmg":33.0,"name":"The statue of Luxor","area":"New Thalos","vnum":9526,"pop":1,"kind":"typical"},{"level":31,"hp":1122.0,"dmg":33.0,"name":"The Royal Guard","area":"New Thalos","vnum":9582,"pop":8,"kind":"typical"},{"level":31,"hp":1136.0,"dmg":33.0,"name":"side of frozen beef","area":"Descent to Hell","vnum":10469,"pop":2,"kind":"typical"},{"level":32,"hp":1159.0,"dmg":37.0,"name":"An insubstantial ghost","area":"The Astral Plane","vnum":1915,"pop":3,"kind":"typical"},{"level":32,"hp":901.0,"dmg":17.0,"name":"The small droid","area":"Mos Eisley","vnum":5805,"pop":6,"kind":"typical"},{"level":32,"hp":1162.0,"dmg":37.0,"name":"a prisoner in hell","area":"Descent to Hell","vnum":10423,"pop":1,"kind":"typical"},{"level":32,"hp":1137.0,"dmg":37.0,"name":"a prisoner in hell","area":"Descent to Hell","vnum":10424,"pop":1,"kind":"typical"},{"level":33,"hp":1173.0,"dmg":37.0,"name":"Marshall Diana","area":"New Ofcol","vnum":601,"pop":1,"kind":"typical"},{"level":33,"hp":1170.0,"dmg":37.0,"name":"A pitch-black nightmare","area":"The Astral Plane","vnum":1901,"pop":2,"kind":"typical"},{"level":33,"hp":1211.0,"dmg":37.0,"name":"Mahn-Tor","area":"The Keep of Mahn-Tor","vnum":2333,"pop":1,"kind":"typical"},{"level":33,"hp":1000.0,"dmg":40.0,"name":"the tertian","area":"Nirvana","vnum":9009,"pop":4,"kind":"typical"},{"level":33,"hp":1178.0,"dmg":37.0,"name":"Guardian Lich","area":"Ciquala's Lair","vnum":13400,"pop":1,"kind":"typical"},{"level":33,"hp":1167.0,"dmg":37.0,"name":"the human automaton","area":"Ciquala's Lair","vnum":13410,"pop":1,"kind":"typical"},{"level":34,"hp":1211.0,"dmg":38.0,"name":"Samuel the Armourer","area":"Olympus","vnum":918,"pop":1,"kind":"typical"},{"level":34,"hp":1232.0,"dmg":38.0,"name":"a chimera","area":"Olympus","vnum":920,"pop":2,"kind":"typical"},{"level":34,"hp":1203.0,"dmg":38.0,"name":"The statue of Elmet","area":"New Thalos","vnum":9527,"pop":1,"kind":"typical"},{"level":34,"hp":1243.0,"dmg":38.0,"name":"a tortured soul","area":"Descent to Hell","vnum":10410,"pop":1,"kind":"typical"},{"level":34,"hp":1249.0,"dmg":38.0,"name":"bloody severed arm","area":"Descent to Hell","vnum":10414,"pop":1,"kind":"typical"},{"level":34,"hp":1215.0,"dmg":38.0,"name":"bloody severed foot","area":"Descent to Hell","vnum":10415,"pop":1,"kind":"typical"},{"level":34,"hp":1218.0,"dmg":38.0,"name":"bloody severed nose","area":"Descent to Hell","vnum":10416,"pop":1,"kind":"typical"},{"level":34,"hp":1201.0,"dmg":38.0,"name":"the prisoner Raiden","area":"Descent to Hell","vnum":10422,"pop":1,"kind":"typical"},{"level":35,"hp":1278.0,"dmg":38.0,"name":"A Soldier","area":"Olympus","vnum":910,"pop":2,"kind":"typical"},{"level":35,"hp":1255.0,"dmg":38.0,"name":"A hound of war","area":"Olympus","vnum":913,"pop":3,"kind":"typical"},{"level":35,"hp":1251.0,"dmg":38.0,"name":"An evil night hag","area":"The Astral Plane","vnum":1902,"pop":1,"kind":"typical"},{"level":35,"hp":1232.0,"dmg":38.0,"name":"A massive blast of fire","area":"The Astral Plane","vnum":1919,"pop":6,"kind":"typical"},{"level":35,"hp":1250.0,"dmg":38.0,"name":"the yochlol","area":"Drow City","vnum":5109,"pop":1,"kind":"typical"},{"level":35,"hp":1272.0,"dmg":38.0,"name":"Gordon the Brave","area":"Old Thalos","vnum":5305,"pop":1,"kind":"typical"},{"level":35,"hp":845.0,"dmg":20.5,"name":"The Jawa","area":"Mos Eisley","vnum":5802,"pop":9,"kind":"typical"},{"level":35,"hp":845.0,"dmg":20.5,"name":"a grinning alien","area":"Mos Eisley","vnum":5828,"pop":2,"kind":"typical"},{"level":35,"hp":1231.0,"dmg":38.0,"name":"The statue of TheMoog","area":"New Thalos","vnum":9521,"pop":1,"kind":"typical"},{"level":35,"hp":1243.0,"dmg":38.0,"name":"The statue of Alander","area":"New Thalos","vnum":9528,"pop":1,"kind":"typical"},{"level":35,"hp":1228.0,"dmg":38.0,"name":"The Sultan","area":"New Thalos","vnum":9550,"pop":1,"kind":"typical"},{"level":35,"hp":1260.0,"dmg":38.0,"name":"a Hollyphant","area":"Yggdrasil","vnum":9900,"pop":2,"kind":"typical"},{"level":35,"hp":1264.0,"dmg":38.0,"name":"a wemic","area":"Yggdrasil","vnum":9911,"pop":2,"kind":"typical"},{"level":35,"hp":1175.0,"dmg":36.0,"name":"A wolf pointe guard","area":"Wolf Pointe","vnum":10061,"pop":2,"kind":"typical"},{"level":35,"hp":1175.0,"dmg":40.0,"name":"A wolf pointe guard","area":"Wolf Pointe","vnum":10062,"pop":2,"kind":"typical"},{"level":35,"hp":1175.0,"dmg":36.0,"name":"A wolf pointe guard","area":"Wolf Pointe","vnum":10063,"pop":2,"kind":"typical"},{"level":35,"hp":1175.0,"dmg":43.0,"name":"A wolf pointe guard","area":"Wolf Pointe","vnum":10064,"pop":2,"kind":"typical"},{"level":35,"hp":1175.0,"dmg":38.0,"name":"A wolf pointe guard","area":"Wolf Pointe","vnum":10065,"pop":1,"kind":"typical"},{"level":35,"hp":1175.0,"dmg":40.0,"name":"A wolf pointe guard","area":"Wolf Pointe","vnum":10066,"pop":1,"kind":"typical"},{"level":35,"hp":1175.0,"dmg":41.0,"name":"A wolf pointe guard","area":"Wolf Pointe","vnum":10067,"pop":1,"kind":"typical"},{"level":35,"hp":1268.0,"dmg":38.0,"name":"the male Dee","area":"Descent to Hell","vnum":10403,"pop":1,"kind":"typical"},{"level":35,"hp":1232.0,"dmg":38.0,"name":"the female Dee","area":"Descent to Hell","vnum":10404,"pop":1,"kind":"typical"},{"level":35,"hp":1254.0,"dmg":38.0,"name":"skeletal warrior","area":"Descent to Hell","vnum":10413,"pop":2,"kind":"typical"},{"level":35,"hp":1244.0,"dmg":38.0,"name":"the manes","area":"Descent to Hell","vnum":10421,"pop":2,"kind":"typical"},{"level":35,"hp":1264.0,"dmg":38.0,"name":"juicy steak","area":"Descent to Hell","vnum":10471,"pop":1,"kind":"typical"},{"level":35,"hp":1254.0,"dmg":38.0,"name":"a docile creature","area":"Ciquala's Lair","vnum":13403,"pop":2,"kind":"typical"},{"level":36,"hp":1600.0,"dmg":46.5,"name":"secundus","area":"Nirvana","vnum":9010,"pop":4,"kind":"typical"},{"level":36,"hp":1319.0,"dmg":39.0,"name":"a damned soul","area":"Descent to Hell","vnum":10409,"pop":3,"kind":"typical"},{"level":36,"hp":1301.0,"dmg":39.0,"name":"the lost soul","area":"Descent to Hell","vnum":10418,"pop":2,"kind":"typical"},{"level":36,"hp":1282.0,"dmg":39.0,"name":"the human automaton","area":"Ciquala's Lair","vnum":13411,"pop":1,"kind":"typical"},{"level":37,"hp":1359.0,"dmg":39.0,"name":"The Ancient Gold Dragon","area":"New Ofcol","vnum":631,"pop":1,"kind":"typical"},{"level":37,"hp":1341.0,"dmg":39.0,"name":"A githyanki guardian","area":"The Astral Plane","vnum":1907,"pop":8,"kind":"typical"},{"level":37,"hp":1358.0,"dmg":39.0,"name":"the Great White Dragon","area":"Dragon Tower","vnum":2223,"pop":1,"kind":"typical"},{"level":37,"hp":1319.0,"dmg":39.0,"name":"the gold bar","area":"Descent to Hell","vnum":10405,"pop":1,"kind":"typical"},{"level":37,"hp":1329.0,"dmg":39.0,"name":"pile of bones","area":"Descent to Hell","vnum":10420,"pop":1,"kind":"typical"},{"level":37,"hp":1344.0,"dmg":39.0,"name":"the black pudding","area":"Ciquala's Lair","vnum":13404,"pop":2,"kind":"typical"},{"level":37,"hp":1349.0,"dmg":39.0,"name":"a vampire servant","area":"Ciquala's Lair","vnum":13408,"pop":1,"kind":"typical"},{"level":37,"hp":1303.0,"dmg":39.0,"name":"Lich","area":"Ciquala's Lair","vnum":13416,"pop":2,"kind":"typical"},{"level":39,"hp":1374.0,"dmg":40.0,"name":"A warlock of the Gith","area":"The Astral Plane","vnum":1912,"pop":4,"kind":"typical"},{"level":39,"hp":1404.0,"dmg":40.0,"name":"the Great Black Dragon","area":"Dragon Tower","vnum":2222,"pop":1,"kind":"typical"},{"level":39,"hp":1369.0,"dmg":40.0,"name":"the human automaton","area":"Ciquala's Lair","vnum":13412,"pop":1,"kind":"typical"},{"level":40,"hp":1458.0,"dmg":41.0,"name":"An evil gish","area":"The Astral Plane","vnum":1910,"pop":2,"kind":"typical"},{"level":40,"hp":1453.0,"dmg":41.0,"name":"An evil gish","area":"The Astral Plane","vnum":1911,"pop":6,"kind":"typical"},{"level":40,"hp":1427.0,"dmg":41.0,"name":"the rock slug","area":"Chapel Catacombs","vnum":3413,"pop":5,"kind":"typical"},{"level":40,"hp":1155.0,"dmg":21.0,"name":"The town person","area":"Mos Eisley","vnum":5808,"pop":10,"kind":"typical"},{"level":40,"hp":4000.0,"dmg":58.0,"name":"Primus","area":"Nirvana","vnum":9011,"pop":1,"kind":"outlier"},{"level":40,"hp":1464.0,"dmg":41.0,"name":"a Shire horse","area":"New Thalos","vnum":9594,"pop":1,"kind":"typical"},{"level":40,"hp":1401.0,"dmg":41.0,"name":"a dretch","area":"Yggdrasil","vnum":9903,"pop":2,"kind":"typical"},{"level":40,"hp":1429.0,"dmg":41.0,"name":"a gorgimera","area":"Yggdrasil","vnum":9913,"pop":1,"kind":"typical"},{"level":40,"hp":810.0,"dmg":37.0,"name":"black Wolf elder","area":"Wolf Pointe","vnum":10071,"pop":1,"kind":"typical"},{"level":40,"hp":533.0,"dmg":42.0,"name":"a wandering Wolf","area":"Wolf Pointe","vnum":10090,"pop":2,"kind":"outlier"},{"level":40,"hp":533.0,"dmg":42.0,"name":"a wandering wolf","area":"Wolf Pointe","vnum":10093,"pop":2,"kind":"outlier"},{"level":40,"hp":1465.0,"dmg":41.0,"name":"jury member","area":"Descent to Hell","vnum":10447,"pop":1,"kind":"typical"},{"level":40,"hp":1449.0,"dmg":41.0,"name":"a warped creature from a nightmare","area":"Ciquala's Lair","vnum":13402,"pop":2,"kind":"typical"},{"level":41,"hp":1643.0,"dmg":41.0,"name":"the Ancient Green Dragon","area":"Dragon Tower","vnum":2225,"pop":1,"kind":"typical"},{"level":41,"hp":1658.0,"dmg":41.0,"name":"demonguard","area":"Descent to Hell","vnum":10425,"pop":3,"kind":"typical"},{"level":41,"hp":1717.0,"dmg":41.0,"name":"the torturer lich","area":"Ciquala's Lair","vnum":13413,"pop":1,"kind":"typical"},{"level":42,"hp":1735.0,"dmg":42.0,"name":"A githyanki knight","area":"The Astral Plane","vnum":1908,"pop":2,"kind":"typical"},{"level":42,"hp":720.0,"dmg":44.0,"name":"a Mother Wolf","area":"Wolf Pointe","vnum":10091,"pop":1,"kind":"typical"},{"level":42,"hp":720.0,"dmg":44.0,"name":"an elder wolf","area":"Wolf Pointe","vnum":10092,"pop":1,"kind":"typical"},{"level":42,"hp":1682.0,"dmg":42.0,"name":"the Guardian of Hell","area":"Descent to Hell","vnum":10401,"pop":2,"kind":"typical"},{"level":42,"hp":1732.0,"dmg":42.0,"name":"the burning fool","area":"Descent to Hell","vnum":10426,"pop":2,"kind":"typical"},{"level":42,"hp":2101.0,"dmg":45.0,"name":"a follower","area":"The Dell","vnum":12101,"pop":1,"kind":"typical"},{"level":43,"hp":1505.0,"dmg":42.5,"name":"The Sand Person","area":"Mos Eisley","vnum":5803,"pop":2,"kind":"typical"},{"level":43,"hp":1794.0,"dmg":45.5,"name":"a chasme","area":"Yggdrasil","vnum":9904,"pop":2,"kind":"typical"},{"level":43,"hp":1740.0,"dmg":45.5,"name":"a scrumptious chicken pot pie","area":"Descent to Hell","vnum":10406,"pop":1,"kind":"typical"},{"level":43,"hp":1738.0,"dmg":45.5,"name":"a yummy beef pot pie","area":"Descent to Hell","vnum":10407,"pop":1,"kind":"typical"},{"level":43,"hp":1788.0,"dmg":45.5,"name":"a yummy vegetable pot pie","area":"Descent to Hell","vnum":10408,"pop":1,"kind":"typical"},{"level":43,"hp":1789.0,"dmg":45.5,"name":"the blood from the fountain","area":"Descent to Hell","vnum":10417,"pop":1,"kind":"typical"},{"level":44,"hp":1821.0,"dmg":46.5,"name":"a fire newt baby","area":"Fire Newt Mountain","vnum":2909,"pop":12,"kind":"typical"},{"level":44,"hp":1502.0,"dmg":112.5,"name":"The droid","area":"Mos Eisley","vnum":5806,"pop":4,"kind":"typical"},{"level":44,"hp":1831.0,"dmg":46.5,"name":"stray proton","area":"Descent to Hell","vnum":10465,"pop":1,"kind":"typical"},{"level":45,"hp":1869.0,"dmg":50.0,"name":"the Great Red Dragon","area":"Dragon Tower","vnum":2221,"pop":1,"kind":"typical"},{"level":45,"hp":1810.0,"dmg":50.0,"name":"a mountain goat","area":"Fire Newt Mountain","vnum":2901,"pop":2,"kind":"typical"},{"level":45,"hp":1884.0,"dmg":50.0,"name":"The mad etcher","area":"Chapel Catacombs","vnum":3414,"pop":1,"kind":"typical"},{"level":45,"hp":1824.0,"dmg":50.0,"name":"The spectral etcher's wife","area":"Chapel Catacombs","vnum":3415,"pop":1,"kind":"typical"},{"level":45,"hp":1868.0,"dmg":50.0,"name":"the living wall","area":"Descent to Hell","vnum":10412,"pop":2,"kind":"typical"},{"level":45,"hp":1819.0,"dmg":50.0,"name":"male construction worker","area":"Descent to Hell","vnum":10427,"pop":2,"kind":"typical"},{"level":45,"hp":1842.0,"dmg":50.0,"name":"female construction worker","area":"Descent to Hell","vnum":10428,"pop":3,"kind":"typical"},{"level":45,"hp":1801.0,"dmg":50.0,"name":"female construction worker","area":"Descent to Hell","vnum":10429,"pop":1,"kind":"typical"},{"level":45,"hp":1822.0,"dmg":50.0,"name":"wall of fire","area":"Descent to Hell","vnum":10431,"pop":1,"kind":"typical"},{"level":45,"hp":1877.0,"dmg":50.0,"name":"half frozen body","area":"Descent to Hell","vnum":10436,"pop":2,"kind":"typical"},{"level":45,"hp":1852.0,"dmg":50.0,"name":"nuclear technician","area":"Descent to Hell","vnum":10464,"pop":1,"kind":"typical"},{"level":45,"hp":1871.0,"dmg":50.0,"name":"guard dog","area":"Descent to Hell","vnum":10470,"pop":1,"kind":"typical"},{"level":45,"hp":1853.0,"dmg":50.0,"name":"Goldmoon","area":"Crystalmir Lake","vnum":11001,"pop":1,"kind":"typical"},{"level":45,"hp":1817.0,"dmg":50.0,"name":"the undead guardian","area":"Ciquala's Lair","vnum":13406,"pop":1,"kind":"typical"},{"level":46,"hp":1847.0,"dmg":51.0,"name":"A githyanki protector","area":"The Astral Plane","vnum":1909,"pop":2,"kind":"typical"},{"level":46,"hp":1870.0,"dmg":51.0,"name":"a fire newt worker","area":"Fire Newt Mountain","vnum":2906,"pop":4,"kind":"typical"},{"level":46,"hp":1884.0,"dmg":51.0,"name":"a babau","area":"Yggdrasil","vnum":9905,"pop":2,"kind":"typical"},{"level":46,"hp":1926.0,"dmg":51.0,"name":"hell hound","area":"Descent to Hell","vnum":10432,"pop":1,"kind":"typical"},{"level":47,"hp":1884.0,"dmg":51.0,"name":"a mountain ewe","area":"Fire Newt Mountain","vnum":2902,"pop":2,"kind":"typical"},{"level":47,"hp":1957.0,"dmg":51.0,"name":"a fire newt worker","area":"Fire Newt Mountain","vnum":2904,"pop":10,"kind":"typical"},{"level":47,"hp":1933.0,"dmg":51.0,"name":"vampire","area":"Ciquala's Lair","vnum":13417,"pop":2,"kind":"typical"},{"level":48,"hp":1943.0,"dmg":52.0,"name":"fire devil","area":"Descent to Hell","vnum":10430,"pop":1,"kind":"typical"},{"level":48,"hp":1989.0,"dmg":52.0,"name":"frantic lady","area":"Descent to Hell","vnum":10463,"pop":2,"kind":"typical"},{"level":48,"hp":2484.5,"dmg":53.0,"name":"an oily black rat","area":"The Valkyrie","vnum":27232,"pop":6,"kind":"typical"},{"level":49,"hp":1981.0,"dmg":52.0,"name":"soul trapped under the ice","area":"Descent to Hell","vnum":10435,"pop":1,"kind":"typical"},{"level":49,"hp":1968.0,"dmg":52.0,"name":"a bowl of blood","area":"Descent to Hell","vnum":10446,"pop":1,"kind":"typical"},{"level":49,"hp":1972.0,"dmg":52.0,"name":"maintenance worker","area":"Descent to Hell","vnum":10452,"pop":3,"kind":"typical"},{"level":49,"hp":1965.0,"dmg":52.0,"name":"reactor worker","area":"Descent to Hell","vnum":10459,"pop":1,"kind":"typical"},{"level":49,"hp":2714.5,"dmg":54.0,"name":"a powder monkey","area":"The Valkyrie","vnum":27213,"pop":4,"kind":"typical"},{"level":50,"hp":2080.0,"dmg":53.0,"name":"the Alchemist","area":"Olympus","vnum":916,"pop":1,"kind":"typical"},{"level":50,"hp":2065.0,"dmg":53.0,"name":"Clive the Weapons Master","area":"Olympus","vnum":917,"pop":1,"kind":"typical"},{"level":50,"hp":2065.0,"dmg":53.0,"name":"The Grand Mistress","area":"High Tower of Sorcery","vnum":1364,"pop":1,"kind":"typical"},{"level":50,"hp":2035.0,"dmg":53.0,"name":"The Astral Guardian","area":"The Astral Plane","vnum":1900,"pop":1,"kind":"typical"},{"level":50,"hp":2094.0,"dmg":53.0,"name":"a mountain kid","area":"Fire Newt Mountain","vnum":2903,"pop":3,"kind":"typical"},{"level":50,"hp":1255.0,"dmg":41.0,"name":"The town person","area":"Mos Eisley","vnum":5809,"pop":9,"kind":"typical"},{"level":50,"hp":2036.0,"dmg":53.0,"name":"a war horse","area":"New Thalos","vnum":9597,"pop":1,"kind":"typical"},{"level":50,"hp":2083.0,"dmg":53.0,"name":"a Shedu","area":"Yggdrasil","vnum":9902,"pop":2,"kind":"typical"},{"level":50,"hp":2019.0,"dmg":53.0,"name":"a frost giant","area":"Yggdrasil","vnum":9912,"pop":4,"kind":"typical"},{"level":50,"hp":3500.0,"dmg":52.5,"name":"the wolf pointe monk","area":"Wolf Pointe","vnum":10059,"pop":1,"kind":"typical"},{"level":50,"hp":2039.0,"dmg":53.0,"name":"frozen body","area":"Descent to Hell","vnum":10433,"pop":1,"kind":"typical"},{"level":50,"hp":2045.0,"dmg":53.0,"name":"I-scream worker","area":"Descent to Hell","vnum":10438,"pop":2,"kind":"typical"},{"level":50,"hp":2072.0,"dmg":53.0,"name":"Ice Screamer","area":"Descent to Hell","vnum":10439,"pop":1,"kind":"typical"},{"level":50,"hp":2068.0,"dmg":53.0,"name":"Complaints Officer","area":"Descent to Hell","vnum":10450,"pop":1,"kind":"typical"},{"level":50,"hp":2009.0,"dmg":53.0,"name":"weeds","area":"Descent to Hell","vnum":10453,"pop":2,"kind":"typical"},{"level":50,"hp":2011.0,"dmg":53.0,"name":"a gigantic automaton","area":"Ciquala's Lair","vnum":13405,"pop":1,"kind":"typical"},{"level":50,"hp":2081.0,"dmg":53.0,"name":"Ciquala's undead pet dragon","area":"Ciquala's Lair","vnum":13414,"pop":1,"kind":"typical"},{"level":50,"hp":2784.5,"dmg":55.0,"name":"a swarthy seafarer","area":"The Valkyrie","vnum":27206,"pop":7,"kind":"typical"},{"level":50,"hp":2784.5,"dmg":55.0,"name":"an emaciated oarsman","area":"The Valkyrie","vnum":27231,"pop":3,"kind":"typical"},{"level":51,"hp":2664.0,"dmg":53.0,"name":"Prometheus","area":"Olympus","vnum":902,"pop":1,"kind":"typical"},{"level":51,"hp":2633.0,"dmg":53.0,"name":"Demonic Foreman","area":"Descent to Hell","vnum":10440,"pop":1,"kind":"typical"},{"level":51,"hp":2914.5,"dmg":55.0,"name":"a senior coxswain","area":"The Valkyrie","vnum":27214,"pop":4,"kind":"typical"},{"level":51,"hp":2914.5,"dmg":55.0,"name":"a seaman's apprentice","area":"The Valkyrie","vnum":27215,"pop":4,"kind":"typical"},{"level":52,"hp":2633.0,"dmg":54.0,"name":"The lich-queen","area":"The Astral Plane","vnum":1913,"pop":1,"kind":"typical"},{"level":52,"hp":2727.0,"dmg":54.0,"name":"a yagnodemon","area":"Yggdrasil","vnum":9906,"pop":2,"kind":"typical"},{"level":52,"hp":2645.0,"dmg":54.0,"name":"killer penguin","area":"Descent to Hell","vnum":10437,"pop":4,"kind":"typical"},{"level":52,"hp":2676.0,"dmg":54.0,"name":"records worker","area":"Descent to Hell","vnum":10443,"pop":3,"kind":"typical"},{"level":52,"hp":2615.0,"dmg":54.0,"name":"Lawyer from Hell","area":"Descent to Hell","vnum":10449,"pop":1,"kind":"typical"},{"level":52,"hp":2687.0,"dmg":54.0,"name":"Homer Simpson","area":"Descent to Hell","vnum":10460,"pop":1,"kind":"typical"},{"level":52,"hp":2663.0,"dmg":54.0,"name":"devils food cake","area":"Descent to Hell","vnum":10461,"pop":1,"kind":"typical"},{"level":52,"hp":2712.0,"dmg":54.0,"name":"mad cook","area":"Descent to Hell","vnum":10462,"pop":1,"kind":"typical"},{"level":52,"hp":2623.0,"dmg":54.0,"name":"radiation","area":"Descent to Hell","vnum":10466,"pop":2,"kind":"typical"},{"level":52,"hp":2691.0,"dmg":54.0,"name":"the lich Ciquala","area":"Ciquala's Lair","vnum":13415,"pop":1,"kind":"typical"},{"level":52,"hp":2904.5,"dmg":56.0,"name":"a bearded seadog","area":"The Valkyrie","vnum":27207,"pop":3,"kind":"typical"},{"level":53,"hp":2728.0,"dmg":54.0,"name":"ice devil","area":"Descent to Hell","vnum":10434,"pop":1,"kind":"typical"},{"level":53,"hp":2663.0,"dmg":54.0,"name":"Secretary of Hell","area":"Descent to Hell","vnum":10441,"pop":1,"kind":"typical"},{"level":53,"hp":2763.0,"dmg":54.0,"name":"office worker from hell","area":"Descent to Hell","vnum":10442,"pop":2,"kind":"typical"},{"level":53,"hp":2750.0,"dmg":54.0,"name":"Judge Whopper","area":"Descent to Hell","vnum":10448,"pop":1,"kind":"typical"},{"level":53,"hp":2661.0,"dmg":54.0,"name":"reactor specialist","area":"Descent to Hell","vnum":10458,"pop":1,"kind":"typical"},{"level":54,"hp":2740.0,"dmg":55.0,"name":"a fire newt mother","area":"Fire Newt Mountain","vnum":2908,"pop":2,"kind":"typical"},{"level":54,"hp":2833.0,"dmg":55.0,"name":"Santa Claus","area":"Descent to Hell","vnum":10444,"pop":1,"kind":"typical"},{"level":54,"hp":2715.0,"dmg":55.0,"name":"High Priest of Hell","area":"Descent to Hell","vnum":10445,"pop":1,"kind":"typical"},{"level":54,"hp":2775.0,"dmg":55.0,"name":"the Chief Engineer of Hell","area":"Descent to Hell","vnum":10467,"pop":1,"kind":"typical"},{"level":54,"hp":3004.5,"dmg":60.0,"name":"an angry seadog","area":"The Valkyrie","vnum":27208,"pop":3,"kind":"typical"},{"level":54,"hp":3004.5,"dmg":60.0,"name":"a flock of hungry seagulls","area":"The Valkyrie","vnum":27216,"pop":2,"kind":"typical"},{"level":54,"hp":3004.5,"dmg":60.0,"name":"a sleepy lookout","area":"The Valkyrie","vnum":27217,"pop":1,"kind":"typical"},{"level":55,"hp":2705.0,"dmg":25.0,"name":"A stone-head creature","area":"Strange World","vnum":801,"pop":9,"kind":"typical"},{"level":55,"hp":2786.0,"dmg":55.0,"name":"Hephaestus","area":"Olympus","vnum":908,"pop":1,"kind":"typical"},{"level":55,"hp":2808.0,"dmg":55.0,"name":"A fairy dragon","area":"The Heavens","vnum":1000,"pop":3,"kind":"typical"},{"level":55,"hp":2392.5,"dmg":53.0,"name":"a peasant gardener","area":"Japan","vnum":1801,"pop":8,"kind":"typical"},{"level":55,"hp":2833.0,"dmg":55.0,"name":"Tiamat","area":"Dragon Tower","vnum":2220,"pop":1,"kind":"typical"},{"level":55,"hp":2771.0,"dmg":55.0,"name":"a fire newt guard","area":"Fire Newt Mountain","vnum":2905,"pop":6,"kind":"typical"},{"level":55,"hp":2810.0,"dmg":55.0,"name":"fire newt guard","area":"Fire Newt Mountain","vnum":2907,"pop":6,"kind":"typical"},{"level":55,"hp":2010.0,"dmg":50.0,"name":"The spaceman","area":"Mos Eisley","vnum":5810,"pop":5,"kind":"typical"},{"level":55,"hp":2010.0,"dmg":50.0,"name":"The smuggler","area":"Mos Eisley","vnum":5815,"pop":1,"kind":"typical"},{"level":55,"hp":3004.5,"dmg":60.0,"name":"a canon loader","area":"The Valkyrie","vnum":27212,"pop":4,"kind":"typical"},{"level":56,"hp":2872.0,"dmg":56.0,"name":"Hermes","area":"Olympus","vnum":903,"pop":1,"kind":"typical"},{"level":56,"hp":2856.0,"dmg":56.0,"name":"Athena","area":"Olympus","vnum":907,"pop":1,"kind":"typical"},{"level":56,"hp":2938.0,"dmg":56.0,"name":"Greater Fire Demon","area":"Descent to Hell","vnum":10468,"pop":1,"kind":"typical"},{"level":56,"hp":3104.5,"dmg":61.0,"name":"a sharp-eyed harpoonist","area":"The Valkyrie","vnum":27223,"pop":1,"kind":"typical"},{"level":57,"hp":20000.0,"dmg":52.5,"name":"Heimdall","area":"Immortal Zone","vnum":1200,"pop":1,"kind":"outlier"},{"level":57,"hp":2882.0,"dmg":60.0,"name":"The enslaved red dragon","area":"The Astral Plane","vnum":1918,"pop":1,"kind":"typical"},{"level":57,"hp":3104.5,"dmg":61.0,"name":"a wailing stormsister","area":"The Valkyrie","vnum":27224,"pop":2,"kind":"typical"},{"level":58,"hp":3105.0,"dmg":38.0,"name":"A bird-head creature","area":"Strange World","vnum":802,"pop":6,"kind":"typical"},{"level":58,"hp":2919.0,"dmg":61.0,"name":"Apollo","area":"Olympus","vnum":905,"pop":1,"kind":"typical"},{"level":58,"hp":3032.0,"dmg":61.0,"name":"a fire newt sergeant","area":"Fire Newt Mountain","vnum":2910,"pop":2,"kind":"typical"},{"level":59,"hp":2967.0,"dmg":61.0,"name":"Poseidon","area":"Olympus","vnum":904,"pop":1,"kind":"typical"},{"level":59,"hp":3053.0,"dmg":61.0,"name":"Ares","area":"Olympus","vnum":906,"pop":1,"kind":"typical"},{"level":59,"hp":3081.0,"dmg":61.0,"name":"Hera","area":"Olympus","vnum":921,"pop":1,"kind":"typical"},{"level":59,"hp":3024.0,"dmg":61.0,"name":"a fire newt general","area":"Fire Newt Mountain","vnum":2911,"pop":4,"kind":"typical"},{"level":60,"hp":3305.0,"dmg":43.0,"name":"A magnet-head","area":"Strange World","vnum":803,"pop":5,"kind":"typical"},{"level":60,"hp":3147.0,"dmg":62.0,"name":"Zeus","area":"Olympus","vnum":901,"pop":1,"kind":"typical"},{"level":60,"hp":3113.0,"dmg":62.0,"name":"Odin","area":"Olympus","vnum":914,"pop":1,"kind":"typical"},{"level":60,"hp":3070.0,"dmg":62.0,"name":"Ra the Sun God","area":"Olympus","vnum":919,"pop":1,"kind":"typical"},{"level":60,"hp":3123.0,"dmg":62.0,"name":"Butterfly of Chaos","area":"The Heavens","vnum":1011,"pop":1,"kind":"typical"},{"level":60,"hp":3051.0,"dmg":62.0,"name":"Lord Gith","area":"The Astral Plane","vnum":1914,"pop":1,"kind":"typical"},{"level":60,"hp":3304.5,"dmg":65.0,"name":"a master gunner","area":"The Valkyrie","vnum":27211,"pop":1,"kind":"typical"},{"level":61,"hp":3685.0,"dmg":66.0,"name":"A griffin","area":"The Heavens","vnum":1001,"pop":2,"kind":"typical"},{"level":61,"hp":3735.0,"dmg":66.0,"name":"some cave weeds","area":"Chapel Catacombs","vnum":3409,"pop":4,"kind":"typical"},{"level":61,"hp":3304.5,"dmg":65.0,"name":"a burly boatswain","area":"The Valkyrie","vnum":27209,"pop":4,"kind":"typical"},{"level":62,"hp":3729.0,"dmg":64.0,"name":"a fire lizard","area":"Fire Newt Mountain","vnum":2914,"pop":2,"kind":"typical"},{"level":62,"hp":3749.0,"dmg":67.0,"name":"The wraith","area":"Chapel Catacombs","vnum":3403,"pop":1,"kind":"typical"},{"level":62,"hp":3344.5,"dmg":66.0,"name":"Quartermaster Kirkelly","area":"The Valkyrie","vnum":27210,"pop":1,"kind":"typical"},{"level":64,"hp":4070.0,"dmg":60.0,"name":"a beautiful maiden","area":"Japan","vnum":1808,"pop":3,"kind":"typical"},{"level":64,"hp":3201.0,"dmg":68.0,"name":"a knight","area":"The Dell","vnum":12102,"pop":1,"kind":"typical"},{"level":65,"hp":5270.0,"dmg":66.0,"name":"a statue of Leonardo","area":"Japan","vnum":1802,"pop":1,"kind":"typical"},{"level":65,"hp":5270.0,"dmg":66.0,"name":"a statue of Michaelangelo","area":"Japan","vnum":1803,"pop":1,"kind":"typical"},{"level":65,"hp":5270.0,"dmg":66.0,"name":"a statue of Donatello","area":"Japan","vnum":1804,"pop":1,"kind":"typical"},{"level":65,"hp":5270.0,"dmg":66.0,"name":"a statue of Raphael","area":"Japan","vnum":1805,"pop":1,"kind":"typical"},{"level":65,"hp":3958.0,"dmg":68.0,"name":"a fire newt leader","area":"Fire Newt Mountain","vnum":2912,"pop":1,"kind":"typical"},{"level":65,"hp":4030.0,"dmg":68.0,"name":"a fire newt priest","area":"Fire Newt Mountain","vnum":2913,"pop":1,"kind":"typical"},{"level":65,"hp":3928.0,"dmg":68.0,"name":"the bony skeleton","area":"Chapel Catacombs","vnum":3400,"pop":4,"kind":"typical"},{"level":65,"hp":1752.5,"dmg":40.0,"name":"The Storm Trooper","area":"Mos Eisley","vnum":5801,"pop":14,"kind":"typical"},{"level":65,"hp":2257.5,"dmg":75.0,"name":"The keyboardist","area":"Mos Eisley","vnum":5811,"pop":1,"kind":"typical"},{"level":65,"hp":3775.0,"dmg":63.0,"name":"the executioner","area":"Wolf Pointe","vnum":10079,"pop":1,"kind":"typical"},{"level":65,"hp":4720.0,"dmg":58.0,"name":"the prisoner","area":"Wolf Pointe","vnum":10087,"pop":1,"kind":"typical"},{"level":65,"hp":3544.5,"dmg":68.0,"name":"a duergar stowaway","area":"The Valkyrie","vnum":27221,"pop":3,"kind":"typical"},{"level":65,"hp":3544.5,"dmg":68.0,"name":"Helmsman Pyke","area":"The Valkyrie","vnum":27222,"pop":1,"kind":"typical"},{"level":65,"hp":3544.5,"dmg":68.0,"name":"the ship's cook","area":"The Valkyrie","vnum":27229,"pop":1,"kind":"typical"},{"level":65,"hp":3544.5,"dmg":68.0,"name":"a master ropemaker","area":"The Valkyrie","vnum":27230,"pop":1,"kind":"typical"},{"level":66,"hp":4270.0,"dmg":56.0,"name":"a fisherman","area":"Japan","vnum":1807,"pop":5,"kind":"typical"},{"level":66,"hp":4170.0,"dmg":69.0,"name":"the red ninja","area":"Japan","vnum":1813,"pop":10,"kind":"typical"},{"level":68,"hp":4357.5,"dmg":70.0,"name":"the black ninja","area":"Japan","vnum":1815,"pop":8,"kind":"typical"},{"level":68,"hp":3783.0,"dmg":74.0,"name":"Sentry McTavish","area":"The Valkyrie","vnum":27218,"pop":1,"kind":"typical"},{"level":68,"hp":3864.5,"dmg":75.0,"name":"a hammerhead shark","area":"The Valkyrie","vnum":27225,"pop":1,"kind":"typical"},{"level":68,"hp":3864.5,"dmg":75.0,"name":"a school of remora fish","area":"The Valkyrie","vnum":27226,"pop":1,"kind":"typical"},{"level":69,"hp":4329.0,"dmg":70.0,"name":"the undead zombie","area":"Chapel Catacombs","vnum":3401,"pop":7,"kind":"typical"},{"level":69,"hp":4154.0,"dmg":70.0,"name":"The ghoul","area":"Chapel Catacombs","vnum":3402,"pop":5,"kind":"typical"},{"level":70,"hp":4065.0,"dmg":29.5,"name":"A flying-disc","area":"Strange World","vnum":804,"pop":5,"kind":"typical"},{"level":70,"hp":4065.0,"dmg":27.0,"name":"Skull-head","area":"Strange World","vnum":805,"pop":5,"kind":"outlier"},{"level":70,"hp":5357.5,"dmg":70.0,"name":"the village chief","area":"Japan","vnum":1809,"pop":1,"kind":"typical"},{"level":70,"hp":4857.5,"dmg":79.0,"name":"a half-asleep samurai","area":"Japan","vnum":1821,"pop":1,"kind":"typical"},{"level":70,"hp":5357.5,"dmg":76.5,"name":"the Commander of the Red","area":"Japan","vnum":1822,"pop":2,"kind":"typical"},{"level":70,"hp":4379.0,"dmg":71.0,"name":"Snapper Joe","area":"Chapel Catacombs","vnum":3410,"pop":1,"kind":"typical"},{"level":70,"hp":4279.0,"dmg":71.0,"name":"The X-ist flesh eater","area":"Chapel Catacombs","vnum":3411,"pop":1,"kind":"typical"},{"level":70,"hp":3510.0,"dmg":57.5,"name":"The man","area":"Mos Eisley","vnum":5813,"pop":1,"kind":"typical"},{"level":70,"hp":2505.0,"dmg":61.0,"name":"The drunk pilot","area":"Mos Eisley","vnum":5817,"pop":2,"kind":"typical"},{"level":70,"hp":4353.0,"dmg":71.0,"name":"a planetar","area":"Yggdrasil","vnum":9901,"pop":1,"kind":"typical"},{"level":70,"hp":4248.0,"dmg":71.0,"name":"a cloud dragon","area":"Yggdrasil","vnum":9909,"pop":1,"kind":"typical"},{"level":70,"hp":4408.0,"dmg":71.0,"name":"a solar","area":"Yggdrasil","vnum":9910,"pop":1,"kind":"typical"},{"level":70,"hp":4083.0,"dmg":75.0,"name":"a Vricillian infiltrator","area":"The Valkyrie","vnum":27219,"pop":1,"kind":"typical"},{"level":70,"hp":4083.0,"dmg":75.0,"name":"an overworked surgeon","area":"The Valkyrie","vnum":27220,"pop":1,"kind":"typical"},{"level":72,"hp":5171.0,"dmg":72.0,"name":"A white pegasus","area":"The Heavens","vnum":1002,"pop":2,"kind":"typical"},{"level":72,"hp":5078.0,"dmg":72.0,"name":"A black pegasus","area":"The Heavens","vnum":1003,"pop":2,"kind":"typical"},{"level":72,"hp":5857.5,"dmg":63.5,"name":"a samurai warrior","area":"Japan","vnum":1810,"pop":8,"kind":"typical"},{"level":72,"hp":4757.5,"dmg":76.0,"name":"the white ninja","area":"Japan","vnum":1814,"pop":10,"kind":"typical"},{"level":72,"hp":5193.5,"dmg":75.0,"name":"Ensign Hicks","area":"The Valkyrie","vnum":27205,"pop":1,"kind":"typical"},{"level":72,"hp":4193.0,"dmg":76.0,"name":"a sentient ibliat","area":"The Valkyrie","vnum":27227,"pop":1,"kind":"typical"},{"level":73,"hp":2505.0,"dmg":75.0,"name":"The Musician","area":"Mos Eisley","vnum":5812,"pop":2,"kind":"typical"},{"level":73,"hp":5393.5,"dmg":76.0,"name":"Petty Officer Vazquez","area":"The Valkyrie","vnum":27202,"pop":1,"kind":"typical"},{"level":73,"hp":5393.5,"dmg":76.0,"name":"Warrant Officer Hudson","area":"The Valkyrie","vnum":27203,"pop":1,"kind":"typical"},{"level":74,"hp":4857.5,"dmg":80.5,"name":"the Commander of the White","area":"Japan","vnum":1820,"pop":2,"kind":"typical"},{"level":75,"hp":4857.5,"dmg":76.5,"name":"an attendant","area":"Japan","vnum":1818,"pop":1,"kind":"typical"},{"level":75,"hp":4857.5,"dmg":76.5,"name":"the grey ninja","area":"Japan","vnum":1819,"pop":2,"kind":"typical"},{"level":75,"hp":5501.0,"dmg":77.5,"name":"The nightgaunt","area":"Chapel Catacombs","vnum":3407,"pop":5,"kind":"typical"},{"level":75,"hp":5255.0,"dmg":77.5,"name":"The hunting horror","area":"Chapel Catacombs","vnum":3408,"pop":1,"kind":"typical"},{"level":75,"hp":5010.0,"dmg":105.0,"name":"A large droid","area":"Mos Eisley","vnum":5807,"pop":2,"kind":"typical"},{"level":75,"hp":5275.0,"dmg":77.5,"name":"Ratatosk","area":"Yggdrasil","vnum":9914,"pop":1,"kind":"typical"},{"level":75,"hp":5330.0,"dmg":70.0,"name":"Town Judge","area":"Wolf Pointe","vnum":10076,"pop":1,"kind":"typical"},{"level":75,"hp":5330.0,"dmg":70.0,"name":"the sheriff","area":"Wolf Pointe","vnum":10081,"pop":1,"kind":"typical"},{"level":75,"hp":5330.0,"dmg":70.0,"name":"the town lord","area":"Wolf Pointe","vnum":10082,"pop":1,"kind":"typical"},{"level":75,"hp":5897.0,"dmg":89.5,"name":"Lieutenant Gorlami","area":"The Valkyrie","vnum":27201,"pop":1,"kind":"typical"},{"level":76,"hp":5857.5,"dmg":82.5,"name":"the elite samurai guard","area":"Japan","vnum":1811,"pop":8,"kind":"typical"},{"level":78,"hp":4010.0,"dmg":117.5,"name":"The retired Jedi master","area":"Mos Eisley","vnum":5822,"pop":1,"kind":"typical"},{"level":80,"hp":6105.0,"dmg":65.0,"name":"Pacman","area":"Strange World","vnum":806,"pop":1,"kind":"typical"},{"level":80,"hp":3005.0,"dmg":47.5,"name":"Aquila","area":"Midgaard","vnum":3162,"pop":1,"kind":"typical"},{"level":80,"hp":5726.0,"dmg":85.0,"name":"the spirit of King Crotus","area":"Chapel Catacombs","vnum":3412,"pop":1,"kind":"typical"},{"level":80,"hp":3005.0,"dmg":47.5,"name":"The pilot","area":"Mos Eisley","vnum":5816,"pop":3,"kind":"typical"},{"level":80,"hp":6897.0,"dmg":85.0,"name":"Captain Crueltooth","area":"The Valkyrie","vnum":27200,"pop":1,"kind":"typical"},{"level":82,"hp":6897.0,"dmg":86.0,"name":"A black unicorn","area":"The Heavens","vnum":1004,"pop":2,"kind":"typical"},{"level":82,"hp":7032.0,"dmg":86.0,"name":"A white unicorn","area":"The Heavens","vnum":1005,"pop":2,"kind":"typical"},{"level":82,"hp":7390.0,"dmg":80.5,"name":"the daimyo","area":"Japan","vnum":1806,"pop":1,"kind":"typical"},{"level":82,"hp":7390.0,"dmg":85.0,"name":"the Shadow Ninja","area":"Japan","vnum":1816,"pop":1,"kind":"typical"},{"level":82,"hp":7297.0,"dmg":86.0,"name":"Kirtok, Ambassador of Uk`tet","area":"The Valkyrie","vnum":27204,"pop":1,"kind":"typical"},{"level":83,"hp":5865.0,"dmg":56.0,"name":"An evil bomb","area":"Strange World","vnum":807,"pop":3,"kind":"typical"},{"level":85,"hp":7390.0,"dmg":85.0,"name":"the Shogun","area":"Japan","vnum":1812,"pop":1,"kind":"typical"},{"level":85,"hp":9390.0,"dmg":85.0,"name":"the Emperor","area":"Japan","vnum":1817,"pop":1,"kind":"typical"},{"level":85,"hp":4010.0,"dmg":110.0,"name":"The mechanic","area":"Mos Eisley","vnum":5814,"pop":2,"kind":"typical"},{"level":85,"hp":4020.0,"dmg":97.5,"name":"Greedo","area":"Mos Eisley","vnum":5819,"pop":1,"kind":"typical"},{"level":85,"hp":7070.0,"dmg":87.0,"name":"Kostchtchie","area":"Yggdrasil","vnum":9907,"pop":1,"kind":"typical"},{"level":86,"hp":7000.0,"dmg":52.0,"name":"Concordius","area":"Midgaard","vnum":3011,"pop":1,"kind":"typical"},{"level":88,"hp":6510.0,"dmg":51.0,"name":"Windman","area":"Strange World","vnum":808,"pop":1,"kind":"typical"},{"level":88,"hp":4755.0,"dmg":48.0,"name":"Thunderman","area":"Strange World","vnum":809,"pop":1,"kind":"typical"},{"level":88,"hp":6610.0,"dmg":54.0,"name":"Rainman","area":"Strange World","vnum":810,"pop":1,"kind":"typical"},{"level":88,"hp":5760.0,"dmg":50.5,"name":"Lightningman","area":"Strange World","vnum":811,"pop":1,"kind":"typical"},{"level":90,"hp":7780.0,"dmg":90.0,"name":"An evil cloud giant","area":"The Heavens","vnum":1006,"pop":2,"kind":"typical"},{"level":90,"hp":7593.0,"dmg":90.0,"name":"A cloud giant","area":"The Heavens","vnum":1007,"pop":2,"kind":"typical"},{"level":90,"hp":7809.0,"dmg":90.0,"name":"the Mi-Go","area":"Chapel Catacombs","vnum":3406,"pop":3,"kind":"typical"}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":{"type":"point","filled":true,"opacity":0.7},"params":[{"name":"zoom","select":"interval","bind":"scales"}],"encoding":{"x":{"field":"level","type":"quantitative","title":"Mob level","scale":{"domain":[1,91],"nice":false}},"y":{"field":"hp","type":"quantitative","title":"Average HP","scale":{"type":"log"}},"color":{"field":"kind","type":"nominal","title":"","scale":{"domain":["outlier","typical"],"range":["#b4532a","#8fa3b0"]}},"size":{"condition":{"test":"datum.kind === 'outlier'","value":70},"value":22},"tooltip":[{"field":"name","title":"Mob"},{"field":"vnum","title":"Vnum"},{"field":"area","title":"Area"},{"field":"level","title":"Level"},{"field":"hp","title":"HP"},{"field":"dmg","title":"Damage"},{"field":"pop","title":"Population"}]}}</script></div>
+
+<details class="abstract">
+<summary>Details: all 25 outliers</summary>
+<table>
+<thead>
+<tr>
+<th>Vnum</th>
+<th>Mob</th>
+<th>Area</th>
+<th>Lvl</th>
+<th>HP</th>
+<th>× local</th>
+<th>Damage</th>
+<th>× local</th>
+<th>Pop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3713</td>
+<td>a girdle shell snail</td>
+<td>Mud School</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0.3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3122</td>
+<td>the duckling</td>
+<td>Midgaard</td>
+<td>0</td>
+<td>2.5</td>
+<td>0.1</td>
+<td>1</td>
+<td>0.3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1200</td>
+<td>Heimdall</td>
+<td>Immortal Zone</td>
+<td>57</td>
+<td>20000</td>
+<td>6.9</td>
+<td>52.5</td>
+<td>0.9</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3701</td>
+<td>an acidic blob</td>
+<td>Mud School</td>
+<td>5</td>
+<td>50</td>
+<td>0.6</td>
+<td>1</td>
+<td>0.2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6605</td>
+<td>an old doll</td>
+<td>Dwarven Day Care</td>
+<td>1</td>
+<td>6.5</td>
+<td>0.2</td>
+<td>2.5</td>
+<td>0.7</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3123</td>
+<td>the sparrow</td>
+<td>Midgaard</td>
+<td>0</td>
+<td>7</td>
+<td>0.2</td>
+<td>2</td>
+<td>0.6</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3062</td>
+<td>a gutter rat</td>
+<td>Midgaard</td>
+<td>0</td>
+<td>7.5</td>
+<td>0.2</td>
+<td>2.5</td>
+<td>0.7</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3066</td>
+<td>an alley cat</td>
+<td>Midgaard</td>
+<td>0</td>
+<td>7.5</td>
+<td>0.2</td>
+<td>3.5</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3702</td>
+<td>a grizzly monster</td>
+<td>Mud School</td>
+<td>1</td>
+<td>8</td>
+<td>0.2</td>
+<td>2</td>
+<td>0.6</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3703</td>
+<td>a cowering beast</td>
+<td>Mud School</td>
+<td>1</td>
+<td>8</td>
+<td>0.2</td>
+<td>1.5</td>
+<td>0.4</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3704</td>
+<td>an angry cave beast</td>
+<td>Mud School</td>
+<td>1</td>
+<td>8</td>
+<td>0.2</td>
+<td>2.5</td>
+<td>0.7</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3705</td>
+<td>a morian cave serpent</td>
+<td>Mud School</td>
+<td>1</td>
+<td>8</td>
+<td>0.2</td>
+<td>2</td>
+<td>0.6</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3709</td>
+<td>a grey hare</td>
+<td>Mud School</td>
+<td>1</td>
+<td>11</td>
+<td>0.3</td>
+<td>2</td>
+<td>0.6</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3124</td>
+<td>the duck</td>
+<td>Midgaard</td>
+<td>1</td>
+<td>12</td>
+<td>0.3</td>
+<td>2.5</td>
+<td>0.7</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3712</td>
+<td>a silvery fox</td>
+<td>Mud School</td>
+<td>1</td>
+<td>13</td>
+<td>0.4</td>
+<td>3</td>
+<td>0.9</td>
+<td>1</td>
+</tr>
+<tr>
+<td>9011</td>
+<td>Primus</td>
+<td>Nirvana</td>
+<td>40</td>
+<td>4000</td>
+<td>2.8</td>
+<td>58</td>
+<td>1.4</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3141</td>
+<td>the cityguard</td>
+<td>Midgaard</td>
+<td>15</td>
+<td>130</td>
+<td>0.4</td>
+<td>9</td>
+<td>0.5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>10074</td>
+<td>the citizen</td>
+<td>Wolf Pointe</td>
+<td>15</td>
+<td>130</td>
+<td>0.4</td>
+<td>16</td>
+<td>0.9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10075</td>
+<td>a citizen</td>
+<td>Wolf Pointe</td>
+<td>15</td>
+<td>130</td>
+<td>0.4</td>
+<td>16</td>
+<td>0.9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10078</td>
+<td>an adventurer</td>
+<td>Wolf Pointe</td>
+<td>15</td>
+<td>130</td>
+<td>0.4</td>
+<td>16</td>
+<td>0.9</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10088</td>
+<td>the resident</td>
+<td>Wolf Pointe</td>
+<td>15</td>
+<td>130</td>
+<td>0.4</td>
+<td>17</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10089</td>
+<td>a resident</td>
+<td>Wolf Pointe</td>
+<td>15</td>
+<td>130</td>
+<td>0.4</td>
+<td>19</td>
+<td>1.1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10090</td>
+<td>a wandering Wolf</td>
+<td>Wolf Pointe</td>
+<td>40</td>
+<td>533</td>
+<td>0.4</td>
+<td>42</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10093</td>
+<td>a wandering wolf</td>
+<td>Wolf Pointe</td>
+<td>40</td>
+<td>533</td>
+<td>0.4</td>
+<td>42</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>805</td>
+<td>Skull-head</td>
+<td>Strange World</td>
+<td>70</td>
+<td>4065</td>
+<td>0.9</td>
+<td>27</td>
+<td>0.4</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="mobs-area-bands">10 areas have most mobs outside their advertised level range<a class="headerlink" href="#mobs-area-bands" title="Permanent link">&para;</a></h2>
+<p>Of the 969 combat mobs in areas that advertise a level range, <strong>24%</strong> fall outside it. In 10 areas, most of the mobs do: Machine Dreams (1–5, actually 8), Nirvana (30–35, actually 8–40), Graveyard (5–10, actually 3–6) and Troll Den (10–15, actually 3–13). Players choosing areas by the <code>areas</code> list will be misled.</p>
+<div class="xu-chart"><script type="application/json">{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","title":{"text":["Share of each area's mobs outside its advertised level band (worst","15)"],"anchor":"start"},"width":"container","height":330,"data":{"values":[{"area":"Machine Dreams","where":"below the band","share":0.0,"total":1.0,"band":"1–5"},{"area":"Machine Dreams","where":"above the band","share":1.0,"total":1.0,"band":"1–5"},{"area":"Nirvana","where":"below the band","share":0.75,"total":0.9166666666666666,"band":"30–35"},{"area":"Nirvana","where":"above the band","share":0.16666666666666666,"total":0.9166666666666666,"band":"30–35"},{"area":"Graveyard","where":"below the band","share":0.8333333333333334,"total":0.8333333333333334,"band":"5–10"},{"area":"Graveyard","where":"above the band","share":0.0,"total":0.8333333333333334,"band":"5–10"},{"area":"Troll Den","where":"below the band","share":0.7777777777777778,"total":0.7777777777777778,"band":"10–15"},{"area":"Troll Den","where":"above the band","share":0.0,"total":0.7777777777777778,"band":"10–15"},{"area":"Sands of Sorrow","where":"below the band","share":0.6470588235294118,"total":0.7647058823529411,"band":"10–20"},{"area":"Sands of Sorrow","where":"above the band","share":0.11764705882352941,"total":0.7647058823529411,"band":"10–20"},{"area":"Ciquala's Lair","where":"below the band","share":0.6111111111111112,"total":0.6666666666666666,"band":"40–50"},{"area":"Ciquala's Lair","where":"above the band","share":0.05555555555555555,"total":0.6666666666666666,"band":"40–50"},{"area":"Old Marsh","where":"below the band","share":0.5,"total":0.5625,"band":"15–25"},{"area":"Old Marsh","where":"above the band","share":0.0625,"total":0.5625,"band":"15–25"},{"area":"Haon Dor","where":"below the band","share":0.36363636363636365,"total":0.5454545454545454,"band":"5–10"},{"area":"Haon Dor","where":"above the band","share":0.18181818181818182,"total":0.5454545454545454,"band":"5–10"},{"area":"Drow City","where":"below the band","share":0.4166666666666667,"total":0.5,"band":"15–25"},{"area":"Drow City","where":"above the band","share":0.08333333333333333,"total":0.5,"band":"15–25"},{"area":"Mob Factory","where":"below the band","share":0.5,"total":0.5,"band":"5–15"},{"area":"Mob Factory","where":"above the band","share":0.0,"total":0.5,"band":"5–15"},{"area":"Kingdom of Juargan","where":"below the band","share":0.2222222222222222,"total":0.4444444444444444,"band":"8–25"},{"area":"Kingdom of Juargan","where":"above the band","share":0.2222222222222222,"total":0.4444444444444444,"band":"8–25"},{"area":"Olympus","where":"below the band","share":0.0,"total":0.44,"band":"5–50"},{"area":"Olympus","where":"above the band","share":0.44,"total":0.44,"band":"5–50"},{"area":"Dwarven Kingdom","where":"below the band","share":0.3125,"total":0.4375,"band":"10–25"},{"area":"Dwarven Kingdom","where":"above the band","share":0.125,"total":0.4375,"band":"10–25"},{"area":"Galaxy","where":"below the band","share":0.4375,"total":0.4375,"band":"20–30"},{"area":"Galaxy","where":"above the band","share":0.0,"total":0.4375,"band":"20–30"},{"area":"Dylan's Area","where":"below the band","share":0.0,"total":0.42857142857142855,"band":"15–25"},{"area":"Dylan's Area","where":"above the band","share":0.42857142857142855,"total":0.42857142857142855,"band":"15–25"}]},"background":"transparent","config":{"font":"Nunito Sans, Helvetica, Arial, sans-serif","view":{"stroke":null},"title":{"font":"Fraunces, Georgia, serif","fontSize":15,"fontWeight":600},"axis":{"labelFontSize":11,"titleFontSize":12,"gridOpacity":0.55},"legend":{"orient":"bottom","columns":5,"labelLimit":180},"range":{"category":["#b4532a","#e0a030","#5f8a5b","#4f7896","#9b5a8a","#8a6a45","#d36e5a","#3f8a86","#c9b27c"]},"bar":{"color":"#b4532a","cornerRadiusEnd":2},"line":{"strokeWidth":2.2},"point":{"color":"#b4532a"}},"mark":"bar","encoding":{"y":{"field":"area","type":"nominal","title":null,"sort":{"field":"total","order":"descending"}},"x":{"field":"share","type":"quantitative","title":"Share of the area's combat mobs","axis":{"format":"%"},"stack":true},"color":{"field":"where","type":"nominal","title":"","scale":{"domain":["below the band","above the band"],"range":["#4f7896","#b4532a"]}},"tooltip":[{"field":"area","title":"Area"},{"field":"band","title":"Advertised band"},{"field":"where","title":"Where"},{"field":"share","title":"Share"}]}}</script></div>
+
+<details class="abstract">
+<summary>Details: every area with mobs outside its band</summary>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Band</th>
+<th>Mobs</th>
+<th>Below</th>
+<th>Above</th>
+<th>Outside</th>
+<th>Actual range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Machine Dreams</td>
+<td>1–5</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>100%</td>
+<td>8–8</td>
+</tr>
+<tr>
+<td>Nirvana</td>
+<td>30–35</td>
+<td>12</td>
+<td>9</td>
+<td>2</td>
+<td>92%</td>
+<td>8–40</td>
+</tr>
+<tr>
+<td>Graveyard</td>
+<td>5–10</td>
+<td>6</td>
+<td>5</td>
+<td>0</td>
+<td>83%</td>
+<td>3–6</td>
+</tr>
+<tr>
+<td>Troll Den</td>
+<td>10–15</td>
+<td>9</td>
+<td>7</td>
+<td>0</td>
+<td>78%</td>
+<td>3–13</td>
+</tr>
+<tr>
+<td>Sands of Sorrow</td>
+<td>10–20</td>
+<td>17</td>
+<td>11</td>
+<td>2</td>
+<td>76%</td>
+<td>3–30</td>
+</tr>
+<tr>
+<td>Ciquala's Lair</td>
+<td>40–50</td>
+<td>18</td>
+<td>11</td>
+<td>1</td>
+<td>67%</td>
+<td>22–52</td>
+</tr>
+<tr>
+<td>Old Marsh</td>
+<td>15–25</td>
+<td>16</td>
+<td>8</td>
+<td>1</td>
+<td>56%</td>
+<td>3–30</td>
+</tr>
+<tr>
+<td>Haon Dor</td>
+<td>5–10</td>
+<td>11</td>
+<td>4</td>
+<td>2</td>
+<td>55%</td>
+<td>2–25</td>
+</tr>
+<tr>
+<td>Drow City</td>
+<td>15–25</td>
+<td>12</td>
+<td>5</td>
+<td>1</td>
+<td>50%</td>
+<td>1–35</td>
+</tr>
+<tr>
+<td>Mob Factory</td>
+<td>5–15</td>
+<td>8</td>
+<td>4</td>
+<td>0</td>
+<td>50%</td>
+<td>2–12</td>
+</tr>
+<tr>
+<td>Kingdom of Juargan</td>
+<td>8–25</td>
+<td>9</td>
+<td>2</td>
+<td>2</td>
+<td>44%</td>
+<td>5–27</td>
+</tr>
+<tr>
+<td>Olympus</td>
+<td>5–50</td>
+<td>25</td>
+<td>0</td>
+<td>11</td>
+<td>44%</td>
+<td>6–60</td>
+</tr>
+<tr>
+<td>Dwarven Kingdom</td>
+<td>10–25</td>
+<td>16</td>
+<td>5</td>
+<td>2</td>
+<td>44%</td>
+<td>3–29</td>
+</tr>
+<tr>
+<td>Galaxy</td>
+<td>20–30</td>
+<td>32</td>
+<td>14</td>
+<td>0</td>
+<td>44%</td>
+<td>4–30</td>
+</tr>
+<tr>
+<td>Dylan's Area</td>
+<td>15–25</td>
+<td>7</td>
+<td>0</td>
+<td>3</td>
+<td>43%</td>
+<td>20–31</td>
+</tr>
+<tr>
+<td>New Thalos</td>
+<td>10–35</td>
+<td>75</td>
+<td>25</td>
+<td>2</td>
+<td>36%</td>
+<td>1–50</td>
+</tr>
+<tr>
+<td>The Shire</td>
+<td>5–35</td>
+<td>26</td>
+<td>8</td>
+<td>0</td>
+<td>31%</td>
+<td>2–25</td>
+</tr>
+<tr>
+<td>Dwarven Catacombs</td>
+<td>10–20</td>
+<td>17</td>
+<td>4</td>
+<td>1</td>
+<td>29%</td>
+<td>5–24</td>
+</tr>
+<tr>
+<td>Gnome Village</td>
+<td>5–15</td>
+<td>24</td>
+<td>7</td>
+<td>0</td>
+<td>29%</td>
+<td>1–15</td>
+</tr>
+<tr>
+<td>Valley of the Elves</td>
+<td>5–20</td>
+<td>15</td>
+<td>2</td>
+<td>2</td>
+<td>27%</td>
+<td>3–25</td>
+</tr>
+<tr>
+<td>Mos Eisley</td>
+<td>40–80</td>
+<td>19</td>
+<td>3</td>
+<td>2</td>
+<td>26%</td>
+<td>32–85</td>
+</tr>
+<tr>
+<td>High Tower of Sorcery</td>
+<td>10–30</td>
+<td>63</td>
+<td>15</td>
+<td>1</td>
+<td>25%</td>
+<td>1–50</td>
+</tr>
+<tr>
+<td>Mud School</td>
+<td>1–5</td>
+<td>18</td>
+<td>1</td>
+<td>3</td>
+<td>22%</td>
+<td>0–30</td>
+</tr>
+<tr>
+<td>Thalos</td>
+<td>10–25</td>
+<td>9</td>
+<td>2</td>
+<td>0</td>
+<td>22%</td>
+<td>3–25</td>
+</tr>
+<tr>
+<td>Fire Newt Mountain</td>
+<td>40–60</td>
+<td>14</td>
+<td>0</td>
+<td>3</td>
+<td>21%</td>
+<td>44–65</td>
+</tr>
+<tr>
+<td>Arachnos</td>
+<td>5–20</td>
+<td>19</td>
+<td>0</td>
+<td>4</td>
+<td>21%</td>
+<td>5–26</td>
+</tr>
+<tr>
+<td>Elemental Canyon</td>
+<td>5–30</td>
+<td>34</td>
+<td>7</td>
+<td>0</td>
+<td>21%</td>
+<td>1–30</td>
+</tr>
+<tr>
+<td>Holy Grove</td>
+<td>5–20</td>
+<td>11</td>
+<td>2</td>
+<td>0</td>
+<td>18%</td>
+<td>2–20</td>
+</tr>
+<tr>
+<td>New Ofcol</td>
+<td>5–35</td>
+<td>29</td>
+<td>4</td>
+<td>1</td>
+<td>17%</td>
+<td>1–37</td>
+</tr>
+<tr>
+<td>Sewer</td>
+<td>5–30</td>
+<td>24</td>
+<td>4</td>
+<td>0</td>
+<td>17%</td>
+<td>1–30</td>
+</tr>
+<tr>
+<td>Plains of the North</td>
+<td>1–20</td>
+<td>7</td>
+<td>0</td>
+<td>1</td>
+<td>14%</td>
+<td>1–24</td>
+</tr>
+<tr>
+<td>Miden'nir</td>
+<td>5–15</td>
+<td>8</td>
+<td>1</td>
+<td>0</td>
+<td>12%</td>
+<td>4–10</td>
+</tr>
+<tr>
+<td>The Valkyrie</td>
+<td>50–75</td>
+<td>32</td>
+<td>2</td>
+<td>2</td>
+<td>12%</td>
+<td>48–82</td>
+</tr>
+<tr>
+<td>Dwarven Day Care</td>
+<td>1–5</td>
+<td>9</td>
+<td>0</td>
+<td>1</td>
+<td>11%</td>
+<td>1–8</td>
+</tr>
+<tr>
+<td>Descent to Hell</td>
+<td>30–55</td>
+<td>69</td>
+<td>5</td>
+<td>1</td>
+<td>9%</td>
+<td>5–56</td>
+</tr>
+<tr>
+<td>Chapel Catacombs</td>
+<td>40–90</td>
+<td>15</td>
+<td>1</td>
+<td>0</td>
+<td>7%</td>
+<td>6–90</td>
+</tr>
+<tr>
+<td>Crystalmir Lake</td>
+<td>5–45</td>
+<td>15</td>
+<td>1</td>
+<td>0</td>
+<td>7%</td>
+<td>4–45</td>
+</tr>
+<tr>
+<td>Yggdrasil</td>
+<td>35–85</td>
+<td>15</td>
+<td>1</td>
+<td>0</td>
+<td>7%</td>
+<td>30–85</td>
+</tr>
+<tr>
+<td>The Astral Plane</td>
+<td>20–60</td>
+<td>20</td>
+<td>1</td>
+<td>0</td>
+<td>5%</td>
+<td>10–60</td>
+</tr>
+<tr>
+<td>Japan</td>
+<td>60–85</td>
+<td>22</td>
+<td>1</td>
+<td>0</td>
+<td>5%</td>
+<td>55–85</td>
+</tr>
+<tr>
+<td>Old Thalos</td>
+<td>1–30</td>
+<td>29</td>
+<td>0</td>
+<td>1</td>
+<td>3%</td>
+<td>1–35</td>
+</tr>
+<tr>
+<td>The Keep of Mahn-Tor</td>
+<td>5–35</td>
+<td>34</td>
+<td>1</td>
+<td>0</td>
+<td>3%</td>
+<td>2–33</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="mobs-excluded">Left out of these numbers<a class="headerlink" href="#mobs-excluded" title="Permanent link">&para;</a></h2>
+<p>18 mobs above level 91 (hero/immortal content) and 16 mobs that never spawn.</p>
+<details class="abstract">
+<summary>Details: mobs above level 91, by area</summary>
+<p>Strange World 6, Mos Eisley 4, The Heavens 3, Chapel Catacombs 2, Japan 1, The Valkyrie 1, The Dell 1.</p>
+</details>
+<details class="abstract">
+<summary>Details: the 16 mobs that never spawn</summary>
+<p>No <code>M</code> reset, or every <code>M</code> reset has a world cap ≤ 0. Some may still be loaded by mob programs or specials.</p>
+<table>
+<thead>
+<tr>
+<th>Vnum</th>
+<th>Mob</th>
+<th>Area</th>
+<th>Lvl</th>
+<th>M resets</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10080</td>
+<td>some birds</td>
+<td>Wolf Pointe</td>
+<td>1</td>
+<td>1</td>
+<td>world cap ≤ 0</td>
+</tr>
+<tr>
+<td>6003</td>
+<td>the ferocious rabbit</td>
+<td>Haon Dor</td>
+<td>3</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>1516</td>
+<td>the hobgoblin guard</td>
+<td>Gnome Village</td>
+<td>6</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>1132</td>
+<td>a shiriff</td>
+<td>The Shire</td>
+<td>8</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>1720</td>
+<td>a displacer beast</td>
+<td>Wyvern Tower</td>
+<td>10</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>8319</td>
+<td>the orc shaman</td>
+<td>Old Marsh</td>
+<td>12</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>9534</td>
+<td>A bodyguard</td>
+<td>New Thalos</td>
+<td>12</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>1707</td>
+<td>a ranger leader</td>
+<td>Wyvern Tower</td>
+<td>15</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>1365</td>
+<td>a wizard</td>
+<td>High Tower of Sorcery</td>
+<td>17</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>1708</td>
+<td>the Lord of the Rangers</td>
+<td>Wyvern Tower</td>
+<td>20</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>9237</td>
+<td>a HUGE elemental</td>
+<td>Elemental Canyon</td>
+<td>20</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>9546</td>
+<td>Conan the Librarian</td>
+<td>New Thalos</td>
+<td>20</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>9563</td>
+<td>The chief guard</td>
+<td>New Thalos</td>
+<td>20</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>9202</td>
+<td>the cyclops</td>
+<td>Elemental Canyon</td>
+<td>22</td>
+<td>1</td>
+<td>world cap ≤ 0</td>
+</tr>
+<tr>
+<td>3041</td>
+<td>the waiter</td>
+<td>Midgaard</td>
+<td>23</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+<tr>
+<td>9512</td>
+<td>the banker</td>
+<td>New Thalos</td>
+<td>23</td>
+<td>0</td>
+<td>no reset</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
+<details class="info">
+<summary>How these numbers are calculated</summary>
+<ul>
+<li>1178 mob prototypes: 18 above hero, 1042 combat, 16 never spawns, 102 service. Only <strong>combat</strong> mobs (spawned, not shopkeepers/trainers/practicers/healers/gain, level ≤ 91) are analysed.</li>
+<li><strong>Population</strong> = the steady-state number of instances the resets maintain: min(world cap, sum of room caps) over the mob's <code>M</code> resets (db.cpp reset_room). It ignores wandering and kills, so it's what a freshly reset world holds.</li>
+<li><strong>Evenness</strong>: CV (stdev ÷ mean) and Gini, both 0 when perfectly even.</li>
+<li>HP and damage are dice averages. Damage dice only apply when the mob fights unarmed (fight.cpp:465); armed mobs use their weapon. AC is the mean of the four armour classes (more negative = better).</li>
+<li><strong>Outliers</strong>: HP or damage above 2.5× or below 0.4× the median of combat mobs within ±2 levels.</li>
+<li>Flags are as written in the area file (race flags are merged at load and aren't counted).</li>
+</ul>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../levelling/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Levelling path">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Levelling path
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../bugs/" class="md-footer__link md-footer__link--next" aria-label="Next: Bugs">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Bugs
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/sorts/tablesort.number.min.js"></script>
+      
+        <script src="../../javascripts/xania.js"></script>
+      
+        <script src="../../javascripts/explore-plan.js"></script>
+      
+        <script src="../../javascripts/explore.js"></script>
+      
+    
+  </body>
+</html>
