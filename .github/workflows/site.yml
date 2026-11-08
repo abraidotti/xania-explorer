@@ -50,6 +50,83 @@ env:
   FORK_REPO: ${{ vars.XANIA_FORK_REPO || format('{0}/xania', github.repository_owner) }}
 
 jobs:
+  # Three jobs run side by side; deploy waits for all of them.
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out xania-explorer
+        uses: actions/checkout@v7
+        with:
+          path: xania-explorer
+
+      - name: Check out upstream Xania
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ env.UPSTREAM_REPO }}
+          ref: ${{ inputs.upstream_ref || vars.XANIA_UPSTREAM_REF || 'main' }}
+          path: xania-upstream
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: xania-explorer/pyproject.toml
+
+      - name: Install
+        run: python -m pip install -e "./xania-explorer[dev,site]"
+
+      - name: Test (in parallel on every core)
+        working-directory: xania-explorer
+        env:
+          XANIA_DIR: ${{ github.workspace }}/xania-upstream
+        run: python -m pytest -q -n auto
+
+  explorer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out xania-explorer
+        uses: actions/checkout@v7
+        with:
+          path: xania-explorer
+
+      - name: Check out upstream Xania
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ env.UPSTREAM_REPO }}
+          ref: ${{ inputs.upstream_ref || vars.XANIA_UPSTREAM_REF || 'main' }}
+          path: xania-upstream
+
+      - name: Check out fork (skipped if it doesn't exist or isn't public)
+        id: fork
+        if: env.FORK_REPO != env.UPSTREAM_REPO
+        continue-on-error: true
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ env.FORK_REPO }}
+          ref: ${{ inputs.fork_ref || vars.XANIA_FORK_REF || '' }}
+          path: xania-fork
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: xania-explorer/pyproject.toml
+
+      - name: Install
+        run: python -m pip install -e "./xania-explorer[dev,site]"
+
+      - name: Bundle the explorer runtime (Pyodide + wheels)
+        working-directory: xania-explorer
+        run: python -m xania_explorer bundle
+
+      - name: Explorer budget (Pyodide in Node) and CPython parity
+        working-directory: xania-explorer
+        run: |
+          sides=(--xania ../xania-upstream)
+          if [ "${{ steps.fork.outcome }}" = "success" ]; then sides+=(--xania ../xania-fork); fi
+          node tests/pyodide/budget.mjs --pyodide docs/runtime/pyodide --wheels docs/runtime/wheels             "${sides[@]}" --seconds 60 --max-wheel-kb 1024 --dump "$RUNNER_TEMP/pyodide-pages.json"
+          python tests/pyodide/compare_cpython.py ../xania-upstream "$RUNNER_TEMP/pyodide-pages.json"
+
   build:
     runs-on: ubuntu-latest
     permissions:
@@ -107,24 +184,9 @@ jobs:
       - name: Install
         run: python -m pip install -e "./xania-explorer[dev,site]"
 
-      - name: Test
-        working-directory: xania-explorer
-        env:
-          XANIA_DIR: ${{ github.workspace }}/xania-upstream
-        run: python -m pytest -q
-
       - name: Bundle the explorer runtime (Pyodide + wheels)
         working-directory: xania-explorer
         run: python -m xania_explorer bundle
-
-      - name: Explorer budget (Pyodide in Node) and CPython parity
-        working-directory: xania-explorer
-        run: |
-          sides=(--xania ../xania-upstream)
-          if [ "${{ steps.fork.outcome }}" = "success" ]; then sides+=(--xania ../xania-fork); fi
-          node tests/pyodide/budget.mjs --pyodide docs/runtime/pyodide --wheels docs/runtime/wheels \
-            "${sides[@]}" --seconds 60 --max-wheel-kb 1024 --dump "$RUNNER_TEMP/pyodide-pages.json"
-          python tests/pyodide/compare_cpython.py ../xania-upstream "$RUNNER_TEMP/pyodide-pages.json"
 
       - name: Load-integrity check
         working-directory: xania-explorer
@@ -192,7 +254,7 @@ jobs:
 
   deploy:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    needs: build
+    needs: [build, test, explorer]
     runs-on: ubuntu-latest
     permissions:
       pages: write

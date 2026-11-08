@@ -58,7 +58,9 @@ publishes them under `/builds/`, listed on the Builds page.
 ## Published site
 
 [.github/workflows/site.yml](.github/workflows/site.yml) checks out `mattgodbolt/xania` and your fork next to
-this repo, runs the tests, builds the site with both as targets, and deploys it to GitHub Pages. It runs on every
+this repo and runs three jobs side by side: the tests (`pytest -n auto`, on every core; run them the same way
+locally), the explorer's Pyodide budget and parity check, and the site build with both checkouts as targets. Once
+all three pass, it deploys to GitHub Pages. It runs on every
 push to `main`, nightly (to pick up new Xania commits), and on demand, where you can choose a branch or commit for
 either checkout. Pull requests build the site but don't deploy it.
 
