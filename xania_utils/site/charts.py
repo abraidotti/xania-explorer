@@ -46,6 +46,27 @@ def embed(chart: dict[str, Any]) -> str:
     return f'\n<div class="xu-chart"><script type="application/json">{payload}</script></div>\n\n'
 
 
+def extract_specs(markdown: str) -> list[dict[str, Any]]:
+    """All chart specs embedded in a generated page (used by tests)."""
+    out = []
+    for chunk in markdown.split('<div class="xu-chart"><script type="application/json">')[1:]:
+        out.append(json.loads(chunk.split("</script></div>", 1)[0].replace("<\\/", "</")))
+    return out
+
+
+def stat_tiles(tiles: list[tuple[str, str]]) -> str:
+    """A row of big-number tiles: [(value, label), ...]."""
+    cells = "".join(f'<div class="xu-stat"><span class="xu-stat-value">{v}</span>'
+                    f'<span class="xu-stat-label">{label}</span></div>' for v, label in tiles)
+    return f'\n<div class="xu-stats">{cells}</div>\n\n'
+
+
+def details(title: str, body: str, kind: str = "abstract") -> str:
+    """A collapsed Material admonition (pymdownx.details) holding Markdown ``body``."""
+    indented = "\n".join(("    " + line) if line.strip() else "" for line in body.rstrip().split("\n"))
+    return f'\n??? {kind} "{title}"\n\n{indented}\n\n'
+
+
 def ordinal(field: str, title: str, order: list[str] | None = None) -> dict[str, Any]:
     enc = {"field": field, "type": "ordinal", "title": title}
     if order is not None:

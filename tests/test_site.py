@@ -47,22 +47,35 @@ def test_embed_is_valid_json_and_script_safe():
 
 
 @needs_xania
+def test_story_pages_lead_with_findings():
+    """Key numbers first, each finding followed by its chart, tables tucked into details blocks."""
+    from xania_utils.site.stories import mobs_page, weapons_page
+
+    world = load_world()
+    for page in (weapons_page(world), mobs_page(world)):
+        assert page.index('class="xu-stats"') < page.index('class="xu-chart"')
+        sections = page.split("\n## ")[1:]
+        findings = [s for s in sections if not s.startswith(("Method", "Left out"))]
+        assert len(findings) >= 4
+        assert sum('class="xu-chart"' in s for s in findings) >= len(findings) - 1  # all but "can't obtain"
+        assert "\n| " not in page.split("\n??? ")[0]  # no bare tables before the first details block
+        assert '??? info "How these numbers are calculated"' in page
+
+
+@needs_xania
 def test_every_chart_renders():
     """Compile each chart with the real Vega-Lite engine (dev extra: vl-convert-python)."""
     vlc = pytest.importorskip("vl_convert")
-    from xania_utils.site.compare import render as render_compare
-    from xania_utils.site.pages import mob_charts, weapon_charts
-    from xania_utils.site.targets import Target
     from xania_utils.paths import XaniaPaths
+    from xania_utils.site.compare import render as render_compare
+    from xania_utils.site.stories import mobs_page, weapons_page
+    from xania_utils.site.targets import Target
 
     world = load_world()
-    specs = list(weapon_charts(world).values()) + list(mob_charts(world).values())
     t = Target("a", XaniaPaths.resolve())
-    page = render_compare([(t, world), (Target("b", t.paths), world)])
-    specs += [json.loads(b.split('">', 1)[1].replace("<\\/", "</"))
-              for b in page.split('<div class="xu-chart"><script type="application/json')[1:]
-              for b in [b.split("</script></div>")[0]]]
-    assert len(specs) >= 13
+    pages = [weapons_page(world), mobs_page(world), render_compare([(t, world), (Target("b", t.paths), world)])]
+    specs = [s for page in pages for s in V.extract_specs(page)]
+    assert len(specs) >= 14
     for spec in specs:
         spec = {**spec, "width": 600}  # "container" needs a browser
         assert vlc.vegalite_to_svg(spec).startswith("<svg"), spec["title"]["text"]

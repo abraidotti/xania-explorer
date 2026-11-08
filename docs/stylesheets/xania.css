@@ -107,6 +107,59 @@
   line-height: 1.65;
 }
 
+/* -- Key-number tiles --------------------------------------------------------------- */
+.xu-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5.4rem, 1fr));
+  gap: 0.6rem;
+  margin: 1.2em 0 1.4em;
+}
+.xu-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 0.75rem 0.6rem;
+  background: var(--xu-card-bg);
+  border: 1px solid var(--xu-card-border);
+  border-top: 3px solid var(--md-primary-fg-color);
+  border-radius: 10px;
+}
+.xu-stat-value {
+  font-family: var(--xu-heading-font);
+  font-size: 1.55rem;
+  font-weight: 650;
+  line-height: 1.1;
+  color: var(--md-primary-fg-color);
+}
+.xu-stat-label {
+  font-size: 0.66rem;
+  line-height: 1.35;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Finding headings read as statements: give them room. */
+.md-typeset h2 {
+  margin-top: 2.2em;
+}
+
+/* Collapsed "Details" blocks: quiet, parchment-toned. */
+.md-typeset details.abstract,
+.md-typeset details.info {
+  border-color: var(--xu-card-border);
+  background: var(--xu-card-bg);
+  box-shadow: none;
+  font-size: 0.72rem;
+}
+.md-typeset details.abstract > summary,
+.md-typeset details.info > summary {
+  background: var(--xu-table-head);
+  font-weight: 600;
+}
+.md-typeset details.abstract > summary::before,
+.md-typeset details.info > summary::before {
+  background-color: var(--md-primary-fg-color);
+}
+
 /* -- Charts as cards ------------------------------------------------------------ */
 .xu-chart {
   margin: 1.2em 0 1.8em;

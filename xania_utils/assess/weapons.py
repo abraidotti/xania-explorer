@@ -141,181 +141,224 @@ def best_by_level(weapons: list[Weapon], types: set[str]) -> dict[int, float | N
     return out
 
 
-# -- report -----------------------------------------------------------------
+# -- analysis -----------------------------------------------------------------
+@dataclass
+class Plateau:
+    cls: str
+    lo: int
+    hi: int
+    value: float | None
+
+    @property
+    def length(self) -> int:
+        return self.hi - self.lo + 1
+
+
+class WeaponAnalysis:
+    """Everything the weapons report says, computed once. Both the Markdown report
+    (``render``) and the website page build on this."""
+
+    def __init__(self, world: World):
+        self.world = world
+        self.weapons = collect(world)
+        self.mortal = [w for w in self.weapons if w.level <= C.HERO_LEVEL]
+        self.got = [w for w in self.mortal if w.obtainable]
+        self.lost = [w for w in self.mortal if not w.obtainable]
+        self.high = [w for w in self.weapons if w.level > C.HERO_LEVEL]
+        self.over = sorted((w for w in self.weapons if w.over_cap), key=lambda w: (-(w.average - w.cap), w.vnum))
+        self.profiles = class_profiles(world.src_dir)
+        self.bands = C.bands()
+        self.best_any = best_by_level(self.got, set(SKILLED_TYPES))
+        self.best_start = {p.name: best_by_level(self.got, set(p.starting)) for p in self.profiles}
+        self.best_easy = {p.name: best_by_level(self.got, set(p.easy)) for p in self.profiles}
+
+    # -- derived facts used in findings ---------------------------------------
+    def in_band(self, band: C.Band) -> list[Weapon]:
+        return [w for w in self.got if w.level in band]
+
+    @property
+    def band_totals(self) -> list[int]:
+        return [len(self.in_band(b)) for b in self.bands]
+
+    @property
+    def early_cutoff(self) -> int:
+        """Top level of the first third of the bands (30 with 5-level bands)."""
+        return self.bands[len(self.bands) // 3 - 1].hi
+
+    @property
+    def early_count(self) -> int:
+        return sum(1 for w in self.got if w.level <= self.early_cutoff)
+
+    def class_access(self, view: str = "start") -> dict[str, int]:
+        attr = "starting" if view == "start" else "easy"
+        return {p.name: sum(w.type in getattr(p, attr) for w in self.got) for p in self.profiles}
+
+    def empty_bands(self, cls: str) -> list[C.Band]:
+        p = next(p for p in self.profiles if p.name == cls)
+        return [b for b in self.bands if not any(w.type in p.starting and w.level in b for w in self.got)]
+
+    def plateaus(self, cls: str | None = None, top: int = 3) -> list[Plateau]:
+        series = self.best_any if cls is None else self.best_start[cls]
+        return [Plateau(cls or "(any type)", lo, hi, v) for lo, hi, v in C.runs_without_increase(series)[:top]]
+
+    @property
+    def worst_plateau(self) -> Plateau:
+        return max((self.plateaus(p.name, 1)[0] for p in self.profiles), key=lambda x: (x.length, -x.lo))
+
+    @property
+    def last_buyable_level(self) -> int | None:
+        return max((w.level for w in self.got if w.buyable), default=None)
+
+    # -- tables ------------------------------------------------------------------
+    def supply_table(self) -> str:
+        rows = []
+        for b in self.bands:
+            ws = self.in_band(b)
+            counts = Counter(w.type for w in ws)
+            rows.append([b.label] + [counts.get(t, 0) for t in ALL_TYPES] + [len(ws), sum(w.buyable for w in ws)])
+        rows.append(["**all**"] + [sum(1 for w in self.got if w.type == t) for t in ALL_TYPES]
+                    + [len(self.got), sum(w.buyable for w in self.got)])
+        return C.table(["Levels"] + ALL_TYPES + ["total", "buyable"], rows)
+
+    def access_table(self) -> str:
+        rows = []
+        for b in self.bands:
+            ws = self.in_band(b)
+            rows.append([b.label] + [sum(w.type in p.starting for w in ws) for p in self.profiles]
+                        + [sum(w.type in p.easy for w in ws) for p in self.profiles])
+        start, easy = self.class_access("start"), self.class_access("easy")
+        rows.append(["**all**"] + [start[p.name] for p in self.profiles] + [easy[p.name] for p in self.profiles])
+        return C.table(["Levels"] + [f"{p.name} start" for p in self.profiles]
+                       + [f"{p.name} easy" for p in self.profiles], rows)
+
+    def empty_bands_list(self) -> str:
+        out = []
+        for p in self.profiles:
+            empty = self.empty_bands(p.name)
+            out.append(f"- **{p.name}** ({', '.join(p.starting)}): {len(empty)}/{len(self.bands)} bands"
+                       + (f" — {', '.join(b.label for b in empty)}" if empty else "") + "\n")
+        return "".join(out)
+
+    def per_level_table(self) -> str:
+        rows = [[lvl, sum(1 for w in self.got if w.level == lvl), allowed_average(lvl, False), self.best_any[lvl]]
+                + [self.best_start[p.name][lvl] for p in self.profiles] for lvl in C.LEVELS]
+        return C.table(["Lvl", "new", "cap", "best (any type)"] + [p.name for p in self.profiles], rows)
+
+    def cap_ratio_table(self) -> str:
+        def ratio(series, lvl):
+            v = series[lvl]
+            return None if v is None else v / allowed_average(lvl, False)
+
+        rows = [[b.label, ratio(self.best_any, b.hi)] + [ratio(self.best_start[p.name], b.hi) for p in self.profiles]
+                + [ratio(self.best_easy[p.name], b.hi) for p in self.profiles] for b in self.bands]
+        return C.table(["Levels", "any"] + [f"{p.name} start" for p in self.profiles]
+                       + [f"{p.name} easy" for p in self.profiles], rows)
+
+    def plateau_table(self) -> str:
+        rows = [[x.cls, f"{x.lo}–{x.hi}", x.length, x.value] for p in self.profiles for x in self.plateaus(p.name)]
+        rows += [[x.cls, f"{x.lo}–{x.hi}", x.length, x.value] for x in self.plateaus(None)]
+        return C.table(["Class", "Levels", "Length", "Best avg during"], rows)
+
+    def source_rows(self) -> list[dict]:
+        rows = []
+        for b in self.bands:
+            ws = self.in_band(b)
+            kinds = Counter(k for w in ws for k in w.source_kinds)
+            drops = [w.best_drop_pct for w in ws if w.best_drop_pct is not None]
+            gaps = [w.easiest_mob_level - w.obj.level for w in ws if w.easiest_mob_level is not None]
+            rows.append({"band": b.label, "weapons": len(ws), "shop": kinds.get("shop", 0),
+                         "mob": kinds.get("mob", 0), "floor": kinds.get("floor", 0) + kinds.get("container", 0),
+                         "drop": C.median_or(drops), "gap": C.median_or(gaps), "max_gap": max(gaps, default=None)})
+        return rows
+
+    def source_table(self) -> str:
+        return C.table(["Levels", "weapons", "buyable", "mob drop", "floor/container", "median mob drop %",
+                        "median mob − weapon lvl", "max mob − weapon lvl"],
+                       [[r["band"], r["weapons"], r["shop"], r["mob"], r["floor"], r["drop"], r["gap"], r["max_gap"]]
+                        for r in self.source_rows()])
+
+    def over_table(self) -> str:
+        area = self.world.obj_area
+        return C.table(["Vnum", "Weapon", "Area", "Type", "Lvl", "Dice", "Avg", "Cap", "Over by", "Sources"],
+                       [[w.vnum, w.obj.short_descr, area[w.vnum].name, w.type, w.obj.level,
+                         f"{w.obj.values[1]}d{w.obj.values[2]}", w.average, w.cap, w.average - w.cap,
+                         ", ".join(w.source_kinds) or "none"] for w in self.over])
+
+    def lost_table(self) -> str:
+        area = self.world.obj_area
+        return C.table(["Vnum", "Weapon", "Area", "Type", "Lvl", "Avg"],
+                       [[w.vnum, w.obj.short_descr, area[w.vnum].name, w.type, w.obj.level, w.average]
+                        for w in self.lost])
+
+    def method(self) -> str:
+        rows = [[p.name, ", ".join(p.starting), ", ".join(p.easy)] + [p.difficulty[t] for t in SKILLED_TYPES]
+                for p in self.profiles]
+        return (
+            f"- **Weapons**: {len(self.weapons)} weapon prototypes; {len(self.mortal)} at level ≤ {C.HERO_LEVEL}; "
+            f"**{len(self.got)} obtainable** (placed by at least one reset: shop stock, mob drop, floor or "
+            "container). Level-0 weapons count as level 1.\n"
+            "- **Usable at level L** = obtainable and weapon level ≤ L (a character can't wield an object above "
+            "their level, act_obj.cpp:137).\n"
+            "- **Class affinity.** Every class can learn every weapon from level 1 "
+            "(SkillTables.cpp), but at different *difficulty* (the class rating): it's the creation-point cost "
+            "and divides both practice gains (act_info.cpp:1604) and learn-by-use chances (Learning.cpp:52). "
+            "Weapon skill % multiplies both to-hit and damage (fight.cpp:452, :472), so a class is effectively "
+            "weaker with a hard-to-train type. Two views per class: *start* = types granted at creation by "
+            "`rom basics` + `<class> basics` + `<class> default` (knight default includes `weaponsmaster` = all "
+            f"types); *easy* = types with difficulty ≤ {EASY_DIFFICULTY}.\n"
+            "- **Exotic** weapons have no skill; every PC uses them at min(2 × level, 90)% (handler.cpp:108), so "
+            "they're shown in supply figures but excluded from class comparisons.\n"
+            "- **Damage** is the dice average `n × (s + 1) / 2`; skill, damroll, enhanced damage and weapon flags "
+            "come on top. The **cap** is `level/2 + 4` (+5% for two-handers), the rule `immworth` checks "
+            "(entity_balance.cpp).\n\n"
+            "Weapon difficulty by class (lower is easier; from `skill_table` ratings):\n\n"
+            + C.table(["Class", "start", "easy"] + SKILLED_TYPES, rows)
+        )
+
+    # -- headline sentences (shared by both renderers) ---------------------------
+    def finding_supply(self) -> str:
+        totals = self.band_totals
+        thin = self.bands[totals.index(min(totals))]
+        return (f"{self.early_count} of {len(self.got)} obtainable weapons "
+                f"({self.early_count / len(self.got):.0%}) are usable by level {self.early_cutoff}; "
+                f"the thinnest band is {thin.label} with {min(totals)}.")
+
+    def finding_access(self) -> str:
+        start = sorted(self.class_access("start").items(), key=lambda kv: -kv[1])
+        return ("Obtainable weapons in each class's starting types: "
+                + ", ".join(f"{c} {n}" for c, n in start) + ".")
+
+
+def analyse(world: World) -> WeaponAnalysis:
+    return WeaponAnalysis(world)
+
+
+# -- plain Markdown report (CLI: python -m xania_utils assess) ------------------
 def render(world: World) -> str:
-    weapons = collect(world)
-    mortal = [w for w in weapons if w.level <= C.HERO_LEVEL]
-    got = [w for w in mortal if w.obtainable]
-    profiles = class_profiles(world.src_dir)
-    bands = C.bands()
-
-    best_any = best_by_level(got, set(SKILLED_TYPES))
-    best_start = {p.name: best_by_level(got, set(p.starting)) for p in profiles}
-    best_easy = {p.name: best_by_level(got, set(p.easy)) for p in profiles}
-
-    out = [C.GENERATED_NOTE, "\n# Weapons: availability by level and class\n\n"]
-    out.append(_findings(got, profiles, bands, best_any, best_start))
-    out.append(_method(profiles, weapons, mortal, got))
-
-    # 1. Supply by band and type
-    out.append("\n## 1. New weapons per level band, by type\n\n"
-               "Obtainable weapons that become usable in each band (a character can't wield an object above "
-               "their level, act_obj.cpp:137).\n\n")
-    rows = []
-    totals = []
-    for b in bands:
-        in_band = [w for w in got if w.level in b]
-        counts = Counter(w.type for w in in_band)
-        totals.append((b.label, len(in_band)))
-        rows.append([b.label] + [counts.get(t, 0) for t in ALL_TYPES] + [len(in_band),
-                                                                           sum(w.buyable for w in in_band)])
-    rows.append(["**all**"] + [sum(1 for w in got if w.type == t) for t in ALL_TYPES]
-                + [len(got), sum(w.buyable for w in got)])
-    out.append(C.table(["Levels"] + ALL_TYPES + ["total", "buyable"], rows))
-    out.append("\n" + C.histogram(totals))
-    out.append(f"\nSpread across bands: {C.Spread.of([v for _, v in totals]).describe()}.\n")
-
-    # 2. Class access by band
-    out.append("\n## 2. New weapons per band that each class is good with\n\n"
-               "*Start* = weapon types the class knows at creation; *easy* = types it trains cheaply "
-               f"(difficulty ≤ {EASY_DIFFICULTY}). See Method.\n\n")
-    headers = ["Levels"] + [f"{p.name} start" for p in profiles] + [f"{p.name} easy" for p in profiles]
-    rows = []
-    for b in bands:
-        in_band = [w for w in got if w.level in b]
-        rows.append([b.label] + [sum(w.type in p.starting for w in in_band) for p in profiles]
-                    + [sum(w.type in p.easy for w in in_band) for p in profiles])
-    rows.append(["**all**"] + [sum(w.type in p.starting for w in got) for p in profiles]
-                + [sum(w.type in p.easy for w in got) for p in profiles])
-    out.append(C.table(headers, rows))
-    out.append("\nBands with **no** new weapon of a class's starting types:\n\n")
-    for p in profiles:
-        empty = [b.label for b in bands if not any(w.type in p.starting and w.level in b for w in got)]
-        out.append(f"- **{p.name}** ({', '.join(p.starting)}): {len(empty)}/{len(bands)} bands"
-                   + (f" — {', '.join(empty)}" if empty else "") + "\n")
-
-    # 3. Damage progression per level
-    out.append("\n## 3. Best usable weapon at each level\n\n"
-               "Average damage (dice average, before skill/damroll) of the best obtainable weapon a character "
-               "of that level can wield. *cap* is the balance allowance for a one-handed weapon of that level "
-               "(`level/2 + 4`). Class columns use the class's starting types.\n\n")
-    rows = []
-    for lvl in C.LEVELS:
-        new = sum(1 for w in got if w.level == lvl)
-        rows.append([lvl, new, allowed_average(lvl, False), best_any[lvl]]
-                    + [best_start[p.name][lvl] for p in profiles])
-    out.append(C.table(["Lvl", "new", "cap", "best (any type)"] + [p.name for p in profiles], rows))
-
-    out.append("\n### Best weapon as a share of the cap, by band\n\n"
-               "Ratio of the best usable weapon (at the top of the band) to the cap at that level. "
-               "Below ~0.8 means characters are noticeably under-equipped for their level.\n\n")
-    rows = []
-    for b in bands:
-        cap = allowed_average(b.hi, False)
-        def ratio(series):
-            v = series[b.hi]
-            return None if v is None else v / cap
-        rows.append([b.label, ratio(best_any)] + [ratio(best_start[p.name]) for p in profiles]
-                    + [ratio(best_easy[p.name]) for p in profiles])
-    out.append(C.table(["Levels", "any"] + [f"{p.name} start" for p in profiles]
-                       + [f"{p.name} easy" for p in profiles], rows))
-
-    # 4. Plateaus
-    out.append("\n## 4. Longest stretches without an upgrade\n\n"
-               "Level ranges over which a class's best starting-type weapon doesn't improve (top 3).\n\n")
-    rows = []
-    for p in profiles:
-        for lo, hi, val in C.runs_without_increase(best_start[p.name])[:3]:
-            rows.append([p.name, f"{lo}–{hi}", hi - lo + 1, val])
-    for lo, hi, val in C.runs_without_increase(best_any)[:3]:
-        rows.append(["(any type)", f"{lo}–{hi}", hi - lo + 1, val])
-    out.append(C.table(["Class", "Levels", "Length", "Best avg during"], rows))
-
-    # 5. Sources
-    out.append("\n## 5. How weapons are obtained, by band\n\n"
-               "A weapon can have several sources. *Mob drop %* is the best drop chance among its mob sources; "
-               "*mob − weapon level* is how much higher the easiest carrier is than the weapon itself.\n\n")
-    rows = []
-    for b in bands:
-        in_band = [w for w in got if w.level in b]
-        kinds = Counter(k for w in in_band for k in w.source_kinds)
-        drops = [w.best_drop_pct for w in in_band if w.best_drop_pct is not None]
-        gaps = [w.easiest_mob_level - w.obj.level for w in in_band if w.easiest_mob_level is not None]
-        rows.append([b.label, len(in_band), kinds.get("shop", 0), kinds.get("mob", 0),
-                     kinds.get("floor", 0) + kinds.get("container", 0),
-                     C.median_or(drops), C.median_or(gaps), max(gaps, default=None)])
-    out.append(C.table(["Levels", "weapons", "buyable", "mob drop", "floor/container", "median mob drop %",
-                        "median mob − weapon lvl", "max mob − weapon lvl"], rows))
-
-    # 6. Balance violations
-    over = sorted((w for w in weapons if w.over_cap), key=lambda w: (-(w.average - w.cap), w.vnum))
-    out.append(f"\n## 6. Weapons over the damage cap ({len(over)})\n\n"
-               "`average > level/2 + 4` (+5% for two-handers), the check `immworth` reports as "
-               "\"average damage too high\".\n\n")
-    if over:
-        out.append(C.table(["Vnum", "Weapon", "Area", "Type", "Lvl", "Dice", "Avg", "Cap", "Over by", "Sources"],
-                           [[w.vnum, w.obj.short_descr, world.obj_area[w.vnum].name, w.type, w.obj.level,
-                             f"{w.obj.values[1]}d{w.obj.values[2]}", w.average, w.cap, w.average - w.cap,
-                             ", ".join(w.source_kinds) or "none"] for w in over]))
-
-    # 7. Unobtainable / above-hero
-    lost = [w for w in mortal if not w.obtainable]
-    out.append(f"\n## 7. Weapons with no reset source ({len(lost)})\n\n"
-               "Not placed by any reset, so not available in normal play (they may come from mobprogs, "
-               "specials or immortals).\n\n")
-    if lost:
-        out.append(C.table(["Vnum", "Weapon", "Area", "Type", "Lvl", "Avg"],
-                           [[w.vnum, w.obj.short_descr, world.obj_area[w.vnum].name, w.type, w.obj.level, w.average]
-                            for w in lost]))
-    high = [w for w in weapons if w.level > C.HERO_LEVEL]
-    if high:
-        out.append(f"\n{len(high)} weapon(s) above level {C.HERO_LEVEL} are excluded from the analysis.\n")
+    a = analyse(world)
+    out = [C.GENERATED_NOTE, "\n# Weapons: availability by level and class\n\n", "## Headline findings\n\n",
+           f"- **Supply is front-loaded**: {a.finding_supply()}\n",
+           f"- **Class access**: {a.finding_access()}\n"]
+    for p in a.profiles:
+        x = a.plateaus(p.name, 1)[0]
+        out.append(f"- **{p.name}**: longest plateau {x.lo}–{x.hi} ({x.length} levels) at avg {x.value}; "
+                   f"at level {C.HERO_LEVEL} best avg {a.best_start[p.name][C.HERO_LEVEL]} vs "
+                   f"{a.best_any[C.HERO_LEVEL]} for any type.\n")
+    out.append("\n## Method\n\n" + a.method())
+    out.append("\n## 1. New weapons per level band, by type\n\n" + a.supply_table())
+    out.append("\n" + C.histogram([(b.label, n) for b, n in zip(a.bands, a.band_totals)]))
+    out.append(f"\nSpread across bands: {C.Spread.of(a.band_totals).describe()}.\n")
+    out.append("\n## 2. New weapons per band that each class is good with\n\n" + a.access_table())
+    out.append("\nBands with **no** new weapon of a class's starting types:\n\n" + a.empty_bands_list())
+    out.append("\n## 3. Best usable weapon at each level\n\n" + a.per_level_table())
+    out.append("\n### Best weapon as a share of the cap, by band\n\n" + a.cap_ratio_table())
+    out.append("\n## 4. Longest stretches without an upgrade\n\n" + a.plateau_table())
+    out.append("\n## 5. How weapons are obtained, by band\n\n" + a.source_table())
+    out.append(f"\n## 6. Weapons over the damage cap ({len(a.over)})\n\n" + (a.over_table() if a.over else "None.\n"))
+    out.append(f"\n## 7. Weapons with no reset source ({len(a.lost)})\n\n" + (a.lost_table() if a.lost else "None.\n"))
+    if a.high:
+        out.append(f"\n{len(a.high)} weapon(s) above level {C.HERO_LEVEL} are excluded from the analysis.\n")
     return "".join(out)
-
-
-def _method(profiles: list[ClassProfile], weapons, mortal, got) -> str:
-    rows = [[p.name, ", ".join(p.starting), ", ".join(p.easy)]
-            + [p.difficulty[t] for t in SKILLED_TYPES] for p in profiles]
-    return (
-        "\n## Method\n\n"
-        f"- **Weapons**: {len(weapons)} weapon prototypes; {len(mortal)} at level ≤ {C.HERO_LEVEL}; "
-        f"**{len(got)} obtainable** (placed by at least one reset: shop stock, mob drop, floor or container). "
-        "Level-0 weapons count as level 1.\n"
-        "- **Usable at level L** = obtainable and weapon level ≤ L.\n"
-        "- **Class affinity.** Every class can learn every weapon from level 1 "
-        "(SkillTables.cpp), but at different *difficulty* (the class rating): it's the creation-point cost "
-        "and divides both practice gains (act_info.cpp:1604) and learn-by-use chances (Learning.cpp:52). "
-        "Weapon skill % multiplies both to-hit and damage (fight.cpp:452, :472), so a class is effectively "
-        "weaker with a hard-to-train type. Two views per class:\n"
-        "  - *start*: types granted at creation by `rom basics` + `<class> basics` + `<class> default` "
-        "(knight default includes `weaponsmaster` = all types);\n"
-        f"  - *easy*: types with difficulty ≤ {EASY_DIFFICULTY}.\n"
-        "- **Exotic** weapons have no skill; every PC uses them at min(2 × level, 90)% (handler.cpp:108), so "
-        "they're shown in supply tables but excluded from class comparisons.\n"
-        "- Damage is the dice average `n × (s + 1) / 2`; skill, damroll, enhanced damage and weapon flags "
-        "come on top (see the combat guide).\n\n"
-        "Weapon difficulty by class (lower is easier; from `skill_table` ratings):\n\n"
-        + C.table(["Class", "start", "easy"] + SKILLED_TYPES, rows)
-    )
-
-
-def _findings(got, profiles, bands, best_any, best_start) -> str:
-    lines = ["## Headline findings\n\n"]
-    totals = [sum(1 for w in got if w.level in b) for b in bands]
-    half = sum(totals[: len(totals) // 3])
-    lines.append(f"- **Supply is front-loaded**: {half} of {len(got)} obtainable weapons "
-                 f"({half / len(got):.0%}) are usable by level {bands[len(bands) // 3 - 1].hi}; "
-                 f"the thinnest band is {bands[totals.index(min(totals))].label} with {min(totals)}.\n")
-    per_class = sorted(((sum(w.type in p.starting for w in got), p) for p in profiles), key=lambda x: x[0])
-    lines.append("- **Class access** (obtainable weapons in starting types): "
-                 + ", ".join(f"{p.name} {n}" for n, p in reversed(per_class)) + ".\n")
-    for p in profiles:
-        lo, hi, val = C.runs_without_increase(best_start[p.name])[0]
-        first = next((lvl for lvl, v in best_start[p.name].items() if v is not None), None)
-        lines.append(f"- **{p.name}**: first starting-type weapon at level {first}; longest plateau "
-                     f"{lo}–{hi} ({hi - lo + 1} levels) at avg {val}; at level 91 best avg "
-                     f"{best_start[p.name][C.HERO_LEVEL]} vs {best_any[C.HERO_LEVEL]} for any type.\n")
-    return "".join(lines)
 
 
 def write_csv(world: World, path: Path) -> None:
@@ -327,4 +370,4 @@ def write_csv(world: World, path: Path) -> None:
                   int(w.buyable), w.best_drop_pct, w.easiest_mob_level] for w in collect(world)])
 
 
-__all__ = ["render", "write_csv", "collect", "class_profiles", "allowed_average", "statistics"]
+__all__ = ["render", "analyse", "WeaponAnalysis", "write_csv", "collect", "class_profiles", "allowed_average"]

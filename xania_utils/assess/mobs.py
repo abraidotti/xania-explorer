@@ -77,126 +77,200 @@ def collect(world: World) -> list[MobInfo]:
                   key=lambda i: (i.level, i.mob.vnum))
 
 
-def render(world: World) -> str:
-    infos = collect(world)
-    combat = [i for i in infos if i.category == "combat"]
-    bands = C.bands()
-    by_band = {b: [i for i in combat if i.level in b] for b in bands}
+@dataclass
+class Outlier:
+    info: MobInfo
+    hp_ratio: float
+    dmg_ratio: float
 
-    out = [C.GENERATED_NOTE, "\n# Mobs: distribution and toughness by level\n\n"]
-    out.append(_findings(combat, bands, by_band))
+    @property
+    def score(self) -> float:
+        rs = [self.hp_ratio, self.dmg_ratio]
+        return max(max(rs), max((1 / r if r else 99) for r in rs))
 
-    cats = Counter(i.category for i in infos)
-    out.append("\n## Method\n\n"
-               f"- {len(infos)} mob prototypes: " + ", ".join(f"{n} {k}" for k, n in sorted(cats.items())) + ". "
-               "Only **combat** mobs (spawned, not shopkeepers/trainers/practicers/healers/gain, level ≤ 91) "
-               "are analysed below.\n"
-               "- **Population** = the steady-state number of instances the resets maintain: "
-               "min(world cap, sum of room caps) over the mob's `M` resets (db.cpp reset_room). "
-               "It ignores wandering and kills, so it's what a freshly reset world holds.\n"
-               "- HP and damage are dice averages. Damage dice only apply when the mob fights unarmed "
-               "(fight.cpp:465); armed mobs use their weapon. AC is the mean of the four armour classes "
-               "(more negative = better).\n"
-               "- Flags are as written in the area file (race flags are merged at load and aren't counted).\n")
 
-    # 1. Distribution by band
-    out.append("\n## 1. Distribution by level band\n\n")
-    rows = []
-    for b in bands:
-        g = by_band[b]
-        inband = [i.in_area_band for i in g if i.in_area_band is not None]
-        rows.append([b.label, len(g), sum(i.population for i in g),
-                     _pct(sum(i.aggressive for i in g), len(g)),
-                     C.median_or(i.mob.hit.average for i in g), C.median_or(i.mob.damage.average for i in g),
-                     C.median_or(i.mob.hitroll for i in g), C.median_or(i.mean_ac for i in g),
-                     _pct(sum(inband), len(inband))])
-    out.append(C.table(["Levels", "prototypes", "population", "aggressive", "median HP", "median dmg",
-                        "median hitroll", "median AC", "in area band"], rows))
-    proto = [len(by_band[b]) for b in bands]
-    pop = [sum(i.population for i in by_band[b]) for b in bands]
-    out.append(f"\n- Prototypes per band: {C.Spread.of(proto).describe()}.\n"
-               f"- Population per band: {C.Spread.of(pop).describe()}.\n\n")
-    out.append("Population per band:\n\n" + C.histogram([(b.label, p) for b, p in zip(bands, pop)]))
+@dataclass
+class AreaBandMiss:
+    area: str
+    band: tuple[int, int]
+    mobs: int
+    below: int
+    above: int
+    actual: tuple[int, int]
 
-    # 2. Per level
-    per_level_pop = {lvl: sum(i.population for i in combat if i.level == lvl) for lvl in C.LEVELS}
-    per_level_proto = {lvl: sum(1 for i in combat if i.level == lvl) for lvl in C.LEVELS}
-    empty = [lvl for lvl in C.LEVELS if per_level_proto[lvl] == 0]
-    out.append("\n## 2. Population at every level\n\n"
-               f"Per-level spread (population): {C.Spread.of(list(per_level_pop.values())).describe()}.\n\n"
-               f"Levels with **no** combat mob: {_ranges(empty) or 'none'}.\n\n")
-    out.append(C.histogram([(str(lvl), per_level_pop[lvl]) for lvl in C.LEVELS], width=50))
+    @property
+    def outside_share(self) -> float:
+        return (self.below + self.above) / self.mobs
 
-    # 3. Toughness outliers
-    def local_median(attr, lvl):
-        return C.median_or(attr(i) for i in combat if abs(i.level - lvl) <= OUTLIER_WINDOW)
 
-    outliers = []
-    for i in combat:
-        hp_med = local_median(lambda m: m.mob.hit.average, i.level)
-        dmg_med = local_median(lambda m: m.mob.damage.average, i.level)
-        hp_r = i.mob.hit.average / hp_med if hp_med else 1
-        dmg_r = i.mob.damage.average / dmg_med if dmg_med else 1
-        if not OUTLIER_LOW <= hp_r <= OUTLIER_HIGH or not OUTLIER_LOW <= dmg_r <= OUTLIER_HIGH:
-            score = max(hp_r, dmg_r, 1 / hp_r if hp_r else 99, 1 / dmg_r if dmg_r else 99)
-            outliers.append((score, i, hp_r, dmg_r))
-    outliers.sort(key=lambda t: (-t[0], t[1].mob.vnum))
-    out.append(f"\n## 3. Toughness outliers ({len(outliers)})\n\n"
-               f"Combat mobs whose HP or damage is above {OUTLIER_HIGH}× or below {OUTLIER_LOW}× the median "
-               f"of combat mobs within ±{OUTLIER_WINDOW} levels of them. Most extreme first (top 40).\n\n")
-    out.append(C.table(["Vnum", "Mob", "Area", "Lvl", "HP", "× local", "Damage", "× local", "Pop"],
-                       [[i.mob.vnum, i.mob.short_descr, i.area.name, i.mob.level, i.mob.hit.average, hp_r,
-                         i.mob.damage.average, dmg_r, i.population] for _, i, hp_r, dmg_r in outliers[:40]]))
+class MobAnalysis:
+    """Everything the mobs report says, computed once (shared by the Markdown report and the site)."""
 
-    # 4. Area bands
-    out.append("\n## 4. Mobs outside their area's level band\n\n"
-               "Areas with a declared `{min max}` band, sorted by share of combat mobs outside it.\n\n")
-    per_area = defaultdict(list)
-    for i in combat:
-        if i.in_area_band is not None:
-            per_area[i.area.name].append(i)
-    rows = []
-    for name, group in per_area.items():
-        h = group[0].area.file.header
-        below = sum(i.mob.level < h.min_level for i in group)
-        above = sum(i.mob.level > h.max_level for i in group)
-        if below or above:
-            rows.append([name, f"{h.min_level}–{h.max_level}", len(group), below, above,
-                         _pct(below + above, len(group)), f"{min(i.mob.level for i in group)}–"
-                                                          f"{max(i.mob.level for i in group)}"])
-    rows.sort(key=lambda r: (-(r[3] + r[4]) / r[2], r[0]))
-    out.append(C.table(["Area", "Band", "Mobs", "Below", "Above", "Outside", "Actual range"], rows))
+    def __init__(self, world: World):
+        self.world = world
+        self.infos = collect(world)
+        self.combat = [i for i in self.infos if i.category == "combat"]
+        self.high = [i for i in self.infos if i.category == "above hero"]
+        self.never = [i for i in self.infos if i.category == "never spawns"]
+        self.bands = C.bands()
+        self.by_band = {b: [i for i in self.combat if i.level in b] for b in self.bands}
+        self.band_pop = [sum(i.population for i in self.by_band[b]) for b in self.bands]
+        self.band_proto = [len(self.by_band[b]) for b in self.bands]
+        self.level_pop = {lvl: sum(i.population for i in self.combat if i.level == lvl) for lvl in C.LEVELS}
+        self.level_proto = {lvl: sum(1 for i in self.combat if i.level == lvl) for lvl in C.LEVELS}
+        self.empty_levels = [lvl for lvl in C.LEVELS if self.level_proto[lvl] == 0]
+        self.outliers = self._outliers()
+        self.area_misses = self._area_misses()
 
-    # 5. Excluded mobs
-    high = [i for i in infos if i.category == "above hero"]
-    never = [i for i in infos if i.category == "never spawns"]
-    out.append(f"\n## 5. Excluded mobs\n\n**Above level {C.HERO_LEVEL}** ({len(high)}), by area: "
-               + ", ".join(f"{a} {n}" for a, n in Counter(i.area.name for i in high).most_common()) + ".\n\n"
-               f"**Never spawn** ({len(never)}): no `M` reset, or every `M` reset has a world cap ≤ 0. "
-               "Some may still be loaded by mob programs or specials.\n\n")
-    out.append(C.table(["Vnum", "Mob", "Area", "Lvl", "M resets", "Reason"],
+    @property
+    def total_pop(self) -> int:
+        return sum(self.band_pop)
+
+    @property
+    def spread(self) -> C.Spread:
+        return C.Spread.of(self.band_pop)
+
+    @property
+    def early_cutoff(self) -> int:
+        return self.bands[len(self.bands) // 3 - 1].hi
+
+    @property
+    def early_share(self) -> float:
+        return sum(self.band_pop[: len(self.bands) // 3]) / self.total_pop if self.total_pop else 0.0
+
+    def median_hp(self, band: C.Band) -> float | None:
+        return C.median_or(i.mob.hit.average for i in self.by_band[band])
+
+    @property
+    def hp_drops(self) -> list[tuple[str, float, float]]:
+        hp = [self.median_hp(b) for b in self.bands]
+        return [(self.bands[k + 1].label, hp[k], hp[k + 1]) for k in range(len(hp) - 1)
+                if hp[k] and hp[k + 1] and hp[k + 1] < hp[k]]
+
+    def _outliers(self) -> list[Outlier]:
+        def local_median(attr, lvl):
+            return C.median_or(attr(i) for i in self.combat if abs(i.level - lvl) <= OUTLIER_WINDOW)
+
+        out = []
+        for i in self.combat:
+            hp_med = local_median(lambda m: m.mob.hit.average, i.level)
+            dmg_med = local_median(lambda m: m.mob.damage.average, i.level)
+            hp_r = i.mob.hit.average / hp_med if hp_med else 1
+            dmg_r = i.mob.damage.average / dmg_med if dmg_med else 1
+            if not OUTLIER_LOW <= hp_r <= OUTLIER_HIGH or not OUTLIER_LOW <= dmg_r <= OUTLIER_HIGH:
+                out.append(Outlier(i, hp_r, dmg_r))
+        return sorted(out, key=lambda o: (-o.score, o.info.mob.vnum))
+
+    def _area_misses(self) -> list[AreaBandMiss]:
+        per_area = defaultdict(list)
+        for i in self.combat:
+            if i.in_area_band is not None:
+                per_area[i.area.name].append(i)
+        out = []
+        for name, group in per_area.items():
+            h = group[0].area.file.header
+            below = sum(i.mob.level < h.min_level for i in group)
+            above = sum(i.mob.level > h.max_level for i in group)
+            if below or above:
+                levels = [i.mob.level for i in group]
+                out.append(AreaBandMiss(name, (h.min_level, h.max_level), len(group), below, above,
+                                        (min(levels), max(levels))))
+        return sorted(out, key=lambda m: (-m.outside_share, m.area))
+
+    @property
+    def banded_mobs(self) -> int:
+        return sum(1 for i in self.combat if i.in_area_band is not None)
+
+    @property
+    def banded_outside(self) -> int:
+        return sum(1 for i in self.combat if i.in_area_band is False)
+
+    # -- tables --------------------------------------------------------------------
+    def band_table(self) -> str:
+        rows = []
+        for b in self.bands:
+            g = self.by_band[b]
+            inband = [i.in_area_band for i in g if i.in_area_band is not None]
+            rows.append([b.label, len(g), sum(i.population for i in g), _pct(sum(i.aggressive for i in g), len(g)),
+                         C.median_or(i.mob.hit.average for i in g), C.median_or(i.mob.damage.average for i in g),
+                         C.median_or(i.mob.hitroll for i in g), C.median_or(i.mean_ac for i in g),
+                         _pct(sum(inband), len(inband))])
+        return C.table(["Levels", "prototypes", "population", "aggressive", "median HP", "median dmg",
+                        "median hitroll", "median AC", "in area band"], rows)
+
+    def outlier_table(self, limit: int | None = 40) -> str:
+        rows = self.outliers if limit is None else self.outliers[:limit]
+        return C.table(["Vnum", "Mob", "Area", "Lvl", "HP", "× local", "Damage", "× local", "Pop"],
+                       [[o.info.mob.vnum, o.info.mob.short_descr, o.info.area.name, o.info.mob.level,
+                         o.info.mob.hit.average, o.hp_ratio, o.info.mob.damage.average, o.dmg_ratio,
+                         o.info.population] for o in rows])
+
+    def area_table(self) -> str:
+        return C.table(["Area", "Band", "Mobs", "Below", "Above", "Outside", "Actual range"],
+                       [[m.area, f"{m.band[0]}–{m.band[1]}", m.mobs, m.below, m.above, _pct(m.below + m.above, m.mobs),
+                         f"{m.actual[0]}–{m.actual[1]}"] for m in self.area_misses])
+
+    def never_table(self) -> str:
+        return C.table(["Vnum", "Mob", "Area", "Lvl", "M resets", "Reason"],
                        [[i.mob.vnum, i.mob.short_descr, i.area.name, i.mob.level, len(i.spawns),
-                         "world cap ≤ 0" if i.spawns else "no reset"] for i in never]))
+                         "world cap ≤ 0" if i.spawns else "no reset"] for i in self.never])
+
+    def high_summary(self) -> str:
+        return ", ".join(f"{a} {n}" for a, n in Counter(i.area.name for i in self.high).most_common())
+
+    def method(self) -> str:
+        cats = Counter(i.category for i in self.infos)
+        return (f"- {len(self.infos)} mob prototypes: " + ", ".join(f"{n} {k}" for k, n in sorted(cats.items()))
+                + f". Only **combat** mobs (spawned, not shopkeepers/trainers/practicers/healers/gain, "
+                f"level ≤ {C.HERO_LEVEL}) are analysed.\n"
+                "- **Population** = the steady-state number of instances the resets maintain: "
+                "min(world cap, sum of room caps) over the mob's `M` resets (db.cpp reset_room). "
+                "It ignores wandering and kills, so it's what a freshly reset world holds.\n"
+                "- **Evenness**: CV (stdev ÷ mean) and Gini, both 0 when perfectly even.\n"
+                "- HP and damage are dice averages. Damage dice only apply when the mob fights unarmed "
+                "(fight.cpp:465); armed mobs use their weapon. AC is the mean of the four armour classes "
+                "(more negative = better).\n"
+                f"- **Outliers**: HP or damage above {OUTLIER_HIGH}× or below {OUTLIER_LOW}× the median of combat "
+                f"mobs within ±{OUTLIER_WINDOW} levels.\n"
+                "- Flags are as written in the area file (race flags are merged at load and aren't counted).\n")
+
+    # -- headline sentences ------------------------------------------------------------
+    def finding_evenness(self) -> str:
+        pop = self.band_pop
+        hi_b, lo_b = self.bands[pop.index(max(pop))], self.bands[pop.index(min(pop))]
+        return (f"{self.early_share:.0%} of the ~{self.total_pop} mobs a reset world holds are level "
+                f"≤ {self.early_cutoff}. Busiest band {hi_b.label} ({max(pop)}), emptiest {lo_b.label} "
+                f"({min(pop)}); CV {self.spread.cv:.2f}, Gini {self.spread.gini:.2f}.")
+
+
+def analyse(world: World) -> MobAnalysis:
+    return MobAnalysis(world)
+
+
+def render(world: World) -> str:
+    a = analyse(world)
+    out = [C.GENERATED_NOTE, "\n# Mobs: distribution and toughness by level\n\n", "## Headline findings\n\n",
+           f"- **{len(a.combat)} combat mob prototypes, ~{a.total_pop} instances** after a full reset.\n",
+           f"- **Evenness**: {a.finding_evenness()}\n"]
+    if a.hp_drops:
+        out.append("- **Toughness isn't monotonic**: median HP falls going into "
+                   + ", ".join(f"{b} ({x:g}→{y:g})" for b, x, y in a.hp_drops) + ".\n")
+    out.append("\n## Method\n\n" + a.method())
+    out.append("\n## 1. Distribution by level band\n\n" + a.band_table())
+    out.append(f"\n- Prototypes per band: {C.Spread.of(a.band_proto).describe()}.\n"
+               f"- Population per band: {a.spread.describe()}.\n\n")
+    out.append("Population per band:\n\n" + C.histogram([(b.label, p) for b, p in zip(a.bands, a.band_pop)]))
+    out.append("\n## 2. Population at every level\n\n"
+               f"Per-level spread (population): {C.Spread.of(list(a.level_pop.values())).describe()}.\n\n"
+               f"Levels with **no** combat mob: {_ranges(a.empty_levels) or 'none'}.\n\n")
+    out.append(C.histogram([(str(lvl), a.level_pop[lvl]) for lvl in C.LEVELS], width=50))
+    out.append(f"\n## 3. Toughness outliers ({len(a.outliers)})\n\nMost extreme first (top 40).\n\n"
+               + a.outlier_table())
+    out.append("\n## 4. Mobs outside their area's level band\n\n" + a.area_table())
+    out.append(f"\n## 5. Excluded mobs\n\n**Above level {C.HERO_LEVEL}** ({len(a.high)}), by area: "
+               f"{a.high_summary()}.\n\n**Never spawn** ({len(a.never)}): no `M` reset, or every `M` reset has a "
+               "world cap ≤ 0. Some may still be loaded by mob programs or specials.\n\n" + a.never_table())
     return "".join(out)
-
-
-def _findings(combat, bands, by_band) -> str:
-    pop = [sum(i.population for i in by_band[b]) for b in bands]
-    lo_b, hi_b = bands[pop.index(min(pop))], bands[pop.index(max(pop))]
-    first_third = sum(pop[: len(pop) // 3])
-    spread = C.Spread.of(pop)
-    hp = [C.median_or(i.mob.hit.average for i in by_band[b]) for b in bands]
-    drops = [(bands[k + 1].label, hp[k], hp[k + 1]) for k in range(len(hp) - 1)
-             if hp[k] and hp[k + 1] and hp[k + 1] < hp[k]]
-    lines = ["## Headline findings\n\n",
-             f"- **{len(combat)} combat mob prototypes, ~{sum(pop)} instances** after a full reset.\n",
-             f"- **Evenness**: population per 5-level band has CV {spread.cv:.2f} and Gini {spread.gini:.2f} "
-             f"(0 = perfectly even). Busiest band {hi_b.label} ({max(pop)}), emptiest {lo_b.label} ({min(pop)}); "
-             f"{first_third / sum(pop):.0%} of all mobs are level ≤ {bands[len(bands) // 3 - 1].hi}.\n"]
-    if drops:
-        lines.append("- **Toughness isn't monotonic**: median HP falls going into "
-                     + ", ".join(f"{b} ({a:g}→{c:g})" for b, a, c in drops) + ".\n")
-    return "".join(lines)
 
 
 def _pct(n: int, d: int) -> str | None:

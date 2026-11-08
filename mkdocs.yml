@@ -53,6 +53,7 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.superfences
+  - pymdownx.details
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/vega@5.30.0
