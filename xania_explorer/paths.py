@@ -19,6 +19,12 @@ SIBLING_XANIA = REPO_ROOT.parent / "xania"
 CANONICAL_REPO = "mattgodbolt/xania"
 UPSTREAM_URL = f"https://github.com/{CANONICAL_REPO}"
 METADATA_FILE = ".xania-explorer.json"  # {"repo": "owner/name", "branch": ..., "commit": ...} for git-less copies
+_GIT_CACHE: dict[tuple[str, tuple[str, ...]], str | None] = {}
+
+
+def clear_git_cache() -> None:
+    """Forget cached git answers (a rebuild under ``mkdocs serve`` may follow a new commit)."""
+    _GIT_CACHE.clear()
 
 
 def default_xania_dir() -> Path:
@@ -58,11 +64,16 @@ class XaniaPaths:
             return {}
 
     def git(self, *args: str) -> str | None:
-        try:
-            out = subprocess.run(["git", "-C", str(self.root), *args], capture_output=True, text=True, timeout=10)
-        except (OSError, subprocess.SubprocessError):
-            return None
-        return out.stdout.strip() if out.returncode == 0 and out.stdout.strip() else None
+        """Run git in the checkout; answers are cached per checkout (``clear_git_cache`` forgets them)."""
+        key = (str(self.root), args)
+        if key not in _GIT_CACHE:
+            try:
+                out = subprocess.run(["git", "-C", str(self.root), *args], capture_output=True, text=True,
+                                     timeout=10)
+                _GIT_CACHE[key] = out.stdout.strip() if out.returncode == 0 and out.stdout.strip() else None
+            except (OSError, subprocess.SubprocessError):
+                _GIT_CACHE[key] = None
+        return _GIT_CACHE[key]
 
     @property
     def commit(self) -> str | None:

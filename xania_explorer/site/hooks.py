@@ -18,6 +18,7 @@ from mkdocs.structure.files import File, Files
 
 # Absolute imports: MkDocs loads this file as a standalone module, not as part of the package.
 from xania_explorer import explore
+from xania_explorer.paths import clear_git_cache
 from xania_explorer.areafile.world import load_world
 from xania_explorer.site import builds, compare, pages
 from xania_explorer.site.dashboard import home_summary
@@ -42,6 +43,7 @@ _UTILS_LINK = re.compile(r"\[([^\]]*)\]\((?:\.\./)+(xania_explorer/[^)]*)\)")
 def on_config(config, **kwargs):
     global _targets, _generated
     cpp_tables.load_skills.cache_clear()  # serve rebuilds re-read the C++ tables
+    clear_git_cache()  # and the checkout's current commit
     cpp_tables.load_groups.cache_clear()
     character_tables.cache_clear()
     targets = load_targets()

@@ -155,6 +155,7 @@ def render_area(world: World, a: Area) -> str:
         rc = Counter(r.command for r in f.resets)
         out.append("- Resets by command: " + ", ".join(f"{k} {v}" for k, v in sorted(rc.items())) + "\n")
 
+    out.append(_difficulty(world, a))
     if f.mobs:
         out.append("\n## Mobs\n\nHP/damage shown as dice (average). AC is pierce/bash/slash/exotic "
                    "(more negative = better). Flags are as written in the file, before race flags are merged.\n\n")
@@ -202,3 +203,33 @@ def write_catalogue(world: World, out_dir: Path) -> list[Path]:
         if stale.name not in expected:
             stale.unlink()
     return written
+
+
+def _difficulty(world: World, a: Area) -> str:
+    """This area's difficulty profile (Area difficulty), when that assessment can run on this checkout."""
+    from ..systems import by_slug
+
+    if not by_slug("difficulty").available(world):
+        return ""
+    from ..assess import difficulty as D
+
+    p = next((x for x in D.analyse(world).areas if x.name == a.name), None)
+    if p is None:
+        return ""
+    vs = (f"{p.peer_ratio:.1f}× the median area within ±{D.PEER_LEVELS} levels ({p.verdict})" if p.peer_ratio
+          else "not compared (too few mobs)")
+    rows = [["Profiled at", f"level {p.level} (the median level of its {p.population} combat mob instances; "
+                            f"most are {p.span[0]}–{p.span[1]})"],
+            ["HP lost per typical fight", f"{p.hp_loss:.0%} for a knight, {vs}"],
+            ["Deadly", f"{p.deadly:.0%} of its mobs, counting helpers"
+                       + (f" (peers: {p.peer_deadly:.0%})" if p.peer_deadly is not None else "")],
+            ["XP per minute of combat", f"{p.xp_per_minute:.0f}"],
+            ["Aggressive / casters / with helpers", f"{p.aggressive:.0%} / {p.casters:.0%} / {p.helped:.0%}"]]
+    if p.traps:
+        rows.append(["Aggro traps", _list_names([f"{m.mob.short_descr} ({m.mob.level})" for m, _ in p.traps])])
+    return ("\n## Difficulty\n\nHow hard this area is for a character at its level, from "
+            "[Area difficulty](../difficulty.md).\n\n" + table(["", ""], rows))
+
+
+def _list_names(items: list[str]) -> str:
+    return items[0] if len(items) == 1 else ", ".join(items[:-1]) + " and " + items[-1]
