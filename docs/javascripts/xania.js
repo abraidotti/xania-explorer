@@ -37,9 +37,21 @@
     });
   }
 
+  // The version switcher keeps your place: the same section in the other version.
+  function keepPlace() {
+    document.querySelectorAll("a.xu-version-link").forEach(function (a) {
+      if (a.dataset.keepPlace) return;
+      a.dataset.keepPlace = "1";
+      a.addEventListener("click", function () {
+        if (location.hash) a.href = a.href.split("#")[0] + location.hash;
+      });
+    });
+  }
+
   function onPage() {
     renderCharts();
     sortTables();
+    keepPlace();
   }
   // The live explorer (explore.js) calls this after inserting a generated page.
   window.XaniaRender = onPage;

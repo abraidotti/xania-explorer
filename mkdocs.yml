@@ -10,8 +10,8 @@ docs_dir: docs
 theme:
   name: material
   features:
+    - navigation.tabs
     - navigation.sections
-    - navigation.indexes
     - navigation.top
     - navigation.footer
     - search.highlight
@@ -68,8 +68,10 @@ extra_javascript:
 extra_css:
   - stylesheets/xania.css
 
-# Per-area catalogue pages are reached from each version's catalogue, not the sidebar.
+# The sidebar lists the systems once (the baseline's pages); other versions' system pages and every area page
+# are reached through the version switcher and the catalogue, and light up their sidebar entry (hooks.py).
 not_in_nav: |
+  /*/*.md
   /*/areas/*.md
   /versions.md
   /builds.md

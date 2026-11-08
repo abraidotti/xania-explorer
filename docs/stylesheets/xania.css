@@ -411,3 +411,14 @@
 .md-typeset .xe-notice .xe-fallback p { border: 0; background: none; padding: 0; }
 .md-typeset .xe-fallback pre { margin: 0.4rem 0; }
 .md-typeset .xe-fallback code { white-space: pre-wrap; word-break: break-all; }
+
+/* Version switcher under a report page's title */
+.md-typeset .xu-version-switch {
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+  border-left: 3px solid var(--md-accent-fg-color);
+  padding: 0.1rem 0 0.1rem 0.6rem;
+  margin: -0.4rem 0 1.2rem;
+}
+.md-typeset .xu-version-switch p { margin: 0; }
+.md-typeset .xu-version-switch strong { color: var(--md-default-fg-color); }

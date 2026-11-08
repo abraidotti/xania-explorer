@@ -39,6 +39,18 @@ class Target:
         return f"{slug} @ {branch}" if branch and branch != "HEAD" else slug
 
     @property
+    def short(self) -> str:
+        """A sidebar-sized name: ``Canonical · main``, ``abraidotti · balance`` (owner/repo when not "xania")."""
+        from ..paths import CANONICAL_REPO
+
+        slug, branch = self.paths.repo_slug, self.paths.branch
+        if not slug:
+            return self.name
+        owner, _, repo = slug.partition("/")
+        who = "Canonical" if slug == CANONICAL_REPO else owner if repo == "xania" else slug
+        return f"{who} · {branch}" if branch and branch != "HEAD" else who
+
+    @property
     def label(self) -> str:
         """e.g. ``upstream: mattgodbolt/xania @ main (82171fa)`` (parts omitted when unknown)."""
         commit = self.paths.commit

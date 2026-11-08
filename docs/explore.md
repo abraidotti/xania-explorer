@@ -6,7 +6,7 @@ the area files and the C++ tables it reads straight from GitHub, then runs the s
 
 <div id="xe-app" class="xe-app"></div>
 
-<noscript>The explorer needs JavaScript. The prebuilt versions in the navigation work without it.</noscript>
+<noscript>The explorer needs JavaScript. The prebuilt versions under Reports work without it.</noscript>
 
 ??? info "How it works, and its limits"
 
