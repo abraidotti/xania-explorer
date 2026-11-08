@@ -75,3 +75,40 @@ def test_without_special_cpp_combat_still_runs(tmp_path):
     tree = [p.relative_to(tmp_path).as_posix() for p in tmp_path.rglob("*") if p.is_file()]
     plan = explore.plan(tree)
     assert plan.ok and not plan.unavailable
+
+
+# -- group fights ----------------------------------------------------------------------------------------
+def _fighter(vnum, race="human", alignment=0, off=()):
+    from types import SimpleNamespace
+
+    return SimpleNamespace(off=frozenset(off), mob=SimpleNamespace(vnum=vnum, race=race, alignment=alignment))
+
+
+def test_assist_rules_follow_check_assist():
+    from xania_explorer.assess.combat import assists
+
+    x = _fighter(1, "orc", -400)
+    assert assists(_fighter(2, "orc", 0, ["AssistRace"]), x)
+    assert not assists(_fighter(2, "elf", 0, ["AssistRace"]), x)
+    assert assists(_fighter(2, "elf", -350, ["AssistAlign"]), x)  # both evil (≤ -350)
+    assert not assists(_fighter(2, "elf", -349, ["AssistAlign"]), x)  # neutral vs evil
+    assert assists(_fighter(1, "orc", 0, ["AssistVnum"]), x) and not assists(_fighter(2, "orc", 0, ["AssistVnum"]), x)
+    assert assists(_fighter(9, "elf", 1000, ["AssistAll"]), x)
+    assert not assists(_fighter(2, "orc", -400), x)
+
+
+def test_race_flags_are_merged_and_groups_cost_more():
+    from xania_explorer.assess import combat as CB
+    from xania_explorer.site.stories.combat import _deadly_shares, _traps
+
+    a = CB.analyse(load_world())
+    fidos = [m for m in a.mobs if m.mob.race == "fido"]
+    assert fidos and all("AssistRace" in m.off for m in fidos)  # race_table gives fidos assist_race
+    p = a.player("knight", 49)
+    for m, f in a.results[("knight", 49)].fights:
+        e = a.encounter_damage(p, m, f)
+        assert e >= f.damage_taken and (e > f.damage_taken) == bool(a.helpers[m.mob.vnum])
+    before = {k: list(v) for k, v in a.helpers.items()}
+    traps = _traps(a)
+    _deadly_shares(a, "knight", 49, frozenset((m.mob.vnum, h.mob.vnum) for m, h in traps))
+    assert {k: list(v) for k, v in a.helpers.items()} == before  # the simulation doesn't leak

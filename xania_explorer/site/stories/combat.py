@@ -9,7 +9,7 @@ from ...assess import combat as CB
 from ...assess import common as C
 from ...source.cpp_tables import CLASSES
 from .. import charts as V
-from .common import HIGHLIGHT, _list, by_area, edit_effort, finding, rec, src_link, story
+from .common import HIGHLIGHT, MUTED, _list, _plural, by_area, edit_effort, finding, rec, src_link, story
 
 CLOCK_MINUTES = CB.FULL_TIME_FACTOR_HOURS * 60
 DEADLY_RUN = 5  # the majority must hold for this many consecutive levels (ignores single noisy levels)
@@ -32,9 +32,9 @@ def combat_story(world: World):
     preamble = ("\n!!! warning \"A model, not a simulation\"\n    Expected values from the C++ formulas, for a human of "
                 "each class with the best gear the world offers at that level. Mobs' casting and breath specials "
                 + ("are included" if a.specials else "aren't included (no `src/special.cpp`)")
-                + ". Player spells, buffs such as haste and sanctuary, resistances, mob skills like bash and "
-                "mobs assisting each other aren't modelled, so casters look weaker here than they play. See the "
-                "Method at the end.\n")
+                + ". Each fight is one mob at a time, except in the section on group fights. Player spells, buffs "
+                "such as haste and sanctuary, resistances and mob skills like bash aren't modelled, so casters look "
+                "weaker here than they play. See the Method at the end.\n")
     tiles = V.stat_tiles([
         (f"{min(kills):.0f}–{max(kills):.0f}", "kills per level, at every level"),
         (f"{hours[fastest]:.0f} h", f"of combat to hero for a {fastest}"),
@@ -63,6 +63,9 @@ def combat_story(world: World):
                      finding("combat.mob-spells", _mob_spells(a), metric=_spell_peak(a)[1],
                              label="% of mob damage from spells and breath, at its peak level (knight)",
                              better="none", issue=False),
+                     finding("combat.group-fights", _groups(a), metric=_group_jump(a)[1],
+                             label="percentage points more mobs deadly once helpers join, at the worst level (knight)",
+                             impact=2, issue=bool(_traps(a)), recs=[_r_traps(a)]),
                  ], a.method(), preamble)
 
 
@@ -291,3 +294,107 @@ def _mob_spells(a: CB.CombatAnalysis) -> str:
             + f" of the damage mobs deal, peaking at **{pct}%** at level {peak}. The share depends on how many "
             "level-appropriate mobs have one (blue).\n")
     return (f"\n## Mob spells and breath add up to {pct}% of the damage mobs deal\n\n" + text + V.embed(chart))
+
+
+# -- group fights -------------------------------------------------------------------------------------------
+TRAP_GAP = 10  # a helper this many levels above the mob it guards makes a level trap
+
+
+def _deadly_shares(a: CB.CombatAnalysis, cls: str, level: int, skip: frozenset = frozenset()) -> tuple[float, float]:
+    """(deadly share fighting each mob alone, deadly share counting its helpers), population-weighted.
+    ``skip`` = (mob vnum, helper vnum) pairs to leave out, to simulate separating them."""
+    r = a.results[(cls, level)]
+    p = a.player(cls, level)
+    if not r.weight:
+        return 0.0, 0.0
+    alone = sum(m.info.population for m, f in r.fights if f.damage_taken >= p.hp) / r.weight
+    if skip:
+        saved = {}
+        for mob, helper in skip:
+            saved.setdefault(mob, a.helpers[mob])
+            a.helpers[mob] = [(h, n) for h, n in a.helpers[mob] if h.mob.vnum != helper]
+    try:
+        grouped = sum(m.info.population for m, f in r.fights if a.encounter_damage(p, m, f) >= p.hp) / r.weight
+    finally:
+        if skip:
+            a.helpers.update(saved)
+    return alone, grouped
+
+
+def _group_jump(a: CB.CombatAnalysis, skip: frozenset = frozenset()) -> tuple[int, int]:
+    """(level, percentage points) where helpers raise the knight's deadly share the most."""
+    jumps = {lvl: _deadly_shares(a, "knight", lvl, skip) for lvl in C.LEVELS}
+    level = max(C.LEVELS, key=lambda lvl: (jumps[lvl][1] - jumps[lvl][0], -lvl))
+    return level, round(100 * (jumps[level][1] - jumps[level][0]))
+
+
+def _traps(a: CB.CombatAnalysis) -> list[tuple[CB.MobFighter, CB.MobFighter]]:
+    """(mob, helper) pairs where the helper is at least TRAP_GAP levels above the mob it guards."""
+    out = []
+    for m in a.mobs:
+        for h, _ in a.helpers.get(m.mob.vnum, []):
+            if h.mob.level - m.mob.level >= TRAP_GAP:
+                out.append((m, h))
+    return sorted(out, key=lambda mh: (mh[0].mob.level, mh[0].mob.vnum, mh[1].mob.vnum))
+
+
+def _groups(a: CB.CombatAnalysis) -> str:
+    rows = []
+    for lvl in C.LEVELS:
+        alone, grouped = _deadly_shares(a, "knight", lvl)
+        r = a.results[("knight", lvl)]
+        helped = sum(m.info.population for m, _ in r.fights if a.helpers.get(m.mob.vnum)) / r.weight if r.weight else 0
+        rows += [{"level": lvl, "what": "deadly, fought alone", "value": round(alone, 3)},
+                 {"level": lvl, "what": "deadly, with helpers", "value": round(grouped, 3)},
+                 {"level": lvl, "what": "mobs with helpers", "value": round(helped, 3)}]
+    chart = V.spec(rows, title="Knight: share of level-appropriate mobs that are deadly, alone and with helpers",
+                   mark={"type": "line"},
+                   encoding={"x": V.quant("level", "Level", scale={"domain": [1, C.HERO_LEVEL], "nice": False}),
+                             "y": V.quant("value", "Share", axis={"format": ".0%"}),
+                             "color": V.nominal("what", "", {"deadly, fought alone": MUTED,
+                                                             "deadly, with helpers": HIGHLIGHT,
+                                                             "mobs with helpers": "#3f88c5"}),
+                             "tooltip": [{"field": "what", "title": ""}, {"field": "level", "title": "Level"},
+                                         {"field": "value", "title": "Share", "format": ".0%"}]})
+    with_helpers = [m for m in a.mobs if a.helpers.get(m.mob.vnum)]
+    level, jump = _group_jump(a)
+    alone, grouped = _deadly_shares(a, "knight", level)
+    traps = _traps(a)
+    text = (f"{_plural(len(with_helpers), 'combat mob')} spawn next to mobs that join a fight against them: the same "
+            "prototype (`assist_vnum`), the same race (`assist_race`, which some races grant to all their mobs), "
+            "the same alignment (`assist_align`) or anyone (`assist_all`). Each joins with a coin flip per round, "
+            f"and then has to be fought too. The worst level is **{level}**, where helpers take the share of mobs a "
+            f"knight can't survive from {alone:.0%} to **{grouped:.0%}**. ")
+    if traps:
+        text += (f"{_plural(len(traps), 'pairing is a level trap', 'pairings are level traps')}: a helper at least "
+                 f"{TRAP_GAP} levels above the mob it guards, so a player hunting at the mob's level pulls in "
+                 "something far beyond them. For example: "
+                 + _list([f"{m.mob.short_descr} ({m.mob.level}) with {h.mob.short_descr} ({h.mob.level}) in "
+                          f"{m.info.area.name}" for m, h in traps[:3]]) + ".")
+    text += " Mobs wander, so this is the fight where they spawn.\n"
+    table = C.table(["Mob", "Lvl", "Helper", "Lvl", "Flags", "Area"],
+                    [[f"#{m.mob.vnum} {m.mob.short_descr}", m.mob.level, f"#{h.mob.vnum} {h.mob.short_descr}",
+                      h.mob.level, ", ".join(sorted(x for x in h.off if x.startswith("Assist"))), m.info.area.name]
+                     for m, h in traps])
+    title = (f"Helpers make {jump} percentage points more mobs deadly at level {level}" if jump
+             else "Mobs that help each other barely change the odds")
+    return (f"\n## {title}\n\n" + text + V.embed(chart)
+            + (V.details(f"Details: the {len(traps)} level traps", table) if traps else ""))
+
+
+def _r_traps(a: CB.CombatAnalysis):
+    traps = _traps(a)
+    if not traps:
+        return None
+    level, jump = _group_jump(a)
+    after_level, after = _group_jump(a, frozenset((m.mob.vnum, h.mob.vnum) for m, h in traps))
+    areas = [m.info.area.name for m, _ in traps]
+    guarded = len({m.mob.vnum for m, _ in traps})
+    return rec("combat.group-fights.separate-traps",
+               f"Separate {_plural(guarded, 'low-level mob')} from the much stronger helpers guarding them",
+               f"For each pair in the table (" + by_area(areas) + "), move the helper to another room, re-level one "
+               "of them, or drop the helper's assist flag (if it comes from the race, `assist_race`, give the "
+               "helper a different race).",
+               f"The biggest jump in deadly mobs from helpers falls from **{jump} points at level {level}** to "
+               f"{after} points (at level {after_level}).",
+               effort=edit_effort(len(set(areas)), len(traps)))

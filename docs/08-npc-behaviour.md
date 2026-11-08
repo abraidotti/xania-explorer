@@ -59,6 +59,9 @@ characters in the room join in:
 Mobs helping mobs join with a 50% chance each round, against a random member of the victim's group. So a pack of
 `assist_vnum` mobs joins one by one, not all at once.
 
+Some races give every mob of that race an assist flag ([Races.cpp](../../xania/src/Races.cpp) `race_table`,
+merged in when mobs load): fidos get `assist_race`, and modrons get `assist_race` and `assist_align`.
+
 ## Fleeing
 
 After taking damage ([fight.cpp:834](../../xania/src/fight.cpp#L834)), an NPC flees when either:
@@ -176,6 +179,7 @@ Notes:
   matters most at high level, where the spells scale with the mob's level. Combat & XP shows how much of the damage
   mobs deal comes from specials at each level.
 - **Assist flags turn single fights into group fights,** one helper per round at 50% each. An area full of
-  `assist_vnum` mobs is much harder than its per-mob numbers suggest.
+  `assist_vnum` mobs is much harder than its per-mob numbers suggest. Combat & XP measures this from the resets
+  (group fights), including level traps where a weak mob spawns beside a much stronger helper.
 - **Regeneration is fast** relative to fight length at high level. Long fights against a healing mob, or
   fights abandoned and resumed, cost more than the per-kill numbers suggest.

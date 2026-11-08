@@ -148,3 +148,38 @@ def load_stat_tables(src_dir: Path | None = None) -> StatTables:
 def cache_clear() -> None:
     for f in (load_classes, load_pc_races, load_stat_tables):
         f.cache_clear()
+
+
+def _letter_bit(token: str) -> int | None:
+    """'A'..'Z' -> 0..25, 'aa'..'ee' -> 26.. (merc.h letter macros)."""
+    if len(token) == 1 and token.isupper():
+        return ord(token) - ord("A")
+    if len(token) == 2 and token[0] == token[1] and token.islower():
+        return 26 + ord(token[0]) - ord("a")
+    return None
+
+
+@lru_cache(maxsize=None)
+def load_race_off_flags(src_dir: Path | None = None) -> dict[str, frozenset[str]]:
+    """Offensive flags each race gives its mobs (``race_table`` in Races.cpp; MobIndexData.cpp merges them in)."""
+    from ..areafile.flags import OFFENSIVE
+
+    by_bit = {bit: name for bit, name in OFFENSIVE.items()}
+    text = _src(src_dir, "Races.cpp")
+    body = _initialiser(text, "race_table[] = {")
+    out = {}
+    for entry in _top_level_groups(body):
+        fields = [f.strip() for f in entry.split(",")]
+        name = re.match(r'"([^"]*)"', fields[0])
+        if not name or len(fields) < 5:
+            continue
+        flags = set()
+        for token in (t.strip() for t in fields[4].split("|")):
+            named = re.fullmatch(r"to_int\(OffensiveFlag::(\w+)\)", token)
+            if named:
+                flags.add(named.group(1))
+            elif (bit := _letter_bit(token)) is not None and bit in by_bit:
+                flags.add(by_bit[bit])
+        out[name.group(1)] = frozenset(flags)
+    assert "human" in out and len(out) >= 20, "race_table parse looks wrong"
+    return out

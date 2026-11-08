@@ -11,9 +11,9 @@ within ±2 levels (the mobs a player of that level would hunt), using the C++ fo
   file hitroll/damroll/AC, the weapon or shield their resets equip.
 
 Expected values are used throughout (hit chances, extra attacks, parry/dodge/block, damage). Mobs' damaging
-special procedures (casting and breath, special.cpp) are included. Player spells, affects (sanctuary, haste…),
-resistances, mob skills like bash and mobs that assist each other are not modelled, so mages and clerics look
-weaker here than they play: see Skills & spells for spell damage.
+special procedures (casting and breath, special.cpp) are included, and mobs that assist each other are modelled
+separately as group fights. Player spells, affects (sanctuary, haste…), resistances and mob skills like bash are
+not modelled, so mages and clerics look weaker here than they play: see Skills & spells for spell damage.
 """
 
 from __future__ import annotations
@@ -24,6 +24,7 @@ from functools import cached_property
 from pathlib import Path
 
 from ..areafile.world import World
+from ..source.character_tables import load_race_off_flags
 from ..source.cpp_tables import CLASSES, load_skills
 from ..source.specials import load_specials, special_damage_per_round
 from . import characters as CH
@@ -102,6 +103,7 @@ class MobFighter:
     weapon_avg: float | None  # wielded weapon dice average (None = unarmed)
     has_shield: bool
     special: str | None = None  # spec_fun from the area's #SPECIALS, e.g. "spec_cast_mage"
+    off: frozenset = frozenset()  # offensive flags: the file's plus the race's (MobIndexData.cpp merges them)
 
     @property
     def mob(self):
@@ -118,7 +120,7 @@ class MobFighter:
         bump = {"Warrior": {"str": 3, "con": 2, "int": -1}, "Thief": {"dex": 3, "int": 1, "wis": -1},
                 "Cleric": {"wis": 3, "dex": -1, "str": 1}, "Mage": {"int": 3, "str": -1, "dex": 1}}
         value = base + bump.get(self.cls or "", {}).get(name, 0)
-        if name == "dex" and "Fast" in self.mob.off_names:
+        if name == "dex" and "Fast" in self.off:
             value += 2
         size = ["tiny", "small", "medium", "large", "huge", "giant"].index(self.mob.body_size) - 2
         if name in ("str", "con"):
@@ -142,7 +144,7 @@ class MobFighter:
     def attacks_per_round(self) -> float:
         second = self.skill("second") / 2 / 100
         third = second * self.skill("third") / 4 / 100  # only if the 2nd landed (fight.cpp mob_hit)
-        fast = 1 if "Fast" in self.mob.off_names else 0
+        fast = 1 if "Fast" in self.off else 0
         return 1 + fast + second + third
 
     def damage_per_hit(self, tables) -> float:
@@ -178,11 +180,45 @@ def mob_fighters(world: World) -> list[MobFighter]:
                 elif r.arg3 == 11:
                     shields.add(last)
     specials = {sp.mob_vnum: sp.spec_fun.lower() for af in world.files for sp in af.specials}
-    return [MobFighter(i, weapons.get(i.mob.vnum), i.mob.vnum in shields, specials.get(i.mob.vnum))
+    race_off = load_race_off_flags(world.src_dir) if (world.src_dir / "Races.cpp").exists() else {}
+    return [MobFighter(i, weapons.get(i.mob.vnum), i.mob.vnum in shields, specials.get(i.mob.vnum),
+                       frozenset(i.mob.off_names) | race_off.get(i.mob.race.lower(), frozenset()))
             for i in M.collect(world) if i.category == "combat"]
 
 
+ASSIST_JOIN = 0.5  # check_assist: a mob helping another mob joins with a coin flip each round
+ALIGN_GOOD, ALIGN_EVIL = 350, -350  # Alignment::Amiable / Depraved (Char::is_good / is_evil)
+
+
+def _align_band(alignment: int) -> int:
+    return 1 if alignment >= ALIGN_GOOD else -1 if alignment <= ALIGN_EVIL else 0
+
+
+def assists(helper: MobFighter, fighter: MobFighter) -> bool:
+    """Would ``helper`` join a fight ``fighter`` is in? (check_assist's NPC cases)"""
+    o = helper.off
+    return ("AssistAll" in o
+            or ("AssistRace" in o and helper.mob.race == fighter.mob.race)
+            or ("AssistAlign" in o and _align_band(helper.mob.alignment) == _align_band(fighter.mob.alignment))
+            or ("AssistVnum" in o and helper.mob.vnum == fighter.mob.vnum))
+
+
 # -- player side -------------------------------------------------------------------------
+@dataclass(frozen=True)
+class Player:
+    cls: str
+    level: int
+    hp: float
+    dex: int
+    armed: bool
+    to_hit_ac: float
+    ac: float
+    attacks: float
+    per_hit: float
+    defence: dict
+    blocks: bool
+
+
 @dataclass
 class Fight:
     hit_pc: float  # player's chance per swing to land (after mob parry/dodge/block)
@@ -267,7 +303,11 @@ class CombatAnalysis:
             return None
         return s.learn_level(cls)
 
-    def _level(self, cls: str, level: int) -> LevelResult:
+    def player(self, cls: str, level: int) -> "Player":
+        """The player side of every fight at this class and level (cached)."""
+        cache = self.__dict__.setdefault("_players", {})
+        if (cls, level) in cache:
+            return cache[(cls, level)]
         build = self.chars.build("human", cls)
         state = build.at(level)
         t = self.tables
@@ -278,45 +318,97 @@ class CombatAnalysis:
         weapon_skill = pc_skill(level, 1) if weapon_avg else 0
         hitroll = gear_hit + t.str_app[st["str"]][0]
         damroll = gear_dam + t.str_app[st["str"]][1]
-        pc_ac = -gear_ac + t.dex_app[st["dex"]]
-        to_hit_ac = interpolate(level, build.cls.to_hit_ac_level0, build.cls.to_hit_ac_level32) * \
-            (weapon_skill or 40) / 100 - hitroll
+        to_hit_ac = interpolate(level, build.cls.to_hit_ac_level0, build.cls.to_hit_ac_level32) *             (weapon_skill or 40) / 100 - hitroll
         second = pc_skill(level, self.learned_at(cls, "second attack"))
         third = pc_skill(level, self.learned_at(cls, "third attack"))
-        attacks = 1 + second / 2 / 100 + third / 4 / 100
         enhanced = enhanced_damage_factor(pc_skill(level, self.learned_at(cls, "enhanced damage")))
         if weapon_avg:
             per_hit = weapon_avg * weapon_skill / 100 * enhanced + damroll * min(100, weapon_skill) / 100
         else:  # unarmed (fight.cpp one_hit)
             per_hit = (1 + 2 * level / 3) / 2 + damroll
         pc_def = {k: pc_skill(level, self.learned_at(cls, k)) for k in ("parry", "dodge", "shield block")}
-        res = LevelResult(cls, level, state.hp)
+        cache[(cls, level)] = Player(cls, level, state.hp, st["dex"], bool(weapon_avg), to_hit_ac,
+                                     -gear_ac + t.dex_app[st["dex"]], 1 + second / 2 / 100 + third / 4 / 100, per_hit,
+                                     pc_def, bool(pc_def["shield block"] or kit.picks.get("shield")))
+        return cache[(cls, level)]
+
+    def fight(self, p: "Player", m: MobFighter) -> Fight:
+        """One straight fight between the player and a mob (expected values)."""
+        t, level, ml = self.tables, p.level, m.mob.level
+        # player attacking the mob
+        avoid = 0.0
+        mob_def = m.skill("defence")
+        if m.weapon_avg:
+            avoid += max(5, mob_def / 3 + ml - level) / 100
+        avoid += (1 - avoid) * max(5, mob_def / 3 + (m.stat("dex") - p.dex) + ml - level) / 100
+        if m.has_shield:
+            avoid += (1 - avoid) * max(5, mob_def / 3 + ml - level) / 100
+        hit_pc = hit_chance(p.to_hit_ac, m.armour_class(t)) * (1 - min(avoid, 0.95))
+        pc_dpr = p.attacks * hit_pc * p.per_hit
+        # mob attacking the player
+        pavoid = 0.0
+        if p.armed:
+            pavoid += max(5, p.defence["parry"] / 3 + level - ml) / 100
+        pavoid += (1 - pavoid) * max(5, p.defence["dodge"] / 3 + (p.dex - m.stat("dex")) + level - ml) / 100
+        if p.blocks:
+            pavoid += (1 - pavoid) * max(5, p.defence["shield block"] / 3 + level - ml) / 100
+        hit_mob = hit_chance(m.to_hit_ac(t), p.ac) * (1 - min(pavoid, 0.95))
+        mob_dpr = m.attacks_per_round() * hit_mob * m.damage_per_hit(t)
+        rounds = m.mob.hit.average / pc_dpr if pc_dpr > 0 else float("inf")
+        xp = xp_per_kill(level, ml, m.mob.alignment, "NoAlign" in m.mob.act_names)
+        spell_dpr = self.spell_dpr(m, level)
+        return Fight(hit_pc, hit_mob, pc_dpr, mob_dpr, rounds, rounds * (mob_dpr + spell_dpr), xp, spell_dpr)
+
+    # -- group fights (check_assist, fight.cpp) -------------------------------------------------
+    @cached_property
+    def helpers(self) -> dict[int, list[tuple[MobFighter, float]]]:
+        """For each combat mob: the mobs spawned in its room that would join a fight against it, with how many of
+        each (averaged over the mob's spawn rooms). Wandering is ignored: this is the fight where it spawns."""
+        by_vnum = {m.mob.vnum: m for m in self.mobs}
+        crowd: dict[int, dict[int, int]] = {}
+        for m in self.mobs:
+            cap = max((s.world_max for s in m.info.spawns), default=0)
+            for s in m.info.spawns:
+                room = crowd.setdefault(s.room_vnum, {})
+                room[m.mob.vnum] = max(room.get(m.mob.vnum, 0), min(max(0, s.room_max), cap))
+        out = {}
+        for m in self.mobs:
+            rooms = [(s.room_vnum, s.room_max) for s in m.info.spawns if s.room_max > 0]
+            total = sum(w for _, w in rooms)
+            found: dict[int, float] = {}
+            for room, w in rooms:
+                for vnum, n in crowd.get(room, {}).items():
+                    n_help = n - 1 if vnum == m.mob.vnum else n
+                    if n_help > 0 and assists(by_vnum[vnum], m):
+                        found[vnum] = found.get(vnum, 0.0) + n_help * w / total
+            out[m.mob.vnum] = [(by_vnum[v], n) for v, n in found.items()]
+        return out
+
+    def encounter_damage(self, p: "Player", m: MobFighter, f: Fight) -> float:
+        """Expected damage to clear an encounter that starts with ``m``: its fight, its helpers' blows while they
+        join (each with a coin flip per round), then a fight with each helper that joined. A lower bound: helpers
+        that join later fights, and blows from several helpers during those fights, aren't counted."""
+        helpers = self.helpers.get(m.mob.vnum, [])
+        if not helpers or f.rounds == float("inf"):
+            return f.damage_taken
+        r = f.rounds
+        joined = 1 - (1 - ASSIST_JOIN) ** r  # chance a given helper joins before m dies
+        present = max(0.0, (r - 1) - (1 - (1 - ASSIST_JOIN) ** max(0.0, r - 1)))  # its expected rounds attacking
+        total = f.damage_taken
+        cache = self.__dict__.setdefault("_helper_fights", {})
+        for h, n in helpers:
+            key = (p.cls, p.level, h.mob.vnum)
+            if key not in cache:
+                cache[key] = self.fight(p, h)
+            fh = cache[key]
+            total += n * (present * (fh.mob_dpr + fh.spell_dpr) + joined * fh.damage_taken)
+        return total
+
+    def _level(self, cls: str, level: int) -> LevelResult:
+        p = self.player(cls, level)
+        res = LevelResult(cls, level, p.hp)
         for m in self.by_level[level]:
-            ml = m.mob.level
-            # player attacking the mob
-            avoid = 0.0
-            mob_def = m.skill("defence")
-            if m.weapon_avg:
-                avoid += max(5, mob_def / 3 + ml - level) / 100
-            avoid += (1 - avoid) * max(5, mob_def / 3 + (m.stat("dex") - st["dex"]) + ml - level) / 100
-            if m.has_shield:
-                avoid += (1 - avoid) * max(5, mob_def / 3 + ml - level) / 100
-            hit_pc = hit_chance(to_hit_ac, m.armour_class(t)) * (1 - min(avoid, 0.95))
-            pc_dpr = attacks * hit_pc * per_hit
-            # mob attacking the player
-            pavoid = 0.0
-            if weapon_avg:
-                pavoid += max(5, pc_def["parry"] / 3 + level - ml) / 100
-            pavoid += (1 - pavoid) * max(5, pc_def["dodge"] / 3 + (st["dex"] - m.stat("dex")) + level - ml) / 100
-            if pc_def["shield block"] or kit.picks.get("shield"):
-                pavoid += (1 - pavoid) * max(5, pc_def["shield block"] / 3 + level - ml) / 100
-            hit_mob = hit_chance(m.to_hit_ac(t), pc_ac) * (1 - min(pavoid, 0.95))
-            mob_dpr = m.attacks_per_round() * hit_mob * m.damage_per_hit(t)
-            rounds = m.mob.hit.average / pc_dpr if pc_dpr > 0 else float("inf")
-            xp = xp_per_kill(level, ml, m.mob.alignment, "NoAlign" in m.mob.act_names)
-            spell_dpr = self.spell_dpr(m, level)
-            res.fights.append((m, Fight(hit_pc, hit_mob, pc_dpr, mob_dpr, rounds, rounds * (mob_dpr + spell_dpr), xp,
-                                        spell_dpr)))
+            res.fights.append((m, self.fight(p, m)))
         return res
 
     # -- facts ---------------------------------------------------------------------------
@@ -383,7 +475,14 @@ class CombatAnalysis:
                    "poison count as no damage; dispel evil/good don't affect a neutral player; exorcise isn't "
                    "halved for close alignments, a slight overestimate.\n"
                    if self.specials else "- **Mob specials** aren't modelled: this checkout has no "
-                   "`src/special.cpp` (or no `src/magic.cpp`).\n"))
+                   "`src/special.cpp` (or no `src/magic.cpp`).\n")
+                + "- **Offensive flags** include the race's (Races.cpp `race_table`, merged in as MobIndexData.cpp "
+                "does), so race-given Fast and assist flags count.\n"
+                "- **Group fights** (check_assist, fight.cpp): the mobs spawned in a mob's room that would assist it "
+                "(same prototype, race or alignment band, or assist_all), counted from the resets. Over a fight of R "
+                "rounds each joins with a 50% chance per round, so it joins at all with chance 1 − ½^R and attacks "
+                "for about R − 1 − (1 − ½^(R−1)) rounds; then it has to be fought too. That's a lower bound: helpers "
+                "joining later fights aren't counted. Mobs wander, so this is the fight where they spawn.\n")
 
 
 def _pct(v):
