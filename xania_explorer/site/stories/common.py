@@ -12,9 +12,28 @@ changes. The plain Markdown reports (``assess`` command) are unchanged.
 from __future__ import annotations
 
 from ...assess import common as C
+from ...findings import Finding, Story
 from .. import charts as V
 
 BAND_LABELS = [b.label for b in C.bands()]
+
+
+def finding(fid: str, section: str, *, metric: float | None = None, label: str = "", better: str = "lower",
+            impact: int = 1, issue: bool = True, summary: str = "") -> Finding | None:
+    """Turn a rendered section ('## Title' + body) into a Finding; empty sections give None."""
+    md = section.lstrip("\n")
+    if not md:
+        return None
+    assert md.startswith("## "), f"{fid}: section must start with a level-2 heading"
+    title, _, body = md[3:].partition("\n")
+    return Finding(id=fid, title=title.strip(), body=body, metric=metric, metric_label=label, better=better,
+                   impact=impact, issue=issue, summary=summary)
+
+
+def story(slug: str, title: str, intro: str, tiles: str, findings: list[Finding | None], method: str,
+          preamble: str = "") -> Story:
+    return Story(slug, title, intro, tiles, [f for f in findings if f], V.details(
+        "How these numbers are calculated", method, kind="info") if method else "", preamble)
 MUTED = "#b8ab9c"
 HIGHLIGHT = "#b4532a"
 

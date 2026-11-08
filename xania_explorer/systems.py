@@ -22,9 +22,16 @@ class System:
     def assessment(self):
         return importlib.import_module(f"xania_explorer.assess.{self.slug}")
 
+    def story(self, world):
+        """The system's findings-first story (xania_explorer.findings.Story), cached per world."""
+        store = world.__dict__.setdefault("_story_cache", {})
+        if self.slug not in store:
+            module = importlib.import_module(f"xania_explorer.site.stories.{self.slug}")
+            store[self.slug] = getattr(module, f"{self.slug}_story")(world)
+        return store[self.slug]
+
     def page(self, world) -> str:
-        module = importlib.import_module(f"xania_explorer.site.stories.{self.slug}")
-        return getattr(module, f"{self.slug}_page")(world)
+        return self.story(world).markdown()
 
 
 SYSTEMS: list[System] = [

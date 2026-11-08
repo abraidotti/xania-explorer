@@ -8,25 +8,36 @@ from ...areafile.world import World
 from ...assess import common as C
 from ...assess import mobs as M
 from .. import charts as V
-from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural, _span
+from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural, _span, finding, story
+
+
+def mobs_story(world: World):
+    a = M.analyse(world)
+    tiles = V.stat_tiles([
+        (f"~{a.total_pop}", "mobs after a full reset"),
+        (f"{a.early_share:.0%}", f"are level ≤ {a.early_cutoff}"),
+        (str(len(a.empty_levels)), "levels with no mobs"),
+        (str(len(a.outliers)), "toughness outliers"),
+        (f"{a.banded_outside / a.banded_mobs:.0%}" if a.banded_mobs else "—", "outside their area's band"),
+    ])
+    majority_off = sum(1 for m in a.area_misses if m.outside_share >= 0.5)
+    return story("mobs", "Mobs by level",
+                 "How the mobs a character fights are spread across levels 1 to 91, how tough they are, and whether "
+                 "they match their area's advertised level range.", tiles, [
+                     finding("mobs.evenness", _m_evenness(a), metric=round(100 * a.early_share),
+                             label=f"% of mobs at level ≤ {a.early_cutoff}", impact=3),
+                     finding("mobs.empty-levels", _m_levels(a), metric=len(a.empty_levels),
+                             label="levels with no combat mob", impact=2),
+                     finding("mobs.toughness", _m_toughness(a), metric=len(a.outliers), label="toughness outliers",
+                             issue=bool(a.hp_drops) or len(a.outliers) > 0),
+                     finding("mobs.area-bands", _m_areas(a), metric=majority_off,
+                             label="areas with most mobs outside their advertised band", impact=2),
+                     finding("mobs.excluded", _m_excluded(a), metric=len(a.never), label="mobs that never spawn", issue=False),
+                 ], a.method())
 
 
 def mobs_page(world: World) -> str:
-    a = M.analyse(world)
-    out = ["# Mobs by level\n\n",
-           "How the mobs a character fights are spread across levels 1 to 91, how tough they are, and whether "
-           "they match their area's advertised level range.\n",
-           V.stat_tiles([
-               (f"~{a.total_pop}", "mobs after a full reset"),
-               (f"{a.early_share:.0%}", f"are level ≤ {a.early_cutoff}"),
-               (str(len(a.empty_levels)), "levels with no mobs"),
-               (str(len(a.outliers)), "toughness outliers"),
-               (f"{a.banded_outside / a.banded_mobs:.0%}" if a.banded_mobs else "—", "outside their area's band"),
-           ])]
-    out += [_m_evenness(a), _m_levels(a), _m_toughness(a), _m_areas(a), _m_excluded(a)]
-    out.append("\n## Method\n")
-    out.append(V.details("How these numbers are calculated", a.method(), kind="info"))
-    return "".join(out)
+    return mobs_story(world).markdown()
 
 
 def _m_evenness(a: M.MobAnalysis) -> str:

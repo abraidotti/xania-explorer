@@ -8,26 +8,45 @@ from ...areafile.world import World
 from ...assess import common as C
 from ...assess import weapons as W
 from .. import charts as V
-from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural, _span
+from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural, _span, finding, story
+
+
+def weapons_story(world: World):
+    a = W.analyse(world)
+    worst = a.worst_plateau
+    start = a.class_access("start")
+    late = [w for w in a.got if w.level > a.early_cutoff]
+    late_mob_only = sum(1 for w in late if not w.buyable and all(s.kind == "mob" for s in w.sources))
+    obtainable = {w.vnum for w in a.got}
+    tiles = V.stat_tiles([
+        (str(len(a.got)), "obtainable weapons"),
+        (f"{a.early_count / len(a.got):.0%}", f"usable by level {a.early_cutoff}"),
+        (str(worst.length), f"levels a {worst.cls} waits for an upgrade"),
+        (str(len(a.over)), "over the damage cap"),
+        (str(len(a.lost)), "with no source"),
+    ])
+    return story("weapons", "Weapons by level and class",
+                 "Which weapons a character can find and wield at each level from 1 to 91, how good they are, "
+                 "and whether some classes get a worse deal.", tiles, [
+                     finding("weapons.supply", _w_supply(a), metric=round(100 * a.early_count / len(a.got)),
+                             label=f"% of weapons usable by level {a.early_cutoff}", impact=2),
+                     finding("weapons.class-access", _w_access(a),
+                             metric=round(max(start.values()) / max(1, min(start.values())), 1),
+                             label="× more weapons for the best-served class", impact=3),
+                     finding("weapons.plateau", _w_plateau(a), metric=worst.length,
+                             label=f"levels a {worst.cls} waits for a better weapon", impact=2),
+                     finding("weapons.sources", _w_sources(a),
+                             metric=round(100 * late_mob_only / len(late)) if late else None,
+                             label=f"% of weapons above {a.early_cutoff} only from mob drops", better="none",
+                             issue=False),
+                     finding("weapons.over-cap", _w_over(a), metric=sum(1 for w in a.over if w.vnum in obtainable),
+                             label="obtainable weapons over the damage cap", impact=2),
+                     finding("weapons.no-source", _w_lost(a), metric=len(a.lost), label="weapons with no source"),
+                 ], a.method())
 
 
 def weapons_page(world: World) -> str:
-    a = W.analyse(world)
-    worst = a.worst_plateau
-    out = ["# Weapons by level and class\n\n",
-           "Which weapons a character can find and wield at each level from 1 to 91, how good they are, "
-           "and whether some classes get a worse deal.\n",
-           V.stat_tiles([
-               (str(len(a.got)), "obtainable weapons"),
-               (f"{a.early_count / len(a.got):.0%}", f"usable by level {a.early_cutoff}"),
-               (str(worst.length), f"levels a {worst.cls} waits for an upgrade"),
-               (str(len(a.over)), "over the damage cap"),
-               (str(len(a.lost)), "with no source"),
-           ])]
-    out += [_w_supply(a), _w_access(a), _w_plateau(a), _w_sources(a), _w_over(a), _w_lost(a)]
-    out.append("\n## Method\n")
-    out.append(V.details("How these numbers are calculated", a.method(), kind="info"))
-    return "".join(out)
+    return weapons_story(world).markdown()
 
 
 def _w_supply(a: W.WeaponAnalysis) -> str:

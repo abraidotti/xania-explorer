@@ -7,34 +7,58 @@ from ...assess import combat as CB
 from ...assess import common as C
 from ...source.cpp_tables import CLASSES
 from .. import charts as V
-from .common import HIGHLIGHT, _list
+from .common import HIGHLIGHT, _list, finding, story
 
 CLOCK_MINUTES = CB.FULL_TIME_FACTOR_HOURS * 60
+DEADLY_RUN = 5  # the majority must hold for this many consecutive levels (ignores single noisy levels)
 
 
-def combat_page(world: World) -> str:
+def deadly_onset(a: CB.CombatAnalysis, cls: str) -> int | None:
+    """First level from which most level-appropriate mobs are deadly in melee, for good."""
+    s = a.series(cls, "deadly_share")
+    return next((lvl for lvl in C.LEVELS if lvl > 5
+                 and all((s.get(x) or 0) >= 0.5 for x in range(lvl, min(lvl + DEADLY_RUN, C.HERO_LEVEL + 1)))), None)
+
+
+def combat_story(world: World):
     a = CB.analyse(world)
     hours = {c: a.hours_to_hero(c) for c in CLASSES}
     kills = [v for v in a.series("knight", "kills_per_level").values() if v]
     fastest, slowest = min(hours, key=hours.get), max(hours, key=hours.get)
-    out = ["# Combat & experience by level\n\n",
-           "What a straight melee fight against level-appropriate mobs looks like for each class at every level "
-           "from 1 to 91: how often each side hits, how long fights last, how many kills a level takes, and when "
-           "fights turn deadly.\n",
-           "\n!!! warning \"A model, not a simulation\"\n    Expected values from the C++ formulas, for a human of "
-           "each class with the best gear the world offers at that level. Spells, buffs such as haste and "
-           "sanctuary, resistances and mob skills like bash aren't modelled, so casters look weaker here than "
-           "they play. See the Method at the end.\n",
-           V.stat_tiles([
-               (f"{min(kills):.0f}–{max(kills):.0f}", "kills per level, at every level"),
-               (f"{hours[fastest]:.0f} h", f"of combat to hero for a {fastest}"),
-               (f"{hours[slowest]:.0f} h", f"for a {slowest}"),
-               (f"{CB.FULL_TIME_FACTOR_HOURS * (C.HERO_LEVEL - 1):.0f} h", "played time needed for full XP"),
-           ])]
-    out += [_kills(a), _clock(a, hours), _rounds(a), _deadly(a), _accuracy(a)]
-    out.append("\n## Method\n")
-    out.append(V.details("How these numbers are calculated", a.method(), kind="info"))
-    return "".join(out)
+    onsets = [x for x in (deadly_onset(a, c) for c in CLASSES) if x]
+    hit = [v for lvl, v in a.series("mage", "hit_pc").items() if v and lvl >= 20]
+    preamble = ("\n!!! warning \"A model, not a simulation\"\n    Expected values from the C++ formulas, for a human of "
+                "each class with the best gear the world offers at that level. Spells, buffs such as haste and "
+                "sanctuary, resistances and mob skills like bash aren't modelled, so casters look weaker here than "
+                "they play. See the Method at the end.\n")
+    tiles = V.stat_tiles([
+        (f"{min(kills):.0f}–{max(kills):.0f}", "kills per level, at every level"),
+        (f"{hours[fastest]:.0f} h", f"of combat to hero for a {fastest}"),
+        (f"{hours[slowest]:.0f} h", f"for a {slowest}"),
+        (f"{CB.FULL_TIME_FACTOR_HOURS * (C.HERO_LEVEL - 1):.0f} h", "played time needed for full XP"),
+    ])
+    return story("combat", "Combat & experience by level",
+                 "What a straight melee fight against level-appropriate mobs looks like for each class at every level "
+                 "from 1 to 91: how often each side hits, how long fights last, how many kills a level takes, and "
+                 "when fights turn deadly.", tiles, [
+                     finding("combat.kills-per-level", _kills(a), metric=round(sum(kills) / len(kills), 1),
+                             label="kills per level on average", better="none", issue=False),
+                     finding("combat.xp-clock", _clock(a, hours), metric=round(hours[slowest], 1),
+                             label=f"hours of combat to hero for a {slowest} (vs a "
+                                   f"{CB.FULL_TIME_FACTOR_HOURS * (C.HERO_LEVEL - 1):.0f} h clock)", impact=3),
+                     finding("combat.fight-length", _rounds(a),
+                             metric=round(a.series("knight", "rounds")[C.HERO_LEVEL] or 0),
+                             label=f"rounds for a knight to kill a level-{C.HERO_LEVEL} mob", impact=2),
+                     finding("combat.deadly-melee", _deadly(a), metric=min(onsets) if onsets else None,
+                             label="level from which melee turns deadly for the weakest class", better="higher",
+                             impact=2),
+                     finding("combat.accuracy-dip", _accuracy(a), metric=round(100 * min(hit)) if hit else None,
+                             label="% lowest chance per swing for a mage (level 20+)", better="higher"),
+                 ], a.method(), preamble)
+
+
+def combat_page(world: World) -> str:
+    return combat_story(world).markdown()
 
 
 def _lines(a: CB.CombatAnalysis, attr: str, title: str, ytitle: str, fmt: str | None = None,

@@ -137,6 +137,67 @@
   color: var(--md-default-fg-color--light);
 }
 
+/* -- Dashboard cards ----------------------------------------------------------------- */
+.md-typeset .xu-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
+  gap: 0.75rem;
+  margin: 1em 0 1.6em;
+}
+.md-typeset .xu-finding-card,
+.md-typeset .xu-system-card {
+  background: var(--xu-card-bg);
+  border: 1px solid var(--xu-card-border);
+  border-left: 4px solid var(--xu-card-border);
+  border-radius: 10px;
+  padding: 0.7rem 0.85rem 0.6rem;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+.md-typeset .xu-finding-card > p,
+.md-typeset .xu-system-card > p {
+  margin: 0.35em 0;
+}
+.md-typeset .xu-finding-card a,
+.md-typeset .xu-system-card a {
+  color: var(--md-typeset-color);
+}
+.md-typeset .xu-finding-card a:hover,
+.md-typeset .xu-system-card a:hover {
+  color: var(--md-typeset-a-color);
+}
+.md-typeset .xu-impact-3 { border-left-color: #b4532a; }
+.md-typeset .xu-impact-2 { border-left-color: #e0a030; }
+.md-typeset .xu-impact-1 { border-left-color: #9a8b7e; }
+.md-typeset .xu-chip {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.05rem 0.4rem;
+  margin-right: 0.3rem;
+  border-radius: 999px;
+  background: var(--xu-table-head);
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .xu-impact-3 .xu-chip-impact { background: #b4532a; color: #fffaf2; }
+.md-typeset .xu-impact-2 .xu-chip-impact { background: #e0a030; color: #3a261c; }
+.md-typeset .xu-card-metric {
+  font-family: var(--xu-heading-font);
+  font-size: 1.15rem;
+  font-weight: 650;
+  color: var(--md-primary-fg-color);
+}
+.md-typeset .xu-card-label {
+  color: var(--md-default-fg-color--light);
+}
+/* Scorecard verdicts */
+.md-typeset .xu-improved { color: #3d7a3a; font-weight: 700; }
+.md-typeset .xu-worse { color: #b4532a; font-weight: 700; }
+[data-md-color-scheme="slate"] .md-typeset .xu-improved { color: #8cc485; }
+[data-md-color-scheme="slate"] .md-typeset .xu-worse { color: #eb9a6c; }
+
 /* Finding headings read as statements: give them room. */
 .md-typeset h2 {
   margin-top: 2.2em;

@@ -9,25 +9,39 @@ from ...assess import common as C
 from ...assess import economy as EC
 from ...assess import equipment as E
 from .. import charts as V
-from .common import HIGHLIGHT, MUTED, _list
+from .common import HIGHLIGHT, MUTED, _list, finding, story
+
+
+def economy_story(world: World):
+    a = EC.analyse(world)
+    total = a.cumulative[C.HERO_LEVEL]
+    heal5 = a.kills_to_afford(EC.HEALER["heal"], 5)
+    g = a.gold_per_kill
+    tiles = V.stat_tiles([
+        (f"{total / 1e6:.1f}M", f"gold earned by level {C.HERO_LEVEL}"),
+        (f"{heal5:.0f}", "kills to pay for one 'heal' at level 5"),
+        (str(_flat_from(a)), "level after which shops sell nothing better"),
+        (str(len(a.gold_outliers())), "mobs with outsized gold"),
+    ])
+    return story("economy", "Economy by level",
+                 "Gold earned from kills against what gold can buy, from level 1 to 91: shop gear, the healer, and "
+                 "where the money ends up.", tiles, [
+                     finding("economy.income", _income(a),
+                             metric=round(g[C.HERO_LEVEL] / g[5]) if g[5] and g[C.HERO_LEVEL] else None,
+                             label=f"× gold per kill, level 5 → {C.HERO_LEVEL}", better="none", issue=False),
+                     finding("economy.healer-prices", _healer(a), metric=round(heal5, 1),
+                             label="kills of gold for one 'heal' at level 5", impact=2),
+                     finding("economy.shop-ceiling", _shops(a), metric=_flat_from(a),
+                             label="last level at which shops sell better armour", better="higher", impact=2),
+                     finding("economy.gold-hoard", _hoard(a), metric=round(total),
+                             label=f"gold earned by level {C.HERO_LEVEL}", better="none"),
+                     finding("economy.gold-outliers", _outliers(a), metric=len(a.gold_outliers()),
+                             label="mobs with outsized gold"),
+                 ], a.method())
 
 
 def economy_page(world: World) -> str:
-    a = EC.analyse(world)
-    total = a.cumulative[C.HERO_LEVEL]
-    out = ["# Economy by level\n\n",
-           "Gold earned from kills against what gold can buy, from level 1 to 91: shop gear, the healer, and where "
-           "the money ends up.\n",
-           V.stat_tiles([
-               (f"{total / 1e6:.1f}M", f"gold earned by level {C.HERO_LEVEL}"),
-               (f"{a.kills_to_afford(EC.HEALER['heal'], 5):.0f}", "kills to pay for one 'heal' at level 5"),
-               (str(_flat_from(a)), "level after which shops sell nothing better"),
-               (str(len(a.gold_outliers())), "mobs with outsized gold"),
-           ])]
-    out += [_income(a), _healer(a), _shops(a), _hoard(a), _outliers(a)]
-    out.append("\n## Method\n")
-    out.append(V.details("How these numbers are calculated", a.method(), kind="info"))
-    return "".join(out)
+    return economy_story(world).markdown()
 
 
 def _x():

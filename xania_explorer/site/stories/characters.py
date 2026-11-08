@@ -7,29 +7,43 @@ from ...assess import characters as CH
 from ...assess import common as C
 from ...source.cpp_tables import CLASSES
 from .. import charts as V
-from .common import _a, _list
+from .common import _a, _list, finding, story
 
 
-def characters_page(world: World) -> str:
+def characters_story(world: World):
     a = CH.analyse(world)
     lo, hi = a.xp_extremes
     human = {c: a.build("human", c) for c in CLASSES}
     hp_ratio = a.hp91(human["barbarian"]) / a.hp91(human["mage"])
     swings = {c: a.hp91(a.best_worst(c, a.hp91)[0]) - a.hp91(a.best_worst(c, a.hp91)[1]) for c in CLASSES}
     maxed = [b.level_stats_maxed for b in a.builds]
-    out = ["# Characters by level\n\n",
-           "How each class and race grows from level 1 to 91: the XP each level costs, the HP, mana and "
-           "movement it brings, and how quickly stats max out.\n",
-           V.stat_tiles([
-               (f"{hi.xp_per_level / lo.xp_per_level:.0f}×", "XP per level, dearest vs cheapest build"),
-               (f"{hp_ratio:.1f}×", "a barbarian's HP vs a mage's at 91"),
-               (f"±{max(swings.values()) / 2:.0f}", "HP that race choice swings at 91"),
-               (f"{min(maxed)}–{max(maxed)}", "level by which stats are maxed"),
-           ])]
-    out += [_xp(a), _hp(a), _mana(a), _value(a), _stats(a)]
-    out.append("\n## Method\n")
-    out.append(V.details("How these numbers are calculated", a.method(), kind="info"))
-    return "".join(out)
+    best_mana, worst_mana = a.best_worst("mage", lambda b: b.at(C.HERO_LEVEL).mana)
+    dragon_gain = max(a.hp91(a.build("dragon", c)) / a.hp91(a.build("human", c)) - 1 for c in CLASSES)
+    tiles = V.stat_tiles([
+        (f"{hi.xp_per_level / lo.xp_per_level:.0f}×", "XP per level, dearest vs cheapest build"),
+        (f"{hp_ratio:.1f}×", "a barbarian's HP vs a mage's at 91"),
+        (f"±{max(swings.values()) / 2:.0f}", "HP that race choice swings at 91"),
+        (f"{min(maxed)}–{max(maxed)}", "level by which stats are maxed"),
+    ])
+    return story("characters", "Characters by level",
+                 "How each class and race grows from level 1 to 91: the XP each level costs, the HP, mana and "
+                 "movement it brings, and how quickly stats max out.", tiles, [
+                     finding("characters.xp-cost", _xp(a), metric=round(hi.xp_per_level / lo.xp_per_level, 2),
+                             label="× XP per level, dearest vs cheapest build", impact=2),
+                     finding("characters.hp-by-class", _hp(a), metric=round(hp_ratio, 2),
+                             label="× a barbarian's HP vs a mage's at 91", better="none", issue=False),
+                     finding("characters.mana-by-race", _mana(a),
+                             metric=round(100 * (best_mana.at(C.HERO_LEVEL).mana / worst_mana.at(C.HERO_LEVEL).mana - 1)),
+                             label="% more mana for the best mage race than the worst", better="none", issue=False),
+                     finding("characters.race-value", _value(a), metric=round(100 * dragon_gain, 1),
+                             label="% more HP at 91 a dragon buys with 4× the XP", better="higher", impact=2),
+                     finding("characters.stats-maxed", _stats(a), metric=max(maxed),
+                             label="level by which every build can max its stats", better="none", issue=False),
+                 ], a.method())
+
+
+def characters_page(world: World) -> str:
+    return characters_story(world).markdown()
 
 
 def _who(a: CH.CharacterAnalysis, b: CH.Build) -> str:

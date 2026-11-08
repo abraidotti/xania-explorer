@@ -7,30 +7,53 @@ from ...assess import common as C
 from ...assess import skills as S
 from ...source.cpp_tables import CLASSES
 from .. import charts as V
-from .common import _list
+from .common import _list, finding, story
 
 CASTERS = ["mage", "cleric"]
 
 
-def skills_page(world: World) -> str:
+def catch_up_level(a: S.SkillAnalysis, cls: str) -> int | None:
+    """First level from which practices earned stay ahead of the default package's needs."""
+    return next((lvl for lvl in C.LEVELS
+                 if all(a.practices_earned(cls, x) >= a.practices_needed(cls, x) for x in range(lvl, C.HERO_LEVEL + 1))),
+                None)
+
+
+def skills_story(world: World):
     a = S.analyse(world)
     lvl20 = {c: (a.practices_needed(c, 20), a.practices_earned(c, 20)) for c in CLASSES}
     worst20 = max(CLASSES, key=lambda c: lvl20[c][0] - lvl20[c][1])
     casts91 = a.casts_to_kill("mage", C.HERO_LEVEL)
-    out = ["# Skills & spells by level\n\n",
-           "What each class can learn as it levels, whether its practices keep up, and how attack spells compare "
-           "with mob HP and with melee.\n",
-           V.stat_tiles([
-               (str(max(len(a.abilities[c]) for c in CLASSES)), "skills and spells a class can learn"),
-               (f"{lvl20[worst20][0]} vs {lvl20[worst20][1]:.0f}", f"practices needed vs earned by a {worst20} at 20"),
-               (f"{casts91:.0f}", f"casts of a mage's best spell to kill a level-{C.HERO_LEVEL} mob"),
-               (f"{C.median_or(v for lvl in C.LEVELS if lvl >= 10 and (v := a.kills_per_mana_bar('mage', lvl))):.1f}",
-                "level-appropriate kills per full mana bar (mage)"),
-           ])]
-    out += [_availability(a), _practices(a), _mana(a), _casts(a), _vs_melee(a)]
-    out.append("\n## Method\n")
-    out.append(V.details("How these numbers are calculated", a.method(), kind="info"))
-    return "".join(out)
+    kills_per_mana = C.median_or(v for lvl in C.LEVELS if lvl >= 10 and (v := a.kills_per_mana_bar("mage", lvl)))
+    last_new = max(max(x.level for x in a.abilities[c]) for c in CLASSES)
+    catch = [x for x in (catch_up_level(a, c) for c in CLASSES) if x]
+    melee91 = a.melee_per_round("mage", C.HERO_LEVEL)
+    tiles = V.stat_tiles([
+        (str(max(len(a.abilities[c]) for c in CLASSES)), "skills and spells a class can learn"),
+        (f"{lvl20[worst20][0]} vs {lvl20[worst20][1]:.0f}", f"practices needed vs earned by a {worst20} at 20"),
+        (f"{casts91:.0f}", f"casts of a mage's best spell to kill a level-{C.HERO_LEVEL} mob"),
+        (f"{kills_per_mana:.1f}", "level-appropriate kills per full mana bar (mage)"),
+    ])
+    return story("skills", "Skills & spells by level",
+                 "What each class can learn as it levels, whether its practices keep up, and how attack spells "
+                 "compare with mob HP and with melee.", tiles, [
+                     finding("skills.nothing-new", _availability(a), metric=C.HERO_LEVEL - last_new,
+                             label="final levels with nothing new to learn", impact=2),
+                     finding("skills.practice-budget", _practices(a), metric=max(catch) if catch else None,
+                             label="level by which practices catch up with the default package", impact=2),
+                     finding("skills.mana-per-kill", _mana(a), metric=round(kills_per_mana, 2),
+                             label="kills per full mana bar (mage)", better="higher", issue=False),
+                     finding("skills.spells-vs-hp", _casts(a), metric=round(casts91, 1),
+                             label=f"casts of a mage's best spell per level-{C.HERO_LEVEL} kill", impact=3),
+                     finding("skills.spells-vs-melee", _vs_melee(a),
+                             metric=round(a.spells["mage"][C.HERO_LEVEL].per_round / melee91, 1) if melee91 else None,
+                             label=f"× a mage's melee damage per round from spells at {C.HERO_LEVEL}", better="none",
+                             issue=False),
+                 ], a.method())
+
+
+def skills_page(world: World) -> str:
+    return skills_story(world).markdown()
 
 
 def _x():

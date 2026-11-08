@@ -15,6 +15,7 @@ from mkdocs.structure.files import File, Files
 # Absolute imports: MkDocs loads this file as a standalone module, not as part of the package.
 from xania_explorer.areafile.world import load_world
 from xania_explorer.site import compare, pages
+from xania_explorer.site.dashboard import home_summary
 from xania_explorer.site.targets import Target, load_targets
 from xania_explorer.source import character_tables, cpp_tables
 from xania_explorer.systems import SYSTEMS
@@ -85,6 +86,11 @@ def on_page_markdown(markdown: str, page, config, files, **kwargs):
         markdown = _UTILS_LINK.sub(lambda m: f"[{m.group(1)}]({repo}/blob/main/{m.group(2)})", markdown)
     else:  # no repo to link to (local build without SITE_REPO_URL): show the path as code
         markdown = _UTILS_LINK.sub(lambda m: f"`{m.group(2)}`", markdown)
+    if page.file.src_uri == "index.md" and _targets:
+        # Put each deployment's top balance issues up front, before the guides.
+        summary = home_summary(_targets)
+        marker = "\n## Guides"
+        markdown = markdown.replace(marker, summary + marker, 1) if marker in markdown else markdown + summary
     return markdown
 
 

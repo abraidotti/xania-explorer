@@ -99,9 +99,12 @@ def _changes(base: dict[int, object], other: dict[int, object], fields, names, a
 def render(targets: list[tuple[Target, World]]) -> str:
     base_t, base_w = targets[0]
     names = [t.name for t, _ in targets]
+    from .dashboard import scorecard
+
     out = ["# Compare versions\n\n",
            f"Baseline: **{base_t.label}**. Compared: "
-           + ", ".join(f"**{t.label}**" for t, _ in targets[1:]) + ".\n\n"]
+           + ", ".join(f"**{t.label}**" for t, _ in targets[1:]) + ".\n\n",
+           scorecard(targets)]
 
     metrics = [_metrics(w) for _, w in targets]
     out.append("## Key numbers\n\n")

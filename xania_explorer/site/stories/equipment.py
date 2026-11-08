@@ -10,29 +10,43 @@ from ...assess import equipment as E
 from ...assess import mobs as M
 from ...assess import weapons as W
 from .. import charts as V
-from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural
+from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural, finding, story
 
 SLOT_ORDER = list(E.SLOTS)
 
 
-def equipment_page(world: World) -> str:
+def equipment_story(world: World):
     a = E.analyse(world)
     k91 = a.ac_kits[C.HERO_LEVEL]
-    out = ["# Equipment by level\n\n",
-           "Armour and other worn gear: how much protection and hitroll/damroll the world offers at each level from "
-           "1 to 91, where the gaps are, and which items break the item-points rule. Weapons have their own page.\n",
-           V.stat_tiles([
-               (f"{k91.total('ac'):.0f}", f"AC from a best-in-slot kit at {C.HERO_LEVEL}"),
-               (f"+{a.hit_kits[C.HERO_LEVEL].total('damroll')}",
-                f"damroll from gear at {C.HERO_LEVEL} (+{a.hit_kits[C.HERO_LEVEL].total('hitroll')} hitroll)"),
-               (str(len(a.got)), "obtainable pieces of gear"),
-               (str(len(a.over_points)), "items over the points rule"),
-               (str(len(a.hidden_by_bug)), "more hidden by an AC bug"),
-           ])]
-    out += [_ac(a), _gaps(a), _hitdam(a), _points(a), _bug(a), _lost(a)]
-    out.append("\n## Method\n")
-    out.append(V.details("How these numbers are calculated", a.method(), kind="info"))
-    return "".join(out)
+    longest_wait = max(hi - lo + 1 for lo, hi, _ in (a.slot_plateau(s) for s in SLOT_ORDER))
+    tiles = V.stat_tiles([
+        (f"{k91.total('ac'):.0f}", f"AC from a best-in-slot kit at {C.HERO_LEVEL}"),
+        (f"+{a.hit_kits[C.HERO_LEVEL].total('damroll')}",
+         f"damroll from gear at {C.HERO_LEVEL} (+{a.hit_kits[C.HERO_LEVEL].total('hitroll')} hitroll)"),
+        (str(len(a.got)), "obtainable pieces of gear"),
+        (str(len(a.over_points)), "items over the points rule"),
+        (str(len(a.hidden_by_bug)), "more hidden by an AC bug"),
+    ])
+    return story("equipment", "Equipment by level",
+                 "Armour and other worn gear: how much protection and hitroll/damroll the world offers at each level "
+                 "from 1 to 91, where the gaps are, and which items break the item-points rule. Weapons have their "
+                 "own page.", tiles, [
+                     finding("equipment.ac-ceiling", _ac(a), metric=round(k91.total("ac")),
+                             label=f"AC from a best-in-slot kit at {C.HERO_LEVEL}", better="none", issue=False),
+                     finding("equipment.slot-gaps", _gaps(a), metric=longest_wait,
+                             label="levels the worst slot waits for an upgrade", impact=2),
+                     finding("equipment.hitdam", _hitdam(a), metric=a.hit_kits[C.HERO_LEVEL].total("damroll"),
+                             label=f"damroll from gear at {C.HERO_LEVEL}", better="none", issue=False),
+                     finding("equipment.points-rule", _points(a), metric=len(a.over_points),
+                             label="obtainable items over the item-points rule", impact=2),
+                     finding("equipment.ac-not-counted", _bug(a), metric=len(a.hidden_by_bug),
+                             label="items the AC/saves bug lets through", impact=2),
+                     finding("equipment.no-source", _lost(a), metric=len(a.lost), label="pieces of gear with no source"),
+                 ], a.method())
+
+
+def equipment_page(world: World) -> str:
+    return equipment_story(world).markdown()
 
 
 def _ac(a: E.EquipmentAnalysis) -> str:

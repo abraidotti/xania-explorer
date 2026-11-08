@@ -9,27 +9,40 @@ from ...assess import common as C
 from ...assess import levelling as L
 from ...assess import mobs as M
 from .. import charts as V
-from .common import HIGHLIGHT, MUTED, _list, _plural
+from .common import HIGHLIGHT, MUTED, _list, _plural, finding, story
 
 TOP_AREAS = 9
 
 
-def levelling_page(world: World) -> str:
+def levelling_story(world: World):
     a = L.analyse(world)
     none_from = next((lvl for lvl in C.LEVELS if all(not a.suitable(x) for x in range(lvl, C.HERO_LEVEL + 1))), None)
-    out = ["# Levelling path\n\n",
-           "Where a character of each level can go for experience: how many areas suit them, how much XP the world "
-           "offers per reset, which areas carry each stretch of levels, and how far away they are.\n",
-           V.stat_tiles([
-               (f"{a.levels_of_xp(3):.0f} → {a.levels_of_xp(88):.1f}", "levels' worth of XP per world reset, level 3 → 88"),
-               (str(none_from) if none_from else "—", "level from which no area suits"),
-               (str(len(a.unreachable_rooms)), "rooms unreachable on foot from recall"),
-               (str(max(d for _, d, _ in a.area_distance())), "steps to the farthest area"),
-           ])]
-    out += [_supply(a, none_from), _areas(a), _dominance(a), _distance(a), _unreachable(a)]
-    out.append("\n## Method\n")
-    out.append(V.details("How these numbers are calculated", a.method(), kind="info"))
-    return "".join(out)
+    thin = sum(1 for lvl in C.LEVELS if len(a.suitable(lvl)) <= 3)
+    top_shares = [a.top_share(lvl)[1] for lvl in C.LEVELS]
+    tiles = V.stat_tiles([
+        (f"{a.levels_of_xp(3):.0f} → {a.levels_of_xp(88):.1f}", "levels' worth of XP per world reset, level 3 → 88"),
+        (str(none_from) if none_from else "—", "level from which no area suits"),
+        (str(len(a.unreachable_rooms)), "rooms unreachable on foot from recall"),
+        (str(max(d for _, d, _ in a.area_distance())), "steps to the farthest area"),
+    ])
+    return story("levelling", "Levelling path",
+                 "Where a character of each level can go for experience: how many areas suit them, how much XP the "
+                 "world offers per reset, which areas carry each stretch of levels, and how far away they are.", tiles, [
+                     finding("levelling.xp-supply", _supply(a, none_from), metric=round(a.levels_of_xp(88), 1),
+                             label="levels' worth of XP per reset for a level-88 character", better="higher", impact=3),
+                     finding("levelling.suitable-areas", _areas(a), metric=thin,
+                             label="levels with three or fewer areas to level in", impact=3),
+                     finding("levelling.area-dominance", _dominance(a), metric=round(100 * max(top_shares)),
+                             label="% largest share of a level's XP from one area"),
+                     finding("levelling.distance", _distance(a), metric=max(d for _, d, _ in a.area_distance()),
+                             label="steps from recall to the farthest area", better="none", issue=False),
+                     finding("levelling.unreachable", _unreachable(a), metric=len(a.unreachable_rooms),
+                             label="rooms unreachable on foot"),
+                 ], a.method())
+
+
+def levelling_page(world: World) -> str:
+    return levelling_story(world).markdown()
 
 
 def _x():
