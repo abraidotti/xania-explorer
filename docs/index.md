@@ -1,9 +1,7 @@
 # Xania Explorer
 
-Balance reports and working notes for [Xania](https://github.com/mattgodbolt/xania), the MUD Matt Godbolt and
-friends ran in the late 1990s. The name tips its hat to his [Compiler Explorer](https://godbolt.org/): point it
-at a Xania checkout and see what the code and data actually do. The guides give formulas and point to the
-source; they aren't player guides.
+Compare Xania deployments by repo or branch. Point the app at two Xania codebases to see what the code and data
+actually do.
 
 ## Guides
 
