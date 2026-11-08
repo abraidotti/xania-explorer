@@ -22,3 +22,6 @@ the area files and the C++ tables it reads straight from GitHub, then runs the s
       anywhere but this browser's cache.
     - **Shareable.** The address bar holds the comparison (`?base=owner/repo@branch&head=…`), so you can
       bookmark it or send it to someone.
+    - **Too slow, or failing on this device?** A maintainer can build the same pages on GitHub instead. The
+      explorer shows the exact command when a run fails or takes long, and finished builds are listed under
+      [Builds on GitHub](builds.md).

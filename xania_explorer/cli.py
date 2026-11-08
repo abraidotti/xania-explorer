@@ -114,6 +114,14 @@ def cmd_bundle(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_custom_build(args: argparse.Namespace) -> int:
+    from .site.builds import custom_build
+
+    dest = custom_build(args.checkouts, args.out, site_url=args.site_url, run_url=args.run_url, keep=args.keep)
+    print(f"built {dest}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="xania_explorer", description="Xania Explorer: balance reports and data checks for the Xania MUD.")
     parser.add_argument("--xania", type=Path, default=None, metavar="PATH",
@@ -155,6 +163,17 @@ def main(argv: list[str] | None = None) -> int:
                    help="copy Pyodide from a local pyodide package dir instead of downloading it")
     p.add_argument("--keep-pyodide", action="store_true", help="reuse an already-downloaded Pyodide; rebuild wheels only")
     p.set_defaults(func=cmd_bundle)
+
+    from .site.builds import KEEP
+
+    p = sub.add_parser("custom-build", help="build one version, or a comparison of two, into OUT/<slug>/ "
+                                            "(the Site workflow's 'Build this on GitHub' fallback)")
+    p.add_argument("checkouts", nargs="+", type=Path, metavar="CHECKOUT", help="base checkout, then optional head")
+    p.add_argument("--out", type=Path, required=True, help="builds folder (the builds branch)")
+    p.add_argument("--site-url", default="", help="the main site's URL; the build lives at <url>/builds/<slug>/")
+    p.add_argument("--run-url", default="", help="link to the workflow run, recorded in build.json")
+    p.add_argument("--keep", type=int, default=KEEP, help=f"how many builds to keep (default {KEEP})")
+    p.set_defaults(func=cmd_custom_build)
 
     args = parser.parse_args(argv)
     try:

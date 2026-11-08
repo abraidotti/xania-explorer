@@ -155,7 +155,8 @@
   }
 
   // ---------------------------------------------------------------- the Pyodide worker
-  var pyWorker = null, pyReady = null, pending = {}, nextId = 1, onWorkerProgress = null, manifestVersion = "";
+  var pyWorker = null, pyReady = null, pending = {}, nextId = 1, onWorkerProgress = null, manifestVersion = "",
+      runtimeBase = "";
   function startWorker() {
     if (pyReady) return pyReady;
     pyReady = new Promise(function (resolve, reject) {
@@ -180,7 +181,8 @@
       pyWorker.onerror = function (ev) {
         reject(new XError("runtime", runtimeMessage(ev.message || "the worker failed to start")));
       };
-      pyWorker.postMessage({ type: "init", base: SITE, version: manifestVersion });
+      // saved GitHub builds share the main site's runtime (manifest.runtimeBase, e.g. "../../")
+      pyWorker.postMessage({ type: "init", base: new URL(runtimeBase, SITE).href, version: manifestVersion });
     });
     pyReady.catch(function () { pyReady = null; });  // allow a retry
     return pyReady;
@@ -267,6 +269,7 @@
       var r = await fetch(new URL("explore-manifest.json", SITE));
       this.manifest = await r.json();
       manifestVersion = this.manifest.version;
+      runtimeBase = this.manifest.runtimeBase || "";
     } catch (e) {
       this.fail(null, "This site build has no explore-manifest.json, so the explorer can't run here.");
       go.disabled = true;
@@ -363,7 +366,7 @@
 
   // ---------------------------------------------------------------- a run
   Explorer.prototype.explore = async function (page) {
-    var self = this, m = this.manifest;
+    var self = this, m = this.manifest, slowTimer = null, sides = [];
     this.status.innerHTML = ""; this.notice.innerHTML = "";
     [this.base, this.head].forEach(function (s) { s.error.hidden = true; });
     var base = this.readSide(this.base), head = this.readSide(this.head);
@@ -378,7 +381,6 @@
     var runtime = startWorker();
     try {
       this.step("check", "Checking " + wanted.map(function (w) { return w.repo; }).join(" and ") + " on GitHub");
-      var sides = [];
       for (var i = 0; i < wanted.length; i++) {
         try {
           sides.push(await resolveSide(wanted[i], m, i ? "head" : "base"));
@@ -401,7 +403,17 @@
         this.notice.innerHTML = "";
         this.notice.appendChild(el("p", {}, ["This exact commit is prebuilt on this site: ",
           el("a", { href: new URL(prebuilt.name + "/", SITE).href, text: prebuilt.label }),
-          " opens instantly and is searchable. The live run below shows the same pages."]));
+          " opens instantly and is searchable."]));
+      }
+      var built = (m.builds || []).find(function (b) {
+        return b.sides.length === sides.length && b.sides.every(function (bs, k) {
+          return bs.repo.toLowerCase() === sides[k].repo.toLowerCase() && bs.commit === sides[k].commit;
+        });
+      });
+      if (built) {
+        this.notice.appendChild(el("p", {}, ["A GitHub build of exactly these commits exists: ",
+          el("a", { href: new URL("builds/" + built.slug + "/", SITE).href, text: built.labels.join(" vs ") || built.slug }),
+          " (built " + built.built.slice(0, 10) + ")."]));
       }
 
       var resultKey = "result:" + m.version + ":" + sides.map(function (s) { return s.repo + "@" + s.commit; }).join("|");
@@ -425,6 +437,7 @@
         var ready = await runtime;
         this.step("runtime", "Python ready (" + (ready.ms / 1000).toFixed(1) + " s)", "done");
         var t0 = performance.now();
+        slowTimer = setTimeout(function () { self.offerBuild(sides, "slow"); }, 45000);
         result = await analyse(payload);
         this.step("analysis", "Analysed in " + ((performance.now() - t0) / 1000).toFixed(1) + " s", "done");
         cachePut(resultKey, result);
@@ -438,10 +451,39 @@
       var msg = e instanceof XError ? e.message : "Something went wrong: " + (e && e.message || e);
       if (e instanceof XError && e.side) this.sideError(e.side === "head" ? this.head : this.base, msg);
       this.fail(e instanceof XError ? e.side : null, msg);
+      // a GitHub build helps when this device or connection is the problem, not when the input is
+      if (!(e instanceof XError) || ["download", "runtime", "analysis"].indexOf(e.stage) >= 0) {
+        this.offerBuild(sides && sides.length ? sides : wanted, "failed");
+      }
     } finally {
+      clearTimeout(slowTimer);
       this.go.disabled = false;
       onWorkerProgress = null;
     }
+  };
+
+  // The fallback: build these pages with the Site workflow on GitHub (maintainers of the site's repo).
+  Explorer.prototype.offerBuild = function (sides, why) {
+    var repo = this.manifest.siteRepo;
+    if (!repo || this.notice.querySelector(".xe-fallback")) return;
+    var names = ["base", "head"], args = [];
+    sides.forEach(function (s, i) {
+      args.push("-f " + names[i] + "_repo=" + s.repo);
+      if (s.branch) args.push("-f " + names[i] + "_ref=" + s.branch);
+    });
+    var command = "gh workflow run site.yml -R " + repo + " " + args.join(" ");
+    var slug = XaniaPlan.buildSlug(sides);
+    var box = el("div", { class: "xe-fallback" }, [
+      el("p", {}, [el("strong", { text: why === "slow" ? "Taking a while? " : "Didn't work on this device? " }),
+        "Build these pages on GitHub instead. Maintainers of " + repo + " can run the Site workflow with these " +
+        "inputs; a few minutes later the build appears under ",
+        el("a", { href: new URL("builds/", SITE).href, text: "Builds" }),
+        " at builds/" + slug + "/."]),
+      el("pre", {}, [el("code", { text: command })]),
+      el("p", {}, ["Or use the ", el("a", { href: "https://github.com/" + repo + "/actions/workflows/site.yml",
+        text: "Run workflow form" }), " with the same inputs."]),
+    ]);
+    this.notice.appendChild(box);
   };
 
   // ---------------------------------------------------------------- results

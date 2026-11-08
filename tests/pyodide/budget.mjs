@@ -64,6 +64,13 @@ const X = py.pyimport("xania_explorer.explore");
 await import(pathToFileURL(join(dirname(fileURLToPath(import.meta.url)), "../../docs/javascripts/explore-plan.js")).href);
 const manifest = JSON.parse(py.runPython("import json; from xania_explorer.explore import manifest; json.dumps(manifest())"));
 const failures = [];
+// ...and name GitHub builds the same way (explore-plan.js slugFor/buildSlug vs builds.py build_slug)
+const slugCases = [[{ repo: "mattgodbolt/xania", branch: "main" }],
+  [{ repo: "A-b/X.y", branch: "feature/Some Thing" }, { repo: "a-b/x.y", branch: "HEAD" }], [{ repo: "", branch: "" }]];
+for (const sides of slugCases) {
+  const py_ = py.runPython(`from xania_explorer.site.builds import build_slug; build_slug(${JSON.stringify(sides)})`);
+  if (py_ !== globalThis.XaniaPlan.buildSlug(sides)) failures.push(`buildSlug disagrees: ${py_} vs ${globalThis.XaniaPlan.buildSlug(sides)}`);
+}
 const sides = [];
 let downloadedBytes = 0;
 args.xania.forEach((root, i) => {

@@ -30,6 +30,7 @@ python -m xania_explorer serve --target upstream=../xania-upstream --target fork
 | `site [--target ...] [--out DIR] [--strict]` | Build the static website into `site/` |
 | `check` | Load the world and list loader warnings and integrity problems (exit 1 if any would stop the MUD booting) |
 | `assess [SYSTEM ...]` | Write the assessments (characters, weapons, equipment, combat, skills, economy, levelling, mobs, bugs) as Markdown + CSV into `build/assessments/` |
+| `custom-build CHECKOUT [CHECKOUT] --out DIR` | Build one version or a comparison as a static site into `DIR/<slug>/` (used by the workflow's "Build this on GitHub") |
 | `bundle` | Write the live explorer's runtime (Pyodide + wheels, ~14 MB, gitignored) into `docs/runtime/`; after that, `site`/`serve` keep its wheel in step with the code |
 | `docs` | Write the area catalogue as Markdown into `build/reference/` |
 
@@ -47,6 +48,12 @@ wheel under 1 MB ([tests/pyodide/](tests/pyodide/)). The analysis code must stay
 standard library (enforced by [tests/test_explore.py](tests/test_explore.py)).
 
 To try it locally, run `python -m xania_explorer bundle` once, then `serve`.
+
+**Build this on GitHub** is the fallback for devices where a live run is too slow or fails: run the Site workflow
+with `base_repo`/`base_ref` (and optionally `head_repo`/`head_ref`), e.g.
+`gh workflow run site.yml -f base_repo=mattgodbolt/xania -f head_repo=you/xania -f head_ref=balance`. It builds
+that version or comparison with `custom-build`, keeps the newest 20 on the `builds` branch, and every deploy
+publishes them under `/builds/`, listed on the Builds page.
 
 ## Published site
 

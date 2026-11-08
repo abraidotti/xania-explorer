@@ -5,6 +5,9 @@
 #       XANIA_FORK_REPO   fork to compare against upstream (default: <repo owner>/xania)
 #       XANIA_FORK_REF    branch/tag/commit of the fork (default: its default branch)
 #       XANIA_UPSTREAM_REF  upstream ref (default: main)
+# "Build this on GitHub": run this workflow with base_repo (and optionally base_ref, head_repo, head_ref) to add a
+# static build of that version or comparison under /builds/. Builds live on the `builds` branch (newest 20, one
+# force-pushed commit) and every deploy copies them in.
 name: Site
 
 on:
@@ -21,13 +24,26 @@ on:
       fork_ref:
         description: "Fork branch, tag or commit (blank = default branch)"
         default: ""
+      base_repo:
+        description: "Build on GitHub: base repo, owner/name (blank = no extra build)"
+        default: ""
+      base_ref:
+        description: "Build on GitHub: base branch (blank = its default branch)"
+        default: ""
+      head_repo:
+        description: "Build on GitHub: repo to compare with (blank = the base repo, if head_ref is set)"
+        default: ""
+      head_ref:
+        description: "Build on GitHub: branch to compare with (blank = no comparison, unless head_repo is set)"
+        default: ""
 
 permissions:
   contents: read
 
 concurrency:
-  group: site-${{ github.ref }}
-  cancel-in-progress: true
+  # A requested build gets its own group: it's never cancelled by, and never cancels, the regular builds.
+  group: site-${{ github.ref }}-${{ inputs.base_repo != '' && github.run_id || 'site' }}
+  cancel-in-progress: ${{ inputs.base_repo == '' }}
 
 env:
   UPSTREAM_REPO: mattgodbolt/xania
@@ -36,6 +52,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # only used to push the builds branch for a requested build
     steps:
       - name: Check out xania-explorer
         uses: actions/checkout@v7
@@ -58,6 +76,27 @@ jobs:
           repository: ${{ env.FORK_REPO }}
           ref: ${{ inputs.fork_ref || vars.XANIA_FORK_REF || '' }}
           path: xania-fork
+
+      - name: Check out the requested build's base
+        if: inputs.base_repo != ''
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ inputs.base_repo }}
+          ref: ${{ inputs.base_ref }}
+          path: build-base
+
+      - name: Check out the requested build's head
+        if: inputs.base_repo != '' && (inputs.head_repo != '' || inputs.head_ref != '')
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ inputs.head_repo || inputs.base_repo }}
+          ref: ${{ inputs.head_ref }}
+          path: build-head
+
+      - name: Fetch saved builds
+        run: |
+          git clone --quiet --depth 1 --branch builds "https://github.com/${GITHUB_REPOSITORY}.git" saved-builds \
+            || { mkdir -p saved-builds; echo "No builds branch yet."; }
 
       - uses: actions/setup-python@v7
         with:
@@ -99,11 +138,39 @@ jobs:
         continue-on-error: true
         uses: actions/configure-pages@v6
 
+      - name: Build the requested version or comparison
+        if: inputs.base_repo != ''
+        working-directory: xania-explorer
+        env:
+          SITE_URL_BASE: ${{ steps.pages.outputs.base_url }}
+          SITE_REPO_URL: https://github.com/${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          NO_MKDOCS_2_WARNING: "1"
+        run: |
+          sides=(../build-base)
+          if [ -d ../build-head ]; then sides+=(../build-head); fi
+          python -m xania_explorer custom-build "${sides[@]}" --out ../saved-builds \
+            --site-url "$SITE_URL_BASE" --run-url "$RUN_URL"
+
+      - name: Save builds (one force-pushed commit on the builds branch)
+        if: inputs.base_repo != '' && github.ref == 'refs/heads/main'
+        working-directory: saved-builds
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf .git
+          git init -q -b builds
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Saved builds (run ${GITHUB_RUN_ID})"
+          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" builds
+
       - name: Build site
         working-directory: xania-explorer
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url && format('{0}/', steps.pages.outputs.base_url) || '' }}
           SITE_REPO_URL: https://github.com/${{ github.repository }}
+          XANIA_BUILDS_DIR: ${{ github.workspace }}/saved-builds
           NO_MKDOCS_2_WARNING: "1"
         run: |
           targets=(--target "upstream=../xania-upstream")
@@ -113,6 +180,9 @@ jobs:
             echo "::notice::Fork ${FORK_REPO} not available; building upstream only."
           fi
           python -m xania_explorer site --strict --out ../_site "${targets[@]}"
+          # saved GitHub builds go under /builds/, next to the Builds page
+          mkdir -p ../_site/builds
+          (cd ../saved-builds && tar --exclude=.git -cf - .) | (cd ../_site/builds && tar -xf -)
 
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'

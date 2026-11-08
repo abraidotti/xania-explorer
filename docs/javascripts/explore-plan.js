@@ -50,5 +50,17 @@
     return { ok: true, error: "", files: files, missing_sources: missing, unavailable: unavailable, warning: warning };
   }
 
-  root.XaniaPlan = { plan: plan };
+  // xania_explorer/site/targets.py slug_for(): a URL-safe name from repo + branch
+  function slugFor(repo, branch, fallback) {
+    var clean = function (s) { return s.toLowerCase().replace(/[^a-z0-9_-]+/g, "-").replace(/^-+|-+$/g, ""); };
+    var parts = [(repo || "").replace(/\//g, "-"), branch && branch !== "HEAD" ? branch : ""].filter(Boolean);
+    return clean(parts.join("-")) || clean(fallback || "") || "xania";
+  }
+
+  // xania_explorer/site/builds.py build_slug(): where a GitHub build of these sides lives
+  function buildSlug(sides) {
+    return sides.map(function (s, i) { return slugFor(s.repo, s.branch, "side" + (i + 1)); }).join("...");
+  }
+
+  root.XaniaPlan = { plan: plan, slugFor: slugFor, buildSlug: buildSlug };
 })(typeof globalThis !== "undefined" ? globalThis : this);

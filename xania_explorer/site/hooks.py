@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import logging
 import mimetypes
+import os
 import re
 
 from mkdocs.structure.files import File, Files
@@ -17,7 +18,7 @@ from mkdocs.structure.files import File, Files
 # Absolute imports: MkDocs loads this file as a standalone module, not as part of the package.
 from xania_explorer import explore
 from xania_explorer.areafile.world import load_world
-from xania_explorer.site import compare, pages
+from xania_explorer.site import builds, compare, pages
 from xania_explorer.site.dashboard import home_summary
 from xania_explorer.site.targets import Target, load_targets
 from xania_explorer.source import character_tables, cpp_tables
@@ -53,10 +54,17 @@ def on_config(config, **kwargs):
     if len(_targets) > 1:
         _generated["compare.md"] = compare.render(_targets)
     _generated["versions.md"] = _versions_page()
-    _generated["explore-manifest.json"] = json.dumps(explore.manifest(
+    site_repo = (config.get("repo_url") or "").rstrip("/").removeprefix("https://github.com/")
+    saved = builds.list_builds(os.environ.get(builds.ENV_DIR))
+    _generated["builds.md"] = builds.builds_page(saved, site_repo)
+    manifest = explore.manifest(
         prebuilt=[{"name": t.name, "repo": t.paths.repo_slug, "branch": t.paths.branch, "commit": t.paths.commit,
                    "label": t.label} for t, _ in _targets],
-        version=explore.code_version()))
+        version=explore.code_version())
+    manifest.update(siteRepo=site_repo, runtimeBase=os.environ.get("XANIA_RUNTIME_URL", ""),
+                    builds=[{"slug": b["slug"], "sides": b["sides"], "labels": b.get("labels", []),
+                             "built": b.get("built", "")} for b in saved])
+    _generated["explore-manifest.json"] = json.dumps(manifest)
 
     nav = [{"Home": "index.md"}, {"Explore any repo": "explore.md"},
            {"Guides": [{"Architecture & game loop": "01-architecture.md"},
@@ -75,11 +83,16 @@ def on_config(config, **kwargs):
                     + [{"Area catalogue": f"{t.name}/areas.md"}]})
     if len(_targets) > 1:
         nav.append({"Compare": "compare.md"})
+    if saved:
+        nav.append({"Builds on GitHub": "builds.md"})
     config["nav"] = nav
     return config
 
 
 def on_files(files: Files, config, **kwargs):
+    if os.environ.get("XANIA_SKIP_RUNTIME"):  # saved builds use the main site's explorer runtime
+        for f in [f for f in files if f.src_uri.startswith("runtime/")]:
+            files.remove(f)
     for path, content in _generated.items():
         files.append(File.generated(config, path, content=content))
     return files
