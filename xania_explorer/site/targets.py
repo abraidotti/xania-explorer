@@ -31,18 +31,35 @@ class Target:
     paths: XaniaPaths
 
     @property
+    def side(self) -> str:
+        """``owner/repo @ branch``: what identifies a deployment (two branches of one repo differ here)."""
+        slug, branch = self.paths.repo_slug, self.paths.branch
+        if not slug:
+            return self.name
+        return f"{slug} @ {branch}" if branch and branch != "HEAD" else slug
+
+    @property
     def label(self) -> str:
-        """e.g. ``upstream: mattgodbolt/xania @ 82171fa`` (parts omitted when unknown)."""
-        slug, commit = self.paths.repo_slug, self.paths.commit
-        label = f"{self.name}: {slug}" if slug else self.name
-        return f"{label} @ {commit[:7]}" if commit else label
+        """e.g. ``upstream: mattgodbolt/xania @ main (82171fa)`` (parts omitted when unknown)."""
+        commit = self.paths.commit
+        named_after_side = self.name == slug_for(self.paths.repo_slug, self.paths.branch, "")
+        label = self.side if named_after_side or self.side == self.name else f"{self.name}: {self.side}"
+        return f"{label} ({commit[:7]})" if commit else label
+
+
+def slug_for(repo: str | None, branch: str | None, fallback: str) -> str:
+    """A URL-safe target name from repo + branch, e.g. ``mattgodbolt-xania-main``."""
+    parts = [p for p in ((repo or "").replace("/", "-"), branch if branch and branch != "HEAD" else "") if p]
+    name = re.sub(r"[^a-z0-9_-]+", "-", "-".join(parts).lower()).strip("-")
+    return name or re.sub(r"[^a-z0-9_-]+", "-", fallback.lower()).strip("-") or "xania"
 
 
 def parse_target(text: str) -> TargetSpec:
-    """``NAME=PATH`` or just ``PATH`` (name = folder name)."""
+    """``NAME=PATH``, or just ``PATH`` (name from the checkout's repo and branch, else its folder name)."""
     name, sep, path = text.partition("=")
     if not sep:
-        path, name = text, Path(text).resolve().name
+        p = XaniaPaths.resolve(text)
+        path, name = text, slug_for(p.repo_slug, p.branch, Path(text).resolve().name)
     name = name.strip().lower()
     if not _SLUG.match(name):
         raise ValueError(f"target name {name!r} must be lower-case letters, digits, '-' or '_'")

@@ -50,7 +50,13 @@ def cmd_assess(args: argparse.Namespace) -> int:
     world = _world(args)
     out: Path = args.out
     out.mkdir(parents=True, exist_ok=True)
+    from .systems import by_slug
+
     for name in args.only or ASSESSMENTS:
+        story = by_slug(name).story(world)
+        if story.status != "ok":
+            print(f"skipped {name}: {story.note}")
+            continue
         mod = importlib.import_module(f".assess.{name}", __package__)
         (out / f"{name}.md").write_text(mod.render(world), encoding="utf-8", newline="\n")
         mod.write_csv(world, out / "data" / f"{name}.csv")
@@ -80,13 +86,32 @@ def _mkdocs(args: argparse.Namespace, *mkdocs_args: str) -> int:
     return subprocess.call(cmd, env=_targets_env(args), cwd=REPO_ROOT)
 
 
+def _refresh_runtime() -> None:
+    """If the explorer runtime is bundled, rebuild its xania_explorer wheel so it matches the code being built."""
+    from .site.bundle import RUNTIME_DIR, build_wheels
+
+    if (RUNTIME_DIR / "wheels" / "index.json").exists():
+        build_wheels(RUNTIME_DIR / "wheels", own_only=True)
+
+
 def cmd_site(args: argparse.Namespace) -> int:
+    _refresh_runtime()
     extra = ["--strict"] if args.strict else []
     return _mkdocs(args, "build", "--site-dir", str(args.out), *extra)
 
 
 def cmd_serve(args: argparse.Namespace) -> int:
+    _refresh_runtime()
     return _mkdocs(args, "serve", "--dev-addr", args.addr)
+
+
+def cmd_bundle(args: argparse.Namespace) -> int:
+    from .site.bundle import bundle
+
+    info = bundle(args.out, args.pyodide, skip_pyodide=args.keep_pyodide)
+    print(f"wrote the explorer runtime to {info['dir']} ({info['mb']} MB): Pyodide {info['pyodide']}, "
+          f"wheels {', '.join(info['wheels'])}")
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -121,6 +146,15 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--target", action="append", default=[], help=target_help)
     p.add_argument("--addr", default="127.0.0.1:8000")
     p.set_defaults(func=cmd_serve)
+
+    from .site.bundle import RUNTIME_DIR
+
+    p = sub.add_parser("bundle", help="write the in-browser explorer's runtime (Pyodide + wheels) into docs/runtime")
+    p.add_argument("--out", type=Path, default=RUNTIME_DIR)
+    p.add_argument("--pyodide", type=Path, default=None, metavar="DIR",
+                   help="copy Pyodide from a local pyodide package dir instead of downloading it")
+    p.add_argument("--keep-pyodide", action="store_true", help="reuse an already-downloaded Pyodide; rebuild wheels only")
+    p.set_defaults(func=cmd_bundle)
 
     args = parser.parse_args(argv)
     try:

@@ -121,8 +121,21 @@ ATTACKS: dict[str, str] = {
 }
 
 
+_DECODED: dict[tuple[int, int], list[str]] = {}
+
+
 def decode(value: int, table: dict[int, str]) -> list[str]:
-    """Names for the set bits of ``value``; unknown bits shown as ``bit<N>``."""
+    """Names for the set bits of ``value``; unknown bits shown as ``bit<N>``. Returns a fresh list.
+
+    Memoised per (table, value): the analyses decode the same few flag words millions of times."""
+    key = (id(table), value)
+    hit = _DECODED.get(key)
+    if hit is None:
+        hit = _DECODED[key] = _decode(value, table)
+    return list(hit)
+
+
+def _decode(value: int, table: dict[int, str]) -> list[str]:
     names = []
     bit = 0
     while value >> bit:

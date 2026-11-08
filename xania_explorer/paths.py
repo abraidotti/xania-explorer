@@ -8,6 +8,7 @@ command line or the ``XANIA_DIR`` environment variable.
 
 from __future__ import annotations
 
+import json
 import os
 import subprocess
 from dataclasses import dataclass
@@ -15,7 +16,9 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SIBLING_XANIA = REPO_ROOT.parent / "xania"
-UPSTREAM_URL = "https://github.com/mattgodbolt/xania"
+CANONICAL_REPO = "mattgodbolt/xania"
+UPSTREAM_URL = f"https://github.com/{CANONICAL_REPO}"
+METADATA_FILE = ".xania-explorer.json"  # {"repo": "owner/name", "branch": ..., "commit": ...} for git-less copies
 
 
 def default_xania_dir() -> Path:
@@ -46,6 +49,14 @@ class XaniaPaths:
     def has_src(self) -> bool:
         return (self.src_dir / "SkillTables.cpp").exists()
 
+    @property
+    def metadata(self) -> dict[str, str]:
+        """Repo/branch/commit written next to a copy that isn't a git checkout (e.g. the in-browser explorer)."""
+        try:
+            return json.loads((self.root / METADATA_FILE).read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return {}
+
     def git(self, *args: str) -> str | None:
         try:
             out = subprocess.run(["git", "-C", str(self.root), *args], capture_output=True, text=True, timeout=10)
@@ -55,15 +66,17 @@ class XaniaPaths:
 
     @property
     def commit(self) -> str | None:
-        return self.git("rev-parse", "HEAD")
+        return self.metadata.get("commit") or self.git("rev-parse", "HEAD")
 
     @property
     def branch(self) -> str | None:
-        return self.git("rev-parse", "--abbrev-ref", "HEAD")
+        return self.metadata.get("branch") or self.git("rev-parse", "--abbrev-ref", "HEAD")
 
     @property
     def web_url(self) -> str | None:
         """https URL of the checkout's ``origin`` remote, if it's on GitHub."""
+        if self.metadata.get("repo"):
+            return f"https://github.com/{self.metadata['repo']}"
         remote = self.git("remote", "get-url", "origin")
         if not remote:
             return None

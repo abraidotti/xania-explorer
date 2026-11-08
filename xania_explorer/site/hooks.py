@@ -7,12 +7,15 @@ watches the Xania checkouts and rebuilds when area files change.
 
 from __future__ import annotations
 
+import json
 import logging
+import mimetypes
 import re
 
 from mkdocs.structure.files import File, Files
 
 # Absolute imports: MkDocs loads this file as a standalone module, not as part of the package.
+from xania_explorer import explore
 from xania_explorer.areafile.world import load_world
 from xania_explorer.site import compare, pages
 from xania_explorer.site.dashboard import home_summary
@@ -21,6 +24,9 @@ from xania_explorer.source import character_tables, cpp_tables
 from xania_explorer.systems import SYSTEMS
 
 log = logging.getLogger("mkdocs.plugins.xania_explorer")
+# The explorer's Pyodide runtime is ES modules (.mjs). Windows' registry often maps .mjs to text/plain, which
+# browsers refuse to run as a module, so `mkdocs serve` would break the explorer there.
+mimetypes.add_type("text/javascript", ".mjs")
 
 _targets: list[tuple[Target, object]] = []
 _generated: dict[str, str] = {}
@@ -47,8 +53,12 @@ def on_config(config, **kwargs):
     if len(_targets) > 1:
         _generated["compare.md"] = compare.render(_targets)
     _generated["versions.md"] = _versions_page()
+    _generated["explore-manifest.json"] = json.dumps(explore.manifest(
+        prebuilt=[{"name": t.name, "repo": t.paths.repo_slug, "branch": t.paths.branch, "commit": t.paths.commit,
+                   "label": t.label} for t, _ in _targets],
+        version=explore.code_version()))
 
-    nav = [{"Home": "index.md"},
+    nav = [{"Home": "index.md"}, {"Explore any repo": "explore.md"},
            {"Guides": [{"Architecture & game loop": "01-architecture.md"},
                        {"Area file format": "02-area-file-format.md"},
                        {"World model": "03-world-model.md"},
@@ -114,3 +124,4 @@ def _versions_page() -> str:
     if len(_targets) > 1:
         lines.append("\nSee [Compare](compare.md) for differences between them.\n")
     return "".join(lines)
+

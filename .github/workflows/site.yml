@@ -74,6 +74,19 @@ jobs:
           XANIA_DIR: ${{ github.workspace }}/xania-upstream
         run: python -m pytest -q
 
+      - name: Bundle the explorer runtime (Pyodide + wheels)
+        working-directory: xania-explorer
+        run: python -m xania_explorer bundle
+
+      - name: Explorer budget (Pyodide in Node) and CPython parity
+        working-directory: xania-explorer
+        run: |
+          sides=(--xania ../xania-upstream)
+          if [ "${{ steps.fork.outcome }}" = "success" ]; then sides+=(--xania ../xania-fork); fi
+          node tests/pyodide/budget.mjs --pyodide docs/runtime/pyodide --wheels docs/runtime/wheels \
+            "${sides[@]}" --seconds 60 --max-wheel-kb 1024 --dump "$RUNNER_TEMP/pyodide-pages.json"
+          python tests/pyodide/compare_cpython.py ../xania-upstream "$RUNNER_TEMP/pyodide-pages.json"
+
       - name: Load-integrity check
         working-directory: xania-explorer
         run: |

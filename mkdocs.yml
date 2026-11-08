@@ -62,6 +62,8 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/tablesort.min.js
   - https://cdn.jsdelivr.net/npm/tablesort@5.3.0/dist/sorts/tablesort.number.min.js
   - javascripts/xania.js
+  - javascripts/explore-plan.js
+  - javascripts/explore.js
 
 extra_css:
   - stylesheets/xania.css

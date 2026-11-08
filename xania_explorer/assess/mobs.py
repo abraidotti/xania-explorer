@@ -12,6 +12,7 @@ from __future__ import annotations
 
 from collections import Counter, defaultdict
 from dataclasses import dataclass
+from functools import cached_property
 from pathlib import Path
 
 from ..areafile.model import Mob
@@ -32,11 +33,11 @@ class MobInfo:
     spawns: list[MobSpawn]
     is_shopkeeper: bool
 
-    @property
+    @cached_property
     def level(self) -> int:
         return C.usable_level(self.mob.level)
 
-    @property
+    @cached_property
     def population(self) -> int:
         return estimated_population(self.spawns)
 

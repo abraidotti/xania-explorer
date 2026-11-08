@@ -75,6 +75,14 @@ def run_checks(world: World) -> list[BugResult]:
     from .checks import CHECKS
 
     def compute(w: World) -> list[BugResult]:
-        return [BugResult(c, c.detect(w)) for c in CHECKS]
+        return [BugResult(c, _detect(c, w)) for c in CHECKS]
 
     return C.cached(world, "bugs", compute)
+
+
+def _detect(check: BugCheck, world: World) -> Detection:
+    """Run one check in isolation: a check that can't run (missing source, a model failing) is 'unknown'."""
+    try:
+        return check.detect(world)
+    except Exception as e:  # noqa: BLE001
+        return Detection("unknown", note=f"couldn't run on this checkout ({type(e).__name__}: {e})")

@@ -64,10 +64,14 @@ def deployment_dashboard(world: World) -> str:
     for s in SYSTEMS:
         st = s.story(world)
         worst = st.issues[0] if st.issues else None
+        if st.status != "ok":
+            line = f"**{'Unavailable' if st.status == 'unavailable' else 'Failed'}** for this checkout.\n\n"
+        elif worst:
+            line = f"Top issue: [{worst.title}]({s.slug}.md#{worst.anchor})\n\n"
+        else:
+            line = "No issues found.\n\n"
         out.append(f'<div class="xu-system-card" markdown>\n\n**[{s.title}]({s.slug}.md)**\n\n'
-                   f'<span class="xu-card-label">{s.question}</span>\n\n'
-                   + (f"Top issue: [{worst.title}]({s.slug}.md#{worst.anchor})\n\n" if worst else "No issues found.\n\n")
-                   + "</div>\n")
+                   f'<span class="xu-card-label">{s.question}</span>\n\n' + line + "</div>\n")
     out.append("\n</div>\n\n")
     return "".join(out)
 
@@ -81,7 +85,9 @@ def home_summary(targets: list[tuple[object, World]], per_target: int = 3) -> st
                    f"{counts[1]} minor balance issues.\n")
         out.append(card_grid(issues(world)[:per_target], prefix=f"{t.name}/"))
     if len(targets) > 1:
-        out.append("See [Compare](compare.md) for how the versions differ.\n\n")
+        out.append("See [Compare](compare.md) for how the versions differ. ")
+    out.append("To look at any other repo or branch, or compare two of them, use the "
+               "[live explorer](explore.md).\n\n")
     return "".join(out)
 
 

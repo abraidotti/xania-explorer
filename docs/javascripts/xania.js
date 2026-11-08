@@ -41,6 +41,8 @@
     renderCharts();
     sortTables();
   }
+  // The live explorer (explore.js) calls this after inserting a generated page.
+  window.XaniaRender = onPage;
 
   if (typeof document$ !== "undefined") {
     document$.subscribe(onPage);

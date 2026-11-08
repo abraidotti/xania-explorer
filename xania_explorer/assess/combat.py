@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import statistics
 from dataclasses import dataclass, field
+from functools import cached_property
 from pathlib import Path
 
 from ..areafile.world import World
@@ -103,7 +104,7 @@ class MobFighter:
     def mob(self):
         return self.info.mob
 
-    @property
+    @cached_property
     def cls(self) -> str | None:
         acts = set(self.mob.act_names)
         return next((c for c in ("Warrior", "Thief", "Cleric", "Mage") if c in acts), None)

@@ -13,6 +13,7 @@ from __future__ import annotations
 
 from collections import Counter
 from dataclasses import dataclass
+from functools import cached_property
 from pathlib import Path
 
 from ..areafile import flags as F
@@ -45,11 +46,11 @@ class Item:
     def vnum(self) -> int:
         return self.obj.vnum
 
-    @property
+    @cached_property
     def level(self) -> int:
         return C.usable_level(self.obj.level)
 
-    @property
+    @cached_property
     def slots(self) -> list[str]:
         wear = set(F.decode(self.obj.wear_flags, F.WEAR))
         return [s for s, flag in SLOT_FLAG.items() if flag in wear]
@@ -183,11 +184,14 @@ class EquipmentAnalysis:
         def value(i: Item) -> float:
             return i.ac if score == "ac" else i.hitroll + i.damroll
 
+        ranked = self.__dict__.setdefault("_ranked", {})
+        if score not in ranked:  # each slot's candidates, best first; sorted once per score
+            ranked[score] = {slot: sorted((i for i in self.got if slot in i.slots and value(i) > 0),
+                                          key=lambda i: (-value(i), i.vnum)) for slot in SLOTS}
         picks = {}
         for slot, count in SLOTS.items():
-            usable = sorted((i for i in self.got if slot in i.slots and i.level <= level and value(i) > 0),
-                            key=lambda i: (-value(i), i.vnum))
-            picks[slot] = usable[:1] * count if usable else []
+            best = next((i for i in ranked[score][slot] if i.level <= level), None)
+            picks[slot] = [best] * count if best else []
         return Kit(level, picks)
 
     def slot_items(self, slot: str) -> list[Item]:

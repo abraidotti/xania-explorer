@@ -13,6 +13,7 @@ from ..assess import common as C
 from ..assess import mobs as M
 from ..assess import weapons as W
 from . import charts as V
+from ..systems import by_slug
 from .pages import BAND_LABELS
 from .targets import Target
 
@@ -30,7 +31,7 @@ def _metrics(world: World) -> dict[str, object]:
         "Obtainable weapons (≤ 91)": len(weapons),
         "Weapons over damage cap": sum(w.over_cap for w in W.collect(world)),
     }
-    for p in W.class_profiles(world.src_dir):
+    for p in _profiles(world):
         out[f"Weapons in {p.name} start types"] = sum(w.type in p.starting for w in weapons)
     spread = C.Spread.of(pop)
     out.update({"Combat mobs": len(mobs), "Mob population": sum(pop),
@@ -48,24 +49,40 @@ def _system_metrics(world: World) -> dict[str, object]:
     from ..assess import levelling as L
     from ..assess import skills as S
 
+    def equipment(out):
+        eq = E.analyse(world)
+        out["Best-in-slot AC at 91"] = round(eq.ac_kits[C.HERO_LEVEL].total("ac"))
+        out["Items over the points rule"] = len(eq.over_points)
+
+    def combat(out):
+        cb = CB.analyse(world)
+        for c in ("mage", "knight"):
+            out[f"Combat hours to 91 ({c})"] = round(cb.hours_to_hero(c), 1)
+        kills = [v for v in cb.series("knight", "kills_per_level").values() if v]
+        out["Mean kills per level"] = round(sum(kills) / len(kills), 1)
+
+    def skills(out):
+        out["Mage casts per kill at 91"] = round(S.analyse(world).casts_to_kill("mage", C.HERO_LEVEL) or 0, 1)
+
+    def economy(out):
+        out["Gold earned by 91"] = f"{EC.analyse(world).cumulative[C.HERO_LEVEL]:,.0f}"
+
+    def levelling(out):
+        lv = L.analyse(world)
+        out["Levels of XP per reset at 60"] = round(lv.levels_of_xp(60), 1)
+        out["Levels with ≤ 3 suitable areas"] = sum(1 for lvl in C.LEVELS if len(lv.suitable(lvl)) <= 3)
+        out["Rooms unreachable on foot"] = len(lv.unreachable_rooms)
+
     out: dict[str, object] = {}
-    eq = E.analyse(world)
-    out["Best-in-slot AC at 91"] = round(eq.ac_kits[C.HERO_LEVEL].total("ac"))
-    out["Items over the points rule"] = len(eq.over_points)
-    cb = CB.analyse(world)
-    for c in ("mage", "knight"):
-        out[f"Combat hours to 91 ({c})"] = round(cb.hours_to_hero(c), 1)
-    kills = [v for v in cb.series("knight", "kills_per_level").values() if v]
-    out["Mean kills per level"] = round(sum(kills) / len(kills), 1)
-    sk = S.analyse(world)
-    out["Mage casts per kill at 91"] = round(sk.casts_to_kill("mage", C.HERO_LEVEL) or 0, 1)
-    ec = EC.analyse(world)
-    out["Gold earned by 91"] = f"{ec.cumulative[C.HERO_LEVEL]:,.0f}"
-    lv = L.analyse(world)
-    out["Levels of XP per reset at 60"] = round(lv.levels_of_xp(60), 1)
-    out["Levels with ≤ 3 suitable areas"] = sum(1 for lvl in C.LEVELS if len(lv.suitable(lvl)) <= 3)
-    out["Rooms unreachable on foot"] = len(lv.unreachable_rooms)
+    for block in (equipment, combat, skills, economy, levelling):
+        if by_slug(block.__name__).available(world):  # an unavailable system's numbers show as "—"
+            block(out)
     return out
+
+
+def _profiles(world: World) -> list:
+    """Class weapon profiles, or none when the checkout has no skill table."""
+    return W.class_profiles(world.src_dir) if by_slug("weapons").available(world) else []
 
 
 def _mob_fields(m: Mob) -> dict[str, object]:
@@ -108,7 +125,8 @@ def render(targets: list[tuple[Target, World]]) -> str:
 
     metrics = [_metrics(w) for _, w in targets]
     out.append("## Key numbers\n\n")
-    out.append(C.table(["Metric"] + names, [[k] + [m[k] for m in metrics] for k in metrics[0]]))
+    keys = list(dict.fromkeys(k for m in metrics for k in m))
+    out.append(C.table(["Metric"] + names, [[k] + [m.get(k, "—") for m in metrics] for k in keys]))
 
     colours = {n: TARGET_COLOURS[i % len(TARGET_COLOURS)] for i, n in enumerate(names)}
     pop, wpn, curve = [], [], []
@@ -118,7 +136,7 @@ def render(targets: list[tuple[Target, World]]) -> str:
         for b in C.bands():
             pop.append({"band": b.label, "version": t.name, "value": sum(i.population for i in combat if i.level in b)})
             wpn.append({"band": b.label, "version": t.name, "value": sum(1 for x in got if x.level in b)})
-        for p in W.class_profiles(w.src_dir):
+        for p in _profiles(w):
             for lvl, v in W.best_by_level(got, set(p.starting)).items():
                 if v is not None:
                     curve.append({"level": lvl, "version": t.name, "class": p.name, "avg": v})
@@ -134,7 +152,7 @@ def render(targets: list[tuple[Target, World]]) -> str:
     out.append("\n## Obtainable weapons by band\n")
     out.append(V.embed(grouped(wpn, "New obtainable weapons per level band", "Weapons")))
     out.append("\n## Best starting-type weapon per class\n")
-    for p in W.class_profiles(base_w.src_dir):
+    for p in _profiles(base_w):
         out.append(V.embed(V.spec([r for r in curve if r["class"] == p.name], height=180,
                                   title=f"{p.name}: best usable weapon by level",
                                   mark={"type": "line", "interpolate": "step-after"},

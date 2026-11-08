@@ -54,8 +54,15 @@ class Story:
     method: str = ""  # rendered method block
     preamble: str = ""  # optional extra block after the intro (e.g. a warning)
     appendix: str = ""  # optional sections after the findings (e.g. the bug catalogue)
+    status: str = "ok"  # "ok" | "unavailable" (C++ files missing) | "error" (the analysis raised)
+    note: str = ""  # why, when status isn't "ok"
 
     def markdown(self) -> str:
+        if self.status != "ok":
+            kind = "warning" if self.status == "unavailable" else "failure"
+            heading = "Not available for this checkout" if self.status == "unavailable" else "This assessment failed"
+            return (f"# {self.title}\n\n{self.intro.rstrip()}\n\n!!! {kind} \"{heading}\"\n\n"
+                    f"    {self.note}\n")
         out = [f"# {self.title}\n\n", self.intro.rstrip() + "\n", self.preamble, self.tiles]
         out += [f.markdown() for f in self.findings]
         out.append(self.appendix)
