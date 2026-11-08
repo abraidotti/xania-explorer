@@ -113,9 +113,9 @@ def _hitdam(a: E.EquipmentAnalysis) -> str:
 
 
 def _points(a: E.EquipmentAnalysis) -> str:
-    pts = [{"level": i.level, "points": i.points, "name": i.obj.short_descr, "vnum": i.vnum,
-            "area": a.world.obj_area[i.vnum].name, "status": "over the rule" if i.points > i.allowed else "within"}
-           for i in a.items if i.obtainable and i.level <= C.HERO_LEVEL and (i.points or i.obj.affects)]
+    pts = [{"level": i.level, "points": a.points(i), "name": i.obj.short_descr, "vnum": i.vnum,
+            "area": a.world.obj_area[i.vnum].name, "status": "over the rule" if a.points(i) > i.allowed else "within"}
+           for i in a.items if i.obtainable and i.level <= C.HERO_LEVEL and (a.points(i) or i.obj.affects)]
     allowed = [{"level": lvl, "allowed": E.points_allowed(lvl)} for lvl in C.LEVELS]
     chart = {**V.spec([], title="Every obtainable item with bonuses: points vs level (dashed = allowed)", height=320),
              "data": {"values": pts},
@@ -136,18 +136,22 @@ def _points(a: E.EquipmentAnalysis) -> str:
     text = (f"The rule allows `level/10 + 1` points; **{len(a.over_points)}** obtainable items exceed it"
             + (f", most from {areas}" if a.over_points else "") + ". "
             + (f"The furthest over is **{top.obj.short_descr}** ({a.world.obj_area[top.vnum].name}, level "
-               f"{top.obj.level}): {top.points} points against {top.allowed}. " if top else "")
+               f"{top.obj.level}): {a.points(top)} points against {top.allowed}. " if top else "")
             + "Movement and HP bonuses count one point per 7, so large `Move +100` items blow the budget quickly.")
     if a.over_points_immortal:
         i = a.over_points_immortal[0]
         n = len(a.over_points_immortal)
         text += (f" Above level {C.HERO_LEVEL}, {_plural(n, 'item')} also {'breaks' if n == 1 else 'break'} it, "
-                 f"including **{i.obj.short_descr}** ({a.world.obj_area[i.vnum].name}) at {i.points} points.")
+                 f"including **{i.obj.short_descr}** ({a.world.obj_area[i.vnum].name}) at {a.points(i)} points.")
     return (f"\n## {len(a.over_points)} items break the item-points rule\n\n" + text + "\n" + V.embed(chart)
             + V.details(f"Details: the {len(a.over_points)} items", a.points_table()))
 
 
 def _bug(a: E.EquipmentAnalysis) -> str:
+    if a.ac_counted:
+        return ("\n## Armour-class bonuses count against the rule\n\n"
+                "This version's `AFFECT_DATA::worth` charges a point for each −1 of AC or saving-throw bonus, so the "
+                "points-rule numbers above include them (upstream Xania never counts them; see Bugs).\n")
     return ("\n## Armour-class bonuses are never counted against the rule\n\n"
             "`AFFECT_DATA::worth` (AFFECT_DATA.cpp:86) is meant to charge a point for each −1 of AC or saving-throw "
             "bonus, but its test reads `if (modifier < 0) if (modifier > 0)`, which can never be true. So `Ac` and "

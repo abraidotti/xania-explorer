@@ -31,9 +31,9 @@ def finding(fid: str, section: str, *, metric: float | None = None, label: str =
 
 
 def story(slug: str, title: str, intro: str, tiles: str, findings: list[Finding | None], method: str,
-          preamble: str = "") -> Story:
+          preamble: str = "", appendix: str = "") -> Story:
     return Story(slug, title, intro, tiles, [f for f in findings if f], V.details(
-        "How these numbers are calculated", method, kind="info") if method else "", preamble)
+        "How these numbers are calculated", method, kind="info") if method else "", preamble, appendix)
 MUTED = "#b8ab9c"
 HIGHLIGHT = "#b4532a"
 

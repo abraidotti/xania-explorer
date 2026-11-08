@@ -20,7 +20,7 @@ from ..areafile.world import Area, World
 
 @dataclass(frozen=True)
 class ObjSource:
-    kind: str  # "shop" | "mob" | "floor" | "container"
+    kind: str  # "shop" | "mob" | "floor" | "container" | "code" (created by the C++)
     area: str  # area short name
     mob_vnum: int | None = None
     mob_level: int | None = None
@@ -40,9 +40,25 @@ def shopkeepers(world: World) -> set[int]:
     return {s.keeper for f in world.files for s in f.shops}
 
 
+CODE_AREA = "(created by the C++)"
+
+
+def code_created_objects(world: World) -> set[int]:
+    """Object vnums the C++ creates directly (VnumObjects.hpp): corpses, body parts, money, spell-made
+    objects and the Mud School kit handed to new characters (Class.cpp first_weapon_vnum)."""
+    path = world.src_dir / "VnumObjects.hpp"
+    if not path.exists():
+        return set()
+    import re
+
+    return {int(v) for v in re.findall(r"constexpr auto \w+ = (\d+)u?;", path.read_text(encoding="latin-1"))}
+
+
 def object_sources(world: World) -> dict[int, list[ObjSource]]:
     keepers = shopkeepers(world)
     out: dict[int, list[ObjSource]] = defaultdict(list)
+    for vnum in code_created_objects(world):
+        out[vnum].append(ObjSource("code", CODE_AREA))
     for af in world.files:
         area_name = af.name
         last_mob: int | None = None

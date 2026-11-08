@@ -43,6 +43,7 @@ SYSTEMS: list[System] = [
     System("economy", "Economy", "Is the gold earned at each level enough for what there is to buy?"),
     System("levelling", "Levelling path", "Where can a character of each level gain experience, and how much is there?"),
     System("mobs", "Mobs", "Are mobs spread evenly over the levels, and is their toughness consistent?"),
+    System("bugs", "Bugs", "What's broken in the code, the area data and the content, and how do we fix it?"),
 ]
 
 

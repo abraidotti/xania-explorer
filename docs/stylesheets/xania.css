@@ -192,6 +192,13 @@
 .md-typeset .xu-card-label {
   color: var(--md-default-fg-color--light);
 }
+/* Bug statuses */
+.md-typeset .xu-status-present { background: #b4532a; color: #fffaf2; }
+.md-typeset .xu-status-latent { background: #e0a030; color: #3a261c; }
+.md-typeset .xu-status-fixed,
+.md-typeset .xu-status-clean { background: #5f8a5b; color: #fffaf2; }
+.md-typeset h3 + p .xu-chip { margin-bottom: 0.3rem; }
+
 /* Scorecard verdicts */
 .md-typeset .xu-improved { color: #3d7a3a; font-weight: 700; }
 .md-typeset .xu-worse { color: #b4532a; font-weight: 700; }

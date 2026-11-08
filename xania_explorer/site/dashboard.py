@@ -85,6 +85,35 @@ def home_summary(targets: list[tuple[object, World]], per_target: int = 3) -> st
     return "".join(out)
 
 
+def bug_changes(targets: list[tuple[object, World]]) -> str:
+    """Bug checks whose status differs from the baseline: fixed, introduced or changed."""
+    from ..assess import bugs as B
+
+    base_t, base_w = targets[0]
+    base = {r.check.id: r for r in B.analyse(base_w).results}
+    rows = []
+    for t, w in targets[1:]:
+        for r in B.analyse(w).results:
+            b = base.get(r.check.id)
+            if b is None or b.status == r.status and len(b.detection.occurrences) == len(r.detection.occurrences):
+                continue
+            if b.open and not r.open:
+                change = '<span class="xu-improved">▲ fixed</span>'
+            elif r.open and not b.open:
+                change = '<span class="xu-worse">▼ introduced</span>'
+            else:
+                d = len(r.detection.occurrences) - len(b.detection.occurrences)
+                change = (f'<span class="xu-{"improved" if d < 0 else "worse"}">{"▲" if d < 0 else "▼"} '
+                          f'{d:+d} occurrences</span>') if d else f"{b.status} → {r.status}"
+            rows.append(f"| {t.name} | [{r.check.title}]({t.name}/bugs.md#{r.anchor}) | {b.status} "
+                        f"({len(b.detection.occurrences)}) | {r.status} ({len(r.detection.occurrences)}) | {change} |\n")
+    out = "\n## Bugs fixed or introduced {#bug-changes}\n\n"
+    if not rows:
+        return out + "Every bug check has the same status and count as the baseline.\n\n"
+    return (out + f"| Version | Check | {base_t.name} | Version | Change |\n|---|---|---|---|---|\n" + "".join(rows)
+            + "\n")
+
+
 def scorecard(targets: list[tuple[object, World]]) -> str:
     """Every finding's headline number per deployment, with the change from the baseline (first target)."""
     from . import charts as V

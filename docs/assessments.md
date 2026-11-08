@@ -14,6 +14,12 @@ Each has interactive charts and a CSV of the underlying data.
 | Economy | Is the gold earned at each level enough for what there is to buy? | Combat, Equipment, Weapons |
 | Levelling path | Where can a character of each level gain experience, and how much is there? | Combat |
 | Mobs | Are mobs spread evenly over the levels, and is their toughness consistent? | — |
+| Bugs | What's broken in the code, the area data and the content, and how do we fix it? | Weapons, Equipment, Mobs, Levelling path |
+
+The Bugs system isn't about levels. It runs checks against the C++ source, the area data and the content. Code
+checks look for a specific faulty pattern, so a branch that fixes a bug shows it as fixed (and Compare lists it
+under "Bugs fixed or introduced"). Where a model ports C++ behaviour that a bug affects, it follows the
+checkout's code. For example, Equipment's item-points rule counts AC bonuses once the AC bug is fixed.
 
 Without the website, `python -m xania_explorer assess` writes the same reports as Markdown and CSV into `build/`.
 

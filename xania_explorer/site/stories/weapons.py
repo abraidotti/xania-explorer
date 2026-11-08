@@ -16,7 +16,7 @@ def weapons_story(world: World):
     worst = a.worst_plateau
     start = a.class_access("start")
     late = [w for w in a.got if w.level > a.early_cutoff]
-    late_mob_only = sum(1 for w in late if not w.buyable and all(s.kind == "mob" for s in w.sources))
+    late_mob_only = sum(1 for w in late if w.sources and all(s.kind == "mob" for s in w.sources))
     obtainable = {w.vnum for w in a.got}
     tiles = V.stat_tiles([
         (str(len(a.got)), "obtainable weapons"),
@@ -157,6 +157,8 @@ def _w_sources(a: W.WeaponAnalysis) -> str:
             return "shop"
         if any(s.kind in ("floor", "container") for s in w.sources):
             return "floor/container"
+        if any(s.kind == "code" for s in w.sources):
+            return "given by the game"
         return "mob drop"
 
     rows = [{"band": b.label, "source": k, "count": n}
@@ -171,7 +173,7 @@ def _w_sources(a: W.WeaponAnalysis) -> str:
                              "y": V.quant("count", "Weapons", stack=True),
                              "color": V.nominal("source", "Easiest source",
                                                 {"shop": "#e0a030", "floor/container": "#5f8a5b",
-                                                 "mob drop": "#b4532a"}),
+                                                 "given by the game": "#4f7896", "mob drop": "#b4532a"}),
                              "order": {"field": "source", "sort": "descending"},
                              "tooltip": V.tooltip(("band", "Levels"), ("source", "Source"), ("count", "Weapons"))})
     share = mob_only / len(late) if late else 0

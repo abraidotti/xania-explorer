@@ -162,12 +162,22 @@ class EquipmentAnalysis:
         self.bands = C.bands()
         self.ac_kits = {lvl: self.kit(lvl, "ac") for lvl in C.LEVELS}
         self.hit_kits = {lvl: self.kit(lvl, "hitdam") for lvl in C.LEVELS}
+        # Follow the checkout's own code: if its AFFECT_DATA::worth bug is fixed, AC/saves count.
+        from ..bugs.checks import _affect_worth
+
+        self.ac_counted = _affect_worth(world).status == "fixed"
         mortal = [i for i in self.items if i.obtainable and i.level <= C.HERO_LEVEL]
-        self.over_points = sorted((i for i in mortal if i.points > i.allowed),
-                                  key=lambda i: (-(i.points - i.allowed), i.vnum))
+        self.over_points = sorted((i for i in mortal if self.points(i) > i.allowed),
+                                  key=lambda i: (-(self.points(i) - i.allowed), i.vnum))
         self.over_points_immortal = sorted((i for i in self.items if i.obtainable and i.level > C.HERO_LEVEL
-                                            and i.points > i.allowed), key=lambda i: (-(i.points - i.allowed), i.vnum))
-        self.hidden_by_bug = [i for i in mortal if i.points <= i.allowed < i.points_if_ac_counted]
+                                            and self.points(i) > i.allowed),
+                                           key=lambda i: (-(self.points(i) - i.allowed), i.vnum))
+        self.hidden_by_bug = [] if self.ac_counted else \
+            [i for i in mortal if i.points <= i.allowed < i.points_if_ac_counted]
+
+    def points(self, item: Item) -> int:
+        """Item points as this checkout's code computes them."""
+        return item.points_if_ac_counted if self.ac_counted else item.points
 
     def kit(self, level: int, score: str) -> Kit:
         def value(i: Item) -> float:
@@ -223,8 +233,8 @@ class EquipmentAnalysis:
     def points_table(self) -> str:
         area = self.world.obj_area
         return C.table(["Vnum", "Item", "Area", "Type", "Lvl", "Points", "Allowed", "Over by", "Affects"],
-                       [[i.vnum, i.obj.short_descr, area[i.vnum].name, i.obj.type_name, i.obj.level, i.points,
-                         i.allowed, i.points - i.allowed,
+                       [[i.vnum, i.obj.short_descr, area[i.vnum].name, i.obj.type_name, i.obj.level, self.points(i),
+                         i.allowed, self.points(i) - i.allowed,
                          ", ".join(f"{a.location_name} {a.modifier:+d}" for a in i.obj.affects)]
                         for i in self.over_points])
 

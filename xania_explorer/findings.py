@@ -53,10 +53,12 @@ class Story:
     findings: list[Finding] = field(default_factory=list)
     method: str = ""  # rendered method block
     preamble: str = ""  # optional extra block after the intro (e.g. a warning)
+    appendix: str = ""  # optional sections after the findings (e.g. the bug catalogue)
 
     def markdown(self) -> str:
         out = [f"# {self.title}\n\n", self.intro.rstrip() + "\n", self.preamble, self.tiles]
         out += [f.markdown() for f in self.findings]
+        out.append(self.appendix)
         if self.method:
             out.append("\n## Method {#method}\n" + self.method)
         return "".join(out)
