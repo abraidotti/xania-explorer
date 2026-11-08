@@ -38,12 +38,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out xania-utils
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: xania-utils
 
       - name: Check out upstream Xania
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: ${{ env.UPSTREAM_REPO }}
           ref: ${{ inputs.upstream_ref || vars.XANIA_UPSTREAM_REF || 'main' }}
@@ -53,13 +53,13 @@ jobs:
         id: fork
         if: env.FORK_REPO != env.UPSTREAM_REPO
         continue-on-error: true
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: ${{ env.FORK_REPO }}
           ref: ${{ inputs.fork_ref || vars.XANIA_FORK_REF || '' }}
           path: xania-fork
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -80,10 +80,16 @@ jobs:
           python -m xania_utils --xania ../xania-upstream check
           if [ "${{ steps.fork.outcome }}" = "success" ]; then python -m xania_utils --xania ../xania-fork check; fi
 
+      - name: Look up the Pages URL (handles custom domains)
+        id: pages
+        if: github.event_name != 'pull_request'
+        continue-on-error: true
+        uses: actions/configure-pages@v6
+
       - name: Build site
         working-directory: xania-utils
         env:
-          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          SITE_URL: ${{ steps.pages.outputs.base_url && format('{0}/', steps.pages.outputs.base_url) || '' }}
           SITE_REPO_URL: https://github.com/${{ github.repository }}
           NO_MKDOCS_2_WARNING: "1"
         run: |
@@ -97,7 +103,7 @@ jobs:
 
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -113,4 +119,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
