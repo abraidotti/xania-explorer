@@ -10,10 +10,10 @@ formulas and point to the source; they aren't player guides.
 | [Architecture and game loop](01-architecture.md) | doorman/xania, config, boot order, pulses and timers, level bands, code map |
 | [Area file format](02-area-file-format.md) | Full `.are` / `.prg` spec: every section and field, with fatal vs logged errors |
 | [World model](03-world-model.md) | Prototypes vs instances, rooms and exits, reset timing and rules, shops, specials, mobprogs |
+| [Characters](04-characters.md) | Creation, classes, races, stats, XP per level, levelling and practising |
 | [About the assessments](assessments.md) | How the level 1–91 balance reports are calculated |
 
-Planned: characters (races, classes, stats), combat, skills and magic, items and economy, NPC behaviour,
-persistence and admin.
+Planned: combat, skills and magic, items and economy, NPC behaviour, persistence and admin.
 
 ## Reports
 

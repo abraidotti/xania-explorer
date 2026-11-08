@@ -1,19 +1,16 @@
-"""Generated pages for one Xania target: overview, assessments with charts, catalogue, CSVs."""
+"""Generated pages for one Xania target: overview, one page per game system, catalogue, CSVs."""
 
 from __future__ import annotations
 
 from ..areafile.world import World
 from ..assess import common as C
-from ..assess import mobs as M
-from ..assess import weapons as W
 from ..gen import area_catalogue
-from .stories import mobs_page, weapons_page
+from ..systems import SYSTEMS
 from .targets import Target
 
 BAND_LABELS = [b.label for b in C.bands()]
 
 
-# -- overview, catalogue, CSV -----------------------------------------------------
 def overview_page(target: Target, world: World) -> str:
     p = target.paths
     commit = p.commit
@@ -30,10 +27,11 @@ def overview_page(target: Target, world: World) -> str:
                  ["Load problems", f"{len(world.problems)} ({fatal} fatal in C++), "
                                    f"{len(world.diagnostics)} warnings, {len(world.unlisted_files)} unlisted files"],
              ]),
-             "\n## Reports\n\n",
-             "- [Weapons by level and class](weapons.md) — data: [weapons.csv](data/weapons.csv)\n",
-             "- [Mobs by level](mobs.md) — data: [mobs.csv](data/mobs.csv)\n",
-             "- [Area catalogue](areas.md) — every area, its mobs, objects, shops and load integrity\n"]
+             "\n## Systems\n\n",
+             C.table(["System", "Question", "Data"],
+                     [[f"[{s.title}]({s.slug}.md)", s.question, f"[{s.slug}.csv](data/{s.slug}.csv)"]
+                      for s in SYSTEMS]),
+             "\nAlso: the [area catalogue](areas.md), with every area's mobs, objects, shops and load integrity.\n"]
     if world.problems:
         lines.append("\n## Load problems\n\n")
         lines.append(C.table(["Kind", "Where", "Message"],
@@ -56,17 +54,13 @@ def csv_text(writer, world: World) -> str:
 def target_pages(target: Target, world: World) -> dict[str, str]:
     """All generated files for one target, keyed by path relative to docs/."""
     t = target.name
-    pages = {
-        f"{t}/index.md": overview_page(target, world),
-        f"{t}/weapons.md": weapons_page(world),
-        f"{t}/mobs.md": mobs_page(world),
-        f"{t}/areas.md": area_catalogue.render_index(world),
-        f"{t}/data/weapons.csv": csv_text(W.write_csv, world),
-        f"{t}/data/mobs.csv": csv_text(M.write_csv, world),
-    }
+    pages = {f"{t}/index.md": overview_page(target, world), f"{t}/areas.md": area_catalogue.render_index(world)}
+    for s in SYSTEMS:
+        pages[f"{t}/{s.slug}.md"] = s.page(world)
+        pages[f"{t}/data/{s.slug}.csv"] = csv_text(s.assessment.write_csv, world)
     for area in world.areas:
         pages[f"{t}/areas/{area_catalogue.page_name(area)}"] = area_catalogue.render_area(world, area)
     return pages
 
 
-__all__ = ["target_pages", "weapons_page", "mobs_page"]
+__all__ = ["target_pages", "overview_page", "BAND_LABELS"]

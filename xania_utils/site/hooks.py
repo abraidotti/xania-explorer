@@ -16,7 +16,8 @@ from mkdocs.structure.files import File, Files
 from xania_utils.areafile.world import load_world
 from xania_utils.site import compare, pages
 from xania_utils.site.targets import Target, load_targets
-from xania_utils.source import cpp_tables
+from xania_utils.source import character_tables, cpp_tables
+from xania_utils.systems import SYSTEMS
 
 log = logging.getLogger("mkdocs.plugins.xania_utils")
 
@@ -33,6 +34,7 @@ def on_config(config, **kwargs):
     global _targets, _generated
     cpp_tables.load_skills.cache_clear()  # serve rebuilds re-read the C++ tables
     cpp_tables.load_groups.cache_clear()
+    character_tables.cache_clear()
     targets = load_targets()
     _targets = []
     _generated = {}
@@ -49,12 +51,14 @@ def on_config(config, **kwargs):
            {"Guides": [{"Architecture & game loop": "01-architecture.md"},
                        {"Area file format": "02-area-file-format.md"},
                        {"World model": "03-world-model.md"},
+                       {"Characters": "04-characters.md"},
                        {"About the assessments": "assessments.md"}]}]
     for t, _ in _targets:
         # The bare index.md first makes the section title itself link to the overview
         # (Material's navigation.indexes feature).
-        nav.append({t.label: [f"{t.name}/index.md", {"Weapons": f"{t.name}/weapons.md"},
-                              {"Mobs": f"{t.name}/mobs.md"}, {"Area catalogue": f"{t.name}/areas.md"}]})
+        nav.append({t.label: [f"{t.name}/index.md"]
+                    + [{s.title: f"{t.name}/{s.slug}.md"} for s in SYSTEMS]
+                    + [{"Area catalogue": f"{t.name}/areas.md"}]})
     if len(_targets) > 1:
         nav.append({"Compare": "compare.md"})
     config["nav"] = nav
@@ -95,8 +99,9 @@ def _versions_page() -> str:
     for t, w in _targets:
         commit = t.paths.commit
         lines.append(f"| **{t.name}** | `{t.paths.root.name}` | {commit[:10] if commit else '—'} | "
-                     f"[overview]({t.name}/index.md) · [weapons]({t.name}/weapons.md) · "
-                     f"[mobs]({t.name}/mobs.md) · [areas]({t.name}/areas.md) |\n")
+                     f"[overview]({t.name}/index.md) · "
+                     + " · ".join(f"[{s.title.lower()}]({t.name}/{s.slug}.md)" for s in SYSTEMS)
+                     + f" · [areas]({t.name}/areas.md) |\n")
     if len(_targets) > 1:
         lines.append("\nSee [Compare](compare.md) for differences between them.\n")
     return "".join(lines)

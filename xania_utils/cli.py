@@ -11,8 +11,9 @@ from pathlib import Path
 
 from .areafile.world import load_world
 from .paths import REPO_ROOT, XaniaPaths, default_xania_dir
+from .systems import SYSTEMS
 
-ASSESSMENTS = ("weapons", "mobs")
+ASSESSMENTS = tuple(s.slug for s in SYSTEMS)
 BUILD_DIR = REPO_ROOT / "build"
 
 

@@ -93,6 +93,33 @@ def tooltip(*fields: tuple[str, str]) -> list[dict[str, str]]:
     return [{"field": f, "title": t} for f, t in fields]
 
 
+def heatmap(data: list[dict[str, Any]], *, x: str, y: str, value: str, title: str, x_order: list[str],
+            y_order: list[str], value_title: str, fmt: str = ",.0f", reverse: bool = False,
+            height: int | None = None) -> dict[str, Any]:
+    """Grid of coloured cells with the value printed in each (warm sequential scale).
+    ``reverse`` makes low values dark (use when low is "bad")."""
+    colours = ["#fbf0dc", "#e7b37a", "#b4532a"]
+    if reverse:
+        colours = colours[::-1]
+    values = [d[value] for d in data if d.get(value) is not None]
+    mid = (min(values) + max(values)) / 2 if values else 0
+    dark_when = f"datum['{value}'] {'<' if reverse else '>'} {mid}"
+    enc_x = {"field": x, "type": "ordinal", "title": None, "sort": x_order, "axis": {"orient": "top", "labelAngle": 0}}
+    enc_y = {"field": y, "type": "ordinal", "title": None, "sort": y_order}
+    return {**spec(data, title=title, height=height or 26 * len(y_order)),
+            "encoding": {"x": enc_x, "y": enc_y},
+            "layer": [
+                {"mark": {"type": "rect", "stroke": "#fffaf2", "strokeWidth": 2, "cornerRadius": 3},
+                 "encoding": {"color": {"field": value, "type": "quantitative", "title": value_title,
+                                        "scale": {"range": colours}, "legend": None},
+                              "tooltip": [{"field": y}, {"field": x}, {"field": value, "title": value_title,
+                                                                       "format": fmt}]}},
+                {"mark": {"type": "text", "fontSize": 11},
+                 "encoding": {"text": {"field": value, "type": "quantitative", "format": fmt},
+                              "color": {"condition": {"test": dark_when, "value": "#fffaf2"}, "value": "#3a261c"}}},
+            ]}
+
+
 def insert_after_heading(markdown: str, heading_prefix: str, html: str) -> str:
     """Insert ``html`` after the paragraph that follows the heading starting with ``heading_prefix``."""
     lines = markdown.split("\n")
