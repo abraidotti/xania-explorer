@@ -502,6 +502,7 @@
       var group = el("div", { class: "xe-group" }, [el("span", { class: "xe-group-label",
         text: (r.names.length > 1 ? (i ? "Head: " : "Base: ") : "") + r.labels[name] })]);
       group.appendChild(button(name + "/index.md", "Dashboard"));
+      if (r.pages[name + "/recommendations.md"]) group.appendChild(button(name + "/recommendations.md", "Recommendations"));
       self.manifest.systems.forEach(function (s) { group.appendChild(button(name + "/" + s.slug + ".md", s.title)); });
       if (r.pages[name + "/areas.md"]) group.appendChild(button(name + "/areas.md", "Areas"));
       nav.appendChild(group);

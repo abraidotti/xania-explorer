@@ -7,7 +7,7 @@ from ...assess import common as C
 from ...assess import skills as S
 from ...source.cpp_tables import CLASSES
 from .. import charts as V
-from .common import _list, finding, story
+from .common import _list, _plural, finding, rec, src_link, story
 
 CASTERS = ["mage", "cleric"]
 
@@ -38,13 +38,16 @@ def skills_story(world: World):
                  "What each class can learn as it levels, whether its practices keep up, and how attack spells "
                  "compare with mob HP and with melee.", tiles, [
                      finding("skills.nothing-new", _availability(a), metric=C.HERO_LEVEL - last_new,
-                             label="final levels with nothing new to learn", impact=2),
+                             label="final levels with nothing new to learn", impact=2,
+                             recs=[_r_nothing_new(a)]),
                      finding("skills.practice-budget", _practices(a), metric=max(catch) if catch else None,
-                             label="level by which practices catch up with the default package", impact=2),
+                             label="level by which practices catch up with the default package", impact=2,
+                             recs=[_r_practices(a)]),
                      finding("skills.mana-per-kill", _mana(a), metric=round(kills_per_mana, 2),
                              label="kills per full mana bar (mage)", better="higher", issue=False),
                      finding("skills.spells-vs-hp", _casts(a), metric=round(casts91, 1),
-                             label=f"casts of a mage's best spell per level-{C.HERO_LEVEL} kill", impact=3),
+                             label=f"casts of a mage's best spell per level-{C.HERO_LEVEL} kill", impact=3,
+                             recs=[_r_casts(a)]),
                      finding("skills.spells-vs-melee", _vs_melee(a),
                              metric=round(a.spells["mage"][C.HERO_LEVEL].per_round / melee91, 1) if melee91 else None,
                              label=f"× a mage's melee damage per round from spells at {C.HERO_LEVEL}", better="none",
@@ -183,3 +186,73 @@ def _vs_melee(a: S.SkillAnalysis) -> str:
             f"({knight:.0f} per round at {C.HERO_LEVEL}) for as long as the mana lasts. Casters are strong in bursts and "
             "weak over a long fight, which is exactly where the long mob-HP fights of the Combat page hurt them.\n")
     return ("\n## Casters out-damage everyone, until the mana runs out\n\n" + text + V.embed(chart))
+
+
+# -- recommendations -------------------------------------------------------------------------------------
+LATE_STEP = 7  # spread late abilities this many levels apart
+PRACTICE_TARGET = 40  # level by which practices should cover the default package (a judgement)
+
+
+def _longest_gap(levels: set[int]) -> int:
+    marks = sorted({1, *levels, C.HERO_LEVEL + 1})
+    return max(b - a - 1 for a, b in zip(marks, marks[1:]))
+
+
+def _r_nothing_new(a: S.SkillAnalysis):
+    last = max(max(x.level for x in a.abilities[c]) for c in CLASSES)
+    if C.HERO_LEVEL - last < LATE_STEP:
+        return None
+    slots = list(range(last + LATE_STEP, C.HERO_LEVEL + 1, LATE_STEP))
+    before, after = {}, {}
+    for c in CLASSES:
+        levels = {x.level for x in a.abilities[c]}
+        crowded = max(levels, key=lambda lvl: len(a.new_at(c, lvl)))
+        moved = levels | set(slots) if len(a.new_at(c, crowded)) > len(slots) else levels
+        before[c], after[c] = _longest_gap(levels), _longest_gap(moved)
+    busiest = {c: max(len(a.new_at(c, lvl)) for lvl in C.LEVELS) for c in CLASSES}
+    return rec("skills.nothing-new.spread-late", f"Move a few abilities into levels {last + 1}–{C.HERO_LEVEL}",
+               f"Every class's last new ability is at or before level {last}. Each class has a level where many open "
+               f"at once (up to {max(busiest.values())}); moving {len(slots)} of those to levels "
+               f"{_list([str(x) for x in slots])} in the skill table's level column (`src/SkillTables.cpp`) gives "
+               "the last stretch something to aim for without adding anything new.",
+               "Longest run of levels with nothing new: "
+               + _list([f"{c} {before[c]} → {after[c]}" for c in CLASSES if after[c] < before[c]]) + ".",
+               effort=2, kind="code")
+
+
+def _r_practices(a: S.SkillAnalysis):
+    def catch(extra: int, cls: str) -> int | None:
+        return next((lvl for lvl in C.LEVELS
+                     if all(a.practices_earned(cls, x) + extra * (x - 1) >= a.practices_needed(cls, x)
+                            for x in range(lvl, C.HERO_LEVEL + 1))), None)
+
+    now = {c: catch(0, c) for c in CLASSES}
+    worst = max((v for v in now.values() if v), default=None)
+    if not worst or worst <= PRACTICE_TARGET:
+        return None
+    extra = next((n for n in range(1, 6) if all((catch(n, c) or 99) <= PRACTICE_TARGET for c in CLASSES)), None)
+    if extra is None:
+        return None
+    after = {c: catch(extra, c) for c in CLASSES}
+    return rec("skills.practice-budget.more-practices", f"Give {_plural(extra, 'more practice')} per level",
+               f"In `advance_level` ({src_link(a.world, 'update.cpp', 'add_prac = wis_app')}), add {extra} to "
+               "`add_prac` (and subtract the same in `lose_level`). Target: every class can master its default "
+               f"package by level {PRACTICE_TARGET} (a judgement).",
+               "Level by which practices catch up: "
+               + _list([f"{c} {now[c] or '—'} → {after[c]}" for c in CLASSES]) + ".",
+               effort=1, kind="code")
+
+
+def _r_casts(a: S.SkillAnalysis):
+    c30, c91 = a.casts_to_kill("mage", 30), a.casts_to_kill("mage", C.HERO_LEVEL)
+    m30, m91 = a.spells["mage"][30], a.spells["mage"][C.HERO_LEVEL]
+    hp30, hp91 = a.mob_hp(30), a.mob_hp(C.HERO_LEVEL)
+    if not (c30 and c91 and m30 and m91 and hp30 and hp91) or c91 < 2 * c30:
+        return None
+    needed = m30.damage * hp91 / hp30
+    return rec("skills.spells-vs-hp.scale-damage", "Let attack-spell damage keep growing after the 30s",
+               f"The damage tables in `src/magic.cpp` flatten after the 30s. Extend them (or add a level multiplier) "
+               f"so a mage's best spell at {C.HERO_LEVEL} does about **{needed:,.0f}** per cast instead of "
+               f"{m91.damage:,.0f}: the same growth as mob HP ({hp91 / hp30:.1f}× from level 30).",
+               f"Casts of a mage's best spell per level-{C.HERO_LEVEL} kill: **{c91:.0f} → {c30:.0f}**, as at level 30.",
+               effort=2, kind="code")

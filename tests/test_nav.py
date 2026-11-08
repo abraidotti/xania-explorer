@@ -42,7 +42,8 @@ def test_nav_is_tabs_with_systems_listed_once(two):
     assert [next(iter(item)) for item in nav] == ["Home", "Reports", "Compare", "Explore", "Guides"]
     reports = nav[1]["Reports"]
     assert reports[0] == {"Versions": [{"Canonical · main": "base/index.md"}, {"abraidotti · balance": "fork/index.md"}]}
-    systems = reports[1]["Systems"]
+    assert reports[1] == {"Recommendations": "base/recommendations.md"}
+    systems = reports[2]["Systems"]
     assert len(systems) == len(SYSTEMS) + 1  # plus the area catalogue
     assert all(path.startswith("base/") for entry in systems for path in entry.values())
     explore = hooks._nav(has_builds=True)[3]["Explore"]

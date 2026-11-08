@@ -10,7 +10,7 @@ from ...assess import equipment as E
 from ...assess import mobs as M
 from ...assess import weapons as W
 from .. import charts as V
-from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural, finding, story
+from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural, by_area, edit_effort, finding, rec, story
 
 SLOT_ORDER = list(E.SLOTS)
 
@@ -34,14 +34,18 @@ def equipment_story(world: World):
                      finding("equipment.ac-ceiling", _ac(a), metric=round(k91.total("ac")),
                              label=f"AC from a best-in-slot kit at {C.HERO_LEVEL}", better="none", issue=False),
                      finding("equipment.slot-gaps", _gaps(a), metric=longest_wait,
-                             label="levels the worst slot waits for an upgrade", impact=2),
+                             label="levels the worst slot waits for an upgrade", impact=2,
+                             recs=[_r_gaps(a)]),
                      finding("equipment.hitdam", _hitdam(a), metric=a.hit_kits[C.HERO_LEVEL].total("damroll"),
                              label=f"damroll from gear at {C.HERO_LEVEL}", better="none", issue=False),
                      finding("equipment.points-rule", _points(a), metric=len(a.over_points),
-                             label="obtainable items over the item-points rule", impact=2),
+                             label="obtainable items over the item-points rule", impact=2,
+                             recs=[_r_points(a)]),
                      finding("equipment.ac-not-counted", _bug(a), metric=len(a.hidden_by_bug),
-                             label="items the AC/saves bug lets through", impact=2),
-                     finding("equipment.no-source", _lost(a), metric=len(a.lost), label="pieces of gear with no source"),
+                             label="items the AC/saves bug lets through", impact=2,
+                             recs=[_r_bug(a)]),
+                     finding("equipment.no-source", _lost(a), metric=len(a.lost), label="pieces of gear with no source",
+                             recs=[_r_lost(a)]),
                  ], a.method())
 
 
@@ -166,3 +170,71 @@ def _lost(a: E.EquipmentAnalysis) -> str:
     return (f"\n## {len(a.lost)} pieces of gear can't be obtained\n\n"
             "No reset places them. They may still come from mob programs, specials or immortals.\n"
             + V.details(f"Details: the {len(a.lost)} items", a.lost_table()))
+
+
+# -- recommendations -------------------------------------------------------------------------------------
+LONG_WAIT = 15  # levels without a better piece that a slot recommendation targets
+
+
+def _r_gaps(a: E.EquipmentAnalysis):
+    picks = []
+    for slot in SLOT_ORDER:
+        lo, hi, stuck = a.slot_plateau(slot)
+        if hi - lo + 1 < LONG_WAIT or stuck is None:
+            continue
+        series = {lvl: (a.ac_kits[lvl].picks[slot][0].ac if a.ac_kits[lvl].picks[slot] else None) for lvl in C.LEVELS}
+        nxt = series.get(hi + 1) or stuck * 1.25
+        mid = (lo + hi) // 2
+        ac = round((stuck + nxt) / 2, 1)
+        if ac <= stuck:
+            continue
+        sim = {lvl: max(v or 0, ac) if lvl >= mid else v for lvl, v in series.items()}
+        after = C.runs_without_increase(sim)[0]
+        picks.append((slot, lo, hi, stuck, mid, ac, after[1] - after[0] + 1))
+    if not picks:
+        return None
+    picks.sort(key=lambda p: -(p[2] - p[1]))
+    picks = picks[:4]
+    return rec("equipment.slot-gaps.mid-upgrades", f"Add mid-wait armour for {_list([p[0] for p in picks])}",
+               "One new piece per slot, halfway through its longest wait: "
+               + _list([f"**{s}** at level {mid}, AC about {ac:g} (now stuck at {stuck:g} from {lo} to {hi})"
+                        for s, lo, hi, stuck, mid, ac, _ in picks])
+               + ". Keep each within the item-points rule for its level.",
+               "Longest waits: " + _list([f"{s} {hi - lo + 1} → {after} levels" for s, lo, hi, _, _, _, after in picks])
+               + ".",
+               effort=edit_effort(len(picks), len(picks)))
+
+
+def _r_bug(a: E.EquipmentAnalysis):
+    if not a.hidden_by_bug:
+        return None
+    return rec("equipment.ac-not-counted.fix-worth", "Make the item-points rule count AC and saves",
+               "Fix the impossible nested condition in `AFFECT_DATA::worth` (`src/AFFECT_DATA.cpp`); the patch is "
+               "in the [bug catalogue](bugs.md#bug-code-affect-worth-ac).",
+               f"The rule would start flagging **{len(a.hidden_by_bug)}** more items, for "
+               f"{len(a.over_points) + len(a.hidden_by_bug)} over the rule in all, so builders' balance reports "
+               "match what the rule intends.",
+               effort=1, kind="code")
+
+
+def _r_points(a: E.EquipmentAnalysis):
+    if not a.over_points:
+        return None
+    areas = [a.world.obj_area[i.vnum].name for i in a.over_points]
+    excess = sum(a.points(i) - i.allowed for i in a.over_points)
+    return rec("equipment.points-rule.trim", f"Trim the {_plural(len(a.over_points), 'item')} over the points rule",
+               f"Reduce each item's affects until its points fit its level ({by_area(areas)}). Together they are "
+               f"{excess} points over.",
+               f"Items over the rule: **{len(a.over_points)} → 0**"
+               + (f" ({len(a.hidden_by_bug)} more once the AC/saves fix lands)." if a.hidden_by_bug else "."),
+               effort=edit_effort(len(set(areas)), len(a.over_points)))
+
+
+def _r_lost(a: E.EquipmentAnalysis):
+    if not a.lost:
+        return None
+    areas = [a.world.obj_area[i.vnum].name for i in a.lost]
+    return rec("equipment.no-source.place-or-remove", f"Place or remove the {_plural(len(a.lost), 'unplaced item')}",
+               f"Give each a reset or delete it: {by_area(areas)}. Check mob programs first.",
+               f"Gear without a source: **{len(a.lost)} → 0**.",
+               effort=edit_effort(len(set(areas)), len(a.lost)), impact=1)

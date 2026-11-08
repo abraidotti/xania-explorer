@@ -9,7 +9,7 @@ from ...assess import common as C
 from ...assess import economy as EC
 from ...assess import equipment as E
 from .. import charts as V
-from .common import HIGHLIGHT, MUTED, _list, finding, story
+from .common import HIGHLIGHT, MUTED, _list, _plural, by_area, edit_effort, finding, rec, src_link, story
 
 
 def economy_story(world: World):
@@ -30,13 +30,15 @@ def economy_story(world: World):
                              metric=round(g[C.HERO_LEVEL] / g[5]) if g[5] and g[C.HERO_LEVEL] else None,
                              label=f"× gold per kill, level 5 → {C.HERO_LEVEL}", better="none", issue=False),
                      finding("economy.healer-prices", _healer(a), metric=round(heal5, 1),
-                             label="kills of gold for one 'heal' at level 5", impact=2),
+                             label="kills of gold for one 'heal' at level 5", impact=2,
+                             recs=[_r_healer(a)]),
                      finding("economy.shop-ceiling", _shops(a), metric=_flat_from(a),
                              label="last level at which shops sell better armour", better="higher", impact=2),
                      finding("economy.gold-hoard", _hoard(a), metric=round(total),
                              label=f"gold earned by level {C.HERO_LEVEL}", better="none"),
                      finding("economy.gold-outliers", _outliers(a), metric=len(a.gold_outliers()),
-                             label="mobs with outsized gold"),
+                             label="mobs with outsized gold",
+                             recs=[_r_outliers(a)]),
                  ], a.method())
 
 
@@ -146,3 +148,35 @@ def _outliers(a: EC.EconomyAnalysis) -> str:
             + "Because these mobs respawn, they act as gold farms.\n")
     return (f"\n## {len(out)} mobs carry outsized gold\n\n" + text + V.embed(chart)
             + V.details("Details: the outliers", a.outlier_table()))
+
+
+# -- recommendations -------------------------------------------------------------------------------------
+def _r_healer(a: EC.EconomyAnalysis):
+    heal = EC.HEALER["heal"]
+    k5, k90 = a.kills_to_afford(heal, 5), a.kills_to_afford(heal, 90)
+    if not k5 or not k90 or k5 <= 2 * k90:
+        return None
+
+    def kills(lvl: int) -> float:  # price × level / hero level, at least 1 gold
+        return max(1, heal * lvl // C.HERO_LEVEL) / a.gold_per_kill[lvl]
+
+    return rec("economy.healer-prices.scale-by-level", "Scale healer prices with the buyer's level",
+               f"In `do_heal` ({src_link(a.world, 'healer.cpp', 'cost = 1000')}), multiply each `cost` by the "
+               f"character's level and divide by {C.HERO_LEVEL}, so a hero pays today's price and a newbie a fraction.",
+               f"Kills' worth of gold for one heal: level 5 **{k5:.0f} → {kills(5):.1f}**, level 20 "
+               f"{a.kills_to_afford(heal, 20):.0f} → {kills(20):.1f}, level 90 {k90:.1f} → {kills(90):.1f}.",
+               effort=1, kind="code")
+
+
+def _r_outliers(a: EC.EconomyAnalysis):
+    out = a.gold_outliers()
+    if not out:
+        return None
+    removed = sum(m.mob.gold - EC.OUTLIER * local for _, m, local in out)
+    areas = [m.info.area.name for _, m, _ in out]
+    return rec("economy.gold-outliers.trim", f"Cut the gold of the {_plural(len(out), 'richest mob')} to "
+               f"{EC.OUTLIER:g}× their level's median",
+               f"Lower each outlier's gold in its area file ({by_area(areas)}); the table under the finding gives "
+               "each one's local median.",
+               f"Outsized-gold mobs: **{len(out)} → 0**; about {removed:,.0f} gold less per full respawn of them.",
+               effort=edit_effort(len(set(areas)), len(out)), impact=1)

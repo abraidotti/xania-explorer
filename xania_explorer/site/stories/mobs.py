@@ -8,7 +8,7 @@ from ...areafile.world import World
 from ...assess import common as C
 from ...assess import mobs as M
 from .. import charts as V
-from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural, _span, finding, story
+from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural, _span, by_area, edit_effort, finding, rec, story
 
 
 def mobs_story(world: World):
@@ -27,11 +27,13 @@ def mobs_story(world: World):
                      finding("mobs.evenness", _m_evenness(a), metric=round(100 * a.early_share),
                              label=f"% of mobs at level ≤ {a.early_cutoff}", impact=3),
                      finding("mobs.empty-levels", _m_levels(a), metric=len(a.empty_levels),
-                             label="levels with no combat mob", impact=2),
+                             label="levels with no combat mob", impact=2,
+                             recs=[_r_empty(a)]),
                      finding("mobs.toughness", _m_toughness(a), metric=len(a.outliers), label="toughness outliers",
-                             issue=bool(a.hp_drops) or len(a.outliers) > 0),
+                             issue=bool(a.hp_drops) or len(a.outliers) > 0, recs=[_r_toughness(a)]),
                      finding("mobs.area-bands", _m_areas(a), metric=majority_off,
-                             label="areas with most mobs outside their advertised band", impact=2),
+                             label="areas with most mobs outside their advertised band", impact=2,
+                             recs=[_r_area_bands(a)]),
                      finding("mobs.excluded", _m_excluded(a), metric=len(a.never), label="mobs that never spawn", issue=False),
                  ], a.method())
 
@@ -172,3 +174,38 @@ def _m_excluded(a: M.MobAnalysis) -> str:
             + V.details(f"Details: the {len(a.never)} mobs that never spawn",
                         "No `M` reset, or every `M` reset has a world cap ≤ 0. Some may still be loaded by mob "
                         "programs or specials.\n\n" + a.never_table()))
+
+
+# -- recommendations -------------------------------------------------------------------------------------
+def _r_area_bands(a: M.MobAnalysis):
+    off = [m for m in a.area_misses if m.outside_share >= 0.5]
+    if not off:
+        return None
+    return rec("mobs.area-bands.fix-headers", f"Correct the advertised level range of {_plural(len(off), 'area')}",
+               "Change the `{lo hi}` range in each area file's header to where its mobs actually are: "
+               + _list([f"{m.area} {_span(m.band)} → {_span(m.actual)}" for m in off]) + ". "
+               "(Or re-level the mobs, if the advertised range is the intent.)",
+               f"Areas with most mobs outside their advertised range: **{len(off)} → 0**, so `areas` and "
+               "players see where each area really sits.",
+               effort=edit_effort(len(off), len(off)))
+
+
+def _r_empty(a: M.MobAnalysis):
+    if not a.empty_levels:
+        return None
+    return rec("mobs.empty-levels.fill", f"Add a combat mob at each of the {_plural(len(a.empty_levels), 'empty level')}",
+               f"Levels {M._ranges(a.empty_levels)} have no combat mob at all. One mob each, in an area whose "
+               "range covers that level, closes the holes.",
+               f"Levels with no combat mob: **{len(a.empty_levels)} → 0**.",
+               effort=edit_effort(len(a.empty_levels), len(a.empty_levels)))
+
+
+def _r_toughness(a: M.MobAnalysis):
+    if not a.outliers:
+        return None
+    areas = [o.info.area.name for o in a.outliers]
+    return rec("mobs.toughness.review-outliers", f"Review the {_plural(len(a.outliers), 'toughness outlier')}",
+               f"Bring each outlier's hit or damage dice back towards its level's median ({by_area(areas)}), "
+               "unless it's a deliberate boss. The table under the finding gives each one's ratios.",
+               f"Toughness outliers: **{len(a.outliers)} → 0** (or the deliberate ones).",
+               effort=edit_effort(len(set(areas)), len(a.outliers)), impact=1)

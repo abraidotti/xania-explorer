@@ -59,6 +59,7 @@ def deployment_dashboard(world: World) -> str:
         for s, f in rest:
             out.append(f"| {s.title} | [{f.title}]({_link('', s, f)}) | {IMPACT_NAME[f.impact]} | "
                        f"{fmt_metric(f.metric)} {f.metric_label} |\n")
+    out.append(top_recommendations(world))
     out.append("\n## Systems {#systems}\n\n")
     out.append('\n<div class="xe-card-grid" markdown>\n\n')
     for s in SYSTEMS:
@@ -74,6 +75,49 @@ def deployment_dashboard(world: World) -> str:
                    f'<span class="xe-card-label">{s.question}</span>\n\n' + line + "</div>\n")
     out.append("\n</div>\n\n")
     return "".join(out)
+
+
+def top_recommendations(world: World, n: int = 5) -> str:
+    """The best-ranked changes for this version, linking to the full list."""
+    from ..findings import EFFORT_NAME
+    from .recommendations import IMPACT_NAME as IMPACT, collect
+
+    recs = collect(world)
+    if not recs:
+        return ""
+    rows = "".join(f"| [{r.title}](recommendations.md#{r.anchor}) | {s.title} | {IMPACT[r.impact]} | "
+                   f"{EFFORT_NAME[r.effort]} |\n" for s, _, r in recs[:n])
+    return ("\n## Top recommendations {#top-recommendations}\n\n"
+            f"The {min(n, len(recs))} best-ranked of {len(recs)} [recommendations](recommendations.md): high impact "
+            "for little effort first.\n\n| Change | System | Impact | Effort |\n|---|---|---|---|\n" + rows)
+
+
+def recommendation_changes(targets: list[tuple[object, World]]) -> str:
+    """Recommendations a compared version no longer needs, and ones it newly needs."""
+    from .recommendations import collect
+
+    base_t, base_w = targets[0]
+    base = {r.id: (s, r) for s, _, r in collect(base_w)}
+    out = ["\n## Recommendations resolved or added {#recommendation-changes}\n\n"]
+    for t, w in targets[1:]:
+        missing = {s.slug for s in SYSTEMS if s.story(w).status != "ok"}
+        other = {r.id: (s, r) for s, _, r in collect(w)}
+        gone = [(s, r) for rid, (s, r) in base.items() if rid not in other and s.slug not in missing]
+        new = [(s, r) for rid, (s, r) in other.items() if rid not in base]
+        out.append(f"**{t.name}** vs {base_t.name}: {len(gone)} resolved, {len(new)} new"
+                   + (f" (not comparable for {_plural(len(missing))} that can't run)" if missing else "") + ".\n\n")
+        if gone or new:
+            out.append("| Recommendation | System | Change |\n|---|---|---|\n")
+            out += [f"| [{r.title}]({base_t.name}/recommendations.md#{r.anchor}) | {s.title} | "
+                    '<span class="xe-improved">▲ resolved</span> |\n' for s, r in gone]
+            out += [f"| [{r.title}]({t.name}/recommendations.md#{r.anchor}) | {s.title} | "
+                    '<span class="xe-worse">▼ new</span> |\n' for s, r in new]
+            out.append("\n")
+    return "".join(out)
+
+
+def _plural(n: int) -> str:
+    return f"{n} system" + ("" if n == 1 else "s")
 
 
 def home_summary(targets: list[tuple[object, World]], per_target: int = 3) -> str:

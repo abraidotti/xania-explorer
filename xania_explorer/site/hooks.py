@@ -95,6 +95,7 @@ def _nav(has_builds: bool) -> list:
         base = _targets[0][0].name
         nav.append({"Reports": [
             {"Versions": [{short[t.name]: f"{t.name}/index.md"} for t, _ in _targets]},
+            {"Recommendations": f"{base}/recommendations.md"},
             {"Systems": [{s.title: f"{base}/{s.slug}.md"} for s in SYSTEMS]
              + [{"Area catalogue": f"{base}/areas.md"}]},
             {"About the assessments": "assessments.md"},

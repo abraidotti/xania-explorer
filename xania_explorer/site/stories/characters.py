@@ -7,7 +7,7 @@ from ...assess import characters as CH
 from ...assess import common as C
 from ...source.cpp_tables import CLASSES
 from .. import charts as V
-from .common import _a, _list, finding, story
+from .common import _a, _list, finding, rec, src_link, story
 
 
 def characters_story(world: World):
@@ -29,7 +29,8 @@ def characters_story(world: World):
                  "How each class and race grows from level 1 to 91: the XP each level costs, the HP, mana and "
                  "movement it brings, and how quickly stats max out.", tiles, [
                      finding("characters.xp-cost", _xp(a), metric=round(hi.xp_per_level / lo.xp_per_level, 2),
-                             label="× XP per level, dearest vs cheapest build", impact=2),
+                             label="× XP per level, dearest vs cheapest build", impact=2,
+                             recs=[_r_xp_cost(a)]),
                      finding("characters.hp-by-class", _hp(a), metric=round(hp_ratio, 2),
                              label="× a barbarian's HP vs a mage's at 91", better="none", issue=False),
                      finding("characters.mana-by-race", _mana(a),
@@ -154,3 +155,37 @@ def _stats(a: CH.CharacterAnalysis) -> str:
     return ("\n## Stats are maxed by level " + f"{late.level_stats_maxed}, then only the caps matter\n\n" + text
             + V.details("Details: start and maximum stats, trains needed", a.stats_table())
             + V.details(f"Details: combat bonuses from stats at level {C.HERO_LEVEL}", a.combat_table()))
+
+
+# -- recommendations -------------------------------------------------------------------------------------
+XP_PREMIUM_TARGET = 2.0  # the most a race should multiply a human's XP per level (a judgement, stated on the page)
+
+
+def _r_xp_cost(a: CH.CharacterAnalysis):
+    human = {c: a.build("human", c).xp_per_level for c in CLASSES}
+
+    def premium(race, points: int) -> float:
+        return max(CH.exp_per_level(CH.DEFAULT_GROUP_POINTS + points, race.mult_for(c)) / human[c] for c in CLASSES)
+
+    races = {b.race.name: b.race for b in a.builds}
+    changes = []
+    for name, race in races.items():
+        now = premium(race, race.points)
+        if now <= XP_PREMIUM_TARGET:
+            continue
+        fits = [p for p in range(race.points, -1, -1) if premium(race, p) <= XP_PREMIUM_TARGET]
+        if fits:
+            changes.append((name, race.points, fits[0], now, premium(race, fits[0])))
+    if not changes:
+        return None
+    changes.sort(key=lambda c: -c[3])
+    worst_after = max(max(c[4] for c in changes),
+                      max(premium(r, r.points) for n, r in races.items() if n not in {c[0] for c in changes}))
+    return rec("characters.xp-cost.race-points", "Cut the creation points of the dearest races",
+               f"Lower the `points` of {_list([f'**{n}** ({old} → {new})' for n, old, new, _, _ in changes])} in "
+               f"`pc_race_table` ({src_link(a.world, 'Races.cpp', 'pc_race_table')}). Target: no race needs more "
+               f"than {XP_PREMIUM_TARGET:g}× a human's XP per level in any class (a judgement; adjust to taste).",
+               f"The dearest race's premium falls from **{changes[0][3]:.1f}×** to **{worst_after:.1f}×** a human's "
+               "XP per level. Race stats and skills are unchanged, so the HP they buy is the same "
+               "(see Expensive races buy very little extra HP).",
+               effort=1, kind="code")

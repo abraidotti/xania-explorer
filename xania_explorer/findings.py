@@ -16,6 +16,43 @@ import re
 from dataclasses import dataclass, field
 
 
+EFFORT_NAME = {1: "small", 2: "medium", 3: "large"}
+KIND_NAME = {"data": "area data", "code": "C++ code", "design": "game design"}
+
+
+@dataclass
+class Recommendation:
+    """A change that would address a finding, generated from the same data (never stored or tracked).
+
+    Effort: 1 = a handful of edits or one constant; 2 = many area files, or one C++ formula or table;
+    3 = new content or a new mechanic. Impact is the finding's unless a rule says otherwise."""
+
+    id: str  # "<finding id>.<name>", stable across builds and deployments
+    title: str  # imperative: what to do
+    change: str  # Markdown: what to change and where (areas, files, vnums, levels)
+    effect: str  # Markdown: the expected effect, computed from the data
+    effort: int = 2
+    kind: str = "data"  # "data" | "code" | "design"
+    impact: int = 0  # 0 = the finding's impact
+
+    @property
+    def system(self) -> str:
+        return self.id.split(".", 1)[0]
+
+    @property
+    def finding_id(self) -> str:
+        return self.id.rsplit(".", 1)[0]
+
+    @property
+    def anchor(self) -> str:
+        return "rec-" + self.id.replace(".", "-")
+
+    @property
+    def score(self) -> int:
+        """Impact × ease, 1–9: high impact for little effort ranks first."""
+        return self.impact * (4 - self.effort)
+
+
 @dataclass
 class Finding:
     id: str  # "<system>.<name>", stable across builds and deployments
@@ -27,6 +64,12 @@ class Finding:
     impact: int = 1  # 1–3, see module docstring
     issue: bool = True  # False = descriptive, not a balance problem
     summary: str = ""  # one sentence for dashboard cards; defaults to the body's first sentence
+    recommendations: list[Recommendation] = field(default_factory=list)
+
+    def __post_init__(self):
+        for r in self.recommendations:
+            assert r.finding_id == self.id, f"{r.id} doesn't belong to {self.id}"
+            r.impact = r.impact or self.impact
 
     @property
     def system(self) -> str:
@@ -41,7 +84,15 @@ class Finding:
         return self.summary or first_sentence(self.body)
 
     def markdown(self) -> str:
-        return f"\n## {self.title} {{#{self.anchor}}}\n\n{self.body.lstrip()}"
+        return f"\n## {self.title} {{#{self.anchor}}}\n\n{self.body.lstrip()}" + self.fixes_box()
+
+    def fixes_box(self) -> str:
+        """'What to change' under the evidence, linking to each recommendation on the version's list."""
+        if not self.recommendations:
+            return ""
+        lines = "".join(f"    - **[{r.title}](recommendations.md#{r.anchor})** "
+                        f"({EFFORT_NAME[r.effort]} effort, {KIND_NAME[r.kind]})\n" for r in self.recommendations)
+        return f'\n!!! tip "What to change"\n\n{lines}\n'
 
 
 @dataclass

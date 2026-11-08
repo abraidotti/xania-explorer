@@ -60,5 +60,24 @@ These live in [xania_explorer/assess/common.py](../xania_explorer/assess/common.
 
 ## Recommendations
 
-Once every system is assessed, a **recommendations** page will rank changes by impact × effort. It's regenerated
-from the same data on every build, with no stored state.
+Each version has a **Recommendations** page (under Reports). Every balance issue and bug can propose changes,
+and each proposal states:
+
+- **what to change and where:** the areas, items, mobs or C++ lines involved;
+- **its expected effect,** computed from the same analysis as the finding (for example, by re-running the
+  weapon curve with the proposed weapon added);
+- **impact,** taken from the finding (1–3);
+- **effort:**
+    - **small:** a handful of edits or one constant;
+    - **medium:** many area files, or one C++ formula or table;
+    - **large:** new content or a new mechanic.
+
+The page ranks recommendations by **impact × (4 − effort)**, so high impact for little work comes first. Each
+recommendation also appears in a "What to change" box under its finding.
+
+Some recommendations aim at a target that is a judgement call, such as "no race should cost more than 2× a
+human's XP". The text names each target so it can be adjusted.
+
+Nothing is stored: every build regenerates the list from the data, so a recommendation disappears once a version
+no longer needs it. Compare lists which recommendations a version resolves or adds. The rules live next to the
+findings they address, in [xania_explorer/site/stories/](../xania_explorer/site/stories/).

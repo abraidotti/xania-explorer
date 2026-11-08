@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import math
+
 from collections import defaultdict
 
 from ...areafile.world import World
@@ -9,7 +11,7 @@ from ...assess import common as C
 from ...assess import levelling as L
 from ...assess import mobs as M
 from .. import charts as V
-from .common import HIGHLIGHT, MUTED, _list, _plural, finding, story
+from .common import HIGHLIGHT, MUTED, _list, _plural, _span, by_area, edit_effort, finding, rec, story
 
 TOP_AREAS = 9
 
@@ -29,15 +31,18 @@ def levelling_story(world: World):
                  "Where a character of each level can go for experience: how many areas suit them, how much XP the "
                  "world offers per reset, which areas carry each stretch of levels, and how far away they are.", tiles, [
                      finding("levelling.xp-supply", _supply(a, none_from), metric=round(a.levels_of_xp(88), 1),
-                             label="levels' worth of XP per reset for a level-88 character", better="higher", impact=3),
+                             label="levels' worth of XP per reset for a level-88 character", better="higher", impact=3,
+                             recs=[_r_supply(a)]),
                      finding("levelling.suitable-areas", _areas(a), metric=thin,
-                             label="levels with three or fewer areas to level in", impact=3),
+                             label="levels with three or fewer areas to level in", impact=3,
+                             recs=[_r_areas(a)]),
                      finding("levelling.area-dominance", _dominance(a), metric=round(100 * max(top_shares)),
                              label="% largest share of a level's XP from one area"),
                      finding("levelling.distance", _distance(a), metric=max(d for _, d, _ in a.area_distance()),
                              label="steps from recall to the farthest area", better="none", issue=False),
                      finding("levelling.unreachable", _unreachable(a), metric=len(a.unreachable_rooms),
-                             label="rooms unreachable on foot"),
+                             label="rooms unreachable on foot",
+                             recs=[_r_unreachable(a)]),
                  ], a.method())
 
 
@@ -167,3 +172,67 @@ def _unreachable(a: L.LevellingAnalysis) -> str:
             f"{_plural(mobs, 'mob reset')} place mobs in them. Some are deliberate (immortal rooms, rooms reached by "
             "portal, mob program or a one-way trap), others may be broken exits worth checking.\n"
             + V.details("Details: unreachable rooms by area", a.unreachable_table()))
+
+
+# -- recommendations -------------------------------------------------------------------------------------
+SUPPLY_TARGET = 3  # levels' worth of XP per reset a level should offer (the finding's threshold)
+
+
+def _r_supply(a: L.LevellingAnalysis):
+    from ...assess import combat as CB
+
+    thin = {lvl: SUPPLY_TARGET - a.levels_of_xp(lvl) for lvl in C.LEVELS if a.levels_of_xp(lvl) < SUPPLY_TARGET}
+    if not thin:
+        return None
+    plan = []
+    for band in C.bands():
+        short = {lvl: d for lvl, d in thin.items() if lvl in band}
+        if not short:
+            continue
+        mid = (band.lo + band.hi) // 2
+        # mobs of level `mid`, counted with the XP each short level actually gets for them
+        need = max(math.ceil(d * L.XP_PER_LEVEL / CB.xp_per_kill(lvl, mid, 0, True)) for lvl, d in short.items())
+        plan.append((band, mid, need))
+    total = sum(n for _, _, n in plan)
+    return rec("levelling.xp-supply.more-mobs", f"Add about {total} level-appropriate mobs from level {min(thin)}",
+               "New combat mobs per level band, at the band's middle level: "
+               + _list([f"{b.label}: {n} of level {mid}" for b, mid, n in plan])
+               + ". Counted with `xp_compute`'s reward for each level in the band, for neutral mobs and a solo "
+               "player.",
+               f"Every level from {min(thin)} to {max(thin)} would offer at least {SUPPLY_TARGET} levels' worth of XP "
+               f"per reset (today level 88 has {a.levels_of_xp(88):.1f}).",
+               effort=3, kind="design")
+
+
+def _r_areas(a: L.LevellingAnalysis):
+    thin = [lvl for lvl in C.LEVELS if len(a.suitable(lvl)) <= 3]
+    if not thin:
+        return None
+    runs, start = [], thin[0]
+    for prev, cur in zip(thin, thin[1:] + [None]):
+        if cur != prev + 1:
+            runs.append((start, prev))
+            start = cur
+    need = [(lo, hi, max(4 - len(a.suitable(lvl)) for lvl in range(lo, hi + 1))) for lo, hi in runs]
+    total = sum(n for _, _, n in need)
+    return rec("levelling.suitable-areas.new-areas", f"Build or re-level areas for levels {M._ranges(thin)}",
+               f"{_plural(len(thin), 'level')} offer three or fewer areas with at least {L.MIN_MOBS} "
+               "level-appropriate mobs. Areas needed to give each at least four: "
+               + _list([f"{_span((lo, hi))}: {n}" for lo, hi, n in need])
+               + f" (an area spanning several of these ranges counts for each; {total} if each is separate). "
+               "Moving under-used areas' mobs into these levels works too.",
+               f"Levels with three or fewer areas: **{len(thin)} → 0** (every level gets at least 4).",
+               effort=3, kind="design")
+
+
+def _r_unreachable(a: L.LevellingAnalysis):
+    rows = a.unreachable_by_area()
+    if not rows:
+        return None
+    mobs = sum(r[3] for r in rows)
+    return rec("levelling.unreachable.connect", f"Connect or retire the {_plural(len(a.unreachable_rooms), 'unreachable room')}",
+               f"Add exits to them ({by_area([r[0] for r in rows for _ in range(r[1])])}), or delete them if "
+               "they're leftovers. Skip rooms reached on purpose by portals or mob programs.",
+               f"Rooms with no walking route from recall: **{len(a.unreachable_rooms)} → 0**"
+               + (f"; {_plural(mobs, 'mob reset')} placed in them become reachable." if mobs else "."),
+               effort=edit_effort(len(rows), len(a.unreachable_rooms)), impact=1)

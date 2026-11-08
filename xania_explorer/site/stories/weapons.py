@@ -8,7 +8,7 @@ from ...areafile.world import World
 from ...assess import common as C
 from ...assess import weapons as W
 from .. import charts as V
-from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural, _span, finding, story
+from .common import BAND_LABELS, HIGHLIGHT, MUTED, _list, _plural, _span, by_area, edit_effort, finding, rec, src_link, story
 
 
 def weapons_story(world: World):
@@ -29,19 +29,24 @@ def weapons_story(world: World):
                  "Which weapons a character can find and wield at each level from 1 to 91, how good they are, "
                  "and whether some classes get a worse deal.", tiles, [
                      finding("weapons.supply", _w_supply(a), metric=round(100 * a.early_count / len(a.got)),
-                             label=f"% of weapons usable by level {a.early_cutoff}", impact=2),
+                             label=f"% of weapons usable by level {a.early_cutoff}", impact=2,
+                             recs=[_r_supply(a)]),
                      finding("weapons.class-access", _w_access(a),
                              metric=round(max(start.values()) / max(1, min(start.values())), 1),
-                             label="× more weapons for the best-served class", impact=3),
+                             label="× more weapons for the best-served class", impact=3,
+                             recs=_r_access(a)),
                      finding("weapons.plateau", _w_plateau(a), metric=worst.length,
-                             label=f"levels a {worst.cls} waits for a better weapon", impact=2),
+                             label=f"levels a {worst.cls} waits for a better weapon", impact=2,
+                             recs=[_r_plateau(a)]),
                      finding("weapons.sources", _w_sources(a),
                              metric=round(100 * late_mob_only / len(late)) if late else None,
                              label=f"% of weapons above {a.early_cutoff} only from mob drops", better="none",
                              issue=False),
                      finding("weapons.over-cap", _w_over(a), metric=sum(1 for w in a.over if w.vnum in obtainable),
-                             label="obtainable weapons over the damage cap", impact=2),
-                     finding("weapons.no-source", _w_lost(a), metric=len(a.lost), label="weapons with no source"),
+                             label="obtainable weapons over the damage cap", impact=2,
+                             recs=[_r_over(a)]),
+                     finding("weapons.no-source", _w_lost(a), metric=len(a.lost), label="weapons with no source",
+                             recs=[_r_lost(a)]),
                  ], a.method())
 
 
@@ -234,3 +239,100 @@ def _w_lost(a: W.WeaponAnalysis) -> str:
             + V.details(f"Details: the {len(a.lost)} weapons", a.lost_table()))
 
 
+
+
+# -- recommendations -------------------------------------------------------------------------------------
+def _r_supply(a: W.WeaponAnalysis):
+    totals = a.band_totals
+    k = len(a.bands) // 3
+    late = sorted(totals[k:])
+    median = late[len(late) // 2]
+    thin = [(b, n) for b, n in zip(a.bands[k:], totals[k:]) if n < median / 2]
+    if not thin:
+        return None
+    needed = sum(round(median) - n for _, n in thin)
+    return rec("weapons.supply.fill-thin-bands", f"Add weapons to the {_plural(len(thin), 'thinnest level band')}",
+               f"Bands {_list([f'{b.label} ({n})' for b, n in thin])} get fewer than half the late-game median of "
+               f"{median} new weapons. New weapons there need an object and a reset (shop, floor or mob) in an "
+               "area of that level.",
+               f"About **{needed}** new weapons would bring each of those bands up to the median.",
+               effort=2 if needed <= 15 else 3)
+
+
+def _r_access(a: W.WeaponAnalysis):
+    start = a.class_access("start")
+    worst = min(start, key=start.get)
+    p = next(p for p in a.profiles if p.name == worst)
+    out = []
+    missing = [t for t in W.SKILLED_TYPES if t not in p.starting]
+    if missing:
+        counts = {t: sum(w.type == t for w in a.got) for t in missing}
+        easiest = [t for t in missing if t in p.easy] or missing
+        add = max(easiest, key=lambda t: counts[t])
+        out.append(rec("weapons.class-access.starting-type",
+                       f"Give {worst}s {add} skill at creation",
+                       f"{worst.capitalize()}s start knowing {_list(p.starting)}. Adding **{add}** to the "
+                       f"`\"{worst} basics\"` skill group "
+                       f"({src_link(a.world, 'SkillTables.cpp', chr(34) + worst + ' basics' + chr(34))}) gives it to "
+                       f"every new {worst} without costing creation points"
+                       + (f"; it's already easy for them to train (difficulty {p.difficulty[add]})." if add in p.easy
+                          else "."),
+                       f"Weapons in a {worst}'s starting types rise from **{start[worst]}** to "
+                       f"**{start[worst] + counts[add]}** (best-served class: {max(start.values())}).",
+                       effort=1, kind="code"))
+    empty = a.empty_bands(worst)
+    if empty:
+        out.append(rec("weapons.class-access.fill-empty-bands",
+                       f"Place {'/'.join(p.starting)} weapons where {worst}s get nothing new",
+                       f"{_plural(len(empty), 'level band')} ({_list([b.label for b in empty])}) have no new "
+                       f"weapon of a {worst}'s starting types. One weapon per band, within that band's damage cap, "
+                       "placed in an area of matching level.",
+                       f"Every band would offer a {worst} at least one new weapon ({len(empty)} new objects).",
+                       effort=edit_effort(len(empty), len(empty))))
+    return out
+
+
+def _r_plateau(a: W.WeaponAnalysis):
+    worst = a.worst_plateau
+    if worst.length < 10:
+        return None
+    p = next(p for p in a.profiles if p.name == worst.cls)
+    mid = (worst.lo + worst.hi) // 2
+    cap = W.allowed_average(mid, False)
+    target = round(((worst.value or 0) + cap) / 2, 1)
+    # simulate it: the class's best-weapon curve with the new weapon from level `mid` on
+    curve = {lvl: max(v or 0, target) if lvl >= mid else v for lvl, v in a.best_start[worst.cls].items()}
+    second = max((hi - lo + 1 for lo, hi, _ in C.runs_without_increase(curve)), default=0)
+    if second >= worst.length:
+        return None
+    return rec("weapons.plateau.mid-upgrade", f"Add a level-{mid} {p.starting[0]} for {worst.cls}s",
+               f"One {'/'.join(p.starting)} weapon at level **{mid}**, average damage about **{target:g}** (between "
+               f"the current best, {worst.value:g}, and the level-{mid} cap of {cap:g}), from a shop or a common "
+               "drop in a level-appropriate area.",
+               f"The longest wait for a {worst.cls} upgrade falls from {worst.length} to {second} levels.",
+               effort=1)
+
+
+def _r_over(a: W.WeaponAnalysis):
+    obtainable = {w.vnum for w in a.got}
+    over = [w for w in a.over if w.vnum in obtainable]
+    if not over:
+        return None
+    areas = [a.world.obj_area[w.vnum].name for w in over]
+    return rec("weapons.over-cap.lower-dice", f"Bring {_plural(len(over), 'weapon')} down to the damage cap",
+               f"Lower the damage dice of the obtainable over-cap weapons ({by_area(areas)}) so each average is at "
+               "most the cap for its level. The table under the finding gives each weapon's cap.",
+               f"Obtainable weapons over the cap: **{len(over)} → 0**. Their wielders lose on average "
+               f"{sum(w.average - w.cap for w in over) / len(over):.1f} damage per hit.",
+               effort=edit_effort(len(set(areas)), len(over)))
+
+
+def _r_lost(a: W.WeaponAnalysis):
+    if not a.lost:
+        return None
+    areas = [a.world.obj_area[w.vnum].name for w in a.lost]
+    return rec("weapons.no-source.place-or-remove", f"Place or remove the {_plural(len(a.lost), 'unplaced weapon')}",
+               f"Give each a reset (on a mob, in a room or a shop) or delete it: {by_area(areas)}. Check mob "
+               "programs first: some may be handed out by scripts.",
+               f"Weapons without a source: **{len(a.lost)} → 0**.",
+               effort=edit_effort(len(set(areas)), len(a.lost)), impact=1)

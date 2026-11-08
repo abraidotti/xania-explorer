@@ -120,7 +120,7 @@ def run(sides: list[dict], *, catalogue: bool = True, progress=None) -> dict:
     from .areafile.world import load_world
     from .gen import area_catalogue
     from .paths import XaniaPaths
-    from .site import compare, pages as P
+    from .site import compare, pages as P, recommendations
     from .site.targets import Target, slug_for
 
     say = progress or (lambda *_: None)
@@ -141,7 +141,8 @@ def run(sides: list[dict], *, catalogue: bool = True, progress=None) -> dict:
             if s.available(world):
                 pages[f"{name}/data/{s.slug}.csv"] = P.csv_text(s.assessment.write_csv, world)
         pages[f"{name}/index.md"] = P.overview_page(t, world, explore_link=False)
-        order += [f"{name}/index.md"] + [f"{name}/{s.slug}.md" for s in SYSTEMS]
+        pages[f"{name}/recommendations.md"] = recommendations.page(world)
+        order += [f"{name}/index.md", f"{name}/recommendations.md"] + [f"{name}/{s.slug}.md" for s in SYSTEMS]
         if catalogue:
             pages[f"{name}/areas.md"] = area_catalogue.render_index(world)
             for area in world.areas:

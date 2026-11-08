@@ -79,7 +79,10 @@ def csv_text(writer, world: World) -> str:
 def target_pages(target: Target, world: World) -> dict[str, str]:
     """All generated files for one target, keyed by path relative to docs/."""
     t = target.name
-    pages = {f"{t}/index.md": overview_page(target, world), f"{t}/areas.md": area_catalogue.render_index(world)}
+    from . import recommendations
+
+    pages = {f"{t}/index.md": overview_page(target, world), f"{t}/areas.md": area_catalogue.render_index(world),
+             f"{t}/recommendations.md": recommendations.page(world)}
     for s in SYSTEMS:
         pages[f"{t}/{s.slug}.md"] = s.page(world)
         if s.available(world):

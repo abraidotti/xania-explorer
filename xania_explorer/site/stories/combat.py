@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+import math
+
 from ...areafile.world import World
 from ...assess import combat as CB
 from ...assess import common as C
 from ...source.cpp_tables import CLASSES
 from .. import charts as V
-from .common import HIGHLIGHT, _list, finding, story
+from .common import HIGHLIGHT, _list, by_area, edit_effort, finding, rec, src_link, story
 
 CLOCK_MINUTES = CB.FULL_TIME_FACTOR_HOURS * 60
 DEADLY_RUN = 5  # the majority must hold for this many consecutive levels (ignores single noisy levels)
@@ -45,10 +47,12 @@ def combat_story(world: World):
                              label="kills per level on average", better="none", issue=False),
                      finding("combat.xp-clock", _clock(a, hours), metric=round(hours[slowest], 1),
                              label=f"hours of combat to hero for a {slowest} (vs a "
-                                   f"{CB.FULL_TIME_FACTOR_HOURS * (C.HERO_LEVEL - 1):.0f} h clock)", impact=3),
+                                   f"{CB.FULL_TIME_FACTOR_HOURS * (C.HERO_LEVEL - 1):.0f} h clock)", impact=3,
+                             recs=[_r_clock(a, hours)]),
                      finding("combat.fight-length", _rounds(a),
                              metric=round(a.series("knight", "rounds")[C.HERO_LEVEL] or 0),
-                             label=f"rounds for a knight to kill a level-{C.HERO_LEVEL} mob", impact=2),
+                             label=f"rounds for a knight to kill a level-{C.HERO_LEVEL} mob", impact=2,
+                             recs=[_r_rounds(a)]),
                      finding("combat.deadly-melee", _deadly(a), metric=min(onsets) if onsets else None,
                              label="level from which melee turns deadly for the weakest class", better="higher",
                              impact=2),
@@ -186,3 +190,51 @@ def _accuracy(a: CB.CombatAnalysis) -> str:
             "anything mobs wear.\n")
     return (f"\n## Players' accuracy dips in the middle levels as mob dex climbs\n\n" + text + V.embed(chart)
             + "".join(V.details(f"Details: {c} by level band", a.class_table(c)) for c in CLASSES))
+
+
+# -- recommendations -------------------------------------------------------------------------------------
+def _r_clock(a: CB.CombatAnalysis, hours: dict[str, float]):
+    slowest = max(hours.values())
+    full = 4 * CB.FULL_TIME_FACTOR_HOURS  # quarter-hours per level for full credit (6)
+    # the smallest whole number of quarter-hours per level that still covers the slowest class's combat time
+    needed = max(2, math.ceil(4 * slowest / (C.HERO_LEVEL - 1)))
+    if needed >= full:
+        return None
+    clock_after = needed / 4 * (C.HERO_LEVEL - 1)
+    return rec("combat.xp-clock.shorten", f"Lower full-XP credit from {full:g} to {needed} quarter-hours per level",
+               f"In `xp_compute` ({src_link(a.world, 'fight.cpp', 'std::clamp(time_per_level, 2, 6)')}), change "
+               f"the clamp's upper bound and the divisor (`/ 6`) from {full:g} to **{needed}**, and cap the "
+               f"below-15 floor (`8 - base_level`) at {needed} too, or levels 2–{8 - needed - 1} would earn more than "
+               f"full XP. {needed} is the smallest value that still covers the slowest class's combat time "
+               f"({slowest:.0f} h to hero).",
+               f"Played time needed for full XP to hero: **{CB.FULL_TIME_FACTOR_HOURS * (C.HERO_LEVEL - 1):.0f} h → "
+               f"{clock_after:.0f} h**. That's still more than any class spends fighting ({slowest:.0f} h at most), "
+               "so a player who fights continuously still gets full XP per kill.",
+               effort=1, kind="code")
+
+
+FIGHT_TARGET = 2.0  # recommend capping fights at this multiple of the level-30 length (a judgement)
+
+
+def _r_rounds(a: CB.CombatAnalysis):
+    r = a.series("knight", "rounds")
+    base = r.get(30)
+    if not base:
+        return None
+    target = FIGHT_TARGET * base
+    over = [lvl for lvl, v in r.items() if v and v > target]
+    if not over:
+        return None
+    first = over[0]
+    mobs = [m for m in a.mobs if C.usable_level(m.mob.level) >= first]
+    factor = target / r[C.HERO_LEVEL] if r.get(C.HERO_LEVEL) else None
+    areas = [a.world.mob_area[m.mob.vnum].name for m in mobs if m.mob.vnum in a.world.mob_area]
+    return rec("combat.fight-length.mob-hp", f"Scale down the HP of mobs above level {first - 1}",
+               f"Knights need more than {FIGHT_TARGET:g}× their level-30 fight length (about {base:.0f} rounds) from "
+               f"level {first}. Rounds to kill scale directly with mob HP, so lowering the hit dice of the "
+               f"{len(mobs)} combat mobs from level {first} up ({by_area(areas, 3)}) shortens fights in proportion. "
+               f"At level {C.HERO_LEVEL} that's about {factor:.0%} of today's HP." if factor else "",
+               f"Knight fights at level {C.HERO_LEVEL}: **{r[C.HERO_LEVEL]:.0f} → {target:.0f} rounds**, and combat "
+               "time per level falls by the same proportion. Mobs also deal less total damage, so melee gets "
+               "safer.",
+               effort=edit_effort(len(set(areas)), len(mobs)))

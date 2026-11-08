@@ -435,3 +435,22 @@
 }
 .md-typeset .xe-version-switch p { margin: 0; }
 .md-typeset .xe-version-switch strong { color: var(--md-default-fg-color); }
+
+/* Recommendation effort chips */
+.md-typeset .xe-effort-1 { background: #2a8350; color: #ffffff; }
+.md-typeset .xe-effort-2 { background: #f5b82e; color: #3a261c; }
+.md-typeset .xe-effort-3 { background: #a35bb5; color: #ffffff; }
+
+/* "What to change" boxes under findings: the sunflower accent rather than Material's teal tip. */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: #f5b82e;
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(245, 184, 46, 0.16);
+}
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: #e8920c;
+}

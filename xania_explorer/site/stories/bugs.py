@@ -8,7 +8,7 @@ from ...areafile.world import World
 from ...assess import bugs as B
 from ...bugs import KINDS, SEVERITY_LABEL, BugResult
 from .. import charts as V
-from .common import HIGHLIGHT, MUTED, _list, _plural, finding, story
+from .common import HIGHLIGHT, MUTED, _list, _plural, edit_effort, finding, rec, story
 
 STATUS_COLOURS = {"present": HIGHLIGHT, "latent": "#f5b82e", "fixed": "#3fa66b", "clean": "#3fa66b",
                   "unknown": MUTED}
@@ -41,13 +41,15 @@ def bugs_story(world: World):
                  "Defects found in this version's C++ code, area data and content, each explained with a fix. "
                  "Everything is re-detected on every build, so a branch that fixes a bug shows it as fixed.", tiles, [
                      finding("bugs.code", _code(a), metric=counted("code", len(code_open)), label="open code defects",
-                             impact=3 if present_crash else 2 if any(r.check.kind == "code" for r in crash) else 1),
+                             impact=3 if present_crash else 2 if any(r.check.kind == "code" for r in crash) else 1,
+                             recs=_r_code(a)),
                      finding("bugs.data", _data(a), metric=data_found, label="area-data load errors and warnings",
                              issue=data_found > 0, impact=3 if any(r.status == "present" and r.check.kind == "data"
-                                                                   for r in crash) else 1),
+                                                                   for r in crash) else 1,
+                             recs=_r_occurrences(a, "data")),
                      finding("bugs.content", _content(a),
                              metric=counted("content", sum(len(r.detection.occurrences) for r in a.by(kind="content"))),
-                             label="pieces of content that never reach players"),
+                             label="pieces of content that never reach players", recs=_r_occurrences(a, "content")),
                      finding("bugs.by-area", _areas(a),
                              metric=counted("content", len({ar for ar, _ in a.area_counts()})),
                              label="areas with open data or content defects", better="none", issue=False),
@@ -172,3 +174,52 @@ def _catalogue(a: B.BugAnalysis) -> str:
             out.append(V.details(f"Where: {_plural(len(r.detection.occurrences), 'occurrence')}",
                                  a.occurrence_table(r, link)))
     return "".join(out)
+
+
+# -- recommendations -------------------------------------------------------------------------------------
+SEVERITY_IMPACT = {"crash": 3, "wrong-behaviour": 2, "cosmetic": 1}
+# Bug checks whose fix another system already recommends with its own computed effect.
+COVERED_BY = {"code.affect-worth-ac": ("equipment",), "content.unreachable-rooms": ("levelling",),
+              "content.unobtainable-items": ("weapons", "equipment")}  # weapons + gear = every unplaced item
+
+
+def _covered(a: B.BugAnalysis, r: BugResult) -> bool:
+    from ...systems import by_slug
+
+    owners = COVERED_BY.get(r.check.id, ())
+    return bool(owners) and all(by_slug(o).available(a.world) for o in owners)
+
+
+def _r_code(a: B.BugAnalysis):
+    out = []
+    for r in a.by(kind="code"):
+        if _covered(a, r):
+            continue
+        latent = r.status == "latent"
+        effect = {"crash": "Removes a way to crash the MUD at boot"
+                           + (" that no current area data triggers, but the next builder's mistake would." if latent
+                              else ", which the current data triggers."),
+                  "wrong-behaviour": "Makes the game do what the code intends (see the catalogue entry for what "
+                                     "goes wrong today).",
+                  "cosmetic": "Tidies a cosmetic defect."}[r.check.severity]
+        out.append(rec(f"bugs.code.{r.check.id.split('.', 1)[1]}", f"Fix: {r.check.title[:1].lower()}{r.check.title[1:]}",
+                       f"Apply the patch in the [catalogue](bugs.md#{r.anchor}).", effect, effort=1, kind="code",
+                       impact=SEVERITY_IMPACT[r.check.severity]))
+    return out
+
+
+def _r_occurrences(a: B.BugAnalysis, kind: str):
+    out = []
+    for r in a.by(kind=kind):
+        n = len(r.detection.occurrences)
+        if not n or _covered(a, r):
+            continue
+        files = {o.file for o in r.detection.occurrences if o.file}
+        out.append(rec(f"bugs.{kind}.{r.check.id.split('.', 1)[1]}",
+                       f"Review the {n} {r.check.title[:1].lower()}{r.check.title[1:]}",
+                       f"Work through the list in the [catalogue](bugs.md#{r.anchor}); {r.check.remedy[:1].lower()}"
+                       f"{r.check.remedy[1:]}",
+                       f"Open occurrences: **{n} → 0**" + (" (or the deliberate ones)." if kind == "content" else "."),
+                       effort=edit_effort(len(files) or 1, n), impact=SEVERITY_IMPACT[r.check.severity]
+                       if kind == "data" else 1))
+    return out
