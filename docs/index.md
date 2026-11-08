@@ -12,9 +12,10 @@ formulas and point to the source; they aren't player guides.
 | [World model](03-world-model.md) | Prototypes vs instances, rooms and exits, reset timing and rules, shops, specials, mobprogs |
 | [Characters](04-characters.md) | Creation, classes, races, stats, XP per level, levelling and practising |
 | [Combat & experience](05-combat.md) | Rounds, hit chance, defences, damage pipeline, mob stats, XP per kill and the played-time clock |
+| [Skills & magic](06-skills-and-magic.md) | The skill table, getting and improving skills, mana costs, saves and damage spells |
 | [About the assessments](assessments.md) | How the level 1–91 balance reports are calculated |
 
-Planned: skills and magic, items and economy, NPC behaviour, persistence and admin.
+Planned: items and economy, NPC behaviour, persistence and admin.
 
 ## Reports
 

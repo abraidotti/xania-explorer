@@ -37,6 +37,7 @@ class Skill:
     levels: tuple[int, ...]  # per class: level at which it can be learned
     ratings: tuple[int, ...]  # per class: creation cost and learning difficulty (higher = harder)
     is_spell: bool
+    spell_fun: str = ""  # C++ function name, e.g. "spell_fireball"
 
     def level_for(self, cls: str) -> int:
         return self.levels[CLASSES.index(cls)]
@@ -120,7 +121,7 @@ def load_skills(src_dir: Path | None = None) -> dict[str, Skill]:
         spell_fun = entry.split(",")[1].strip()
         skills[name.group(1)] = Skill(
             name.group(1), int(tail.group(1)), int(tail.group(2)), int(tail.group(3)),
-            _ints(tail.group(4)), _ints(tail.group(5)), spell_fun not in ("nullptr", "spell_null"),
+            _ints(tail.group(4)), _ints(tail.group(5)), spell_fun not in ("nullptr", "spell_null"), spell_fun,
         )
     assert len(skills) > 100, "skill_table parse looks wrong"
     return skills
