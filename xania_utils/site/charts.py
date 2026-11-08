@@ -11,8 +11,13 @@ import json
 from typing import Any
 
 SCHEMA = "https://vega.github.io/schema/vega-lite/v5.json"
-CLASS_COLOURS = {"mage": "#4e79a7", "cleric": "#f28e2b", "knight": "#59a14f", "barbarian": "#e15759",
-                 "any type": "#9c755f", "cap": "#888888"}
+# Warm palette to match docs/stylesheets/xania.css; still distinct for colour-blind readers
+# (hue *and* lightness differ between neighbours).
+WARM_CATEGORY = ["#b4532a", "#e0a030", "#5f8a5b", "#4f7896", "#9b5a8a", "#8a6a45", "#d36e5a", "#3f8a86",
+                 "#c9b27c"]
+CLASS_COLOURS = {"mage": "#4f7896", "cleric": "#e0a030", "knight": "#5f8a5b", "barbarian": "#b4532a",
+                 "any type": "#8a6a45", "cap": "#9a8b7e"}
+FONT = "Nunito Sans, Helvetica, Arial, sans-serif"
 
 
 def spec(data: list[dict[str, Any]], *, title: str, height: int = 300, **body: Any) -> dict[str, Any]:
@@ -23,8 +28,14 @@ def spec(data: list[dict[str, Any]], *, title: str, height: int = 300, **body: A
         "height": height,
         "data": {"values": data},
         "background": "transparent",
-        "config": {"view": {"stroke": None}, "axis": {"labelFontSize": 11, "titleFontSize": 12},
-                   "legend": {"orient": "bottom"}},
+        "config": {"font": FONT, "view": {"stroke": None},
+                   "title": {"font": "Fraunces, Georgia, serif", "fontSize": 15, "fontWeight": 600},
+                   "axis": {"labelFontSize": 11, "titleFontSize": 12, "gridOpacity": 0.55},
+                   "legend": {"orient": "bottom"},
+                   "range": {"category": WARM_CATEGORY},
+                   "bar": {"color": WARM_CATEGORY[0], "cornerRadiusEnd": 2},
+                   "line": {"strokeWidth": 2.2},
+                   "point": {"color": WARM_CATEGORY[0]}},
         **body,
     }
 
@@ -84,6 +95,11 @@ def strip_text_histograms(markdown: str) -> str:
             if skipping:
                 if not any("│" in b for b in block):
                     out += ["```", *block, line]
+                else:  # drop the histogram's caption line ("Population per band:") too
+                    while out and not out[-1].strip():
+                        out.pop()
+                    if out and out[-1].rstrip().endswith(":") and not out[-1].startswith(("|", "-", "#")):
+                        out.pop()
                 skipping, block = False, []
                 continue
             skipping = True

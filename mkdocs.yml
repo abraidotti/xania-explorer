@@ -17,19 +17,29 @@ theme:
     - search.suggest
     - content.code.copy
     - toc.follow
+  # Warm "parchment and lantern-light" palette; colours live in docs/stylesheets/xania.css.
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-4
+        icon: material/white-balance-sunny
         name: Switch to light mode
+  font:
+    text: Nunito Sans
+    code: JetBrains Mono
+  icon:
+    logo: material/sword-cross
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
 
 hooks:
   - xania_utils/site/hooks.py

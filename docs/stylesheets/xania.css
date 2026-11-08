@@ -1,18 +1,172 @@
-/* Charts span the content column. */
+/* Warm theme for Xania Utils: parchment and terracotta by day, lantern-lit brown by night.
+   Material reads these custom properties (palette primary/accent: custom in mkdocs.yml). */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap");
+
+:root {
+  --xu-heading-font: "Fraunces", Georgia, "Times New Roman", serif;
+}
+
+/* -- Light: parchment ------------------------------------------------------- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #a8482a;          /* terracotta */
+  --md-primary-fg-color--light: #c4683f;
+  --md-primary-fg-color--dark: #86361d;
+  --md-primary-bg-color: #fdf8ef;
+  --md-primary-bg-color--light: rgba(253, 248, 239, 0.75);
+  --md-accent-fg-color: #c27c0e;           /* amber */
+  --md-accent-fg-color--transparent: rgba(194, 124, 14, 0.12);
+
+  --md-default-bg-color: #fbf6ec;          /* parchment */
+  --md-default-fg-color: rgba(58, 38, 28, 0.9);
+  --md-default-fg-color--light: rgba(58, 38, 28, 0.66);
+  --md-default-fg-color--lighter: rgba(58, 38, 28, 0.36);
+  --md-default-fg-color--lightest: rgba(58, 38, 28, 0.1);
+
+  --md-typeset-color: #3a261c;
+  --md-typeset-a-color: #a8482a;
+  --md-code-bg-color: #f3eadb;
+  --md-code-fg-color: #4a3428;
+  --md-footer-bg-color: #3a261c;
+  --md-footer-bg-color--dark: #2c1d15;
+
+  --xu-card-bg: #fffaf2;
+  --xu-card-border: #ead9c0;
+  --xu-table-head: #f1e3cd;
+  --xu-table-stripe: rgba(168, 72, 42, 0.035);
+  --xu-table-hover: rgba(194, 124, 14, 0.1);
+}
+
+/* -- Dark: lantern light ------------------------------------------------------ */
+[data-md-color-scheme="slate"] {
+  --md-hue: 24;                            /* warms all of Material's slate greys */
+  --md-primary-fg-color: #d9774e;
+  --md-primary-fg-color--light: #e89470;
+  --md-primary-fg-color--dark: #b85a33;
+  --md-primary-bg-color: #fdf3e6;
+  --md-accent-fg-color: #f0b04a;
+  --md-accent-fg-color--transparent: rgba(240, 176, 74, 0.12);
+
+  --md-default-bg-color: #1e1814;
+  --md-default-fg-color: rgba(244, 231, 214, 0.88);
+  --md-default-fg-color--light: rgba(244, 231, 214, 0.62);
+  --md-default-fg-color--lighter: rgba(244, 231, 214, 0.34);
+  --md-default-fg-color--lightest: rgba(244, 231, 214, 0.1);
+
+  --md-typeset-color: #efe2d0;
+  --md-typeset-a-color: #eb9a6c;
+  --md-code-bg-color: #2a221c;
+  --md-code-fg-color: #efd9bd;
+  --md-footer-bg-color: #16110e;
+  --md-footer-bg-color--dark: #110d0a;
+
+  --xu-card-bg: #261f1a;
+  --xu-card-border: #3b2f27;
+  --xu-table-head: #31271f;
+  --xu-table-stripe: rgba(240, 176, 74, 0.03);
+  --xu-table-hover: rgba(240, 176, 74, 0.08);
+}
+
+/* Header in light mode: a deeper, warmer bar than the body accent. */
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: #8f3c22;
+}
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #2b211b;
+  color: #f4e4cf;
+}
+
+/* -- Typography --------------------------------------------------------------- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-header__topic:first-child {
+  font-family: var(--xu-heading-font);
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+.md-typeset h1 {
+  font-weight: 650;
+  color: var(--md-primary-fg-color--dark);
+}
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: var(--md-primary-fg-color--light);
+}
+.md-typeset h2 {
+  font-weight: 600;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid var(--xu-card-border);
+}
+.md-typeset h3 {
+  font-weight: 500;
+}
+.md-typeset {
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+/* -- Charts as cards ------------------------------------------------------------ */
 .xu-chart {
-  margin: 1.2em 0 1.6em;
+  margin: 1.2em 0 1.8em;
   width: 100%;
+  padding: 0.9rem 1rem 0.6rem;
+  background: var(--xu-card-bg);
+  border: 1px solid var(--xu-card-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(58, 38, 28, 0.06), 0 6px 18px -10px rgba(58, 38, 28, 0.18);
+  box-sizing: border-box;
 }
-.xu-chart .xu-chart-body {
-  width: 100%;
-}
+.xu-chart .xu-chart-body,
 .xu-chart .vega-embed {
   width: 100%;
 }
+/* vega-embed's actions menu is a <details>; Material styles every <details> as a collapsible
+   admonition (blue border, icon, chevron). Undo that inside charts. */
+.md-typeset .xu-chart .vega-embed details {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7rem;
+  overflow: visible;
+}
+.md-typeset .xu-chart .vega-embed details > summary {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: 0;
+  min-height: 0;
+  opacity: 0.55;
+}
+.md-typeset .xu-chart .vega-embed details > summary::before,
+.md-typeset .xu-chart .vega-embed details > summary::after {
+  display: none;
+}
+.md-typeset .xu-chart .vega-embed details > summary:hover {
+  opacity: 1;
+}
 
-/* Wide report tables: smaller text, sortable headers show a pointer. */
+/* -- Tables ----------------------------------------------------------------------- */
 .md-typeset table:not([class]) {
   font-size: 0.68rem;
+  border: 1px solid var(--xu-card-border);
+  border-radius: 10px;
+  box-shadow: none;
+}
+.md-typeset table:not([class]) th {
+  background: var(--xu-table-head);
+  font-weight: 700;
+}
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background: var(--xu-table-stripe);
+}
+.md-typeset table:not([class]) tbody tr:hover {
+  background: var(--xu-table-hover);
+  box-shadow: none;
 }
 .md-typeset table:not([class]) th[role="columnheader"] {
   cursor: pointer;
@@ -20,7 +174,14 @@
 }
 .md-typeset table:not([class]) th[aria-sort="ascending"]::after {
   content: " ▲";
+  color: var(--md-accent-fg-color);
 }
 .md-typeset table:not([class]) th[aria-sort="descending"]::after {
   content: " ▼";
+  color: var(--md-accent-fg-color);
+}
+
+/* Inline code: a little ink-on-parchment. */
+.md-typeset code {
+  border-radius: 4px;
 }

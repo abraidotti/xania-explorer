@@ -73,7 +73,7 @@ def weapon_charts(world: World) -> dict[str, dict]:
                                       "tooltip": V.tooltip(("name", "Weapon"), ("vnum", "Vnum"), ("area", "Area"),
                                                            ("type", "Type"), ("level", "Level"), ("avg", "Avg"),
                                                            ("sources", "Sources"))}},
-                        {"data": {"values": cap}, "mark": {"type": "line", "strokeDash": [4, 4], "color": "#888"},
+                        {"data": {"values": cap}, "mark": {"type": "line", "strokeDash": [4, 4], "color": "#9a8b7e"},
                          "encoding": {"x": {"field": "level", "type": "quantitative"},
                                       "y": {"field": "cap", "type": "quantitative"}}},
                     ]}
@@ -94,7 +94,9 @@ def mob_charts(world: World) -> dict[str, dict]:
     per_level = [{"level": lvl, "population": sum(i.population for i in combat if i.level == lvl),
                   "prototypes": sum(1 for i in combat if i.level == lvl)} for lvl in C.LEVELS]
     out["## 2."] = V.spec(per_level, title="Combat mob population at every level", mark="bar",
-                          encoding={"x": V.ordinal("level", "Level"),
+                          encoding={"x": {**V.ordinal("level", "Level"),
+                                          "axis": {"values": [1] + list(range(5, C.HERO_LEVEL + 1, 5)) + [91],
+                                                   "labelAngle": 0}},
                                     "y": V.quant("population", "Instances"),
                                     "tooltip": V.tooltip(("level", "Level"), ("population", "Population"),
                                                          ("prototypes", "Prototypes"))})
@@ -108,7 +110,7 @@ def mob_charts(world: World) -> dict[str, dict]:
                                                  scale={"domain": [1, C.HERO_LEVEL], "nice": False}),
                                     "y": V.quant("hp", "Average HP", scale={"type": "log"}),
                                     "color": V.nominal("kind", "Behaviour",
-                                                       {"aggressive": "#e15759", "passive": "#4e79a7"}),
+                                                       {"aggressive": "#b4532a", "passive": "#4f7896"}),
                                     "size": V.quant("pop", "Population"),
                                     "tooltip": V.tooltip(("name", "Mob"), ("vnum", "Vnum"), ("area", "Area"),
                                                          ("level", "Level"), ("hp", "HP"), ("dmg", "Damage"),

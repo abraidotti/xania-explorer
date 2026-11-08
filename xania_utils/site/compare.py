@@ -17,7 +17,7 @@ from .pages import BAND_LABELS
 from .targets import Target
 
 MAX_CHANGE_ROWS = 300
-TARGET_COLOURS = ["#4e79a7", "#e15759", "#59a14f", "#f28e2b", "#b07aa1"]
+TARGET_COLOURS = ["#4f7896", "#b4532a", "#5f8a5b", "#e0a030", "#9b5a8a"]
 
 
 def _metrics(world: World) -> dict[str, object]:
