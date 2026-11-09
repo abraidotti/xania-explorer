@@ -50,10 +50,10 @@ class AreaProfile:
     aggressive: float  # share of the population that's aggressive
     casters: float  # share with a damaging special
     helped: float  # share that spawns beside helpers
-    traps: list[tuple[CB.MobFighter, int]] = field(default_factory=list)  # aggressive mobs far above the band
+    traps: list[tuple[CB.MobFighter, int]] = field(default_factory=list, repr=False)  # aggressive mobs far above the band
     peer_ratio: float | None = None  # hp_loss ÷ the median of its peers
     peer_deadly: float | None = None  # its peers' median deadly share
-    killers: list[CB.MobFighter] = field(default_factory=list)  # mobs deadly at the area's level
+    killers: list[CB.MobFighter] = field(default_factory=list, repr=False)  # mobs deadly at the area's level
 
     @property
     def xp_per_hp(self) -> float:

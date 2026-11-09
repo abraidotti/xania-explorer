@@ -10,10 +10,11 @@
 
 from __future__ import annotations
 
-from collections import defaultdict, deque
+from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
+from ..areafile import graph as G
 from ..areafile.world import World
 from . import combat as CB
 from . import common as C
@@ -25,19 +26,7 @@ XP_PER_LEVEL = 1000  # human, default build
 
 def distances(world: World, start: int = RECALL_ROOM) -> dict[int, int]:
     """Breadth-first walking distance from ``start`` to every reachable room."""
-    if start not in world.rooms:
-        return {}
-    dist = {start: 0}
-    queue = deque([start])
-    while queue:
-        vnum = queue.popleft()
-        for exit_ in world.rooms[vnum].exits.values():
-            to = exit_.to_vnum
-            if exit_.cosmetic or to <= 0 or to not in world.rooms or to in dist:
-                continue
-            dist[to] = dist[vnum] + 1
-            queue.append(to)
-    return dist
+    return G.distances(world, start)
 
 
 @dataclass

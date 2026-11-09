@@ -38,6 +38,20 @@ Every command takes `--xania PATH` (a checkout root or its `area/` dir) before t
 default is `$XANIA_DIR`, or failing that `../xania`. `site`/`serve` use `--target` instead, so they can take
 several versions.
 
+## Python API
+
+Other tools (such as xania-sim's bots) should import [xania_explorer/api.py](xania_explorer/api.py) and nothing
+else. Its names and signatures are pinned by [tests/test_api.py](tests/test_api.py).
+
+```python
+from xania_explorer import api
+world = api.load_world("../xania")
+api.path(world, api.RECALL_ROOM, 3054)                      # walking steps, e.g. [Step(... command="north")]
+api.predict_fight(world, "knight", 10, 110)                 # expected rounds, damage taken, xp, deadly
+api.predict_spell(world, "mage", "magic missile", 5, 5)     # skill, save chance, damage range, mana
+api.abilities("mage"), api.pc_races(), api.area_profile(world, "Dell.are")
+```
+
 ## Live explorer
 
 The site's **Explore any repo** page ([docs/explore.md](docs/explore.md)) analyses any public Xania repo and branch,
