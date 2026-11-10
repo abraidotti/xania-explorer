@@ -74,7 +74,7 @@ def test_rooms_in_and_entrances(world):
 # Restricted rooms (RoomFlag.hpp: NewbiesOnly = R = bit 17, HeroesOnly = Q = bit 16, GodsOnly = P = bit 15):
 # 300 -n-> 301 (newbies only) ; 300 -e-> 302 (heroes only) ; 300 -s-> 303 (gods only) ; 301 -n-> 304
 GATED = ("#AREA\nGated.are~\nGated~\n{ 1 91} Test Gated~\n300 310\n\n#ROOMS\n"
-         + _room(300, "Square", _exit(0, 301) + _exit(1, 302) + _exit(2, 303)).replace("0 0\n", "0 0\n", 1)
+         + _room(300, "Square", _exit(0, 301) + _exit(1, 302) + _exit(2, 303))
          + f"#301\nSchool~\nSchool.\n~\n{1 << 17} 0\n" + _exit(2, 300) + _exit(0, 304) + "S\n"
          + f"#302\nHall of Heroes~\nHall.\n~\n{1 << 16} 0\n" + _exit(3, 300) + "S\n"
          + f"#303\nShrine~\nShrine.\n~\n{1 << 15} 0\n" + _exit(0, 300) + "S\n"
