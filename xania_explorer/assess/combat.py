@@ -23,6 +23,7 @@ from dataclasses import dataclass, field
 from functools import cached_property
 from pathlib import Path
 
+from ..areafile import graph as G
 from ..areafile.world import World
 from ..source.character_tables import load_race_off_flags
 from ..source.cpp_tables import CLASSES, load_skills
@@ -184,7 +185,21 @@ def mob_fighters(world: World) -> list[MobFighter]:
     race_off = load_race_off_flags(world.src_dir) if (world.src_dir / "Races.cpp").exists() else {}
     return [MobFighter(i, weapons.get(i.mob.vnum), i.mob.vnum in shields, specials.get(i.mob.vnum),
                        frozenset(i.mob.off_names) | race_off.get(i.mob.race.lower(), frozenset()))
-            for i in M.collect(world) if i.category == "combat"]
+            for i in M.collect(world) if i.category == "combat" and huntable_near_its_level(world, i)]
+
+
+def huntable(world: World, info, level: int) -> bool:
+    """Can a mortal of ``level`` get at the mob: does it spawn in a room that level can see? (Mud School's
+    level-30 acolyte and adepts spawn in NewbiesOnly rooms: no one who could fight them can enter.) A mob with no
+    spawn rooms counts, as before."""
+    rooms = [s.room_vnum for s in info.spawns if s.room_vnum in world.rooms]
+    return not rooms or any(G.visible_to(world.rooms[r], level) for r in rooms)
+
+
+def huntable_near_its_level(world: World, info) -> bool:
+    """Huntable at some level within ``WINDOW`` of its own, where Combat would fight it."""
+    lvl = C.usable_level(info.mob.level)
+    return any(huntable(world, info, L) for L in range(max(1, lvl - WINDOW), min(C.HERO_LEVEL, lvl + WINDOW) + 1))
 
 
 ASSIST_JOIN = 0.5  # check_assist: a mob helping another mob joins with a coin flip each round
@@ -307,8 +322,8 @@ class CombatAnalysis:
         self.mobs = mob_fighters(world)
         # None when special.cpp (or magic.cpp, for spell damage) isn't in the checkout
         self.specials = load_specials(world.src_dir) if (world.src_dir / "magic.cpp").exists() else None
-        self.by_level = {lvl: [m for m in self.mobs if abs(C.usable_level(m.mob.level) - lvl) <= WINDOW]
-                         for lvl in C.LEVELS}
+        self.by_level = {lvl: [m for m in self.mobs if abs(C.usable_level(m.mob.level) - lvl) <= WINDOW
+                               and huntable(world, m.info, lvl)] for lvl in C.LEVELS}
         self.results = {(c, lvl): self._level(c, lvl) for c in CLASSES for lvl in C.LEVELS}
 
     def spell_dpr(self, m: MobFighter, level: int) -> float:

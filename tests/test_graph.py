@@ -69,3 +69,36 @@ def test_rooms_in_and_entrances(world):
     assert [(s.from_vnum, s.command) for s in G.entrances(world, "Two")] == [(102, "north")]
     with pytest.raises(KeyError):
         G.rooms_in(world, "Nowhere")
+
+
+# Restricted rooms (RoomFlag.hpp: NewbiesOnly = R = bit 17, HeroesOnly = Q = bit 16, GodsOnly = P = bit 15):
+# 300 -n-> 301 (newbies only) ; 300 -e-> 302 (heroes only) ; 300 -s-> 303 (gods only) ; 301 -n-> 304
+GATED = ("#AREA\nGated.are~\nGated~\n{ 1 91} Test Gated~\n300 310\n\n#ROOMS\n"
+         + _room(300, "Square", _exit(0, 301) + _exit(1, 302) + _exit(2, 303)).replace("0 0\n", "0 0\n", 1)
+         + f"#301\nSchool~\nSchool.\n~\n{1 << 17} 0\n" + _exit(2, 300) + _exit(0, 304) + "S\n"
+         + f"#302\nHall of Heroes~\nHall.\n~\n{1 << 16} 0\n" + _exit(3, 300) + "S\n"
+         + f"#303\nShrine~\nShrine.\n~\n{1 << 15} 0\n" + _exit(0, 300) + "S\n"
+         + _room(304, "Classroom", _exit(2, 301))
+         + "#0\n\n#$\n")
+
+
+@pytest.fixture(scope="module")
+def gated(tmp_path_factory):
+    d = tmp_path_factory.mktemp("gated") / "area"
+    d.mkdir()
+    (d / "area.lst").write_text("Gated.are\n$\n")
+    (d / "Gated.are").write_text(GATED)
+    return load_world(d)
+
+
+def test_level_gated_rooms(gated):
+    """Char::can_see(const Room &): a mortal can't see, so can't enter, a room restricted above (or below) its
+    level, and the game doesn't list the exit. Without a level every room counts, as before."""
+    assert G.reachable(gated, 300) == {300, 301, 302, 303, 304}
+    assert G.reachable(gated, 300, level=5) == {300, 301, 304}  # newbies: school yes, heroes and gods no
+    assert G.reachable(gated, 300, level=6) == {300}
+    assert G.reachable(gated, 300, level=91) == {300, 302}
+    assert [s.to_vnum for s in G.path(gated, 300, 304, level=3)] == [301, 304]
+    assert G.path(gated, 300, 304, level=20) is None
+    assert G.distances(gated, 300, level=20) == {300: 0}
+    assert [s.to_vnum for s in G.steps_from(gated, 300, level=91)] == [302]

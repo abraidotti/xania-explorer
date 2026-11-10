@@ -10,12 +10,15 @@ from xania_explorer.areafile.world import DEFAULT_AREA_DIR
 
 PINNED = {
     "load_world": "(xania: 'XaniaPaths | Path | str | None' = None) -> 'World'",
-    "steps_from": "(world: 'World', vnum: 'int', doors: 'bool' = True) -> 'list[Step]'",
-    "path": "(world: 'World', start: 'int', goal: 'int', doors: 'bool' = True) -> 'list[Step] | None'",
-    "distances": "(world: 'World', start: 'int', doors: 'bool' = True) -> 'dict[int, int]'",
-    "reachable": "(world: 'World', start: 'int', doors: 'bool' = True) -> 'set[int]'",
+    "steps_from": "(world: 'World', vnum: 'int', doors: 'bool' = True, level: 'int | None' = None) -> 'list[Step]'",
+    "path": "(world: 'World', start: 'int', goal: 'int', doors: 'bool' = True, level: 'int | None' = None) "
+            "-> 'list[Step] | None'",
+    "distances": "(world: 'World', start: 'int', doors: 'bool' = True, level: 'int | None' = None) "
+                 "-> 'dict[int, int]'",
+    "reachable": "(world: 'World', start: 'int', doors: 'bool' = True, level: 'int | None' = None) -> 'set[int]'",
     "rooms_in": "(world: 'World', area: 'str') -> 'list[int]'",
-    "entrances": "(world: 'World', area: 'str', doors: 'bool' = True) -> 'list[Step]'",
+    "entrances": "(world: 'World', area: 'str', doors: 'bool' = True, level: 'int | None' = None) "
+                 "-> 'list[Step]'",
     "predict_fight": "(world: 'World', cls: 'str', level: 'int', mob_vnum: 'int', caster: 'bool' = False) "
                      "-> 'FightPrediction'",
     "predict_spell": "(world: 'World', cls: 'str', spell: 'str', caster_level: 'int', victim_level: 'int', "
@@ -116,3 +119,14 @@ def test_area_profile(world):
     assert p.name == "The Dell" and "killers" not in repr(p)
     with pytest.raises(KeyError):
         api.area_profile(world, "Nowhere")
+
+
+def test_level_gated_rooms_on_the_checkout(world):
+    """Mud School's inner rooms are NewbiesOnly: from level 6 nobody can walk in, so its level-30 acolyte and
+    adepts (in those rooms) aren't fights for anyone, and the school's mob levels are its newbies' levels."""
+    from xania_explorer.assess import combat as CB
+
+    assert api.path(world, 3001, 3757, level=3) is not None and api.path(world, 3001, 3757, level=20) is None
+    fights = CB.analyse(world).results[("knight", 30)].fights
+    assert not [m for m, _ in fights if m.info.area.name == "Mud School"]
+    assert api.area_profile(world, "MudSchool.are").span[1] <= 5

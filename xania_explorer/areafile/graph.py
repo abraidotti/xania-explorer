@@ -3,6 +3,11 @@
 An exit is walkable when it leads to a room that exists: cosmetic exits (file value -1) and dangling exits are
 skipped. Doors are walkable (a player can open them; locked ones need the key in ``Step.key``) unless a caller
 passes ``doors=False``. Portals, mob programs, recall and other transport aren't followed.
+
+With ``level``, rooms a mortal of that level can't see are left out, as the game does (``Char::can_see(const
+Room &)``, Char.cpp): it neither lists an exit into them nor lets the character in. ImpOnly and GodsOnly rooms are
+for immortals, HeroesOnly ones for level 91, NewbiesOnly ones (most of Mud School) for level 5 and below.
+Without ``level`` every room counts, as before.
 """
 
 from __future__ import annotations
@@ -12,6 +17,25 @@ from dataclasses import dataclass
 
 from . import flags as F
 from .world import World
+
+
+HERO_LEVEL = 91  # LEVEL_HERO: is_hero()
+NEWBIE_MAX = 5  # NewbiesOnly rooms: level > 5 can't see them
+RESTRICTED = frozenset({"ImpOnly", "GodsOnly", "HeroesOnly", "NewbiesOnly"})
+
+
+def visible_to(room, level: int | None) -> bool:
+    """Can a mortal of ``level`` see (and so enter) ``room``? ``None``: any level, always True."""
+    if level is None or not room.room_flags:
+        return True
+    flags = set(F.decode(room.room_flags, F.ROOM)) & RESTRICTED
+    if not flags:
+        return True
+    if flags & {"ImpOnly", "GodsOnly"}:
+        return False
+    if "HeroesOnly" in flags and level < HERO_LEVEL:
+        return False
+    return not ("NewbiesOnly" in flags and level > NEWBIE_MAX)
 
 
 @dataclass(frozen=True)
@@ -29,8 +53,9 @@ class Step:
         return F.DIRECTIONS[self.direction]
 
 
-def steps_from(world: World, vnum: int, doors: bool = True) -> list[Step]:
-    """The walkable exits of room ``vnum``, in direction order (empty for an unknown room)."""
+def steps_from(world: World, vnum: int, doors: bool = True, level: int | None = None) -> list[Step]:
+    """The walkable exits of room ``vnum``, in direction order (empty for an unknown room); with ``level``, only into
+    rooms a mortal of that level can see."""
     room = world.rooms.get(vnum)
     if room is None:
         return []
@@ -39,11 +64,14 @@ def steps_from(world: World, vnum: int, doors: bool = True) -> list[Step]:
         e = room.exits[d]
         if e.cosmetic or e.to_vnum <= 0 or e.to_vnum not in world.rooms or (e.is_door and not doors):
             continue
+        if level is not None and not visible_to(world.rooms[e.to_vnum], level):
+            continue
         out.append(Step(vnum, d, e.to_vnum, e.is_door, e.key))
     return out
 
 
-def _search(world: World, start: int, doors: bool, goal: int | None = None) -> dict[int, Step | None]:
+def _search(world: World, start: int, doors: bool, goal: int | None = None,
+            level: int | None = None) -> dict[int, Step | None]:
     """Breadth-first search from ``start``: each reached room -> the step that first reached it."""
     if start not in world.rooms:
         return {}
@@ -53,16 +81,16 @@ def _search(world: World, start: int, doors: bool, goal: int | None = None) -> d
         vnum = queue.popleft()
         if vnum == goal:
             break
-        for s in steps_from(world, vnum, doors):
+        for s in steps_from(world, vnum, doors, level):
             if s.to_vnum not in came:
                 came[s.to_vnum] = s
                 queue.append(s.to_vnum)
     return came
 
 
-def distances(world: World, start: int, doors: bool = True) -> dict[int, int]:
+def distances(world: World, start: int, doors: bool = True, level: int | None = None) -> dict[int, int]:
     """Walking distance in steps from ``start`` to every reachable room (``start`` itself is 0)."""
-    came = _search(world, start, doors)
+    came = _search(world, start, doors, level=level)
     dist: dict[int, int] = {}
     for vnum in came:  # BFS order: a room's predecessor is always measured first
         step = came[vnum]
@@ -70,13 +98,13 @@ def distances(world: World, start: int, doors: bool = True) -> dict[int, int]:
     return dist
 
 
-def reachable(world: World, start: int, doors: bool = True) -> set[int]:
-    return set(_search(world, start, doors))
+def reachable(world: World, start: int, doors: bool = True, level: int | None = None) -> set[int]:
+    return set(_search(world, start, doors, level=level))
 
 
-def path(world: World, start: int, goal: int, doors: bool = True) -> list[Step] | None:
+def path(world: World, start: int, goal: int, doors: bool = True, level: int | None = None) -> list[Step] | None:
     """A shortest walking route from ``start`` to ``goal``; [] if they're the same room, None if there's none."""
-    came = _search(world, start, doors, goal)
+    came = _search(world, start, doors, goal, level)
     if goal not in came:
         return None
     route = []
@@ -94,8 +122,8 @@ def rooms_in(world: World, area: str) -> list[int]:
     return sorted(v for v, owner in world.room_area.items() if owner is a)
 
 
-def entrances(world: World, area: str, doors: bool = True) -> list[Step]:
+def entrances(world: World, area: str, doors: bool = True, level: int | None = None) -> list[Step]:
     """Walkable steps from a room outside the area into one inside it."""
     inside = set(rooms_in(world, area))
     return [s for vnum in sorted(world.rooms) if vnum not in inside
-            for s in steps_from(world, vnum, doors) if s.to_vnum in inside]
+            for s in steps_from(world, vnum, doors, level) if s.to_vnum in inside]
