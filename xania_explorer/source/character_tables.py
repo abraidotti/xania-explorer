@@ -183,3 +183,31 @@ def load_race_off_flags(src_dir: Path | None = None) -> dict[str, frozenset[str]
         out[name.group(1)] = frozenset(flags)
     assert "human" in out and len(out) >= 20, "race_table parse looks wrong"
     return out
+
+
+def load_race_tolerances(src_dir: Path | None = None) -> dict[str, tuple[frozenset, frozenset, frozenset]]:
+    """{race: (immune, resistant, vulnerable)} that each race gives its mobs: ``race_table`` in Races.cpp, fields 6-8
+    (MobIndexData.cpp merges them into the file's own flags)."""
+    from ..areafile.flags import TOLERANCE
+
+    text = _src(src_dir, "Races.cpp")
+    body = _initialiser(text, "race_table[] = {")
+    out = {}
+    for entry in _top_level_groups(body):
+        fields = [f.strip() for f in entry.split(",")]
+        name = re.match(r'"([^"]*)"', fields[0])
+        if not name or len(fields) < 8:
+            continue
+        sets = []
+        for field in fields[5:8]:
+            flags = set()
+            for token in (t.strip() for t in field.split("|")):
+                named = re.fullmatch(r"to_int\(ToleranceFlag::(\w+)\)", token)
+                if named:
+                    flags.add(named.group(1))
+                elif (bit := _letter_bit(token)) is not None and bit in TOLERANCE:
+                    flags.add(TOLERANCE[bit])
+            sets.append(frozenset(flags))
+        out[name.group(1)] = tuple(sets)
+    assert "human" in out and len(out) >= 20, "race_table parse looks wrong"
+    return out

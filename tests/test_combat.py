@@ -47,3 +47,43 @@ def test_model_runs_and_is_plausible():
     assert r.fights and 0 < r.weighted_mean("hit_pc") <= 0.95
     assert 1 < r.kills_per_level < 50
     assert a.hours_to_hero("knight") < a.hours_to_hero("mage")
+
+
+def test_tolerance_follows_check_damage_tolerance():
+    """DamageTolerance.cpp: for bash/pierce/slash the catch-all Weapon flag comes first; types without a flag of
+    their own count as Magic; immune beats resistant beats vulnerable. damage(): x0, -1/3, +1/2."""
+    from xania_explorer.assess.combat import tolerance
+
+    f = frozenset
+    assert tolerance(f({"Weapon"}), f(), f({"Slash"}), "Slash") == 0
+    assert tolerance(f(), f({"Weapon"}), f({"Slash"}), "Slash") == 2 / 3
+    assert tolerance(f(), f(), f({"Slash"}), "Slash") == 1.5
+    assert tolerance(f({"Weapon"}), f(), f(), "Fire") == 1.0  # Weapon only covers the physical types
+    assert tolerance(f(), f({"Magic"}), f(), "Other") == 2 / 3 and tolerance(f(), f({"Magic"}), f(), "Harm") == 2 / 3
+    assert tolerance(f({"Fire"}), f({"Fire"}), f({"Fire"}), "Fire") == 0
+    assert tolerance(f(), f(), f(), "None") == 1.0
+
+
+def test_tolerances_on_the_checkout():
+    """Mobs get their race's flags too (MobIndexData.cpp): every troll resists bash and is vulnerable to fire and
+    acid. Spells carry their damage() call's type (harm deals fire damage in Xania)."""
+    from pathlib import Path
+
+    from xania_explorer import api
+    from xania_explorer.source.character_tables import load_race_tolerances
+    from xania_explorer.source.spell_tables import load_damage_spells
+
+    w = api.load_world()
+    imm, res, vuln = load_race_tolerances(w.src_dir)["troll"]
+    assert {"Bash"} <= res and {"Acid", "Fire"} <= vuln
+    spells = load_damage_spells(w.src_dir)
+    assert (spells["spell_fireball"].damage_type, spells["spell_magic_missile"].damage_type) == ("Fire", "Energy")
+    troll = CB.analyse(w)
+    giant = next(m for m in troll.mobs if m.mob.vnum == 2804)
+    assert (giant.takes("Bash"), giant.takes("Slash"), giant.takes("Fire")) == (2 / 3, 1.0, 1.5)
+    p = api.predict_spell(w, "mage", "burning hands", 20, 13, mob_vnum=2804)
+    assert p.damage_type == "Fire" and p.tolerance == 1.5
+    # a mob a player's weapon can't hurt isn't averaged in as an endless fight
+    for r in troll.results.values():
+        assert all(m.takes(troll.player(r.cls, r.level).damage_type) == 0 for m in r.unhurtable)
+    assert any(r.unhurtable for r in troll.results.values())  # weapon-immune mobs exist (The Blob, The Fire...)

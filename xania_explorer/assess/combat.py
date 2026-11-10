@@ -25,7 +25,8 @@ from pathlib import Path
 
 from ..areafile import graph as G
 from ..areafile.world import World
-from ..source.character_tables import load_race_off_flags
+from ..areafile import flags as F
+from ..source.character_tables import load_race_off_flags, load_race_tolerances
 from ..source.cpp_tables import CLASSES, load_skills
 from ..source.specials import load_specials, special_damage_per_round
 from ..source.spell_tables import save_chance
@@ -98,6 +99,35 @@ def xp_per_kill(killer_level: int, victim_level: int, victim_alignment: int, no_
     return xp * 1.5  # solo: (xp × level / total_levels) × 1.5; the ±25% random roll averages out
 
 
+# -- damage tolerances (DamageTolerance.cpp, fight.cpp damage) --------------------------------
+PHYSICAL = {"Bash", "Pierce", "Slash"}
+IMMUNE, RESISTANT, VULNERABLE = 0.0, 2 / 3, 1.5  # damage(): x0, -= /3, += /2
+MATERIAL_VULNERABLE = 1.5  # check_material_vulnerability: wood, silver or iron weapon vs a mob vulnerable to it
+
+
+def tolerance(imm: frozenset, res: frozenset, vuln: frozenset, damage_type: str) -> float:
+    """The damage multiplier ``check_damage_tolerance`` gives a victim with these flags against ``damage_type``.
+    For bash/pierce/slash the catch-all Weapon flag is checked first; damage types without a flag of their own
+    (Other, Harm) count as Magic. Immune beats resistant beats vulnerable, as in the C++."""
+    if damage_type == "None":
+        return 1.0
+    if damage_type in PHYSICAL:
+        if "Weapon" in imm:
+            return IMMUNE
+        if "Weapon" in res:
+            return RESISTANT
+        if "Weapon" in vuln:
+            return VULNERABLE
+    bit = damage_type if damage_type in F.TOLERANCE.values() and damage_type not in ("Other", "Harm") else "Magic"
+    if bit in imm:
+        return IMMUNE
+    if bit in res:
+        return RESISTANT
+    if bit in vuln:
+        return VULNERABLE
+    return 1.0
+
+
 # -- mob side --------------------------------------------------------------------------
 @dataclass
 class MobFighter:
@@ -106,6 +136,16 @@ class MobFighter:
     has_shield: bool
     special: str | None = None  # spec_fun from the area's #SPECIALS, e.g. "spec_cast_mage"
     off: frozenset = frozenset()  # offensive flags: the file's plus the race's (MobIndexData.cpp merges them)
+    imm: frozenset = frozenset()  # tolerance flags, the file's plus the race's (MobIndexData.cpp)
+    res: frozenset = frozenset()
+    vuln: frozenset = frozenset()
+
+    def takes(self, damage_type: str, material: str = "") -> float:
+        """Multiplier on damage of ``damage_type`` dealt to this mob, by a weapon of ``material`` if given."""
+        f = tolerance(self.imm, self.res, self.vuln, damage_type)
+        if material.capitalize() in ("Wood", "Silver", "Iron") and material.capitalize() in self.vuln:
+            f *= MATERIAL_VULNERABLE
+        return f
 
     @property
     def mob(self):
@@ -182,9 +222,18 @@ def mob_fighters(world: World) -> list[MobFighter]:
                 elif r.arg3 == 11:
                     shields.add(last)
     specials = {sp.mob_vnum: sp.spec_fun.lower() for af in world.files for sp in af.specials}
-    race_off = load_race_off_flags(world.src_dir) if (world.src_dir / "Races.cpp").exists() else {}
+    has_races = (world.src_dir / "Races.cpp").exists()
+    race_off = load_race_off_flags(world.src_dir) if has_races else {}
+    race_tol = load_race_tolerances(world.src_dir) if has_races else {}
+    none = (frozenset(), frozenset(), frozenset())
+
+    def tol(i):
+        r = race_tol.get(i.mob.race.lower(), none)
+        own = [frozenset(F.decode(getattr(i.mob, k), F.TOLERANCE)) for k in ("imm_flags", "res_flags", "vuln_flags")]
+        return [a | b for a, b in zip(own, r)]
+
     return [MobFighter(i, weapons.get(i.mob.vnum), i.mob.vnum in shields, specials.get(i.mob.vnum),
-                       frozenset(i.mob.off_names) | race_off.get(i.mob.race.lower(), frozenset()))
+                       frozenset(i.mob.off_names) | race_off.get(i.mob.race.lower(), frozenset()), *tol(i))
             for i in M.collect(world) if i.category == "combat" and huntable_near_its_level(world, i)]
 
 
@@ -257,6 +306,8 @@ class Player:
     defence: dict
     blocks: bool
     buffs: Buffs = NO_BUFFS
+    damage_type: str = "Bash"  # its weapon's (attack word -> Attacks.cpp); unarmed hits bash
+    material: str = ""  # its weapon's material (wood, silver and iron hurt mobs vulnerable to them)
 
 
 @dataclass
@@ -277,6 +328,9 @@ class LevelResult:
     level: int
     hp: float
     fights: list[tuple[MobFighter, Fight]] = field(default_factory=list)
+    # mobs in the level window it can't hurt (immune to its weapon's damage type): nobody hunts those, so they're
+    # left out of the averages and listed here
+    unhurtable: list[MobFighter] = field(default_factory=list)
 
     def median(self, attr: str) -> float | None:
         vals = [getattr(f, attr) for _, f in self.fights]
@@ -377,6 +431,9 @@ class CombatAnalysis:
         kit = self.equip.ac_kits[level]
         gear_hit, gear_dam, gear_ac = kit.total("hitroll"), kit.total("damroll"), kit.total("ac")
         weapon_avg = self.weapons.best_start[cls][level]
+        wielded = self.weapons.best_start_weapon[cls][level]
+        damage_type = F.ATTACKS.get(str(wielded.obj.values[3]), "Bash") if wielded else "Bash"
+        material = wielded.obj.material if wielded else ""
         weapon_skill = pc_skill(level, 1) if weapon_avg else 0
         hitroll = gear_hit + t.str_app[st["str"]][0] + b.hitroll
         damroll = gear_dam + t.str_app[st["str"]][1] + b.damroll
@@ -393,7 +450,7 @@ class CombatAnalysis:
         cache[(cls, level, buffed)] = Player(
             cls, level, state.hp, st["dex"], bool(weapon_avg), to_hit_ac, -gear_ac + t.dex_app[st["dex"]] + b.ac,
             1 + second / 2 / 100 + third / 4 / 100 + b.haste, per_hit, pc_def,
-            bool(pc_def["shield block"] or kit.picks.get("shield")), b)
+            bool(pc_def["shield block"] or kit.picks.get("shield")), b, damage_type, material)
         return cache[(cls, level, buffed)]
 
     def fight_with_spells(self, p: "Player", m: MobFighter, spell, mana: float) -> Fight:
@@ -406,7 +463,8 @@ class CombatAnalysis:
         if spell is not None and spell.mana > 0 and spell.damage > 0:
             # the cast's damage, with the save re-rolled against this mob's level
             skill = spell.damage / spell.spell.expected(p.level, save_chance(p.level, p.level))
-            per_cast = spell.spell.expected(p.level, save_chance(p.level, m.mob.level)) * skill
+            per_cast = spell.spell.expected(p.level, save_chance(p.level, m.mob.level)) * skill \
+                * m.takes(spell.spell.damage_type)
             band = _align_band(m.mob.alignment)  # dispel evil/good only hurt evil/good victims
             if (spell.spell.fun == "spell_dispel_evil" and band >= 0) or \
                     (spell.spell.fun == "spell_dispel_good" and band <= 0):
@@ -437,7 +495,7 @@ class CombatAnalysis:
         if m.has_shield:
             avoid += (1 - avoid) * max(5, mob_def / 3 + ml - level) / 100
         hit_pc = hit_chance(p.to_hit_ac, m.armour_class(t)) * (1 - min(avoid, 0.95))
-        pc_dpr = p.attacks * hit_pc * p.per_hit
+        pc_dpr = p.attacks * hit_pc * p.per_hit * m.takes(p.damage_type, p.material)
         # mob attacking the player
         pavoid = 0.0
         if p.armed:
@@ -501,7 +559,11 @@ class CombatAnalysis:
         p = self.player(cls, level)
         res = LevelResult(cls, level, p.hp)
         for m in self.by_level[level]:
-            res.fights.append((m, self.fight(p, m)))
+            f = self.fight(p, m)
+            if f.pc_dpr <= 0 and m.takes(p.damage_type, p.material) == 0:
+                res.unhurtable.append(m)
+            else:
+                res.fights.append((m, f))
         return res
 
     # -- facts ---------------------------------------------------------------------------

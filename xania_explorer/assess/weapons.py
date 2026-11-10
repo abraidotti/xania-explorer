@@ -128,17 +128,23 @@ def collect(world: World) -> list[Weapon]:
     return sorted(weapons, key=lambda w: (w.level, w.vnum))
 
 
-def best_by_level(weapons: list[Weapon], types: set[str]) -> dict[int, float | None]:
+def best_weapon_by_level(weapons: list[Weapon], types: set[str]) -> dict[int, Weapon | None]:
+    """The weapon with the best average usable at each level (the first found, on a tie)."""
     out = {}
     best = None
     pool = sorted((w for w in weapons if w.type in types), key=lambda w: w.level)
     i = 0
     for lvl in C.LEVELS:
         while i < len(pool) and pool[i].level <= lvl:
-            best = max(best or 0, pool[i].average)
+            if best is None or pool[i].average > best.average:
+                best = pool[i]
             i += 1
         out[lvl] = best
     return out
+
+
+def best_by_level(weapons: list[Weapon], types: set[str]) -> dict[int, float | None]:
+    return {lvl: (w.average if w else None) for lvl, w in best_weapon_by_level(weapons, types).items()}
 
 
 # -- analysis -----------------------------------------------------------------
@@ -170,6 +176,7 @@ class WeaponAnalysis:
         self.bands = C.bands()
         self.best_any = best_by_level(self.got, set(SKILLED_TYPES))
         self.best_start = {p.name: best_by_level(self.got, set(p.starting)) for p in self.profiles}
+        self.best_start_weapon = {p.name: best_weapon_by_level(self.got, set(p.starting)) for p in self.profiles}
         self.best_easy = {p.name: best_by_level(self.got, set(p.easy)) for p in self.profiles}
 
     # -- derived facts used in findings ---------------------------------------

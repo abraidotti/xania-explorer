@@ -22,7 +22,7 @@ PINNED = {
     "predict_fight": "(world: 'World', cls: 'str', level: 'int', mob_vnum: 'int', caster: 'bool' = False) "
                      "-> 'FightPrediction'",
     "predict_spell": "(world: 'World', cls: 'str', spell: 'str', caster_level: 'int', victim_level: 'int', "
-                     "skill: 'float | None' = None) -> 'SpellPrediction'",
+                     "skill: 'float | None' = None, mob_vnum: 'int | None' = None) -> 'SpellPrediction'",
     "area_profile": "(world: 'World', area: 'str') -> 'DF.AreaProfile'",
     "classes": "() -> 'list[str]'",
     "pc_races": "(src_dir: 'Path | None' = None) -> 'list[str]'",
@@ -34,7 +34,7 @@ PINNED_FIELDS = {
     "FightPrediction": ["cls", "level", "mob_vnum", "mob_level", "player_hp", "hit_chance", "mob_hit_chance",
                         "rounds", "damage_taken", "encounter_damage", "xp"],
     "SpellPrediction": ["spell", "caster_level", "victim_level", "skill", "save_chance", "mana", "beats",
-                        "damage_min", "damage_max", "damage_expected"],
+                        "damage_min", "damage_max", "damage_expected", "damage_type", "tolerance"],
     "AbilityInfo": ["name", "level", "is_spell", "in_default", "min_mana", "beats"],
 }
 

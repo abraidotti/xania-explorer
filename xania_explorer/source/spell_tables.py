@@ -27,6 +27,7 @@ class DamageSpell:
     table: str | None  # damage table name, or None for dice spells
     values: tuple[int, ...]  # the table (index = caster level, clamped)
     formula: str
+    damage_type: str = "Other"  # DamageType of its damage() call, e.g. Fire (decides resistances)
 
     def expected(self, level: int, save_chance: float = 0.5) -> float:
         """Expected damage per successful cast at caster ``level`` against a victim saving
@@ -51,10 +52,13 @@ def load_damage_spells(src_dir: Path | None = None) -> dict[str, DamageSpell]:
     for m in re.finditer(r"void (spell_\w+)\(int sn, int level[^{]*\{(.*?)\n\}", text, re.S):
         fun, body = m.group(1), m.group(2)
         used = re.findall(r"get_direct_dmg_and_level\(level, (\w+)\)", body)
+        kind = re.search(r"\bdamage\([^;]*?DamageType::(\w+)", body)
+        dtype = kind.group(1) if kind else "Other"
         if used:
-            out[fun] = DamageSpell(fun, used[0], tables[used[0]], f"table {used[0]} (½× to 2×), halved on a save")
+            out[fun] = DamageSpell(fun, used[0], tables[used[0]], f"table {used[0]} (½× to 2×), halved on a save",
+                                   dtype)
         elif fun in DICE_SPELLS:
-            out[fun] = DamageSpell(fun, None, (), DICE_SPELLS[fun][0])
+            out[fun] = DamageSpell(fun, None, (), DICE_SPELLS[fun][0], dtype)
     assert "spell_fireball" in out and len(out) >= 15, "magic.cpp damage-spell parse looks wrong"
     return out
 

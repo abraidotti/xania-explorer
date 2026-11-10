@@ -78,7 +78,9 @@ class SpellPrediction:
     beats: int  # lag in pulses after casting (4 pulses = 1 second)
     damage_min: float | None  # one successful cast, no save (None for dice spells)
     damage_max: float | None
-    damage_expected: float  # per successful cast, averaged over saves
+    damage_expected: float  # per successful cast, averaged over saves (and the mob's tolerance, given one)
+    damage_type: str = "Other"  # its damage() call's DamageType: what resistances and vulnerabilities act on
+    tolerance: float = 1.0  # the mob's multiplier for that type (0 immune, 2/3 resistant, 1.5 vulnerable)
 
     @property
     def per_cast(self) -> float:
@@ -87,9 +89,11 @@ class SpellPrediction:
 
 
 def predict_spell(world: World, cls: str, spell: str, caster_level: int, victim_level: int,
-                  skill: float | None = None) -> SpellPrediction:
+                  skill: float | None = None, mob_vnum: int | None = None) -> SpellPrediction:
     """A damage spell cast by a ``cls`` of ``caster_level`` on a victim of ``victim_level``. ``skill`` is the
-    caster's % in it; by default the Combat model's assumption for that level (75% when learned, 100% by 30)."""
+    caster's % in it; by default the Combat model's assumption for that level (75% when learned, 100% by 30).
+    ``mob_vnum``: a combat mob, whose immunity, resistance or vulnerability to the spell's damage type (its own
+    flags plus its race's) scales the damage."""
     s = load_skills(world.src_dir).get(spell)
     if s is None or not s.is_spell:
         raise KeyError(f"{spell!r} isn't a spell")
@@ -106,9 +110,12 @@ def predict_spell(world: World, cls: str, spell: str, caster_level: int, victim_
     else:
         t = ds.values[max(0, min(caster_level, len(ds.values) - 1))]
         lo, hi = t // 2, t * 2
+    factor = 1.0
+    if mob_vnum is not None:
+        factor = _mob(CB.analyse(world), mob_vnum).takes(ds.damage_type)
     return SpellPrediction(spell, caster_level, victim_level, pct, save * 100,
                            mana_cost(s.min_mana, caster_level, max(1, learned)), s.beats, lo, hi,
-                           ds.expected(caster_level, save))
+                           ds.expected(caster_level, save) * factor, ds.damage_type, factor)
 
 
 def area_profile(world: World, area: str) -> DF.AreaProfile:
