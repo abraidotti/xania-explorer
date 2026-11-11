@@ -59,6 +59,21 @@ These live in [xania_explorer/assess/common.py](../xania_explorer/assess/common.
   exist in C++, from extractors in [xania_explorer/source/](../xania_explorer/source/): skills and groups, classes,
   races and stat tables, and spell damage.
 
+## What the models leave out
+
+The models are expected values, not a simulation, and some things are out of them altogether:
+
+- **weight limits** on what a character can wield and carry;
+- **how far players really practise** their skills: they're assumed at 75% when learned, rising to 100% by
+  level 30;
+- **mob skills** like bash in fights, and mobs **wandering** away from where they spawn;
+- **sneak**, which a player notices by chance each time it looks;
+- **portals and mob programs** when finding walking routes;
+- players **trading** and **grouping**.
+
+Each page's Method section says what that page assumes. [Xania Sim](https://github.com/abraidotti/xania-sim)
+plays the real game and puts what its bots see beside these predictions.
+
 ## Recommendations
 
 Each version has a **Recommendations** page (under Reports). Every balance issue and bug can propose changes,
