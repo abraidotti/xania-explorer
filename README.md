@@ -1,5 +1,16 @@
 <a id="readme-top"></a>
 
+```text
+  /    \    /    \    __________
+  \     \  /     /   |          |
+   \     \/     /    |    ______|
+    \          /     |   |___
+    /    /\    \     |    ___|
+   /    /  \    \    |   |______
+  /    /    \    \   |          |
+  \   /      \   /   |__________|
+```
+
 [![Site][site-shield]][site-url]
 [![License][license-shield]][license-url]
 [![Python][python-shield]][python-url]
