@@ -85,6 +85,28 @@ def _elemental_flags(world: World) -> Detection:
     return Detection("present", found) if found else Detection("fixed")
 
 
+def _lobby_empty_reply(world: World) -> Detection:
+    """Each lobby state in ``MudImpl::nanny`` that reads ``argument[0]`` before checking ``argument.empty()``."""
+    text = _source(world, "MudImpl.cpp")
+    if text is None:
+        return Detection("unknown", note="MudImpl.cpp isn't in this checkout")
+    m = re.search(r"void MudImpl::nanny\(Descriptor \*d, std::string_view argument\) \{(.*?)\n\}", text, re.S)
+    if not m:
+        return Detection("unknown", note="MudImpl::nanny not found")
+    start, body = m.start(1), m.group(1)
+    cases = list(re.finditer(r"case DescriptorState::(\w+):", body))
+    found = []
+    for i, c in enumerate(cases):
+        end = cases[i + 1].start() if i + 1 < len(cases) else len(body)
+        section = body[c.end():end]
+        read = re.search(r"\bargument\[0\]", section)
+        if read and "argument.empty()" not in section[:read.start()]:
+            line = _line_of(text, start + c.end() + read.start())
+            found.append(Occurrence(f"MudImpl.cpp:{line}", f"`{c.group(1)}` reads `argument[0]` of a reply that may "
+                                    "be empty", file="src/MudImpl.cpp", line=line))
+    return Detection("present", found) if found else Detection("fixed")
+
+
 def _harm_fire(world: World) -> Detection:
     return _code_status(_code(world, "magic.cpp",
                               r"void spell_harm\([^{]*\{(?:(?!\nvoid ).)*?DamageType::Fire",
@@ -299,6 +321,21 @@ CHECKS: list[BugCheck] = [
         "Either give them an effect in `one_hit` (a small extra fire or cold `damage()` call on a hit, so the "
         "victim's tolerance applies, as ROM does), or stop charging worth for them in `entity_balance.cpp`.",
         _elemental_flags),
+    BugCheck(
+        "code.lobby-empty-reply", "An empty reply at a login prompt crashes debug builds", "code", "crash",
+        "`MudImpl::nanny` (MudImpl.cpp) switches on `argument[0]` at several lobby prompts (confirming a new name, "
+        "sex, alignment, customising, connecting over a character that's already playing) without checking the "
+        "reply is non-empty. Blank lines reach `nanny` (`Descriptor::pop_incomm` passes them on, and `nanny` trims "
+        "spaces to nothing), so pressing Enter indexes an empty `std::string_view`: debug builds abort on the "
+        "libstdc++ bounds assertion and the MUD goes down for everyone; release builds read past the end. The ANSI "
+        "prompt already checks `argument.empty()`. Confirmed by xania-sim's lobby trial "
+        "([abraidotti/xania#3](https://github.com/abraidotti/xania/issues/3)).",
+        "Treat an empty reply as an invalid answer and ask again, as `GetAnsi` does:\n\n```cpp\n"
+        "case DescriptorState::ConfirmNewName:\n    if (argument.empty()) {\n"
+        "        d->write(fmt::format(\"Did I hear that right - '{}' (Y/N)? \", ch->name));\n        break;\n    }\n"
+        "    switch (argument[0]) {\n```\n\nor `switch (argument.empty() ? '\\0' : argument[0])` and let each "
+        "state's `default:` re-prompt.",
+        _lobby_empty_reply),
     BugCheck(
         "code.harm-fire-damage", "The harm spell does fire damage", "code", "wrong-behaviour",
         "`spell_harm` (magic.cpp) deals its damage as `DamageType::Fire`. Every other harm-type spell (the cause "

@@ -18,6 +18,10 @@ BUGGY = {
     "Area.cpp": " * - Every minute if unoccupied by players.\n        age_ = RoomResetAgeUnoccupiedArea;\n",
     "apps/map.cpp": "FILE *out_file;\nfmt::print(\"    v{} [label]\");\nfmt::print(out_file, \"ok\");\n",
     "act_obj.cpp": "if ((arg1[3] == '\\0' || is_name(&arg1[4], obj->name)) && ch->can_see(*obj)) {}\n",
+    "MudImpl.cpp": "void MudImpl::nanny(Descriptor *d, std::string_view argument) {\n    switch (d->state()) {\n"
+                   "    case DescriptorState::GetAnsi:\n        if (argument.empty()) {\n            break;\n        }\n"
+                   "        switch (argument[0]) {}\n        break;\n    case DescriptorState::GetNewSex:\n"
+                   "        switch (argument[0]) {}\n        break;\n    }\n}\n",
     "fight.cpp": "        ch->hit += (adjusted_damage / 100) * 10;\n"
                  "/* if (check_enum_bit(wield->value[4], WeaponFlag::Flaming)) wield->value[3] = 29; */\n",
     "entity_balance.cpp": "        if (check_enum_bit(obj->value[4], WeaponFlag::Flaming))\n            worth++;\n"
@@ -34,6 +38,11 @@ FIXED = {
     "Area.cpp": " * - Every 5 minutes.\n        age_ = RoomResetAgeUnoccupiedArea;\n",
     "apps/map.cpp": "FILE *out_file;\nfmt::print(out_file, \"    v{} [label]\");\n",
     "act_obj.cpp": "if ((is_all || is_name(named, obj->name)) && ch->can_see(*obj)) {}\n",
+    "MudImpl.cpp": "void MudImpl::nanny(Descriptor *d, std::string_view argument) {\n    switch (d->state()) {\n"
+                   "    case DescriptorState::GetAnsi:\n        if (argument.empty()) {\n            break;\n        }\n"
+                   "        switch (argument[0]) {}\n        break;\n    case DescriptorState::GetNewSex:\n"
+                   "        if (argument.empty()) {\n            break;\n        }\n        switch (argument[0]) {}\n"
+                   "        break;\n    }\n}\n",
     "fight.cpp": "        ch->hit += adjusted_damage / 10;\n"
                  "if (check_enum_bit(wield->value[4], WeaponFlag::Flaming)) dam += dice(level / 4 + 1, 6);\n"
                  "if (check_enum_bit(wield->value[4], WeaponFlag::Frost)) dam += dice(level / 4 + 1, 6);\n",
@@ -42,7 +51,7 @@ FIXED = {
                  "DamageType::Harm);\n}\nvoid spell_fireball(int sn) {\n    damage(ch, v, d, sn, DamageType::Fire);\n}\n",
 }
 CODE_CHECKS = [K._affect_worth, K._lose_level, K._exit_null, K._shop_null, K._mudschool_comment, K._dot_stdout,
-               K._get_all_past_end, K._vampiric_drain, K._elemental_flags, K._harm_fire]
+               K._get_all_past_end, K._vampiric_drain, K._elemental_flags, K._harm_fire, K._lobby_empty_reply]
 
 
 def make(tmp_path, sources):
@@ -62,7 +71,7 @@ def test_code_checks_detect_buggy_source(tmp_path):
     assert statuses == {"_affect_worth": "present", "_lose_level": "present", "_exit_null": "latent",
                         "_shop_null": "latent", "_mudschool_comment": "present", "_dot_stdout": "present",
                         "_get_all_past_end": "present", "_vampiric_drain": "present", "_elemental_flags": "present",
-                        "_harm_fire": "present"}
+                        "_harm_fire": "present", "_lobby_empty_reply": "present"}
 
 
 def test_code_checks_see_fixes(tmp_path):
