@@ -1,6 +1,7 @@
 <a id="readme-top"></a>
 
 [![Site][site-shield]][site-url]
+[![License][license-shield]][license-url]
 [![Python][python-shield]][python-url]
 
 <br />
@@ -39,6 +40,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#license">License</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -138,6 +140,12 @@ routes and fight and spell predictions from there.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## License
+
+Distributed under the MIT License. See [`LICENSE`](LICENSE).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Acknowledgments
 
 * [Xania](https://github.com/mattgodbolt/xania) and its developers
@@ -147,5 +155,7 @@ routes and fight and spell predictions from there.
 
 [site-shield]: https://img.shields.io/github/actions/workflow/status/abraidotti/xania-explorer/site.yml?branch=main&label=site&style=for-the-badge
 [site-url]: https://abraidotti.github.io/xania-explorer/
+[license-shield]: https://img.shields.io/github/license/abraidotti/xania-explorer?style=for-the-badge
+[license-url]: LICENSE
 [python-shield]: https://img.shields.io/badge/python-3.12%2B-blue?style=for-the-badge
 [python-url]: https://www.python.org/
