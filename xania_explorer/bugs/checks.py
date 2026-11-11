@@ -52,6 +52,45 @@ def _problems(world: World, *kinds: str) -> list[Occurrence]:
 
 
 # -- code ------------------------------------------------------------------------------------------
+def _uncommented(world: World, rel: str) -> str | None:
+    from ..source.cpp_tables import _strip_comments
+
+    text = _source(world, rel)
+    return None if text is None else _strip_comments(text)
+
+
+def _get_all_past_end(world: World) -> Detection:
+    return _code_status(_code(world, "act_obj.cpp", r"&?\barg1\[[34]\]",
+                              "`arg1` is a `std::string_view` holding `\"all\"`: index 3 and 4 are past its end"))
+
+
+def _vampiric_drain(world: World) -> Detection:
+    return _code_status(_code(world, "fight.cpp", r"\(\s*adjusted_damage\s*/\s*100\s*\)\s*\*\s*10",
+                              "`(adjusted_damage / 100) * 10` is integer arithmetic: 0 for any hit under 100"))
+
+
+def _elemental_flags(world: World) -> Detection:
+    fight = _uncommented(world, "fight.cpp")
+    balance = _source(world, "entity_balance.cpp")
+    if fight is None or balance is None:
+        return Detection("unknown", note="fight.cpp or entity_balance.cpp isn't in this checkout")
+    found = []
+    for flag in ("Flaming", "Frost"):
+        if re.search(rf"WeaponFlag::{flag}\b", fight):
+            continue  # it does something in combat now
+        for m in re.finditer(rf"check_enum_bit\(obj->value\[4\],\s*WeaponFlag::{flag}\)\)\s*worth\+\+", balance):
+            line = _line_of(balance, m.start())
+            found.append(Occurrence(f"entity_balance.cpp:{line}", f"{flag} adds to an item's worth but does nothing "
+                                    "in combat", file="src/entity_balance.cpp", line=line))
+    return Detection("present", found) if found else Detection("fixed")
+
+
+def _harm_fire(world: World) -> Detection:
+    return _code_status(_code(world, "magic.cpp",
+                              r"void spell_harm\([^{]*\{(?:(?!\nvoid ).)*?DamageType::Fire",
+                              "`spell_harm` deals `DamageType::Fire`, not `DamageType::Harm`"))
+
+
 def _affect_worth(world: World) -> Detection:
     return _code_status(_code(world, "AFFECT_DATA.cpp", r"if\s*\(\s*modifier\s*<\s*0\s*\)\s*if\s*\(\s*modifier\s*>\s*0\s*\)",
                               "`if (modifier < 0) if (modifier > 0)` can never be true"))
@@ -228,6 +267,45 @@ def _unlisted(world: World) -> Detection:
 
 
 CHECKS: list[BugCheck] = [
+    BugCheck(
+        "code.get-all-past-end", "`get all` and autoloot read past the end of \"all\"", "code", "crash",
+        "`do_get` (act_obj.cpp) still tells `get all` from `get all.<name>` the way the C code did with a "
+        "NUL-terminated buffer: `arg1[3] == '\\0'`, and `&arg1[4]` for the name. `arg1` is now a `std::string_view`, "
+        "so for the plain `\"all\"` (3 characters) those reads are out of range. Debug builds abort on the "
+        "libstdc++ bounds assertion, which takes the MUD down whenever `get all` finds nothing or autoloot "
+        "empties a corpse (autoloot is on for new characters). Release builds read the next byte instead, so "
+        "the guard against mass-looting undroppable items from corpses never applies. Found by xania-sim "
+        "([abraidotti/xania#1](https://github.com/abraidotti/xania/issues/1)).",
+        "Decide \"all\" vs \"all.name\" once and pass that intent instead of a character:\n\n```cpp\n"
+        "const auto is_all = matches(arg1, \"all\");\nconst auto named = is_all ? std::string_view{} : "
+        "arg1.substr(4);\n// ... (is_all || is_name(named, obj->name)) ...\n"
+        "is_mass_looting_npc_undroppable_obj(obj, container, is_all)\n```\n\nwith "
+        "`is_mass_looting_npc_undroppable_obj` taking a `bool`.",
+        _get_all_past_end),
+    BugCheck(
+        "code.vampiric-integer-drain", "Vampiric weapons drain nothing from hits under 100 damage", "code",
+        "wrong-behaviour",
+        "`damage()` (fight.cpp) gives a vampiric weapon's wielder `(adjusted_damage / 100) * 10` HP and takes it "
+        "from the victim. `adjusted_damage` is an `int`, so the division rounds down first: any hit under 100 "
+        "drains 0, and a hit of 199 drains 10. Below the highest levels almost no hit reaches 100, so the flag "
+        "does nothing while still counting towards the item's worth (entity_balance.cpp).",
+        "Take the tenth before rounding: `const auto drain = adjusted_damage / 10;` (or `* 10 / 100`).",
+        _vampiric_drain),
+    BugCheck(
+        "code.elemental-weapon-flags", "Flaming and frost weapons do nothing in combat", "code", "wrong-behaviour",
+        "`identify` lists flaming and frost, and `entity_balance.cpp` counts each one towards an item's worth "
+        "(which tightens what else it may carry), but no live code in fight.cpp reads them: the only flaming "
+        "effect is inside a commented-out block. A builder pays for the flag and the player gets nothing.",
+        "Either give them an effect in `one_hit` (a small extra fire or cold `damage()` call on a hit, so the "
+        "victim's tolerance applies, as ROM does), or stop charging worth for them in `entity_balance.cpp`.",
+        _elemental_flags),
+    BugCheck(
+        "code.harm-fire-damage", "The harm spell does fire damage", "code", "wrong-behaviour",
+        "`spell_harm` (magic.cpp) deals its damage as `DamageType::Fire`. Every other harm-type spell (the cause "
+        "spells) uses `DamageType::Harm`, so this looks like a copy-paste slip: fire-resistant or fire-immune "
+        "mobs shrug off a cleric's strongest attack spell, and fire-vulnerable ones (every troll) take 1.5x.",
+        "Use `DamageType::Harm` in `spell_harm`'s `damage()` call.",
+        _harm_fire),
     BugCheck(
         "code.affect-worth-ac", "Armour-class and saving-throw bonuses are free under the item-points rule", "code",
         "wrong-behaviour",

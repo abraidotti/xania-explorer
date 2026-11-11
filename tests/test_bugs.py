@@ -17,6 +17,13 @@ BUGGY = {
                   "void lose_level(Char *ch) {\n    add_mana = number_range(2, ch->max_stat(Stat::Int));\n}\n",
     "Area.cpp": " * - Every minute if unoccupied by players.\n        age_ = RoomResetAgeUnoccupiedArea;\n",
     "apps/map.cpp": "FILE *out_file;\nfmt::print(\"    v{} [label]\");\nfmt::print(out_file, \"ok\");\n",
+    "act_obj.cpp": "if ((arg1[3] == '\\0' || is_name(&arg1[4], obj->name)) && ch->can_see(*obj)) {}\n",
+    "fight.cpp": "        ch->hit += (adjusted_damage / 100) * 10;\n"
+                 "/* if (check_enum_bit(wield->value[4], WeaponFlag::Flaming)) wield->value[3] = 29; */\n",
+    "entity_balance.cpp": "        if (check_enum_bit(obj->value[4], WeaponFlag::Flaming))\n            worth++;\n"
+                          "        if (check_enum_bit(obj->value[4], WeaponFlag::Frost))\n            worth++;\n",
+    "magic.cpp": "void spell_harm(int sn, int level, Char *ch, void *vo) {\n    damage(ch, victim, dam, sn, "
+                 "DamageType::Fire);\n}\nvoid spell_cause_light(int sn) {\n    damage(ch, v, d, sn, DamageType::Harm);\n}\n",
 }
 FIXED = {
     "AFFECT_DATA.cpp": "case AffectLocation::Ac:\n        if (modifier < 0)\n            return Value{0, 0, -modifier};\n",
@@ -26,8 +33,16 @@ FIXED = {
                   "void lose_level(Char *ch) {\n    add_mana = gains(ch);\n}\n",
     "Area.cpp": " * - Every 5 minutes.\n        age_ = RoomResetAgeUnoccupiedArea;\n",
     "apps/map.cpp": "FILE *out_file;\nfmt::print(out_file, \"    v{} [label]\");\n",
+    "act_obj.cpp": "if ((is_all || is_name(named, obj->name)) && ch->can_see(*obj)) {}\n",
+    "fight.cpp": "        ch->hit += adjusted_damage / 10;\n"
+                 "if (check_enum_bit(wield->value[4], WeaponFlag::Flaming)) dam += dice(level / 4 + 1, 6);\n"
+                 "if (check_enum_bit(wield->value[4], WeaponFlag::Frost)) dam += dice(level / 4 + 1, 6);\n",
+    "entity_balance.cpp": "        if (check_enum_bit(obj->value[4], WeaponFlag::Flaming))\n            worth++;\n",
+    "magic.cpp": "void spell_harm(int sn, int level, Char *ch, void *vo) {\n    damage(ch, victim, dam, sn, "
+                 "DamageType::Harm);\n}\nvoid spell_fireball(int sn) {\n    damage(ch, v, d, sn, DamageType::Fire);\n}\n",
 }
-CODE_CHECKS = [K._affect_worth, K._lose_level, K._exit_null, K._shop_null, K._mudschool_comment, K._dot_stdout]
+CODE_CHECKS = [K._affect_worth, K._lose_level, K._exit_null, K._shop_null, K._mudschool_comment, K._dot_stdout,
+               K._get_all_past_end, K._vampiric_drain, K._elemental_flags, K._harm_fire]
 
 
 def make(tmp_path, sources):
@@ -45,7 +60,9 @@ def test_code_checks_detect_buggy_source(tmp_path):
     world = make(tmp_path, BUGGY)
     statuses = {f.__name__: f(world).status for f in CODE_CHECKS}
     assert statuses == {"_affect_worth": "present", "_lose_level": "present", "_exit_null": "latent",
-                        "_shop_null": "latent", "_mudschool_comment": "present", "_dot_stdout": "present"}
+                        "_shop_null": "latent", "_mudschool_comment": "present", "_dot_stdout": "present",
+                        "_get_all_past_end": "present", "_vampiric_drain": "present", "_elemental_flags": "present",
+                        "_harm_fire": "present"}
 
 
 def test_code_checks_see_fixes(tmp_path):
