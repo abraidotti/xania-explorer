@@ -1,104 +1,110 @@
 # Xania Explorer
 
-Tools for documenting and assessing [Xania](https://github.com/mattgodbolt/xania). They read a Xania checkout's
-data files directly (no C++ build needed) and produce a website of guides, level 1–91 balance reports with
-interactive charts, an area catalogue, and a comparison between Xania versions (e.g. upstream vs your fork).
+Xania Explorer reads a [Xania](https://github.com/mattgodbolt/xania) checkout, its area files and its C++ source,
+and reports how the game plays for a character levelling from 1 to 91: where the balance is off, what's broken,
+and what to change. It only reads Xania. Nothing here changes the game, and no build of Xania is needed.
 
-## Quick start
+**The site: https://abraidotti.github.io/xania-explorer/**, rebuilt every night from `mattgodbolt/xania` and my
+fork, with the two compared side by side.
 
-Put a Xania checkout next to this repo (`../xania`), then:
+## What you'll find
+
+For each Xania version:
+
+- **A dashboard** of the most pressing findings, and **recommendations**, ranked by impact and effort.
+- **One page per game system**, each answering one question across levels 1-91, with charts and the data
+  behind them as CSV:
+
+  | System | Question |
+  |---|---|
+  | Characters | How do classes and races grow, and what does each cost in XP? |
+  | Weapons | What weapons can each class find and wield at each level? |
+  | Equipment | How much armour and hitroll/damroll can a character wear at each level? |
+  | Combat & XP | What does a fight look like at each level, and how many kills does a level take? |
+  | Skills & spells | What can each class learn as it levels, and do attack spells keep up? |
+  | Economy | Is the gold earned at each level enough for what there is to buy? |
+  | Levelling path | Where can a character of each level gain experience, and how much is there? |
+  | Mobs | Are mobs spread evenly over the levels, and is their toughness consistent? |
+  | Area difficulty | How hard is each area for the characters it serves, and what does it pay? |
+  | Bugs | What's broken in the code, the area data and the content, and how do we fix it? |
+
+- **An area catalogue**: every area's mobs, objects, shops, specials and mob programs, and how hard it is for
+  the levels it serves.
+
+Across versions:
+
+- **Compare**: a scorecard of every finding between two versions (say, upstream and a branch): what improved or
+  got worse, which bugs were fixed or introduced.
+- **Explore any repo**: the same analysis for any public Xania repo and branch, run in your browser.
+- **Guides** to how Xania works, written from the source: the game loop, the area file format, the world model,
+  characters, combat, skills and magic, items and the economy, NPC behaviour, persistence and administration.
+
+## How it works
+
+**Reading the world.** A port of Xania's area loader reads the files in `area.lst` order, the way `db.cpp` does,
+and reports the same warnings and fatal errors the MUD would at boot. Tables that live in the C++ (the skill table,
+classes, races, stat tables, spell damage, specials, attack types) are read straight from `src/`, so a branch that
+changes them is analysed as it is.
+
+**Modelling it.** The assessments use expected values from Xania's own formulas: hit chances, parry, dodge and
+block, damage, extra attacks, XP per kill, mob specials, mobs assisting each other, a caster's buffs and spells, and
+mobs' immunities, resistances and vulnerabilities. Each formula names the C++ it comes from. A level-L character is
+a human of each class with the best gear the world offers at L, fighting the mobs within two levels that it can
+reach, see and hurt. It's a model, not a simulation. [Xania Sim](https://github.com/abraidotti/xania-sim) plays the
+real game and checks the model against what actually happens.
+
+**What it leaves out.** Weight limits on gear; how far players actually practise their skills (it assumes 75%
+when learned, rising to 100% by level 30); mob skills like bash in fights; mobs wandering away from where they
+spawn; sneak; portals and mob programs when finding routes; players trading or grouping. Each page's Method
+section says what that page assumes.
+
+**Writing it up.** Every page leads with its findings. Each finding is a sentence generated from the data, with the
+evidence and a chart below it, so the wording stays true as the game changes. Bug checks come in two kinds:
+narrow patterns in the C++ (each one confirmed by reading the code), and checks on the loaded data and content.
+A code check reports a bug as `present` until its pattern goes away, then as `fixed`, so a branch that fixes a bug
+shows it on Compare.
+
+## Running it yourself
+
+Python 3.12 or later. Put a Xania checkout next to this repo (`../xania`), then:
 
 ```
 python -m venv .venv
-.venv\Scripts\activate            # Windows   (source .venv/bin/activate elsewhere)
+source .venv/bin/activate            # .venv\Scripts\activate on Windows
 python -m pip install -e ".[dev,site]"
 
-python -m xania_explorer serve       # http://127.0.0.1:8000, rebuilds when area files change
+python -m xania_explorer serve       # the site at http://127.0.0.1:8000, rebuilt when area files change
 ```
 
-To compare two versions, point at both checkouts. The first is the baseline:
+To compare two checkouts, the first being the baseline:
 
 ```
-python -m xania_explorer serve --target upstream=../xania-upstream --target fork=../xania
+python -m xania_explorer serve --target upstream=../xania-upstream --target mine=../xania
 ```
-
-## Commands
 
 | Command | What it does |
 |---|---|
-| `serve [--target NAME=PATH ...]` | Build the website and serve it locally with live reload |
-| `site [--target ...] [--out DIR] [--strict]` | Build the static website into `site/` |
+| `serve [--target NAME=PATH ...]` | Build the site and serve it locally, with live reload |
+| `site [--target ...] [--out DIR]` | Build the static site into `site/` |
 | `check` | Load the world and list loader warnings and integrity problems (exit 1 if any would stop the MUD booting) |
-| `assess [SYSTEM ...]` | Write the assessments (characters, weapons, equipment, combat, skills, economy, levelling, mobs, bugs) as Markdown + CSV into `build/assessments/` |
-| `custom-build CHECKOUT [CHECKOUT] --out DIR` | Build one version or a comparison as a static site into `DIR/<slug>/` (used by the workflow's "Build this on GitHub") |
-| `bundle` | Write the live explorer's runtime (Pyodide + wheels, ~14 MB, gitignored) into `docs/runtime/`; after that, `site`/`serve` keep its wheel in step with the code |
+| `assess [SYSTEM ...]` | Write the assessments as Markdown and CSV into `build/assessments/` |
 | `docs` | Write the area catalogue as Markdown into `build/reference/` |
 
-Every command takes `--xania PATH` (a checkout root or its `area/` dir) before the command name. Without it, the
-default is `$XANIA_DIR`, or failing that `../xania`. `site`/`serve` use `--target` instead, so they can take
-several versions.
+`--xania PATH` (before the command) points at another checkout, or its `area/` directory; otherwise
+`$XANIA_DIR`, then `../xania`. `site` and `serve` take `--target` instead, so they can show several versions.
 
-## Python API
+**In the browser.** The site's Explore page runs this same package with [Pyodide](https://pyodide.org): it fetches
+a repo's files from GitHub and builds the pages locally, so a live run matches the prebuilt pages. The analysis
+is pure Python, standard library only, to keep that possible. If a device is too slow for it, the repo's Site
+workflow can build any version or comparison on GitHub instead.
 
-Other tools (such as xania-sim's bots) should import [xania_explorer/api.py](xania_explorer/api.py) and nothing
-else. Its names and signatures are pinned by [tests/test_api.py](tests/test_api.py).
+**From other tools.** [`xania_explorer/api.py`](xania_explorer/api.py) is the stable interface, used by Xania Sim
+for routes and predictions:
 
 ```python
 from xania_explorer import api
 world = api.load_world("../xania")
-api.path(world, api.RECALL_ROOM, 3054)                      # walking steps, e.g. [Step(... command="north")]
-api.predict_fight(world, "knight", 10, 110)                 # expected rounds, damage taken, xp, deadly
-api.predict_spell(world, "mage", "magic missile", 5, 5)     # skill, save chance, damage range, mana
-api.abilities("mage"), api.pc_races(), api.area_profile(world, "Dell.are")
-```
-
-## Live explorer
-
-The site's **Explore any repo** page ([docs/explore.md](docs/explore.md)) analyses any public Xania repo and branch,
-or compares two, entirely in the browser. It fetches the files from GitHub and runs this package under
-[Pyodide](https://pyodide.org) in a Web Worker. The pages come from the same generators as the static site, so a
-live run of a commit matches its prebuilt pages; CI checks that, and that a two-sided run stays under 60 s with a
-wheel under 1 MB ([tests/pyodide/](tests/pyodide/)). The analysis code must stay pure Python with only the
-standard library (enforced by [tests/test_explore.py](tests/test_explore.py)).
-
-To try it locally, run `python -m xania_explorer bundle` once, then `serve`.
-
-**Build this on GitHub** is the fallback for devices where a live run is too slow or fails: run the Site workflow
-with `base_repo`/`base_ref` (and optionally `head_repo`/`head_ref`), e.g.
-`gh workflow run site.yml -f base_repo=mattgodbolt/xania -f head_repo=you/xania -f head_ref=balance`. It builds
-that version or comparison with `custom-build`, keeps the newest 20 on the `builds` branch, and every deploy
-publishes them under `/builds/`, listed on the Builds page.
-
-## Published site
-
-[.github/workflows/site.yml](.github/workflows/site.yml) checks out `mattgodbolt/xania` and your fork next to
-this repo and runs three jobs side by side: the tests (`pytest -n auto`, on every core; run them the same way
-locally), the explorer's Pyodide budget and parity check, and the site build with both checkouts as targets. Once
-all three pass, it deploys to GitHub Pages. It runs on every
-push to `main`, nightly (to pick up new Xania commits), and on demand, where you can choose a branch or commit for
-either checkout. Pull requests build the site but don't deploy it.
-
-One-time setup:
-1. Settings → Pages → Source: **GitHub Actions**.
-2. Optionally, under Settings → Secrets and variables → Actions → Variables:
-   - `XANIA_FORK_REPO` (default `<owner>/xania`);
-   - `XANIA_FORK_REF` (default: the fork's default branch);
-   - `XANIA_UPSTREAM_REF` (default `main`).
-
-If the fork doesn't exist or isn't public, the site is built from upstream alone.
-
-## Layout
-
-```
-docs/                             hand-written pages (guides); generated pages are added at build time
-mkdocs.yml                        site config; hooks in xania_explorer/site/hooks.py
-xania_explorer/paths.py              where the Xania checkout is (--xania / XANIA_DIR / ../xania)
-xania_explorer/areafile/             faithful port of Xania's area loader (reader, parser, model, world checks)
-xania_explorer/source/               tables extracted from xania/src: skills/groups, classes/races/stats, spell damage
-xania_explorer/systems.py            the game systems assessed, in reading order (drives CLI, pages, nav)
-xania_explorer/assess/               one analysis per system + shared stats (common.py) and item sources
-xania_explorer/gen/area_catalogue.py area catalogue pages
-xania_explorer/site/                 website: targets, per-version pages, findings-first stories/, charts (Vega-Lite), compare, hooks
-xania_explorer/explore.py            the live explorer's Python side (file plan, repo validation, run); bundle in site/bundle.py
-docs/javascripts/explore*.js         the live explorer's page, worker and download plan
+api.path(world, api.RECALL_ROOM, 3054, level=20)              # walking steps a level-20 character can take
+api.predict_fight(world, "knight", 10, 110)                   # expected rounds, damage taken, xp
+api.predict_spell(world, "mage", "burning hands", 20, 13, mob_vnum=2804)   # damage, with that mob's tolerance
 ```

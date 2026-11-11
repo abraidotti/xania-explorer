@@ -33,7 +33,9 @@ def combat_story(world: World):
                 "each class with the best gear the world offers at that level. Mobs' casting and breath specials "
                 + ("are included" if a.specials else "aren't included (no `src/special.cpp`)")
                 + ". Each fight is straight melee against one mob, except in two sections: casters fighting with "
-                "their spells and buffs, and group fights. Resistances and mob skills like bash aren't modelled. "
+                "their spells and buffs, and group fights. Mobs' immunities, resistances and vulnerabilities count; "
+                "mobs a character can't hurt or can't see are left out of its fights; mob skills like bash "
+                "aren't modelled. "
                 "See the Method at the end.\n")
     tiles = V.stat_tiles([
         (f"{min(kills):.0f}–{max(kills):.0f}", "kills per level, at every level"),

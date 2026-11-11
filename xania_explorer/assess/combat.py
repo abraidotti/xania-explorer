@@ -12,8 +12,10 @@ within ±2 levels (the mobs a player of that level would hunt), using the C++ fo
 
 Expected values are used throughout (hit chances, extra attacks, parry/dodge/block, damage). Mobs' damaging
 special procedures (casting and breath, special.cpp) are included, and mobs that assist each other are modelled
-separately as group fights. Player spells, affects (sanctuary, haste…), resistances and mob skills like bash are
-not modelled, so mages and clerics look weaker here than they play: see Skills & spells for spell damage.
+separately as group fights. Mobs' immunities, resistances and vulnerabilities to the player's weapon count; mobs
+the player can't hurt (immune to its weapon) or can't see (hidden or invisible, without the detect spells) are left
+out of its fights. Player spells, affects (sanctuary, haste…) and mob skills like bash are not modelled in the
+straight fights, so mages and clerics look weaker there than they play: see the casters' section and Skills & spells.
 """
 
 from __future__ import annotations
@@ -655,6 +657,16 @@ class CombatAnalysis:
                    "`src/special.cpp` (or no `src/magic.cpp`).\n")
                 + "- **Offensive flags** include the race's (Races.cpp `race_table`, merged in as MobIndexData.cpp "
                 "does), so race-given Fast and assist flags count.\n"
+                "- **Immune, resistant, vulnerable** (check_damage_tolerance, DamageTolerance.cpp): the player's "
+                "damage is ×0, ×⅔ or ×1.5 by its weapon's damage type (the attack word's, Attacks.cpp), with the "
+                "catch-all Weapon flag checked first for bash, pierce and slash; a wood, silver or iron weapon does "
+                "×1.5 more to a mob vulnerable to it. Spells use their `damage()` call's type. Mobs get their race's "
+                "flags too. A mob immune to the player's weapon is listed apart, not fought.\n"
+                "- **Mobs it can't see** (Char::can_see): a passive invisible mob needs detect invis, a passive "
+                "hidden one detect hidden (from the level the class learns them); they're left out until then. "
+                "Aggressive ones attack whoever they can, so they count. Sneak (a random chance per look) doesn't.\n"
+                "- **Level-gated rooms**: a mob counts at a level only if it spawns in a room that level can enter "
+                "(NewbiesOnly rooms are for level 5 and below, HeroesOnly for 91).\n"
                 "- **Group fights** (check_assist, fight.cpp): the mobs spawned in a mob's room that would assist it "
                 "(same prototype, race or alignment band, or assist_all), counted from the resets. Over a fight of R "
                 "rounds each joins with a 50% chance per round, so it joins at all with chance 1 − ½^R and attacks "
