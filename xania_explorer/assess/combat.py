@@ -331,6 +331,8 @@ class LevelResult:
     # mobs in the level window it can't hurt (immune to its weapon's damage type): nobody hunts those, so they're
     # left out of the averages and listed here
     unhurtable: list[MobFighter] = field(default_factory=list)
+    # passive mobs it can't see (invisible, or hidden, without the detect spell): it can't find them to attack
+    unseen: list[MobFighter] = field(default_factory=list)
 
     def median(self, attr: str) -> float | None:
         vals = [getattr(f, attr) for _, f in self.fights]
@@ -390,6 +392,23 @@ class CombatAnalysis:
             cache[key] = special_damage_per_round(self.specials, m.special, m.mob.level, m.mob.hit.average, level,
                                                   self.world.src_dir)
         return cache[key]
+
+    def can_see(self, cls: str, level: int, m: MobFighter) -> bool:
+        """Can a ``cls`` of ``level`` find ``m`` to attack it (Char::can_see(const Char &), Char.cpp)? Invisible
+        mobs need detect invis; hidden ones need detect hidden while they aren't fighting. An aggressive mob attacks
+        whoever it can, and a player fights back at what's fighting it, so those always count. Sneak (a random
+        chance per look) isn't modelled. The detect spells count from the level the class learns them."""
+        aff = set(F.decode(m.mob.affected_by, F.AFFECT))
+        if not aff & {"Invisible", "Hide"} or "Aggressive" in m.mob.act_names:
+            return True
+
+        def knows(spell: str) -> bool:
+            at = self.learned_at(cls, spell)
+            return at is not None and at <= level
+
+        if "Invisible" in aff and not knows("detect invis"):
+            return False
+        return not ("Hide" in aff and not knows("detect hidden"))
 
     def learned_at(self, cls: str, skill: str) -> int | None:
         s = self.skills.get(skill)
@@ -559,6 +578,9 @@ class CombatAnalysis:
         p = self.player(cls, level)
         res = LevelResult(cls, level, p.hp)
         for m in self.by_level[level]:
+            if not self.can_see(cls, level, m):
+                res.unseen.append(m)
+                continue
             f = self.fight(p, m)
             if f.pc_dpr <= 0 and m.takes(p.damage_type, p.material) == 0:
                 res.unhurtable.append(m)

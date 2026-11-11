@@ -1,6 +1,7 @@
 import pytest
 
 from xania_explorer.areafile.world import DEFAULT_AREA_DIR, load_world
+from xania_explorer.areafile import flags as F
 from xania_explorer.assess import combat as CB
 
 
@@ -87,3 +88,19 @@ def test_tolerances_on_the_checkout():
     for r in troll.results.values():
         assert all(m.takes(troll.player(r.cls, r.level).damage_type) == 0 for m in r.unhurtable)
     assert any(r.unhurtable for r in troll.results.values())  # weapon-immune mobs exist (The Blob, The Fire...)
+
+
+def test_unseen_mobs_need_the_detect_spells():
+    """Char::can_see(const Char &): a passive hidden mob (the tiny water sprite, #13215) can't be found without
+    detect hidden, so it's no fight for a knight; a mage learns detect hidden at 15 and sees it. Aggressive hidden
+    or invisible mobs attack whoever they can, so they always count."""
+    from xania_explorer import api
+
+    cb = CB.analyse(api.load_world())
+    sprite = next(m for m in cb.mobs if m.mob.vnum == 13215)
+    assert not cb.can_see("knight", 23, sprite) and cb.can_see("mage", 23, sprite)
+    assert sprite in cb.results[("knight", 23)].unseen
+    assert sprite in [m for m, _ in cb.results[("mage", 23)].fights]
+    sneaky = [m for m in cb.mobs if "Aggressive" in m.mob.act_names
+              and {"Hide", "Invisible"} & set(F.decode(m.mob.affected_by, F.AFFECT))]
+    assert sneaky and all(cb.can_see("knight", 10, m) for m in sneaky)
