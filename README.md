@@ -21,8 +21,14 @@
 
   <p align="center">
     How Xania plays from level 1 to 91: balance reports, bug checks and guides, read straight from a checkout.
-    <br />
-    <a href="https://abraidotti.github.io/xania-explorer/"><strong>Open the site »</strong></a>
+  </p>
+
+  <h2 align="center">
+    <a href="https://abraidotti.github.io/xania-explorer/">abraidotti.github.io/xania-explorer »</a>
+  </h2>
+
+  <p align="center">
+    The reports for <code>mattgodbolt/xania</code> and my fork, side by side, rebuilt every night.
     <br />
     <br />
     <a href="https://abraidotti.github.io/xania-explorer/explore/">Explore any repo</a>
