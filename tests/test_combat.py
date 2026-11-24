@@ -67,7 +67,8 @@ def test_tolerance_follows_check_damage_tolerance():
 
 def test_tolerances_on_the_checkout():
     """Mobs get their race's flags too (MobIndexData.cpp): every troll resists bash and is vulnerable to fire and
-    acid. Spells carry their damage() call's type (harm deals fire damage in Xania)."""
+    acid. Spells carry their damage() call's type: harm deals Harm damage (it dealt Fire until
+    mattgodbolt/xania#312)."""
     from pathlib import Path
 
     from xania_explorer import api
@@ -79,6 +80,7 @@ def test_tolerances_on_the_checkout():
     assert {"Bash"} <= res and {"Acid", "Fire"} <= vuln
     spells = load_damage_spells(w.src_dir)
     assert (spells["spell_fireball"].damage_type, spells["spell_magic_missile"].damage_type) == ("Fire", "Energy")
+    assert spells["spell_harm"].damage_type == "Harm"
     troll = CB.analyse(w)
     giant = next(m for m in troll.mobs if m.mob.vnum == 2804)
     assert (giant.takes("Bash"), giant.takes("Slash"), giant.takes("Fire")) == (2 / 3, 1.0, 1.5)
