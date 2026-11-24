@@ -3,7 +3,7 @@
 #   - Settings → Pages → Source: "GitHub Actions".
 #   - Optional variables (Settings → Secrets and variables → Actions → Variables):
 #       XANIA_FORK_REPO   fork to compare against upstream (default: <repo owner>/xania)
-#       XANIA_FORK_REF    branch/tag/commit of the fork (default: its default branch)
+#       XANIA_FORK_REF    branch/tag/commit of the fork (default: main)
 #       XANIA_UPSTREAM_REF  upstream ref (default: main)
 # "Build this on GitHub": run this workflow with base_repo (and optionally base_ref, head_repo, head_ref) to add a
 # static build of that version or comparison under /builds/. Builds live on the `builds` branch (newest 20, one
@@ -22,7 +22,7 @@ on:
         description: "mattgodbolt/xania branch, tag or commit"
         default: ""
       fork_ref:
-        description: "Fork branch, tag or commit (blank = default branch)"
+        description: "Fork branch, tag or commit (blank = main)"
         default: ""
       base_repo:
         description: "Build on GitHub: base repo, owner/name (blank = no extra build)"
@@ -103,7 +103,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: ${{ env.FORK_REPO }}
-          ref: ${{ inputs.fork_ref || vars.XANIA_FORK_REF || '' }}
+          ref: ${{ inputs.fork_ref || vars.XANIA_FORK_REF || 'main' }}
           path: xania-fork
 
       - uses: actions/setup-python@v7
@@ -151,7 +151,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: ${{ env.FORK_REPO }}
-          ref: ${{ inputs.fork_ref || vars.XANIA_FORK_REF || '' }}
+          ref: ${{ inputs.fork_ref || vars.XANIA_FORK_REF || 'main' }}
           path: xania-fork
 
       - name: Check out the requested build's base
